@@ -426,6 +426,8 @@ export default function TestimonialsSection() {
   const [page, setPage] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [animating, setAnimating] = useState(false);
+  const [slideDir, setSlideDir] = useState<"left" | "right">("left");
 
   const total = testimonials.length;
   const totalPages = Math.ceil(total / perPage);
@@ -442,8 +444,21 @@ export default function TestimonialsSection() {
     [totalPages]
   );
 
-  const goNext = useCallback(() => goTo(page + 1), [page, goTo]);
-  const goPrev = useCallback(() => goTo(page - 1), [page, goTo]);
+  const animatedGo = useCallback(
+    (p: number, dir: "left" | "right") => {
+      setSlideDir(dir);
+      setAnimating(true);
+      // Quick fade-out, then swap page, then fade-in
+      setTimeout(() => {
+        goTo(p);
+        setAnimating(false);
+      }, 150);
+    },
+    [goTo]
+  );
+
+  const goNext = useCallback(() => animatedGo(page + 1, "left"), [page, animatedGo]);
+  const goPrev = useCallback(() => animatedGo(page - 1, "right"), [page, animatedGo]);
 
   /* No auto-play — only manual navigation via swipe or arrows */
 
@@ -524,14 +539,22 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Cards grid */}
+        {/* Cards grid with slide animation */}
         <div
-          className="select-none"
+          className="select-none overflow-hidden"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 transition-all duration-200 ease-out"
+            style={{
+              opacity: animating ? 0 : 1,
+              transform: animating
+                ? `translateX(${slideDir === "left" ? "-12px" : "12px"})`
+                : "translateX(0)",
+            }}
+          >
             {visible.map((review, i) => (
               <ReviewCard key={startIdx + i} review={review} />
             ))}

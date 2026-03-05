@@ -176,7 +176,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8">
-            {services.map((service) => (
+            {services.slice(0, 6).map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
           </div>
