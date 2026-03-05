@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { company } from "@/data/company";
+import ScrollReveal from "@/components/ScrollReveal";
 
 interface Testimonial {
   stars: number;
@@ -493,6 +494,7 @@ export default function TestimonialsSection() {
     <section className="section-padding bg-brand-light">
       <div className="container-wide mx-auto">
         {/* Heading */}
+        <ScrollReveal>
         <div className="text-center mb-6 md:mb-10">
           <h2 className="section-heading">What Our Customers Say</h2>
           <div className="flex items-center justify-center gap-2 mt-3 md:mt-4">
@@ -538,6 +540,7 @@ export default function TestimonialsSection() {
             Swipe to see more reviews
           </p>
         </div>
+        </ScrollReveal>
 
         {/* Cards grid with slide animation */}
         <div

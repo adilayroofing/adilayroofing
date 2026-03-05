@@ -1,4 +1,5 @@
 import { company } from "@/data/company";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const stats = [
   {
@@ -45,20 +46,19 @@ export default function TrustBar() {
       <div className="container-wide mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center"
-            >
-              <div className="text-brand-red mb-1 md:mb-3">
-                {stat.icon}
+            <ScrollReveal key={index} delay={index * 80} distance={16}>
+              <div className="flex flex-col items-center text-center">
+                <div className="text-brand-red mb-1 md:mb-3">
+                  {stat.icon}
+                </div>
+                <p className="text-xl md:text-3xl font-extrabold text-white leading-tight">
+                  {stat.value}
+                </p>
+                <p className="text-white/60 text-xs md:text-sm font-medium mt-0.5 md:mt-1">
+                  {stat.label}
+                </p>
               </div>
-              <p className="text-xl md:text-3xl font-extrabold text-white leading-tight">
-                {stat.value}
-              </p>
-              <p className="text-white/60 text-xs md:text-sm font-medium mt-0.5 md:mt-1">
-                {stat.label}
-              </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

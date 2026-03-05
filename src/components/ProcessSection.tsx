@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 const steps = [
   {
     number: 1,
@@ -46,46 +48,50 @@ export default function ProcessSection() {
     <section className="section-padding bg-white">
       <div className="container-wide mx-auto">
         {/* Heading */}
-        <div className="text-center mb-6 md:mb-16">
-          <h2 className="section-heading">Our Process</h2>
-          <p className="section-subheading mx-auto mt-4">
-            From first contact to final walkthrough, we make roofing simple, transparent, and stress-free.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-6 md:mb-16">
+            <h2 className="section-heading">Our Process</h2>
+            <p className="section-subheading mx-auto mt-4">
+              From first contact to final walkthrough, we make roofing simple, transparent, and stress-free.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Steps */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {steps.map((step, index) => (
-            <div key={step.number} className="relative text-center">
-              {/* Connector line (desktop only, between steps) */}
-              {index < steps.length - 1 && (
-                <div
-                  className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-brand-border"
-                  aria-hidden="true"
-                />
-              )}
+            <ScrollReveal key={step.number} delay={index * 100} distance={20}>
+              <div className="relative text-center">
+                {/* Connector line (desktop only, between steps) */}
+                {index < steps.length - 1 && (
+                  <div
+                    className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-brand-border"
+                    aria-hidden="true"
+                  />
+                )}
 
-              {/* Number Circle */}
-              <div className="relative inline-flex items-center justify-center w-11 h-11 md:w-16 md:h-16 rounded-full bg-brand-red text-white mb-2 md:mb-5">
-                <span className="md:hidden text-white font-bold text-sm">{step.number}</span>
-                <span className="hidden md:block">{step.icon}</span>
+                {/* Number Circle */}
+                <div className="relative inline-flex items-center justify-center w-11 h-11 md:w-16 md:h-16 rounded-full bg-brand-red text-white mb-2 md:mb-5">
+                  <span className="md:hidden text-white font-bold text-sm">{step.number}</span>
+                  <span className="hidden md:block">{step.icon}</span>
+                </div>
+
+                {/* Step Number — visible on desktop only */}
+                <p className="hidden md:block text-xs font-bold text-brand-red uppercase tracking-widest mb-2">
+                  Step {step.number}
+                </p>
+
+                {/* Title */}
+                <h3 className="text-sm md:text-lg font-bold text-brand-dark mb-1 md:mb-2">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-brand-gray text-xs md:text-sm leading-relaxed max-w-xs mx-auto">
+                  {step.description}
+                </p>
               </div>
-
-              {/* Step Number — visible on desktop only */}
-              <p className="hidden md:block text-xs font-bold text-brand-red uppercase tracking-widest mb-2">
-                Step {step.number}
-              </p>
-
-              {/* Title */}
-              <h3 className="text-sm md:text-lg font-bold text-brand-dark mb-1 md:mb-2">
-                {step.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-brand-gray text-xs md:text-sm leading-relaxed max-w-xs mx-auto">
-                {step.description}
-              </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
