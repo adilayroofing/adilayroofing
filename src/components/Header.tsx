@@ -13,22 +13,44 @@ export default function Header() {
   const [headerHidden, setHeaderHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const lastDirection = useRef<"up" | "down">("up");
+  const directionChangeY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Track scroll direction for header hide/show
   useEffect(() => {
     let ticking = false;
+    const SCROLL_THRESHOLD = 8; // px needed in one direction to trigger
+
     function onScroll() {
       if (!ticking) {
         requestAnimationFrame(() => {
           const currentY = window.scrollY;
           setScrolled(currentY > 20);
-          // Only hide/show after scrolling past 60px to avoid flicker at top
-          if (currentY > 60) {
-            setHeaderHidden(currentY > lastScrollY.current);
-          } else {
+
+          // Near the top — always show
+          if (currentY <= 60) {
             setHeaderHidden(false);
+            lastScrollY.current = currentY;
+            lastDirection.current = "up";
+            directionChangeY.current = currentY;
+            ticking = false;
+            return;
           }
+
+          // Detect direction change
+          const direction = currentY > lastScrollY.current ? "down" : "up";
+          if (direction !== lastDirection.current) {
+            directionChangeY.current = lastScrollY.current;
+            lastDirection.current = direction;
+          }
+
+          // Only trigger after scrolling SCROLL_THRESHOLD px in one direction
+          const delta = Math.abs(currentY - directionChangeY.current);
+          if (delta > SCROLL_THRESHOLD) {
+            setHeaderHidden(direction === "down");
+          }
+
           lastScrollY.current = currentY;
           ticking = false;
         });
