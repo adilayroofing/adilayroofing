@@ -365,7 +365,7 @@ export default function QuoteForm() {
           </svg>
         </div>
         <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-3">
-          Thank You!
+          Thank You{formData.fullName.trim() ? `, ${formData.fullName.trim().split(" ")[0]}` : ""}!
         </h2>
         <p className="text-brand-gray text-sm md:text-lg max-w-md mx-auto mb-2">
           Your quote request has been submitted successfully. Our team will review
