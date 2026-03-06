@@ -59,6 +59,8 @@ export default function GetQuotePage() {
         {/* Right Panel - Form */}
         <div className="lg:w-[60%] bg-brand-light flex items-start lg:items-center justify-center px-3 md:px-4 py-6 md:py-10 lg:py-16">
           <div className="w-full max-w-2xl">
+            {/* Scroll anchor — sits outside QuoteForm so re-renders don't move it */}
+            <div id="quote-form-top" />
             <QuoteForm />
           </div>
         </div>
