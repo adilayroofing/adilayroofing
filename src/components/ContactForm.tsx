@@ -16,16 +16,45 @@ const serviceOptions = [
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission delay
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      service: formData.get("service") as string,
+      message: formData.get("message") as string,
+    };
 
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to send message.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or call us directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -159,6 +188,13 @@ export default function ContactForm() {
                      focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-colors resize-vertical"
         />
       </div>
+
+      {/* Error Message */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-sm p-4 text-red-700 text-sm">
+          {error}
+        </div>
+      )}
 
       {/* Submit Button */}
       <button

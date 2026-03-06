@@ -189,6 +189,8 @@ export default function QuoteForm() {
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   /* ---------- helpers ---------- */
@@ -280,8 +282,33 @@ export default function QuoteForm() {
     }, 200);
   }
 
-  function handleSubmit() {
-    setSubmitted(true);
+  async function handleSubmit() {
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to submit request.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or call us directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   /* ---------- label helpers for review ---------- */
@@ -770,6 +797,12 @@ export default function QuoteForm() {
               <ReviewRow label="Preferred Contact" value={getContactMethodLabel(formData.preferredContact)} />
             </div>
 
+            {submitError && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4 md:mt-6 text-red-700 text-sm">
+                {submitError}
+              </div>
+            )}
+
             <p className="text-xs text-brand-gray mt-6 md:mt-8 leading-relaxed">
               By submitting, you agree to be contacted regarding your project. We
               respect your privacy and will never share your information with third
@@ -841,11 +874,28 @@ export default function QuoteForm() {
             </svg>
           </button>
         ) : (
-          <button type="button" onClick={handleSubmit} className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base">
-            Submit Request
-            <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
+          <button
+            type="button"
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+            className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <>
+                <svg className="w-4 h-4 mr-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+                Submitting...
+              </>
+            ) : (
+              <>
+                Submit Request
+                <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </>
+            )}
           </button>
         )}
       </div>
