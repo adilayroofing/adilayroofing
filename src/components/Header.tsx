@@ -10,16 +10,26 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll position for header animation
+  // Track scroll direction for header hide/show
   useEffect(() => {
     let ticking = false;
     function onScroll() {
       if (!ticking) {
         requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 20);
+          const currentY = window.scrollY;
+          setScrolled(currentY > 20);
+          // Only hide/show after scrolling past 60px to avoid flicker at top
+          if (currentY > 60) {
+            setHeaderHidden(currentY > lastScrollY.current);
+          } else {
+            setHeaderHidden(false);
+          }
+          lastScrollY.current = currentY;
           ticking = false;
         });
         ticking = true;
@@ -56,13 +66,13 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header
+      className={`sticky top-0 z-50 w-full transition-transform duration-300 ease-in-out ${
+        headerHidden && !mobileMenuOpen ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       {/* Top Bar */}
-      <div
-        className={`bg-brand-navy text-white text-sm transition-all duration-300 ease-in-out overflow-hidden ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
-        }`}
-      >
+      <div className="bg-brand-navy text-white text-sm">
         <div className="container-wide mx-auto flex items-center justify-between px-4 py-2">
           <div className="hidden md:flex items-center gap-1 text-white/80">
             <svg
