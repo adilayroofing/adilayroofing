@@ -104,7 +104,7 @@ export default function GalleryPage() {
                     <img
                       src={`/images/before-after-${n}-after.jpg`}
                       alt={`Project ${n} — after`}
-                      className="w-full aspect-square object-cover"
+                      className="w-full aspect-square object-cover object-top"
                     />
                     <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       AFTER
