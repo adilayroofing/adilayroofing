@@ -840,18 +840,9 @@ export default function QuoteForm() {
         </div>
       </div>
 
-      {/* ── Step content (inline — no nested components) ── */}
-      <div
-        className={`transition-opacity duration-200 ${
-          isTransitioning ? "opacity-0" : "opacity-100"
-        }`}
-      >
-        {renderStep()}
-      </div>
-
-      {/* ── Navigation buttons ── */}
-      <div className="flex items-center justify-between mt-6 md:mt-10 pt-4 md:pt-6 border-t border-brand-border">
-        {currentStep > 1 ? (
+      {/* ── Navigation buttons (TOP — only on review step) ── */}
+      {currentStep === TOTAL_STEPS && (
+        <div className="flex items-center justify-between mb-6 md:mb-8 pb-4 md:pb-6 border-b border-brand-border">
           <button
             type="button"
             onClick={goBack}
@@ -862,18 +853,6 @@ export default function QuoteForm() {
             </svg>
             Back
           </button>
-        ) : (
-          <div />
-        )}
-
-        {currentStep < TOTAL_STEPS ? (
-          <button type="button" onClick={goNext} className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base">
-            Next
-            <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
-        ) : (
           <button
             type="button"
             onClick={handleSubmit}
@@ -897,8 +876,43 @@ export default function QuoteForm() {
               </>
             )}
           </button>
-        )}
+        </div>
+      )}
+
+      {/* ── Step content (inline — no nested components) ── */}
+      <div
+        className={`transition-opacity duration-200 ${
+          isTransitioning ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        {renderStep()}
       </div>
+
+      {/* ── Navigation buttons (BOTTOM — for steps 1-6 only) ── */}
+      {currentStep < TOTAL_STEPS && (
+        <div className="flex items-center justify-between mt-6 md:mt-10 pt-4 md:pt-6 border-t border-brand-border">
+          {currentStep > 1 ? (
+            <button
+              type="button"
+              onClick={goBack}
+              className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-5 py-2 md:py-2.5 text-brand-gray font-medium hover:text-brand-dark transition-colors cursor-pointer text-sm md:text-base"
+            >
+              <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              Back
+            </button>
+          ) : (
+            <div />
+          )}
+          <button type="button" onClick={goNext} className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base">
+            Next
+            <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
