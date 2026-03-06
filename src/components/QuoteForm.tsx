@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { company } from "@/data/company";
 
 /* ────────────────────────────────────────────────────────────
@@ -192,15 +192,24 @@ export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const isFirstRender = useRef(true);
 
-  /** Scroll to the static anchor above this component (defined in page.tsx).
-   *  Uses instant scroll ("auto") to avoid conflicts with step transitions. */
-  function scrollToFormTop() {
-    const anchor = document.getElementById("quote-form-top");
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "auto", block: "start" });
+  /** After every step change (except initial load), scroll to the progress bar */
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
     }
-  }
+    // Double rAF ensures React has committed AND the browser has painted
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const anchor = document.getElementById("quote-form-top");
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: "auto", block: "start" });
+        }
+      });
+    });
+  }, [currentStep, submitted]);
 
   /* ---------- helpers ---------- */
 
@@ -279,8 +288,6 @@ export default function QuoteForm() {
     setTimeout(() => {
       setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS));
       setIsTransitioning(false);
-      // Scroll AFTER the new step renders
-      setTimeout(scrollToFormTop, 50);
     }, 200);
   }
 
@@ -290,8 +297,6 @@ export default function QuoteForm() {
     setTimeout(() => {
       setCurrentStep((s) => Math.max(s - 1, 1));
       setIsTransitioning(false);
-      // Scroll AFTER the new step renders
-      setTimeout(scrollToFormTop, 50);
     }, 200);
   }
 
@@ -313,8 +318,7 @@ export default function QuoteForm() {
       }
 
       setSubmitted(true);
-      // Scroll after React renders the success state
-      setTimeout(scrollToFormTop, 50);
+      // useEffect on [submitted] handles the scroll
     } catch (err) {
       setSubmitError(
         err instanceof Error
