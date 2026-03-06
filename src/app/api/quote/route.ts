@@ -5,6 +5,7 @@ import path from "path";
 const RECIPIENT_EMAIL = "adilayroofing@gmail.com";
 
 export async function POST(request: Request) {
+  console.log(">>> Quote API hit from:", request.headers.get("user-agent")?.substring(0, 50));
   try {
     const body = await request.json();
     const {
