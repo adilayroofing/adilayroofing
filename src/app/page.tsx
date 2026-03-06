@@ -33,6 +33,7 @@ const whyChooseUs = [
     title: "Experienced Crew",
     description:
       "Over 20 years of hands-on roofing experience in the Philadelphia area.",
+    bgImage: "/images/experienced-crew-adilay-roofing-philadelphia.jpg",
     icon: (
       <svg
         className="w-8 h-8"
@@ -54,6 +55,7 @@ const whyChooseUs = [
     title: "Quality Materials",
     description:
       "We use top-rated materials from trusted manufacturers for lasting results.",
+    bgImage: "/images/quality-roofing-materials-adilay.jpg",
     icon: (
       <svg
         className="w-8 h-8"
@@ -75,6 +77,7 @@ const whyChooseUs = [
     title: "Honest Pricing",
     description:
       "Clear, written proposals with no hidden fees or surprise charges.",
+    bgImage: "/images/adilay-roofing-honest-pricing-proposal.jpg",
     icon: (
       <svg
         className="w-8 h-8"
@@ -262,15 +265,26 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
             {whyChooseUs.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100} distance={20}>
-                <div className="bg-white rounded-sm p-5 md:p-10 border border-brand-border shadow-sm hover:shadow-md transition-shadow duration-300 flex items-start gap-4 md:flex-col md:items-center md:text-center h-full">
-                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-brand-red/10 text-brand-red md:mb-6">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold text-brand-dark mb-1 md:mb-3">
+                <div className="group relative rounded-sm overflow-hidden min-h-[160px] md:min-h-[300px] h-full">
+                  {/* Background image */}
+                  <img
+                    src={item.bgImage}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    aria-hidden="true"
+                  />
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-opacity duration-300" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col justify-end h-full p-5 md:p-8 md:items-center md:text-center md:justify-end">
+                    <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/20 text-white mb-3 md:mb-4 group-hover:bg-brand-red transition-colors duration-300">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-1 md:mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-brand-gray text-sm md:text-base leading-relaxed">
+                    <p className="text-white/80 text-sm md:text-base leading-relaxed">
                       {item.description}
                     </p>
                   </div>
