@@ -193,12 +193,12 @@ export default function QuoteForm() {
   const [submitError, setSubmitError] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  /** Scroll to the static anchor above this component (defined in page.tsx) */
+  /** Scroll to the static anchor above this component (defined in page.tsx).
+   *  Uses instant scroll ("auto") to avoid conflicts with step transitions. */
   function scrollToFormTop() {
     const anchor = document.getElementById("quote-form-top");
     if (anchor) {
-      const y = anchor.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      anchor.scrollIntoView({ behavior: "auto", block: "start" });
     }
   }
 
@@ -275,21 +275,23 @@ export default function QuoteForm() {
 
   function goNext() {
     if (!validateStep(currentStep)) return;
-    scrollToFormTop();
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS));
       setIsTransitioning(false);
+      // Scroll AFTER the new step renders
+      setTimeout(scrollToFormTop, 50);
     }, 200);
   }
 
   function goBack() {
     setErrors({});
-    scrollToFormTop();
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentStep((s) => Math.max(s - 1, 1));
       setIsTransitioning(false);
+      // Scroll AFTER the new step renders
+      setTimeout(scrollToFormTop, 50);
     }, 200);
   }
 
@@ -311,7 +313,8 @@ export default function QuoteForm() {
       }
 
       setSubmitted(true);
-      scrollToFormTop();
+      // Scroll after React renders the success state
+      setTimeout(scrollToFormTop, 50);
     } catch (err) {
       setSubmitError(
         err instanceof Error
