@@ -2,11 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
 import ServiceIcon from "@/components/ServiceIcon";
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -115,19 +117,25 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="group relative flex items-center"
+            className="group flex items-center"
             aria-label="Adilay Roofing - Home"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "instant" });
+              }
+            }}
           >
             <img
               src="/images/logo.svg"
               alt="Adilay Roofing"
-              className="h-14 md:h-16 w-auto transition-opacity duration-300 group-hover:opacity-0 group-active:opacity-0"
+              className="h-14 md:h-16 w-auto md:group-hover:hidden"
             />
             <img
               src="/images/logo-red.svg"
               alt=""
-              className="h-14 md:h-16 w-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100"
+              className="h-14 md:h-16 w-auto hidden md:group-hover:block"
               aria-hidden="true"
             />
           </Link>
