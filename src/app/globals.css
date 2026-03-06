@@ -77,3 +77,38 @@
     @apply text-base md:text-xl text-brand-gray max-w-2xl;
   }
 }
+
+/* ── Floating quote tab animations ── */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-nudge {
+  animation: nudge 0.8s ease-in-out;
+}

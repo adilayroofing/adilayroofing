@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import FloatingQuoteTab from "@/components/FloatingQuoteTab";
 import JsonLd from "@/components/JsonLd";
 import { company } from "@/data/company";
 
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingQuoteTab />
       </body>
     </html>
   );
