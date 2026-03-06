@@ -66,7 +66,7 @@ export const galleryProjects: GalleryProject[] = [
     category: "gutters",
     description:
       "Removed old, damaged gutters and installed new seamless aluminum system with leaf guards to prevent clogging.",
-    location: "South Jersey",
+    location: "Bucks County, PA",
   },
   {
     id: "project-7",

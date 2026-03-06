@@ -23,9 +23,6 @@ const serviceAreas = [
   "Willow Grove",
   "Levittown",
   "Bensalem",
-  "Camden County, NJ",
-  "Burlington County, NJ",
-  "Gloucester County, NJ",
 ];
 
 const whyChooseUs = [
@@ -438,7 +435,7 @@ export default function Home() {
                 </h2>
                 <p className="text-brand-gray leading-relaxed mt-4 mb-6">
                   We proudly serve homeowners and businesses across southeastern
-                  Pennsylvania and southern New Jersey.
+                  southeastern Pennsylvania.
                 </p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">

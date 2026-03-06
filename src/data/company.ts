@@ -18,8 +18,8 @@ export const company = {
   projectsCompleted: "2,080+",
   satisfiedClients: "1,000+",
   teamMembers: "30+",
-  serviceAreas: ["Philadelphia", "Bucks County", "Montgomery County", "Delaware County", "Chester County", "South Jersey"],
-  states: ["Pennsylvania", "New Jersey"],
+  serviceAreas: ["Philadelphia", "Bucks County", "Montgomery County", "Delaware County", "Chester County"],
+  states: ["Pennsylvania"],
   license: "PA184779",
   tagline: "Philadelphia's Trusted Roofing Experts",
   description:

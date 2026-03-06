@@ -12,7 +12,7 @@ export const faqs = [
   {
     question: "What areas do you serve?",
     answer:
-      "We serve Philadelphia and surrounding areas in Pennsylvania and New Jersey, including Bucks County, Montgomery County, Delaware County, Chester County, and South Jersey communities.",
+      "We serve Philadelphia and surrounding areas in Pennsylvania, including Bucks County, Montgomery County, Delaware County, and Chester County.",
   },
   {
     question: "How long does a roof replacement take?",

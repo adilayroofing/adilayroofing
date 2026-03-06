@@ -86,7 +86,7 @@ export default function AboutPage() {
                   decades. What started as a small, dedicated crew has grown into
                   a full-service roofing and exterior company with {company.teamMembers}{" "}
                   professionals serving homeowners and businesses across
-                  Pennsylvania and New Jersey.
+                  Pennsylvania.
                 </p>
                 <p className="text-brand-gray text-base md:text-lg leading-relaxed mt-4">
                   Our mission is simple: deliver the highest standard of roofing

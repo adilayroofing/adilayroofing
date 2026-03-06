@@ -4,7 +4,7 @@ import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Service Areas",
-  description: `${company.name} serves the greater Philadelphia region including Pennsylvania and New Jersey. Professional roofing services in Bucks County, Montgomery County, Delaware County, Chester County, Camden County, Burlington County, and more.`,
+  description: `${company.name} serves the greater Philadelphia region in Pennsylvania. Professional roofing services in Bucks County, Montgomery County, Delaware County, Chester County, and more.`,
 };
 
 // TODO: Confirm all service area cities/counties with the client
@@ -37,29 +37,6 @@ const paAreas = [
   },
 ];
 
-// TODO: Confirm all service area cities/counties with the client
-const njAreas = [
-  {
-    name: "Camden County",
-    description:
-      "Serving Cherry Hill, Haddonfield, Voorhees, Collingswood, Camden, and surrounding areas.",
-  },
-  {
-    name: "Burlington County",
-    description:
-      "Covering Mount Laurel, Moorestown, Marlton, Medford, and nearby communities.",
-  },
-  {
-    name: "Gloucester County",
-    description:
-      "Roofing services in Washington Township, Deptford, Woodbury, Glassboro, and the surrounding area.",
-  },
-  {
-    name: "South Jersey",
-    description:
-      "Extended coverage across additional South Jersey communities. Contact us to confirm availability in your area.",
-  },
-];
 
 const localBenefits = [
   {
@@ -171,7 +148,7 @@ export default function ServiceAreasPage() {
               Areas We Serve
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-              Professional roofing services across Pennsylvania and New Jersey.
+              Professional roofing services across southeastern Pennsylvania.
               Wherever you are in the greater Philadelphia region, we&apos;ve
               got you covered.
             </p>
@@ -190,7 +167,7 @@ export default function ServiceAreasPage() {
               <p className="section-subheading mx-auto mt-4">
                 From our home base in Philadelphia, we serve homeowners and
                 businesses throughout the greater Philadelphia area &mdash;
-                including communities across Pennsylvania and New Jersey. No
+                including communities across southeastern Pennsylvania. No
                 matter where you are, you get the same quality workmanship and
                 dedicated service.
               </p>
@@ -229,31 +206,6 @@ export default function ServiceAreasPage() {
               </div>
             </div>
 
-            {/* New Jersey Areas */}
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-8 flex items-center gap-3">
-                <span className="w-10 h-1 bg-brand-red inline-block" />
-                New Jersey
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {njAreas.map((area) => (
-                  <div
-                    key={area.name}
-                    className="border border-brand-border rounded-sm p-6 hover:shadow-md transition-shadow bg-white"
-                  >
-                    <div className="flex items-start gap-3 mb-3">
-                      <MapPinIcon />
-                      <h4 className="text-lg font-bold text-brand-dark">
-                        {area.name}
-                      </h4>
-                    </div>
-                    <p className="text-brand-gray text-sm leading-relaxed">
-                      {area.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
