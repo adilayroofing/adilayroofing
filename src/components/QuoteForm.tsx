@@ -195,13 +195,9 @@ export default function QuoteForm() {
   const formTopRef = useRef<HTMLDivElement>(null);
 
   const scrollToFormTop = useCallback(() => {
-    setTimeout(() => {
-      if (formTopRef.current) {
-        const rect = formTopRef.current.getBoundingClientRect();
-        const offset = window.scrollY + rect.top - 16;
-        window.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
-      }
-    }, 250);
+    requestAnimationFrame(() => {
+      formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }, []);
 
   /* ---------- helpers ---------- */
@@ -277,21 +273,21 @@ export default function QuoteForm() {
 
   function goNext() {
     if (!validateStep(currentStep)) return;
+    scrollToFormTop();
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS));
       setIsTransitioning(false);
-      scrollToFormTop();
     }, 200);
   }
 
   function goBack() {
     setErrors({});
+    scrollToFormTop();
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentStep((s) => Math.max(s - 1, 1));
       setIsTransitioning(false);
-      scrollToFormTop();
     }, 200);
   }
 
