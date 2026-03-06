@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import path from "path";
 
 const RECIPIENT_EMAIL = "adilayroofing@gmail.com";
 
@@ -68,11 +69,14 @@ export async function POST(request: Request) {
       .map((s: string) => serviceLabels[s] || s)
       .join(", ");
 
+    // Logo path for CID attachment
+    const logoPath = path.join(process.cwd(), "public", "images", "logo.png");
+
     // Build the email HTML
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background-color: #1B1B2F; padding: 24px; text-align: center;">
-          <img src="https://www.adilayroofing.com/images/logo.png" alt="Adilay Roofing" width="180" style="display: inline-block; max-width: 180px; height: auto;" />
+          <img src="cid:adilay-logo" alt="Adilay Roofing" width="180" style="display: inline-block; max-width: 180px; height: auto;" />
         </div>
         <div style="background-color: #C41E1E; padding: 20px; text-align: center;">
           <h1 style="color: #ffffff; margin: 0; font-size: 22px;">🏠 New FREE Quote Request</h1>
@@ -186,7 +190,7 @@ Submitted from Adilay Roofing website.
       },
     });
 
-    // Send email
+    // Send email with embedded logo
     await transporter.sendMail({
       from: `"Adilay Roofing Website" <${process.env.SMTP_USER}>`,
       to: RECIPIENT_EMAIL,
@@ -194,6 +198,13 @@ Submitted from Adilay Roofing website.
       subject: `🏠 New Quote Request: ${fullName} — ${formattedServices}`,
       text,
       html,
+      attachments: [
+        {
+          filename: "logo.png",
+          path: logoPath,
+          cid: "adilay-logo",
+        },
+      ],
     });
 
     return NextResponse.json({ success: true });
