@@ -79,17 +79,21 @@ export default function GalleryPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {[1, 2, 3].map((n) => (
+              {[
+                { id: 1, beforePos: "object-top", afterPos: "object-top" },
+                { id: 2, beforePos: "object-center", afterPos: "object-top" },
+                { id: 3, beforePos: "object-top", afterPos: "object-top" },
+              ].map((project) => (
                 <div
-                  key={n}
+                  key={project.id}
                   className="rounded-sm overflow-hidden border border-brand-border shadow-sm"
                 >
                   {/* Before */}
                   <div className="relative">
                     <img
-                      src={`/images/before-after-${n}-before.jpg`}
-                      alt={`Project ${n} — before`}
-                      className="w-full aspect-square object-cover object-top"
+                      src={`/images/before-after-${project.id}-before.jpg`}
+                      alt={`Project ${project.id} — before`}
+                      className={`w-full aspect-square object-cover ${project.beforePos}`}
                     />
                     <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       BEFORE
@@ -102,9 +106,9 @@ export default function GalleryPage() {
                   {/* After */}
                   <div className="relative">
                     <img
-                      src={`/images/before-after-${n}-after.jpg`}
-                      alt={`Project ${n} — after`}
-                      className="w-full aspect-square object-cover object-top"
+                      src={`/images/before-after-${project.id}-after.jpg`}
+                      alt={`Project ${project.id} — after`}
+                      className={`w-full aspect-square object-cover ${project.afterPos}`}
                     />
                     <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       AFTER
