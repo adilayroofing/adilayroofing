@@ -10,55 +10,20 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [headerHidden, setHeaderHidden] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const lastScrollY = useRef(0);
-  const lastDirection = useRef<"up" | "down">("up");
-  const directionChangeY = useRef(0);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
-  // Track scroll direction for header hide/show
+  // Measure header height for mobile menu positioning
   useEffect(() => {
-    let ticking = false;
-    const SCROLL_THRESHOLD = 8; // px needed in one direction to trigger
-
-    function onScroll() {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const currentY = window.scrollY;
-          setScrolled(currentY > 20);
-
-          // Near the top — always show
-          if (currentY <= 60) {
-            setHeaderHidden(false);
-            lastScrollY.current = currentY;
-            lastDirection.current = "up";
-            directionChangeY.current = currentY;
-            ticking = false;
-            return;
-          }
-
-          // Detect direction change
-          const direction = currentY > lastScrollY.current ? "down" : "up";
-          if (direction !== lastDirection.current) {
-            directionChangeY.current = lastScrollY.current;
-            lastDirection.current = direction;
-          }
-
-          // Only trigger after scrolling SCROLL_THRESHOLD px in one direction
-          const delta = Math.abs(currentY - directionChangeY.current);
-          if (delta > SCROLL_THRESHOLD) {
-            setHeaderHidden(direction === "down");
-          }
-
-          lastScrollY.current = currentY;
-          ticking = false;
-        });
-        ticking = true;
+    function updateHeight() {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
       }
     }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
   // Close dropdown when clicking outside
@@ -75,24 +40,21 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
+  // Prevent background scroll when mobile menu is open (touch devices)
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+    if (!mobileMenuOpen) return;
+    function preventScroll(e: TouchEvent) {
+      // Allow scroll inside the menu panel itself
+      const menu = document.getElementById("mobile-menu");
+      if (menu && menu.contains(e.target as Node)) return;
+      e.preventDefault();
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.addEventListener("touchmove", preventScroll, { passive: false });
+    return () => document.removeEventListener("touchmove", preventScroll);
   }, [mobileMenuOpen]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-transform duration-300 ease-in-out ${
-        headerHidden && !mobileMenuOpen ? "-translate-y-full" : "translate-y-0"
-      }`}
-    >
+    <header ref={headerRef} className="sticky top-0 z-50 w-full">
       {/* Top Bar */}
       <div className="bg-brand-navy text-white text-sm">
         <div className="container-wide mx-auto flex items-center justify-between px-4 py-2">
@@ -146,9 +108,7 @@ export default function Header() {
 
       {/* Main Navigation */}
       <nav
-        className={`bg-white transition-shadow duration-300 ${
-          scrolled ? "shadow-lg" : "shadow-md"
-        }`}
+        className="bg-white shadow-md"
         aria-label="Main navigation"
       >
         <div className="container-wide mx-auto flex items-center justify-between px-4 py-3">
@@ -317,12 +277,14 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+      </nav>
+
+      {/* Mobile Menu — outside nav, inside header for correct stacking */}
+      {mobileMenuOpen && (
         <div
-          className={`lg:hidden fixed inset-0 top-[calc(var(--header-top-bar-height,36px)+var(--header-nav-height,56px))] bg-white z-40 transition-transform duration-300 ease-in-out overflow-y-auto ${
-            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-          aria-hidden={!mobileMenuOpen}
+          id="mobile-menu"
+          className="lg:hidden fixed inset-0 bg-white z-[60] overflow-y-auto"
+          style={{ top: headerHeight }}
         >
           <div className="flex flex-col p-6">
             {/* Mobile Services Accordion */}
@@ -433,7 +395,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </nav>
+      )}
     </header>
   );
 }
