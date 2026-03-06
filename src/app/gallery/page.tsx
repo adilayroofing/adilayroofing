@@ -82,7 +82,7 @@ export default function GalleryPage() {
               {[
                 { id: 1, beforePos: "object-top", afterPos: "object-top" },
                 { id: 2, beforePos: "object-center", afterPos: "object-top" },
-                { id: 3, beforePos: "object-top", afterPos: "object-top" },
+                { id: 3, beforePos: "object-center", afterPos: "object-top" },
               ].map((project) => (
                 <div
                   key={project.id}
