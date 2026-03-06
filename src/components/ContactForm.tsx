@@ -17,6 +17,7 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [submittedName, setSubmittedName] = useState("");
   const formTopRef = useRef<HTMLDivElement>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -46,9 +47,19 @@ export default function ContactForm() {
         throw new Error(result.error || "Failed to send message.");
       }
 
+      setSubmittedName(data.name);
       setSubmitted(true);
       setTimeout(() => {
-        formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (formTopRef.current) {
+          // Temporarily override CSS scroll-behavior: smooth so scrollIntoView works reliably
+          const html = document.documentElement;
+          html.style.scrollBehavior = "auto";
+          formTopRef.current.scrollIntoView({ behavior: "auto", block: "start" });
+          // Restore after scroll completes
+          requestAnimationFrame(() => {
+            html.style.scrollBehavior = "";
+          });
+        }
       }, 50);
     } catch (err) {
       setError(
@@ -63,7 +74,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div ref={formTopRef} className="bg-green-50 border border-green-200 rounded-sm p-8 text-center">
+      <div ref={formTopRef} style={{ scrollMarginTop: "120px" }} className="bg-green-50 border border-green-200 rounded-sm p-8 text-center">
         <svg
           className="w-12 h-12 text-green-500 mx-auto mb-4"
           fill="none"
@@ -79,7 +90,7 @@ export default function ContactForm() {
           />
         </svg>
         <p className="text-green-800 text-lg font-bold mb-2">
-          Thank you! We&apos;ll get back to you within 24 hours.
+          Thank You{submittedName.trim() ? `, ${submittedName.trim().split(" ")[0]}` : ""}! We&apos;ll get back to you within 24 hours.
         </p>
         <p className="text-green-700 text-sm">
           If you need immediate help, call us directly.
