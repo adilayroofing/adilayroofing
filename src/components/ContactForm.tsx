@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 
 const serviceOptions = [
   "Roof Replacement",
@@ -17,6 +17,7 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const formTopRef = useRef<HTMLDivElement>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -46,6 +47,9 @@ export default function ContactForm() {
       }
 
       setSubmitted(true);
+      setTimeout(() => {
+        formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
     } catch (err) {
       setError(
         err instanceof Error
@@ -59,7 +63,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-sm p-8 text-center">
+      <div ref={formTopRef} className="bg-green-50 border border-green-200 rounded-sm p-8 text-center">
         <svg
           className="w-12 h-12 text-green-500 mx-auto mb-4"
           fill="none"

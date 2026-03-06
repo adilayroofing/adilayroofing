@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { company } from "@/data/company";
 
 /* ────────────────────────────────────────────────────────────
@@ -192,6 +192,17 @@ export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const formTopRef = useRef<HTMLDivElement>(null);
+
+  const scrollToFormTop = useCallback(() => {
+    setTimeout(() => {
+      if (formTopRef.current) {
+        const rect = formTopRef.current.getBoundingClientRect();
+        const offset = window.scrollY + rect.top - 16;
+        window.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
+      }
+    }, 250);
+  }, []);
 
   /* ---------- helpers ---------- */
 
@@ -270,6 +281,7 @@ export default function QuoteForm() {
     setTimeout(() => {
       setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS));
       setIsTransitioning(false);
+      scrollToFormTop();
     }, 200);
   }
 
@@ -279,6 +291,7 @@ export default function QuoteForm() {
     setTimeout(() => {
       setCurrentStep((s) => Math.max(s - 1, 1));
       setIsTransitioning(false);
+      scrollToFormTop();
     }, 200);
   }
 
@@ -300,6 +313,7 @@ export default function QuoteForm() {
       }
 
       setSubmitted(true);
+      scrollToFormTop();
     } catch (err) {
       setSubmitError(
         err instanceof Error
@@ -344,7 +358,7 @@ export default function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="text-center py-10 md:py-16 px-4 md:px-6">
+      <div ref={formTopRef} className="text-center py-10 md:py-16 px-4 md:px-6">
         <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4 md:mb-6">
           <svg className="w-8 h-8 md:w-10 md:h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -821,7 +835,7 @@ export default function QuoteForm() {
      ──────────────────────────────────────────────────────────── */
 
   return (
-    <div className="w-full">
+    <div ref={formTopRef} className="w-full">
       {/* ── Progress bar ── */}
       <div className="mb-5 md:mb-8">
         <div className="flex items-center justify-between mb-1.5 md:mb-2">

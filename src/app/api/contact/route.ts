@@ -17,14 +17,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // Logo path for CID attachment
-    const logoPath = path.join(process.cwd(), "public", "images", "logo.png");
+    // Logo path for CID attachment (red logo)
+    const logoPath = path.join(process.cwd(), "public", "images", "logo-red.png");
 
     // Build the email HTML
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background-color: #1B1B2F; padding: 24px; text-align: center;">
-          <img src="cid:adilay-logo" alt="Adilay Roofing" width="180" style="display: inline-block; max-width: 180px; height: auto;" />
+        <div style="background-color: #ffffff; padding: 24px 24px 16px; text-align: center; border-bottom: 1px solid #e0e0e0;">
+          <img src="cid:adilay-logo" alt="Adilay Roofing" width="200" style="display: inline-block; max-width: 200px; height: auto;" />
         </div>
         <div style="background-color: #C41E1E; padding: 20px; text-align: center;">
           <h1 style="color: #ffffff; margin: 0; font-size: 22px;">New Contact Form Submission</h1>
@@ -93,7 +93,7 @@ Submitted from Adilay Roofing website.
       html,
       attachments: [
         {
-          filename: "logo.png",
+          filename: "logo-red.png",
           path: logoPath,
           cid: "adilay-logo",
         },
