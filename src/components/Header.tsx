@@ -70,7 +70,7 @@ export default function Header() {
           </div>
           <a
             href={`tel:${company.phoneRaw}`}
-            className="flex items-center gap-2 text-white hover:text-brand-red transition-colors font-semibold ml-auto"
+            className="flex items-center gap-2 text-white hover:text-brand-red active:text-brand-red transition-colors font-semibold ml-auto"
           >
             <svg
               className="w-4 h-4"
@@ -99,16 +99,17 @@ export default function Header() {
             href="/"
             className="group relative flex items-center"
             aria-label="Adilay Roofing - Home"
+            onClick={() => setMobileMenuOpen(false)}
           >
             <img
               src="/images/logo.svg"
               alt="Adilay Roofing"
-              className="h-14 md:h-16 w-auto transition-opacity duration-300 group-hover:opacity-0"
+              className="h-14 md:h-16 w-auto transition-opacity duration-300 group-hover:opacity-0 group-active:opacity-0"
             />
             <img
               src="/images/logo-red.svg"
               alt=""
-              className="h-14 md:h-16 w-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="h-14 md:h-16 w-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100"
               aria-hidden="true"
             />
           </Link>
@@ -300,7 +301,7 @@ export default function Header() {
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="flex items-center gap-3 py-2 pl-4 text-brand-gray hover:text-brand-red transition-colors"
+                    className="flex items-center gap-3 py-2 pl-4 text-brand-gray hover:text-brand-red active:text-brand-red transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="text-brand-red/50" aria-hidden="true">
@@ -314,28 +315,28 @@ export default function Header() {
 
             <Link
               href="/service-areas"
-              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red transition-colors"
+              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Service Areas
             </Link>
             <Link
               href="/about"
-              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red transition-colors"
+              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/gallery"
-              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red transition-colors"
+              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Gallery
             </Link>
             <Link
               href="/contact"
-              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red transition-colors"
+              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact

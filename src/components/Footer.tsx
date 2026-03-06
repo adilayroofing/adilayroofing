@@ -20,12 +20,12 @@ export default function Footer() {
               <img
                 src="/images/logo-white.svg"
                 alt="Adilay Roofing"
-                className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-0"
+                className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-0 group-active:opacity-0"
               />
               <img
                 src="/images/logo-red-white.svg"
                 alt=""
-                className="h-12 w-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                className="h-12 w-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100"
                 aria-hidden="true"
               />
             </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
                 href={company.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-brand-red transition-colors"
+                className="hover:text-brand-red active:text-brand-red transition-colors"
               >
                 {company.address.street}
                 <br />
@@ -53,7 +53,7 @@ export default function Footer() {
                   href={company.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/60 hover:text-brand-red transition-colors"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -66,7 +66,7 @@ export default function Footer() {
                   href={company.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/60 hover:text-brand-red transition-colors"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                    className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                   >
                     {service.title}
                   </Link>
@@ -101,7 +101,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   About Us
                 </Link>
@@ -109,7 +109,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/gallery"
-                  className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   Gallery
                 </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   Contact
                 </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/service-areas"
-                  className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   Service Areas
                 </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/get-quote"
-                  className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   Get a Quote
                 </Link>
@@ -141,7 +141,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/faq"
-                  className="text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   FAQ
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${company.phoneRaw}`}
-                  className="flex items-center gap-2 text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="flex items-center gap-2 text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   <svg
                     className="w-4 h-4 text-brand-red flex-shrink-0"
@@ -178,7 +178,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${company.email}`}
-                  className="flex items-center gap-2 text-white/60 hover:text-brand-red transition-colors text-sm"
+                  className="flex items-center gap-2 text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
                   <svg
                     className="w-4 h-4 text-brand-red flex-shrink-0"
@@ -234,13 +234,13 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="hover:text-brand-red transition-colors"
+              className="hover:text-brand-red active:text-brand-red transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="hover:text-brand-red transition-colors"
+              className="hover:text-brand-red active:text-brand-red transition-colors"
             >
               Terms of Service
             </Link>
