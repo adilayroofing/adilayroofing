@@ -422,8 +422,8 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-brand-dark/50" />
-        <div className="relative z-10 py-4 md:py-6 px-4">
+        <div className="absolute inset-0 bg-brand-dark/60 md:bg-brand-dark/45" />
+        <div className="relative z-10 py-4 md:py-14 px-4">
           <div className="container-narrow mx-auto">
             <ScrollReveal>
               <Link
