@@ -128,15 +128,9 @@ export default function Header() {
             }}
           >
             <img
-              src="/images/logo.svg"
+              src="/images/logo-new.png"
               alt="Adilay Roofing"
-              className="h-14 md:h-16 w-auto md:group-hover:hidden"
-            />
-            <img
-              src="/images/logo-red.svg"
-              alt=""
-              className="h-14 md:h-16 w-auto hidden md:group-hover:block"
-              aria-hidden="true"
+              className="h-16 md:h-20 w-auto"
             />
           </Link>
 
