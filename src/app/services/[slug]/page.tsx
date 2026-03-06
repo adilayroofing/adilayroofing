@@ -54,10 +54,15 @@ export default async function ServicePage({ params }: PageProps) {
       {/* ================================================================= */}
       {/* Hero Section                                                      */}
       {/* ================================================================= */}
-      <section className="relative bg-brand-darker overflow-hidden">
-        {/* Subtle diagonal accent */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] bg-brand-red rounded-full blur-3xl" />
+      <section className="relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-darker/75" />
         </div>
 
         <div className="relative section-padding">

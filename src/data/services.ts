@@ -5,6 +5,7 @@ export interface Service {
   tagline: string;
   description: string;
   icon: string;
+  image: string;
   heroDescription: string;
   benefits: string[];
   features: string[];
@@ -20,6 +21,7 @@ export const services: Service[] = [
     description:
       "Complete roof replacement services for homes and businesses in Philadelphia and surrounding areas. We remove your old roof and install a brand-new roofing system built to last.",
     icon: "",
+    image: "/images/roof-replacement-philadelphia.jpg",
     heroDescription:
       "When repairs are no longer enough, a full roof replacement gives your property the protection it deserves. Our team handles the entire process — from removing your existing roof to installing a new system with quality materials and clean, professional workmanship.",
     benefits: [
@@ -58,6 +60,7 @@ export const services: Service[] = [
     description:
       "Expert roof repair services in Philadelphia. From minor leak fixes to storm damage restoration, we diagnose and fix roof problems quickly.",
     icon: "",
+    image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:
       "A small leak can become a big problem fast. Our repair team responds quickly to diagnose the issue and fix it right — whether it's storm damage, a persistent leak, or worn flashing. We repair all roof types and stand behind our work.",
     benefits: [
@@ -96,6 +99,7 @@ export const services: Service[] = [
     description:
       "Professional flat roof installation and repair using EPDM rubber roofing. Ideal for commercial buildings, row homes, and additions in the Philadelphia area.",
     icon: "",
+    image: "/images/flat-roof-philadelphia.jpg",
     heroDescription:
       "EPDM (ethylene propylene diene terpolymer) rubber roofing is one of the most reliable flat roofing materials available. It delivers excellent waterproofing, UV resistance, and long-term durability — making it ideal for commercial buildings and residential flat roof sections.",
     benefits: [
@@ -134,6 +138,7 @@ export const services: Service[] = [
     description:
       "Asphalt and architectural shingle roofing installation in Philadelphia. Affordable, attractive, and built to withstand Mid-Atlantic weather.",
     icon: "",
+    image: "/images/roof-shingles-philadelphia.jpg",
     heroDescription:
       "Asphalt shingles remain the most popular roofing choice for a reason — they offer reliable weather protection, a clean look, and excellent value. We install both standard 3-tab and dimensional architectural shingles in a wide range of colors and styles.",
     benefits: [
@@ -172,6 +177,7 @@ export const services: Service[] = [
     description:
       "Professional siding installation, repair, and replacement in Philadelphia. Vinyl, fiber cement, and wood options to improve your home's look and energy efficiency.",
     icon: "",
+    image: "/images/siding-philadelphia.jpg",
     heroDescription:
       "New siding does more than improve how your home looks — it adds a layer of insulation, protects against moisture damage, and reduces energy costs. We install vinyl, fiber cement, and wood siding with precision and attention to detail.",
     benefits: [
@@ -210,6 +216,7 @@ export const services: Service[] = [
     description:
       "Window installation, replacement, and coping services in Philadelphia. Improve energy efficiency, natural light, and comfort in your home.",
     icon: "",
+    image: "/images/window-installation-philadelphia.jpg",
     heroDescription:
       "Old, drafty windows drive up energy bills and let in noise, dust, and moisture. Our window installation services help you upgrade to modern, energy-efficient windows that keep your home comfortable year-round — and look great doing it.",
     benefits: [
@@ -248,6 +255,7 @@ export const services: Service[] = [
     description:
       "Professional gutter installation, repair, cleaning, and maintenance in Philadelphia. Keep water away from your foundation and prevent costly damage.",
     icon: "",
+    image: "/images/gutters-philadelphia.png",
     heroDescription:
       "Gutters are your home's first defense against water damage. When they're clogged, damaged, or improperly installed, water pools around your foundation and can cause serious structural problems. We install, repair, and maintain gutter systems that work.",
     benefits: [
