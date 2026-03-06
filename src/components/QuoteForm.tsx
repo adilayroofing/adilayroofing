@@ -194,19 +194,26 @@ export default function QuoteForm() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const isFirstRender = useRef(true);
 
-  /** After every step change (except initial load), scroll to the progress bar */
+  /** After every step change (except initial load), scroll to the progress bar.
+   *  Must override the CSS `scroll-behavior: smooth` on <html> to prevent the
+   *  smooth animation from conflicting with the DOM content change. */
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
     }
-    // Double rAF ensures React has committed AND the browser has painted
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const anchor = document.getElementById("quote-form-top");
-        if (anchor) {
-          anchor.scrollIntoView({ behavior: "auto", block: "start" });
-        }
+        if (!anchor) return;
+        // Temporarily disable CSS smooth-scroll so the jump is instant
+        const html = document.documentElement;
+        html.style.scrollBehavior = "auto";
+        anchor.scrollIntoView({ behavior: "auto", block: "start" });
+        // Re-enable after the scroll completes
+        requestAnimationFrame(() => {
+          html.style.scrollBehavior = "";
+        });
       });
     });
   }, [currentStep, submitted]);
