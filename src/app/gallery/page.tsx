@@ -60,87 +60,53 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Gallery with filter — client component */}
-      <GalleryGrid />
-
-      {/* Before & After Concept Section */}
-      <section className="bg-brand-dark">
+      {/* Before & After Section */}
+      <section className="bg-white">
         <div className="section-padding">
-          <div className="container-narrow mx-auto">
+          <div className="container-wide mx-auto">
             <div className="text-center mb-8 md:mb-14">
               <span className="inline-block text-brand-red font-bold text-xs md:text-sm tracking-widest uppercase mb-3">
                 Transformations
               </span>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-3 md:mb-4">
                 Before &amp; After
               </h2>
-              <p className="text-base md:text-lg text-white/60 max-w-xl mx-auto">
+              <p className="text-base md:text-lg text-brand-gray max-w-xl mx-auto">
                 See the difference quality craftsmanship makes. Every project
                 starts with a detailed assessment and ends with a result that
                 exceeds expectations.
               </p>
             </div>
 
-            {/* Before/After comparison placeholders */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {[1, 2].map((n) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              {[1, 2, 3].map((n) => (
                 <div
                   key={n}
-                  className="rounded-sm overflow-hidden border border-white/10"
+                  className="rounded-sm overflow-hidden border border-brand-border shadow-sm"
                 >
                   {/* Before */}
-                  <div className="relative">
-                    <div className="aspect-[16/10] bg-brand-darker flex items-center justify-center">
-                      <div className="text-center">
-                        <svg
-                          className="w-10 h-10 md:w-12 md:h-12 text-white/20 mx-auto mb-2"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={1.5}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z"
-                          />
-                        </svg>
-                        <p className="text-white/30 text-sm font-medium">
-                          Before Photo Coming Soon
-                        </p>
-                      </div>
-                    </div>
-                    <span className="absolute top-3 left-3 bg-white/90 text-brand-dark text-xs font-bold px-3 py-1 rounded-sm">
+                  <div className="relative bg-brand-light">
+                    <img
+                      src={`/images/before-after-${n}-before.jpg`}
+                      alt={`Project ${n} — before`}
+                      className="w-full aspect-[4/3] object-contain"
+                    />
+                    <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       BEFORE
                     </span>
                   </div>
 
                   {/* Divider */}
-                  <div className="h-px bg-white/10" />
+                  <div className="h-px bg-brand-border" />
 
                   {/* After */}
-                  <div className="relative">
-                    <div className="aspect-[16/10] bg-brand-darker flex items-center justify-center">
-                      <div className="text-center">
-                        <svg
-                          className="w-10 h-10 md:w-12 md:h-12 text-brand-red/30 mx-auto mb-2"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={1.5}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z"
-                          />
-                        </svg>
-                        <p className="text-white/30 text-sm font-medium">
-                          After Photo Coming Soon
-                        </p>
-                      </div>
-                    </div>
-                    <span className="absolute top-3 left-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-sm">
+                  <div className="relative bg-brand-light">
+                    <img
+                      src={`/images/before-after-${n}-after.jpg`}
+                      alt={`Project ${n} — after`}
+                      className="w-full aspect-[4/3] object-contain"
+                    />
+                    <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       AFTER
                     </span>
                   </div>
@@ -150,6 +116,9 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+
+      {/* Gallery with filter — client component */}
+      <GalleryGrid />
 
       {/* Trust Stats */}
       <TrustBar />

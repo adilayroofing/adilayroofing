@@ -145,13 +145,13 @@ export default function GalleryGrid() {
       : galleryProjects.filter((p) => p.category === activeCategory);
 
   return (
-    <section className="bg-white">
+    <section className="bg-brand-dark">
       <div className="section-padding">
         <div className="container-wide mx-auto">
           {/* Section heading */}
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="section-heading">Project Gallery</h2>
-            <p className="section-subheading mx-auto mt-2">
+            <h2 className="text-2xl md:text-4xl font-bold text-white">Project Gallery</h2>
+            <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto mt-2">
               Filter by project type to find examples relevant to your needs.
             </p>
           </div>
@@ -166,7 +166,7 @@ export default function GalleryGrid() {
                 className={`px-3 md:px-5 py-2 md:py-2.5 rounded-sm text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   activeCategory === cat.value
                     ? "bg-brand-red text-white shadow-md"
-                    : "bg-brand-light text-brand-dark hover:bg-brand-red/10 hover:text-brand-red border border-brand-border"
+                    : "bg-white/10 text-white hover:bg-brand-red/20 hover:text-white border border-white/20"
                 }`}
               >
                 {cat.label}
@@ -184,11 +184,11 @@ export default function GalleryGrid() {
           {/* Empty state */}
           {filtered.length === 0 && (
             <div className="text-center py-16">
-              <ImagePlaceholderIcon className="w-16 h-16 text-brand-border mx-auto mb-4" />
-              <p className="text-brand-gray text-lg font-medium">
+              <ImagePlaceholderIcon className="w-16 h-16 text-white/20 mx-auto mb-4" />
+              <p className="text-white/70 text-lg font-medium">
                 No projects in this category yet.
               </p>
-              <p className="text-brand-gray/60 text-sm mt-1">
+              <p className="text-white/40 text-sm mt-1">
                 Check back soon — we&apos;re always adding new work.
               </p>
             </div>
@@ -196,7 +196,7 @@ export default function GalleryGrid() {
 
           {/* Bottom note */}
           <div className="text-center mt-8 md:mt-12">
-            <p className="text-brand-gray text-sm">
+            <p className="text-white/60 text-sm">
               More projects being added regularly. Have a project in mind?
             </p>
             <a
