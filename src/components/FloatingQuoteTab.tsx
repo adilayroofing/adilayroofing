@@ -58,9 +58,9 @@ export default function FloatingQuoteTab() {
       <Image
         src="/images/tab-widget.png"
         alt="Get A FREE Quote - Adilay Roofing"
-        width={120}
-        height={92}
-        className="rounded-l-lg md:w-[140px] md:h-auto"
+        width={140}
+        height={108}
+        className="rounded-l-lg w-[90px] md:w-[140px] h-auto"
         priority={false}
       />
     </Link>
