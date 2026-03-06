@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { company } from "@/data/company";
 
 /* ────────────────────────────────────────────────────────────
@@ -192,31 +192,17 @@ export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const isFirstRender = useRef(true);
 
-  /** After every step change (except initial load), scroll to the progress bar.
-   *  Must override the CSS `scroll-behavior: smooth` on <html> to prevent the
-   *  smooth animation from conflicting with the DOM content change. */
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const anchor = document.getElementById("quote-form-top");
-        if (!anchor) return;
-        // Temporarily disable CSS smooth-scroll so the jump is instant
-        const html = document.documentElement;
-        html.style.scrollBehavior = "auto";
-        anchor.scrollIntoView({ behavior: "auto", block: "start" });
-        // Re-enable after the scroll completes
-        requestAnimationFrame(() => {
-          html.style.scrollBehavior = "";
-        });
-      });
-    });
-  }, [currentStep, submitted]);
+  /** Scroll to the progress bar. Overrides CSS scroll-behavior:smooth
+   *  and accounts for sticky header via scroll-margin-top on the anchor. */
+  function scrollToFormTop() {
+    const anchor = document.getElementById("quote-form-top");
+    if (!anchor) return;
+    const html = document.documentElement;
+    html.style.scrollBehavior = "auto";
+    anchor.scrollIntoView({ behavior: "auto", block: "start" });
+    html.style.scrollBehavior = "";
+  }
 
   /* ---------- helpers ---------- */
 
@@ -295,6 +281,7 @@ export default function QuoteForm() {
     setTimeout(() => {
       setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS));
       setIsTransitioning(false);
+      setTimeout(scrollToFormTop, 50);
     }, 200);
   }
 
@@ -304,6 +291,7 @@ export default function QuoteForm() {
     setTimeout(() => {
       setCurrentStep((s) => Math.max(s - 1, 1));
       setIsTransitioning(false);
+      setTimeout(scrollToFormTop, 50);
     }, 200);
   }
 
@@ -325,7 +313,7 @@ export default function QuoteForm() {
       }
 
       setSubmitted(true);
-      // useEffect on [submitted] handles the scroll
+      setTimeout(scrollToFormTop, 50);
     } catch (err) {
       setSubmitError(
         err instanceof Error
