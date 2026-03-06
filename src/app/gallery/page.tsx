@@ -13,18 +13,16 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-dark relative overflow-hidden">
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
+      <section className="relative overflow-hidden">
+        {/* Background banner image */}
+        <img
+          src="/images/gallery-banner.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-brand-dark/70" />
 
         <div className="section-padding relative z-10">
           <div className="container-narrow mx-auto text-center">
