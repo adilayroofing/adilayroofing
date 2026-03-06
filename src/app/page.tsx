@@ -424,14 +424,14 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="relative z-10 py-12 md:py-20 px-4">
+        <div className="relative z-10 py-4 md:py-6 px-4">
           <div className="container-narrow mx-auto">
             <ScrollReveal>
               <Link
                 href="/gallery"
                 className="group block text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-red/20 mb-5 md:mb-6 group-hover:bg-brand-red/30 transition-colors duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-brand-red/20 mb-3 md:mb-4 group-hover:bg-brand-red/30 transition-colors duration-300">
                   <svg
                     className="w-8 h-8 md:w-10 md:h-10 text-brand-red"
                     fill="none"
@@ -446,10 +446,10 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3">
                   See Our Work in Action
                 </h2>
-                <p className="text-white/60 text-base md:text-lg max-w-md mx-auto mb-6 md:mb-8">
+                <p className="text-white/60 text-base md:text-lg max-w-md mx-auto mb-4 md:mb-5">
                   Real projects. Real transformations. Browse before &amp; after photos from homes across Philadelphia.
                 </p>
                 <span className="inline-flex items-center gap-2 bg-brand-red text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-sm text-sm md:text-base group-hover:gap-3 transition-all duration-200 shadow-lg group-hover:shadow-xl">
