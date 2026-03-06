@@ -419,7 +419,7 @@ export default function Home() {
           src="/images/gallery-banner.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-brand-dark/60 md:bg-brand-dark/45" />
