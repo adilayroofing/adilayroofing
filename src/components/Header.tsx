@@ -10,7 +10,24 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll position for header animation
+  useEffect(() => {
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -41,7 +58,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar */}
-      <div className="bg-brand-navy text-white text-sm">
+      <div
+        className={`bg-brand-navy text-white text-sm transition-all duration-300 ease-in-out overflow-hidden ${
+          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+        }`}
+      >
         <div className="container-wide mx-auto flex items-center justify-between px-4 py-2">
           <div className="hidden md:flex items-center gap-1 text-white/80">
             <svg
@@ -92,7 +113,12 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-white shadow-md" aria-label="Main navigation">
+      <nav
+        className={`bg-white transition-shadow duration-300 ${
+          scrolled ? "shadow-lg" : "shadow-md"
+        }`}
+        aria-label="Main navigation"
+      >
         <div className="container-wide mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <Link
