@@ -144,7 +144,7 @@ export default function ServicesPage() {
                 </p>
                 <div className="mt-8">
                   <Link href="/get-quote" className="btn-primary">
-                    Get Your Free Estimate
+                    Get Your FREE Estimate
                   </Link>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export default function ServicesPage() {
             {/* CTA link */}
             <div className="text-center mt-12">
               <Link href="/contact" className="btn-primary">
-                Get Your Free Estimate
+                Get Your FREE Estimate
               </Link>
             </div>
           </div>

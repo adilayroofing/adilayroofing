@@ -50,7 +50,7 @@ export default function CTASection({
                 href="/contact"
                 className="btn-outline-white w-full sm:w-auto"
               >
-                Get Free Quote
+                Get FREE Quote
               </Link>
             </div>
           </ScrollReveal>

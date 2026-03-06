@@ -203,7 +203,7 @@ export default function GalleryGrid() {
               href="/get-quote"
               className="inline-flex items-center gap-2 text-brand-red font-bold hover:text-brand-red-dark transition-colors text-sm md:text-base mt-2"
             >
-              Get Your Free Estimate
+              Get Your FREE Estimate
               <svg
                 className="w-4 h-4"
                 fill="none"

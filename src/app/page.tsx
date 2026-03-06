@@ -138,7 +138,7 @@ export default function Home() {
           <ScrollReveal delay={700} duration={600} distance={16}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/get-quote" className="btn-primary w-full sm:w-auto">
-                Get Your Free Quote
+                Get Your FREE Quote
               </Link>
               <a
                 href={`tel:${company.phoneRaw}`}
@@ -332,7 +332,7 @@ export default function Home() {
                     Learn More About Us
                   </Link>
                   <Link href="/get-quote" className="btn-secondary">
-                    Get a Free Quote
+                    Get a FREE Quote
                   </Link>
                 </div>
               </div>

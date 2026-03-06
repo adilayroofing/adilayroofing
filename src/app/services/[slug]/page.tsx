@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: PageProps) {
               {service.tagline}
             </p>
             <Link href="/contact" className="btn-primary">
-              Get a Free Estimate
+              Get a FREE Estimate
             </Link>
           </div>
         </div>
