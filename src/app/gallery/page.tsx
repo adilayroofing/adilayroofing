@@ -85,11 +85,11 @@ export default function GalleryPage() {
                   className="rounded-sm overflow-hidden border border-brand-border shadow-sm"
                 >
                   {/* Before */}
-                  <div className="relative bg-brand-light">
+                  <div className="relative">
                     <img
                       src={`/images/before-after-${n}-before.jpg`}
                       alt={`Project ${n} — before`}
-                      className="w-full aspect-[4/3] object-contain"
+                      className="w-full aspect-square object-cover"
                     />
                     <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       BEFORE
@@ -100,11 +100,11 @@ export default function GalleryPage() {
                   <div className="h-px bg-brand-border" />
 
                   {/* After */}
-                  <div className="relative bg-brand-light">
+                  <div className="relative">
                     <img
                       src={`/images/before-after-${n}-after.jpg`}
                       alt={`Project ${n} — after`}
-                      className="w-full aspect-[4/3] object-contain"
+                      className="w-full aspect-square object-cover"
                     />
                     <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       AFTER
