@@ -419,10 +419,10 @@ export default function Home() {
           src="/images/gallery-banner.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-brand-dark/75" />
+        <div className="absolute inset-0 bg-brand-dark/50" />
         <div className="relative z-10 py-4 md:py-6 px-4">
           <div className="container-narrow mx-auto">
             <ScrollReveal>
