@@ -19,6 +19,9 @@ export async function POST(request: Request) {
     // Build the email HTML
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background-color: #1B1B2F; padding: 24px; text-align: center;">
+          <img src="https://www.adilayroofing.com/images/logo.png" alt="Adilay Roofing" width="180" style="display: inline-block; max-width: 180px; height: auto;" />
+        </div>
         <div style="background-color: #C41E1E; padding: 20px; text-align: center;">
           <h1 style="color: #ffffff; margin: 0; font-size: 22px;">New Contact Form Submission</h1>
         </div>
