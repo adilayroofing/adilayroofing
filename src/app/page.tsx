@@ -3,12 +3,14 @@ import Link from "next/link";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
 import { faqs } from "@/data/faqs";
+import { getAllPosts } from "@/lib/blog";
 import ServiceCard from "@/components/ServiceCard";
 import TrustBar from "@/components/TrustBar";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
+import BlogCard from "@/components/blog/BlogCard";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BASE_URL = "https://www.adilayroofing.com";
@@ -617,6 +619,67 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ============================================ */}
+      {/* BLOG / LATEST INSIGHTS                       */}
+      {/* ============================================ */}
+      {(() => {
+        const latestPosts = getAllPosts().slice(0, 3);
+        if (latestPosts.length === 0) return null;
+        return (
+          <section className="bg-brand-light section-padding">
+            <div className="container-wide mx-auto">
+              <ScrollReveal distance={20}>
+                <div className="text-center mb-10 md:mb-14">
+                  <span className="text-brand-red font-bold text-sm uppercase tracking-wider">
+                    From Our Blog
+                  </span>
+                  <h2 className="section-heading mt-2">
+                    Roofing Tips & Expert Insights
+                  </h2>
+                  <p className="text-brand-gray max-w-2xl mx-auto mt-3">
+                    Helpful guides for Philadelphia homeowners — from cost
+                    breakdowns to maintenance tips.
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {latestPosts.map((post, i) => (
+                  <ScrollReveal key={post.frontmatter.slug} delay={i * 120} distance={16}>
+                    <BlogCard post={post.frontmatter} />
+                  </ScrollReveal>
+                ))}
+              </div>
+
+              <ScrollReveal delay={300} distance={12}>
+                <div className="text-center mt-10 md:mt-14">
+                  <Link
+                    href="/blog"
+                    className="inline-flex items-center gap-2 bg-white border-2 border-brand-dark text-brand-dark font-bold px-8 py-3 rounded-sm hover:bg-brand-dark hover:text-white transition-all duration-300"
+                  >
+                    See All Blog Posts
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </ScrollReveal>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ============================================ */}
       {/* CTA SECTION                                  */}
