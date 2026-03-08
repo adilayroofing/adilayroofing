@@ -260,9 +260,16 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Right Actions */}
+          <div className="lg:hidden flex items-center gap-3">
+            <Link
+              href="/get-quote"
+              className="bg-brand-red text-white text-xs font-bold px-3 py-2 rounded-md hover:bg-brand-red-dark transition-colors"
+            >
+              FREE Estimate
+            </Link>
           <button
-            className="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+            className="flex flex-col gap-1.5 p-2 cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -283,6 +290,7 @@ export default function Header() {
               }`}
             />
           </button>
+          </div>
         </div>
 
       </nav>
