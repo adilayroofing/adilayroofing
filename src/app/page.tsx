@@ -265,13 +265,13 @@ export default function Home() {
       {/* ============================================ */}
       <section className="bg-brand-darker">
         <div className="container-wide mx-auto">
-          <div className="grid grid-cols-2 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {[
               { src: "/images/crew-flat-roof-action.png", alt: "Adilay Roofing crew installing EPDM membrane on a Philadelphia flat roof", pos: "object-[50%_25%] scale-110 origin-[50%_25%]" },
               { src: "/images/flat-roof-materials-staging.png", alt: "Professional flat roof project with EPDM materials staged on a Philadelphia row home", pos: "object-[center_40%]" },
             ].map((img, i) => (
               <ScrollReveal key={img.src} delay={i * 120} distance={16}>
-                <div className="relative h-52 md:h-96 overflow-hidden">
+                <div className="relative h-64 md:h-96 overflow-hidden">
                   <img
                     src={img.src}
                     alt={img.alt}
