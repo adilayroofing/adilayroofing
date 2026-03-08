@@ -10,6 +10,7 @@ import JsonLd from "@/components/JsonLd";
 import { company } from "@/data/company";
 
 const GA_MEASUREMENT_ID = "G-7E3RFPT4LL";
+const GOOGLE_ADS_ID = "AW-16713352384";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -115,6 +116,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GOOGLE_ADS_ID}');
           `}
         </Script>
       </head>
