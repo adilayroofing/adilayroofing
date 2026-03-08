@@ -78,9 +78,12 @@ export default function GalleryPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {[
-                { id: 1, beforePos: "object-top", afterPos: "object-top" },
-                { id: 2, beforePos: "object-center", afterPos: "object-top" },
-                { id: 3, beforePos: "object-center", afterPos: "object-top" },
+                { id: 1, ext: "jpg", beforePos: "object-top", afterPos: "object-top", label: "Roof Replacement" },
+                { id: 2, ext: "jpg", beforePos: "object-center", afterPos: "object-top", label: "Roof Repair" },
+                { id: 3, ext: "jpg", beforePos: "object-center", afterPos: "object-top", label: "Flat Roof Repair" },
+                { id: 4, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Roof Decking & Shingles" },
+                { id: 5, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Vinyl Siding Installation" },
+                { id: 6, ext: "png", beforePos: "object-center", afterPos: "object-center", label: "Complete Roof Replacement" },
               ].map((project) => (
                 <div
                   key={project.id}
@@ -89,8 +92,8 @@ export default function GalleryPage() {
                   {/* Before */}
                   <div className="relative">
                     <img
-                      src={`/images/before-after-${project.id}-before.jpg`}
-                      alt={`Project ${project.id} — before`}
+                      src={`/images/before-after-${project.id}-before.${project.ext}`}
+                      alt={`${project.label} — before`}
                       className={`w-full aspect-square object-cover ${project.beforePos}`}
                     />
                     <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
@@ -104,13 +107,18 @@ export default function GalleryPage() {
                   {/* After */}
                   <div className="relative">
                     <img
-                      src={`/images/before-after-${project.id}-after.jpg`}
-                      alt={`Project ${project.id} — after`}
+                      src={`/images/before-after-${project.id}-after.${project.ext}`}
+                      alt={`${project.label} — after`}
                       className={`w-full aspect-square object-cover ${project.afterPos}`}
                     />
                     <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-sm">
                       AFTER
                     </span>
+                  </div>
+
+                  {/* Label */}
+                  <div className="bg-white px-4 py-2.5 text-center">
+                    <span className="text-sm font-semibold text-brand-dark">{project.label}</span>
                   </div>
                 </div>
               ))}

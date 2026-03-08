@@ -18,7 +18,6 @@ export const galleryCategories = [
   { label: "Gutters", value: "gutters" },
 ];
 
-// Placeholder projects — replace images when ready
 export const galleryProjects: GalleryProject[] = [
   {
     id: "project-1",
@@ -27,14 +26,18 @@ export const galleryProjects: GalleryProject[] = [
     description:
       "Full tear-off and replacement with 50-year architectural shingles. Included new ice barrier, underlayment, and flashing throughout.",
     location: "Philadelphia, PA",
+    beforeImage: "/images/before-after-6-before.png",
+    afterImage: "/images/before-after-6-after.png",
   },
   {
     id: "project-2",
-    title: "Flat Roof Installation",
+    title: "Flat Roof EPDM Installation",
     category: "flat-roofing",
     description:
-      "Torch-down flat roof system installed on a multi-unit residential building. Sealed all seams and added proper drainage.",
-    location: "Bucks County, PA",
+      "EPDM rubber membrane installation on a Philadelphia row home flat roof. Full tear-off, new decking, and sealed membrane with proper drainage.",
+    location: "Philadelphia, PA",
+    beforeImage: "/images/before-after-4-before.jpg",
+    afterImage: "/images/before-after-4-after.jpg",
   },
   {
     id: "project-3",
@@ -43,14 +46,18 @@ export const galleryProjects: GalleryProject[] = [
     description:
       "Emergency roof repair after severe storm damage. Replaced damaged shingles, repaired decking, and restored full weatherproofing.",
     location: "Montgomery County, PA",
+    beforeImage: "/images/before-after-2-before.jpg",
+    afterImage: "/images/before-after-2-after.jpg",
   },
   {
     id: "project-4",
     title: "Vinyl Siding Installation",
     category: "siding",
     description:
-      "Complete siding replacement on a two-story colonial home. Upgraded to premium vinyl with insulated backing for energy efficiency.",
-    location: "Delaware County, PA",
+      "Complete vinyl siding installation on a Philadelphia row home. Removed old siding, installed house wrap and premium vinyl with clean trim detail.",
+    location: "Philadelphia, PA",
+    beforeImage: "/images/before-after-5-before.jpg",
+    afterImage: "/images/before-after-5-after.jpg",
   },
   {
     id: "project-5",
@@ -59,6 +66,8 @@ export const galleryProjects: GalleryProject[] = [
     description:
       "New architectural shingle roof with seamless aluminum gutter system. Included custom downspouts and gutter guards.",
     location: "Chester County, PA",
+    beforeImage: "/images/before-after-1-before.jpg",
+    afterImage: "/images/before-after-1-after.jpg",
   },
   {
     id: "project-6",
@@ -70,11 +79,13 @@ export const galleryProjects: GalleryProject[] = [
   },
   {
     id: "project-7",
-    title: "Multi-Roof Commercial Project",
+    title: "Flat Roof Membrane Replacement",
     category: "flat-roofing",
     description:
-      "Four flat roofs replaced on a commercial property. Included EPDM membrane and improved drainage systems.",
+      "Complete flat roof membrane replacement on a commercial property. Installed new EPDM membrane with improved drainage and sealed all penetrations.",
     location: "Philadelphia, PA",
+    beforeImage: "/images/before-after-3-before.jpg",
+    afterImage: "/images/before-after-3-after.jpg",
   },
   {
     id: "project-8",

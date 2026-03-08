@@ -228,9 +228,9 @@ export default function Home() {
         <div className="container-wide mx-auto">
           <div className="grid grid-cols-3 gap-0">
             {[
-              { src: "/images/metal-roof-crew.jpg", alt: "Adilay Roofing crew installing standing seam metal roof", pos: "object-[center_30%]" },
+              { src: "/images/crew-flat-roof-action.png", alt: "Adilay Roofing crew installing EPDM membrane on a Philadelphia flat roof", pos: "object-[center_40%]" },
               { src: "/images/adilay-truck.jpg", alt: "Adilay Roofing branded truck with logo and license number", pos: "object-center" },
-              { src: "/images/metal-roof-closeup.jpg", alt: "Adilay Roofing workers installing metal roof panels", pos: "object-[center_30%]" },
+              { src: "/images/flat-roof-materials-staging.png", alt: "Professional flat roof project with EPDM materials staged on a Philadelphia row home", pos: "object-[center_40%]" },
             ].map((img, i) => (
               <ScrollReveal key={img.src} delay={i * 120} distance={16}>
                 <div className="relative h-32 md:h-80 overflow-hidden">
