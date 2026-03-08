@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogPostPages,
     {
+      url: `${BASE_URL}/faq`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",

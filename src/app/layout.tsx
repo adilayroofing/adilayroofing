@@ -22,18 +22,69 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
-    template: "Adilay Roofing | %s",
-    default: "Adilay Roofing | Philadelphia's Trusted Roofing Experts",
+    template: "%s | Adilay Roofing Philadelphia",
+    default:
+      "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA — Free Estimates",
   },
-  description: company.description,
+  description:
+    "Adilay Roofing — Philadelphia's trusted roofing contractor with 20+ years experience. Roof replacement, repair, flat roofing, siding, windows & gutters. Licensed (PA184779), insured, free estimates. Call (888) 823-4766.",
+  keywords: [
+    "roofing contractor Philadelphia",
+    "roof replacement Philadelphia",
+    "roof repair Philadelphia PA",
+    "flat roofing Philadelphia",
+    "Philadelphia roofer",
+    "roofing company near me",
+    "siding installation Philadelphia",
+    "window replacement Philadelphia",
+    "gutter installation Philadelphia",
+    "licensed roofer PA",
+  ],
+  authors: [{ name: "Adilay Roofing LLC" }],
+  creator: "Adilay Roofing LLC",
+  publisher: "Adilay Roofing LLC",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
+    url: BASE_URL,
     siteName: company.name,
+    title:
+      "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA",
+    description:
+      "Philadelphia's trusted roofing experts. 20+ years, 2,080+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
+    images: [
+      {
+        url: `${BASE_URL}/images/adilay-van-service-areas.jpg`,
+        width: 1534,
+        height: 969,
+        alt: "Adilay Roofing crew and van completing a roof replacement in Philadelphia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Adilay Roofing | Philadelphia's Trusted Roofing Experts",
-    description: company.description,
+    description:
+      "20+ years of roofing excellence in Philadelphia. Free estimates — call (888) 823-4766.",
+  },
+  alternates: {
+    canonical: BASE_URL,
   },
 };
 

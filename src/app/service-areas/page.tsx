@@ -2,9 +2,27 @@ import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import { company } from "@/data/company";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "Service Areas",
-  description: `${company.name} serves the greater Philadelphia region in Pennsylvania. Professional roofing services in Bucks County, Montgomery County, Delaware County, Chester County, and more.`,
+  title: "Service Areas — Roofing in Philadelphia, Bucks & Montgomery County",
+  description:
+    "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County & Chester County, PA. Local roofers with fast response. Free estimates!",
+  keywords: [
+    "roofing service areas Philadelphia",
+    "roofer Bucks County PA",
+    "roofing Montgomery County PA",
+    "roofer near me Philadelphia",
+    "Delaware County roofing contractor",
+    "Chester County roofer",
+  ],
+  alternates: { canonical: `${BASE_URL}/service-areas` },
+  openGraph: {
+    title: "Adilay Roofing Service Areas — Philadelphia & Surrounding Counties",
+    description:
+      "Professional roofing in Philadelphia, Bucks, Montgomery, Delaware & Chester Counties. Local team, fast response.",
+    url: `${BASE_URL}/service-areas`,
+  },
 };
 
 // TODO: Confirm all service area cities/counties with the client

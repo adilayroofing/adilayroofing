@@ -2,9 +2,25 @@ import type { Metadata } from "next";
 import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Get in touch with ${company.name}. Call ${company.phone} or send us a message for a free roofing estimate in Philadelphia and surrounding areas.`,
+  title: "Contact Adilay Roofing — Free Estimate | (888) 823-4766",
+  description:
+    "Contact Adilay Roofing for a free roofing estimate in Philadelphia, PA. Call (888) 823-4766, email info@adilayroofing.com, or fill out our quick form. Fast response!",
+  keywords: [
+    "contact roofer Philadelphia",
+    "roofing estimate Philadelphia PA",
+    "roofing company phone number",
+    "free roof inspection Philadelphia",
+  ],
+  alternates: { canonical: `${BASE_URL}/contact` },
+  openGraph: {
+    title: "Contact Adilay Roofing Philadelphia — Free Estimates",
+    description:
+      "Call (888) 823-4766 for a free roofing estimate. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
+    url: `${BASE_URL}/contact`,
+  },
 };
 
 export default function ContactPage() {
@@ -32,7 +48,7 @@ export default function ContactPage() {
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <img
                   src="/images/team-office.jpg"
-                  alt="Adilay Roofing team at the office"
+                  alt="Adilay Roofing team at the Philadelphia office ready to help with your roofing project"
                   className="w-full h-auto object-cover"
                 />
               </div>

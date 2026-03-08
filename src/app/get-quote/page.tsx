@@ -2,9 +2,26 @@ import type { Metadata } from "next";
 import { company } from "@/data/company";
 import QuoteForm from "@/components/QuoteForm";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "Get a Free Quote",
-  description: `Request a free, no-obligation roofing estimate from ${company.name}. Serving Philadelphia, PA and surrounding areas. Call ${company.phone} or fill out our quick form.`,
+  title: "Get a Free Roofing Estimate in Philadelphia, PA | Adilay Roofing",
+  description:
+    "Request your free, no-obligation roofing estimate from Adilay Roofing. Serving Philadelphia & surrounding counties. Call (888) 823-4766 or fill out our quick form.",
+  keywords: [
+    "free roofing estimate Philadelphia",
+    "roof replacement quote Philadelphia",
+    "roofing quote near me",
+    "free roof inspection PA",
+    "roofing estimate Bucks County",
+  ],
+  alternates: { canonical: `${BASE_URL}/get-quote` },
+  openGraph: {
+    title: "Get a Free Roofing Quote — Adilay Roofing Philadelphia",
+    description:
+      "Request your free roofing estimate. No obligation. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
+    url: `${BASE_URL}/get-quote`,
+  },
 };
 
 export default function GetQuotePage() {

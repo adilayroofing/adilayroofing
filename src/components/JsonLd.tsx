@@ -4,11 +4,12 @@ import { services } from "@/data/services";
 export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.adilayroofing.com", // TODO: confirm production URL
+    "@type": "RoofingContractor",
+    "@id": "https://www.adilayroofing.com",
     name: company.name,
-    description: company.description,
-    url: "https://www.adilayroofing.com", // TODO: confirm production URL
+    description:
+      "Professional roofing contractor in Philadelphia, PA. Roof replacement, repair, flat roofing, siding, windows & gutters. Licensed PA184779, 20+ years experience.",
+    url: "https://www.adilayroofing.com",
     telephone: company.phone,
     email: company.email,
     address: {
@@ -21,32 +22,29 @@ export default function JsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      // TODO: confirm exact lat/long for business address
       latitude: 39.9784,
       longitude: -75.1285,
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "08:00",
-        closes: "14:00",
+        dayOfWeek: [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
       },
     ],
-    // TODO: Add actual logo URL once available
-    image: "https://www.adilayroofing.com/logo.png",
-    // TODO: Add actual logo URL once available
-    logo: "https://www.adilayroofing.com/logo.png",
+    image: "https://www.adilayroofing.com/images/adilay-van-service-areas.jpg",
+    logo: "https://www.adilayroofing.com/images/logo-red-white.svg",
     sameAs: [
       company.social.facebook,
       company.social.instagram,
-      // TODO: add other social profiles when confirmed
     ].filter(Boolean),
     areaServed: company.serviceAreas.map((area) => ({
       "@type": "Place",
@@ -64,13 +62,7 @@ export default function JsonLd() {
         },
       })),
     },
-    // TODO: Add aggregateRating once review data is available
-    // aggregateRating: {
-    //   "@type": "AggregateRating",
-    //   ratingValue: "4.9",
-    //   reviewCount: "150",
-    // },
-    priceRange: "$$", // TODO: confirm price range indicator
+    priceRange: "$$",
   };
 
   return (

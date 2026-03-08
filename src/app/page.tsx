@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
@@ -9,6 +10,44 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
+
+const BASE_URL = "https://www.adilayroofing.com";
+
+export const metadata: Metadata = {
+  title:
+    "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA — Free Estimates",
+  description:
+    "Philadelphia's top-rated roofing contractor with 20+ years experience. Roof replacement, repair, flat roofing, siding, windows & gutters. Licensed PA184779, insured. Free estimates — (888) 823-4766.",
+  keywords: [
+    "roofing contractor Philadelphia",
+    "roof replacement Philadelphia PA",
+    "Philadelphia roofer",
+    "best roofing company Philadelphia",
+    "roof repair Philadelphia",
+    "flat roofing Philadelphia",
+    "siding installation Philadelphia",
+    "roofing company near me",
+    "licensed roofer PA",
+    "free roofing estimate Philadelphia",
+  ],
+  alternates: {
+    canonical: BASE_URL,
+  },
+  openGraph: {
+    title: "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA",
+    description:
+      "Philadelphia's trusted roofing experts. 20+ years, 2,080+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
+    url: BASE_URL,
+    images: [
+      {
+        url: `${BASE_URL}/images/adilay-van-service-areas.jpg`,
+        width: 1534,
+        height: 969,
+        alt: "Adilay Roofing crew and van completing a roofing project in Philadelphia",
+      },
+    ],
+  },
+};
 
 const serviceAreas = [
   "Philadelphia",

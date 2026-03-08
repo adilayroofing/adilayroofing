@@ -10,10 +10,18 @@ export const metadata: Metadata = {
   title: "Roofing Blog — Tips, Guides & Philadelphia Roofing Insights",
   description:
     "Expert roofing tips, cost guides, and insights for Philadelphia homeowners. Learn about roof replacement, repair, maintenance, and more from Adilay Roofing.",
+  keywords: [
+    "roofing blog Philadelphia",
+    "roof replacement tips",
+    "roofing cost guide",
+    "Philadelphia roofing advice",
+    "roof maintenance tips",
+    "roofing contractor blog",
+  ],
   openGraph: {
-    title: "Roofing Blog | Adilay Roofing",
+    title: "Roofing Blog | Adilay Roofing Philadelphia",
     description:
-      "Expert roofing tips and guides for Philadelphia homeowners.",
+      "Expert roofing tips, cost guides, and insights for Philadelphia homeowners.",
     url: "https://www.adilayroofing.com/blog",
     type: "website",
   },

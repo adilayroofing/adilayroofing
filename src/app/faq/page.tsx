@@ -5,10 +5,26 @@ import { company } from "@/data/company";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "FAQ — Frequently Asked Questions",
+  title: "Roofing FAQ — Common Questions Answered | Philadelphia Roofers",
   description:
-    "Common questions about roofing services, costs, timelines, insurance, and more. Get answers from Adilay Roofing, serving Philadelphia and surrounding areas.",
+    "Answers to common roofing questions about costs, timelines, insurance claims, and materials. Expert answers from Adilay Roofing, Philadelphia's trusted contractor.",
+  keywords: [
+    "roofing FAQ",
+    "roof replacement questions",
+    "roofing cost Philadelphia",
+    "how long does roof replacement take",
+    "roofing insurance claims Philadelphia",
+  ],
+  alternates: { canonical: `${BASE_URL}/faq` },
+  openGraph: {
+    title: "Roofing FAQ — Answers from Philadelphia's Trusted Roofer",
+    description:
+      "Common questions about roofing services, costs, timelines, insurance, and more — answered by Adilay Roofing experts.",
+    url: `${BASE_URL}/faq`,
+  },
 };
 
 const areaFaqs = [

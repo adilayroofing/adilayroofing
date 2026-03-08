@@ -4,9 +4,26 @@ import CTASection from "@/components/CTASection";
 import TrustBar from "@/components/TrustBar";
 import GalleryGrid from "@/components/GalleryGrid";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "Our Work — Project Gallery",
-  description: `Browse real roofing projects completed by ${company.name} across Philadelphia and surrounding areas. See before & after transformations of roof replacements, repairs, flat roofing, siding, and more.`,
+  title: "Roofing Project Gallery — Before & After Photos | Philadelphia",
+  description:
+    "Browse real before & after roofing photos by Adilay Roofing. See roof replacements, repairs, flat roofs, siding & gutter projects across Philadelphia, PA.",
+  keywords: [
+    "roofing before and after photos",
+    "roof replacement photos Philadelphia",
+    "roofing project gallery",
+    "Philadelphia roofing work examples",
+    "roofing company portfolio",
+  ],
+  alternates: { canonical: `${BASE_URL}/gallery` },
+  openGraph: {
+    title: "Adilay Roofing Project Gallery — Before & After Photos",
+    description:
+      "Real roofing projects across Philadelphia. See the quality of our roof replacements, repairs, siding, and more.",
+    url: `${BASE_URL}/gallery`,
+  },
 };
 
 export default function GalleryPage() {

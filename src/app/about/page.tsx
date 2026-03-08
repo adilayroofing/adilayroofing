@@ -3,9 +3,26 @@ import CTASection from "@/components/CTASection";
 import TrustBar from "@/components/TrustBar";
 import { company } from "@/data/company";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "About Us",
-  description: `Learn about ${company.name} — over ${company.yearsExperience} years of trusted roofing services in Philadelphia, PA and surrounding areas. Licensed (${company.license}), quality craftsmanship, and reliable service.`,
+  title: "About Adilay Roofing — 20+ Years Serving Philadelphia, PA",
+  description:
+    "Meet Adilay Roofing — Philadelphia's trusted roofing contractor. 20+ years experience, 2,080+ projects, PA license PA184779. Family-owned, quality craftsmanship.",
+  keywords: [
+    "about Adilay Roofing",
+    "Philadelphia roofing company",
+    "licensed roofer Philadelphia PA",
+    "trusted roofing contractor near me",
+    "family-owned roofer Philadelphia",
+  ],
+  alternates: { canonical: `${BASE_URL}/about` },
+  openGraph: {
+    title: "About Adilay Roofing — Philadelphia's Trusted Roofing Experts",
+    description:
+      "20+ years of roofing excellence. Licensed, insured, family-owned. Serving Philadelphia & surrounding counties.",
+    url: `${BASE_URL}/about`,
+  },
 };
 
 export default function AboutPage() {
@@ -117,7 +134,7 @@ export default function AboutPage() {
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <img
                   src="/images/metal-roof-crew.jpg"
-                  alt="Adilay Roofing crew working on a standing seam metal roof"
+                  alt="Adilay Roofing crew installing a standing seam metal roof on a Philadelphia home"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -179,7 +196,7 @@ export default function AboutPage() {
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <img
                   src="/images/adilay-truck.jpg"
-                  alt="Adilay Roofing branded truck"
+                  alt="Adilay Roofing branded service truck with company logo and PA license number in Philadelphia"
                   className="w-full h-auto object-cover"
                 />
               </div>

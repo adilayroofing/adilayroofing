@@ -19,6 +19,8 @@ export function generateStaticParams() {
 // ---------------------------------------------------------------------------
 type PageProps = { params: Promise<{ slug: string }> };
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
@@ -28,8 +30,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: service.title,
-    description: service.description,
+    title: `${service.title} in Philadelphia, PA — Adilay Roofing`,
+    description: `${service.tagline} — Adilay Roofing offers professional ${service.title.toLowerCase()} in Philadelphia, PA. Free estimates — call (888) 823-4766.`,
+    keywords: [
+      `${service.title.toLowerCase()} Philadelphia`,
+      `${service.title.toLowerCase()} near me`,
+      `Philadelphia ${service.title.toLowerCase()} contractor`,
+      "roofing contractor Philadelphia PA",
+    ],
+    alternates: { canonical: `${BASE_URL}/services/${slug}` },
+    openGraph: {
+      title: `${service.title} — Adilay Roofing Philadelphia`,
+      description: service.description,
+      url: `${BASE_URL}/services/${slug}`,
+      images: service.image ? [{ url: `${BASE_URL}${service.image}` }] : undefined,
+    },
   };
 }
 
@@ -59,7 +74,7 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="absolute inset-0">
           <img
             src={service.image}
-            alt={service.title}
+            alt={`Professional ${service.title.toLowerCase()} services in Philadelphia, PA by Adilay Roofing`}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-brand-darker/75" />

@@ -4,10 +4,27 @@ import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 
+const BASE_URL = "https://www.adilayroofing.com";
+
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Roofing & Exterior Services in Philadelphia, PA | Adilay Roofing",
   description:
-    "Comprehensive roofing and exterior services in Philadelphia — roof replacement, repair, flat roofing, shingles, siding, windows, and gutters. Free estimates from Adilay Roofing.",
+    "Full roofing services in Philadelphia: roof replacement, repair, flat roofing, shingle installation, siding, windows & gutters. Licensed PA184779. Free estimates!",
+  keywords: [
+    "roofing services Philadelphia",
+    "roof replacement service Philadelphia",
+    "roof repair service Philadelphia PA",
+    "flat roofing Philadelphia",
+    "siding installation Philadelphia",
+    "gutter installation Philadelphia",
+  ],
+  alternates: { canonical: `${BASE_URL}/services` },
+  openGraph: {
+    title: "Roofing & Exterior Services — Adilay Roofing Philadelphia",
+    description:
+      "Comprehensive roofing and exterior services. Roof replacement, repair, flat roofing, siding, windows & gutters.",
+    url: `${BASE_URL}/services`,
+  },
 };
 
 const benefits = [
@@ -123,7 +140,7 @@ export default function ServicesPage() {
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <img
                   src="/images/metal-roof-closeup.jpg"
-                  alt="Adilay Roofing crew installing standing seam metal roof"
+                  alt="Close-up of professional standing seam metal roof installation by Adilay Roofing in Philadelphia"
                   className="w-full h-auto object-cover"
                 />
               </div>
