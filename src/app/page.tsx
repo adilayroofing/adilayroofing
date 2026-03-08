@@ -271,7 +271,7 @@ export default function Home() {
               { src: "/images/flat-roof-materials-staging.png", alt: "Professional flat roof project with EPDM materials staged on a Philadelphia row home", pos: "object-[center_40%]" },
             ].map((img, i) => (
               <ScrollReveal key={img.src} delay={i * 120} distance={16}>
-                <div className="relative h-64 md:h-96 overflow-hidden">
+                <div className="relative h-80 md:h-96 overflow-hidden">
                   <img
                     src={img.src}
                     alt={img.alt}
