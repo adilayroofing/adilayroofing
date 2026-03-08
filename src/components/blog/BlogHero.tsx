@@ -6,6 +6,7 @@ interface BlogHeroProps {
   date: string;
   readTime: string;
   category: string;
+  featuredImage?: string;
 }
 
 export default function BlogHero({
@@ -14,6 +15,7 @@ export default function BlogHero({
   date,
   readTime,
   category,
+  featuredImage,
 }: BlogHeroProps) {
   const formattedDate = new Date(date + "T12:00:00").toLocaleDateString(
     "en-US",
@@ -43,6 +45,19 @@ export default function BlogHero({
           </div>
         </div>
       </div>
+
+      {/* Featured Image Banner */}
+      {featuredImage && (
+        <div className="container-wide mx-auto px-4 pb-0 -mb-12 md:-mb-16 relative z-10">
+          <div className="rounded-lg overflow-hidden shadow-xl max-w-4xl mx-auto">
+            <img
+              src={featuredImage}
+              alt={title}
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

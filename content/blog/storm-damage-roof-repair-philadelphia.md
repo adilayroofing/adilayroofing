@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "10 min read"
 category: "insurance"
 featuredImage: "/images/blog/storm-damage-roof-repair-philadelphia.jpg"
-relatedSlugs:
-  - "roof-insurance-claim-philadelphia-guide"
-  - "emergency-roof-leak-repair-philadelphia"
-  - "roof-repair-costs-philadelphia"
 faq:
   - question: "Does homeowners insurance cover storm damage roof repair in Philadelphia?"
     answer: "Most standard homeowners insurance policies in Pennsylvania cover storm damage roof repair, including wind, hail, and fallen tree damage. However, coverage depends on your specific policy, the age and condition of your roof, and the nature of the storm. Cosmetic-only damage may not be covered by all policies. Contact your insurer promptly after any storm event and document everything before making temporary repairs."
@@ -34,7 +30,7 @@ faq:
 
 Philadelphia homeowners know that storms are not a matter of *if* but *when*. From violent nor'easters that batter Kensington and Fishtown row homes to summer hail storms rolling through Montgomery County, **storm damage roof repair in Philadelphia** is one of the most common -- and most stressful -- calls we receive at Adilay Roofing LLC. Over our 20+ years serving the greater Philadelphia area, we have handled more than 2,080 roofing projects, and a significant portion of those involved storm-related damage and the insurance process that follows.
 
-This guide walks you through everything you need to know: identifying storm damage, protecting your home immediately after a storm, navigating [filing insurance claims](/blog/roof-insurance-claim-philadelphia-guide), and understanding the repair timeline so you can get your home back to normal as quickly as possible. If your roof has been hit, call us at **(888) 823-4766** or [get a free roof estimate](/get-quote) right away -- we offer 24/7 emergency service every day except Saturday.
+This guide walks you through everything you need to know: identifying storm damage, protecting your home immediately after a storm, navigating filing insurance claims, and understanding the repair timeline so you can get your home back to normal as quickly as possible. If your roof has been hit, call us at **(888) 823-4766** or [get a free roof estimate](/get-quote) right away -- we offer 24/7 emergency service every day except Saturday.
 
 ## Types of Storms That Damage Philadelphia Roofs
 
@@ -95,7 +91,7 @@ A trained eye catches what homeowners often miss. When you call Adilay Roofing f
 - Detailed photo documentation for your insurance claim
 - A written report with our findings and recommended repairs
 
-This inspection is free, and the documentation we provide is essential for [filing insurance claims](/blog/roof-insurance-claim-philadelphia-guide) successfully.
+This inspection is free, and the documentation we provide is essential for filing insurance claims successfully.
 
 ## What to Do Immediately After Storm Damage
 
@@ -166,7 +162,7 @@ The cost and scope of storm damage roof repair Philadelphia homeowners face depe
 - Patching small membrane tears on flat roofs
 - Clearing debris from gutters and drains
 
-These repairs typically take one day and can be completed quickly after the insurance process moves forward. Learn more about typical [professional roof repair](/services/roof-repair) costs in our detailed guide on [roof repair costs in Philadelphia](/blog/roof-repair-costs-philadelphia).
+These repairs typically take one day and can be completed quickly after the insurance process moves forward. Learn more about typical [professional roof repair](/services/roof-repair) costs in our detailed guide on roof repair costs in Philadelphia.
 
 ### Moderate Repairs ($1,500 - $5,000)
 
@@ -254,6 +250,6 @@ After widespread events like major nor'easters, every phase can take longer due 
 
 Do not wait for a small leak to become a major problem. Whether your home is a classic Fishtown row home with a flat rubber roof or a single-family house in Bucks County with architectural shingles, storm damage demands prompt professional attention.
 
-Call Adilay Roofing LLC at **(888) 823-4766** for a free storm damage inspection, or [get a free roof estimate](/get-quote) online. We are available 24/7 for [emergency roof repair](/blog/emergency-roof-leak-repair-philadelphia) -- because storms do not wait for business hours, and neither do we.
+Call Adilay Roofing LLC at **(888) 823-4766** for a free storm damage inspection, or [get a free roof estimate](/get-quote) online. We are available 24/7 for emergency roof repair -- because storms do not wait for business hours, and neither do we.
 
 As a family-owned, licensed, and insured Philadelphia roofing company with over 1,000 happy clients, we are here to guide you through every step -- from the first tarp to the final shingle. No subcontractors, no surprise costs, just honest work from a team that calls Philadelphia home.

@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "flat-roofing"
 featuredImage: "/images/blog/epdm-rubber-roofing-philadelphia.jpg"
-relatedSlugs:
-  - "flat-roof-repair-philadelphia-row-home-guide"
-  - "roofing-south-philadelphia-row-homes"
-  - "best-roofing-materials-philadelphia-climate"
 faq:
   - question: "Is EPDM or TPO better for Philadelphia flat roofs?"
     answer: "For most Philadelphia flat roofs, EPDM is the better choice. It has a longer proven track record (50+ years of industry use vs. 20+ for TPO), superior flexibility in cold weather which matters during Philadelphia winters, and better resistance to the freeze-thaw cycles that are common in the Mid-Atlantic. TPO has the advantage of being white and more reflective, which can reduce cooling costs, but its cold-weather performance is less reliable."
@@ -132,7 +128,7 @@ Modified bitumen (mod-bit) is the successor to traditional tar-and-gravel roofs.
 
 Built-up roofing, the classic "tar and gravel" roof, is being phased out in residential applications. It is heavy, messy to install, difficult to repair, and does not match the performance or lifespan of modern EPDM systems.
 
-For a broader comparison of all roofing materials available to Philadelphia homeowners, including pitched roof options, read our [best roofing materials for Philadelphia](/blog/best-roofing-materials-philadelphia-climate) guide.
+For a broader comparison of all roofing materials available to Philadelphia homeowners, including pitched roof options, read our best roofing materials for Philadelphia guide.
 
 ## Maintaining Your EPDM Rubber Roof
 
@@ -155,7 +151,7 @@ One of EPDM's advantages is its low maintenance requirements, but low does not m
 - Have a qualified roofer perform a detailed inspection
 - Address any minor issues before they become major repairs
 
-For a detailed breakdown of flat roof repair approaches, see our guide on [flat roof repair for row homes](/blog/flat-roof-repair-philadelphia-row-home-guide). And if you notice active leaking or significant damage, do not wait. Contact us for a prompt repair to prevent water damage to your home's interior.
+For a detailed breakdown of flat roof repair approaches, see our guide on flat roof repair for row homes. And if you notice active leaking or significant damage, do not wait. Contact us for a prompt repair to prevent water damage to your home's interior.
 
 ## Common EPDM Problems and Solutions in Philadelphia
 
@@ -189,4 +185,4 @@ Our process is straightforward: we inspect your roof, explain exactly what we fi
 
 **[Get a free roof estimate](/get-quote)** or call **(888) 823-4766** today. We are available Sunday through Friday, 24 hours a day. For emergency flat roof leaks, we offer 24/7 response.
 
-Explore our full range of [flat roofing services](/services/flat-roofing) or learn about [roofing challenges specific to South Philadelphia row homes](/blog/roofing-south-philadelphia-row-homes). If you are weighing a repair versus full replacement, our [roof repair cost guide](/blog/roof-repair-costs-philadelphia) breaks down the numbers to help you decide.
+Explore our full range of [flat roofing services](/services/flat-roofing) or learn about roofing challenges specific to South Philadelphia row homes. If you are weighing a repair versus full replacement, our roof repair cost guide breaks down the numbers to help you decide.

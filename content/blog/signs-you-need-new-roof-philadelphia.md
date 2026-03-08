@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "roof-replacement"
 featuredImage: "/images/blog/signs-you-need-new-roof-philadelphia.jpg"
-relatedSlugs:
-  - "roof-replacement-cost-philadelphia-2026"
-  - "how-to-choose-roofing-contractor-philadelphia"
-  - "emergency-roof-leak-repair-philadelphia"
 faq:
   - question: "How often should I get a roof inspection in Philadelphia?"
     answer: "We recommend a professional roof inspection at least once every two years, and always after a major storm. Philadelphia's combination of nor'easters, summer thunderstorms, and freeze-thaw cycles puts extra stress on roofing materials. Annual inspections are ideal for roofs over 15 years old."
@@ -50,7 +46,7 @@ If your home was built or re-roofed in the early 2000s with standard asphalt shi
 
 **Pro tip:** If you bought your home recently and don't know the roof's age, check your home inspection report or look in the attic for installation date stamps on the underlayment.
 
-Not sure what your roof's age means for your budget? Check out our complete guide on [roof replacement costs in Philadelphia](/blog/roof-replacement-cost-philadelphia-2026) for 2026 pricing.
+Not sure what your roof's age means for your budget? Check out our complete guide on roof replacement costs in Philadelphia for 2026 pricing.
 
 ## 2. Shingles Are Curling, Cracking, or Missing
 
@@ -98,7 +94,7 @@ A sagging roofline is a serious structural issue that demands immediate attentio
 
 In Philadelphia row homes, sagging can also occur along party walls where water infiltration at the parapet has rotted the structural members over years. This is one of the most common issues we see when performing a **roof inspection in Philadelphia** on attached homes.
 
-A sagging roof is not a DIY situation and it's not something to "keep an eye on." If you notice sagging, call us at **(888) 823-4766** immediately. We offer [24/7 emergency roof service](/blog/emergency-roof-leak-repair-philadelphia) for situations exactly like this.
+A sagging roof is not a DIY situation and it's not something to "keep an eye on." If you notice sagging, call us at **(888) 823-4766** immediately. We offer 24/7 emergency roof service for situations exactly like this.
 
 ## 6. Your Energy Bills Are Climbing
 
@@ -110,7 +106,7 @@ In Philadelphia's climate, where summer temperatures hit the 90s and winter lows
 - **Extremely hot attic in summer:** If your attic is 20-30 degrees hotter than the outside temperature, ventilation may be failing.
 - **Uneven temperatures:** Rooms on the top floor that are noticeably hotter or colder than the rest of the house.
 
-Interested in making your next roof more energy-efficient? Read our guide on [energy-efficient roofing options for Philadelphia](/blog/energy-efficient-roofing-philadelphia).
+Interested in making your next roof more energy-efficient? Read our guide on energy-efficient roofing options for Philadelphia.
 
 ## 7. Flashing Is Damaged or Missing
 
@@ -141,11 +137,11 @@ At Adilay Roofing, our inspections are thorough and free. We'll check every comp
 
 ### Step 3: Get a Detailed Estimate
 
-If replacement is recommended, get a written estimate that breaks down every cost, including materials, labor, tear-off, disposal, permits, and any structural repairs. Our guide on [roof replacement costs in Philadelphia](/blog/roof-replacement-cost-philadelphia-2026) will help you understand what to expect.
+If replacement is recommended, get a written estimate that breaks down every cost, including materials, labor, tear-off, disposal, permits, and any structural repairs. Our guide on roof replacement costs in Philadelphia will help you understand what to expect.
 
 ### Step 4: Choose the Right Contractor
 
-Not all roofing contractors are created equal. Before signing a contract, make sure your contractor is licensed, insured, and experienced with Philadelphia's unique roofing challenges. Check out our guide on [how to choose a roofing contractor in Philadelphia](/blog/how-to-choose-roofing-contractor-philadelphia) for a complete checklist.
+Not all roofing contractors are created equal. Before signing a contract, make sure your contractor is licensed, insured, and experienced with Philadelphia's unique roofing challenges. Check out our guide on how to choose a roofing contractor in Philadelphia for a complete checklist.
 
 ## Why Adilay Roofing for Your Roof Inspection
 

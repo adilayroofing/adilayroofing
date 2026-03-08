@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "7 min read"
 category: "general-roofing"
 featuredImage: "/images/blog/roofing-warranties-explained.jpg"
-relatedSlugs:
-  - "gaf-timberline-shingles-review-philadelphia"
-  - "how-to-choose-roofing-contractor-philadelphia"
-  - "best-roofing-materials-philadelphia-climate"
 faq:
   - question: "Can I transfer my roof warranty to a new homeowner if I sell my house?"
     answer: "Most manufacturer roofing warranties are transferable to a new homeowner, but there are conditions. GAF warranties can typically be transferred within the first 20 years, while CertainTeed allows a one-time transfer. Workmanship warranties vary by contractor. At Adilay Roofing, our workmanship guarantee transfers with the home. You usually need to notify the manufacturer within 30-60 days of the sale to complete the transfer."
@@ -51,7 +47,7 @@ Here is what you need to know about manufacturer warranties:
 
 The catch? Most standard manufacturer warranties only cover the cost of replacement materials. They do not cover the labor to tear off the old roof and install the new one. Since labor often makes up 60 percent of a roof replacement cost, a materials-only warranty still leaves you with a significant bill.
 
-When choosing materials for your Philadelphia home, the warranty terms should factor into your decision. Our guide on the [best roofing materials](/blog/best-roofing-materials-philadelphia-climate) for our climate breaks down the top options and their warranty coverage side by side.
+When choosing materials for your Philadelphia home, the warranty terms should factor into your decision. Our guide on the best roofing materials for our climate breaks down the top options and their warranty coverage side by side.
 
 ### Workmanship Warranty Roofing: Covering Installation Errors
 
@@ -64,7 +60,7 @@ Key details about workmanship warranties:
 - **What is NOT covered**: Material defects, storm damage, or homeowner-caused damage
 - **Who handles claims**: Your roofing contractor directly
 
-Here is the uncomfortable truth: a workmanship warranty is only as reliable as the contractor who issued it. If the company goes out of business, your workmanship warranty goes with them. This is one of the biggest reasons why [choosing the right roofing contractor](/blog/how-to-choose-roofing-contractor-philadelphia) matters so much.
+Here is the uncomfortable truth: a workmanship warranty is only as reliable as the contractor who issued it. If the company goes out of business, your workmanship warranty goes with them. This is one of the biggest reasons why choosing the right roofing contractor matters so much.
 
 At Adilay Roofing, we have been serving Philadelphia since our founding and have completed over 2,080 projects. We are a family-owned company, fully licensed under PA184779, and we stand behind every installation with a robust workmanship guarantee. Learn more [about Adilay Roofing](/about) and why our clients trust us with their homes.
 
@@ -82,7 +78,7 @@ The top tier of GAF protection, the Golden Pledge warranty provides 50-year non-
 
 To qualify for Golden Pledge coverage, your contractor must be a GAF Master Elite installer, a designation held by only about 3 percent of all roofing contractors in the country. The installation must also use a full GAF roofing system, including underlayment, starter strips, ridge caps, and ventilation.
 
-For a deep dive into GAF products and real-world performance in the Philadelphia area, check out our [GAF shingles review](/blog/gaf-timberline-shingles-review-philadelphia).
+For a deep dive into GAF products and real-world performance in the Philadelphia area, check out our GAF shingles review.
 
 ### CertainTeed SureStart Warranty
 
@@ -100,7 +96,7 @@ Knowing what your warranty covers is only half the battle. You also need to know
 
 **Layering over existing shingles** rather than performing a complete tear-off can also void your warranty. While Philadelphia code may allow one layer of overlay in certain situations, most manufacturer warranties require a full tear-off and fresh installation on clean decking.
 
-**Poor maintenance** rounds out the list. Failing to clean gutters, allowing debris to accumulate in valleys, or ignoring minor damage can all give manufacturers grounds to deny a claim. Our [seasonal maintenance checklist](/blog/seasonal-roof-maintenance-checklist-philadelphia) helps you stay on top of what your roof needs throughout the year.
+**Poor maintenance** rounds out the list. Failing to clean gutters, allowing debris to accumulate in valleys, or ignoring minor damage can all give manufacturers grounds to deny a claim. Our seasonal maintenance checklist helps you stay on top of what your roof needs throughout the year.
 
 ## Warranty Transferability: What Happens When You Sell
 
@@ -114,7 +110,7 @@ Most manufacturer warranties allow at least one transfer, but the terms vary:
 
 Workmanship warranty transfers depend entirely on your contractor's policy. At Adilay Roofing, we transfer our workmanship coverage to the new homeowner at no additional charge because we stand behind our work regardless of who lives under the roof.
 
-A new roof with a strong warranty package can add real value to your home. Read more about how a [new roof can increase your home's value](/blog/new-roof-increase-home-value-philadelphia) in the Philadelphia market.
+A new roof with a strong warranty package can add real value to your home. Read more about how a new roof can increase your home's value in the Philadelphia market.
 
 ## How to Maximize Your Warranty Protection
 

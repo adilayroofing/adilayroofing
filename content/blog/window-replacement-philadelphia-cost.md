@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "windows"
 featuredImage: "/images/blog/window-replacement-philadelphia-cost.jpg"
-relatedSlugs:
-  - "vinyl-vs-fiber-cement-siding-philadelphia"
-  - "energy-efficient-roofing-philadelphia"
-  - "new-roof-increase-home-value-philadelphia"
 faq:
   - question: "How much does window replacement cost per window in Philadelphia?"
     answer: "Window replacement in Philadelphia typically costs between $300 and $1,200 per window, including installation. Basic single-hung vinyl windows fall at the lower end, while premium double-hung or casement windows with triple-pane glass and custom sizing cost more. The average Philadelphia homeowner replacing 10 windows spends between $5,000 and $12,000 total. Factors that affect price include window size, frame material, glass type, and accessibility."
@@ -100,7 +96,7 @@ Philadelphia's climate makes window efficiency particularly impactful:
 - **Summer cooling demand.** With average summer highs in the upper 80s to low 90s and high humidity, your AC system battles solar heat gain through windows all summer. Low-E coatings block up to 70% of solar heat gain while still admitting visible light.
 - **Row home wall exposure.** Many Philadelphia row homes only have windows on the front and rear walls, which means those windows are responsible for a disproportionate share of the home's ventilation and light. Making those fewer windows as efficient as possible has an outsized impact.
 
-For maximum energy savings, consider pairing your window upgrade with [energy efficient roofing](/blog/energy-efficient-roofing-philadelphia) and improved insulation for a whole-home approach to comfort and efficiency.
+For maximum energy savings, consider pairing your window upgrade with energy efficient roofing and improved insulation for a whole-home approach to comfort and efficiency.
 
 ## Window Types: Choosing the Right Windows for Your Philadelphia Home
 
@@ -224,8 +220,8 @@ Check out our work in the [areas we serve](/service-areas) -- from Center City r
 
 Many Philadelphia homeowners choose to combine window replacement with other exterior improvements for maximum impact and efficiency. Common pairings include:
 
-- **Windows + siding:** Upgrading both at once ensures a seamless, weathertight envelope. Read our detailed comparison of [vinyl vs. fiber cement siding](/blog/vinyl-vs-fiber-cement-siding-philadelphia) to explore your siding options.
-- **Windows + roofing:** A new roof and new windows together can transform your home's energy performance and curb appeal. Learn how a [new roof can increase your home's value](/blog/new-roof-increase-home-value-philadelphia).
+- **Windows + siding:** Upgrading both at once ensures a seamless, weathertight envelope. Read our detailed comparison of vinyl vs. fiber cement siding to explore your siding options.
+- **Windows + roofing:** A new roof and new windows together can transform your home's energy performance and curb appeal. Learn how a new roof can increase your home's value.
 - **Windows + gutters:** While we have the ladders and scaffolding up for window work, it is an ideal time to address gutter issues.
 
 Bundling projects reduces overall labor costs and means you only deal with one contractor, one schedule, and one point of contact.

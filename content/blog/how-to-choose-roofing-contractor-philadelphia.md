@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "general-roofing"
 featuredImage: "/images/blog/how-to-choose-roofing-contractor-philadelphia.jpg"
-relatedSlugs:
-  - "roof-replacement-cost-philadelphia-2026"
-  - "signs-you-need-new-roof-philadelphia"
-  - "roofing-warranties-explained"
 faq:
   - question: "How do I verify a roofing contractor's license in Pennsylvania?"
     answer: "You can verify a PA home improvement contractor license through the Pennsylvania Attorney General's office at attorneygeneral.gov. Search by the contractor's name or license number. Any legitimate licensed roofer in Philadelphia will have their license number displayed on their website, business card, and contracts. For example, Adilay Roofing's license is PA184779, active until July 2027."
@@ -89,7 +85,7 @@ A professional contractor provides a written estimate that includes:
 
 If a contractor gives you a verbal quote, a handwritten number on the back of a business card, or a vague one-line estimate, that's a major red flag. You should know exactly what you're paying for before any work begins.
 
-Want to understand what fair pricing looks like? Our [roof replacement cost guide for Philadelphia](/blog/roof-replacement-cost-philadelphia-2026) breaks down what to expect for every component.
+Want to understand what fair pricing looks like? Our roof replacement cost guide for Philadelphia breaks down what to expect for every component.
 
 ### 5. Strong References and Portfolio
 
@@ -179,7 +175,7 @@ In Philadelphia, a permit is required for roof replacements. If a contractor say
 - Void your insurance coverage
 - Indicate the work won't meet building code standards
 
-A legitimate contractor handles permits as part of the job. Learn more about [Philadelphia roof permit requirements](/blog/roof-permit-philadelphia).
+A legitimate contractor handles permits as part of the job. Learn more about Philadelphia roof permit requirements.
 
 ## Questions to Ask Every Roofing Contractor
 
@@ -190,7 +186,7 @@ Before hiring anyone, ask these questions and evaluate their responses:
 3. **How long have you been doing business in Philadelphia?** (Look for 5+ years minimum)
 4. **Do you use your own crews or subcontractors?** (Own crews are preferable for quality control)
 5. **What specific materials will you use?** (Get brand names and product lines in writing)
-6. **What does your warranty cover, and for how long?** (Read our guide on [roofing warranties explained](/blog/roofing-warranties-explained) for what to look for)
+6. **What does your warranty cover, and for how long?** (Read our guide on roofing warranties explained for what to look for)
 7. **Will you handle the permit?** (The answer should always be yes)
 8. **Can I see photos of recent projects similar to mine?** (Recent and local is key)
 9. **What's your timeline for starting and completing the work?**
@@ -227,4 +223,4 @@ PA License: PA184779
 
 ---
 
-*Family-owned, no subcontractors, honest pricing. Serving Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County for over 20 years. If you've noticed [signs your roof needs replacing](/blog/signs-you-need-new-roof-philadelphia), don't wait -- a free inspection is just a phone call away.*
+*Family-owned, no subcontractors, honest pricing. Serving Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County for over 20 years. If you've noticed signs your roof needs replacing, don't wait -- a free inspection is just a phone call away.*

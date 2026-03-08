@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "10 min read"
 category: "flat-roofing"
 featuredImage: "/images/blog/flat-roof-repair-philadelphia-row-home-guide.jpg"
-relatedSlugs:
-  - "epdm-rubber-roofing-philadelphia"
-  - "roofing-south-philadelphia-row-homes"
-  - "roof-repair-costs-philadelphia"
 faq:
   - question: "How long does a flat roof last on a Philadelphia row home?"
     answer: "A well-maintained flat roof on a Philadelphia row home typically lasts 20-30 years with EPDM rubber or TPO membrane, and 10-15 years with modified bitumen. Lifespan depends heavily on installation quality, drainage design, and how well the parapet wall flashings are maintained. Regular inspections can extend the life of any flat roof system."
@@ -118,7 +114,7 @@ The cost of **flat roof repair in Philadelphia** varies widely based on the type
 
 The wide range in replacement cost depends on roof size, material choice, and how much structural work is needed. A standard 14x40 foot row home flat roof section typically costs $4,500 to $8,000 for a complete EPDM or TPO replacement.
 
-For a detailed breakdown of repair costs throughout Philadelphia, see our [comprehensive roof repair cost guide](/blog/roof-repair-costs-philadelphia).
+For a detailed breakdown of repair costs throughout Philadelphia, see our comprehensive roof repair cost guide.
 
 ## Flat Roof Membrane Options for Philadelphia Row Homes
 
@@ -133,7 +129,7 @@ EPDM (Ethylene Propylene Diene Monomer) is the most popular flat roof material f
 - **Pros:** Excellent flexibility in cold weather (critical for Philadelphia winters), UV resistant, easy to repair, proven track record
 - **Cons:** Black color absorbs heat, seams require careful installation
 
-EPDM is our most-recommended material for Philadelphia row homes because of its proven performance in our climate. The flexibility of rubber means it handles freeze-thaw cycles without cracking, unlike some rigid membrane systems. Read our complete [EPDM rubber roofing guide](/blog/epdm-rubber-roofing-philadelphia) for a deep dive into this material.
+EPDM is our most-recommended material for Philadelphia row homes because of its proven performance in our climate. The flexibility of rubber means it handles freeze-thaw cycles without cracking, unlike some rigid membrane systems. Read our complete EPDM rubber roofing guide for a deep dive into this material.
 
 ### TPO (Thermoplastic Polyolefin)
 
@@ -201,7 +197,7 @@ Preventive maintenance is the most cost-effective way to extend your flat roof's
 - After nor'easters, check for ice dams and backed-up drains
 - Monitor interior ceilings for water stains, which indicate active leaks
 
-For a more detailed guide, see our [seasonal roof maintenance checklist for Philadelphia](/blog/seasonal-roof-maintenance-checklist-philadelphia).
+For a more detailed guide, see our seasonal roof maintenance checklist for Philadelphia.
 
 ### When to Call a Professional
 

@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "6 min read"
 category: "general-roofing"
 featuredImage: "/images/blog/roof-permit-philadelphia.jpg"
-relatedSlugs:
-  - "how-to-choose-roofing-contractor-philadelphia"
-  - "roof-replacement-cost-philadelphia-2026"
-  - "roofing-warranties-explained"
 faq:
   - question: "How much does a roofing permit cost in Philadelphia?"
     answer: "A roof permit in Philadelphia typically costs between 40 and 200 dollars, depending on the scope of work and the total project value. The Philadelphia Department of Licenses and Inspections uses a fee schedule based on the estimated construction cost. For a standard residential roof replacement valued between 5,000 and 15,000 dollars, expect a permit fee in the 75 to 150 dollar range. Your contractor should include the permit cost in their project estimate."
@@ -104,7 +100,7 @@ Here is the general fee structure:
 
 These fees are a tiny fraction of the overall project cost. On a $10,000 roof replacement, a $100 permit fee represents just 1 percent of the total investment. Any contractor who suggests skipping the permit to save this amount is not looking out for your best interests.
 
-For a full breakdown of what a roof replacement costs in the Philadelphia area, including permits, materials, and labor, check out our detailed [roof replacement cost guide](/blog/roof-replacement-cost-philadelphia-2026).
+For a full breakdown of what a roof replacement costs in the Philadelphia area, including permits, materials, and labor, check out our detailed roof replacement cost guide.
 
 ## What Happens If You Skip the Permit
 
@@ -120,7 +116,7 @@ In extreme cases, L&I can require you to remove the unpermitted work so the unde
 
 ### Voided Warranty
 
-Major shingle manufacturers, including GAF and CertainTeed, require that roofing be installed in compliance with all local building codes. Unpermitted work violates this requirement, giving the manufacturer grounds to deny any future warranty claims. We break down how warranties work and what can void them in our guide to [roofing warranties explained](/blog/roofing-warranties-explained).
+Major shingle manufacturers, including GAF and CertainTeed, require that roofing be installed in compliance with all local building codes. Unpermitted work violates this requirement, giving the manufacturer grounds to deny any future warranty claims. We break down how warranties work and what can void them in our guide to roofing warranties explained.
 
 ### Insurance Complications
 
@@ -140,7 +136,7 @@ A question we hear regularly is whether the homeowner or the contractor should b
 
 **It shows accountability.** A contractor who handles permits is a contractor who plans to do the work right and stand behind it. They are not trying to avoid the inspection process.
 
-At Adilay Roofing, we manage the entire permit process from application through final inspection on every project we complete. It is included in our service at no additional charge. This is part of what it means to work with a legitimate, licensed contractor. For more guidance on evaluating contractors, read our guide on [choosing a roofing contractor](/blog/how-to-choose-roofing-contractor-philadelphia) in Philadelphia.
+At Adilay Roofing, we manage the entire permit process from application through final inspection on every project we complete. It is included in our service at no additional charge. This is part of what it means to work with a legitimate, licensed contractor. For more guidance on evaluating contractors, read our guide on choosing a roofing contractor in Philadelphia.
 
 ## Permits in Surrounding Counties
 

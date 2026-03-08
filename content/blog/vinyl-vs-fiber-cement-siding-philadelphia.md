@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "siding"
 featuredImage: "/images/blog/vinyl-vs-fiber-cement-siding-philadelphia.jpg"
-relatedSlugs:
-  - "window-replacement-philadelphia-cost"
-  - "best-roofing-materials-philadelphia-climate"
-  - "energy-efficient-roofing-philadelphia"
 faq:
   - question: "How much does vinyl siding cost compared to fiber cement siding in Philadelphia?"
     answer: "Vinyl siding typically costs $3 to $7 per square foot installed in the Philadelphia area, while fiber cement siding ranges from $6 to $13 per square foot installed. For a typical 1,500 square foot Philadelphia home exterior, that translates to roughly $4,500 to $10,500 for vinyl versus $9,000 to $19,500 for fiber cement. The price difference reflects fiber cement's superior durability, fire resistance, and longer lifespan."
@@ -153,7 +149,7 @@ Both siding options can improve your home's energy efficiency, but the impact de
 
 **Fiber cement siding** does not include built-in insulation but is commonly installed over rigid foam insulation boards, which can add R-3 to R-10 depending on thickness. The combination of fiber cement over foam board creates an extremely well-insulated and weather-tight wall system.
 
-If energy efficiency is a priority, consider pairing your siding upgrade with [energy efficient roofing](/blog/energy-efficient-roofing-philadelphia) and [window replacement services](/services/windows) for maximum impact on your utility bills.
+If energy efficiency is a priority, consider pairing your siding upgrade with energy efficient roofing and [window replacement services](/services/windows) for maximum impact on your utility bills.
 
 ## Philadelphia Historical District Considerations
 
@@ -198,7 +194,7 @@ Regardless of which material you choose, professional installation is the differ
 
 At Adilay Roofing, we handle every [siding installation and repair](/services/siding) with our own trained crews -- never subcontractors. Our PA License #PA184779 covers all exterior work, and we back our installations with both manufacturer and workmanship warranties. We have installed siding on everything from Fishtown row homes to sprawling Chester County colonials, and we approach every project with the same attention to detail.
 
-You can [see our completed projects](/gallery) to get a sense of the quality we deliver, and check out what materials work best in our region in our guide to [choosing the best roofing materials for Philadelphia's climate](/blog/best-roofing-materials-philadelphia-climate).
+You can [see our completed projects](/gallery) to get a sense of the quality we deliver, and check out what materials work best in our region in our guide to choosing the best roofing materials for Philadelphia's climate.
 
 ## Get a Free Siding Consultation
 

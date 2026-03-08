@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "7 min read"
 category: "seasonal-maintenance"
 featuredImage: "/images/blog/seasonal-roof-maintenance-checklist-philadelphia.jpg"
-relatedSlugs:
-  - "signs-you-need-new-roof-philadelphia"
-  - "best-time-replace-roof-pennsylvania"
-  - "how-long-does-roof-last-philadelphia"
 faq:
   - question: "How often should I have my roof professionally inspected in Philadelphia?"
     answer: "We recommend a professional roof inspection at least twice per year -- once in spring after winter weather has passed and once in fall before the cold season begins. You should also schedule an inspection after any major storm event, including nor'easters, hailstorms, or high wind events. Regular inspections catch small issues before they become expensive repairs."
@@ -59,7 +55,7 @@ Spring is the most critical inspection season for Philadelphia roof maintenance.
 - **Trim branches that overhang or touch the roof.** Branches scrape shingles, deposit debris, and give pests a bridge to your roof. Keep a minimum 6-foot clearance.
 - **Remove moss or algae growth.** Philadelphia's humid springs encourage moss on north-facing roof slopes. Moss retains moisture and accelerates shingle deterioration.
 
-If your spring inspection reveals any of the [signs you need a new roof](/blog/signs-you-need-new-roof-philadelphia), schedule a professional evaluation before the busy summer season begins.
+If your spring inspection reveals any of the signs you need a new roof, schedule a professional evaluation before the busy summer season begins.
 
 ## Summer Roof Maintenance Checklist (June - August)
 
@@ -143,7 +139,7 @@ Beyond seasonal tasks, these ongoing practices keep your roof in peak condition:
 - **Address issues immediately.** A $200 repair today prevents a $5,000 repair next year. Roofing problems never get better on their own.
 - **Maintain your trees.** Mature trees in neighborhoods like Germantown, Mt. Airy, and Chestnut Hill require regular trimming to protect roofs.
 - **Ensure proper attic ventilation year-round.** It prevents ice dams in winter, heat damage in summer, and moisture problems in every season.
-- **Know your roof's age and warranty.** Understanding [how long your roof should last](/blog/how-long-does-roof-last-philadelphia) helps you plan for replacement before failure.
+- **Know your roof's age and warranty.** Understanding how long your roof should last helps you plan for replacement before failure.
 
 ## When to Call a Professional
 

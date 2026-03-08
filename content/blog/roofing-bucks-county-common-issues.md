@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "local-seo"
 featuredImage: "/images/blog/roofing-bucks-county-common-issues.jpg"
-relatedSlugs:
-  - "montgomery-county-roofing-weather-solutions"
-  - "storm-damage-roof-repair-philadelphia"
-  - "best-roofing-materials-philadelphia-climate"
 faq:
   - question: "Do I need a permit for roof replacement in Bucks County?"
     answer: "Yes, most Bucks County townships require a building permit for a full roof replacement. Requirements vary by municipality. Doylestown Borough, Bensalem Township, Bristol Township, and Warminster Township each have their own permit process. Your roofing contractor should handle the permit application as part of the project. Adilay Roofing handles all permitting for our Bucks County clients at no additional charge."
@@ -67,7 +63,7 @@ We see ice dam damage most frequently in:
 
 ### 2. Wind Damage from Storms
 
-Bucks County sits in the path of nor'easters, tropical storm remnants, and severe thunderstorms that produce damaging winds. Every year, we respond to dozens of calls for [storm damage repair](/blog/storm-damage-roof-repair-philadelphia) throughout the county.
+Bucks County sits in the path of nor'easters, tropical storm remnants, and severe thunderstorms that produce damaging winds. Every year, we respond to dozens of calls for storm damage repair throughout the county.
 
 Common wind damage patterns we see:
 - **Tab lift and shingle blow-off** on aging 3-tab roofs, especially in exposed locations
@@ -88,7 +84,7 @@ Signs we commonly see on these aging suburban roofs:
 - Deteriorated pipe boot flashings around plumbing vents
 - Failed sealant around chimney and skylight flashings
 
-**The fix:** Once a roof shows multiple signs of aging, targeted repairs become a diminishing return. A full [roof replacement](/services/roof-replacement) with modern materials, proper underlayment, and updated flashing is the most cost-effective long-term solution. Read our guide on the [best roofing materials](/blog/best-roofing-materials-philadelphia-climate) for help choosing the right product.
+**The fix:** Once a roof shows multiple signs of aging, targeted repairs become a diminishing return. A full [roof replacement](/services/roof-replacement) with modern materials, proper underlayment, and updated flashing is the most cost-effective long-term solution. Read our guide on the best roofing materials for help choosing the right product.
 
 ### 4. Valley and Flashing Failures
 
@@ -148,6 +144,6 @@ We are not the only roofing company Bucks County has to offer, but we believe we
 - **Licensed and insured.** PA License #PA184779, fully insured with workers' comp coverage.
 - **2,080+ completed projects** and 1,000+ happy clients across our service area
 
-Whether you need a small repair in Bensalem or a full roof replacement in Doylestown, we are here to help. Our team is also experienced with [Montgomery County roofing](/blog/montgomery-county-roofing-weather-solutions) challenges if you have properties in multiple areas.
+Whether you need a small repair in Bensalem or a full roof replacement in Doylestown, we are here to help. Our team is also experienced with Montgomery County roofing challenges if you have properties in multiple areas.
 
 **Call us at (888) 823-4766** to schedule your free inspection and estimate. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent situations. Visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125.

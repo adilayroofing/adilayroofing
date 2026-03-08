@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "10 min read"
 category: "insurance"
 featuredImage: "/images/blog/roof-insurance-claim-philadelphia-guide.jpg"
-relatedSlugs:
-  - "storm-damage-roof-repair-philadelphia"
-  - "emergency-roof-leak-repair-philadelphia"
-  - "roof-repair-costs-philadelphia"
 faq:
   - question: "What types of roof damage does homeowner insurance typically cover?"
     answer: "Standard homeowner insurance policies in Philadelphia typically cover roof damage caused by sudden, accidental events such as wind, hail, fallen trees, fire, and lightning. Damage from named storms (hurricanes, tropical storms) is usually covered but may carry a separate, higher deductible. Insurance generally does not cover damage from wear and tear, lack of maintenance, gradual deterioration, or roofs that have exceeded their expected useful life. Cosmetic damage, such as minor hail dents that do not affect function, may also be excluded depending on your policy."
@@ -61,7 +57,7 @@ When you discover roof damage, whether from a storm, fallen tree, or sudden leak
 
 If there is an active leak or exposed opening, take reasonable steps to prevent further damage. Tarping a damaged area, placing buckets under leaks, and moving belongings away from water intrusion are all expected actions. Keep receipts for any emergency supplies you purchase, as these costs are typically reimbursable under your policy.
 
-For severe situations, our team provides [emergency roof leak repair](/blog/emergency-roof-leak-repair-philadelphia) services and can respond quickly to secure your property. This emergency tarping and temporary repair is separate from the permanent fix and can often begin before the claim is filed.
+For severe situations, our team provides emergency roof leak repair services and can respond quickly to secure your property. This emergency tarping and temporary repair is separate from the permanent fix and can often begin before the claim is filed.
 
 ## Step 2: Contact Your Insurance Company
 
@@ -196,7 +192,7 @@ Not every roof repair warrants an insurance claim. Filing a claim for minor dama
 - **Pay out of pocket when** damage is close to or below your deductible, or when the repair is minor and clearly affordable. Example: $2,500 deductible with $3,000 in damage.
 - **Always get a professional assessment first.** What looks like a minor repair from the ground may reveal more extensive damage upon inspection. Our team at Adilay Roofing provides honest assessments, and if we think a claim is not worth filing, we will tell you directly.
 
-For a better understanding of repair costs that might influence this decision, review our guide on [storm damage roof repair](/blog/storm-damage-roof-repair-philadelphia) or explore our [professional roof repair](/services/roof-repair) and [roof replacement services](/services/roof-replacement) pages.
+For a better understanding of repair costs that might influence this decision, review our guide on storm damage roof repair or explore our [professional roof repair](/services/roof-repair) and [roof replacement services](/services/roof-replacement) pages.
 
 ## We Help Philadelphia Homeowners Through the Insurance Process
 

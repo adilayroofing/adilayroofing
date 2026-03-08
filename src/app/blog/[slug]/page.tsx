@@ -185,11 +185,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         date={fm.date}
         readTime={fm.readTime}
         category={fm.category}
+        featuredImage={fm.featuredImage}
       />
 
       {/* Article Body */}
       <article className="bg-white">
-        <div className="section-padding">
+        <div className={`section-padding ${fm.featuredImage ? "pt-16 md:pt-20" : ""}`}>
           <div className="container-narrow mx-auto">
             {/* Mobile TOC */}
             <TableOfContents items={toc} />

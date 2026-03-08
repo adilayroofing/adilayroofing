@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "local-seo"
 featuredImage: "/images/blog/roofing-south-philadelphia-row-homes.jpg"
-relatedSlugs:
-  - "flat-roof-repair-philadelphia-row-home-guide"
-  - "epdm-rubber-roofing-philadelphia"
-  - "roof-repair-costs-philadelphia"
 faq:
   - question: "Who is responsible for a shared party wall roof leak between row homes?"
     answer: "In Philadelphia, responsibility for a shared party wall typically falls on both property owners. However, if the leak originates from one side, that homeowner is generally responsible for the repair. We recommend having a professional roofer inspect the area to determine the source before approaching your neighbor. Adilay Roofing can provide a documented inspection report that helps clarify responsibility."
@@ -72,7 +68,7 @@ Grays Ferry row homes tend to be older stock with original or near-original roof
 
 ### Pennsport
 
-Pennsport sits close to the Delaware River, and that proximity means slightly more moisture exposure and salt air. Roofing materials in Pennsport tend to degrade a few years faster than in neighborhoods further inland. We recommend EPDM rubber roofing for Pennsport row homes because of its superior resistance to moisture and UV degradation. Read our detailed guide on [EPDM rubber roofing in Philadelphia](/blog/epdm-rubber-roofing-philadelphia) to learn why it is the preferred material for flat roofs in this area.
+Pennsport sits close to the Delaware River, and that proximity means slightly more moisture exposure and salt air. Roofing materials in Pennsport tend to degrade a few years faster than in neighborhoods further inland. We recommend EPDM rubber roofing for Pennsport row homes because of its superior resistance to moisture and UV degradation. Read our detailed guide on EPDM rubber roofing in Philadelphia to learn why it is the preferred material for flat roofs in this area.
 
 ## The Best Roofing Materials for South Philly Row Homes
 
@@ -80,7 +76,7 @@ Choosing the right material for your flat roof South Philadelphia row home is cr
 
 ### EPDM Rubber Roofing
 
-EPDM is our top recommendation for most South Philly row homes. This single-ply rubber membrane handles ponding water, temperature extremes from summer heat to winter freezes, and UV exposure without breaking down prematurely. A properly installed EPDM roof lasts 25 to 30 years, and it is one of the most cost-effective flat roofing options available. We cover EPDM in much greater detail in our [flat roof repair guide for Philadelphia row homes](/blog/flat-roof-repair-philadelphia-row-home-guide).
+EPDM is our top recommendation for most South Philly row homes. This single-ply rubber membrane handles ponding water, temperature extremes from summer heat to winter freezes, and UV exposure without breaking down prematurely. A properly installed EPDM roof lasts 25 to 30 years, and it is one of the most cost-effective flat roofing options available. We cover EPDM in much greater detail in our flat roof repair guide for Philadelphia row homes.
 
 ### Modified Bitumen
 
@@ -127,7 +123,7 @@ Do not wait for a ceiling stain to call us. If you notice any of these warning s
 - **Visible daylight** through the roof deck from your attic or top floor
 - **Your roof is over 20 years old** and has never been replaced
 
-For a closer look at what these repairs might cost, check out our breakdown of [roof repair costs in Philadelphia](/blog/roof-repair-costs-philadelphia).
+For a closer look at what these repairs might cost, check out our breakdown of roof repair costs in Philadelphia.
 
 ## Get Your Free South Philly Row Home Roof Estimate
 

@@ -13,10 +13,6 @@ author: "Adilay Roofing Team"
 readTime: "7 min read"
 category: "shingle-roofing"
 featuredImage: "/images/blog/gaf-timberline-shingles-review-philadelphia.jpg"
-relatedSlugs:
-  - "3-tab-vs-architectural-shingles-philadelphia"
-  - "best-roofing-materials-philadelphia-climate"
-  - "roofing-warranties-explained"
 faq:
   - question: "What warranty do GAF Timberline shingles come with?"
     answer: "GAF Timberline HDZ shingles come with a limited lifetime warranty covering manufacturing defects. When installed by a GAF Certified contractor using the full GAF roofing system (underlayment, ridge caps, ventilation, and starter strips), you qualify for the GAF System Plus or Silver Pledge warranty, which adds coverage for installation workmanship. The Golden Pledge warranty, available through Master Elite contractors, adds 25 years of workmanship coverage and is fully transferable."
@@ -113,7 +109,7 @@ We install both brands and can help you decide which is the better fit for your 
 
 ## GAF Warranty Structure: What You Actually Get
 
-GAF's warranty program is one of the most comprehensive in the industry, but understanding what you actually receive requires looking beyond the "lifetime warranty" headline. For a deeper dive, read our full guide on [roofing warranties explained](/blog/roofing-warranties-explained).
+GAF's warranty program is one of the most comprehensive in the industry, but understanding what you actually receive requires looking beyond the "lifetime warranty" headline. For a deeper dive, read our full guide on roofing warranties explained.
 
 **Standard Warranty (any installer):**
 - Limited lifetime coverage on manufacturing defects
@@ -148,7 +144,7 @@ After completing over 2,080 projects across the Philadelphia region, this is our
 
 **GAF Timberline HDZ** is the right choice for the majority of Philadelphia homeowners. It offers proven performance in our climate, strong wind and algae resistance, competitive pricing, and access to industry-leading warranties when installed by a certified contractor.
 
-**Consider alternatives if** you have a flat roof (EPDM or TPO is more appropriate), you want to invest in a multi-generational roof (metal or slate), or your budget requires the most affordable option (3-tab shingles, though we generally recommend stretching for HDZ). For a complete comparison, see our guide on [3-tab vs architectural shingles](/blog/3-tab-vs-architectural-shingles-philadelphia).
+**Consider alternatives if** you have a flat roof (EPDM or TPO is more appropriate), you want to invest in a multi-generational roof (metal or slate), or your budget requires the most affordable option (3-tab shingles, though we generally recommend stretching for HDZ). For a complete comparison, see our guide on 3-tab vs architectural shingles.
 
 ## Get GAF Timberline Shingles Installed by Philadelphia's Trusted Roofers
 
