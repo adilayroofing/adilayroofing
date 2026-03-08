@@ -217,6 +217,12 @@ export default function Header() {
               Gallery
             </Link>
             <Link
+              href="/blog"
+              className="text-brand-dark font-semibold hover:text-brand-red transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
               href="/contact"
               className="text-brand-dark font-semibold hover:text-brand-red transition-colors"
             >
@@ -355,6 +361,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Gallery
+            </Link>
+            <Link
+              href="/blog"
+              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               href="/contact"

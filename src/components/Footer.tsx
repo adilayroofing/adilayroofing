@@ -132,6 +132,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/get-quote"
                   className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >
