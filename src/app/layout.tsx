@@ -86,6 +86,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  formatDetection: {
+    telephone: false,
+  },
+  other: {
+    "format-detection": "telephone=no",
+  },
 };
 
 export default function RootLayout({
