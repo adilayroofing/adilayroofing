@@ -1,7 +1,7 @@
 ---
 title: "How Much Does a Roof Replacement Cost in Philadelphia in 2026?"
 slug: "roof-replacement-cost-philadelphia-2026"
-date: "2026-03-09"
+date: "2026-03-08"
 description: "Roof replacement cost in Philadelphia ranges $5,192-$10,986 in 2026. Get a detailed price breakdown by material, size & more. Free estimates available."
 primaryKeyword: "roof replacement cost Philadelphia"
 secondaryKeywords:
