@@ -179,6 +179,17 @@
   .blog-prose li { font-size: 1.125rem; }
 }
 
+/* ── Crew photo scale (Safari-safe) ── */
+@media (min-width: 768px) {
+  .crew-photo-scale {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transform-origin: 50% 30%;
+    transform-origin: 50% 30%;
+    object-position: 50% 30%;
+  }
+}
+
 /* ── Floating quote tab animations ── */
 @keyframes slideInRight {
   from {
