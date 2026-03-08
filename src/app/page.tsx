@@ -469,8 +469,8 @@ export default function Home() {
             <ScrollReveal direction="left" distance={30}>
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <img
-                  src="/images/adilay-van-jobsite.jpg"
-                  alt="Adilay Roofing van at a residential job site"
+                  src="/images/adilay-van-service-areas.jpg"
+                  alt="Adilay Roofing van and crew completing a roof replacement on a residential property"
                   className="w-full h-auto object-cover"
                 />
               </div>
