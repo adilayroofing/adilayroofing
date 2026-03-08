@@ -13,7 +13,7 @@ export const company = {
     full: "2020 Dreer St., Unit 101, Philadelphia, PA 19125",
   },
   mapUrl: "https://maps.app.goo.gl/JjzmgKQX79gPMCXC8",
-  googleReviewsUrl: "https://www.google.com/maps/place/Adilay+Roofing+LLC/", // TODO: confirm exact Google Business Profile URL
+  googleReviewsUrl: "https://www.google.com/maps/place/Adilay+roofing/@40.0657544,-74.3053164,8.59z/data=!4m6!3m5!1s0xa0bd1e455cbe4473:0x74b01e3f11e033a2!8m2!3d40.071862!4d-75.115953!16s%2Fg%2F11ww__wfkd?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D",
   yearsExperience: "20+",
   projectsCompleted: "2,080+",
   satisfiedClients: "1,000+",
