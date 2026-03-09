@@ -13,33 +13,40 @@ const serviceImages: Record<string, string> = {
   gutters: "/images/gutters-philadelphia.png",
 };
 
+/* Custom object-position so people in Adilay shirts stay visible above text */
+const imagePosition: Record<string, string> = {
+  "roof-replacement": "object-top",
+  "roof-repair": "object-top",
+};
+
 interface ServiceCardProps {
   service: Service;
 }
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   const bgImage = serviceImages[service.slug];
+  const posClass = imagePosition[service.slug] ?? "";
 
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group relative rounded-sm overflow-hidden block min-h-[140px] md:min-h-[280px]"
+      className="group relative rounded-sm overflow-hidden block min-h-[180px] md:min-h-[340px]"
     >
       {/* Background image */}
       {bgImage && (
         <img
           src={bgImage}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${posClass}`}
           aria-hidden="true"
         />
       )}
 
-      {/* Dark overlay for text readability */}
+      {/* Gradient overlay — top stays bright to show people, bottom darker for text */}
       <div
         className={`absolute inset-0 transition-opacity duration-300 ${
           bgImage
-            ? "bg-black/60 group-hover:bg-black/50"
+            ? "bg-gradient-to-t from-black/75 via-black/30 to-black/10"
             : "bg-brand-light"
         }`}
       />
