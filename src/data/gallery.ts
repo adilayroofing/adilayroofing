@@ -103,4 +103,14 @@ export const galleryProjects: GalleryProject[] = [
       "Diagnosed and repaired persistent leak caused by faulty flashing. Installed new step flashing and sealed all vulnerable areas.",
     location: "Bucks County, PA",
   },
+  {
+    id: "project-10",
+    title: "Shingle Roof Replacement",
+    category: "roof-replacement",
+    description:
+      "Complete tear-off and shingle replacement with new underlayment. Our crew installed architectural shingles for long-lasting protection.",
+    location: "Philadelphia, PA",
+    beforeImage: "/images/before-after-7-before.jpg",
+    afterImage: "/images/before-after-7-after.jpg",
+  },
 ];

@@ -95,12 +95,17 @@ export default function GalleryPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {[
+                /* Roof Replacement */
                 { id: 1, ext: "jpg", beforePos: "object-top", afterPos: "object-top", label: "Roof Replacement" },
-                { id: 2, ext: "jpg", beforePos: "object-center", afterPos: "object-top", label: "Roof Repair" },
-                { id: 3, ext: "jpg", beforePos: "object-center", afterPos: "object-top", label: "Flat Roof Repair" },
-                { id: 4, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Roof Decking & Shingles" },
-                { id: 5, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Vinyl Siding Installation" },
                 { id: 6, ext: "png", beforePos: "object-center", afterPos: "object-center", label: "Complete Roof Replacement" },
+                { id: 7, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Shingle Roof Replacement" },
+                /* Roof Repair */
+                { id: 2, ext: "jpg", beforePos: "object-center", afterPos: "object-top", label: "Roof Repair" },
+                { id: 4, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Roof Decking & Shingles" },
+                /* Flat Roofing */
+                { id: 3, ext: "jpg", beforePos: "object-center", afterPos: "object-top", label: "Flat Roof Repair" },
+                /* Siding */
+                { id: 5, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Vinyl Siding Installation" },
               ].map((project) => (
                 <div
                   key={project.id}
