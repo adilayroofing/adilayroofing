@@ -10,6 +10,7 @@ import { company } from "@/data/company";
 interface FormData {
   // Step 1 - Service Area
   serviceArea: string;
+  customServiceArea: string;
   propertyType: "" | "residential" | "commercial";
 
   // Step 2 - Project Type
@@ -35,6 +36,7 @@ interface FormData {
 
 const INITIAL_FORM_DATA: FormData = {
   serviceArea: "",
+  customServiceArea: "",
   propertyType: "",
   projectType: "",
   servicesNeeded: [],
@@ -242,6 +244,7 @@ export default function QuoteForm() {
     switch (step) {
       case 1:
         if (!formData.serviceArea) newErrors.serviceArea = "Please select a service area.";
+        if (formData.serviceArea === "Other" && !formData.customServiceArea.trim()) newErrors.customServiceArea = "Please enter your location.";
         if (!formData.propertyType) newErrors.propertyType = "Please select property type.";
         break;
       case 2:
@@ -400,19 +403,42 @@ export default function QuoteForm() {
               <select
                 id="serviceArea"
                 value={formData.serviceArea}
-                onChange={(e) => updateField("serviceArea", e.target.value)}
+                onChange={(e) => {
+                  updateField("serviceArea", e.target.value);
+                  if (e.target.value !== "Other") updateField("customServiceArea", "");
+                }}
                 className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border border-brand-border bg-white text-brand-dark text-sm md:text-base
                            focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red
                            transition-colors appearance-none cursor-pointer"
               >
                 <option value="">Select your area...</option>
-                {company.serviceAreas.map((area) => (
+                {[...company.serviceAreas, "Norristown", "Levittown", "Bensalem"].map((area) => (
                   <option key={area} value={area}>
                     {area}
                   </option>
                 ))}
+                <option value="Other">Other</option>
               </select>
               <FieldError field="serviceArea" />
+
+              {formData.serviceArea === "Other" && (
+                <div className="mt-3">
+                  <label htmlFor="customServiceArea" className="block text-xs md:text-sm font-semibold text-brand-dark mb-1.5">
+                    Please enter your location:
+                  </label>
+                  <input
+                    id="customServiceArea"
+                    type="text"
+                    value={formData.customServiceArea}
+                    onChange={(e) => updateField("customServiceArea", e.target.value)}
+                    placeholder="e.g. Doylestown, Trenton, NJ..."
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border border-brand-border bg-white text-brand-dark text-sm md:text-base
+                               focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red
+                               transition-colors"
+                  />
+                  <FieldError field="customServiceArea" />
+                </div>
+              )}
             </div>
 
             <div>
@@ -792,7 +818,7 @@ export default function QuoteForm() {
             </p>
 
             <div className="space-y-2 md:space-y-4">
-              <ReviewRow label="Service Area" value={formData.serviceArea} />
+              <ReviewRow label="Service Area" value={formData.serviceArea === "Other" ? formData.customServiceArea : formData.serviceArea} />
               <ReviewRow label="Property Type" value={formData.propertyType ? formData.propertyType.charAt(0).toUpperCase() + formData.propertyType.slice(1) : ""} />
               <ReviewRow label="Project Type" value={getProjectTypeLabel(formData.projectType)} />
               <ReviewRow label="Services Needed" value={getServicesLabels(formData.servicesNeeded)} />

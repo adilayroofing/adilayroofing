@@ -12,7 +12,8 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const {
-      serviceArea,
+      serviceArea: rawServiceArea,
+      customServiceArea,
       propertyType,
       projectType,
       servicesNeeded,
@@ -25,6 +26,8 @@ export async function POST(request: Request) {
       email,
       preferredContact,
     } = body;
+
+    const serviceArea = rawServiceArea === "Other" ? (customServiceArea || "Other") : rawServiceArea;
 
     // Validate required fields
     if (!fullName || !phone || !email || !serviceArea || !propertyType || !projectType || !timeline || !preferredContact) {
