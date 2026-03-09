@@ -49,6 +49,9 @@ export default function ContactForm() {
 
       setSubmittedName(data.name);
       setSubmitted(true);
+      if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        window.fbq("track", "Lead");
+      }
       setTimeout(() => {
         if (formTopRef.current) {
           // Temporarily override CSS scroll-behavior: smooth so scrollIntoView works reliably

@@ -316,6 +316,9 @@ export default function QuoteForm() {
       }
 
       setSubmitted(true);
+      if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        window.fbq("track", "Lead");
+      }
       setTimeout(scrollToFormTop, 50);
     } catch (err) {
       setSubmitError(
