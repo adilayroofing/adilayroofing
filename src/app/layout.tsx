@@ -134,6 +134,26 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+        <Script id="click-to-call-tracking" strategy="afterInteractive">
+          {`
+            document.addEventListener('click', function(e) {
+              var link = e.target.closest('a[href^="tel:"]');
+              if (!link) return;
+              // Google Ads conversion
+              if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                  send_to: '${GOOGLE_ADS_ID}/call_click',
+                  event_category: 'engagement',
+                  event_label: 'phone_call'
+                });
+              }
+              // Meta Pixel
+              if (typeof fbq === 'function') {
+                fbq('track', 'Contact', { content_name: 'Phone Call' });
+              }
+            });
+          `}
+        </Script>
         <noscript>
           <img
             height="1"
