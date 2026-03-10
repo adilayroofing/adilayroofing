@@ -64,8 +64,42 @@ export default async function ServicePage({ params }: PageProps) {
     .filter((s) => s.slug !== service.slug)
     .slice(0, 3);
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    provider: {
+      "@type": "RoofingContractor",
+      name: "Adilay Roofing",
+      url: "https://www.adilayroofing.com",
+      telephone: "+18888234766",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "2020 Dreer St., Unit 101",
+        addressLocality: "Philadelphia",
+        addressRegion: "PA",
+        postalCode: "19125",
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "City", "name": "Philadelphia" },
+      { "@type": "AdministrativeArea", "name": "Bucks County" },
+      { "@type": "AdministrativeArea", "name": "Montgomery County" },
+      { "@type": "AdministrativeArea", "name": "Delaware County" },
+      { "@type": "AdministrativeArea", "name": "Chester County" },
+    ],
+    url: `${BASE_URL}/services/${slug}`,
+    image: service.image ? `${BASE_URL}${service.image}` : undefined,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* ================================================================= */}
       {/* Hero Section                                                      */}
       {/* ================================================================= */}
