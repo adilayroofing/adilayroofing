@@ -257,10 +257,10 @@ export default function ContactPage() {
       </section>
 
       {/* ── Map Section ── */}
-      <section>
+      <section className="relative">
         <iframe
-          title="Adilay Roofing Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.5!2d-75.13!3d39.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z2020+Dreer+St%2C+Philadelphia%2C+PA+19125!5e0!3m2!1sen!2sus!4v1"
+          title="Adilay Roofing Service Area"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d392483.05756051!2d-75.4455701!3d40.0713949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa0bd1e455cbe4473%3A0x74b01e3f11e033a2!2sAdilay%20roofing!5e0!3m2!1sen!2sus!4v1"
           width="100%"
           height="400"
           style={{ border: 0 }}
@@ -269,6 +269,19 @@ export default function ContactPage() {
           referrerPolicy="no-referrer-when-downgrade"
           className="w-full"
         />
+        <div className="bg-white border-t border-brand-border py-3 px-4 text-center">
+          <a
+            href="https://www.google.com/maps/place/Adilay+roofing/@40.0713949,-75.4455701,10z/data=!3m1!4b1!4m6!3m5!1s0xa0bd1e455cbe4473:0x74b01e3f11e033a2!8m2!3d40.071862!4d-75.115953!16s%2Fg%2F11ww__wfkd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red-dark transition-colors text-sm md:text-base"
+          >
+            Open in Google Maps
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
       </section>
 
       {/* ── Emergency Banner ── */}
