@@ -155,6 +155,22 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               document.addEventListener('click', function(e) {
+                // CTA click tracking
+                var cta = e.target.closest('a[href="/contact"], a[href="/get-quote"]');
+                if (cta && typeof gtag === 'function') {
+                  var loc = 'page';
+                  var el = cta;
+                  if (el.closest('header')) loc = 'header';
+                  else if (el.closest('footer')) loc = 'footer';
+                  else if (el.closest('[class*="FloatingQuoteTab"]') || el.closest('[class*="floating"]')) loc = 'floating_tab';
+                  else if (el.closest('section:first-of-type')) loc = 'hero';
+                  gtag('event', 'cta_click', {
+                    cta_text: (cta.textContent || '').trim(),
+                    cta_location: loc,
+                    link_url: cta.getAttribute('href')
+                  });
+                }
+                // Phone click tracking
                 var link = e.target.closest('a[href^="tel:"]');
                 if (!link) return;
                 if (typeof gtag === 'function') {
@@ -162,6 +178,10 @@ export default function RootLayout({
                     send_to: '${GOOGLE_ADS_ID}/call_click',
                     event_category: 'engagement',
                     event_label: 'phone_call'
+                  });
+                  gtag('event', 'phone_call_click', {
+                    event_category: 'engagement',
+                    link_url: link.getAttribute('href')
                   });
                 }
                 if (typeof fbq === 'function') {

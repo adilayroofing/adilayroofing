@@ -52,6 +52,14 @@ export default function ContactForm() {
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead");
       }
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          event_category: "Contact Form",
+          service_type: data.service,
+          currency: "USD",
+          value: 1,
+        });
+      }
       setTimeout(() => {
         if (formTopRef.current) {
           // Temporarily override CSS scroll-behavior: smooth so scrollIntoView works reliably

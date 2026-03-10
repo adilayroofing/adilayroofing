@@ -278,11 +278,28 @@ export default function QuoteForm() {
 
   /* ---------- navigation ---------- */
 
+  const STEP_NAMES: Record<number, string> = {
+    1: "Service Area",
+    2: "Project Type",
+    3: "Services Needed",
+    4: "Timeline",
+    5: "Property Details",
+    6: "Contact Info",
+    7: "Review & Submit",
+  };
+
   function goNext() {
     if (!validateStep(currentStep)) return;
+    const nextStep = Math.min(currentStep + 1, TOTAL_STEPS);
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "quote_form_step", {
+        step_number: nextStep,
+        step_name: STEP_NAMES[nextStep],
+      });
+    }
     setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentStep((s) => Math.min(s + 1, TOTAL_STEPS));
+      setCurrentStep(nextStep);
       setIsTransitioning(false);
       setTimeout(scrollToFormTop, 50);
     }, 200);
@@ -318,6 +335,19 @@ export default function QuoteForm() {
       setSubmitted(true);
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead");
+      }
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          event_category: "Quote Form",
+          service_type: formData.servicesNeeded
+            .map((v) => SERVICE_OPTIONS.find((s) => s.value === v)?.label ?? v)
+            .join(", "),
+          property_type: formData.propertyType,
+          project_type: formData.projectType,
+          timeline: formData.timeline,
+          currency: "USD",
+          value: 5,
+        });
       }
       setTimeout(scrollToFormTop, 50);
     } catch (err) {
