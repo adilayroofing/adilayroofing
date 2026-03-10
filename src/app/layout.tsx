@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -107,6 +106,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics (gtag.js) - GA4 + Google Ads */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+              gtag('config', '${GOOGLE_ADS_ID}');
+            `,
+          }}
+        />
+        {/* Meta Pixel */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${META_PIXEL_ID}');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
         <noscript>
           <img
             height="1"
@@ -118,53 +150,27 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className={`${lato.variable} antialiased`}>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+        {/* Click-to-call conversion tracking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('click', function(e) {
+                var link = e.target.closest('a[href^="tel:"]');
+                if (!link) return;
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    send_to: '${GOOGLE_ADS_ID}/call_click',
+                    event_category: 'engagement',
+                    event_label: 'phone_call'
+                  });
+                }
+                if (typeof fbq === 'function') {
+                  fbq('track', 'Contact', { content_name: 'Phone Call' });
+                }
+              });
+            `,
+          }}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-            gtag('config', '${GOOGLE_ADS_ID}');
-          `}
-        </Script>
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${META_PIXEL_ID}');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-        <Script id="click-to-call-tracking" strategy="afterInteractive">
-          {`
-            document.addEventListener('click', function(e) {
-              var link = e.target.closest('a[href^="tel:"]');
-              if (!link) return;
-              // Google Ads conversion
-              if (typeof gtag === 'function') {
-                gtag('event', 'conversion', {
-                  send_to: '${GOOGLE_ADS_ID}/call_click',
-                  event_category: 'engagement',
-                  event_label: 'phone_call'
-                });
-              }
-              // Meta Pixel
-              if (typeof fbq === 'function') {
-                fbq('track', 'Contact', { content_name: 'Phone Call' });
-              }
-            });
-          `}
-        </Script>
         <JsonLd />
         <ScrollToTop />
         <Header />
