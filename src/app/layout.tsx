@@ -107,6 +107,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
+      </head>
+      <body className={`${lato.variable} antialiased`}>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
@@ -154,17 +165,6 @@ export default function RootLayout({
             });
           `}
         </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
-      </head>
-      <body className={`${lato.variable} antialiased`}>
         <JsonLd />
         <ScrollToTop />
         <Header />
