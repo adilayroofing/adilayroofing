@@ -106,10 +106,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics (gtag.js) - GA4 + Google Ads */}
+        {/* Google tag (gtag.js) - loads via Google Ads ID, configures both GA4 + Ads */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -117,8 +117,8 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA_MEASUREMENT_ID}');
               gtag('config', '${GOOGLE_ADS_ID}');
+              gtag('config', '${GA_MEASUREMENT_ID}');
             `,
           }}
         />
