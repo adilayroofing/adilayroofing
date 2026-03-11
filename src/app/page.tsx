@@ -272,7 +272,7 @@ export default function Home() {
               {
                 src: "/images/adilay-crew-at-work.jpg",
                 alt: "Adilay Roofing van and crew working on a multi-unit roof replacement in Philadelphia",
-                objPos: "30% 35%",
+                objPos: "30% 45%",
                 extraClass: "",
               },
               {
@@ -283,7 +283,7 @@ export default function Home() {
               },
             ].map((img, i) => (
               <ScrollReveal key={img.src} delay={i * 120} distance={16}>
-                <div className="relative h-80 md:h-96 overflow-hidden">
+                <div className="relative h-80 md:h-[28rem] overflow-hidden">
                   <img
                     src={img.src}
                     alt={img.alt}
