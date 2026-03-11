@@ -17,6 +17,7 @@ const serviceImages: Record<string, string> = {
 const imagePosition: Record<string, string> = {
   "roof-replacement": "object-top",
   "roof-repair": "object-top",
+  "flat-roofing": "object-[center_20%]",
 };
 
 interface ServiceCardProps {

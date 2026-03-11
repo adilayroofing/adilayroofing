@@ -104,6 +104,16 @@ export const galleryProjects: GalleryProject[] = [
     location: "Bucks County, PA",
   },
   {
+    id: "project-11",
+    title: "Multi-Unit Roof Replacement",
+    category: "roof-replacement",
+    description:
+      "Full roof replacement on a multi-unit townhouse building. Our crew completed a full tear-off and installed new architectural shingles with proper flashing and ventilation.",
+    location: "Philadelphia, PA",
+    beforeImage: "/images/before-after-8-before.jpg",
+    afterImage: "/images/before-after-8-after.jpg",
+  },
+  {
     id: "project-10",
     title: "Shingle Roof Replacement",
     category: "roof-replacement",

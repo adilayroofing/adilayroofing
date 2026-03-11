@@ -270,14 +270,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {[
               {
-                src: "/images/crew-flat-roof-action.png",
-                alt: "Adilay Roofing crew installing EPDM membrane on a Philadelphia flat roof",
-                objPos: "50% 35%",
-                scale: true,
+                src: "/images/adilay-crew-at-work.jpg",
+                alt: "Adilay Roofing van and crew working on a multi-unit roof replacement in Philadelphia",
+                objPos: "30% 60%",
+                scale: false,
               },
               {
-                src: "/images/flat-roof-materials-staging.png",
-                alt: "Professional flat roof project with EPDM materials staged on a Philadelphia row home",
+                src: "/images/adilay-safety-crew.jpg",
+                alt: "Adilay Roofing crew with safety harnesses and hard hats installing underlayment on a steep roof",
                 objPos: "center 40%",
                 scale: false,
               },

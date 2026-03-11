@@ -96,6 +96,7 @@ export default function GalleryPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {[
                 /* Roof Replacement */
+                { id: 8, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Multi-Unit Roof Replacement" },
                 { id: 1, ext: "jpg", beforePos: "object-top", afterPos: "object-top", label: "Roof Replacement" },
                 { id: 6, ext: "png", beforePos: "object-center", afterPos: "object-center", label: "Complete Roof Replacement" },
                 { id: 7, ext: "jpg", beforePos: "object-center", afterPos: "object-center", label: "Shingle Roof Replacement" },
