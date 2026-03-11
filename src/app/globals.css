@@ -185,7 +185,7 @@
 }
 @media (min-width: 768px) {
   .safety-crew-photo {
-    object-position: center 40%;
+    object-position: 20% 40%;
   }
 }
 
