@@ -181,7 +181,7 @@
 
 /* ── Safety crew photo: show helmeted workers on mobile ── */
 .safety-crew-photo {
-  object-position: 25% 40%;
+  object-position: 10% 40%;
 }
 @media (min-width: 768px) {
   .safety-crew-photo {
