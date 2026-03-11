@@ -272,7 +272,7 @@ export default function Home() {
               {
                 src: "/images/adilay-crew-at-work.jpg",
                 alt: "Adilay Roofing van and crew working on a multi-unit roof replacement in Philadelphia",
-                objPos: "30% 60%",
+                objPos: "30% 35%",
                 extraClass: "",
               },
               {
