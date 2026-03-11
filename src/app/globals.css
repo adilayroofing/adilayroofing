@@ -179,6 +179,16 @@
   .blog-prose li { font-size: 1.125rem; }
 }
 
+/* ── Safety crew photo: show helmeted workers on mobile ── */
+.safety-crew-photo {
+  object-position: 25% 40%;
+}
+@media (min-width: 768px) {
+  .safety-crew-photo {
+    object-position: center 40%;
+  }
+}
+
 /* ── Crew photo scale (Safari-safe) ── */
 @media (min-width: 768px) {
   .crew-photo-scale {

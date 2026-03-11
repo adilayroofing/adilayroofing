@@ -273,13 +273,13 @@ export default function Home() {
                 src: "/images/adilay-crew-at-work.jpg",
                 alt: "Adilay Roofing van and crew working on a multi-unit roof replacement in Philadelphia",
                 objPos: "30% 60%",
-                scale: false,
+                extraClass: "",
               },
               {
                 src: "/images/adilay-safety-crew.jpg",
                 alt: "Adilay Roofing crew with safety harnesses and hard hats installing underlayment on a steep roof",
-                objPos: "center 40%",
-                scale: false,
+                objPos: "",
+                extraClass: "safety-crew-photo",
               },
             ].map((img, i) => (
               <ScrollReveal key={img.src} delay={i * 120} distance={16}>
@@ -287,8 +287,8 @@ export default function Home() {
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className={`w-full h-full object-cover${img.scale ? " crew-photo-scale" : ""}`}
-                    style={{ objectPosition: img.objPos }}
+                    className={`w-full h-full object-cover ${img.extraClass}`}
+                    style={img.objPos ? { objectPosition: img.objPos } : undefined}
                   />
                 </div>
               </ScrollReveal>
