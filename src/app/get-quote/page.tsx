@@ -74,12 +74,32 @@ export default function GetQuotePage() {
             </div>
 
             <div className="mb-5 md:mb-8">
-              <p className="text-white/60 text-xs md:text-sm mb-1 md:mb-2">Or call us directly:</p>
+              <p className="text-white/60 text-xs md:text-sm mb-1 md:mb-2">Or contact us directly:</p>
               <a
                 href={`tel:${company.phoneRaw}`}
-                className="text-xl md:text-2xl font-bold text-brand-red hover:text-brand-red-dark transition-colors"
+                className="block text-xl md:text-2xl font-bold text-brand-red hover:text-brand-red-dark transition-colors"
               >
                 {company.phone}
+              </a>
+              <a
+                href="sms:+12672553620&body=Hi%2C%20I%27m%20interested%20in%20a%20free%20roofing%20estimate."
+                className="mt-2.5 md:mt-3 inline-flex items-center justify-center gap-2 border border-white/40 hover:border-white/70 bg-white/10 hover:bg-white/15 rounded-sm px-4 md:px-5 py-2 md:py-2.5 text-white text-sm md:text-base font-semibold transition-all duration-200"
+              >
+                <svg
+                  className="w-4 h-4 md:w-5 md:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
+                </svg>
+                Text Us
               </a>
             </div>
 
