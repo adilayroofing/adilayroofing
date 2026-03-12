@@ -172,20 +172,40 @@ export default function RootLayout({
                 }
                 // Phone click tracking
                 var link = e.target.closest('a[href^="tel:"]');
-                if (!link) return;
-                if (typeof gtag === 'function') {
-                  gtag('event', 'conversion', {
-                    send_to: '${GOOGLE_ADS_ID}/call_click',
-                    event_category: 'engagement',
-                    event_label: 'phone_call'
-                  });
-                  gtag('event', 'phone_call_click', {
-                    event_category: 'engagement',
-                    link_url: link.getAttribute('href')
-                  });
+                if (link) {
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'conversion', {
+                      send_to: '${GOOGLE_ADS_ID}/call_click',
+                      event_category: 'engagement',
+                      event_label: 'phone_call'
+                    });
+                    gtag('event', 'phone_call_click', {
+                      event_category: 'engagement',
+                      link_url: link.getAttribute('href')
+                    });
+                  }
+                  if (typeof fbq === 'function') {
+                    fbq('track', 'Contact', { content_name: 'Phone Call' });
+                  }
                 }
-                if (typeof fbq === 'function') {
-                  fbq('track', 'Contact', { content_name: 'Phone Call' });
+                // SMS / Text Us click tracking
+                var smsLink = e.target.closest('a[href^="sms:"]');
+                if (smsLink) {
+                  var smsLoc = 'page';
+                  if (smsLink.closest('header')) smsLoc = 'header';
+                  else if (smsLink.closest('footer')) smsLoc = 'footer';
+                  else if (smsLink.closest('section:first-of-type')) smsLoc = 'hero';
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'sms_click', {
+                      event_category: 'engagement',
+                      event_label: 'text_us',
+                      link_url: smsLink.getAttribute('href'),
+                      click_location: smsLoc
+                    });
+                  }
+                  if (typeof fbq === 'function') {
+                    fbq('track', 'Contact', { content_name: 'Text Message' });
+                  }
                 }
               });
             `,
