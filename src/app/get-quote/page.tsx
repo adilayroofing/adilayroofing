@@ -104,17 +104,17 @@ export default function GetQuotePage() {
             </div>
 
             {/* Trust signals - horizontal on mobile, column on large */}
-            <div className="flex flex-row lg:flex-col gap-3 md:gap-4 justify-center lg:justify-start">
+            <div className="flex flex-row lg:flex-col gap-4 md:gap-4 justify-center lg:justify-start items-start">
               {[
                 { icon: "✓", text: "Free Estimates" },
                 { icon: "✓", text: "No Obligation" },
                 { icon: "✓", text: "Response Within 24hrs" },
               ].map((item) => (
-                <div key={item.text} className="flex flex-col md:flex-row items-center gap-1.5 md:gap-3">
+                <div key={item.text} className="flex flex-col md:flex-row items-center gap-1.5 md:gap-3 flex-1 lg:flex-none">
                   <span className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs md:text-sm flex-shrink-0">
                     {item.icon}
                   </span>
-                  <span className="text-white/90 font-medium text-xs md:text-base text-center md:text-left">{item.text}</span>
+                  <span className="text-white/90 font-medium text-[10px] md:text-base text-center md:text-left leading-tight">{item.text}</span>
                 </div>
               ))}
             </div>
