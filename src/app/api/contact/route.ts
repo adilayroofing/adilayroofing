@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { appendToSheet } from "@/lib/googleSheets";
 
 const RECIPIENT_EMAIL = "adilayroofing@gmail.com";
 
@@ -101,6 +102,17 @@ Submitted from Adilay Roofing website.
         },
       ],
     });
+
+    // Append to Google Sheet (non-blocking — email is primary)
+    await appendToSheet("Contact Leads", [
+      new Date().toISOString(),
+      name,
+      email,
+      phone || "Not provided",
+      service,
+      message,
+      "Contact Form",
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (error) {
