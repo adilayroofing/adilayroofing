@@ -108,6 +108,16 @@ const SERVICE_OPTIONS = [
     ),
   },
   {
+    value: "roof-replacement-free-gutter-cleaning",
+    label: "Roof Replacement + Free Gutter Cleaning",
+    icon: (
+      <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8.25v3.75m0 0v.75m0-.75h.75m-.75 0h-.75" />
+      </svg>
+    ),
+  },
+  {
     value: "flat-roofing",
     label: "Flat Roofing",
     icon: (
@@ -876,7 +886,12 @@ export default function QuoteForm() {
               </div>
             )}
 
-            <p className="text-xs text-brand-gray mt-6 md:mt-8 leading-relaxed">
+            <p className="text-xs md:text-[13px] text-brand-gray mt-5 md:mt-6 flex items-start gap-1.5">
+              <span className="text-green-600 font-bold flex-shrink-0">✓</span>
+              Mention this offer to claim your free gutter cleaning with roof replacement.
+            </p>
+
+            <p className="text-xs text-brand-gray mt-3 md:mt-4 leading-relaxed">
               By submitting, you agree to be contacted regarding your project. We
               respect your privacy and will never share your information with third
               parties.

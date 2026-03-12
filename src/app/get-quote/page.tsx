@@ -61,10 +61,17 @@ export default function GetQuotePage() {
               <span className="text-brand-red">FREE QUOTE</span>{" "}
               TODAY!
             </h1>
-            <p className="text-sm md:text-lg text-white/80 mb-5 md:mb-8">
+            <p className="text-sm md:text-lg text-white/80 mb-4 md:mb-6">
               Fill out this short form and we will send you a detailed proposal
               tailored to your exact property measurements.
             </p>
+
+            {/* Gutter Cleaning Offer Banner */}
+            <div className="mb-4 md:mb-6 bg-amber-500/15 border-l-4 border-amber-400 rounded-r-lg px-3 py-2.5 md:px-4 md:py-3 text-center lg:text-left">
+              <p className="text-white text-xs md:text-sm font-semibold leading-snug">
+                🎁 Limited Offer: <span className="text-amber-300">FREE Gutter Cleaning</span> with Every Roof Replacement — First-Time Customers
+              </p>
+            </div>
 
             <div className="mb-5 md:mb-8">
               <p className="text-white/60 text-xs md:text-sm mb-1 md:mb-2">Or call us directly:</p>
