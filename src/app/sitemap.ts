@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
+import { locations } from "@/data/locations";
 import { getPostSlugs } from "@/lib/blog";
 
 const BASE_URL = "https://www.adilayroofing.com";
@@ -7,6 +8,13 @@ const BASE_URL = "https://www.adilayroofing.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = services.map((service) => ({
     url: `${BASE_URL}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const locationPages = locations.map((location) => ({
+    url: `${BASE_URL}/service-areas/${location.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -37,13 +45,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/service-areas`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.9,
     },
+    ...locationPages,
     {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${BASE_URL}/gallery`,

@@ -16,19 +16,24 @@ import ScrollReveal from "@/components/ScrollReveal";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title:
-    "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA — Free Estimates",
+  title: {
+    absolute: "Roofer Philadelphia | Best Roofing Contractor — Adilay Roofing",
+  },
   description:
-    "Philadelphia's top-rated roofing contractor with 20+ years experience. Roof replacement, repair, flat roofing, siding, windows & gutters. Licensed PA184779, insured. Free estimates — (888) 823-4766.",
+    "Looking for a roofer in Philadelphia? Adilay Roofing is the top-rated roofing contractor with 20+ years experience, 2,080+ projects & 5-star reviews. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
   keywords: [
+    "roofer Philadelphia",
     "roofing contractor Philadelphia",
-    "roof replacement Philadelphia PA",
-    "Philadelphia roofer",
-    "best roofing company Philadelphia",
+    "best roofer Philadelphia",
+    "roof replacement Philadelphia",
     "roof repair Philadelphia",
+    "Philadelphia roofer",
+    "roofer near me",
+    "roofing company near me",
+    "affordable roofer Philadelphia",
     "flat roofing Philadelphia",
     "siding installation Philadelphia",
-    "roofing company near me",
+    "emergency roof repair Philadelphia",
     "licensed roofer PA",
     "free roofing estimate Philadelphia",
   ],
@@ -145,9 +150,8 @@ export default function Home() {
         {/* Hero background image */}
         <img
           src="/images/hero-van.jpg"
-          alt=""
+          alt="Adilay Roofing van and crew at a roofing job site in Philadelphia PA"
           className="absolute inset-0 w-full h-full object-cover object-center"
-          aria-hidden="true"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/80" />
@@ -156,9 +160,9 @@ export default function Home() {
         <div className="relative z-10 container-wide mx-auto px-4 py-16 md:py-32 text-center">
           <ScrollReveal delay={200} duration={600} distance={28}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-              Philadelphia&apos;s Trusted
+              Philadelphia&apos;s #1 Rated
               <br />
-              <span className="text-brand-red">Roofing Experts</span>
+              <span className="text-brand-red">Roofing Contractor</span>
             </h1>
           </ScrollReveal>
 
@@ -170,9 +174,10 @@ export default function Home() {
 
           <ScrollReveal delay={550} duration={600} distance={16}>
             <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              From roof replacements to emergency repairs, Adilay Roofing has
-              served Philadelphia and surrounding areas for over 20 years. Get a
-              detailed proposal tailored to your property — free.
+              Looking for the best roofer in Philadelphia? From roof replacement
+              and roof repair to emergency roofing services, Adilay Roofing has
+              served Philadelphia and surrounding areas for over 20 years.
+              Licensed, insured, 5-star rated. Get a free estimate today.
             </p>
           </ScrollReveal>
 
@@ -307,6 +312,7 @@ export default function Home() {
                   <img
                     src={img.src}
                     alt={img.alt}
+                    loading="lazy"
                     className={`w-full h-full object-cover ${img.extraClass}`}
                     style={img.objPos ? { objectPosition: img.objPos } : undefined}
                   />
@@ -337,9 +343,9 @@ export default function Home() {
                   {/* Background image */}
                   <img
                     src={item.bgImage}
-                    alt=""
+                    alt={`${item.title} — Adilay Roofing Philadelphia`}
+                    loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    aria-hidden="true"
                   />
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-opacity duration-300" />
@@ -374,7 +380,8 @@ export default function Home() {
               <div className="relative rounded-sm overflow-hidden shadow-lg">
                 <img
                   src="/images/team-office.jpg"
-                  alt="Adilay Roofing team at the office"
+                  alt="Adilay Roofing team at the Philadelphia office — family-owned roofer"
+                  loading="lazy"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -426,6 +433,7 @@ export default function Home() {
                   <img
                     src="/images/pa-license.png"
                     alt="Commonwealth of Pennsylvania Home Improvement Contractor License - Adilay Roofing LLC, Registration PA184779, Valid Until 7/25/2027"
+                    loading="lazy"
                     className="w-full h-auto"
                   />
                 </div>
@@ -488,8 +496,8 @@ export default function Home() {
         {/* Background image */}
         <img
           src="/images/gallery-banner.png"
-          alt=""
-          aria-hidden="true"
+          alt="Roofing project gallery — before and after photos by Adilay Roofing Philadelphia"
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
         />
         {/* Dark overlay for text readability */}
@@ -541,7 +549,8 @@ export default function Home() {
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <img
                   src="/images/adilay-van-service-areas.jpg"
-                  alt="Adilay Roofing van and crew completing a roof replacement on a residential property"
+                  alt="Adilay Roofing van and crew completing a roof replacement on a residential property in Philadelphia"
+                  loading="lazy"
                   className="w-full h-auto object-cover"
                 />
               </div>

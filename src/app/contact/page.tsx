@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "Contact Adilay Roofing — Free Estimate | (888) 823-4766",
+  title: "Contact Us — Free Roofing Estimate | (888) 823-4766",
   description:
     "Contact Adilay Roofing for a free roofing estimate in Philadelphia, PA. Call (888) 823-4766, email info@adilayroofing.com, or fill out our quick form. Fast response!",
   keywords: [

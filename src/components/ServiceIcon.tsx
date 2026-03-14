@@ -113,4 +113,31 @@ const icons: Record<string, React.ReactNode> = {
       />
     </>
   ),
+
+  // Emergency Roof Repair — bolt / lightning
+  "emergency-roof-repair": (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.42 15.17l-5.16-5.17a3.12 3.12 0 114.42-4.42l.74.74.74-.74a3.12 3.12 0 014.42 4.42l-5.16 5.17z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M13 10l-1.5 3h3L13 16"
+      />
+    </>
+  ),
+
+  // Commercial Roofing — office building
+  "commercial-roofing": (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.25 21h19.5M3.75 3h16.5M4.5 3v18M19.5 3v18M8.25 7.5h1.5M8.25 10.5h1.5M8.25 13.5h1.5M14.25 7.5h1.5M14.25 10.5h1.5M14.25 13.5h1.5M8.25 18.75h7.5V15.75h-7.5v3z"
+      />
+    </>
+  ),
 };

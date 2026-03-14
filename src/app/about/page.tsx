@@ -6,7 +6,7 @@ import { company } from "@/data/company";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "About Adilay Roofing — 20+ Years Serving Philadelphia, PA",
+  title: "About Us — 20+ Years Serving Philadelphia, PA",
   description:
     "Meet Adilay Roofing — Philadelphia's trusted roofing contractor. 20+ years experience, 2,080+ projects, PA license PA184779. Family-owned, quality craftsmanship.",
   keywords: [

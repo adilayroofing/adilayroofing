@@ -7,9 +7,9 @@ import CTASection from "@/components/CTASection";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "Roofing & Exterior Services in Philadelphia, PA | Adilay Roofing",
+  title: "Roofing & Exterior Services Philadelphia PA",
   description:
-    "Full roofing services in Philadelphia: roof replacement, repair, flat roofing, shingle installation, siding, windows & gutters. Licensed PA184779. Free estimates!",
+    "Full roofing services in Philadelphia: roof replacement, repair, flat roofing, shingle installation, siding, windows, gutters, emergency roof repair & commercial roofing. Licensed PA184779. Free estimates!",
   keywords: [
     "roofing services Philadelphia",
     "roof replacement service Philadelphia",
@@ -17,12 +17,14 @@ export const metadata: Metadata = {
     "flat roofing Philadelphia",
     "siding installation Philadelphia",
     "gutter installation Philadelphia",
+    "emergency roof repair Philadelphia",
+    "commercial roofing Philadelphia",
   ],
   alternates: { canonical: `${BASE_URL}/services` },
   openGraph: {
     title: "Roofing & Exterior Services — Adilay Roofing Philadelphia",
     description:
-      "Comprehensive roofing and exterior services. Roof replacement, repair, flat roofing, siding, windows & gutters.",
+      "Comprehensive roofing and exterior services. Roof replacement, repair, flat roofing, siding, windows, gutters, emergency repairs & commercial roofing.",
     url: `${BASE_URL}/services`,
   },
 };

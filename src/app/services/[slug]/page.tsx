@@ -30,13 +30,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${service.title} in Philadelphia, PA — Adilay Roofing`,
-    description: `${service.tagline} — Adilay Roofing offers professional ${service.title.toLowerCase()} in Philadelphia, PA. Free estimates — call (888) 823-4766.`,
+    title: `${service.title} Philadelphia PA | Free Estimates`,
+    description: `Need ${service.title.toLowerCase()} in Philadelphia? Adilay Roofing offers professional ${service.title.toLowerCase()} services with 20+ years experience. Licensed PA184779, 5-star rated. Free estimates — call (888) 823-4766.`,
     keywords: [
       `${service.title.toLowerCase()} Philadelphia`,
+      `${service.title.toLowerCase()} Philadelphia PA`,
       `${service.title.toLowerCase()} near me`,
+      `best ${service.title.toLowerCase()} Philadelphia`,
       `Philadelphia ${service.title.toLowerCase()} contractor`,
-      "roofing contractor Philadelphia PA",
+      `affordable ${service.title.toLowerCase()} Philadelphia`,
+      "roofer Philadelphia",
+      "roofing contractor Philadelphia",
     ],
     alternates: { canonical: `${BASE_URL}/services/${slug}` },
     openGraph: {
@@ -120,7 +124,7 @@ export default async function ServicePage({ params }: PageProps) {
               <ServiceIcon slug={service.slug} className="w-8 h-8" />
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              {service.title}
+              {service.title} in Philadelphia, PA
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
               {service.tagline}

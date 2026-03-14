@@ -11,7 +11,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "Get a Free Roofing Estimate in Philadelphia, PA | Adilay Roofing",
+  title: "Free Roofing Estimate Philadelphia PA",
   description:
     "Request your free, no-obligation roofing estimate from Adilay Roofing. Serving Philadelphia & surrounding counties. Call (888) 823-4766 or fill out our quick form.",
   keywords: [

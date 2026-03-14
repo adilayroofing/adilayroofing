@@ -8,7 +8,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "Roofing FAQ — Common Questions Answered | Philadelphia Roofers",
+  title: "Roofing FAQ — Common Questions Answered",
   description:
     "Answers to common roofing questions about costs, timelines, insurance claims, and materials. Expert answers from Adilay Roofing, Philadelphia's trusted contractor.",
   keywords: [

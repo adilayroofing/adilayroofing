@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { company } from "@/data/company";
+import { locations } from "@/data/locations";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "Service Areas — Roofing in Philadelphia, Bucks & Montgomery County",
+  title: "Service Areas — Philadelphia, Bucks, Montgomery & Delaware County",
   description:
-    "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County & Chester County, PA. Local roofers with fast response. Free estimates!",
+    "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County & Chester County, PA. Local roofer with fast response times. Free estimates — call (888) 823-4766.",
   keywords: [
-    "roofing service areas Philadelphia",
-    "roofer Bucks County PA",
-    "roofing Montgomery County PA",
     "roofer near me Philadelphia",
-    "Delaware County roofing contractor",
+    "roofing contractor near me",
+    "roofer Bucks County PA",
+    "roofer Montgomery County PA",
+    "roofer Delaware County PA",
     "Chester County roofer",
+    "roofer near me",
+    "roofing service areas Philadelphia",
   ],
   alternates: { canonical: `${BASE_URL}/service-areas` },
   openGraph: {
@@ -25,35 +29,8 @@ export const metadata: Metadata = {
   },
 };
 
-// TODO: Confirm all service area cities/counties with the client
-const paAreas = [
-  {
-    name: "Philadelphia",
-    note: "Our Home Base",
-    description:
-      "Full roofing services across all Philadelphia neighborhoods including Center City, Northeast, South Philly, Kensington, and more.",
-  },
-  {
-    name: "Bucks County",
-    description:
-      "Serving Levittown, Bensalem, Doylestown, Newtown, Langhorne, and surrounding communities.",
-  },
-  {
-    name: "Montgomery County",
-    description:
-      "Roofing services in Norristown, King of Prussia, Lansdale, Conshohocken, Ambler, and nearby areas.",
-  },
-  {
-    name: "Delaware County",
-    description:
-      "Covering Media, Drexel Hill, Springfield, Upper Darby, Havertown, and the surrounding region.",
-  },
-  {
-    name: "Chester County",
-    description:
-      "Professional roofing in West Chester, Downingtown, Phoenixville, Coatesville, and nearby towns.",
-  },
-];
+const paLocations = locations.filter((l) => l.state === "PA");
+const njLocations = locations.filter((l) => l.state === "NJ");
 
 
 const localBenefits = [
@@ -198,31 +175,66 @@ export default function ServiceAreasPage() {
                 Pennsylvania
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {paAreas.map((area) => (
-                  <div
-                    key={area.name}
-                    className="border border-brand-border rounded-sm p-6 hover:shadow-md transition-shadow bg-white"
+                {paLocations.map((area) => (
+                  <Link
+                    key={area.slug}
+                    href={`/service-areas/${area.slug}`}
+                    className="group border border-brand-border rounded-sm p-6 hover:shadow-md hover:border-brand-red/30 transition-all bg-white"
                   >
                     <div className="flex items-start gap-3 mb-3">
                       <MapPinIcon />
                       <div>
-                        <h4 className="text-lg font-bold text-brand-dark">
+                        <h4 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
                           {area.name}
                         </h4>
-                        {area.note && (
+                        {area.slug === "philadelphia" && (
                           <span className="inline-block text-xs font-semibold text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-sm mt-1">
-                            {area.note}
+                            Our Home Base
                           </span>
                         )}
+                        <span className="inline-block text-xs text-brand-gray mt-1 capitalize">
+                          {area.type === "county" ? "County" : area.type === "neighborhood" ? "Neighborhood" : "City"}
+                        </span>
                       </div>
                     </div>
-                    <p className="text-brand-gray text-sm leading-relaxed">
-                      {area.description}
+                    <p className="text-brand-gray text-sm leading-relaxed line-clamp-2">
+                      {area.metaDescription}
                     </p>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
+
+            {/* New Jersey Areas */}
+            {njLocations.length > 0 && (
+              <div className="mb-16">
+                <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-8 flex items-center gap-3">
+                  <span className="w-10 h-1 bg-brand-red inline-block" />
+                  New Jersey
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {njLocations.map((area) => (
+                    <Link
+                      key={area.slug}
+                      href={`/service-areas/${area.slug}`}
+                      className="group border border-brand-border rounded-sm p-6 hover:shadow-md hover:border-brand-red/30 transition-all bg-white"
+                    >
+                      <div className="flex items-start gap-3 mb-3">
+                        <MapPinIcon />
+                        <div>
+                          <h4 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
+                            {area.name}
+                          </h4>
+                        </div>
+                      </div>
+                      <p className="text-brand-gray text-sm leading-relaxed line-clamp-2">
+                        {area.metaDescription}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
           </div>
         </div>

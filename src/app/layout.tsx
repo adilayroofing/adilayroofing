@@ -31,22 +31,26 @@ const BASE_URL = "https://www.adilayroofing.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    template: "%s | Adilay Roofing Philadelphia",
+    template: "%s | Adilay Roofing",
     default:
-      "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA — Free Estimates",
+      "Roofer Philadelphia | #1 Roofing Contractor — Adilay Roofing",
   },
   description:
-    "Adilay Roofing — Philadelphia's trusted roofing contractor with 20+ years experience. Roof replacement, repair, flat roofing, siding, windows & gutters. Licensed (PA184779), insured, free estimates. Call (888) 823-4766.",
+    "Adilay Roofing — Philadelphia's top-rated roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779, insured. 5-star rated, 2,080+ projects. Free estimates — (888) 823-4766.",
   keywords: [
+    "roofer Philadelphia",
     "roofing contractor Philadelphia",
     "roof replacement Philadelphia",
-    "roof repair Philadelphia PA",
-    "flat roofing Philadelphia",
+    "roof repair Philadelphia",
+    "best roofer Philadelphia",
     "Philadelphia roofer",
+    "roofer near me",
     "roofing company near me",
+    "flat roofing Philadelphia",
     "siding installation Philadelphia",
     "window replacement Philadelphia",
-    "gutter installation Philadelphia",
+    "emergency roof repair Philadelphia",
+    "affordable roofer Philadelphia",
     "licensed roofer PA",
   ],
   authors: [{ name: "Adilay Roofing LLC" }],
