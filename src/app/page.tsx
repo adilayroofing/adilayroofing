@@ -141,8 +141,26 @@ const whyChooseUs = [
 ];
 
 export default function Home() {
+  // FAQPage schema for the 6 homepage FAQs
+  const homepageFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.slice(0, 6).map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
+      />
       {/* ============================================ */}
       {/* HERO SECTION                                 */}
       {/* ============================================ */}

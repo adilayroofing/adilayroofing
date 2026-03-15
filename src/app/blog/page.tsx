@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import CTASection from "@/components/CTASection";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 // Revalidate every 6 hours so scheduled posts go live automatically
 export const revalidate = 21600;
@@ -35,6 +36,7 @@ export default function BlogIndex() {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Blog", path: "/blog" }]} />
       {/* Hero */}
       <section className="bg-brand-dark">
         <div className="section-padding">

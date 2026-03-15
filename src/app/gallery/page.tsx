@@ -3,6 +3,7 @@ import { company } from "@/data/company";
 import CTASection from "@/components/CTASection";
 import TrustBar from "@/components/TrustBar";
 import GalleryGrid from "@/components/GalleryGrid";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Gallery", path: "/gallery" }]} />
       {/* Hero */}
       <section className="relative overflow-hidden">
         {/* Background banner image */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Contact", path: "/contact" }]} />
       {/* ── Hero ── */}
       <section className="bg-brand-dark">
         <div className="section-padding">

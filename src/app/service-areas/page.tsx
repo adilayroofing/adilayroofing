@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { company } from "@/data/company";
 import { locations } from "@/data/locations";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -128,6 +129,7 @@ function MapPinIcon() {
 export default function ServiceAreasPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Service Areas", path: "/service-areas" }]} />
       {/* Hero Section */}
       <section className="relative bg-brand-dark overflow-hidden">
         <img

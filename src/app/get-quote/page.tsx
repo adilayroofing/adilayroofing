@@ -7,6 +7,7 @@ import TrustBar from "@/components/TrustBar";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -48,6 +49,7 @@ const serviceAreas = [
 export default function GetQuotePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Get a Quote", path: "/get-quote" }]} />
       {/* Hero / Split Layout */}
       <section className="relative min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row">
         {/* Left Panel - Dark CTA side */}

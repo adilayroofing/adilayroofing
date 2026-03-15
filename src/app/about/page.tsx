@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import TrustBar from "@/components/TrustBar";
 import { company } from "@/data/company";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -72,6 +73,7 @@ export default function AboutPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "About", path: "/about" }]} />
       {/* Hero Section */}
       <section className="bg-brand-dark">
         <div className="section-padding">

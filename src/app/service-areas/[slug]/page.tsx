@@ -6,6 +6,7 @@ import { services } from "@/data/services";
 import { getAllLocations, getLocationBySlug } from "@/data/locations";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render all location pages
@@ -202,6 +203,12 @@ export default async function LocationPage({ params }: PageProps) {
   return (
     <>
       {/* Structured Data */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Service Areas", path: "/service-areas" },
+          { name: location.name, path: `/service-areas/${slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -4,6 +4,7 @@ import { faqs } from "@/data/faqs";
 import { company } from "@/data/company";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -44,6 +45,50 @@ const areaFaqs = [
   },
 ];
 
+const roofingDetailsFaqs = [
+  {
+    question: "How much does a roof replacement cost in Philadelphia?",
+    answer:
+      "The cost of a roof replacement in Philadelphia typically ranges from $5,000 to $12,000+ depending on the size of your home, materials chosen, and the complexity of the job. Architectural shingles are the most popular choice. We provide free, detailed written estimates so you know exactly what to expect — no hidden fees.",
+  },
+  {
+    question: "Do you need a permit for a roof replacement in Philadelphia?",
+    answer:
+      "In most cases, yes. Philadelphia requires a building permit for roof replacements. Adilay Roofing handles the permitting process for you so you don't have to worry about it.",
+  },
+  {
+    question: "How long does a new roof last?",
+    answer:
+      "A new asphalt shingle roof typically lasts 25–30 years, and architectural shingles can last up to 50 years with proper maintenance. EPDM flat roofs generally last 20–25 years. The lifespan depends on materials, installation quality, ventilation, and maintenance.",
+  },
+  {
+    question: "What happens if it rains during my roof replacement?",
+    answer:
+      "We monitor weather closely and plan around it. If rain is expected mid-project, we use tarps and waterproof underlayment to protect your home. We never leave a roof exposed overnight. Your home's protection is always our top priority.",
+  },
+  {
+    question: "Do you use subcontractors?",
+    answer:
+      "No. All work is performed by our own crew of 30+ experienced professionals. We don't outsource any part of the job. This is how we maintain quality control on every project.",
+  },
+  {
+    question: "Can you replace a roof in the winter?",
+    answer:
+      "Yes, we can perform roof replacements year-round in the Philadelphia area. We follow manufacturer guidelines for temperature-sensitive materials and take extra precautions in colder months to ensure a proper installation.",
+  },
+  {
+    question:
+      "What is the difference between 3-tab and architectural shingles?",
+    answer:
+      "3-tab shingles are thinner, flat, and more affordable but have a shorter lifespan (15–20 years). Architectural shingles are thicker, more durable, offer a dimensional look, and last 25–50 years. We recommend architectural shingles for most Philadelphia homes because they handle our weather better and add more curb appeal.",
+  },
+  {
+    question: "Do you provide roof inspections?",
+    answer:
+      "Yes. We offer free roof inspections for homeowners in Philadelphia and surrounding counties. We'll assess your roof's condition, document any issues with photos, and give you an honest recommendation — no pressure to commit.",
+  },
+];
+
 const processFaqs = [
   {
     question: "What happens after I request a quote?",
@@ -62,7 +107,7 @@ const processFaqs = [
   },
 ];
 
-const allFaqs = [...faqs, ...areaFaqs, ...processFaqs];
+const allFaqs = [...faqs, ...areaFaqs, ...roofingDetailsFaqs, ...processFaqs];
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -84,6 +129,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbJsonLd items={[{ name: "FAQ", path: "/faq" }]} />
       {/* Hero */}
       <section className="bg-brand-dark">
         <div className="section-padding">
@@ -152,8 +198,24 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Process FAQs */}
+      {/* Roofing Details FAQs */}
       <section className="bg-white">
+        <div className="section-padding">
+          <div className="container-narrow mx-auto">
+            <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-4">
+              Roofing Details
+            </h2>
+            <p className="text-brand-gray text-sm md:text-base mb-6 md:mb-8">
+              In-depth answers about costs, materials, permits, and what to
+              expect during your roofing project.
+            </p>
+            <FAQAccordion items={roofingDetailsFaqs} />
+          </div>
+        </div>
+      </section>
+
+      {/* Process FAQs */}
+      <section className="bg-brand-light">
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-4">
@@ -168,7 +230,7 @@ export default function FAQPage() {
       </section>
 
       {/* Still have questions */}
-      <section className="bg-brand-light">
+      <section className="bg-white">
         <div className="py-10 md:py-16 px-4">
           <div className="container-narrow mx-auto text-center">
             <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-3 md:mb-4">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { company } from "@/data/company";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Privacy Policy", path: "/privacy" }]} />
       {/* Hero */}
       <section className="bg-brand-dark text-white py-16 md:py-20">
         <div className="container-wide mx-auto px-4 text-center">

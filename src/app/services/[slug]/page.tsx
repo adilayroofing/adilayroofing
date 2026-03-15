@@ -6,6 +6,7 @@ import ServiceCard from "@/components/ServiceCard";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import ServiceIcon from "@/components/ServiceIcon";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render all 7 service pages
@@ -71,12 +72,13 @@ export default async function ServicePage({ params }: PageProps) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.title,
+    serviceType: service.title,
+    name: `${service.title} in Philadelphia`,
     description: service.description,
     provider: {
       "@type": "RoofingContractor",
       name: "Adilay Roofing",
-      url: "https://www.adilayroofing.com",
+      url: BASE_URL,
       telephone: "+18888234766",
       address: {
         "@type": "PostalAddress",
@@ -88,21 +90,49 @@ export default async function ServicePage({ params }: PageProps) {
       },
     },
     areaServed: [
-      { "@type": "City", "name": "Philadelphia" },
-      { "@type": "AdministrativeArea", "name": "Bucks County" },
-      { "@type": "AdministrativeArea", "name": "Montgomery County" },
-      { "@type": "AdministrativeArea", "name": "Delaware County" },
-      { "@type": "AdministrativeArea", "name": "Chester County" },
+      { "@type": "City", name: "Philadelphia" },
+      { "@type": "AdministrativeArea", name: "Bucks County" },
+      { "@type": "AdministrativeArea", name: "Montgomery County" },
+      { "@type": "AdministrativeArea", name: "Delaware County" },
+      { "@type": "AdministrativeArea", name: "Chester County" },
     ],
     url: `${BASE_URL}/services/${slug}`,
     image: service.image ? `${BASE_URL}${service.image}` : undefined,
   };
+
+  const faqSchema =
+    service.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${slug}` },
+        ]}
       />
       {/* ================================================================= */}
       {/* Hero Section                                                      */}

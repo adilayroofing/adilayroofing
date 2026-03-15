@@ -3,6 +3,7 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -98,6 +99,7 @@ const benefits = [
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Services", path: "/services" }]} />
       {/* Hero Banner */}
       <section className="relative bg-brand-darker overflow-hidden">
         <img
