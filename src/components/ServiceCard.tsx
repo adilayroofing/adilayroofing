@@ -11,6 +11,8 @@ const serviceImages: Record<string, string> = {
   siding: "/images/siding-philadelphia.jpg",
   windows: "/images/window-installation-philadelphia.jpg",
   gutters: "/images/gutters-philadelphia.png",
+  "emergency-roof-repair": "/images/emergency-roof-repair-philadelphia.jpg",
+  "commercial-roofing": "/images/commercial-roofing-philadelphia.jpg",
 };
 
 /* Custom object-position so people in Adilay shirts stay visible above text */
