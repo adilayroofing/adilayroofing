@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
-import { getPostSlugs } from "@/lib/blog";
+import { getPublishedPostSlugs } from "@/lib/blog";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogPostPages = getPostSlugs().map((slug) => ({
+  const blogPostPages = getPublishedPostSlugs().map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

@@ -106,13 +106,18 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
   };
 }
 
-// ─── getPostSlugs (for generateStaticParams) ────────────────────────
+// ─── getPostSlugs (ALL slugs – for generateStaticParams) ────────────
 export function getPostSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
   return fs
     .readdirSync(BLOG_DIR)
     .filter((f) => f.endsWith(".md"))
     .map((f) => f.replace(/\.md$/, ""));
+}
+
+// ─── getPublishedPostSlugs (only published – for sitemap) ───────────
+export function getPublishedPostSlugs(): string[] {
+  return getAllPosts().map((p) => p.frontmatter.slug);
 }
 
 // ─── getRelatedPosts (only published) ────────────────────────────────

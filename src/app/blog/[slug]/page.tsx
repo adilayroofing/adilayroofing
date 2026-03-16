@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import {
   getPostSlugs,
   getPostBySlug,
+  getAllPosts,
   getRelatedPosts,
   generateTOC,
   renderMarkdown,
@@ -21,6 +22,13 @@ import CTASection from "@/components/CTASection";
 // Revalidate every 6 hours so scheduled posts go live automatically
 export const revalidate = 21600;
 
+// ─── Helpers ────────────────────────────────────────────────────────
+function isPostPublished(dateStr: string): boolean {
+  const now = new Date();
+  now.setHours(23, 59, 59, 999);
+  return new Date(dateStr) <= now;
+}
+
 // ─── Static params ──────────────────────────────────────────────────
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
@@ -34,7 +42,8 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: "Post Not Found" };
+  if (!post || !isPostPublished(post.frontmatter.date))
+    return { title: "Post Not Found" };
 
   const { frontmatter: fm } = post;
   const url = `${BASE_URL}/blog/${fm.slug}`;
@@ -64,7 +73,7 @@ export async function generateMetadata({
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) notFound();
+  if (!post || !isPostPublished(post.frontmatter.date)) notFound();
 
   const { frontmatter: fm, content } = post;
   const htmlContent = renderMarkdown(content);
