@@ -103,13 +103,13 @@ export default function LandingPageLayout({
   return (
     <div className="min-h-screen">
       {/* ── LP Header ── */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <header className="bg-white shadow-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
           <Link href="/" aria-label="Adilay Roofing - Home">
             <img
               src="/images/logo-new.png"
               alt="Adilay Roofing"
-              className="h-12 md:h-16 w-auto"
+              className="h-16 md:h-20 w-auto"
             />
           </Link>
           <a
