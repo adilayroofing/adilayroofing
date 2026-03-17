@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
-import FloatingQuoteTab from "@/components/FloatingQuoteTab";
 import JsonLd from "@/components/JsonLd";
+import LayoutShell from "@/components/LayoutShell";
 import { company } from "@/data/company";
 
 const GA_MEASUREMENT_ID = "G-7E3RFPT4LL";
@@ -216,11 +213,7 @@ export default function RootLayout({
           }}
         />
         <JsonLd />
-        <ScrollToTop />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FloatingQuoteTab />
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );
