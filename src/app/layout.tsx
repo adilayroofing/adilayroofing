@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import LayoutShell from "@/components/LayoutShell";
@@ -108,6 +107,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google tag (gtag.js) — loaded via GA4 Measurement ID */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });
+              gtag('config', '${GOOGLE_ADS_ID}');
+            `,
+          }}
+        />
+        {/* Meta Pixel */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${META_PIXEL_ID}');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
         <noscript>
           <img
             height="1"
@@ -119,96 +151,67 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className={`${lato.variable} antialiased`}>
-        {/* Google tag (gtag.js) — loaded via GA4 Measurement ID (Google recommended) */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });
-            gtag('config', '${GOOGLE_ADS_ID}');
-          `}
-        </Script>
-
-        {/* Meta Pixel */}
-        <Script id="fb-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${META_PIXEL_ID}');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-
         {/* Click-to-call & CTA conversion tracking */}
-        <Script id="click-tracking" strategy="afterInteractive">
-          {`
-            document.addEventListener('click', function(e) {
-              // CTA click tracking
-              var cta = e.target.closest('a[href="/contact"], a[href="/get-quote"]');
-              if (cta && typeof gtag === 'function') {
-                var loc = 'page';
-                var el = cta;
-                if (el.closest('header')) loc = 'header';
-                else if (el.closest('footer')) loc = 'footer';
-                else if (el.closest('[class*="FloatingQuoteTab"]') || el.closest('[class*="floating"]')) loc = 'floating_tab';
-                else if (el.closest('section:first-of-type')) loc = 'hero';
-                gtag('event', 'cta_click', {
-                  cta_text: (cta.textContent || '').trim(),
-                  cta_location: loc,
-                  link_url: cta.getAttribute('href')
-                });
-              }
-              // Phone click tracking
-              var link = e.target.closest('a[href^="tel:"]');
-              if (link) {
-                if (typeof gtag === 'function') {
-                  gtag('event', 'conversion', {
-                    send_to: '${GOOGLE_ADS_ID}/call_click',
-                    event_category: 'engagement',
-                    event_label: 'phone_call'
-                  });
-                  gtag('event', 'phone_call_click', {
-                    event_category: 'engagement',
-                    link_url: link.getAttribute('href')
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('click', function(e) {
+                // CTA click tracking
+                var cta = e.target.closest('a[href="/contact"], a[href="/get-quote"]');
+                if (cta && typeof gtag === 'function') {
+                  var loc = 'page';
+                  var el = cta;
+                  if (el.closest('header')) loc = 'header';
+                  else if (el.closest('footer')) loc = 'footer';
+                  else if (el.closest('[class*="FloatingQuoteTab"]') || el.closest('[class*="floating"]')) loc = 'floating_tab';
+                  else if (el.closest('section:first-of-type')) loc = 'hero';
+                  gtag('event', 'cta_click', {
+                    cta_text: (cta.textContent || '').trim(),
+                    cta_location: loc,
+                    link_url: cta.getAttribute('href')
                   });
                 }
-                if (typeof fbq === 'function') {
-                  fbq('track', 'Contact', { content_name: 'Phone Call' });
+                // Phone click tracking
+                var link = e.target.closest('a[href^="tel:"]');
+                if (link) {
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'conversion', {
+                      send_to: '${GOOGLE_ADS_ID}/call_click',
+                      event_category: 'engagement',
+                      event_label: 'phone_call'
+                    });
+                    gtag('event', 'phone_call_click', {
+                      event_category: 'engagement',
+                      link_url: link.getAttribute('href')
+                    });
+                  }
+                  if (typeof fbq === 'function') {
+                    fbq('track', 'Contact', { content_name: 'Phone Call' });
+                  }
                 }
-              }
-              // SMS / Text Us click tracking
-              var smsLink = e.target.closest('a[href^="sms:"]');
-              if (smsLink) {
-                var smsLoc = 'page';
-                if (smsLink.closest('header')) smsLoc = 'header';
-                else if (smsLink.closest('footer')) smsLoc = 'footer';
-                else if (smsLink.closest('section:first-of-type')) smsLoc = 'hero';
-                if (typeof gtag === 'function') {
-                  gtag('event', 'sms_click', {
-                    event_category: 'engagement',
-                    event_label: 'text_us',
-                    link_url: smsLink.getAttribute('href'),
-                    click_location: smsLoc
-                  });
+                // SMS / Text Us click tracking
+                var smsLink = e.target.closest('a[href^="sms:"]');
+                if (smsLink) {
+                  var smsLoc = 'page';
+                  if (smsLink.closest('header')) smsLoc = 'header';
+                  else if (smsLink.closest('footer')) smsLoc = 'footer';
+                  else if (smsLink.closest('section:first-of-type')) smsLoc = 'hero';
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'sms_click', {
+                      event_category: 'engagement',
+                      event_label: 'text_us',
+                      link_url: smsLink.getAttribute('href'),
+                      click_location: smsLoc
+                    });
+                  }
+                  if (typeof fbq === 'function') {
+                    fbq('track', 'Contact', { content_name: 'Text Message' });
+                  }
                 }
-                if (typeof fbq === 'function') {
-                  fbq('track', 'Contact', { content_name: 'Text Message' });
-                }
-              }
-            });
-          `}
-        </Script>
+              });
+            `,
+          }}
+        />
         <JsonLd />
         <LayoutShell>{children}</LayoutShell>
       </body>
