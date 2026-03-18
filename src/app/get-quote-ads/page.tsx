@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect, FormEvent, Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams, usePathname } from "next/navigation";
 import { company } from "@/data/company";
@@ -63,6 +63,14 @@ function GoogleIcon() {
 }
 
 export default function GetQuoteAdsPage() {
+  return (
+    <Suspense>
+      <GetQuoteAdsContent />
+    </Suspense>
+  );
+}
+
+function GetQuoteAdsContent() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [submitted, setSubmitted] = useState(false);
