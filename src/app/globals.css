@@ -234,3 +234,14 @@
 .animate-nudge {
   animation: nudge 0.8s ease-in-out;
 }
+
+/* ── Landing page project timeline animations ── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}

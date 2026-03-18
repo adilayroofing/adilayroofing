@@ -12,7 +12,7 @@ export default function LayoutShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isLandingPage = pathname.startsWith("/lp");
+  const isLandingPage = pathname.startsWith("/lp") || pathname.startsWith("/get-quote-ads");
 
   if (isLandingPage) {
     return <>{children}</>;

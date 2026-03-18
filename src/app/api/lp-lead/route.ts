@@ -23,6 +23,8 @@ export async function POST(request: Request) {
       utm_term,
       gclid,
       landingPage,
+      message,
+      source,
     } = body;
 
     // Validate required fields
@@ -77,6 +79,22 @@ export async function POST(request: Request) {
               <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">${zipCode}</td>
             </tr>
             ${
+              message
+                ? `<tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0; font-weight: bold; vertical-align: top;">Additional Info:</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">${message}</td>
+            </tr>`
+                : ""
+            }
+            ${
+              source
+                ? `<tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0; font-weight: bold; vertical-align: top; color: #888;">Lead Source:</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0; color: #888; font-size: 12px;">${source}</td>
+            </tr>`
+                : ""
+            }
+            ${
               utmInfo
                 ? `<tr>
               <td style="padding: 10px 0; font-weight: bold; vertical-align: top; color: #888;">Campaign Info:</td>
@@ -101,6 +119,8 @@ Phone: ${phone}
 Email: ${email}
 Service Needed: ${service}
 Zip Code: ${zipCode}
+${message ? `Additional Info: ${message}` : ""}
+${source ? `Lead Source: ${source}` : ""}
 ${utmInfo ? `Campaign Info: ${utmInfo}` : ""}
 ============================
 Submitted from Adilay Roofing Google Ads landing page.
@@ -120,7 +140,7 @@ Submitted from Adilay Roofing Google Ads landing page.
       from: `"Adilay Roofing Website" <${process.env.SMTP_USER}>`,
       to: RECIPIENT_EMAIL,
       replyTo: email,
-      subject: `🔥 New LP Lead: ${name} — ${service} (${zipCode})`,
+      subject: `🔥 New ${source === "meta-ads" ? "Meta Ads" : "LP"} Lead: ${name} — ${service} (${zipCode})`,
       text,
       html,
       attachments: [

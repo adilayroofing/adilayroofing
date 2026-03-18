@@ -27,6 +27,7 @@ export default function RoofReplacementLP() {
       offerText="FREE Gutter Cleaning With Every Roof Replacement — Limited Time Offer"
       galleryImage="/images/adilay-crew-at-work.jpg"
       galleryImageAlt="Adilay Roofing crew completing a roof replacement in Philadelphia"
+      showTransformation
     />
   );
 }
