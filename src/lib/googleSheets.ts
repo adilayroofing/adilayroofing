@@ -50,14 +50,15 @@ export async function appendToSheet(
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `'${sheetName}'!A:A`,
+      range: `${sheetName}!A:A`,
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [[leadId, ...values]],
       },
     });
-  } catch (error) {
-    // Log but don't throw — email is the primary delivery method
-    console.error(`Failed to append to Google Sheet (${sheetName}):`, error);
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : String(error);
+    const errStatus = (error as { status?: number })?.status;
+    console.error(`Failed to append to Google Sheet (${sheetName}): status=${errStatus} message=${errMsg}`);
   }
 }
