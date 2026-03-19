@@ -196,8 +196,10 @@ Submitted from Adilay Roofing website.
       },
     });
 
-    // Send email with embedded logo
-    await transporter.sendMail({
+    // Run email and Google Sheet append in parallel
+    const estTimestamp = getESTTimestamp();
+
+    const emailPromise = transporter.sendMail({
       from: `"Adilay Roofing Website" <${process.env.SMTP_USER}>`,
       to: RECIPIENT_EMAIL,
       replyTo: email,
@@ -213,10 +215,8 @@ Submitted from Adilay Roofing website.
       ],
     });
 
-    // Append to Google Sheet — "get-quote-ads" tab
     // Columns: Lead ID, Timestamp, Name, Email, Phone, Service Needed, Zip Code, Source, Additional Info
-    const estTimestamp = getESTTimestamp();
-    await appendToSheet("get-quote-ads", [
+    const sheetPromise = appendToSheet("get-quote-ads", [
       estTimestamp,
       fullName,
       email,
@@ -226,6 +226,8 @@ Submitted from Adilay Roofing website.
       "Quote Form",
       knownIssues || "",
     ]);
+
+    await Promise.all([emailPromise, sheetPromise]);
 
     return NextResponse.json({ success: true });
   } catch (error) {
