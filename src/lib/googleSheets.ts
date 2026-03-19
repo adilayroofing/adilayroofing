@@ -50,7 +50,7 @@ export async function appendToSheet(
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${sheetName}!A:A`,
+      range: `'${sheetName}'!A:A`,
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [[leadId, ...values]],
