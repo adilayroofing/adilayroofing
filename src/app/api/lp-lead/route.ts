@@ -152,39 +152,18 @@ Submitted from Adilay Roofing Google Ads landing page.
       ],
     });
 
-    // Route to the correct Google Sheet tab based on landing page
+    // Append to Google Sheet — lp/roof-replacement tab for all LP leads
+    // Columns: Lead ID, Timestamp, Name, Email, Phone, Service Needed, Zip Code, Source
     const estTimestamp = getESTTimestamp();
-
-    if (landingPage === "/lp/roof-replacement") {
-      // Tab: lp/roof-replacement
-      // Columns: Lead ID, Timestamp, Name, Email, Phone, Service Needed, Zip Code, Source
-      await appendToSheet("lp/roof-replacement", [
-        estTimestamp,
-        name,
-        email,
-        phone,
-        service,
-        zipCode,
-        landingPage,
-      ]);
-    } else {
-      // Default: Landing Page Leads tab for other LPs
-      await appendToSheet("Landing Page Leads", [
-        estTimestamp,
-        name,
-        phone,
-        email,
-        service,
-        zipCode,
-        landingPage || "",
-        utm_source || "",
-        utm_medium || "",
-        utm_campaign || "",
-        utm_term || "",
-        gclid || "",
-        "Landing Page Form",
-      ]);
-    }
+    await appendToSheet("lp/roof-replacement", [
+      estTimestamp,
+      name,
+      email,
+      phone,
+      service,
+      zipCode,
+      landingPage || "Landing Page",
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (error) {
