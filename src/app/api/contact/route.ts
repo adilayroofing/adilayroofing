@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { appendToSheet } from "@/lib/googleSheets";
+import { appendToSheet, getESTTimestamp } from "@/lib/googleSheets";
 
 const RECIPIENT_EMAIL = "adilayroofing@gmail.com";
 
@@ -105,7 +105,7 @@ Submitted from Adilay Roofing website.
 
     // Append to Google Sheet (non-blocking — email is primary)
     await appendToSheet("Contact Leads", [
-      new Date().toISOString(),
+      getESTTimestamp(),
       name,
       email,
       phone || "Not provided",

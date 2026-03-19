@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { appendToSheet } from "@/lib/googleSheets";
+import { appendToSheet, getESTTimestamp } from "@/lib/googleSheets";
 
 const RECIPIENT_EMAIL = "adilayroofing@gmail.com";
 
@@ -152,22 +152,39 @@ Submitted from Adilay Roofing Google Ads landing page.
       ],
     });
 
-    // Append to Google Sheet — separate tab for LP leads
-    await appendToSheet("Landing Page Leads", [
-      new Date().toISOString(),
-      name,
-      phone,
-      email,
-      service,
-      zipCode,
-      landingPage || "",
-      utm_source || "",
-      utm_medium || "",
-      utm_campaign || "",
-      utm_term || "",
-      gclid || "",
-      "Landing Page Form",
-    ]);
+    // Route to the correct Google Sheet tab based on landing page
+    const estTimestamp = getESTTimestamp();
+
+    if (landingPage === "/lp/roof-replacement") {
+      // Tab: lp/roof-replacement
+      // Columns: Lead ID, Timestamp, Name, Email, Phone, Service Needed, Zip Code, Source
+      await appendToSheet("lp/roof-replacement", [
+        estTimestamp,
+        name,
+        email,
+        phone,
+        service,
+        zipCode,
+        landingPage,
+      ]);
+    } else {
+      // Default: Landing Page Leads tab for other LPs
+      await appendToSheet("Landing Page Leads", [
+        estTimestamp,
+        name,
+        phone,
+        email,
+        service,
+        zipCode,
+        landingPage || "",
+        utm_source || "",
+        utm_medium || "",
+        utm_campaign || "",
+        utm_term || "",
+        gclid || "",
+        "Landing Page Form",
+      ]);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

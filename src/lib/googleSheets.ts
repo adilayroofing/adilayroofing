@@ -7,6 +7,20 @@ function generateLeadId(): string {
   return `ADL-${hex}`;
 }
 
+/** Generate a timestamp in US Eastern Time */
+export function getESTTimestamp(): string {
+  return new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+}
+
 function getAuth() {
   const credentials = JSON.parse(
     process.env.GOOGLE_SERVICE_ACCOUNT_KEY || "{}"
