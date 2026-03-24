@@ -8,6 +8,8 @@ interface FAQItem {
 }
 
 export interface LocationContent {
+  heroTitle: string;
+  heroSubtitle: string;
   intro: string;
   localContext: string;
   neighborhoods: string[];
@@ -68,6 +70,26 @@ export default function StructuredLocationEditor({
 
   return (
     <div className="space-y-8">
+      {/* ── Hero Banner ────────────────────────────────────────── */}
+      <Section title="Hero Banner" hint="The main heading (H1) and subtitle shown in the hero section.">
+        <label className="block text-xs text-gray-500 mb-1">Page Title (H1)</label>
+        <input
+          type="text"
+          value={content.heroTitle}
+          onChange={(e) => onChange({ ...content, heroTitle: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Philadelphia Roofing Services"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Subtitle</label>
+        <input
+          type="text"
+          value={content.heroSubtitle}
+          onChange={(e) => onChange({ ...content, heroSubtitle: e.target.value })}
+          className="input-field"
+          placeholder="e.g. Professional roofing services for Philadelphia and surrounding areas"
+        />
+      </Section>
+
       {/* ── Intro ────────────────────────────────────────────────── */}
       <Section title="Intro Paragraph" hint="Shown directly below the hero section.">
         <InlineRichTextField

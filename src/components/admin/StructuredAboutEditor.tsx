@@ -3,6 +3,7 @@
 import InlineRichTextField from "./InlineRichTextField";
 
 export interface AboutPageContent {
+  heroTitle: string;
   heroDescription: string;
   storyHeading: string;
   storyParagraphs: string[];
@@ -45,8 +46,17 @@ export default function StructuredAboutEditor({
 
   return (
     <div className="space-y-8">
-      {/* Hero Description */}
-      <Section title="Hero Description" hint="Shown below the page title in the hero banner.">
+      {/* Hero Banner */}
+      <Section title="Hero Banner" hint="The main heading (H1) and description shown in the hero section.">
+        <label className="block text-xs text-gray-500 mb-1">Page Title (H1)</label>
+        <input
+          type="text"
+          value={content.heroTitle}
+          onChange={(e) => onChange({ ...content, heroTitle: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. About Adilay Roofing"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Hero Description</label>
         <InlineRichTextField
           value={content.heroDescription}
           onChange={(html) => onChange({ ...content, heroDescription: html })}

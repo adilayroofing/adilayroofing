@@ -14,6 +14,8 @@ interface FAQCategory {
 }
 
 export interface FAQPageContent {
+  heroTitle: string;
+  heroSubtitle: string;
   general: FAQCategory;
   areas: FAQCategory;
   roofingDetails: FAQCategory;
@@ -27,8 +29,10 @@ export default function StructuredFAQEditor({
   content: FAQPageContent;
   onChange: (content: FAQPageContent) => void;
 }) {
+  type CategoryKey = "general" | "areas" | "roofingDetails" | "process";
+
   function updateCategory(
-    key: keyof FAQPageContent,
+    key: CategoryKey,
     field: "title" | "description",
     value: string
   ) {
@@ -38,7 +42,7 @@ export default function StructuredFAQEditor({
     });
   }
 
-  function addFAQ(key: keyof FAQPageContent) {
+  function addFAQ(key: CategoryKey) {
     onChange({
       ...content,
       [key]: {
@@ -49,7 +53,7 @@ export default function StructuredFAQEditor({
   }
 
   function updateFAQ(
-    key: keyof FAQPageContent,
+    key: CategoryKey,
     index: number,
     field: "question" | "answer",
     value: string
@@ -62,7 +66,7 @@ export default function StructuredFAQEditor({
     });
   }
 
-  function removeFAQ(key: keyof FAQPageContent, index: number) {
+  function removeFAQ(key: CategoryKey, index: number) {
     onChange({
       ...content,
       [key]: {
@@ -72,7 +76,7 @@ export default function StructuredFAQEditor({
     });
   }
 
-  function moveFAQ(key: keyof FAQPageContent, index: number, direction: -1 | 1) {
+  function moveFAQ(key: CategoryKey, index: number, direction: -1 | 1) {
     const items = [...content[key].items];
     const newIndex = index + direction;
     if (newIndex < 0 || newIndex >= items.length) return;
@@ -80,7 +84,7 @@ export default function StructuredFAQEditor({
     onChange({ ...content, [key]: { ...content[key], items } });
   }
 
-  const categories: { key: keyof FAQPageContent; hint: string }[] = [
+  const categories: { key: CategoryKey; hint: string }[] = [
     { key: "general", hint: "Most common questions from homeowners and businesses." },
     { key: "areas", hint: "Questions about service coverage areas." },
     { key: "roofingDetails", hint: "In-depth answers about costs, materials, and permits." },
@@ -89,6 +93,28 @@ export default function StructuredFAQEditor({
 
   return (
     <div className="space-y-10">
+      {/* ── Hero Banner ────────────────────────────────────────── */}
+      <div className="border border-gray-700 rounded-lg p-5">
+        <h3 className="text-white font-semibold text-sm mb-1">Hero Banner</h3>
+        <p className="text-gray-500 text-xs mb-3">The main heading (H1) and subtitle shown at the top of the FAQ page.</p>
+        <label className="block text-xs text-gray-500 mb-1">Page Title (H1)</label>
+        <input
+          type="text"
+          value={content.heroTitle}
+          onChange={(e) => onChange({ ...content, heroTitle: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Frequently Asked Questions"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Subtitle</label>
+        <input
+          type="text"
+          value={content.heroSubtitle}
+          onChange={(e) => onChange({ ...content, heroSubtitle: e.target.value })}
+          className="input-field"
+          placeholder="e.g. Have questions about roofing? Find answers below."
+        />
+      </div>
+
       {categories.map(({ key, hint }) => (
         <div key={key} className="border border-gray-700 rounded-lg p-5">
           {/* Category header fields */}

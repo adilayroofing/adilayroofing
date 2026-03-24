@@ -141,6 +141,9 @@ export default async function FAQPage() {
   const cmsData = await getStructuredContent("/faq", "structured_faq");
 
   // Merge CMS data with hardcoded fallback
+  const heroTitle = (cmsData?.heroTitle as string) || "Frequently Asked Questions";
+  const heroSubtitle = (cmsData?.heroSubtitle as string) || "";
+
   type FaqItem = { question: string; answer: string };
   type FaqCategory = { title: string; description: string; items: FaqItem[] };
 
@@ -195,18 +198,22 @@ export default async function FAQPage() {
               FAQ
             </span>
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6">
-              Frequently Asked Questions
+              {heroTitle}
             </h1>
             <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto">
-              Have questions about roofing, our process, or your project? Find
-              answers below, or{" "}
-              <Link
-                href="/contact"
-                className="text-brand-red hover:text-brand-red-dark underline underline-offset-2"
-              >
-                contact us
-              </Link>{" "}
-              directly.
+              {heroSubtitle || (
+                <>
+                  Have questions about roofing, our process, or your project? Find
+                  answers below, or{" "}
+                  <Link
+                    href="/contact"
+                    className="text-brand-red hover:text-brand-red-dark underline underline-offset-2"
+                  >
+                    contact us
+                  </Link>{" "}
+                  directly.
+                </>
+              )}
             </p>
           </div>
         </div>

@@ -106,6 +106,7 @@ export default async function AboutPage() {
   const cmsData = await getStructuredContent("/about", "structured_about");
 
   // Merge CMS data with hardcoded fallback
+  const heroTitle = (cmsData?.heroTitle as string) || "About Adilay Roofing";
   const heroDescription = (cmsData?.heroDescription as string) ||
     `Serving the Philadelphia region with honest, high-quality roofing services for over ${company.yearsExperience} years.`;
 
@@ -128,7 +129,7 @@ export default async function AboutPage() {
         <div className="section-padding">
           <div className="container-narrow mx-auto text-center">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              About Adilay Roofing
+              {heroTitle}
             </h1>
             <SafeHTML
               html={heroDescription}

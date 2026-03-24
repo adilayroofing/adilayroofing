@@ -9,6 +9,8 @@ interface FAQItem {
 }
 
 export interface ServiceContent {
+  heroTitle: string;
+  heroTagline: string;
   heroDescription: string;
   benefits: string[];
   features: string[];
@@ -82,6 +84,26 @@ export default function StructuredServiceEditor({
 
   return (
     <div className="space-y-8">
+      {/* ── Hero Banner ───────────────────────────────────────────── */}
+      <Section title="Hero Banner" hint="The main heading (H1) and tagline shown in the hero section.">
+        <label className="block text-xs text-gray-500 mb-1">Page Title (H1)</label>
+        <input
+          type="text"
+          value={content.heroTitle}
+          onChange={(e) => onChange({ ...content, heroTitle: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Roof Replacement in Philadelphia, PA"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Tagline / Subtitle</label>
+        <input
+          type="text"
+          value={content.heroTagline}
+          onChange={(e) => onChange({ ...content, heroTagline: e.target.value })}
+          className="input-field"
+          placeholder="e.g. A New Roof That Protects What Matters Most"
+        />
+      </Section>
+
       {/* ── Hero Description ─────────────────────────────────────── */}
       <Section title="Hero Description" hint="The main intro paragraph shown below the hero banner.">
         <InlineRichTextField

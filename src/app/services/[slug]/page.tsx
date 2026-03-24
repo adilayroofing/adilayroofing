@@ -91,6 +91,8 @@ export default async function ServicePage({ params }: PageProps) {
   const cmsData = await getStructuredContent(`/services/${slug}`, "structured_service");
 
   // Merge: CMS data overrides hardcoded, with fallback
+  const heroTitle = (cmsData?.heroTitle as string) || `${service.title} in Philadelphia, PA`;
+  const heroTagline = (cmsData?.heroTagline as string) || service.tagline;
   const heroDescription = (cmsData?.heroDescription as string) || service.heroDescription;
   const cmsBenefits = cmsData?.benefits as string[] | undefined;
   const benefits = cmsBenefits?.length ? cmsBenefits : service.benefits;
@@ -189,10 +191,10 @@ export default async function ServicePage({ params }: PageProps) {
               <ServiceIcon slug={service.slug} className="w-8 h-8" />
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              {service.title} in Philadelphia, PA
+              {heroTitle}
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
-              {service.tagline}
+              {heroTagline}
             </p>
             <Link href="/contact" className="btn-primary">
               Get a FREE Estimate

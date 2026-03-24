@@ -142,6 +142,9 @@ export default async function LocationPage({ params }: PageProps) {
   const cmsData = await getStructuredContent(`/service-areas/${slug}`, "structured_location");
 
   // Merge: CMS data overrides hardcoded, with fallback
+  const heroTitle = (cmsData?.heroTitle as string) || location.h1;
+  const heroSubtitle = (cmsData?.heroSubtitle as string) ||
+    `Professional roofing services for ${location.name}, ${location.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`;
   const intro = (cmsData?.intro as string) || location.intro;
   const localContext = (cmsData?.localContext as string) || location.localContext;
   const cmsNeighborhoods = cmsData?.neighborhoods as string[] | undefined;
@@ -300,12 +303,10 @@ export default async function LocationPage({ params }: PageProps) {
             </nav>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              {location.h1}
+              {heroTitle}
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
-              Professional roofing services for {location.name},{" "}
-              {location.state} and surrounding areas. Licensed, insured,
-              and backed by {company.yearsExperience} years of experience.
+              {heroSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a

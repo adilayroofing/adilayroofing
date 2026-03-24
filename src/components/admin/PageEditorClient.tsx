@@ -93,6 +93,8 @@ export default function PageEditorClient({
     if (structuredBlock?.block_type === "structured_service") {
       const c = structuredBlock.content as Record<string, unknown>;
       return {
+        heroTitle: (c.heroTitle as string) || "",
+        heroTagline: (c.heroTagline as string) || "",
         heroDescription: (c.heroDescription as string) || "",
         benefits: (c.benefits as string[]) || [],
         features: (c.features as string[]) || [],
@@ -105,6 +107,8 @@ export default function PageEditorClient({
       const hardcoded = getServiceBySlug(serviceSlug);
       if (hardcoded) {
         return {
+          heroTitle: `${hardcoded.title} in Philadelphia, PA`,
+          heroTagline: hardcoded.tagline,
           heroDescription: hardcoded.heroDescription,
           benefits: [...hardcoded.benefits],
           features: [...hardcoded.features],
@@ -112,7 +116,7 @@ export default function PageEditorClient({
         };
       }
     }
-    return { heroDescription: "", benefits: [], features: [], faq: [] };
+    return { heroTitle: "", heroTagline: "", heroDescription: "", benefits: [], features: [], faq: [] };
   });
 
   // Content — structured location (pre-fill from CMS or hardcoded data)
@@ -120,6 +124,8 @@ export default function PageEditorClient({
     if (structuredBlock?.block_type === "structured_location") {
       const c = structuredBlock.content as Record<string, unknown>;
       return {
+        heroTitle: (c.heroTitle as string) || "",
+        heroSubtitle: (c.heroSubtitle as string) || "",
         intro: (c.intro as string) || "",
         localContext: (c.localContext as string) || "",
         neighborhoods: (c.neighborhoods as string[]) || [],
@@ -133,6 +139,8 @@ export default function PageEditorClient({
       const hardcoded = getLocationBySlug(locationSlug);
       if (hardcoded) {
         return {
+          heroTitle: hardcoded.h1,
+          heroSubtitle: `Professional roofing services for ${hardcoded.name}, ${hardcoded.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`,
           intro: hardcoded.intro,
           localContext: hardcoded.localContext,
           neighborhoods: [...hardcoded.neighborhoods],
@@ -141,17 +149,24 @@ export default function PageEditorClient({
         };
       }
     }
-    return { intro: "", localContext: "", neighborhoods: [], zipCodes: [], faq: [] };
+    return { heroTitle: "", heroSubtitle: "", intro: "", localContext: "", neighborhoods: [], zipCodes: [], faq: [] };
   });
 
   // Content — structured FAQ page (pre-fill from CMS or hardcoded data)
   const [faqContent, setFaqContent] = useState<FAQPageContent>(() => {
     if (structuredBlock?.block_type === "structured_faq") {
-      return structuredBlock.content as unknown as FAQPageContent;
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroTitle: (c.heroTitle as string) || "Frequently Asked Questions",
+        heroSubtitle: (c.heroSubtitle as string) || "",
+        ...(c as unknown as Omit<FAQPageContent, "heroTitle" | "heroSubtitle">),
+      };
     }
     // Pre-fill from hardcoded FAQ data
     if (isFAQPage) {
       return {
+        heroTitle: "Frequently Asked Questions",
+        heroSubtitle: "Have questions about roofing, our process, or your project? Find answers below, or contact us directly.",
         general: {
           title: "General Questions",
           description: "The most common questions we get from homeowners and businesses.",
@@ -192,6 +207,8 @@ export default function PageEditorClient({
       };
     }
     return {
+      heroTitle: "",
+      heroSubtitle: "",
       general: { title: "", description: "", items: [] },
       areas: { title: "", description: "", items: [] },
       roofingDetails: { title: "", description: "", items: [] },
@@ -202,10 +219,15 @@ export default function PageEditorClient({
   // Content — structured About page (pre-fill from CMS or hardcoded data)
   const [aboutContent, setAboutContent] = useState<AboutPageContent>(() => {
     if (structuredBlock?.block_type === "structured_about") {
-      return structuredBlock.content as unknown as AboutPageContent;
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroTitle: (c.heroTitle as string) || "About Adilay Roofing",
+        ...(c as unknown as Omit<AboutPageContent, "heroTitle">),
+      };
     }
     if (isAboutPage) {
       return {
+        heroTitle: "About Adilay Roofing",
         heroDescription: "Serving the Philadelphia region with honest, high-quality roofing services for over 20 years.",
         storyHeading: "Roofing Done Right — For Over 20 Years",
         storyParagraphs: [
@@ -223,6 +245,7 @@ export default function PageEditorClient({
       };
     }
     return {
+      heroTitle: "",
       heroDescription: "",
       storyHeading: "",
       storyParagraphs: [],
