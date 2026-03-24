@@ -49,9 +49,11 @@ function LoginForm() {
     <div className="bg-gray-800 rounded-xl shadow-2xl p-8">
       {/* Logo */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-red-600 rounded-xl mb-4">
-          <span className="text-white font-bold text-2xl">A</span>
-        </div>
+        <img
+          src="/images/logo-new.png"
+          alt="Adilay Roofing"
+          className="h-12 mx-auto mb-4"
+        />
         <h1 className="text-2xl font-bold text-white">Adilay CMS</h1>
         <p className="text-gray-400 mt-1">Sign in to manage your site</p>
       </div>
