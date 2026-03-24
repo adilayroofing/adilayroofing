@@ -56,49 +56,80 @@ export default function PendingQueueClient({
       if (action === "approved") {
         const { new_value, table_name, record_id, change_type } = change;
 
+        // Extract content fields (not part of the pages table)
+        const {
+          content_html,
+          content_block_type,
+          content_data,
+          ...pageData
+        } = new_value as Record<string, unknown>;
+
+        // Determine the block type and content to save
+        const blockType = (content_block_type as string) || "rich_text";
+        const blockContent = content_data ?? (content_html ? { html: content_html } : null);
+
         if (change_type === "create") {
-          // Remove non-table fields
-          const { content_html, ...pageData } = new_value as Record<string, unknown>;
           const { data: newPage } = await supabase
             .from(table_name)
             .insert(pageData)
             .select()
             .single();
 
-          // If there's content, save it
-          if (content_html && newPage) {
+          // Save content block if there's content
+          if (blockContent && newPage) {
             await supabase.from("content_blocks").insert({
               page_id: newPage.id,
-              block_type: "rich_text",
-              content: { html: content_html },
+              block_type: blockType,
+              content: blockContent,
               sort_order: 0,
             });
           }
         } else if (change_type === "update") {
-          const { content_html, ...pageData } = new_value as Record<string, unknown>;
+          // Save revision snapshot before overwriting (for change history)
+          const { data: existingBlocks } = await supabase
+            .from("content_blocks")
+            .select("*")
+            .eq("page_id", record_id)
+            .limit(1);
+
+          const { data: currentPage } = await supabase
+            .from("pages")
+            .select("*")
+            .eq("id", record_id)
+            .single();
+
+          if (currentPage) {
+            await supabase.from("page_revisions").insert({
+              page_id: record_id,
+              slug: (currentPage as Record<string, unknown>).slug || (pageData.slug as string) || "",
+              page_data: currentPage,
+              content_data: existingBlocks?.[0]?.content || {},
+              block_type: existingBlocks?.[0]?.block_type || blockType,
+              saved_by: userEmail,
+            });
+          }
+
+          // Update the page
           await supabase
             .from(table_name)
             .update(pageData)
             .eq("id", record_id);
 
-          // Update content if present
-          if (content_html) {
-            const { data: existing } = await supabase
-              .from("content_blocks")
-              .select("id")
-              .eq("page_id", record_id)
-              .limit(1);
-
-            if (existing && existing.length > 0) {
+          // Update or create content block
+          if (blockContent) {
+            if (existingBlocks && existingBlocks.length > 0) {
               await supabase
                 .from("content_blocks")
-                .update({ content: { html: content_html } })
-                .eq("id", existing[0].id);
+                .update({
+                  block_type: blockType,
+                  content: blockContent,
+                })
+                .eq("id", existingBlocks[0].id);
             } else {
               await supabase.from("content_blocks").insert({
                 page_id: record_id,
-                block_type: "rich_text",
-                content: { html: content_html },
+                block_type: blockType,
+                content: blockContent,
                 sort_order: 0,
               });
             }
