@@ -8,7 +8,6 @@ import { createClient } from "@/lib/supabase";
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: "home" },
   { href: "/admin/pages", label: "Pages", icon: "pages" },
-  { href: "/admin/links", label: "Internal Links", icon: "links" },
   { href: "/admin/pending", label: "Approval Queue", icon: "pending", adminOnly: true },
   { href: "/admin/canonicals", label: "Canonicals", icon: "canonicals" },
 ];
