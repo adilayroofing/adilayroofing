@@ -14,6 +14,7 @@ interface Revision {
   block_type: string;
   saved_by: string;
   created_at: string;
+  reverted_at: string | null;
 }
 
 export default function HistoryClient({
@@ -28,7 +29,6 @@ export default function HistoryClient({
   const [previewId, setPreviewId] = useState<string | null>(null);
   const [revertingId, setRevertingId] = useState<string | null>(null);
   const [confirmRevertId, setConfirmRevertId] = useState<string | null>(null);
-  const [revertedIds, setRevertedIds] = useState<Set<string>>(new Set());
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const filtered = filter
@@ -88,6 +88,12 @@ export default function HistoryClient({
         });
       }
 
+      // Mark this revision as reverted
+      await supabase
+        .from("page_revisions")
+        .update({ reverted_at: new Date().toISOString() })
+        .eq("id", revision.id);
+
       // Log the revert action
       await supabase.from("activity_log").insert({
         user_email: userEmail,
@@ -96,7 +102,6 @@ export default function HistoryClient({
       });
 
       setMessage({ type: "success", text: `Reverted "${revision.slug}" to version from ${formatDate(revision.created_at)}` });
-      setRevertedIds((prev) => new Set(prev).add(revision.id));
       setConfirmRevertId(null);
       router.refresh();
     } catch (err) {
@@ -170,7 +175,7 @@ export default function HistoryClient({
                       >
                         {previewId === rev.id ? "Close" : "Preview"}
                       </button>
-                      {revertedIds.has(rev.id) ? (
+                      {rev.reverted_at ? (
                         <span className="px-3 py-1.5 text-xs font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
                           Reverted ✓
                         </span>
@@ -266,7 +271,7 @@ export default function HistoryClient({
               >
                 Close
               </button>
-              {revertedIds.has(previewRevision.id) ? (
+              {previewRevision.reverted_at ? (
                 <span className="px-4 py-2 text-sm font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
                   Reverted ✓
                 </span>
