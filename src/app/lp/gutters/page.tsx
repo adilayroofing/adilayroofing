@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Professional gutter installation, repair & cleaning in Philadelphia. Seamless aluminum gutters. Free gutter cleaning with roof replacement. Call (888) 823-4766.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.adilayroofing.com/lp/gutters" },
 };
 
 export default function GuttersLP() {

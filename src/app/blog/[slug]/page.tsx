@@ -9,6 +9,7 @@ import {
   renderMarkdown,
   BASE_URL,
 } from "@/lib/blog";
+import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import BlogHero from "@/components/blog/BlogHero";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -19,8 +20,8 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 import StickyMobileCTA from "@/components/blog/StickyMobileCTA";
 import CTASection from "@/components/CTASection";
 
-// Revalidate every 6 hours so scheduled posts go live automatically
-export const revalidate = 21600;
+// Revalidate every 60 seconds for CMS changes (also handles scheduled posts)
+export const revalidate = 60;
 
 // ─── Helpers ────────────────────────────────────────────────────────
 function isPostPublished(dateStr: string): boolean {
@@ -45,6 +46,16 @@ export async function generateMetadata({
   if (!post || !isPostPublished(post.frontmatter.date))
     return { title: "Post Not Found" };
 
+  // Check Supabase for CMS-managed SEO data first
+  const dbSeo = await getPageSEO(`/blog/${slug}`);
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [post.frontmatter.primaryKeyword, ...post.frontmatter.secondaryKeywords],
+    };
+  }
+
+  // Fallback to frontmatter metadata
   const { frontmatter: fm } = post;
   const url = `${BASE_URL}/blog/${fm.slug}`;
 

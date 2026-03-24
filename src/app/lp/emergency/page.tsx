@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "24/7 emergency roof repair in Philadelphia. Storm damage? Leaking roof? We respond fast. Licensed PA184779, fully insured. Call now (888) 823-4766.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.adilayroofing.com/lp/emergency" },
 };
 
 export default function EmergencyLP() {

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Professional roof replacement in Philadelphia. 20+ years experience, 2,080+ projects. Free gutter cleaning included. Licensed PA184779. Call (888) 823-4766 for a free estimate.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.adilayroofing.com/lp/roof-replacement" },
 };
 
 export default function RoofReplacementLP() {

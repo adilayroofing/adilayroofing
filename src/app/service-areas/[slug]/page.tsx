@@ -7,6 +7,9 @@ import { getAllLocations, getLocationBySlug } from "@/data/locations";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
+
+export const revalidate = 60;
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render all location pages
@@ -32,6 +35,25 @@ export async function generateMetadata({
     return { title: "Location Not Found" };
   }
 
+  // Check Supabase for CMS-managed SEO data first
+  const dbSeo = await getPageSEO(`/service-areas/${slug}`);
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        `roofer ${location.name}`,
+        `roofing contractor ${location.name}`,
+        `roof replacement ${location.name}`,
+        `roof repair ${location.name}`,
+        `${location.name} roofer`,
+        `${location.name} roofing`,
+        `best roofer ${location.name} ${location.state}`,
+        `roofer near me ${location.name}`,
+      ],
+    };
+  }
+
+  // Fallback to hardcoded metadata
   return {
     title: location.metaTitle,
     description: location.metaDescription,

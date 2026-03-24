@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Fast, affordable roof leak repair in Philadelphia. Same-day service available. 20+ years experience. Licensed PA184779. Free estimates — call (888) 823-4766.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.adilayroofing.com/lp/roof-repair" },
 };
 
 export default function RoofRepairLP() {

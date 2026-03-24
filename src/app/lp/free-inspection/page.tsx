@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Free roof inspection in Philadelphia. Know your roof's condition with no cost and no obligation. Licensed PA184779. Call (888) 823-4766 to schedule.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.adilayroofing.com/lp/free-inspection" },
 };
 
 export default function FreeInspectionLP() {
