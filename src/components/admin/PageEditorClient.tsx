@@ -234,7 +234,20 @@ export default function PageEditorClient({
   // Content — structured Home page (pre-fill from CMS or hardcoded data)
   const [homeContent, setHomeContent] = useState<HomePageContent>(() => {
     if (structuredBlock?.block_type === "structured_home") {
-      return structuredBlock.content as unknown as HomePageContent;
+      const c = structuredBlock.content as Record<string, unknown>;
+      // Handle migration from old heroHeadline field to new split fields
+      const oldHeadline = c.heroHeadline as string | undefined;
+      return {
+        heroHeadlineWhite: (c.heroHeadlineWhite as string) || (oldHeadline ? "Philadelphia's #1 Rated" : ""),
+        heroHeadlineRed: (c.heroHeadlineRed as string) || (oldHeadline ? "Roofing Contractor" : ""),
+        heroSubheadline: (c.heroSubheadline as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        whyChooseUs: (c.whyChooseUs as { title: string; description: string }[]) || [],
+        teamHeading: (c.teamHeading as string) || "",
+        teamParagraphs: (c.teamParagraphs as string[]) || [],
+        serviceAreasHeading: (c.serviceAreasHeading as string) || "",
+        serviceAreasDescription: (c.serviceAreasDescription as string) || "",
+      };
     }
     if (isHomePage) {
       return {
