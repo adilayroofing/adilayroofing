@@ -28,6 +28,7 @@ export default function HistoryClient({
   const [previewId, setPreviewId] = useState<string | null>(null);
   const [revertingId, setRevertingId] = useState<string | null>(null);
   const [confirmRevertId, setConfirmRevertId] = useState<string | null>(null);
+  const [revertedIds, setRevertedIds] = useState<Set<string>>(new Set());
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const filtered = filter
@@ -95,6 +96,7 @@ export default function HistoryClient({
       });
 
       setMessage({ type: "success", text: `Reverted "${revision.slug}" to version from ${formatDate(revision.created_at)}` });
+      setRevertedIds((prev) => new Set(prev).add(revision.id));
       setConfirmRevertId(null);
       router.refresh();
     } catch (err) {
@@ -168,7 +170,11 @@ export default function HistoryClient({
                       >
                         {previewId === rev.id ? "Close" : "Preview"}
                       </button>
-                      {confirmRevertId === rev.id ? (
+                      {revertedIds.has(rev.id) ? (
+                        <span className="px-3 py-1.5 text-xs font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
+                          Reverted ✓
+                        </span>
+                      ) : confirmRevertId === rev.id ? (
                         <div className="flex items-center gap-1">
                           <button
                             onClick={() => handleRevert(rev)}
@@ -260,15 +266,21 @@ export default function HistoryClient({
               >
                 Close
               </button>
-              <button
-                onClick={() => {
-                  setConfirmRevertId(previewRevision.id);
-                  setPreviewId(null);
-                }}
-                className="px-4 py-2 text-sm font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-colors"
-              >
-                Revert to This Version
-              </button>
+              {revertedIds.has(previewRevision.id) ? (
+                <span className="px-4 py-2 text-sm font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
+                  Reverted ✓
+                </span>
+              ) : (
+                <button
+                  onClick={() => {
+                    setConfirmRevertId(previewRevision.id);
+                    setPreviewId(null);
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-colors"
+                >
+                  Revert to This Version
+                </button>
+              )}
             </div>
           </div>
         </div>
