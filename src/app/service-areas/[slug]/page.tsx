@@ -7,7 +7,7 @@ import { getAllLocations, getLocationBySlug } from "@/data/locations";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getPageSEO, buildMetadataFromSEO, getPageContent } from "@/lib/seo";
+import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -136,9 +136,6 @@ export default async function LocationPage({ params }: PageProps) {
   if (!location) {
     notFound();
   }
-
-  // Check for CMS-managed content (edited via admin dashboard)
-  const cmsContent = await getPageContent(`/service-areas/${slug}`);
 
   // JSON-LD LocalBusiness schema
   const localBusinessSchema = {
@@ -329,212 +326,202 @@ export default async function LocationPage({ params }: PageProps) {
       </section>
 
       {/* ================================================================= */}
-      {/* Page Body Content (CMS or hardcoded fallback)                     */}
+      {/* Intro Section                                                     */}
       {/* ================================================================= */}
-      {cmsContent ? (
-        /* CMS-managed content from Supabase content_blocks */
-        <section className="bg-white">
+      <section className="bg-white">
+        <div className="section-padding">
+          <div className="container-narrow mx-auto">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg text-brand-gray leading-relaxed">
+                {location.intro}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* Services Section                                                  */}
+      {/* ================================================================= */}
+      <section className="bg-brand-light">
+        <div className="section-padding">
+          <div className="container-narrow mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="section-heading">
+                Our Roofing Services in {location.name}
+              </h2>
+              <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
+                We offer a complete range of roofing and exterior services to
+                homeowners and businesses in {location.name},{" "}
+                {location.state}. Every project is backed by our{" "}
+                {company.yearsExperience} years of experience and our
+                commitment to quality workmanship.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="group bg-white border border-brand-border rounded-sm p-6 hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-start gap-3">
+                    <CheckIcon />
+                    <div>
+                      <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-brand-gray mt-2 leading-relaxed">
+                        {service.description.replace(
+                          /in Philadelphia/gi,
+                          `in ${location.name}`
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* Local Context Section                                             */}
+      {/* ================================================================= */}
+      <section className="bg-white">
+        <div className="section-padding">
+          <div className="container-narrow mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div className="md:col-span-7">
+                  <h2 className="section-heading mb-6">
+                    Why {location.name} Homeowners Choose Adilay Roofing
+                  </h2>
+                  <p className="text-brand-gray leading-relaxed">
+                    {location.localContext}
+                  </p>
+                </div>
+                <div className="md:col-span-5">
+                  <div className="bg-brand-light border border-brand-border rounded-sm p-6">
+                    <h3 className="text-lg font-bold text-brand-dark mb-4">
+                      Why Choose Us
+                    </h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-sm text-brand-dark font-medium">
+                          {company.yearsExperience} years of roofing experience
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-sm text-brand-dark font-medium">
+                          {company.projectsCompleted} projects completed
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-sm text-brand-dark font-medium">
+                          Licensed in Pennsylvania (PA184779)
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-sm text-brand-dark font-medium">
+                          Fully insured with workers&apos; comp
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-sm text-brand-dark font-medium">
+                          Free on-site estimates &mdash; no pressure
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-sm text-brand-dark font-medium">
+                          Emergency service available 24/7
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* Neighborhoods / Areas Served                                      */}
+      {/* ================================================================= */}
+      {location.neighborhoods.length > 0 && (
+        <section className="bg-brand-light">
           <div className="section-padding">
             <div className="container-narrow mx-auto">
-              <div
-                className="prose prose-lg max-w-3xl mx-auto prose-headings:text-brand-dark prose-p:text-brand-gray prose-a:text-brand-red prose-strong:text-brand-dark prose-li:text-brand-gray"
-                dangerouslySetInnerHTML={{ __html: cmsContent }}
-              />
+              <div className="text-center mb-10">
+                <h2 className="section-heading">
+                  {location.type === "county"
+                    ? `Communities We Serve in ${location.name}`
+                    : `Neighborhoods We Serve in ${location.name}`}
+                </h2>
+                <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
+                  Our roofing services are available throughout{" "}
+                  {location.name} and the surrounding{" "}
+                  {location.type === "neighborhood"
+                    ? "neighborhoods"
+                    : "communities"}
+                  . No matter where you are in the area, we provide the same
+                  quality workmanship and reliable service.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                {location.neighborhoods.map((neighborhood) => (
+                  <div
+                    key={neighborhood}
+                    className="flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3"
+                  >
+                    <MapPinIcon className="w-4 h-4 text-brand-red flex-shrink-0" />
+                    <span className="text-sm font-medium text-brand-dark">
+                      {neighborhood}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Zip codes */}
+              {location.zipCodes.length > 0 && (
+                <div className="mt-8 text-center">
+                  <p className="text-sm text-brand-gray">
+                    <span className="font-semibold text-brand-dark">
+                      Zip codes served:{" "}
+                    </span>
+                    {location.zipCodes.join(", ")}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>
-      ) : (
-        /* Hardcoded fallback from locations.ts data */
-        <>
-          {/* Intro Section */}
-          <section className="bg-white">
-            <div className="section-padding">
-              <div className="container-narrow mx-auto">
-                <div className="max-w-3xl mx-auto">
-                  <p className="text-lg text-brand-gray leading-relaxed">
-                    {location.intro}
-                  </p>
-                </div>
-              </div>
+      )}
+
+      {/* ================================================================= */}
+      {/* FAQ Section                                                       */}
+      {/* ================================================================= */}
+      {location.faq.length > 0 && (
+        <section className="bg-white">
+          <div className="section-padding">
+            <div className="container-narrow mx-auto max-w-3xl">
+              <h2 className="section-heading text-center mb-10">
+                Frequently Asked Questions About Roofing in {location.name}
+              </h2>
+              <FAQ items={location.faq} />
             </div>
-          </section>
-
-          {/* Services Section */}
-          <section className="bg-brand-light">
-            <div className="section-padding">
-              <div className="container-narrow mx-auto">
-                <div className="text-center mb-12">
-                  <h2 className="section-heading">
-                    Our Roofing Services in {location.name}
-                  </h2>
-                  <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
-                    We offer a complete range of roofing and exterior services to
-                    homeowners and businesses in {location.name},{" "}
-                    {location.state}. Every project is backed by our{" "}
-                    {company.yearsExperience} years of experience and our
-                    commitment to quality workmanship.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="group bg-white border border-brand-border rounded-sm p-6 hover:shadow-md transition-shadow"
-                    >
-                      <div className="flex items-start gap-3">
-                        <CheckIcon />
-                        <div>
-                          <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
-                            {service.title}
-                          </h3>
-                          <p className="text-sm text-brand-gray mt-2 leading-relaxed">
-                            {service.description.replace(
-                              /in Philadelphia/gi,
-                              `in ${location.name}`
-                            )}
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Local Context Section */}
-          <section className="bg-white">
-            <div className="section-padding">
-              <div className="container-narrow mx-auto">
-                <div className="max-w-4xl mx-auto">
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                    <div className="md:col-span-7">
-                      <h2 className="section-heading mb-6">
-                        Why {location.name} Homeowners Choose Adilay Roofing
-                      </h2>
-                      <p className="text-brand-gray leading-relaxed">
-                        {location.localContext}
-                      </p>
-                    </div>
-                    <div className="md:col-span-5">
-                      <div className="bg-brand-light border border-brand-border rounded-sm p-6">
-                        <h3 className="text-lg font-bold text-brand-dark mb-4">
-                          Why Choose Us
-                        </h3>
-                        <ul className="space-y-3">
-                          <li className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-sm text-brand-dark font-medium">
-                              {company.yearsExperience} years of roofing experience
-                            </span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-sm text-brand-dark font-medium">
-                              {company.projectsCompleted} projects completed
-                            </span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-sm text-brand-dark font-medium">
-                              Licensed in Pennsylvania (PA184779)
-                            </span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-sm text-brand-dark font-medium">
-                              Fully insured with workers&apos; comp
-                            </span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-sm text-brand-dark font-medium">
-                              Free on-site estimates &mdash; no pressure
-                            </span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-sm text-brand-dark font-medium">
-                              Emergency service available 24/7
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Neighborhoods / Areas Served */}
-          {location.neighborhoods.length > 0 && (
-            <section className="bg-brand-light">
-              <div className="section-padding">
-                <div className="container-narrow mx-auto">
-                  <div className="text-center mb-10">
-                    <h2 className="section-heading">
-                      {location.type === "county"
-                        ? `Communities We Serve in ${location.name}`
-                        : `Neighborhoods We Serve in ${location.name}`}
-                    </h2>
-                    <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
-                      Our roofing services are available throughout{" "}
-                      {location.name} and the surrounding{" "}
-                      {location.type === "neighborhood"
-                        ? "neighborhoods"
-                        : "communities"}
-                      . No matter where you are in the area, we provide the same
-                      quality workmanship and reliable service.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                    {location.neighborhoods.map((neighborhood) => (
-                      <div
-                        key={neighborhood}
-                        className="flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3"
-                      >
-                        <MapPinIcon className="w-4 h-4 text-brand-red flex-shrink-0" />
-                        <span className="text-sm font-medium text-brand-dark">
-                          {neighborhood}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Zip codes */}
-                  {location.zipCodes.length > 0 && (
-                    <div className="mt-8 text-center">
-                      <p className="text-sm text-brand-gray">
-                        <span className="font-semibold text-brand-dark">
-                          Zip codes served:{" "}
-                        </span>
-                        {location.zipCodes.join(", ")}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* FAQ Section */}
-          {location.faq.length > 0 && (
-            <section className="bg-white">
-              <div className="section-padding">
-                <div className="container-narrow mx-auto max-w-3xl">
-                  <h2 className="section-heading text-center mb-10">
-                    Frequently Asked Questions About Roofing in {location.name}
-                  </h2>
-                  <FAQ items={location.faq} />
-                </div>
-              </div>
-            </section>
-          )}
-        </>
+          </div>
+        </section>
       )}
 
       {/* ================================================================= */}

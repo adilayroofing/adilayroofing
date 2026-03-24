@@ -9,7 +9,7 @@ import {
   renderMarkdown,
   BASE_URL,
 } from "@/lib/blog";
-import { getPageSEO, buildMetadataFromSEO, getPageContent } from "@/lib/seo";
+import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import BlogHero from "@/components/blog/BlogHero";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -88,10 +88,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const { frontmatter: fm, content } = post;
 
-  // Check for CMS-managed content first, fall back to markdown
-  const cmsContent = await getPageContent(`/blog/${fm.slug}`);
-  const htmlContent = cmsContent || renderMarkdown(content);
-
+  const htmlContent = renderMarkdown(content);
   const toc = generateTOC(content);
   const related = getRelatedPosts(fm.slug, fm.category, fm.relatedSlugs);
   const postUrl = `${BASE_URL}/blog/${fm.slug}`;
