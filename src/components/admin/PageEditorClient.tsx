@@ -7,6 +7,8 @@ import SEOPreview from "./SEOPreview";
 import RichTextEditor from "./RichTextEditor";
 import StructuredServiceEditor, { type ServiceContent } from "./StructuredServiceEditor";
 import StructuredLocationEditor, { type LocationContent } from "./StructuredLocationEditor";
+import { getServiceBySlug } from "@/data/services";
+import { getLocationBySlug } from "@/data/locations";
 
 interface PageData {
   id: string;
@@ -74,7 +76,7 @@ export default function PageEditorClient({
       : ""
   );
 
-  // Content — structured service
+  // Content — structured service (pre-fill from CMS or hardcoded data)
   const [serviceContent, setServiceContent] = useState<ServiceContent>(() => {
     if (structuredBlock?.block_type === "structured_service") {
       const c = structuredBlock.content as Record<string, unknown>;
@@ -85,10 +87,23 @@ export default function PageEditorClient({
         faq: (c.faq as { question: string; answer: string }[]) || [],
       };
     }
+    // Pre-fill from hardcoded service data if no CMS block exists yet
+    if (isServicePage) {
+      const serviceSlug = slug.replace("/services/", "");
+      const hardcoded = getServiceBySlug(serviceSlug);
+      if (hardcoded) {
+        return {
+          heroDescription: hardcoded.heroDescription,
+          benefits: [...hardcoded.benefits],
+          features: [...hardcoded.features],
+          faq: hardcoded.faq.map((f) => ({ ...f })),
+        };
+      }
+    }
     return { heroDescription: "", benefits: [], features: [], faq: [] };
   });
 
-  // Content — structured location
+  // Content — structured location (pre-fill from CMS or hardcoded data)
   const [locationContent, setLocationContent] = useState<LocationContent>(() => {
     if (structuredBlock?.block_type === "structured_location") {
       const c = structuredBlock.content as Record<string, unknown>;
@@ -99,6 +114,20 @@ export default function PageEditorClient({
         zipCodes: (c.zipCodes as string[]) || [],
         faq: (c.faq as { question: string; answer: string }[]) || [],
       };
+    }
+    // Pre-fill from hardcoded location data if no CMS block exists yet
+    if (isLocationPage) {
+      const locationSlug = slug.replace("/service-areas/", "");
+      const hardcoded = getLocationBySlug(locationSlug);
+      if (hardcoded) {
+        return {
+          intro: hardcoded.intro,
+          localContext: hardcoded.localContext,
+          neighborhoods: [...hardcoded.neighborhoods],
+          zipCodes: [...hardcoded.zipCodes],
+          faq: hardcoded.faq.map((f) => ({ ...f })),
+        };
+      }
     }
     return { intro: "", localContext: "", neighborhoods: [], zipCodes: [], faq: [] };
   });
