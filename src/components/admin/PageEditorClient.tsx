@@ -7,8 +7,11 @@ import SEOPreview from "./SEOPreview";
 import RichTextEditor from "./RichTextEditor";
 import StructuredServiceEditor, { type ServiceContent } from "./StructuredServiceEditor";
 import StructuredLocationEditor, { type LocationContent } from "./StructuredLocationEditor";
+import StructuredFAQEditor, { type FAQPageContent } from "./StructuredFAQEditor";
+import StructuredAboutEditor, { type AboutPageContent } from "./StructuredAboutEditor";
 import { getServiceBySlug } from "@/data/services";
 import { getLocationBySlug } from "@/data/locations";
+import { faqs as hardcodedFaqs } from "@/data/faqs";
 
 interface PageData {
   id: string;
@@ -62,10 +65,16 @@ export default function PageEditorClient({
   // Detect page type from slug
   const isServicePage = slug.startsWith("/services/") && slug !== "/services";
   const isLocationPage = slug.startsWith("/service-areas/") && slug !== "/service-areas";
+  const isFAQPage = slug === "/faq";
+  const isAboutPage = slug === "/about";
 
   // Find structured content block or rich_text block
   const structuredBlock = contentBlocks.find(
-    (b) => b.block_type === "structured_service" || b.block_type === "structured_location"
+    (b) =>
+      b.block_type === "structured_service" ||
+      b.block_type === "structured_location" ||
+      b.block_type === "structured_faq" ||
+      b.block_type === "structured_about"
   );
   const richTextBlock = contentBlocks.find((b) => b.block_type === "rich_text");
 
@@ -132,6 +141,93 @@ export default function PageEditorClient({
     return { intro: "", localContext: "", neighborhoods: [], zipCodes: [], faq: [] };
   });
 
+  // Content — structured FAQ page (pre-fill from CMS or hardcoded data)
+  const [faqContent, setFaqContent] = useState<FAQPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_faq") {
+      return structuredBlock.content as unknown as FAQPageContent;
+    }
+    // Pre-fill from hardcoded FAQ data
+    if (isFAQPage) {
+      return {
+        general: {
+          title: "General Questions",
+          description: "The most common questions we get from homeowners and businesses.",
+          items: hardcodedFaqs.map((f) => ({ ...f })),
+        },
+        areas: {
+          title: "Service Area Questions",
+          description: "We proudly serve Philadelphia and surrounding counties in southeastern Pennsylvania.",
+          items: [
+            { question: "What neighborhoods in Philadelphia do you cover?", answer: "We serve all of Philadelphia — from Northeast Philly and Kensington to Center City, South Philly, Germantown, and everywhere in between. If you're in the greater Philadelphia area, we can help." },
+            { question: "Do you serve outside of Philadelphia?", answer: "Yes! In addition to Philadelphia, we serve Bucks County, Montgomery County, Delaware County, and Chester County. This includes towns like Norristown, Cheltenham, Abington, Jenkintown, and many more across southeastern Pennsylvania." },
+            { question: "Is there an extra charge for jobs outside of the city?", answer: "No. Our pricing is based on the scope of work, not your location. Whether you're in Philadelphia or a surrounding county, you'll receive the same honest pricing." },
+          ],
+        },
+        roofingDetails: {
+          title: "Roofing Details",
+          description: "In-depth answers about costs, materials, permits, and what to expect during your roofing project.",
+          items: [
+            { question: "How much does a roof replacement cost in Philadelphia?", answer: "The cost of a roof replacement in Philadelphia typically ranges from $5,000 to $12,000+ depending on the size of your home, materials chosen, and the complexity of the job. Architectural shingles are the most popular choice. We provide free, detailed written estimates so you know exactly what to expect — no hidden fees." },
+            { question: "Do you need a permit for a roof replacement in Philadelphia?", answer: "In most cases, yes. Philadelphia requires a building permit for roof replacements. Adilay Roofing handles the permitting process for you so you don't have to worry about it." },
+            { question: "How long does a new roof last?", answer: "A new asphalt shingle roof typically lasts 25–30 years, and architectural shingles can last up to 50 years with proper maintenance. EPDM flat roofs generally last 20–25 years. The lifespan depends on materials, installation quality, ventilation, and maintenance." },
+            { question: "What happens if it rains during my roof replacement?", answer: "We monitor weather closely and plan around it. If rain is expected mid-project, we use tarps and waterproof underlayment to protect your home. We never leave a roof exposed overnight. Your home's protection is always our top priority." },
+            { question: "Do you use subcontractors?", answer: "No. All work is performed by our own crew of 30+ experienced professionals. We don't outsource any part of the job. This is how we maintain quality control on every project." },
+            { question: "Can you replace a roof in the winter?", answer: "Yes, we can perform roof replacements year-round in the Philadelphia area. We follow manufacturer guidelines for temperature-sensitive materials and take extra precautions in colder months to ensure a proper installation." },
+            { question: "What is the difference between 3-tab and architectural shingles?", answer: "3-tab shingles are thinner, flat, and more affordable but have a shorter lifespan (15–20 years). Architectural shingles are thicker, more durable, offer a dimensional look, and last 25–50 years. We recommend architectural shingles for most Philadelphia homes because they handle our weather better and add more curb appeal." },
+            { question: "Do you provide roof inspections?", answer: "Yes. We offer free roof inspections for homeowners in Philadelphia and surrounding counties. We'll assess your roof's condition, document any issues with photos, and give you an honest recommendation — no pressure to commit." },
+          ],
+        },
+        process: {
+          title: "Our Process",
+          description: "What to expect when you work with Adilay Roofing.",
+          items: [
+            { question: "What happens after I request a quote?", answer: "Once you submit a quote request, our team will reach out within 24 hours to schedule a convenient time for a free inspection. We'll assess your property, discuss your needs, and provide a clear, written estimate — no pressure, no obligation." },
+            { question: "How do I prepare for a roof replacement?", answer: "We handle most of the prep work, but we recommend moving vehicles away from the house, securing loose items in the attic, and letting your neighbors know about the upcoming work. Our crew will protect your landscaping and clean up thoroughly when the job is done." },
+            { question: "Do I need to be home during the work?", answer: "You don't need to be home for the entire project, but we ask that you're available at the start and end of each workday so we can go over progress and answer any questions. We'll keep you updated throughout." },
+          ],
+        },
+      };
+    }
+    return {
+      general: { title: "", description: "", items: [] },
+      areas: { title: "", description: "", items: [] },
+      roofingDetails: { title: "", description: "", items: [] },
+      process: { title: "", description: "", items: [] },
+    };
+  });
+
+  // Content — structured About page (pre-fill from CMS or hardcoded data)
+  const [aboutContent, setAboutContent] = useState<AboutPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_about") {
+      return structuredBlock.content as unknown as AboutPageContent;
+    }
+    if (isAboutPage) {
+      return {
+        heroDescription: "Serving the Philadelphia region with honest, high-quality roofing services for over 20 years.",
+        storyHeading: "Roofing Done Right — For Over 20 Years",
+        storyParagraphs: [
+          "Founded by Adilay, Adilay Roofing LLC has been a trusted name in the Philadelphia roofing industry for over two decades. What started as a small, dedicated crew has grown into a full-service roofing and exterior company with 30+ professionals serving homeowners and businesses across Pennsylvania.",
+          "Our mission is simple: deliver the highest standard of roofing services with integrity, quality craftsmanship, and genuine care for every customer. We don't cut corners, and we don't disappear after the job is done.",
+          "With over 2,080+ completed projects and a growing list of satisfied customers, we've built our reputation on referrals, repeat business, and doing right by every property we touch.",
+        ],
+        values: [
+          { title: "Quality Craftsmanship", description: "Every project gets our full attention. We take pride in clean, professional work that lasts." },
+          { title: "Honest Communication", description: "We tell you what your roof needs — not what makes us the most money. No pressure, no upsells." },
+          { title: "Reliable Service", description: "We show up when we say we will, finish on time, and stand behind our work." },
+          { title: "Community Focus", description: "We live and work in the same neighborhoods we serve. Your satisfaction is our reputation." },
+        ],
+        teamDescription: "Our crew of 30+ experienced professionals brings decades of combined roofing expertise to every project. Led by owner Adilay, we treat every property like it's our own.",
+      };
+    }
+    return {
+      heroDescription: "",
+      storyHeading: "",
+      storyParagraphs: [],
+      values: [],
+      teamDescription: "",
+    };
+  });
+
   const canonicalValid =
     !canonicalUrl || canonicalUrl.startsWith("https://www.adilayroofing.com");
 
@@ -160,7 +256,11 @@ export default function PageEditorClient({
         ? { blockType: "structured_service" as const, data: serviceContent }
         : isLocationPage
           ? { blockType: "structured_location" as const, data: locationContent }
-          : { blockType: "rich_text" as const, data: { html: editorContent } };
+          : isFAQPage
+            ? { blockType: "structured_faq" as const, data: faqContent }
+            : isAboutPage
+              ? { blockType: "structured_about" as const, data: aboutContent }
+              : { blockType: "rich_text" as const, data: { html: editorContent } };
 
       if (asPending) {
         // Editor submits for review
@@ -465,6 +565,20 @@ export default function PageEditorClient({
                 Edit the location page content below. Each section maps to a styled section on the live site.
               </p>
               <StructuredLocationEditor content={locationContent} onChange={setLocationContent} />
+            </>
+          ) : isFAQPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the FAQ page content below. Each category maps to a styled section on the live site.
+              </p>
+              <StructuredFAQEditor content={faqContent} onChange={setFaqContent} />
+            </>
+          ) : isAboutPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the About page content below. Each field maps to a styled section on the live site.
+              </p>
+              <StructuredAboutEditor content={aboutContent} onChange={setAboutContent} />
             </>
           ) : (
             <>

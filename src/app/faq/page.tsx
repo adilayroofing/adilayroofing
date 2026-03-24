@@ -5,47 +5,34 @@ import { company } from "@/data/company";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "Roofing FAQ — Common Questions Answered",
-  description:
-    "Answers to common roofing questions about costs, timelines, insurance claims, and materials. Expert answers from Adilay Roofing, Philadelphia's trusted contractor.",
-  keywords: [
-    "roofing FAQ",
-    "roof replacement questions",
-    "roofing cost Philadelphia",
-    "how long does roof replacement take",
-    "roofing insurance claims Philadelphia",
-  ],
-  alternates: { canonical: `${BASE_URL}/faq` },
-  openGraph: {
-    title: "Roofing FAQ — Answers from Philadelphia's Trusted Roofer",
-    description:
-      "Common questions about roofing services, costs, timelines, insurance, and more — answered by Adilay Roofing experts.",
-    url: `${BASE_URL}/faq`,
-  },
-};
+export const revalidate = 60;
 
-const areaFaqs = [
+// ---------------------------------------------------------------------------
+// Hardcoded fallback data
+// ---------------------------------------------------------------------------
+const areaFaqsFallback = [
   {
-    question: `What neighborhoods in Philadelphia do you cover?`,
+    question: "What neighborhoods in Philadelphia do you cover?",
     answer:
       "We serve all of Philadelphia — from Northeast Philly and Kensington to Center City, South Philly, Germantown, and everywhere in between. If you're in the greater Philadelphia area, we can help.",
   },
   {
-    question: `Do you serve outside of Philadelphia?`,
-    answer: `Yes! In addition to Philadelphia, we serve Bucks County, Montgomery County, Delaware County, and Chester County. This includes towns like Norristown, Cheltenham, Abington, Jenkintown, and many more across southeastern Pennsylvania.`,
+    question: "Do you serve outside of Philadelphia?",
+    answer:
+      "Yes! In addition to Philadelphia, we serve Bucks County, Montgomery County, Delaware County, and Chester County. This includes towns like Norristown, Cheltenham, Abington, Jenkintown, and many more across southeastern Pennsylvania.",
   },
   {
-    question: `Is there an extra charge for jobs outside of the city?`,
+    question: "Is there an extra charge for jobs outside of the city?",
     answer:
       "No. Our pricing is based on the scope of work, not your location. Whether you're in Philadelphia or a surrounding county, you'll receive the same honest pricing.",
   },
 ];
 
-const roofingDetailsFaqs = [
+const roofingDetailsFaqsFallback = [
   {
     question: "How much does a roof replacement cost in Philadelphia?",
     answer:
@@ -89,7 +76,7 @@ const roofingDetailsFaqs = [
   },
 ];
 
-const processFaqs = [
+const processFaqsFallback = [
   {
     question: "What happens after I request a quote?",
     answer:
@@ -107,22 +94,92 @@ const processFaqs = [
   },
 ];
 
-const allFaqs = [...faqs, ...areaFaqs, ...roofingDetailsFaqs, ...processFaqs];
+// ---------------------------------------------------------------------------
+// Dynamic metadata
+// ---------------------------------------------------------------------------
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/faq");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "roofing FAQ",
+        "roof replacement questions",
+        "roofing cost Philadelphia",
+        "how long does roof replacement take",
+        "roofing insurance claims Philadelphia",
+      ],
+    };
+  }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: allFaqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
+  return {
+    title: "Roofing FAQ — Common Questions Answered",
+    description:
+      "Answers to common roofing questions about costs, timelines, insurance claims, and materials. Expert answers from Adilay Roofing, Philadelphia's trusted contractor.",
+    keywords: [
+      "roofing FAQ",
+      "roof replacement questions",
+      "roofing cost Philadelphia",
+      "how long does roof replacement take",
+      "roofing insurance claims Philadelphia",
+    ],
+    alternates: { canonical: `${BASE_URL}/faq` },
+    openGraph: {
+      title: "Roofing FAQ — Answers from Philadelphia's Trusted Roofer",
+      description:
+        "Common questions about roofing services, costs, timelines, insurance, and more — answered by Adilay Roofing experts.",
+      url: `${BASE_URL}/faq`,
     },
-  })),
-};
+  };
+}
 
-export default function FAQPage() {
+// ---------------------------------------------------------------------------
+// Page component
+// ---------------------------------------------------------------------------
+export default async function FAQPage() {
+  // Fetch CMS structured content (falls back to hardcoded if none)
+  const cmsData = await getStructuredContent("/faq", "structured_faq");
+
+  // Merge CMS data with hardcoded fallback
+  type FaqItem = { question: string; answer: string };
+  type FaqCategory = { title: string; description: string; items: FaqItem[] };
+
+  const cmsGeneral = cmsData?.general as FaqCategory | undefined;
+  const cmsAreas = cmsData?.areas as FaqCategory | undefined;
+  const cmsRoofing = cmsData?.roofingDetails as FaqCategory | undefined;
+  const cmsProcess = cmsData?.process as FaqCategory | undefined;
+
+  const generalTitle = cmsGeneral?.title || "General Questions";
+  const generalDesc = cmsGeneral?.description || "The most common questions we get from homeowners and businesses.";
+  const generalItems = cmsGeneral?.items?.length ? cmsGeneral.items : faqs;
+
+  const areasTitle = cmsAreas?.title || "Service Area Questions";
+  const areasDesc = cmsAreas?.description || "We proudly serve Philadelphia and surrounding counties in southeastern Pennsylvania.";
+  const areasItems = cmsAreas?.items?.length ? cmsAreas.items : areaFaqsFallback;
+
+  const roofingTitle = cmsRoofing?.title || "Roofing Details";
+  const roofingDesc = cmsRoofing?.description || "In-depth answers about costs, materials, permits, and what to expect during your roofing project.";
+  const roofingItems = cmsRoofing?.items?.length ? cmsRoofing.items : roofingDetailsFaqsFallback;
+
+  const processTitle = cmsProcess?.title || "Our Process";
+  const processDesc = cmsProcess?.description || "What to expect when you work with Adilay Roofing.";
+  const processItems = cmsProcess?.items?.length ? cmsProcess.items : processFaqsFallback;
+
+  const allFaqs = [...generalItems, ...areasItems, ...roofingItems, ...processItems];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <script
@@ -160,12 +217,12 @@ export default function FAQPage() {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-4">
-              General Questions
+              {generalTitle}
             </h2>
             <p className="text-brand-gray text-sm md:text-base mb-6 md:mb-8">
-              The most common questions we get from homeowners and businesses.
+              {generalDesc}
             </p>
-            <FAQAccordion items={faqs} />
+            <FAQAccordion items={generalItems} />
           </div>
         </div>
       </section>
@@ -175,13 +232,12 @@ export default function FAQPage() {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-4">
-              Service Area Questions
+              {areasTitle}
             </h2>
             <p className="text-brand-gray text-sm md:text-base mb-6 md:mb-8">
-              We proudly serve Philadelphia and surrounding counties in
-              southeastern Pennsylvania.
+              {areasDesc}
             </p>
-            <FAQAccordion items={areaFaqs} />
+            <FAQAccordion items={areasItems} />
 
             {/* Area tags */}
             <div className="mt-6 md:mt-8 flex flex-wrap gap-2">
@@ -203,13 +259,12 @@ export default function FAQPage() {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-4">
-              Roofing Details
+              {roofingTitle}
             </h2>
             <p className="text-brand-gray text-sm md:text-base mb-6 md:mb-8">
-              In-depth answers about costs, materials, permits, and what to
-              expect during your roofing project.
+              {roofingDesc}
             </p>
-            <FAQAccordion items={roofingDetailsFaqs} />
+            <FAQAccordion items={roofingItems} />
           </div>
         </div>
       </section>
@@ -219,12 +274,12 @@ export default function FAQPage() {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-2 md:mb-4">
-              Our Process
+              {processTitle}
             </h2>
             <p className="text-brand-gray text-sm md:text-base mb-6 md:mb-8">
-              What to expect when you work with Adilay Roofing.
+              {processDesc}
             </p>
-            <FAQAccordion items={processFaqs} />
+            <FAQAccordion items={processItems} />
           </div>
         </div>
       </section>

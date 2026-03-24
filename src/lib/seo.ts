@@ -94,7 +94,7 @@ export async function getPageContent(slug: string): Promise<string | null> {
  */
 export async function getStructuredContent(
   slug: string,
-  blockType: "structured_service" | "structured_location"
+  blockType: "structured_service" | "structured_location" | "structured_faq" | "structured_about"
 ): Promise<Record<string, unknown> | null> {
   const client = getAnonClient();
   if (!client) return null;

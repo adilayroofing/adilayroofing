@@ -3,73 +3,121 @@ import CTASection from "@/components/CTASection";
 import TrustBar from "@/components/TrustBar";
 import { company } from "@/data/company";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "About Us — 20+ Years Serving Philadelphia, PA",
-  description:
-    "Meet Adilay Roofing — Philadelphia's trusted roofing contractor. 20+ years experience, 2,080+ projects, PA license PA184779. Family-owned, quality craftsmanship.",
-  keywords: [
-    "about Adilay Roofing",
-    "Philadelphia roofing company",
-    "licensed roofer Philadelphia PA",
-    "trusted roofing contractor near me",
-    "family-owned roofer Philadelphia",
-  ],
-  alternates: { canonical: `${BASE_URL}/about` },
-  openGraph: {
-    title: "About Adilay Roofing — Philadelphia's Trusted Roofing Experts",
-    description:
-      "20+ years of roofing excellence. Licensed, insured, family-owned. Serving Philadelphia & surrounding counties.",
-    url: `${BASE_URL}/about`,
-  },
-};
+export const revalidate = 60;
 
-export default function AboutPage() {
-  const values = [
-    {
-      title: "Quality Craftsmanship",
+// ---------------------------------------------------------------------------
+// Dynamic metadata
+// ---------------------------------------------------------------------------
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/about");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "about Adilay Roofing",
+        "Philadelphia roofing company",
+        "licensed roofer Philadelphia PA",
+        "trusted roofing contractor near me",
+        "family-owned roofer Philadelphia",
+      ],
+    };
+  }
+
+  return {
+    title: "About Us — 20+ Years Serving Philadelphia, PA",
+    description:
+      "Meet Adilay Roofing — Philadelphia's trusted roofing contractor. 20+ years experience, 2,080+ projects, PA license PA184779. Family-owned, quality craftsmanship.",
+    keywords: [
+      "about Adilay Roofing",
+      "Philadelphia roofing company",
+      "licensed roofer Philadelphia PA",
+      "trusted roofing contractor near me",
+      "family-owned roofer Philadelphia",
+    ],
+    alternates: { canonical: `${BASE_URL}/about` },
+    openGraph: {
+      title: "About Adilay Roofing — Philadelphia's Trusted Roofing Experts",
       description:
-        "Every project gets our full attention. We take pride in clean, professional work that lasts.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
+        "20+ years of roofing excellence. Licensed, insured, family-owned. Serving Philadelphia & surrounding counties.",
+      url: `${BASE_URL}/about`,
     },
-    {
-      title: "Honest Communication",
-      description:
-        "We tell you what your roof needs — not what makes us the most money. No pressure, no upsells.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Reliable Service",
-      description:
-        "We show up when we say we will, finish on time, and stand behind our work.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Community Focus",
-      description:
-        "We live and work in the same neighborhoods we serve. Your satisfaction is our reputation.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-    },
-  ];
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Hardcoded fallback values
+// ---------------------------------------------------------------------------
+const fallbackValues = [
+  {
+    title: "Quality Craftsmanship",
+    description:
+      "Every project gets our full attention. We take pride in clean, professional work that lasts.",
+  },
+  {
+    title: "Honest Communication",
+    description:
+      "We tell you what your roof needs — not what makes us the most money. No pressure, no upsells.",
+  },
+  {
+    title: "Reliable Service",
+    description:
+      "We show up when we say we will, finish on time, and stand behind our work.",
+  },
+  {
+    title: "Community Focus",
+    description:
+      "We live and work in the same neighborhoods we serve. Your satisfaction is our reputation.",
+  },
+];
+
+const fallbackStoryParagraphs = [
+  `Founded by ${company.owner}, ${company.legalName} has been a trusted name in the Philadelphia roofing industry for over two decades. What started as a small, dedicated crew has grown into a full-service roofing and exterior company with ${company.teamMembers} professionals serving homeowners and businesses across Pennsylvania.`,
+  "Our mission is simple: deliver the highest standard of roofing services with integrity, quality craftsmanship, and genuine care for every customer. We don't cut corners, and we don't disappear after the job is done.",
+  `With over ${company.projectsCompleted} completed projects and a growing list of satisfied customers, we've built our reputation on referrals, repeat business, and doing right by every property we touch.`,
+];
+
+// Value icons — mapped by index (design stays the same regardless of CMS text)
+const valueIcons = [
+  <svg key="0" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  </svg>,
+  <svg key="1" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+  </svg>,
+  <svg key="2" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>,
+  <svg key="3" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>,
+];
+
+// ---------------------------------------------------------------------------
+// Page component
+// ---------------------------------------------------------------------------
+export default async function AboutPage() {
+  // Fetch CMS structured content (falls back to hardcoded if none)
+  const cmsData = await getStructuredContent("/about", "structured_about");
+
+  // Merge CMS data with hardcoded fallback
+  const heroDescription = (cmsData?.heroDescription as string) ||
+    `Serving the Philadelphia region with honest, high-quality roofing services for over ${company.yearsExperience} years.`;
+
+  const storyHeading = (cmsData?.storyHeading as string) || "Roofing Done Right — For Over 20 Years";
+
+  const cmsStoryParagraphs = cmsData?.storyParagraphs as string[] | undefined;
+  const storyParagraphs = cmsStoryParagraphs?.length ? cmsStoryParagraphs : fallbackStoryParagraphs;
+
+  const cmsValues = cmsData?.values as { title: string; description: string }[] | undefined;
+  const values = cmsValues?.length ? cmsValues : fallbackValues;
+
+  const teamDescription = (cmsData?.teamDescription as string) ||
+    `Our crew of ${company.teamMembers} experienced professionals brings decades of combined roofing expertise to every project. Led by owner ${company.owner}, we treat every property like it's our own.`;
 
   return (
     <>
@@ -82,8 +130,7 @@ export default function AboutPage() {
               About Adilay Roofing
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-              Serving the Philadelphia region with honest, high-quality roofing
-              services for over {company.yearsExperience} years.
+              {heroDescription}
             </p>
           </div>
         </div>
@@ -97,28 +144,13 @@ export default function AboutPage() {
               {/* Text Column */}
               <div>
                 <h2 className="section-heading">
-                  Roofing Done Right &mdash; For Over 20 Years
+                  {storyHeading}
                 </h2>
-                <p className="text-brand-gray text-base md:text-lg leading-relaxed mt-6">
-                  Founded by {company.owner}, {company.legalName} has been a
-                  trusted name in the Philadelphia roofing industry for over two
-                  decades. What started as a small, dedicated crew has grown into
-                  a full-service roofing and exterior company with {company.teamMembers}{" "}
-                  professionals serving homeowners and businesses across
-                  Pennsylvania.
-                </p>
-                <p className="text-brand-gray text-base md:text-lg leading-relaxed mt-4">
-                  Our mission is simple: deliver the highest standard of roofing
-                  services with integrity, quality craftsmanship, and genuine care
-                  for every customer. We don&apos;t cut corners, and we don&apos;t
-                  disappear after the job is done.
-                </p>
-                <p className="text-brand-gray text-base md:text-lg leading-relaxed mt-4">
-                  With over {company.projectsCompleted} completed projects and a
-                  growing list of satisfied customers, we&apos;ve built our
-                  reputation on referrals, repeat business, and doing right by
-                  every property we touch.
-                </p>
+                {storyParagraphs.map((para, i) => (
+                  <p key={i} className="text-brand-gray text-base md:text-lg leading-relaxed mt-4 first:mt-6">
+                    {para}
+                  </p>
+                ))}
 
                 {/* License badge */}
                 <div className="mt-8 flex items-center gap-3 bg-brand-light p-4 rounded-sm">
@@ -155,7 +187,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
               {values.map((value, index) => (
                 <div key={index} className="bg-white p-4 md:p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow flex items-start gap-4 sm:flex-col">
-                  <div className="flex-shrink-0 text-brand-red sm:mb-4">{value.icon}</div>
+                  <div className="flex-shrink-0 text-brand-red sm:mb-4">
+                    {valueIcons[index] || valueIcons[0]}
+                  </div>
                   <div>
                     <h3 className="text-base md:text-lg font-bold text-brand-dark mb-1 md:mb-2">{value.title}</h3>
                     <p className="text-brand-gray text-sm leading-relaxed">{value.description}</p>
@@ -178,9 +212,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="section-heading text-left">Our Team</h2>
                 <p className="text-brand-gray text-base md:text-lg leading-relaxed mt-4">
-                  Our crew of {company.teamMembers} experienced professionals brings
-                  decades of combined roofing expertise to every project. Led by owner{" "}
-                  {company.owner}, we treat every property like it&apos;s our own.
+                  {teamDescription}
                 </p>
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   {[
