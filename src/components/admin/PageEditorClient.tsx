@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import SEOPreview from "./SEOPreview";
 import RichTextEditor from "./RichTextEditor";
+import StructuredServiceEditor, { type ServiceContent } from "./StructuredServiceEditor";
+import StructuredLocationEditor, { type LocationContent } from "./StructuredLocationEditor";
 
 interface PageData {
   id: string;
@@ -55,12 +57,51 @@ export default function PageEditorClient({
   const [customHeadTags, setCustomHeadTags] = useState(page?.custom_head_tags || "");
   const [status, setStatus] = useState(page?.status || "draft");
 
-  // Content
+  // Detect page type from slug
+  const isServicePage = slug.startsWith("/services/") && slug !== "/services";
+  const isLocationPage = slug.startsWith("/service-areas/") && slug !== "/service-areas";
+
+  // Find structured content block or rich_text block
+  const structuredBlock = contentBlocks.find(
+    (b) => b.block_type === "structured_service" || b.block_type === "structured_location"
+  );
+  const richTextBlock = contentBlocks.find((b) => b.block_type === "rich_text");
+
+  // Content — rich text (for blog/static pages)
   const [editorContent, setEditorContent] = useState(
-    contentBlocks.length > 0 && contentBlocks[0].content
-      ? (contentBlocks[0].content as { html?: string }).html || ""
+    richTextBlock?.content
+      ? (richTextBlock.content as { html?: string }).html || ""
       : ""
   );
+
+  // Content — structured service
+  const [serviceContent, setServiceContent] = useState<ServiceContent>(() => {
+    if (structuredBlock?.block_type === "structured_service") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroDescription: (c.heroDescription as string) || "",
+        benefits: (c.benefits as string[]) || [],
+        features: (c.features as string[]) || [],
+        faq: (c.faq as { question: string; answer: string }[]) || [],
+      };
+    }
+    return { heroDescription: "", benefits: [], features: [], faq: [] };
+  });
+
+  // Content — structured location
+  const [locationContent, setLocationContent] = useState<LocationContent>(() => {
+    if (structuredBlock?.block_type === "structured_location") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        intro: (c.intro as string) || "",
+        localContext: (c.localContext as string) || "",
+        neighborhoods: (c.neighborhoods as string[]) || [],
+        zipCodes: (c.zipCodes as string[]) || [],
+        faq: (c.faq as { question: string; answer: string }[]) || [],
+      };
+    }
+    return { intro: "", localContext: "", neighborhoods: [], zipCodes: [], faq: [] };
+  });
 
   const canonicalValid =
     !canonicalUrl || canonicalUrl.startsWith("https://www.adilayroofing.com");
@@ -85,6 +126,13 @@ export default function PageEditorClient({
     };
 
     try {
+      // Determine content to save based on page type
+      const contentPayload = isServicePage
+        ? { blockType: "structured_service" as const, data: serviceContent }
+        : isLocationPage
+          ? { blockType: "structured_location" as const, data: locationContent }
+          : { blockType: "rich_text" as const, data: { html: editorContent } };
+
       if (asPending) {
         // Editor submits for review
         const { error } = await supabase.from("pending_changes").insert({
@@ -92,7 +140,7 @@ export default function PageEditorClient({
           record_id: page?.id || "00000000-0000-0000-0000-000000000000",
           change_type: isNew ? "create" : "update",
           old_value: page || null,
-          new_value: { ...pageData, content_html: editorContent },
+          new_value: { ...pageData, content_block_type: contentPayload.blockType, content_data: contentPayload.data },
           submitted_by: userEmail,
           status: "pending",
         });
@@ -117,14 +165,12 @@ export default function PageEditorClient({
           if (error) throw error;
 
           // Save content block
-          if (editorContent) {
-            await supabase.from("content_blocks").insert({
-              page_id: newPage.id,
-              block_type: "rich_text",
-              content: { html: editorContent },
-              sort_order: 0,
-            });
-          }
+          await supabase.from("content_blocks").insert({
+            page_id: newPage.id,
+            block_type: contentPayload.blockType,
+            content: contentPayload.data,
+            sort_order: 0,
+          });
 
           await supabase.from("activity_log").insert({
             user_email: userEmail,
@@ -142,20 +188,19 @@ export default function PageEditorClient({
           if (error) throw error;
 
           // Update or create content block
-          if (editorContent) {
-            if (contentBlocks.length > 0) {
-              await supabase
-                .from("content_blocks")
-                .update({ content: { html: editorContent } })
-                .eq("id", contentBlocks[0].id);
-            } else {
-              await supabase.from("content_blocks").insert({
-                page_id: page.id,
-                block_type: "rich_text",
-                content: { html: editorContent },
-                sort_order: 0,
-              });
-            }
+          const existingBlock = structuredBlock || richTextBlock;
+          if (existingBlock) {
+            await supabase
+              .from("content_blocks")
+              .update({ block_type: contentPayload.blockType, content: contentPayload.data })
+              .eq("id", existingBlock.id);
+          } else {
+            await supabase.from("content_blocks").insert({
+              page_id: page.id,
+              block_type: contentPayload.blockType,
+              content: contentPayload.data,
+              sort_order: 0,
+            });
           }
 
           await supabase.from("activity_log").insert({
@@ -378,10 +423,28 @@ export default function PageEditorClient({
       {/* Content Tab */}
       {tab === "content" && (
         <div>
-          <p className="text-gray-400 text-sm mb-4">
-            Rich text content for this page. Supports headings, links, images, tables, and raw HTML.
-          </p>
-          <RichTextEditor content={editorContent} onChange={setEditorContent} />
+          {isServicePage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the service page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredServiceEditor content={serviceContent} onChange={setServiceContent} />
+            </>
+          ) : isLocationPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the location page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredLocationEditor content={locationContent} onChange={setLocationContent} />
+            </>
+          ) : (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Rich text content for this page. Supports headings, links, images, tables, and raw HTML.
+              </p>
+              <RichTextEditor content={editorContent} onChange={setEditorContent} />
+            </>
+          )}
         </div>
       )}
 

@@ -7,7 +7,7 @@ import { getAllLocations, getLocationBySlug } from "@/data/locations";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -137,6 +137,19 @@ export default async function LocationPage({ params }: PageProps) {
     notFound();
   }
 
+  // Fetch CMS structured content (falls back to hardcoded if none)
+  const cmsData = await getStructuredContent(`/service-areas/${slug}`, "structured_location");
+
+  // Merge: CMS data overrides hardcoded, with fallback
+  const intro = (cmsData?.intro as string) || location.intro;
+  const localContext = (cmsData?.localContext as string) || location.localContext;
+  const cmsNeighborhoods = cmsData?.neighborhoods as string[] | undefined;
+  const neighborhoods = cmsNeighborhoods?.length ? cmsNeighborhoods : location.neighborhoods;
+  const cmsZipCodes = cmsData?.zipCodes as string[] | undefined;
+  const zipCodes = cmsZipCodes?.length ? cmsZipCodes : location.zipCodes;
+  const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
+  const locationFaq = cmsFaq?.length ? cmsFaq : location.faq;
+
   // JSON-LD LocalBusiness schema
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -212,7 +225,7 @@ export default async function LocationPage({ params }: PageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: location.faq.map((item) => ({
+    mainEntity: locationFaq.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -333,7 +346,7 @@ export default async function LocationPage({ params }: PageProps) {
           <div className="container-narrow mx-auto">
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-brand-gray leading-relaxed">
-                {location.intro}
+                {intro}
               </p>
             </div>
           </div>
@@ -400,7 +413,7 @@ export default async function LocationPage({ params }: PageProps) {
                     Why {location.name} Homeowners Choose Adilay Roofing
                   </h2>
                   <p className="text-brand-gray leading-relaxed">
-                    {location.localContext}
+                    {localContext}
                   </p>
                 </div>
                 <div className="md:col-span-5">
@@ -457,7 +470,7 @@ export default async function LocationPage({ params }: PageProps) {
       {/* ================================================================= */}
       {/* Neighborhoods / Areas Served                                      */}
       {/* ================================================================= */}
-      {location.neighborhoods.length > 0 && (
+      {neighborhoods.length > 0 && (
         <section className="bg-brand-light">
           <div className="section-padding">
             <div className="container-narrow mx-auto">
@@ -479,7 +492,7 @@ export default async function LocationPage({ params }: PageProps) {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {location.neighborhoods.map((neighborhood) => (
+                {neighborhoods.map((neighborhood) => (
                   <div
                     key={neighborhood}
                     className="flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3"
@@ -493,13 +506,13 @@ export default async function LocationPage({ params }: PageProps) {
               </div>
 
               {/* Zip codes */}
-              {location.zipCodes.length > 0 && (
+              {zipCodes.length > 0 && (
                 <div className="mt-8 text-center">
                   <p className="text-sm text-brand-gray">
                     <span className="font-semibold text-brand-dark">
                       Zip codes served:{" "}
                     </span>
-                    {location.zipCodes.join(", ")}
+                    {zipCodes.join(", ")}
                   </p>
                 </div>
               )}
@@ -511,14 +524,14 @@ export default async function LocationPage({ params }: PageProps) {
       {/* ================================================================= */}
       {/* FAQ Section                                                       */}
       {/* ================================================================= */}
-      {location.faq.length > 0 && (
+      {locationFaq.length > 0 && (
         <section className="bg-white">
           <div className="section-padding">
             <div className="container-narrow mx-auto max-w-3xl">
               <h2 className="section-heading text-center mb-10">
                 Frequently Asked Questions About Roofing in {location.name}
               </h2>
-              <FAQ items={location.faq} />
+              <FAQ items={locationFaq} />
             </div>
           </div>
         </section>

@@ -88,6 +88,43 @@ export async function getPageContent(slug: string): Promise<string | null> {
   }
 }
 
+/**
+ * Fetch structured content (service or location) for a page from Supabase.
+ * Returns the JSONB content object or null (caller falls back to hardcoded data).
+ */
+export async function getStructuredContent(
+  slug: string,
+  blockType: "structured_service" | "structured_location"
+): Promise<Record<string, unknown> | null> {
+  const client = getAnonClient();
+  if (!client) return null;
+
+  try {
+    const { data: page, error: pageError } = await client
+      .from("pages")
+      .select("id")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .single();
+
+    if (pageError || !page) return null;
+
+    const { data: block, error: blockError } = await client
+      .from("content_blocks")
+      .select("content")
+      .eq("page_id", page.id)
+      .eq("block_type", blockType)
+      .limit(1)
+      .single();
+
+    if (blockError || !block) return null;
+
+    return block.content as Record<string, unknown>;
+  } catch {
+    return null;
+  }
+}
+
 export function buildMetadataFromSEO(seo: PageSEO) {
   return {
     title: seo.meta_title,

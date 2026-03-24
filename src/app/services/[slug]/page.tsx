@@ -7,7 +7,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import ServiceIcon from "@/components/ServiceIcon";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -86,6 +86,18 @@ export default async function ServicePage({ params }: PageProps) {
     notFound();
   }
 
+  // Fetch CMS structured content (falls back to hardcoded if none)
+  const cmsData = await getStructuredContent(`/services/${slug}`, "structured_service");
+
+  // Merge: CMS data overrides hardcoded, with fallback
+  const heroDescription = (cmsData?.heroDescription as string) || service.heroDescription;
+  const cmsBenefits = cmsData?.benefits as string[] | undefined;
+  const benefits = cmsBenefits?.length ? cmsBenefits : service.benefits;
+  const cmsFeatures = cmsData?.features as string[] | undefined;
+  const features = cmsFeatures?.length ? cmsFeatures : service.features;
+  const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
+  const faq = cmsFaq?.length ? cmsFaq : service.faq;
+
   // Build related services — exclude the current one, take up to 3
   const relatedServices = services
     .filter((s) => s.slug !== service.slug)
@@ -123,11 +135,11 @@ export default async function ServicePage({ params }: PageProps) {
   };
 
   const faqSchema =
-    service.faq.length > 0
+    faq.length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: service.faq.map((item) => ({
+          mainEntity: faq.map((item) => ({
             "@type": "Question",
             name: item.question,
             acceptedAnswer: {
@@ -195,7 +207,7 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <p className="text-lg md:text-xl text-brand-gray leading-relaxed max-w-3xl mx-auto text-center">
-              {service.heroDescription}
+              {heroDescription}
             </p>
           </div>
         </div>
@@ -210,7 +222,7 @@ export default async function ServicePage({ params }: PageProps) {
             <h2 className="section-heading text-center mb-10">Benefits</h2>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-              {service.benefits.map((benefit) => (
+              {benefits.map((benefit) => (
                 <li
                   key={benefit}
                   className="flex items-start gap-3 bg-white rounded-sm p-5 border border-brand-border"
@@ -249,7 +261,7 @@ export default async function ServicePage({ params }: PageProps) {
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {service.features.map((feature, index) => (
+              {features.map((feature, index) => (
                 <div
                   key={feature}
                   className="flex items-start gap-3 p-5 bg-brand-light rounded-sm border border-brand-border"
@@ -271,14 +283,14 @@ export default async function ServicePage({ params }: PageProps) {
       {/* ================================================================= */}
       {/* Service FAQ                                                       */}
       {/* ================================================================= */}
-      {service.faq.length > 0 && (
+      {faq.length > 0 && (
         <section className="bg-brand-light">
           <div className="section-padding">
             <div className="container-narrow mx-auto max-w-3xl">
               <h2 className="section-heading text-center mb-10">
                 Frequently Asked Questions
               </h2>
-              <FAQ items={service.faq} />
+              <FAQ items={faq} />
             </div>
           </div>
         </section>
