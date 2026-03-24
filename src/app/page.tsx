@@ -12,49 +12,80 @@ import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/blog/BlogCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Roofer Philadelphia | Best Roofing Contractor — Adilay Roofing",
-  },
-  description:
-    "Looking for a roofer in Philadelphia? Adilay Roofing is the top-rated roofing contractor with 20+ years experience, 2,080+ projects & 5-star reviews. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
-  keywords: [
-    "roofer Philadelphia",
-    "roofing contractor Philadelphia",
-    "best roofer Philadelphia",
-    "roof replacement Philadelphia",
-    "roof repair Philadelphia",
-    "Philadelphia roofer",
-    "roofer near me",
-    "roofing company near me",
-    "affordable roofer Philadelphia",
-    "flat roofing Philadelphia",
-    "siding installation Philadelphia",
-    "emergency roof repair Philadelphia",
-    "licensed roofer PA",
-    "free roofing estimate Philadelphia",
-  ],
-  alternates: {
-    canonical: BASE_URL,
-  },
-  openGraph: {
-    title: "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA",
+export const revalidate = 60;
+
+// ---------------------------------------------------------------------------
+// Dynamic metadata
+// ---------------------------------------------------------------------------
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "roofer Philadelphia",
+        "roofing contractor Philadelphia",
+        "best roofer Philadelphia",
+        "roof replacement Philadelphia",
+        "roof repair Philadelphia",
+        "Philadelphia roofer",
+        "roofer near me",
+        "roofing company near me",
+        "affordable roofer Philadelphia",
+        "flat roofing Philadelphia",
+        "siding installation Philadelphia",
+        "emergency roof repair Philadelphia",
+        "licensed roofer PA",
+        "free roofing estimate Philadelphia",
+      ],
+    };
+  }
+
+  return {
+    title: {
+      absolute: "Roofer Philadelphia | Best Roofing Contractor — Adilay Roofing",
+    },
     description:
-      "Philadelphia's trusted roofing experts. 20+ years, 2,080+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
-    url: BASE_URL,
-    images: [
-      {
-        url: `${BASE_URL}/images/adilay-van-service-areas.jpg`,
-        width: 1534,
-        height: 969,
-        alt: "Adilay Roofing crew and van completing a roofing project in Philadelphia",
-      },
+      "Looking for a roofer in Philadelphia? Adilay Roofing is the top-rated roofing contractor with 20+ years experience, 2,080+ projects & 5-star reviews. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
+    keywords: [
+      "roofer Philadelphia",
+      "roofing contractor Philadelphia",
+      "best roofer Philadelphia",
+      "roof replacement Philadelphia",
+      "roof repair Philadelphia",
+      "Philadelphia roofer",
+      "roofer near me",
+      "roofing company near me",
+      "affordable roofer Philadelphia",
+      "flat roofing Philadelphia",
+      "siding installation Philadelphia",
+      "emergency roof repair Philadelphia",
+      "licensed roofer PA",
+      "free roofing estimate Philadelphia",
     ],
-  },
-};
+    alternates: {
+      canonical: BASE_URL,
+    },
+    openGraph: {
+      title: "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA",
+      description:
+        "Philadelphia's trusted roofing experts. 20+ years, 2,080+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
+      url: BASE_URL,
+      images: [
+        {
+          url: `${BASE_URL}/images/adilay-van-service-areas.jpg`,
+          width: 1534,
+          height: 969,
+          alt: "Adilay Roofing crew and van completing a roofing project in Philadelphia",
+        },
+      ],
+    },
+  };
+}
 
 const serviceAreas = [
   "Philadelphia",
@@ -71,76 +102,85 @@ const serviceAreas = [
   "Bensalem",
 ];
 
-const whyChooseUs = [
+// ---------------------------------------------------------------------------
+// Hardcoded fallback data
+// ---------------------------------------------------------------------------
+const fallbackWhyChooseUs = [
   {
     title: "Experienced Crew",
     description:
       "Over 20 years of hands-on roofing experience in the Philadelphia area.",
     bgImage: "/images/experienced-crew-adilay-roofing-philadelphia.jpg",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    ),
   },
   {
     title: "Quality Materials",
     description:
       "We use top-rated materials from trusted manufacturers for lasting results.",
     bgImage: "/images/quality-roofing-materials-adilay.jpg",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-        />
-      </svg>
-    ),
   },
   {
     title: "Honest Pricing",
     description:
       "Clear, written proposals with no hidden fees or surprise charges.",
     bgImage: "/images/adilay-roofing-honest-pricing-proposal.jpg",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-        />
-      </svg>
-    ),
   },
 ];
 
-export default function Home() {
+// Icons for Why Choose Us cards — mapped by index (design stays the same)
+const whyChooseUsIcons = [
+  <svg key="0" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>,
+  <svg key="1" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  </svg>,
+  <svg key="2" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+  </svg>,
+];
+
+// Background images for Why Choose Us — mapped by index
+const whyChooseUsBgImages = [
+  "/images/experienced-crew-adilay-roofing-philadelphia.jpg",
+  "/images/quality-roofing-materials-adilay.jpg",
+  "/images/adilay-roofing-honest-pricing-proposal.jpg",
+];
+
+// ---------------------------------------------------------------------------
+// Page component
+// ---------------------------------------------------------------------------
+export default async function Home() {
+  // Fetch CMS structured content (falls back to hardcoded if none)
+  const cmsData = await getStructuredContent("/", "structured_home");
+
+  // Merge CMS data with hardcoded fallback
+  const heroHeadline = (cmsData?.heroHeadline as string) || "Philadelphia's #1 Rated Roofing Contractor";
+  const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
+  const heroDescription = (cmsData?.heroDescription as string) ||
+    "Looking for the best roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated. Get a free estimate today.";
+
+  const cmsWhyChooseUs = cmsData?.whyChooseUs as { title: string; description: string }[] | undefined;
+  const whyChooseUs = cmsWhyChooseUs?.length
+    ? cmsWhyChooseUs.map((item, i) => ({
+        ...item,
+        bgImage: whyChooseUsBgImages[i] || whyChooseUsBgImages[0],
+      }))
+    : fallbackWhyChooseUs;
+
+  const teamHeading = (cmsData?.teamHeading as string) || "Family-Owned. Locally Trusted.";
+
+  const cmsTeamParagraphs = cmsData?.teamParagraphs as string[] | undefined;
+  const teamParagraphs = cmsTeamParagraphs?.length
+    ? cmsTeamParagraphs
+    : [
+        "Adilay Roofing is a family-run business built on hard work, honest service, and a genuine commitment to every homeowner we serve. From our office in Philadelphia, we manage every project personally — no subcontractors, no runaround.",
+        "With over 20 years of experience and a crew that treats your home like their own, you get more than a contractor — you get a team that stands behind every shingle, every seam, and every promise.",
+      ];
+
+  const serviceAreasHeading = (cmsData?.serviceAreasHeading as string) || "Serving Philadelphia & Beyond";
+  const serviceAreasDescription = (cmsData?.serviceAreasDescription as string) ||
+    "We proudly serve homeowners and businesses across southeastern Pennsylvania.";
+
   // FAQPage schema for the 6 homepage FAQs
   const homepageFaqSchema = {
     "@context": "https://schema.org",
@@ -178,24 +218,27 @@ export default function Home() {
         <div className="relative z-10 container-wide mx-auto px-4 py-16 md:py-32 text-center">
           <ScrollReveal delay={200} duration={600} distance={28}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-              Philadelphia&apos;s #1 Rated
-              <br />
-              <span className="text-brand-red">Roofing Contractor</span>
+              {heroHeadline.includes("Roofing Contractor") ? (
+                <>
+                  {heroHeadline.split("Roofing Contractor")[0]}
+                  <br />
+                  <span className="text-brand-red">Roofing Contractor</span>
+                </>
+              ) : (
+                heroHeadline
+              )}
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={400} duration={600} distance={20}>
             <p className="text-xl md:text-2xl font-light text-white/90 mb-4 tracking-wide">
-              Quality Craftsmanship. Proven Results.
+              {heroSubheadline}
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={550} duration={600} distance={16}>
             <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Looking for the best roofer in Philadelphia? From roof replacement
-              and roof repair to emergency roofing services, Adilay Roofing has
-              served Philadelphia and surrounding areas for over 20 years.
-              Licensed, insured, 5-star rated. Get a free estimate today.
+              {heroDescription}
             </p>
           </ScrollReveal>
 
@@ -371,7 +414,7 @@ export default function Home() {
                   {/* Content */}
                   <div className="relative z-10 flex flex-col justify-end h-full p-5 md:p-8 md:items-center md:text-center md:justify-end">
                     <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/20 text-white mb-3 md:mb-4 group-hover:bg-brand-red transition-colors duration-300">
-                      {item.icon}
+                      {whyChooseUsIcons[i] || whyChooseUsIcons[0]}
                     </div>
                     <h3 className="text-lg md:text-2xl font-bold text-white mb-1 md:mb-3">
                       {item.title}
@@ -409,20 +452,13 @@ export default function Home() {
             <ScrollReveal direction="right" delay={100} distance={30}>
               <div>
                 <h2 className="section-heading text-left">
-                  Family-Owned. Locally Trusted.
+                  {teamHeading}
                 </h2>
-                <p className="text-brand-gray leading-relaxed mt-4">
-                  Adilay Roofing is a family-run business built on hard work,
-                  honest service, and a genuine commitment to every homeowner we
-                  serve. From our office in Philadelphia, we manage every project
-                  personally — no subcontractors, no runaround.
-                </p>
-                <p className="text-brand-gray leading-relaxed mt-4">
-                  With over 20 years of experience and a crew that treats your
-                  home like their own, you get more than a contractor — you get a
-                  team that stands behind every shingle, every seam, and every
-                  promise.
-                </p>
+                {teamParagraphs.map((para, i) => (
+                  <p key={i} className="text-brand-gray leading-relaxed mt-4">
+                    {para}
+                  </p>
+                ))}
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Link href="/about" className="btn-primary">
                     Learn More About Us
@@ -578,11 +614,10 @@ export default function Home() {
             <ScrollReveal direction="right" delay={100} distance={30}>
               <div>
                 <h2 className="section-heading text-left">
-                  Serving Philadelphia &amp; Beyond
+                  {serviceAreasHeading}
                 </h2>
                 <p className="text-brand-gray leading-relaxed mt-4 mb-6">
-                  We proudly serve homeowners and businesses across southeastern
-                  southeastern Pennsylvania.
+                  {serviceAreasDescription}
                 </p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">

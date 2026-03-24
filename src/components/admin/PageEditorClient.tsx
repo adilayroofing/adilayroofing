@@ -9,6 +9,7 @@ import StructuredServiceEditor, { type ServiceContent } from "./StructuredServic
 import StructuredLocationEditor, { type LocationContent } from "./StructuredLocationEditor";
 import StructuredFAQEditor, { type FAQPageContent } from "./StructuredFAQEditor";
 import StructuredAboutEditor, { type AboutPageContent } from "./StructuredAboutEditor";
+import StructuredHomeEditor, { type HomePageContent } from "./StructuredHomeEditor";
 import { getServiceBySlug } from "@/data/services";
 import { getLocationBySlug } from "@/data/locations";
 import { faqs as hardcodedFaqs } from "@/data/faqs";
@@ -67,6 +68,7 @@ export default function PageEditorClient({
   const isLocationPage = slug.startsWith("/service-areas/") && slug !== "/service-areas";
   const isFAQPage = slug === "/faq";
   const isAboutPage = slug === "/about";
+  const isHomePage = slug === "/" || slug === "";
 
   // Find structured content block or rich_text block
   const structuredBlock = contentBlocks.find(
@@ -74,7 +76,8 @@ export default function PageEditorClient({
       b.block_type === "structured_service" ||
       b.block_type === "structured_location" ||
       b.block_type === "structured_faq" ||
-      b.block_type === "structured_about"
+      b.block_type === "structured_about" ||
+      b.block_type === "structured_home"
   );
   const richTextBlock = contentBlocks.find((b) => b.block_type === "rich_text");
 
@@ -228,6 +231,42 @@ export default function PageEditorClient({
     };
   });
 
+  // Content — structured Home page (pre-fill from CMS or hardcoded data)
+  const [homeContent, setHomeContent] = useState<HomePageContent>(() => {
+    if (structuredBlock?.block_type === "structured_home") {
+      return structuredBlock.content as unknown as HomePageContent;
+    }
+    if (isHomePage) {
+      return {
+        heroHeadline: "Philadelphia's #1 Rated Roofing Contractor",
+        heroSubheadline: "Quality Craftsmanship. Proven Results.",
+        heroDescription: "Looking for the best roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated. Get a free estimate today.",
+        whyChooseUs: [
+          { title: "Experienced Crew", description: "Over 20 years of hands-on roofing experience in the Philadelphia area." },
+          { title: "Quality Materials", description: "We use top-rated materials from trusted manufacturers for lasting results." },
+          { title: "Honest Pricing", description: "Clear, written proposals with no hidden fees or surprise charges." },
+        ],
+        teamHeading: "Family-Owned. Locally Trusted.",
+        teamParagraphs: [
+          "Adilay Roofing is a family-run business built on hard work, honest service, and a genuine commitment to every homeowner we serve. From our office in Philadelphia, we manage every project personally — no subcontractors, no runaround.",
+          "With over 20 years of experience and a crew that treats your home like their own, you get more than a contractor — you get a team that stands behind every shingle, every seam, and every promise.",
+        ],
+        serviceAreasHeading: "Serving Philadelphia & Beyond",
+        serviceAreasDescription: "We proudly serve homeowners and businesses across southeastern Pennsylvania.",
+      };
+    }
+    return {
+      heroHeadline: "",
+      heroSubheadline: "",
+      heroDescription: "",
+      whyChooseUs: [],
+      teamHeading: "",
+      teamParagraphs: [],
+      serviceAreasHeading: "",
+      serviceAreasDescription: "",
+    };
+  });
+
   const canonicalValid =
     !canonicalUrl || canonicalUrl.startsWith("https://www.adilayroofing.com");
 
@@ -260,7 +299,9 @@ export default function PageEditorClient({
             ? { blockType: "structured_faq" as const, data: faqContent }
             : isAboutPage
               ? { blockType: "structured_about" as const, data: aboutContent }
-              : { blockType: "rich_text" as const, data: { html: editorContent } };
+              : isHomePage
+                ? { blockType: "structured_home" as const, data: homeContent }
+                : { blockType: "rich_text" as const, data: { html: editorContent } };
 
       if (asPending) {
         // Editor submits for review
@@ -579,6 +620,13 @@ export default function PageEditorClient({
                 Edit the About page content below. Each field maps to a styled section on the live site.
               </p>
               <StructuredAboutEditor content={aboutContent} onChange={setAboutContent} />
+            </>
+          ) : isHomePage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the homepage content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredHomeEditor content={homeContent} onChange={setHomeContent} />
             </>
           ) : (
             <>
