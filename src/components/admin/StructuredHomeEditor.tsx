@@ -1,7 +1,8 @@
 "use client";
 
 export interface HomePageContent {
-  heroHeadline: string;
+  heroHeadlineWhite: string;
+  heroHeadlineRed: string;
   heroSubheadline: string;
   heroDescription: string;
   whyChooseUs: { title: string; description: string }[];
@@ -48,13 +49,21 @@ export default function StructuredHomeEditor({
     <div className="space-y-8">
       {/* Hero Section */}
       <Section title="Hero Section" hint="The main banner at the top of the homepage.">
-        <label className="block text-xs text-gray-500 mb-1">Headline</label>
+        <label className="block text-xs text-gray-500 mb-1">Headline — Line 1 (white text)</label>
         <input
           type="text"
-          value={content.heroHeadline}
-          onChange={(e) => onChange({ ...content, heroHeadline: e.target.value })}
+          value={content.heroHeadlineWhite}
+          onChange={(e) => onChange({ ...content, heroHeadlineWhite: e.target.value })}
           className="input-field mb-3"
-          placeholder="Main headline..."
+          placeholder="e.g. Philadelphia's #1 Rated"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Headline — Line 2 (red accent text)</label>
+        <input
+          type="text"
+          value={content.heroHeadlineRed}
+          onChange={(e) => onChange({ ...content, heroHeadlineRed: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Roofing Contractor"
         />
         <label className="block text-xs text-gray-500 mb-1">Subheadline</label>
         <input

@@ -238,7 +238,8 @@ export default function PageEditorClient({
     }
     if (isHomePage) {
       return {
-        heroHeadline: "Philadelphia's #1 Rated Roofing Contractor",
+        heroHeadlineWhite: "Philadelphia's #1 Rated",
+        heroHeadlineRed: "Roofing Contractor",
         heroSubheadline: "Quality Craftsmanship. Proven Results.",
         heroDescription: "Looking for the best roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated. Get a free estimate today.",
         whyChooseUs: [
@@ -256,7 +257,8 @@ export default function PageEditorClient({
       };
     }
     return {
-      heroHeadline: "",
+      heroHeadlineWhite: "",
+      heroHeadlineRed: "",
       heroSubheadline: "",
       heroDescription: "",
       whyChooseUs: [],

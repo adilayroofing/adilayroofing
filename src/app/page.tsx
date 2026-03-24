@@ -154,7 +154,8 @@ export default async function Home() {
   const cmsData = await getStructuredContent("/", "structured_home");
 
   // Merge CMS data with hardcoded fallback
-  const heroHeadline = (cmsData?.heroHeadline as string) || "Philadelphia's #1 Rated Roofing Contractor";
+  const heroHeadlineWhite = (cmsData?.heroHeadlineWhite as string) || "Philadelphia's #1 Rated";
+  const heroHeadlineRed = (cmsData?.heroHeadlineRed as string) || "Roofing Contractor";
   const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
   const heroDescription = (cmsData?.heroDescription as string) ||
     "Looking for the best roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated. Get a free estimate today.";
@@ -218,15 +219,9 @@ export default async function Home() {
         <div className="relative z-10 container-wide mx-auto px-4 py-16 md:py-32 text-center">
           <ScrollReveal delay={200} duration={600} distance={28}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-              {heroHeadline.includes("Roofing Contractor") ? (
-                <>
-                  {heroHeadline.split("Roofing Contractor")[0]}
-                  <br />
-                  <span className="text-brand-red">Roofing Contractor</span>
-                </>
-              ) : (
-                heroHeadline
-              )}
+              {heroHeadlineWhite}
+              <br />
+              <span className="text-brand-red">{heroHeadlineRed}</span>
             </h1>
           </ScrollReveal>
 
