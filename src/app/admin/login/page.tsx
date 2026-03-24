@@ -52,7 +52,7 @@ function LoginForm() {
         <img
           src="/images/logo-new.png"
           alt="Adilay Roofing"
-          className="h-12 mx-auto mb-4"
+          className="h-20 mx-auto mb-5"
         />
         <h1 className="text-2xl font-bold text-white">Adilay CMS</h1>
         <p className="text-gray-400 mt-1">Sign in to manage your site</p>

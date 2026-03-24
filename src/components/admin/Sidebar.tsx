@@ -83,14 +83,14 @@ export default function Sidebar({
     <>
       {/* Logo */}
       <div className="px-6 py-5 border-b border-gray-700">
-        <Link href="/admin" className="flex items-center gap-3">
+        <Link href="/admin" className="flex flex-col items-center gap-2">
           <img
             src="/images/logo-new.png"
             alt="Adilay Roofing"
-            className="h-8"
+            className="h-12"
           />
-          <div>
-            <span className="text-white font-bold text-sm">CMS</span>
+          <div className="text-center">
+            <span className="text-white font-bold text-sm">Content Management</span>
             <span className="block text-xs text-gray-400 capitalize">{userRole}</span>
           </div>
         </Link>
