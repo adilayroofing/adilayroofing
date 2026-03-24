@@ -8,6 +8,7 @@ import { createClient } from "@/lib/supabase";
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: "home" },
   { href: "/admin/pages", label: "Pages", icon: "pages" },
+  { href: "/admin/history", label: "Change History", icon: "history", adminOnly: true },
   { href: "/admin/pending", label: "Approval Queue", icon: "pending", adminOnly: true },
   { href: "/admin/canonicals", label: "Canonicals", icon: "canonicals" },
 ];
@@ -34,6 +35,12 @@ function NavIcon({ icon }: { icon: string }) {
         </svg>
       );
     case "pending":
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      );
+    case "history":
       return (
         <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
