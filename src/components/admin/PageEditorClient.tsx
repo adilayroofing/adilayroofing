@@ -368,17 +368,16 @@ export default function PageEditorClient({
         } else {
           // Save revision snapshot before overwriting (for revert)
           const existingBlock = structuredBlock || richTextBlock;
-          try {
-            await supabase.from("page_revisions").insert({
-              page_id: page.id,
-              slug: page.slug,
-              page_data: page,
-              content_data: existingBlock?.content || {},
-              block_type: existingBlock?.block_type || contentPayload.blockType,
-              saved_by: userEmail,
-            });
-          } catch {
-            // Don't block save if revision insert fails (table may not exist yet)
+          const { error: revError } = await supabase.from("page_revisions").insert({
+            page_id: page.id,
+            slug: page.slug,
+            page_data: page,
+            content_data: existingBlock?.content || {},
+            block_type: existingBlock?.block_type || contentPayload.blockType,
+            saved_by: userEmail,
+          });
+          if (revError) {
+            console.warn("Failed to save revision:", revError.message);
           }
 
           const { error } = await supabase
