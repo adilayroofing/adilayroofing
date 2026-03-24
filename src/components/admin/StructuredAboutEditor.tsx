@@ -1,5 +1,7 @@
 "use client";
 
+import InlineRichTextField from "./InlineRichTextField";
+
 export interface AboutPageContent {
   heroDescription: string;
   storyHeading: string;
@@ -45,11 +47,10 @@ export default function StructuredAboutEditor({
     <div className="space-y-8">
       {/* Hero Description */}
       <Section title="Hero Description" hint="Shown below the page title in the hero banner.">
-        <textarea
+        <InlineRichTextField
           value={content.heroDescription}
-          onChange={(e) => onChange({ ...content, heroDescription: e.target.value })}
+          onChange={(html) => onChange({ ...content, heroDescription: html })}
           rows={3}
-          className="input-field resize-y"
           placeholder="Hero description text..."
         />
       </Section>
@@ -68,13 +69,14 @@ export default function StructuredAboutEditor({
         <div className="space-y-2">
           {content.storyParagraphs.map((para, i) => (
             <div key={i} className="flex gap-2">
-              <textarea
-                value={para}
-                onChange={(e) => updateParagraph(i, e.target.value)}
-                rows={3}
-                className="input-field resize-y flex-1"
-                placeholder={`Paragraph ${i + 1}...`}
-              />
+              <div className="flex-1">
+                <InlineRichTextField
+                  value={para}
+                  onChange={(html) => updateParagraph(i, html)}
+                  rows={3}
+                  placeholder={`Paragraph ${i + 1}...`}
+                />
+              </div>
               <button
                 type="button"
                 onClick={() => removeParagraph(i)}
@@ -122,11 +124,10 @@ export default function StructuredAboutEditor({
                 className="input-field mb-2"
                 placeholder="Value title..."
               />
-              <textarea
+              <InlineRichTextField
                 value={value.description}
-                onChange={(e) => updateValue(i, "description", e.target.value)}
+                onChange={(html) => updateValue(i, "description", html)}
                 rows={2}
-                className="input-field resize-y"
                 placeholder="Value description..."
               />
             </div>
@@ -143,11 +144,10 @@ export default function StructuredAboutEditor({
 
       {/* Team Description */}
       <Section title="Team Description" hint="Paragraph in the 'Our Team' section.">
-        <textarea
+        <InlineRichTextField
           value={content.teamDescription}
-          onChange={(e) => onChange({ ...content, teamDescription: e.target.value })}
+          onChange={(html) => onChange({ ...content, teamDescription: html })}
           rows={3}
-          className="input-field resize-y"
           placeholder="Team description text..."
         />
       </Section>

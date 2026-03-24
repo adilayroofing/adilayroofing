@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import SafeHTML from "@/components/SafeHTML";
 
 export const revalidate = 60;
 
@@ -345,9 +346,11 @@ export default async function LocationPage({ params }: PageProps) {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-brand-gray leading-relaxed">
-                {intro}
-              </p>
+              <SafeHTML
+                html={intro}
+                as="div"
+                className="text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
+              />
             </div>
           </div>
         </div>
@@ -412,9 +415,11 @@ export default async function LocationPage({ params }: PageProps) {
                   <h2 className="section-heading mb-6">
                     Why {location.name} Homeowners Choose Adilay Roofing
                   </h2>
-                  <p className="text-brand-gray leading-relaxed">
-                    {localContext}
-                  </p>
+                  <SafeHTML
+                    html={localContext}
+                    as="div"
+                    className="text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
+                  />
                 </div>
                 <div className="md:col-span-5">
                   <div className="bg-brand-light border border-brand-border rounded-sm p-6">

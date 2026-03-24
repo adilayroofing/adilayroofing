@@ -1,5 +1,7 @@
 "use client";
 
+import InlineRichTextField from "./InlineRichTextField";
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -68,22 +70,20 @@ export default function StructuredLocationEditor({
     <div className="space-y-8">
       {/* ── Intro ────────────────────────────────────────────────── */}
       <Section title="Intro Paragraph" hint="Shown directly below the hero section.">
-        <textarea
+        <InlineRichTextField
           value={content.intro}
-          onChange={(e) => updateField("intro", e.target.value)}
+          onChange={(html) => updateField("intro", html)}
           rows={5}
-          className="input-field resize-y"
           placeholder="Intro text about this service area..."
         />
       </Section>
 
       {/* ── Local Context ────────────────────────────────────────── */}
       <Section title="Local Context" hint="'Why homeowners choose us' section — left column text.">
-        <textarea
+        <InlineRichTextField
           value={content.localContext}
-          onChange={(e) => updateField("localContext", e.target.value)}
+          onChange={(html) => updateField("localContext", html)}
           rows={5}
-          className="input-field resize-y"
           placeholder="Local context about roofing in this area..."
         />
       </Section>
@@ -183,11 +183,10 @@ export default function StructuredLocationEditor({
                 className="input-field mb-2"
                 placeholder="Question..."
               />
-              <textarea
+              <InlineRichTextField
                 value={item.answer}
-                onChange={(e) => updateFAQ(i, "answer", e.target.value)}
+                onChange={(html) => updateFAQ(i, "answer", html)}
                 rows={3}
-                className="input-field resize-y"
                 placeholder="Answer..."
               />
             </div>

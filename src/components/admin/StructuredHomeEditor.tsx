@@ -1,5 +1,7 @@
 "use client";
 
+import InlineRichTextField from "./InlineRichTextField";
+
 export interface HomePageContent {
   heroHeadlineWhite: string;
   heroHeadlineRed: string;
@@ -74,11 +76,10 @@ export default function StructuredHomeEditor({
           placeholder="Short subheadline..."
         />
         <label className="block text-xs text-gray-500 mb-1">Description</label>
-        <textarea
+        <InlineRichTextField
           value={content.heroDescription}
-          onChange={(e) => onChange({ ...content, heroDescription: e.target.value })}
+          onChange={(html) => onChange({ ...content, heroDescription: html })}
           rows={3}
-          className="input-field resize-y"
           placeholder="Hero description paragraph..."
         />
       </Section>
@@ -108,11 +109,10 @@ export default function StructuredHomeEditor({
                 className="input-field mb-2"
                 placeholder="Card title..."
               />
-              <textarea
+              <InlineRichTextField
                 value={item.description}
-                onChange={(e) => updateWhyItem(i, "description", e.target.value)}
+                onChange={(html) => updateWhyItem(i, "description", html)}
                 rows={2}
-                className="input-field resize-y"
                 placeholder="Card description..."
               />
             </div>
@@ -141,13 +141,14 @@ export default function StructuredHomeEditor({
         <div className="space-y-2">
           {content.teamParagraphs.map((para, i) => (
             <div key={i} className="flex gap-2">
-              <textarea
-                value={para}
-                onChange={(e) => updateTeamParagraph(i, e.target.value)}
-                rows={3}
-                className="input-field resize-y flex-1"
-                placeholder={`Paragraph ${i + 1}...`}
-              />
+              <div className="flex-1">
+                <InlineRichTextField
+                  value={para}
+                  onChange={(html) => updateTeamParagraph(i, html)}
+                  rows={3}
+                  placeholder={`Paragraph ${i + 1}...`}
+                />
+              </div>
               <button
                 type="button"
                 onClick={() => removeTeamParagraph(i)}
@@ -181,11 +182,10 @@ export default function StructuredHomeEditor({
           placeholder="Section heading..."
         />
         <label className="block text-xs text-gray-500 mb-1">Description</label>
-        <textarea
+        <InlineRichTextField
           value={content.serviceAreasDescription}
-          onChange={(e) => onChange({ ...content, serviceAreasDescription: e.target.value })}
+          onChange={(html) => onChange({ ...content, serviceAreasDescription: html })}
           rows={2}
-          className="input-field resize-y"
           placeholder="Section description..."
         />
       </Section>

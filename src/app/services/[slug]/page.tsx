@@ -8,6 +8,7 @@ import CTASection from "@/components/CTASection";
 import ServiceIcon from "@/components/ServiceIcon";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import SafeHTML from "@/components/SafeHTML";
 
 export const revalidate = 60;
 
@@ -206,9 +207,11 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="bg-white">
         <div className="section-padding">
           <div className="container-narrow mx-auto">
-            <p className="text-lg md:text-xl text-brand-gray leading-relaxed max-w-3xl mx-auto text-center">
-              {heroDescription}
-            </p>
+            <SafeHTML
+              html={heroDescription}
+              as="div"
+              className="text-lg md:text-xl text-brand-gray leading-relaxed max-w-3xl mx-auto text-center [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
+            />
           </div>
         </div>
       </section>

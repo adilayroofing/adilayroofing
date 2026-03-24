@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SafeHTML from "./SafeHTML";
 
 interface FAQItem {
   question: string;
@@ -46,9 +47,11 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                 isOpen ? "max-h-96 pb-4 md:pb-5" : "max-h-0"
               }`}
             >
-              <p className="text-brand-gray text-sm md:text-base leading-relaxed pr-8">
-                {item.answer}
-              </p>
+              <SafeHTML
+                html={item.answer}
+                as="div"
+                className="text-brand-gray text-sm md:text-base leading-relaxed pr-8 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-1 [&_p:last-child]:mb-0"
+              />
             </div>
           </div>
         );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SafeHTML from "./SafeHTML";
 
 interface FAQItem {
   question: string;
@@ -79,9 +80,11 @@ export default function FAQ({ items }: FAQProps) {
                 isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <p className="pb-5 pr-10 text-brand-gray leading-relaxed">
-                {item.answer}
-              </p>
+              <SafeHTML
+                html={item.answer}
+                as="div"
+                className="pb-5 pr-10 text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-1 [&_p:last-child]:mb-0"
+              />
             </div>
           </div>
         );

@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/blog/BlogCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import SafeHTML from "@/components/SafeHTML";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -232,9 +233,11 @@ export default async function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={550} duration={600} distance={16}>
-            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              {heroDescription}
-            </p>
+            <SafeHTML
+              html={heroDescription}
+              as="div"
+              className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed [&_a]:text-red-400 [&_a]:underline [&_a:hover]:text-red-300 [&_p]:mb-2 [&_p:last-child]:mb-0"
+            />
           </ScrollReveal>
 
           <ScrollReveal delay={700} duration={600} distance={16}>
@@ -414,9 +417,11 @@ export default async function Home() {
                     <h3 className="text-lg md:text-2xl font-bold text-white mb-1 md:mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-white/80 text-sm md:text-base leading-relaxed">
-                      {item.description}
-                    </p>
+                    <SafeHTML
+                      html={item.description}
+                      as="div"
+                      className="text-white/80 text-sm md:text-base leading-relaxed [&_a]:text-red-300 [&_a]:underline [&_a:hover]:text-white [&_p]:mb-0"
+                    />
                   </div>
                 </div>
               </ScrollReveal>
@@ -450,9 +455,12 @@ export default async function Home() {
                   {teamHeading}
                 </h2>
                 {teamParagraphs.map((para, i) => (
-                  <p key={i} className="text-brand-gray leading-relaxed mt-4">
-                    {para}
-                  </p>
+                  <SafeHTML
+                    key={i}
+                    html={para}
+                    as="div"
+                    className="text-brand-gray leading-relaxed mt-4 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-1 [&_p:last-child]:mb-0"
+                  />
                 ))}
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Link href="/about" className="btn-primary">
@@ -611,9 +619,11 @@ export default async function Home() {
                 <h2 className="section-heading text-left">
                   {serviceAreasHeading}
                 </h2>
-                <p className="text-brand-gray leading-relaxed mt-4 mb-6">
-                  {serviceAreasDescription}
-                </p>
+                <SafeHTML
+                  html={serviceAreasDescription}
+                  as="div"
+                  className="text-brand-gray leading-relaxed mt-4 mb-6 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
+                />
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
                   {serviceAreas.slice(0, 9).map((area) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import InlineRichTextField from "./InlineRichTextField";
 
 interface FAQItem {
   question: string;
@@ -83,11 +84,10 @@ export default function StructuredServiceEditor({
     <div className="space-y-8">
       {/* ── Hero Description ─────────────────────────────────────── */}
       <Section title="Hero Description" hint="The main intro paragraph shown below the hero banner.">
-        <textarea
+        <InlineRichTextField
           value={content.heroDescription}
-          onChange={(e) => updateHero(e.target.value)}
+          onChange={(html) => updateHero(html)}
           rows={5}
-          className="input-field resize-y"
           placeholder="Describe this service..."
         />
       </Section>
@@ -228,11 +228,10 @@ export default function StructuredServiceEditor({
                 className="input-field mb-2"
                 placeholder="Question..."
               />
-              <textarea
+              <InlineRichTextField
                 value={item.answer}
-                onChange={(e) => updateFAQ(i, "answer", e.target.value)}
+                onChange={(html) => updateFAQ(i, "answer", html)}
                 rows={3}
-                className="input-field resize-y"
                 placeholder="Answer..."
               />
             </div>

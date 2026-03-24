@@ -4,6 +4,7 @@ import TrustBar from "@/components/TrustBar";
 import { company } from "@/data/company";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import SafeHTML from "@/components/SafeHTML";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -129,9 +130,11 @@ export default async function AboutPage() {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
               About Adilay Roofing
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-              {heroDescription}
-            </p>
+            <SafeHTML
+              html={heroDescription}
+              as="div"
+              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto [&_a]:text-red-400 [&_a]:underline [&_a:hover]:text-red-300 [&_p]:mb-2 [&_p:last-child]:mb-0"
+            />
           </div>
         </div>
       </section>
@@ -147,9 +150,12 @@ export default async function AboutPage() {
                   {storyHeading}
                 </h2>
                 {storyParagraphs.map((para, i) => (
-                  <p key={i} className="text-brand-gray text-base md:text-lg leading-relaxed mt-4 first:mt-6">
-                    {para}
-                  </p>
+                  <SafeHTML
+                    key={i}
+                    html={para}
+                    as="div"
+                    className="text-brand-gray text-base md:text-lg leading-relaxed mt-4 first:mt-6 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-1 [&_p:last-child]:mb-0"
+                  />
                 ))}
 
                 {/* License badge */}
@@ -192,7 +198,11 @@ export default async function AboutPage() {
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-bold text-brand-dark mb-1 md:mb-2">{value.title}</h3>
-                    <p className="text-brand-gray text-sm leading-relaxed">{value.description}</p>
+                    <SafeHTML
+                      html={value.description}
+                      as="div"
+                      className="text-brand-gray text-sm leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-0"
+                    />
                   </div>
                 </div>
               ))}
@@ -211,9 +221,11 @@ export default async function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <h2 className="section-heading text-left">Our Team</h2>
-                <p className="text-brand-gray text-base md:text-lg leading-relaxed mt-4">
-                  {teamDescription}
-                </p>
+                <SafeHTML
+                  html={teamDescription}
+                  as="div"
+                  className="text-brand-gray text-base md:text-lg leading-relaxed mt-4 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
+                />
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   {[
                     { label: `${company.yearsExperience} Years`, sub: "Experience" },

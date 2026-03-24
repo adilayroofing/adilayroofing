@@ -686,6 +686,107 @@ export default function PageEditorClient({
         .input-field::placeholder {
           color: rgb(107 114 128);
         }
+
+        /* ── Inline Rich Text Field ─────────────────────── */
+        .inline-rich-field-wrapper {
+          position: relative;
+          background: rgb(31 41 55);
+          border: 1px solid rgb(75 85 99);
+          border-radius: 0.5rem;
+          overflow: hidden;
+          transition: box-shadow 0.15s, border-color 0.15s;
+        }
+        .inline-rich-field-wrapper:focus-within {
+          border-color: transparent;
+          box-shadow: 0 0 0 2px rgb(220 38 38);
+        }
+        .inline-rich-toolbar {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          padding: 4px 8px;
+          background: rgb(24 32 43);
+          border-bottom: 1px solid rgb(55 65 81);
+        }
+        .irt-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 3px 6px;
+          font-size: 0.75rem;
+          color: rgb(156 163 175);
+          background: transparent;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background 0.1s, color 0.1s;
+        }
+        .irt-btn:hover {
+          background: rgb(55 65 81);
+          color: white;
+        }
+        .irt-btn-active {
+          background: rgb(55 65 81);
+          color: rgb(248 113 113);
+        }
+        .irt-separator {
+          width: 1px;
+          height: 16px;
+          background: rgb(55 65 81);
+          margin: 0 4px;
+        }
+        .irt-link-popup {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 50;
+          padding: 12px;
+          background: rgb(17 24 39);
+          border: 1px solid rgb(55 65 81);
+          border-radius: 0 0 0.5rem 0.5rem;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .inline-rich-editor-content {
+          padding: 0.625rem 1rem;
+          color: white;
+          font-size: 0.875rem;
+          outline: none;
+          line-height: 1.6;
+        }
+        .inline-rich-editor-content p {
+          margin: 0 0 0.25em 0;
+        }
+        .inline-rich-editor-content p:last-child {
+          margin-bottom: 0;
+        }
+        .inline-rich-editor-content p.is-editor-empty:first-child::before {
+          content: attr(data-placeholder);
+          color: rgb(107 114 128);
+          float: left;
+          height: 0;
+          pointer-events: none;
+        }
+        .inline-rich-editor-content a,
+        .inline-rich-editor-content .cms-inline-link {
+          color: rgb(96 165 250);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        .inline-rich-editor-content a:hover,
+        .inline-rich-editor-content .cms-inline-link:hover {
+          color: rgb(147 197 253);
+        }
+        .inline-rich-editor-content .ProseMirror {
+          outline: none;
+        }
+        .inline-rich-editor-content .ProseMirror p.is-editor-empty:first-child::before {
+          content: attr(data-placeholder);
+          color: rgb(107 114 128);
+          float: left;
+          height: 0;
+          pointer-events: none;
+        }
       `}</style>
     </div>
   );

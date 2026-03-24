@@ -1,5 +1,7 @@
 "use client";
 
+import InlineRichTextField from "./InlineRichTextField";
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -154,11 +156,10 @@ export default function StructuredFAQEditor({
                   className="input-field mb-2 text-sm"
                   placeholder="Question..."
                 />
-                <textarea
+                <InlineRichTextField
                   value={item.answer}
-                  onChange={(e) => updateFAQ(key, i, "answer", e.target.value)}
+                  onChange={(html) => updateFAQ(key, i, "answer", html)}
                   rows={2}
-                  className="input-field resize-y text-sm"
                   placeholder="Answer..."
                 />
               </div>
