@@ -49,6 +49,45 @@ export async function getPageSEO(slug: string): Promise<PageSEO | null> {
  * Build a Next.js Metadata object from Supabase SEO data.
  * Returns null if no DB data found (caller should use hardcoded fallback).
  */
+/**
+ * Fetch CMS content (rich_text block) for a page from Supabase.
+ * Returns the HTML string if found, or null (caller falls back to hardcoded).
+ */
+export async function getPageContent(slug: string): Promise<string | null> {
+  const client = getAnonClient();
+  if (!client) return null;
+
+  try {
+    // First get the page ID
+    const { data: page, error: pageError } = await client
+      .from("pages")
+      .select("id")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .single();
+
+    if (pageError || !page) return null;
+
+    // Then get the rich_text content block
+    const { data: block, error: blockError } = await client
+      .from("content_blocks")
+      .select("content")
+      .eq("page_id", page.id)
+      .eq("block_type", "rich_text")
+      .order("sort_order", { ascending: true })
+      .limit(1)
+      .single();
+
+    if (blockError || !block) return null;
+
+    // content is stored as { html: "..." }
+    const html = block.content?.html;
+    return typeof html === "string" && html.trim().length > 0 ? html : null;
+  } catch {
+    return null;
+  }
+}
+
 export function buildMetadataFromSEO(seo: PageSEO) {
   return {
     title: seo.meta_title,

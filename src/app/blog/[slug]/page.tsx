@@ -9,7 +9,7 @@ import {
   renderMarkdown,
   BASE_URL,
 } from "@/lib/blog";
-import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
+import { getPageSEO, buildMetadataFromSEO, getPageContent } from "@/lib/seo";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import BlogHero from "@/components/blog/BlogHero";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -87,7 +87,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post || !isPostPublished(post.frontmatter.date)) notFound();
 
   const { frontmatter: fm, content } = post;
-  const htmlContent = renderMarkdown(content);
+
+  // Check for CMS-managed content first, fall back to markdown
+  const cmsContent = await getPageContent(`/blog/${fm.slug}`);
+  const htmlContent = cmsContent || renderMarkdown(content);
+
   const toc = generateTOC(content);
   const related = getRelatedPosts(fm.slug, fm.category, fm.relatedSlugs);
   const postUrl = `${BASE_URL}/blog/${fm.slug}`;

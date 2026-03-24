@@ -7,7 +7,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import ServiceIcon from "@/components/ServiceIcon";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
+import { getPageSEO, buildMetadataFromSEO, getPageContent } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -85,6 +85,9 @@ export default async function ServicePage({ params }: PageProps) {
   if (!service) {
     notFound();
   }
+
+  // Check for CMS-managed content (edited via admin dashboard)
+  const cmsContent = await getPageContent(`/services/${slug}`);
 
   // Build related services — exclude the current one, take up to 3
   const relatedServices = services
@@ -189,99 +192,109 @@ export default async function ServicePage({ params }: PageProps) {
       </section>
 
       {/* ================================================================= */}
-      {/* Main Content — heroDescription                                    */}
+      {/* Page Body Content (CMS or hardcoded fallback)                     */}
       {/* ================================================================= */}
-      <section className="bg-white">
-        <div className="section-padding">
-          <div className="container-narrow mx-auto">
-            <p className="text-lg md:text-xl text-brand-gray leading-relaxed max-w-3xl mx-auto text-center">
-              {service.heroDescription}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================= */}
-      {/* Benefits Section                                                  */}
-      {/* ================================================================= */}
-      <section className="bg-brand-light">
-        <div className="section-padding">
-          <div className="container-narrow mx-auto">
-            <h2 className="section-heading text-center mb-10">Benefits</h2>
-
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-              {service.benefits.map((benefit) => (
-                <li
-                  key={benefit}
-                  className="flex items-start gap-3 bg-white rounded-sm p-5 border border-brand-border"
-                >
-                  {/* Checkmark icon */}
-                  <svg
-                    className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span className="text-brand-dark font-medium">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================= */}
-      {/* Features Section — "What's Included"                              */}
-      {/* ================================================================= */}
-      <section className="bg-white">
-        <div className="section-padding">
-          <div className="container-narrow mx-auto">
-            <h2 className="section-heading text-center mb-10">
-              What&apos;s Included
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {service.features.map((feature, index) => (
-                <div
-                  key={feature}
-                  className="flex items-start gap-3 p-5 bg-brand-light rounded-sm border border-brand-border"
-                >
-                  {/* Numbered icon */}
-                  <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-brand-red text-white font-bold text-sm rounded-full">
-                    {index + 1}
-                  </span>
-                  <span className="text-brand-dark text-sm leading-relaxed font-medium pt-1">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================= */}
-      {/* Service FAQ                                                       */}
-      {/* ================================================================= */}
-      {service.faq.length > 0 && (
-        <section className="bg-brand-light">
+      {cmsContent ? (
+        /* CMS-managed content from Supabase content_blocks */
+        <section className="bg-white">
           <div className="section-padding">
-            <div className="container-narrow mx-auto max-w-3xl">
-              <h2 className="section-heading text-center mb-10">
-                Frequently Asked Questions
-              </h2>
-              <FAQ items={service.faq} />
+            <div className="container-narrow mx-auto">
+              <div
+                className="prose prose-lg max-w-3xl mx-auto prose-headings:text-brand-dark prose-p:text-brand-gray prose-a:text-brand-red prose-strong:text-brand-dark prose-li:text-brand-gray"
+                dangerouslySetInnerHTML={{ __html: cmsContent }}
+              />
             </div>
           </div>
         </section>
+      ) : (
+        /* Hardcoded fallback from services.ts data */
+        <>
+          {/* Main Content — heroDescription */}
+          <section className="bg-white">
+            <div className="section-padding">
+              <div className="container-narrow mx-auto">
+                <p className="text-lg md:text-xl text-brand-gray leading-relaxed max-w-3xl mx-auto text-center">
+                  {service.heroDescription}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section className="bg-brand-light">
+            <div className="section-padding">
+              <div className="container-narrow mx-auto">
+                <h2 className="section-heading text-center mb-10">Benefits</h2>
+
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                  {service.benefits.map((benefit) => (
+                    <li
+                      key={benefit}
+                      className="flex items-start gap-3 bg-white rounded-sm p-5 border border-brand-border"
+                    >
+                      <svg
+                        className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-brand-dark font-medium">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section — "What's Included" */}
+          <section className="bg-white">
+            <div className="section-padding">
+              <div className="container-narrow mx-auto">
+                <h2 className="section-heading text-center mb-10">
+                  What&apos;s Included
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                  {service.features.map((feature, index) => (
+                    <div
+                      key={feature}
+                      className="flex items-start gap-3 p-5 bg-brand-light rounded-sm border border-brand-border"
+                    >
+                      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-brand-red text-white font-bold text-sm rounded-full">
+                        {index + 1}
+                      </span>
+                      <span className="text-brand-dark text-sm leading-relaxed font-medium pt-1">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Service FAQ */}
+          {service.faq.length > 0 && (
+            <section className="bg-brand-light">
+              <div className="section-padding">
+                <div className="container-narrow mx-auto max-w-3xl">
+                  <h2 className="section-heading text-center mb-10">
+                    Frequently Asked Questions
+                  </h2>
+                  <FAQ items={service.faq} />
+                </div>
+              </div>
+            </section>
+          )}
+        </>
       )}
 
       {/* ================================================================= */}
