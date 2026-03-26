@@ -229,7 +229,7 @@ export default function LandingPageLayout({
 
               {/* BBB Accredited */}
               <div className="mb-6">
-                <BBBSeal variant="horizontal" darkBg />
+                <BBBSeal />
               </div>
 
               {/* CTA Buttons */}
@@ -635,7 +635,7 @@ export default function LandingPageLayout({
                 loading="lazy"
               />
             </div>
-            <BBBSeal variant="vertical" />
+            <BBBSeal />
           </div>
         </div>
       </section>
@@ -665,7 +665,7 @@ export default function LandingPageLayout({
             </a>
           </p>
           <div className="mt-3 flex justify-center">
-            <BBBSeal variant="horizontal" darkBg />
+            <BBBSeal />
           </div>
         </div>
       </footer>

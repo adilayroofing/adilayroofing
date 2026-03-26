@@ -124,7 +124,7 @@ export default function GetQuotePage() {
 
             {/* BBB Accredited */}
             <div className="mt-6 flex justify-center lg:justify-start">
-              <BBBSeal variant="horizontal" darkBg />
+              <BBBSeal />
             </div>
           </div>
         </div>

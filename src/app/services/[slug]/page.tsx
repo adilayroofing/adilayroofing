@@ -224,7 +224,7 @@ export default async function ServicePage({ params }: PageProps) {
       {/* ================================================================= */}
       <div className="bg-white pb-4 md:pb-6">
         <div className="flex justify-center">
-          <BBBSeal variant="horizontal" />
+          <BBBSeal />
         </div>
       </div>
 

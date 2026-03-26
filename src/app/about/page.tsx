@@ -171,7 +171,7 @@ export default async function AboutPage() {
                       <p className="text-brand-gray text-sm">PA License #{company.license}</p>
                     </div>
                   </div>
-                  <BBBSeal variant="horizontal" />
+                  <BBBSeal />
                 </div>
               </div>
 

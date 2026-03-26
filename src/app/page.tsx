@@ -533,7 +533,7 @@ export default async function Home() {
                 </div>
 
                 <div className="mt-6 flex justify-center lg:justify-start">
-                  <BBBSeal variant="vertical" darkBg />
+                  <BBBSeal />
                 </div>
               </div>
             </ScrollReveal>

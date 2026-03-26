@@ -419,7 +419,7 @@ function GetQuoteAdsContent() {
 
               {/* BBB Accredited */}
               <div className="flex justify-center">
-                <BBBSeal variant="vertical" />
+                <BBBSeal />
               </div>
 
               {/* Truck + house photo */}
@@ -623,7 +623,7 @@ function GetQuoteAdsContent() {
         </p>
         <p className="mt-1">Licensed PA Home Improvement Contractor #PA184779</p>
         <div className="mt-3 flex justify-center">
-          <BBBSeal variant="horizontal" darkBg />
+          <BBBSeal />
         </div>
       </footer>
     </div>

@@ -49,7 +49,7 @@ export default function Footer() {
 
             {/* BBB Accredited Business Seal */}
             <div className="mt-5">
-              <BBBSeal darkBg />
+              <BBBSeal />
             </div>
 
             {/* Social Media Icons */}
