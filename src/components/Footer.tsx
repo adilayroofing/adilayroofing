@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
+import BBBSeal from "@/components/BBBSeal";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,8 +47,13 @@ export default function Footer() {
               </a>
             </address>
 
+            {/* BBB Accredited Business Seal */}
+            <div className="mt-5">
+              <BBBSeal darkBg />
+            </div>
+
             {/* Social Media Icons */}
-            <div className="mt-5 flex items-center gap-4">
+            <div className="mt-4 flex items-center gap-4">
               {company.social.facebook && (
                 <a
                   href={company.social.facebook}

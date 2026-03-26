@@ -3,6 +3,7 @@ import Link from "next/link";
 import { company } from "@/data/company";
 import LPLeadForm from "@/components/LPLeadForm";
 import TransformationTimeline from "@/components/TransformationTimeline";
+import BBBSeal from "@/components/BBBSeal";
 
 interface LandingPageLayoutProps {
   headline: string;
@@ -224,6 +225,11 @@ export default function LandingPageLayout({
                     {badge.text}
                   </div>
                 ))}
+              </div>
+
+              {/* BBB Accredited */}
+              <div className="mb-6">
+                <BBBSeal variant="horizontal" darkBg />
               </div>
 
               {/* CTA Buttons */}
@@ -620,7 +626,7 @@ export default function LandingPageLayout({
           <p className="text-brand-gray text-sm mt-4">
             PA License #{company.license} &middot; Licensed &amp; Insured
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
             <div className="bg-white rounded-xl shadow-lg border-2 border-brand-red/20 p-5 md:p-8 inline-block">
               <img
                 src="/images/pa-license.png"
@@ -629,6 +635,7 @@ export default function LandingPageLayout({
                 loading="lazy"
               />
             </div>
+            <BBBSeal variant="vertical" />
           </div>
         </div>
       </section>
@@ -657,6 +664,9 @@ export default function LandingPageLayout({
               {company.email}
             </a>
           </p>
+          <div className="mt-3 flex justify-center">
+            <BBBSeal variant="horizontal" darkBg />
+          </div>
         </div>
       </footer>
     </div>

@@ -5,6 +5,7 @@ import { company } from "@/data/company";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
+import BBBSeal from "@/components/BBBSeal";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -159,15 +160,18 @@ export default async function AboutPage() {
                   />
                 ))}
 
-                {/* License badge */}
-                <div className="mt-8 flex items-center gap-3 bg-brand-light p-4 rounded-sm">
-                  <svg className="w-6 h-6 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  <div>
-                    <p className="font-bold text-brand-dark text-sm">Licensed Contractor</p>
-                    <p className="text-brand-gray text-sm">PA License #{company.license}</p>
+                {/* License badge + BBB Seal */}
+                <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="flex items-center gap-3 bg-brand-light p-4 rounded-sm">
+                    <svg className="w-6 h-6 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <div>
+                      <p className="font-bold text-brand-dark text-sm">Licensed Contractor</p>
+                      <p className="text-brand-gray text-sm">PA License #{company.license}</p>
+                    </div>
                   </div>
+                  <BBBSeal variant="horizontal" />
                 </div>
               </div>
 

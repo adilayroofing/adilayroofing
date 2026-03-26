@@ -14,6 +14,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
+import BBBSeal from "@/components/BBBSeal";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -529,6 +530,10 @@ export default async function Home() {
                       Active
                     </p>
                   </div>
+                </div>
+
+                <div className="mt-6 flex justify-center lg:justify-start">
+                  <BBBSeal variant="vertical" darkBg />
                 </div>
               </div>
             </ScrollReveal>

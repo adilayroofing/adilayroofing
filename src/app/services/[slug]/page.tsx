@@ -9,6 +9,7 @@ import ServiceIcon from "@/components/ServiceIcon";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
+import BBBSeal from "@/components/BBBSeal";
 
 export const revalidate = 60;
 
@@ -217,6 +218,15 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* ================================================================= */}
+      {/* BBB Trust Badge                                                   */}
+      {/* ================================================================= */}
+      <div className="bg-white pb-4 md:pb-6">
+        <div className="flex justify-center">
+          <BBBSeal variant="horizontal" />
+        </div>
+      </div>
 
       {/* ================================================================= */}
       {/* Benefits Section                                                  */}

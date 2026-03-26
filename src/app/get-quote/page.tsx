@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import BBBSeal from "@/components/BBBSeal";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -119,6 +120,11 @@ export default function GetQuotePage() {
                   <span className="text-white/90 font-medium text-[10px] md:text-base text-center md:text-left leading-tight">{item.text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* BBB Accredited */}
+            <div className="mt-6 flex justify-center lg:justify-start">
+              <BBBSeal variant="horizontal" darkBg />
             </div>
           </div>
         </div>

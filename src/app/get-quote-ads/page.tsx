@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSearchParams, usePathname } from "next/navigation";
 import { company } from "@/data/company";
 import TransformationTimeline from "@/components/TransformationTimeline";
+import BBBSeal from "@/components/BBBSeal";
 
 declare global {
   interface Window {
@@ -416,6 +417,11 @@ function GetQuoteAdsContent() {
                 ))}
               </div>
 
+              {/* BBB Accredited */}
+              <div className="flex justify-center">
+                <BBBSeal variant="vertical" />
+              </div>
+
               {/* Truck + house photo */}
               <div className="rounded-sm overflow-hidden shadow-lg">
                 <Image
@@ -616,6 +622,9 @@ function GetQuoteAdsContent() {
           </a>
         </p>
         <p className="mt-1">Licensed PA Home Improvement Contractor #PA184779</p>
+        <div className="mt-3 flex justify-center">
+          <BBBSeal variant="horizontal" darkBg />
+        </div>
       </footer>
     </div>
   );
