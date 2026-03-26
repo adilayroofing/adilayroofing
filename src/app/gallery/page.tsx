@@ -60,7 +60,7 @@ export default function GalleryPage() {
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-8 md:mt-10">
               {[
                 { value: company.projectsCompleted, label: "Projects Completed" },
-                { value: company.satisfiedClients, label: "Happy Clients" },
+                { value: company.satisfiedClients, label: "Clients Served" },
                 { value: company.yearsExperience, label: "Years Experience" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">

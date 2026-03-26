@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       keywords: [
         "roofer Philadelphia",
         "roofing contractor Philadelphia",
-        "best roofer Philadelphia",
+        "trusted roofer Philadelphia",
         "roof replacement Philadelphia",
         "roof repair Philadelphia",
         "Philadelphia roofer",
@@ -48,14 +48,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      absolute: "Roofer Philadelphia | Best Roofing Contractor — Adilay Roofing",
+      absolute: "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
     },
     description:
-      "Looking for a roofer in Philadelphia? Adilay Roofing is the top-rated roofing contractor with 20+ years experience, 2,080+ projects & 5-star reviews. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Looking for a roofer in Philadelphia? Adilay Roofing is a trusted roofing contractor with 20+ years experience, 2,000+ projects & 5-star Google reviews. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
     keywords: [
       "roofer Philadelphia",
       "roofing contractor Philadelphia",
-      "best roofer Philadelphia",
+      "trusted roofer Philadelphia",
       "roof replacement Philadelphia",
       "roof repair Philadelphia",
       "Philadelphia roofer",
@@ -72,9 +72,9 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: BASE_URL,
     },
     openGraph: {
-      title: "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA",
+      title: "Adilay Roofing | Trusted Roofing Contractor in Philadelphia, PA",
       description:
-        "Philadelphia's trusted roofing experts. 20+ years, 2,080+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
+        "Philadelphia's trusted roofing experts. 20+ years, 2,000+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
       url: BASE_URL,
       images: [
         {
@@ -116,7 +116,7 @@ const fallbackWhyChooseUs = [
   {
     title: "Quality Materials",
     description:
-      "We use top-rated materials from trusted manufacturers for lasting results.",
+      "We use quality materials from trusted manufacturers for lasting results.",
     bgImage: "/images/quality-roofing-materials-adilay.jpg",
   },
   {
@@ -155,11 +155,11 @@ export default async function Home() {
   const cmsData = await getStructuredContent("/", "structured_home");
 
   // Merge CMS data with hardcoded fallback
-  const heroHeadlineWhite = (cmsData?.heroHeadlineWhite as string) || "Philadelphia's #1 Rated";
+  const heroHeadlineWhite = (cmsData?.heroHeadlineWhite as string) || "Philadelphia's Trusted";
   const heroHeadlineRed = (cmsData?.heroHeadlineRed as string) || "Roofing Contractor";
   const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
   const heroDescription = (cmsData?.heroDescription as string) ||
-    "Looking for the best roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated. Get a free estimate today.";
+    "Looking for a reliable roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated on Google. Get a free estimate today.";
 
   const cmsWhyChooseUs = cmsData?.whyChooseUs as { title: string; description: string }[] | undefined;
   const whyChooseUs = cmsWhyChooseUs?.length

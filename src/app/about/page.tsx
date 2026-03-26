@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "About Us — 20+ Years Serving Philadelphia, PA",
     description:
-      "Meet Adilay Roofing — Philadelphia's trusted roofing contractor. 20+ years experience, 2,080+ projects, PA license PA184779. Family-owned, quality craftsmanship.",
+      "Meet Adilay Roofing — Philadelphia's trusted roofing contractor. 20+ years experience, 2,000+ projects, PA license PA184779. Family-owned, quality craftsmanship.",
     keywords: [
       "about Adilay Roofing",
       "Philadelphia roofing company",

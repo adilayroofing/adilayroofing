@@ -37,7 +37,7 @@ export const faqs = [
   {
     question: "Do you offer any warranties?",
     answer:
-      "We stand behind our work with a workmanship warranty on every project, in addition to manufacturer warranties on materials. The specific terms depend on the project and materials chosen — we'll cover all warranty details in your proposal.",
+      "We stand behind our work with a workmanship warranty on every project, in addition to manufacturer warranties on materials. The specific terms depend on the project and materials chosen — we cover all warranty details in your project proposal before any work begins. See our Terms of Service for more information.",
   },
   {
     question: "Can you help with emergency roof repairs?",

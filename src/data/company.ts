@@ -15,7 +15,7 @@ export const company = {
   mapUrl: "https://maps.app.goo.gl/JjzmgKQX79gPMCXC8",
   googleReviewsUrl: "https://www.google.com/maps/search/?api=1&query=Adilay+Roofing+Philadelphia+PA",
   yearsExperience: "20+",
-  projectsCompleted: "2,080+",
+  projectsCompleted: "2,000+",
   satisfiedClients: "1,000+",
   teamMembers: "30+",
   serviceAreas: ["Philadelphia", "Bucks County", "Montgomery County", "Delaware County", "Chester County"],

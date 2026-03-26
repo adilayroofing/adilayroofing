@@ -238,7 +238,7 @@ function GetQuoteAdsContent() {
             <div className="flex items-center justify-center gap-4 md:gap-8 mt-5 flex-wrap">
               {[
                 { value: "20+", label: "Years Exp." },
-                { value: "2,080+", label: "Projects" },
+                { value: "2,000+", label: "Projects" },
                 { value: "5.0★", label: "Google Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -402,8 +402,8 @@ function GetQuoteAdsContent() {
               <div className="grid grid-cols-2 gap-3">
                 {[
                   { value: "20+", label: "Years Experience" },
-                  { value: "2,080+", label: "Projects Completed" },
-                  { value: "1,000+", label: "Happy Clients" },
+                  { value: "2,000+", label: "Projects Completed" },
+                  { value: "1,000+", label: "Clients Served" },
                   { value: "PA184779", label: "Licensed & Insured" },
                 ].map((stat) => (
                   <div

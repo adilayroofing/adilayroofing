@@ -30,16 +30,16 @@ export const metadata: Metadata = {
   title: {
     template: "%s | Adilay Roofing",
     default:
-      "Roofer Philadelphia | #1 Roofing Contractor — Adilay Roofing",
+      "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
   },
   description:
-    "Adilay Roofing — Philadelphia's top-rated roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779, insured. 5-star rated, 2,080+ projects. Free estimates — (888) 823-4766.",
+    "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779, insured. 5-star rated on Google, 2,000+ projects. Free estimates — (888) 823-4766.",
   keywords: [
     "roofer Philadelphia",
     "roofing contractor Philadelphia",
     "roof replacement Philadelphia",
     "roof repair Philadelphia",
-    "best roofer Philadelphia",
+    "trusted roofer Philadelphia",
     "Philadelphia roofer",
     "roofer near me",
     "roofing company near me",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: company.name,
     title:
-      "Adilay Roofing | #1 Roofing Contractor in Philadelphia, PA",
+      "Adilay Roofing | Trusted Roofing Contractor in Philadelphia, PA",
     description:
-      "Philadelphia's trusted roofing experts. 20+ years, 2,080+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
+      "Philadelphia's trusted roofing experts. 20+ years, 2,000+ projects completed. Roof replacement, repair, flat roofing, siding & more. Free estimates!",
     images: [
       {
         url: `${BASE_URL}/images/adilay-van-service-areas.jpg`,

@@ -316,7 +316,7 @@ export default function LandingPageLayout({
             {[
               {
                 title: "Experienced Crew",
-                desc: "20+ years and 2,080+ projects completed across Philadelphia.",
+                desc: "20+ years and 2,000+ projects completed across Philadelphia.",
                 icon: (
                   <svg
                     className="w-8 h-8 text-brand-red"

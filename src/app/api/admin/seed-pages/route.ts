@@ -29,13 +29,13 @@ export async function POST(request: Request) {
   const staticPages = [
     {
       slug: "/",
-      title: "Roofer Philadelphia | #1 Roofing Contractor — Adilay Roofing",
-      description: "Adilay Roofing — Philadelphia's top-rated roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
+      title: "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
+      description: "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
     },
     {
       slug: "/about",
       title: "About Adilay Roofing | Philadelphia's Trusted Roofer",
-      description: "Learn about Adilay Roofing — over 20 years serving Philadelphia and surrounding counties. Licensed PA184779, insured, 2,080+ projects completed.",
+      description: "Learn about Adilay Roofing — over 20 years serving Philadelphia and surrounding counties. Licensed PA184779, insured, 2,000+ projects completed.",
     },
     {
       slug: "/contact",

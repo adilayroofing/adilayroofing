@@ -11,7 +11,7 @@ export default function JsonLd() {
     name: company.name,
     legalName: company.legalName,
     description:
-      "Philadelphia's #1 rated roofing contractor. Roof replacement, repair, flat roofing, shingles, siding, windows, gutters, and emergency services. Licensed, insured, 20+ years experience. Free estimates.",
+      "Philadelphia's trusted roofing contractor. Roof replacement, repair, flat roofing, shingles, siding, windows, gutters, and emergency services. Licensed, insured, 20+ years experience. Free estimates.",
     url: BASE_URL,
     telephone: company.phoneRaw,
     email: company.email,

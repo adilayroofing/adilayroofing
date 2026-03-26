@@ -233,7 +233,7 @@ export default function PageEditorClient({
         storyParagraphs: [
           "Founded by Adilay, Adilay Roofing LLC has been a trusted name in the Philadelphia roofing industry for over two decades. What started as a small, dedicated crew has grown into a full-service roofing and exterior company with 30+ professionals serving homeowners and businesses across Pennsylvania.",
           "Our mission is simple: deliver the highest standard of roofing services with integrity, quality craftsmanship, and genuine care for every customer. We don't cut corners, and we don't disappear after the job is done.",
-          "With over 2,080+ completed projects and a growing list of satisfied customers, we've built our reputation on referrals, repeat business, and doing right by every property we touch.",
+          "With over 2,000+ completed projects and a growing list of satisfied customers, we've built our reputation on referrals, repeat business, and doing right by every property we touch.",
         ],
         values: [
           { title: "Quality Craftsmanship", description: "Every project gets our full attention. We take pride in clean, professional work that lasts." },
@@ -261,7 +261,7 @@ export default function PageEditorClient({
       // Handle migration from old heroHeadline field to new split fields
       const oldHeadline = c.heroHeadline as string | undefined;
       return {
-        heroHeadlineWhite: (c.heroHeadlineWhite as string) || (oldHeadline ? "Philadelphia's #1 Rated" : ""),
+        heroHeadlineWhite: (c.heroHeadlineWhite as string) || (oldHeadline ? "Philadelphia's Trusted" : ""),
         heroHeadlineRed: (c.heroHeadlineRed as string) || (oldHeadline ? "Roofing Contractor" : ""),
         heroSubheadline: (c.heroSubheadline as string) || "",
         heroDescription: (c.heroDescription as string) || "",
@@ -274,13 +274,13 @@ export default function PageEditorClient({
     }
     if (isHomePage) {
       return {
-        heroHeadlineWhite: "Philadelphia's #1 Rated",
+        heroHeadlineWhite: "Philadelphia's Trusted",
         heroHeadlineRed: "Roofing Contractor",
         heroSubheadline: "Quality Craftsmanship. Proven Results.",
-        heroDescription: "Looking for the best roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated. Get a free estimate today.",
+        heroDescription: "Looking for a reliable roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated on Google. Get a free estimate today.",
         whyChooseUs: [
           { title: "Experienced Crew", description: "Over 20 years of hands-on roofing experience in the Philadelphia area." },
-          { title: "Quality Materials", description: "We use top-rated materials from trusted manufacturers for lasting results." },
+          { title: "Quality Materials", description: "We use quality materials from trusted manufacturers for lasting results." },
           { title: "Honest Pricing", description: "Clear, written proposals with no hidden fees or surprise charges." },
         ],
         teamHeading: "Family-Owned. Locally Trusted.",
@@ -309,6 +309,10 @@ export default function PageEditorClient({
     !canonicalUrl || canonicalUrl.startsWith("https://www.adilayroofing.com");
 
   async function handleSave(asPending: boolean) {
+    if (userRole === "viewer") {
+      setMessage({ type: "error", text: "View-only users cannot save changes." });
+      return;
+    }
     setSaving(true);
     setMessage(null);
 
@@ -454,8 +458,12 @@ export default function PageEditorClient({
           </h1>
           {!isNew && <p className="text-gray-400 text-sm mt-1">{page.slug}</p>}
         </div>
-        <div className="flex gap-2">
-          {userRole === "editor" ? (
+        <div className="flex gap-2 items-center">
+          {userRole === "viewer" ? (
+            <span className="px-3 py-1.5 bg-gray-700 text-gray-400 text-sm font-medium rounded-lg">
+              👁 View Only
+            </span>
+          ) : userRole === "editor" ? (
             <button
               onClick={() => handleSave(true)}
               disabled={saving || !slug}
@@ -476,6 +484,13 @@ export default function PageEditorClient({
           )}
         </div>
       </div>
+
+      {/* Viewer read-only banner */}
+      {userRole === "viewer" && (
+        <div className="mb-4 p-3 rounded-lg text-sm bg-blue-500/10 border border-blue-500/20 text-blue-400">
+          You are viewing this page in read-only mode. Contact an admin if you need edit access.
+        </div>
+      )}
 
       {/* Message */}
       {message && (
@@ -513,6 +528,9 @@ export default function PageEditorClient({
           Content
         </button>
       </div>
+
+      {/* Form fields — disabled for viewer role */}
+      <div className={userRole === "viewer" ? "pointer-events-none opacity-75 select-none" : ""}>
 
       {/* SEO Tab */}
       {tab === "seo" && (
@@ -689,6 +707,8 @@ export default function PageEditorClient({
           )}
         </div>
       )}
+
+      </div>{/* end viewer-disabled wrapper */}
 
       {/* Global styles for input fields */}
       <style jsx global>{`

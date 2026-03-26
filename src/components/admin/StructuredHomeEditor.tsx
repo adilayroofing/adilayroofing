@@ -57,7 +57,7 @@ export default function StructuredHomeEditor({
           value={content.heroHeadlineWhite}
           onChange={(e) => onChange({ ...content, heroHeadlineWhite: e.target.value })}
           className="input-field mb-3"
-          placeholder="e.g. Philadelphia's #1 Rated"
+          placeholder="e.g. Philadelphia's Trusted"
         />
         <label className="block text-xs text-gray-500 mb-1">Headline — Line 2 (red accent text)</label>
         <input

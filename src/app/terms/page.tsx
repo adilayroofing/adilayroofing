@@ -115,7 +115,8 @@ export default function TermsOfServicePage() {
                   (1/3) of the contract price as an initial deposit.
                 </li>
                 <li>
-                  We accept checks, credit cards, and electronic payment
+                  We accept checks, credit cards (a 4% processing surcharge
+                  applies to credit card payments), and electronic payment
                   methods. Financing options may be available — ask your project
                   manager for details.
                 </li>

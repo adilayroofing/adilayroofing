@@ -48,7 +48,7 @@ export async function generateMetadata({
         `roof repair ${location.name}`,
         `${location.name} roofer`,
         `${location.name} roofing`,
-        `best roofer ${location.name} ${location.state}`,
+        `trusted roofer ${location.name} ${location.state}`,
         `roofer near me ${location.name}`,
       ],
     };
@@ -65,7 +65,7 @@ export async function generateMetadata({
       `roof repair ${location.name}`,
       `${location.name} roofer`,
       `${location.name} roofing`,
-      `best roofer ${location.name} ${location.state}`,
+      `trusted roofer ${location.name} ${location.state}`,
       `roofer near me ${location.name}`,
     ],
     alternates: { canonical: `${BASE_URL}/service-areas/${slug}` },

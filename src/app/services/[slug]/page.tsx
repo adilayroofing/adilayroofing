@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         `${service.title.toLowerCase()} Philadelphia`,
         `${service.title.toLowerCase()} Philadelphia PA`,
         `${service.title.toLowerCase()} near me`,
-        `best ${service.title.toLowerCase()} Philadelphia`,
+        `trusted ${service.title.toLowerCase()} Philadelphia`,
         `Philadelphia ${service.title.toLowerCase()} contractor`,
         `affordable ${service.title.toLowerCase()} Philadelphia`,
         "roofer Philadelphia",
@@ -55,12 +55,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Fallback to hardcoded metadata
   return {
     title: `${service.title} Philadelphia PA | Free Estimates`,
-    description: `Need ${service.title.toLowerCase()} in Philadelphia? Adilay Roofing offers professional ${service.title.toLowerCase()} services with 20+ years experience. Licensed PA184779, 5-star rated. Free estimates — call (888) 823-4766.`,
+    description: `Need ${service.title.toLowerCase()} in Philadelphia? Adilay Roofing offers professional ${service.title.toLowerCase()} services with 20+ years experience. Licensed PA184779, 5-star rated on Google. Free estimates — call (888) 823-4766.`,
     keywords: [
       `${service.title.toLowerCase()} Philadelphia`,
       `${service.title.toLowerCase()} Philadelphia PA`,
       `${service.title.toLowerCase()} near me`,
-      `best ${service.title.toLowerCase()} Philadelphia`,
+      `trusted ${service.title.toLowerCase()} Philadelphia`,
       `Philadelphia ${service.title.toLowerCase()} contractor`,
       `affordable ${service.title.toLowerCase()} Philadelphia`,
       "roofer Philadelphia",
