@@ -12,7 +12,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "9 min read"
 category: "cost-guide"
-featuredImage: "/images/blog/roof-repair-costs-philadelphia.jpg"
+featuredImage: "/images/blog/roof-repair-costs-philadelphia.png"
 faq:
   - question: "How much does a typical roof repair cost in Philadelphia?"
     answer: "Roof repair costs in Philadelphia range from $300-$1,000 for minor fixes like replacing a few shingles, $1,000-$3,000 for moderate repairs such as flashing replacement or small leak repair, and $3,000-$10,000+ for major overhauls involving structural damage or large sections of decking. The exact cost depends on the type of damage, roofing material, and accessibility."
