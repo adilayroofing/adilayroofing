@@ -90,14 +90,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Failed to fetch pages" }, { status: 500 });
   }
 
-  // Get existing content blocks to avoid duplicates
+  // Get existing content blocks (for duplicate check + field merge)
   const pageIds = allPages.map((p) => p.id);
   const { data: existingBlocks } = await supabase
     .from("content_blocks")
-    .select("page_id, block_type")
+    .select("id, page_id, block_type, content")
     .in("page_id", pageIds);
 
   const pagesWithBlocks = new Set((existingBlocks || []).map((b) => b.page_id));
+  const existingBlocksByPageId = new Map((existingBlocks || []).map((b) => [b.page_id, b]));
 
   const contentBlocksToInsert: {
     page_id: string;
@@ -109,40 +110,61 @@ export async function POST(request: Request) {
   let serviceCount = 0;
   let locationCount = 0;
   let specialCount = 0;
+  let mergedCount = 0;
+
+  // Track blocks to update (merge missing fields into existing blocks)
+  const blocksToUpdate: { id: string; content: Record<string, unknown> }[] = [];
 
   for (const page of allPages) {
-    // Skip pages that already have content blocks
-    if (pagesWithBlocks.has(page.id)) continue;
-
     const { slug } = page;
+
+    // Helper: either insert new block or merge missing fields into existing
+    function addOrMerge(blockType: string, content: Record<string, unknown>) {
+      const existing = existingBlocksByPageId.get(page.id);
+      if (existing && existing.block_type === blockType) {
+        // Merge: add any fields from `content` that don't exist in the current block
+        const currentContent = (existing.content || {}) as Record<string, unknown>;
+        const merged = { ...content, ...currentContent }; // existing values take priority
+        // Only update if there are actually new fields
+        const newKeys = Object.keys(content).filter((k) => !(k in currentContent));
+        if (newKeys.length > 0) {
+          blocksToUpdate.push({ id: existing.id, content: merged });
+          mergedCount++;
+        }
+        return;
+      }
+      if (!pagesWithBlocks.has(page.id)) {
+        contentBlocksToInsert.push({
+          page_id: page.id,
+          block_type: blockType,
+          content,
+          sort_order: 0,
+        });
+      }
+    }
 
     // SERVICE PAGES
     if (slug.startsWith("/services/") && slug !== "/services") {
       const serviceSlug = slug.replace("/services/", "");
       const service = getServiceBySlug(serviceSlug);
       if (service) {
-        contentBlocksToInsert.push({
-          page_id: page.id,
-          block_type: "structured_service",
-          content: {
-            heroTitle: `${service.title} in Philadelphia, PA`,
-            heroTagline: service.tagline,
-            heroDescription: service.heroDescription,
-            heroCTAText: "Get a FREE Estimate",
-            benefits: [...service.benefits],
-            benefitsHeading: "Benefits",
-            features: [...service.features],
-            featuresHeading: "What's Included",
-            faq: service.faq.map((f) => ({ ...f })),
-            faqHeading: "Frequently Asked Questions",
-            relatedHeading: "Other Services We Offer",
-            relatedSubheading: "Explore more ways Adilay Roofing can protect and improve your property.",
-            financingHeadline: "Don\u2019t let cost hold you back.",
-            financingBody: "Financing is available through Service Finance Company \u2014 loans from $1,000 to $100,000, with no payments until your job is complete.",
-            ctaHeadline: `Ready for ${service.shortTitle} Services?`,
-            ctaSubtext: `Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`,
-          },
-          sort_order: 0,
+        addOrMerge("structured_service", {
+          heroTitle: `${service.title} in Philadelphia, PA`,
+          heroTagline: service.tagline,
+          heroDescription: service.heroDescription,
+          heroCTAText: "Get a FREE Estimate",
+          benefits: [...service.benefits],
+          benefitsHeading: "Benefits",
+          features: [...service.features],
+          featuresHeading: "What's Included",
+          faq: service.faq.map((f) => ({ ...f })),
+          faqHeading: "Frequently Asked Questions",
+          relatedHeading: "Other Services We Offer",
+          relatedSubheading: "Explore more ways Adilay Roofing can protect and improve your property.",
+          financingHeadline: "Don\u2019t let cost hold you back.",
+          financingBody: "Financing is available through Service Finance Company \u2014 loans from $1,000 to $100,000, with no payments until your job is complete.",
+          ctaHeadline: `Ready for ${service.shortTitle} Services?`,
+          ctaSubtext: `Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`,
         });
         serviceCount++;
       }
@@ -153,36 +175,31 @@ export async function POST(request: Request) {
       const locationSlug = slug.replace("/service-areas/", "");
       const location = getLocationBySlug(locationSlug);
       if (location) {
-        contentBlocksToInsert.push({
-          page_id: page.id,
-          block_type: "structured_location",
-          content: {
-            heroTitle: location.h1,
-            heroSubtitle: `Professional roofing services for ${location.name}, ${location.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`,
-            heroCTAText: "Get FREE Estimate",
-            intro: location.intro,
-            servicesHeading: `Our Services in ${location.name}`,
-            servicesSubtext: `We offer a complete range of roofing and exterior services to homeowners and businesses in ${location.name}, ${location.state}. Every project is backed by our 20+ years of experience and our commitment to quality workmanship.`,
-            localContext: location.localContext,
-            localContextHeading: `Why ${location.name} Homeowners Choose Adilay Roofing`,
-            whyChooseItems: [
-              "20+ years of roofing experience",
-              "2,000+ projects completed",
-              "Licensed in Pennsylvania (PA184779)",
-              "Fully insured with workers' comp",
-              "Free on-site estimates \u2014 no pressure",
-              "Emergency service available 24/7",
-            ],
-            neighborhoods: [...location.neighborhoods],
-            neighborhoodsHeading: `${location.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${location.name}`,
-            neighborhoodsSubtext: `Our roofing services are available throughout ${location.name} and the surrounding ${location.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`,
-            zipCodes: [...location.zipCodes],
-            faq: location.faq.map((f) => ({ ...f })),
-            faqHeading: `Frequently Asked Questions About Roofing in ${location.name}`,
-            ctaHeadline: `Need a Roofer in ${location.name}?`,
-            ctaSubtext: `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`,
-          },
-          sort_order: 0,
+        addOrMerge("structured_location", {
+          heroTitle: location.h1,
+          heroSubtitle: `Professional roofing services for ${location.name}, ${location.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`,
+          heroCTAText: "Get FREE Estimate",
+          intro: location.intro,
+          servicesHeading: `Our Services in ${location.name}`,
+          servicesSubtext: `We offer a complete range of roofing and exterior services to homeowners and businesses in ${location.name}, ${location.state}. Every project is backed by our 20+ years of experience and our commitment to quality workmanship.`,
+          localContext: location.localContext,
+          localContextHeading: `Why ${location.name} Homeowners Choose Adilay Roofing`,
+          whyChooseItems: [
+            "20+ years of roofing experience",
+            "2,000+ projects completed",
+            "Licensed in Pennsylvania (PA184779)",
+            "Fully insured with workers' comp",
+            "Free on-site estimates \u2014 no pressure",
+            "Emergency service available 24/7",
+          ],
+          neighborhoods: [...location.neighborhoods],
+          neighborhoodsHeading: `${location.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${location.name}`,
+          neighborhoodsSubtext: `Our roofing services are available throughout ${location.name} and the surrounding ${location.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`,
+          zipCodes: [...location.zipCodes],
+          faq: location.faq.map((f) => ({ ...f })),
+          faqHeading: `Frequently Asked Questions About Roofing in ${location.name}`,
+          ctaHeadline: `Need a Roofer in ${location.name}?`,
+          ctaSubtext: `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`,
         });
         locationCount++;
       }
@@ -190,10 +207,7 @@ export async function POST(request: Request) {
 
     // HOME PAGE
     else if (slug === "/" || slug === "") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_home",
-        content: {
+      addOrMerge("structured_home", {
           heroHeadlineWhite: "Philadelphia's Trusted",
           heroHeadlineRed: "Roofing Contractor",
           heroSubheadline: "Quality Craftsmanship. Proven Results.",
@@ -210,18 +224,13 @@ export async function POST(request: Request) {
           ],
           serviceAreasHeading: "Serving Philadelphia & Beyond",
           serviceAreasDescription: "We proudly serve homeowners and businesses across southeastern Pennsylvania.",
-        },
-        sort_order: 0,
       });
       specialCount++;
     }
 
     // ABOUT PAGE
     else if (slug === "/about") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_about",
-        content: {
+      addOrMerge("structured_about", {
           heroTitle: "About Adilay Roofing",
           heroDescription: "Serving the Philadelphia region with honest, high-quality roofing services for over 20 years.",
           storyHeading: "Roofing Done Right — For Over 20 Years",
@@ -237,18 +246,13 @@ export async function POST(request: Request) {
             { title: "Community Focus", description: "We live and work in the same neighborhoods we serve. Your satisfaction is our reputation." },
           ],
           teamDescription: "Our crew of 30+ experienced professionals brings decades of combined roofing expertise to every project. Led by owner Adilay, we treat every property like it's our own.",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // FAQ PAGE
     else if (slug === "/faq") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_faq",
-        content: {
+      addOrMerge("structured_faq", {
           heroTitle: "Frequently Asked Questions",
           heroSubtitle: "Have questions about roofing, our process, or your project? Find answers below, or contact us directly.",
           general: {
@@ -286,18 +290,13 @@ export async function POST(request: Request) {
               { question: "Do I need to be home during the work?", answer: "You don't need to be home for the entire project, but we ask that you're available at the start and end of each workday so we can go over progress and answer any questions. We'll keep you updated throughout." },
             ],
           },
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // CONTACT PAGE
     else if (slug === "/contact") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_contact",
-        content: {
+      addOrMerge("structured_contact", {
           heroTitle: "Get In Touch",
           heroDescription: "Have a question or ready to get started? We\u2019re here to help.",
           officeHeading: "Meet the Team Behind Your Roof",
@@ -306,18 +305,13 @@ export async function POST(request: Request) {
           formHeading: "Send Us a Message",
           formDescription: "Fill out the form below and we\u2019ll get back to you as soon as possible.",
           emergencyBannerText: "Roof Emergency? Call us now \u2014 we respond fast.",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // GET QUOTE PAGE
     else if (slug === "/get-quote") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_quote",
-        content: {
+      addOrMerge("structured_quote", {
           heroTitle: "Get Your Free Roofing Estimate",
           heroDescription: "Fill out the form below and we\u2019ll get back to you within 24 hours with a detailed, no-obligation estimate for your roofing project.",
           offerBannerText: "Limited Time: Free roof inspection with every estimate request!",
@@ -333,18 +327,13 @@ export async function POST(request: Request) {
           serviceAreaDescription: "We provide free estimates throughout Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Whether you\u2019re in Center City or the surrounding suburbs, our team is ready to help.",
           faqHeading: "Common Questions About Getting an Estimate",
           faqSubheading: "Quick answers to help you understand our process.",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // SERVICES INDEX PAGE
     else if (slug === "/services") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_services_index",
-        content: {
+      addOrMerge("structured_services_index", {
           heroTitle: "Our Roofing & Exterior Services",
           heroDescription: "Comprehensive solutions for Philadelphia properties \u2014 from roof replacement and repair to siding, windows, and gutters. Quality workmanship you can trust.",
           showcaseHeading: "Real Work. Real Results.",
@@ -357,18 +346,13 @@ export async function POST(request: Request) {
             { title: "Quality Materials", description: "We use manufacturer-backed materials from trusted brands to ensure your roof or exterior stands the test of time." },
             { title: "Honest Pricing", description: "No hidden fees, no surprise charges. We provide clear, written estimates so you know exactly what to expect." },
           ],
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // SERVICE AREAS INDEX PAGE
     else if (slug === "/service-areas") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_areas_index",
-        content: {
+      addOrMerge("structured_areas_index", {
           heroTitle: "Areas We Serve",
           heroDescription: "Professional roofing services across southeastern Pennsylvania. Wherever you are in the greater Philadelphia region, we\u2019ve got you covered.",
           mainHeading: "Trusted Roofing Services Across the Philadelphia Region",
@@ -380,18 +364,13 @@ export async function POST(request: Request) {
             { title: "Community Reputation", description: "We\u2019ve built our business on referrals from satisfied neighbors. Our reputation matters to us." },
           ],
           ctaHeadline: "Need a Roofer in Your Area?",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // GALLERY PAGE
     else if (slug === "/gallery") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_gallery",
-        content: {
+      addOrMerge("structured_gallery", {
           heroLabel: "Project Gallery",
           heroTitle: "Our Work Speaks",
           heroTitleRed: "for Itself",
@@ -401,36 +380,26 @@ export async function POST(request: Request) {
           beforeAfterDescription: "See the difference quality craftsmanship makes. Every project starts with a detailed assessment and ends with a result that exceeds expectations.",
           ctaHeadline: "Like What You See?",
           ctaSubtext: "Let us transform your roof next. Get a free, no-obligation estimate today.",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // BLOG INDEX PAGE
     else if (slug === "/blog") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_blog_index",
-        content: {
+      addOrMerge("structured_blog_index", {
           heroLabel: "Blog",
           heroTitle: "Roofing Tips & Expert Insights",
           heroDescription: "Practical advice for Philadelphia homeowners \u2014 from roof maintenance to choosing the right materials for your home.",
           emptyMessage: "Blog posts coming soon! Check back for expert roofing tips and guides.",
           ctaHeadline: "Need Roofing Help in Philadelphia?",
           ctaSubtext: "Contact Adilay Roofing today for a free estimate. Honest advice, quality work, no pressure.",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
 
     // FINANCING PAGE
     else if (slug === "/financing") {
-      contentBlocksToInsert.push({
-        page_id: page.id,
-        block_type: "structured_financing",
-        content: {
+      addOrMerge("structured_financing", {
           heroHeadline: "Roof Financing in Philadelphia — Approved Through Service Finance Company",
           heroDescription: "A new roof is one of the most important investments you can make in your home. Don't let cost stand in the way of protecting your family. With flexible financing through Service Finance Company, you can get the roof you need now — and pay over time with manageable monthly payments.",
           howItWorks: [
@@ -469,9 +438,7 @@ export async function POST(request: Request) {
           ctaSubtext: "Apply for financing today, or contact us for a free estimate. We'll help you find the right payment option for your project.",
           bottomCtaHeadline: "Protect Your Home Today",
           bottomCtaSubtext: "Don't let cost hold you back. Finance your roofing project with Adilay Roofing and Service Finance Company. No payments until your job is complete.",
-        },
-        sort_order: 0,
-      });
+        });
       specialCount++;
     }
   }
@@ -487,8 +454,21 @@ export async function POST(request: Request) {
       }
     }
     results.push(`Inserted content blocks: ${serviceCount} services, ${locationCount} locations, ${specialCount} special pages`);
-  } else {
+  } else if (blocksToUpdate.length === 0) {
     results.push("All pages already have content blocks");
+  }
+
+  // Update existing blocks with merged fields
+  if (blocksToUpdate.length > 0) {
+    let updateErrors = 0;
+    for (const block of blocksToUpdate) {
+      const { error } = await supabase
+        .from("content_blocks")
+        .update({ content: block.content })
+        .eq("id", block.id);
+      if (error) updateErrors++;
+    }
+    results.push(`Merged missing fields into ${blocksToUpdate.length} existing blocks${updateErrors > 0 ? ` (${updateErrors} errors)` : ""}`);
   }
 
   return NextResponse.json({
@@ -498,10 +478,12 @@ export async function POST(request: Request) {
       testBlogPagesRemoved: testPageIds.length,
       testBlogPostsRemoved: testSlugs.length,
       contentBlocksSeeded: contentBlocksToInsert.length,
+      contentBlocksMerged: blocksToUpdate.length,
       breakdown: {
         services: serviceCount,
         locations: locationCount,
         special: specialCount,
+        merged: mergedCount,
       },
     },
   });
