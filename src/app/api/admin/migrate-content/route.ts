@@ -1,0 +1,297 @@
+import { NextResponse } from "next/server";
+import { createAdminClient } from "@/lib/supabase-server";
+import { services, getServiceBySlug } from "@/data/services";
+import { getAllLocations, getLocationBySlug } from "@/data/locations";
+import { faqs as hardcodedFaqs } from "@/data/faqs";
+
+export async function POST(request: Request) {
+  const authHeader = request.headers.get("authorization");
+  if (authHeader !== `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const supabase = createAdminClient();
+  const results: string[] = [];
+
+  // =========================================================================
+  // 1. CLEAN UP TEST BLOG POSTS
+  // =========================================================================
+  // Remove test/junk blog posts created during testing
+  const { data: allBlogPages } = await supabase
+    .from("pages")
+    .select("id, slug")
+    .like("slug", "/blog/%");
+
+  const testSlugs: string[] = [];
+  const testPageIds: string[] = [];
+
+  // Known seeded blog slugs (keep these)
+  const seededBlogSlugs = new Set([
+    "roof-replacement-cost-philadelphia-2026",
+    "signs-you-need-new-roof-philadelphia",
+    "flat-roof-repair-philadelphia-row-home-guide",
+    "how-to-choose-roofing-contractor-philadelphia",
+    "best-roofing-materials-philadelphia-climate",
+    "roof-repair-costs-philadelphia",
+    "epdm-rubber-roofing-philadelphia",
+    "emergency-roof-leak-repair-philadelphia",
+    "roofing-south-philadelphia-row-homes",
+    "3-tab-vs-architectural-shingles-philadelphia",
+    "best-time-replace-roof-pennsylvania",
+    "new-roof-increase-home-value-philadelphia",
+    "storm-damage-roof-repair-philadelphia",
+    "seasonal-roof-maintenance-checklist-philadelphia",
+    "vinyl-vs-fiber-cement-siding-philadelphia",
+    "window-replacement-philadelphia-cost",
+    "how-long-does-roof-last-philadelphia",
+    "gaf-timberline-shingles-review-philadelphia",
+    "roofing-bucks-county-common-issues",
+    "roof-insurance-claim-philadelphia-guide",
+    "roofing-warranties-explained",
+    "energy-efficient-roofing-philadelphia",
+    "montgomery-county-roofing-weather-solutions",
+    "roof-permit-philadelphia",
+  ]);
+
+  if (allBlogPages) {
+    for (const page of allBlogPages) {
+      const blogSlug = page.slug.replace("/blog/", "");
+      // If slug is empty, or not in our known seeded list → it's a test post
+      if (!blogSlug || !seededBlogSlugs.has(blogSlug)) {
+        testSlugs.push(blogSlug);
+        testPageIds.push(page.id);
+      }
+    }
+  }
+
+  if (testPageIds.length > 0) {
+    await supabase.from("content_blocks").delete().in("page_id", testPageIds);
+    await supabase.from("page_revisions").delete().in("page_id", testPageIds);
+    await supabase.from("pages").delete().in("id", testPageIds);
+    results.push(`Deleted ${testPageIds.length} test blog pages from pages table`);
+  }
+
+  if (testSlugs.length > 0) {
+    await supabase.from("blog_posts").delete().in("slug", testSlugs.filter(Boolean));
+    results.push(`Deleted ${testSlugs.length} test blog posts from blog_posts table`);
+  }
+
+  // Also remove the bare /blog/ page entry if it exists (not a real page)
+  await supabase.from("pages").delete().eq("slug", "/blog/");
+
+  // =========================================================================
+  // 2. SEED CONTENT BLOCKS FOR ALL PAGE TYPES
+  // =========================================================================
+
+  // Get all pages
+  const { data: allPages } = await supabase.from("pages").select("id, slug");
+  if (!allPages) {
+    return NextResponse.json({ error: "Failed to fetch pages" }, { status: 500 });
+  }
+
+  // Get existing content blocks to avoid duplicates
+  const pageIds = allPages.map((p) => p.id);
+  const { data: existingBlocks } = await supabase
+    .from("content_blocks")
+    .select("page_id, block_type")
+    .in("page_id", pageIds);
+
+  const pagesWithBlocks = new Set((existingBlocks || []).map((b) => b.page_id));
+
+  const contentBlocksToInsert: {
+    page_id: string;
+    block_type: string;
+    content: Record<string, unknown>;
+    sort_order: number;
+  }[] = [];
+
+  let serviceCount = 0;
+  let locationCount = 0;
+  let specialCount = 0;
+
+  for (const page of allPages) {
+    // Skip pages that already have content blocks
+    if (pagesWithBlocks.has(page.id)) continue;
+
+    const { slug } = page;
+
+    // SERVICE PAGES
+    if (slug.startsWith("/services/") && slug !== "/services") {
+      const serviceSlug = slug.replace("/services/", "");
+      const service = getServiceBySlug(serviceSlug);
+      if (service) {
+        contentBlocksToInsert.push({
+          page_id: page.id,
+          block_type: "structured_service",
+          content: {
+            heroTitle: `${service.title} in Philadelphia, PA`,
+            heroTagline: service.tagline,
+            heroDescription: service.heroDescription,
+            benefits: [...service.benefits],
+            features: [...service.features],
+            faq: service.faq.map((f) => ({ ...f })),
+          },
+          sort_order: 0,
+        });
+        serviceCount++;
+      }
+    }
+
+    // LOCATION PAGES
+    else if (slug.startsWith("/service-areas/") && slug !== "/service-areas") {
+      const locationSlug = slug.replace("/service-areas/", "");
+      const location = getLocationBySlug(locationSlug);
+      if (location) {
+        contentBlocksToInsert.push({
+          page_id: page.id,
+          block_type: "structured_location",
+          content: {
+            heroTitle: location.h1,
+            heroSubtitle: `Professional roofing services for ${location.name}, ${location.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`,
+            intro: location.intro,
+            localContext: location.localContext,
+            neighborhoods: [...location.neighborhoods],
+            zipCodes: [...location.zipCodes],
+            faq: location.faq.map((f) => ({ ...f })),
+          },
+          sort_order: 0,
+        });
+        locationCount++;
+      }
+    }
+
+    // HOME PAGE
+    else if (slug === "/" || slug === "") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_home",
+        content: {
+          heroHeadlineWhite: "Philadelphia's Trusted",
+          heroHeadlineRed: "Roofing Contractor",
+          heroSubheadline: "Quality Craftsmanship. Proven Results.",
+          heroDescription: "Looking for a reliable roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated on Google. Get a free estimate today.",
+          whyChooseUs: [
+            { title: "Experienced Crew", description: "Over 20 years of hands-on roofing experience in the Philadelphia area." },
+            { title: "Quality Materials", description: "We use quality materials from trusted manufacturers for lasting results." },
+            { title: "Honest Pricing", description: "Clear, written proposals with no hidden fees or surprise charges." },
+          ],
+          teamHeading: "Family-Owned. Locally Trusted.",
+          teamParagraphs: [
+            "Adilay Roofing is a family-run business built on hard work, honest service, and a genuine commitment to every homeowner we serve. From our office in Philadelphia, we manage every project personally — no subcontractors, no runaround.",
+            "With over 20 years of experience and a crew that treats your home like their own, you get more than a contractor — you get a team that stands behind every shingle, every seam, and every promise.",
+          ],
+          serviceAreasHeading: "Serving Philadelphia & Beyond",
+          serviceAreasDescription: "We proudly serve homeowners and businesses across southeastern Pennsylvania.",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // ABOUT PAGE
+    else if (slug === "/about") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_about",
+        content: {
+          heroTitle: "About Adilay Roofing",
+          heroDescription: "Serving the Philadelphia region with honest, high-quality roofing services for over 20 years.",
+          storyHeading: "Roofing Done Right — For Over 20 Years",
+          storyParagraphs: [
+            "Founded by Adilay, Adilay Roofing LLC has been a trusted name in the Philadelphia roofing industry for over two decades. What started as a small, dedicated crew has grown into a full-service roofing and exterior company with 30+ professionals serving homeowners and businesses across Pennsylvania.",
+            "Our mission is simple: deliver the highest standard of roofing services with integrity, quality craftsmanship, and genuine care for every customer. We don't cut corners, and we don't disappear after the job is done.",
+            "With over 2,000+ completed projects and a growing list of satisfied customers, we've built our reputation on referrals, repeat business, and doing right by every property we touch.",
+          ],
+          values: [
+            { title: "Quality Craftsmanship", description: "Every project gets our full attention. We take pride in clean, professional work that lasts." },
+            { title: "Honest Communication", description: "We tell you what your roof needs — not what makes us the most money. No pressure, no upsells." },
+            { title: "Reliable Service", description: "We show up when we say we will, finish on time, and stand behind our work." },
+            { title: "Community Focus", description: "We live and work in the same neighborhoods we serve. Your satisfaction is our reputation." },
+          ],
+          teamDescription: "Our crew of 30+ experienced professionals brings decades of combined roofing expertise to every project. Led by owner Adilay, we treat every property like it's our own.",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // FAQ PAGE
+    else if (slug === "/faq") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_faq",
+        content: {
+          heroTitle: "Frequently Asked Questions",
+          heroSubtitle: "Have questions about roofing, our process, or your project? Find answers below, or contact us directly.",
+          general: {
+            title: "General Questions",
+            description: "The most common questions we get from homeowners and businesses.",
+            items: hardcodedFaqs.map((f) => ({ ...f })),
+          },
+          areas: {
+            title: "Service Area Questions",
+            description: "We proudly serve Philadelphia and surrounding counties in southeastern Pennsylvania.",
+            items: [
+              { question: "What neighborhoods in Philadelphia do you cover?", answer: "We serve all of Philadelphia — from Northeast Philly and Kensington to Center City, South Philly, Germantown, and everywhere in between. If you're in the greater Philadelphia area, we can help." },
+              { question: "Do you serve outside of Philadelphia?", answer: "Yes! In addition to Philadelphia, we serve Bucks County, Montgomery County, Delaware County, and Chester County. This includes towns like Norristown, Cheltenham, Abington, Jenkintown, and many more across southeastern Pennsylvania." },
+              { question: "Is there an extra charge for jobs outside of the city?", answer: "No. Our pricing is based on the scope of work, not your location. Whether you're in Philadelphia or a surrounding county, you'll receive the same honest pricing." },
+            ],
+          },
+          roofingDetails: {
+            title: "Roofing Details",
+            description: "In-depth answers about costs, materials, permits, and what to expect during your roofing project.",
+            items: [
+              { question: "How much does a roof replacement cost in Philadelphia?", answer: "The cost of a roof replacement in Philadelphia typically ranges from $5,000 to $12,000+ depending on the size of your home, materials chosen, and the complexity of the job. Architectural shingles are the most popular choice. We provide free, detailed written estimates so you know exactly what to expect — no hidden fees." },
+              { question: "Do you need a permit for a roof replacement in Philadelphia?", answer: "In most cases, yes. Philadelphia requires a building permit for roof replacements. Adilay Roofing handles the permitting process for you so you don't have to worry about it." },
+              { question: "How long does a new roof last?", answer: "A new asphalt shingle roof typically lasts 25–30 years, and architectural shingles can last up to 50 years with proper maintenance. EPDM flat roofs generally last 20–25 years. The lifespan depends on materials, installation quality, ventilation, and maintenance." },
+              { question: "What happens if it rains during my roof replacement?", answer: "We monitor weather closely and plan around it. If rain is expected mid-project, we use tarps and waterproof underlayment to protect your home. We never leave a roof exposed overnight. Your home's protection is always our top priority." },
+              { question: "Do you use subcontractors?", answer: "No. All work is performed by our own crew of 30+ experienced professionals. We don't outsource any part of the job. This is how we maintain quality control on every project." },
+              { question: "Can you replace a roof in the winter?", answer: "Yes, we can perform roof replacements year-round in the Philadelphia area. We follow manufacturer guidelines for temperature-sensitive materials and take extra precautions in colder months to ensure a proper installation." },
+            ],
+          },
+          process: {
+            title: "Our Process",
+            description: "What to expect when you work with Adilay Roofing.",
+            items: [
+              { question: "What happens after I request a quote?", answer: "Once you submit a quote request, our team will reach out within 24 hours to schedule a convenient time for a free inspection. We'll assess your property, discuss your needs, and provide a clear, written estimate — no pressure, no obligation." },
+              { question: "How do I prepare for a roof replacement?", answer: "We handle most of the prep work, but we recommend moving vehicles away from the house, securing loose items in the attic, and letting your neighbors know about the upcoming work. Our crew will protect your landscaping and clean up thoroughly when the job is done." },
+              { question: "Do I need to be home during the work?", answer: "You don't need to be home for the entire project, but we ask that you're available at the start and end of each workday so we can go over progress and answer any questions. We'll keep you updated throughout." },
+            ],
+          },
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+  }
+
+  // Insert content blocks in batches
+  if (contentBlocksToInsert.length > 0) {
+    const batchSize = 50;
+    for (let i = 0; i < contentBlocksToInsert.length; i += batchSize) {
+      const batch = contentBlocksToInsert.slice(i, i + batchSize);
+      const { error } = await supabase.from("content_blocks").insert(batch);
+      if (error) {
+        results.push(`Error inserting content blocks batch ${i}: ${error.message}`);
+      }
+    }
+    results.push(`Inserted content blocks: ${serviceCount} services, ${locationCount} locations, ${specialCount} special pages`);
+  } else {
+    results.push("All pages already have content blocks");
+  }
+
+  return NextResponse.json({
+    message: "Migration complete",
+    results,
+    summary: {
+      testBlogPagesRemoved: testPageIds.length,
+      testBlogPostsRemoved: testSlugs.length,
+      contentBlocksSeeded: contentBlocksToInsert.length,
+      breakdown: {
+        services: serviceCount,
+        locations: locationCount,
+        special: specialCount,
+      },
+    },
+  });
+}

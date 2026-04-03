@@ -44,7 +44,7 @@ create index idx_pages_status on public.pages (status);
 create table public.content_blocks (
   id uuid primary key default uuid_generate_v4(),
   page_id uuid not null references public.pages(id) on delete cascade,
-  block_type text not null check (block_type in ('rich_text', 'heading', 'image', 'cta', 'faq')),
+  block_type text not null check (block_type in ('rich_text', 'heading', 'image', 'cta', 'faq', 'structured_service', 'structured_location', 'structured_faq', 'structured_about', 'structured_home', 'structured_blog')),
   content jsonb not null default '{}',
   sort_order integer not null default 0,
   updated_at timestamptz default now()
