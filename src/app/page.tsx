@@ -126,6 +126,12 @@ const fallbackWhyChooseUs = [
       "Clear, written proposals with no hidden fees or surprise charges.",
     bgImage: "/images/adilay-roofing-honest-pricing-proposal.jpg",
   },
+  {
+    title: "Flexible Financing",
+    description:
+      'Approved through Service Finance Company. Break your project into manageable monthly payments \u2014 no home equity required. <a href="/financing">Learn more</a>',
+    bgImage: "/images/adilay-roofing-honest-pricing-proposal.jpg",
+  },
 ];
 
 // Icons for Why Choose Us cards — mapped by index (design stays the same)
@@ -139,12 +145,16 @@ const whyChooseUsIcons = [
   <svg key="2" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>,
+  <svg key="3" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+  </svg>,
 ];
 
 // Background images for Why Choose Us — mapped by index
 const whyChooseUsBgImages = [
   "/images/experienced-crew-adilay-roofing-philadelphia.jpg",
   "/images/quality-roofing-materials-adilay.jpg",
+  "/images/adilay-roofing-honest-pricing-proposal.jpg",
   "/images/adilay-roofing-honest-pricing-proposal.jpg",
 ];
 
@@ -188,7 +198,7 @@ export default async function Home() {
   const homepageFaqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.slice(0, 6).map((faq) => ({
+    mainEntity: faqs.slice(0, 8).map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -300,6 +310,36 @@ export default async function Home() {
       <TrustBar />
 
       {/* ============================================ */}
+      {/* FINANCING BANNER                             */}
+      {/* ============================================ */}
+      <section className="bg-brand-light border-y border-brand-border">
+        <div className="container-wide mx-auto px-4 py-5 md:py-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center md:text-left">
+            <div className="flex items-center gap-3">
+              <svg className="w-6 h-6 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+              <p className="text-brand-dark text-sm md:text-base">
+                <strong className="font-bold">Financing Available</strong>
+                <span className="hidden sm:inline"> &mdash; </span>
+                <br className="sm:hidden" />
+                <span className="text-brand-gray">Approved through Service Finance Company. Apply in minutes. No payments until your project is complete.</span>
+              </p>
+            </div>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <Link href="/financing" className="text-brand-red font-bold text-sm hover:underline whitespace-nowrap">
+                Learn More
+              </Link>
+              <span className="text-brand-border">|</span>
+              <Link href="/financing" className="text-brand-red font-bold text-sm hover:underline whitespace-nowrap">
+                Apply Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* SERVICES SECTION                             */}
       {/* ============================================ */}
       <section className="section-padding bg-white">
@@ -399,7 +439,7 @@ export default async function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {whyChooseUs.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100} distance={20}>
                 <div className="group relative rounded-sm overflow-hidden min-h-[160px] md:min-h-[300px] h-full">
@@ -685,7 +725,7 @@ export default async function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <FAQ items={faqs.slice(0, 6)} />
+            <FAQ items={faqs.slice(0, 8)} />
           </ScrollReveal>
 
           <ScrollReveal delay={200}>

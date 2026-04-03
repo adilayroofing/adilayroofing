@@ -32,6 +32,7 @@ export default function ContactForm() {
       phone: formData.get("phone") as string,
       service: formData.get("service") as string,
       message: formData.get("message") as string,
+      financingInterested: formData.get("financingInterested") === "on",
     };
 
     try {
@@ -213,6 +214,22 @@ export default function ContactForm() {
           className="w-full px-4 py-3 border border-brand-border rounded-sm text-brand-dark placeholder:text-brand-gray/50
                      focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-colors resize-vertical"
         />
+      </div>
+
+      {/* Financing Interest */}
+      <div className="flex items-start gap-3">
+        <input
+          type="checkbox"
+          id="financingInterested"
+          name="financingInterested"
+          className="mt-1 w-4 h-4 text-brand-red border-brand-border rounded focus:ring-brand-red cursor-pointer"
+        />
+        <label htmlFor="financingInterested" className="text-sm text-brand-dark cursor-pointer">
+          I&apos;m interested in <strong>financing options</strong> for my project
+          <span className="block text-xs text-brand-gray mt-0.5">
+            Loans from $1,000 to $100,000 through Service Finance Company. No payments until job is complete.
+          </span>
+        </label>
       </div>
 
       {/* Error Message */}

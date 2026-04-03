@@ -358,6 +358,30 @@ export default async function ServicePage({ params }: PageProps) {
       </section>
 
       {/* ================================================================= */}
+      {/* Financing Callout                                                 */}
+      {/* ================================================================= */}
+      <section className="bg-white">
+        <div className="container-narrow mx-auto px-4">
+          <div className="border-l-4 border-brand-red bg-brand-light rounded-sm p-5 md:p-6 max-w-3xl mx-auto">
+            <p className="text-brand-dark font-bold text-lg mb-2">
+              Don&apos;t let cost hold you back.
+            </p>
+            <p className="text-brand-gray leading-relaxed mb-3">
+              Financing is available through Service Finance Company &mdash; loans
+              from $1,000 to $100,000, with no payments until your job is
+              complete.
+            </p>
+            <Link
+              href="/financing"
+              className="inline-flex items-center gap-1 text-brand-red font-bold hover:underline"
+            >
+              See Financing Options &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
       {/* CTA                                                               */}
       {/* ================================================================= */}
       <CTASection

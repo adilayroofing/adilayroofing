@@ -26,6 +26,7 @@ interface FormData {
   squareFootage: string;
   stories: string;
   knownIssues: string;
+  financingInterested: boolean;
 
   // Step 6 - Contact Info
   fullName: string;
@@ -44,6 +45,7 @@ const INITIAL_FORM_DATA: FormData = {
   squareFootage: "",
   stories: "",
   knownIssues: "",
+  financingInterested: false,
   fullName: "",
   phone: "",
   email: "",
@@ -750,6 +752,38 @@ export default function QuoteForm() {
                              focus:border-brand-red transition-colors resize-none"
                 />
               </div>
+
+              {/* Financing Interest */}
+              <div
+                className={`flex items-start gap-3 p-3 md:p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
+                  formData.financingInterested
+                    ? "border-brand-red bg-brand-red/5"
+                    : "border-brand-border hover:border-gray-300 bg-white"
+                }`}
+                onClick={() => updateField("financingInterested", !formData.financingInterested)}
+              >
+                <span
+                  className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded flex items-center justify-center border-2 ${
+                    formData.financingInterested
+                      ? "border-brand-red bg-brand-red"
+                      : "border-gray-300"
+                  }`}
+                >
+                  {formData.financingInterested && (
+                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  )}
+                </span>
+                <div>
+                  <span className="text-sm md:text-base font-semibold text-brand-dark">
+                    I&apos;m interested in financing
+                  </span>
+                  <span className="block text-xs md:text-sm text-brand-gray mt-0.5">
+                    Loans from $1,000–$100,000 through Service Finance Company. No payments until job is complete.
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         );
@@ -871,6 +905,7 @@ export default function QuoteForm() {
               )}
               {formData.stories && <ReviewRow label="Stories" value={formData.stories} />}
               {formData.knownIssues && <ReviewRow label="Known Issues" value={formData.knownIssues} />}
+              <ReviewRow label="Financing" value={formData.financingInterested ? "Yes — interested in financing" : "No"} />
 
               <div className="border-t border-brand-border my-1 md:my-2" />
 

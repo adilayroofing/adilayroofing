@@ -11,7 +11,7 @@ const LOGO_BASE64 = "iVBORw0KGgoAAAANSUhEUgAAAZAAAAD9CAYAAACSoiH8AAAACXBIWXMAAAs
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, service, message } = body;
+    const { name, email, phone, service, message, financingInterested } = body;
 
     // Validate required fields
     if (!name || !email || !service || !message) {
@@ -51,8 +51,12 @@ export async function POST(request: Request) {
               <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">${service}</td>
             </tr>
             <tr>
-              <td style="padding: 10px 0; font-weight: bold; vertical-align: top;">Message:</td>
-              <td style="padding: 10px 0; white-space: pre-wrap;">${message}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0; font-weight: bold; vertical-align: top;">Message:</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e0e0e0; white-space: pre-wrap;">${message}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; font-weight: bold; vertical-align: top;">Financing Interest:</td>
+              <td style="padding: 10px 0;">${financingInterested ? '<span style="color: #C41E1E; font-weight: bold;">Yes — Interested in Financing</span>' : "No"}</td>
             </tr>
           </table>
         </div>
@@ -111,6 +115,7 @@ Submitted from Adilay Roofing website.
       phone || "Not provided",
       service,
       message,
+      financingInterested ? "Yes" : "No",
       "Contact Form",
     ]);
 

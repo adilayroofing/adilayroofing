@@ -25,6 +25,7 @@ export async function POST(request: Request) {
       phone,
       email,
       preferredContact,
+      financingInterested,
     } = body;
 
     const serviceArea = rawServiceArea === "Other" ? (customServiceArea || "Other") : rawServiceArea;
@@ -144,8 +145,12 @@ export async function POST(request: Request) {
               <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0;">${stories || "Not provided"}</td>
             </tr>
             <tr>
-              <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Known Issues:</td>
-              <td style="padding: 8px 0; white-space: pre-wrap;">${knownIssues || "None reported"}</td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: bold; vertical-align: top;">Known Issues:</td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; white-space: pre-wrap;">${knownIssues || "None reported"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Financing Interest:</td>
+              <td style="padding: 8px 0;">${financingInterested ? '<span style="color: #C41E1E; font-weight: bold;">Yes — Interested in Financing</span>' : "No"}</td>
             </tr>
           </table>
         </div>
@@ -180,6 +185,7 @@ PROPERTY DETAILS
 Square Footage: ${squareFootage || "Not provided"}
 Stories: ${stories || "Not provided"}
 Known Issues: ${knownIssues || "None reported"}
+Financing Interest: ${financingInterested ? "Yes — Interested in Financing" : "No"}
 
 ==============================
 Submitted from Adilay Roofing website.
@@ -228,6 +234,7 @@ Submitted from Adilay Roofing website.
       squareFootage || "Not provided",
       stories || "Not provided",
       knownIssues || "None reported",
+      financingInterested ? "Yes" : "No",
       "Quote Form",
     ]);
 

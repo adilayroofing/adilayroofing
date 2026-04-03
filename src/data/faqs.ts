@@ -45,8 +45,13 @@ export const faqs = [
       "Absolutely. We offer 24/7 emergency roof repair service. If you have an active leak or storm damage, call us right away at (888) 823-4766. We respond quickly to prevent further damage to your property.",
   },
   {
-    question: "Do you offer financing?",
+    question: "Do you offer financing for roof replacement or repair?",
     answer:
-      "Please call us to discuss payment options for your project. We want to make sure quality roofing is accessible and can work with you to find a solution that fits your budget.",
+      'Yes! Adilay Roofing is approved through Service Finance Company, LLC, a nationally licensed lender. You can finance your roofing project from $1,000 to $100,000, with no payments due until the job is complete. <a href="/financing">Learn more about financing \u2192</a>',
+  },
+  {
+    question: "What credit score do I need to finance a roof with Adilay?",
+    answer:
+      "Service Finance Company works with a range of credit profiles. The best way to find out your options is to apply \u2014 checking your eligibility typically does not affect your credit score.",
   },
 ];
