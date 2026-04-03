@@ -2,7 +2,15 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked, Renderer } from "marked";
-import { createAdminClient } from "@/lib/supabase-server";
+import { createClient } from "@supabase/supabase-js";
+
+/** Public read-only Supabase client for fetching blog posts (no service role key needed) */
+function createBlogClient() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
 
 // ─── Types ──────────────────────────────────────────────────────────
 export interface BlogPostFrontmatter {
@@ -65,7 +73,7 @@ marked.use({ renderer });
 // ─── CMS (Supabase) blog post fetching ──────────────────────────────
 async function getCMSBlogPosts(publishedOnly = true): Promise<BlogPost[]> {
   try {
-    const supabase = createAdminClient();
+    const supabase = createBlogClient();
     let query = supabase
       .from("blog_posts")
       .select("*")
@@ -103,7 +111,7 @@ async function getCMSBlogPosts(publishedOnly = true): Promise<BlogPost[]> {
 
 async function getCMSBlogPost(slug: string): Promise<BlogPost | undefined> {
   try {
-    const supabase = createAdminClient();
+    const supabase = createBlogClient();
     const { data, error } = await supabase
       .from("blog_posts")
       .select("*")
