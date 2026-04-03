@@ -198,6 +198,9 @@ export default async function Home() {
     })),
   };
 
+  // Fetch latest blog posts
+  const latestPosts = (await getAllPosts()).slice(0, 3);
+
   return (
     <>
       <script
@@ -715,10 +718,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* BLOG / LATEST INSIGHTS                       */}
       {/* ============================================ */}
-      {(() => {
-        const latestPosts = getAllPosts().slice(0, 3);
-        if (latestPosts.length === 0) return null;
-        return (
+      {latestPosts.length > 0 && (
           <section className="bg-brand-light section-padding">
             <div className="container-wide mx-auto">
               <ScrollReveal distance={20}>
@@ -770,8 +770,7 @@ export default async function Home() {
               </ScrollReveal>
             </div>
           </section>
-        );
-      })()}
+      )}
 
       {/* ============================================ */}
       {/* CTA SECTION                                  */}

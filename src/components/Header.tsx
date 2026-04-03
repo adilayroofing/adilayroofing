@@ -4,14 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { company } from "@/data/company";
-import { services } from "@/data/services";
-import ServiceIcon from "@/components/ServiceIcon";
+import { serviceCategories, getServicesByCategory } from "@/data/services";
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileCategoryOpen, setMobileCategoryOpen] = useState<string | null>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
@@ -191,32 +191,42 @@ export default function Header() {
 
               {servicesDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-72 bg-white rounded-sm shadow-xl border border-brand-border py-2 z-50"
+                  className="absolute top-full left-0 mt-2 w-[540px] bg-white rounded-sm shadow-xl border border-brand-border p-4 z-50"
                   onMouseLeave={() => setServicesDropdownOpen(false)}
                   role="menu"
                 >
-                  {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light hover:text-brand-red transition-colors"
-                      role="menuitem"
-                      onClick={() => setServicesDropdownOpen(false)}
-                    >
-                      <span className="text-brand-red/60" aria-hidden="true">
-                        <ServiceIcon slug={service.slug} className="w-5 h-5" />
-                      </span>
-                      <span className="font-medium">{service.title}</span>
-                    </Link>
-                  ))}
-                  <div className="border-t border-brand-border mt-2 pt-2">
+                  <div className="grid grid-cols-2 gap-4">
+                    {serviceCategories.map((cat) => {
+                      const catServices = getServicesByCategory(cat.id);
+                      if (catServices.length === 0) return null;
+                      return (
+                        <div key={cat.id}>
+                          <p className="text-xs font-bold text-brand-red uppercase tracking-wider mb-1.5 px-1">
+                            {cat.label}
+                          </p>
+                          {catServices.map((service) => (
+                            <Link
+                              key={service.slug}
+                              href={`/services/${service.slug}`}
+                              className="block px-1 py-1 text-sm text-brand-dark hover:text-brand-red transition-colors"
+                              role="menuitem"
+                              onClick={() => setServicesDropdownOpen(false)}
+                            >
+                              {service.shortTitle}
+                            </Link>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="border-t border-brand-border mt-3 pt-2">
                     <Link
                       href="/services"
-                      className="block px-4 py-2 text-brand-red font-semibold hover:bg-brand-light transition-colors"
+                      className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
                       role="menuitem"
                       onClick={() => setServicesDropdownOpen(false)}
                     >
-                      View All Services
+                      View All Services &rarr;
                     </Link>
                   </div>
                 </div>
@@ -377,22 +387,54 @@ export default function Header() {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  mobileServicesOpen ? "max-h-[500px] pb-4" : "max-h-0"
+                  mobileServicesOpen ? "max-h-[2000px] pb-4" : "max-h-0"
                 }`}
               >
-                {services.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className="flex items-center gap-3 py-2 pl-4 text-brand-gray hover:text-brand-red active:text-brand-red transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="text-brand-red/50" aria-hidden="true">
-                      <ServiceIcon slug={service.slug} className="w-4 h-4" />
-                    </span>
-                    <span>{service.title}</span>
-                  </Link>
-                ))}
+                {serviceCategories.map((cat) => {
+                  const catServices = getServicesByCategory(cat.id);
+                  if (catServices.length === 0) return null;
+                  const isOpen = mobileCategoryOpen === cat.id;
+                  return (
+                    <div key={cat.id} className="border-b border-brand-border/50 last:border-b-0">
+                      <button
+                        onClick={() => setMobileCategoryOpen(isOpen ? null : cat.id)}
+                        className="flex items-center justify-between w-full py-3 pl-4 pr-2 cursor-pointer"
+                      >
+                        <span className="text-base font-semibold text-brand-dark">
+                          {cat.label}
+                        </span>
+                        <svg
+                          className={`w-4 h-4 text-brand-gray transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? "max-h-[400px] pb-2" : "max-h-0"}`}>
+                        {catServices.map((service) => (
+                          <Link
+                            key={service.slug}
+                            href={`/services/${service.slug}`}
+                            className="block py-2 pl-8 text-sm text-brand-gray hover:text-brand-red active:text-brand-red transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {service.shortTitle}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+                <Link
+                  href="/services"
+                  className="block pl-4 pt-3 text-sm text-brand-red font-semibold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  View All Services &rarr;
+                </Link>
               </div>
             </div>
 

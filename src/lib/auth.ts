@@ -1,6 +1,6 @@
 import { createServerSupabaseClient } from "./supabase-server";
 
-export type UserRole = "admin" | "editor";
+export type UserRole = "admin" | "editor" | "viewer";
 
 export interface CmsUser {
   id: string;

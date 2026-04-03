@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import {
   getPostSlugs,
   getPostBySlug,
-  getAllPosts,
   getRelatedPosts,
   generateTOC,
+  generateTOCFromHtml,
   renderMarkdown,
   BASE_URL,
 } from "@/lib/blog";
@@ -31,8 +31,9 @@ function isPostPublished(dateStr: string): boolean {
 }
 
 // ─── Static params ──────────────────────────────────────────────────
-export function generateStaticParams() {
-  return getPostSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getPostSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 // ─── Metadata ───────────────────────────────────────────────────────
@@ -42,7 +43,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post || !isPostPublished(post.frontmatter.date))
     return { title: "Post Not Found" };
 
@@ -83,14 +84,24 @@ export async function generateMetadata({
 // ─── Page ───────────────────────────────────────────────────────────
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post || !isPostPublished(post.frontmatter.date)) notFound();
 
-  const { frontmatter: fm, content } = post;
+  const { frontmatter: fm } = post;
 
-  const htmlContent = renderMarkdown(content);
-  const toc = generateTOC(content);
-  const related = getRelatedPosts(fm.slug, fm.category, fm.relatedSlugs);
+  // Render content based on source
+  const htmlContent =
+    post.source === "cms" && post.htmlContent
+      ? post.htmlContent
+      : renderMarkdown(post.content);
+
+  // Generate TOC based on source
+  const toc =
+    post.source === "cms" && post.htmlContent
+      ? generateTOCFromHtml(post.htmlContent)
+      : generateTOC(post.content);
+
+  const related = await getRelatedPosts(fm.slug, fm.category, fm.relatedSlugs);
   const postUrl = `${BASE_URL}/blog/${fm.slug}`;
 
   // BlogPosting JSON-LD

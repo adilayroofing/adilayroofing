@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { services } from "@/data/services";
+import { services, serviceCategories, getServicesByCategory } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
@@ -123,15 +123,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services by Category */}
       <section className="bg-brand-light">
         <div className="section-padding">
-          <div className="container-wide mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
-              {services.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
-              ))}
-            </div>
+          <div className="container-wide mx-auto space-y-16">
+            {serviceCategories.map((cat) => {
+              const catServices = getServicesByCategory(cat.id);
+              if (catServices.length === 0) return null;
+              return (
+                <div key={cat.id}>
+                  <div className="mb-6">
+                    <h2 className="text-2xl md:text-3xl font-bold text-brand-dark flex items-center gap-3">
+                      <span className="w-10 h-1 bg-brand-red inline-block" />
+                      {cat.label}
+                    </h2>
+                    <p className="text-brand-gray mt-2">{cat.description}</p>
+                  </div>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+                    {catServices.map((service) => (
+                      <ServiceCard key={service.slug} service={service} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

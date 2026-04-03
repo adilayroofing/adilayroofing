@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   // =========================================================================
   // 1. BLOG POSTS — convert markdown to HTML and store in content_blocks
   // =========================================================================
-  const posts = getAllPostsIncludingFuture();
+  const posts = await getAllPostsIncludingFuture();
 
   for (const post of posts) {
     const slug = `/blog/${post.frontmatter.slug}`;

@@ -4,7 +4,8 @@ interface ServiceIconProps {
 }
 
 export default function ServiceIcon({ slug, className = "w-8 h-8" }: ServiceIconProps) {
-  const icon = icons[slug];
+  const resolvedSlug = slugAliases[slug] || slug;
+  const icon = icons[resolvedSlug];
   if (!icon) return null;
 
   return (
@@ -20,6 +21,28 @@ export default function ServiceIcon({ slug, className = "w-8 h-8" }: ServiceIcon
     </svg>
   );
 }
+
+// Map new slugs to their base icon category
+const slugAliases: Record<string, string> = {
+  "siding-installation": "siding",
+  "siding-repair": "siding",
+  "commercial-siding": "siding",
+  "residential-siding": "siding",
+  "vinyl-siding": "siding",
+  "window-installation": "windows",
+  "window-replacement": "windows",
+  "window-repair": "windows",
+  "window-companies": "windows",
+  "gutter-repair": "gutters",
+  "gutter-cleaning": "gutters",
+  "gutter-installation": "gutters",
+  "gutter-screening": "gutters",
+  "residential-roofing": "roof-replacement",
+  "flat-roof-repair": "flat-roofing",
+  "asphalt-shingle-roofing": "shingle-roofing",
+  "shingle-repair": "shingle-roofing",
+  "shingle-replacement": "shingle-roofing",
+};
 
 const icons: Record<string, React.ReactNode> = {
   // Roof Replacement — house with roof

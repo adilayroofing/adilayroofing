@@ -5,7 +5,7 @@ import { getPublishedPostSlugs } from "@/lib/blog";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const servicePages = services.map((service) => ({
     url: `${BASE_URL}/services/${service.slug}`,
     lastModified: new Date(),
@@ -20,7 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogPostPages = getPublishedPostSlugs().map((slug) => ({
+  const publishedSlugs = await getPublishedPostSlugs();
+  const blogPostPages = publishedSlugs.map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

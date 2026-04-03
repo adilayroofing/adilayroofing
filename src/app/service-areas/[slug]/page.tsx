@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { company } from "@/data/company";
-import { services } from "@/data/services";
-import { getAllLocations, getLocationBySlug } from "@/data/locations";
+import { serviceCategories, getServicesByCategory } from "@/data/services";
+import { getAllLocations, getLocationBySlug, type Location } from "@/data/locations";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
@@ -137,6 +137,9 @@ export default async function LocationPage({ params }: PageProps) {
   if (!location) {
     notFound();
   }
+
+  // All locations for linking in "Communities We Serve"
+  const allLocations = getAllLocations();
 
   // Fetch CMS structured content (falls back to hardcoded if none)
   const cmsData = await getStructuredContent(`/service-areas/${slug}`, "structured_location");
@@ -358,14 +361,14 @@ export default async function LocationPage({ params }: PageProps) {
       </section>
 
       {/* ================================================================= */}
-      {/* Services Section                                                  */}
+      {/* Services Section — grouped by category                            */}
       {/* ================================================================= */}
       <section className="bg-brand-light">
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <div className="text-center mb-12">
               <h2 className="section-heading">
-                Our Roofing Services in {location.name}
+                Our Services in {location.name}
               </h2>
               <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
                 We offer a complete range of roofing and exterior services to
@@ -376,29 +379,43 @@ export default async function LocationPage({ params }: PageProps) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="group bg-white border border-brand-border rounded-sm p-6 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-3">
-                    <CheckIcon />
-                    <div>
-                      <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm text-brand-gray mt-2 leading-relaxed">
-                        {service.description.replace(
-                          /in Philadelphia/gi,
-                          `in ${location.name}`
-                        )}
-                      </p>
+            <div className="space-y-10">
+              {serviceCategories.map((cat) => {
+                const catServices = getServicesByCategory(cat.id);
+                if (catServices.length === 0) return null;
+                return (
+                  <div key={cat.id}>
+                    <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                      <span className="w-6 h-0.5 bg-brand-red inline-block" />
+                      {cat.label}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {catServices.map((service) => (
+                        <Link
+                          key={service.slug}
+                          href={`/services/${service.slug}`}
+                          className="group bg-white border border-brand-border rounded-sm p-5 hover:shadow-md transition-shadow"
+                        >
+                          <div className="flex items-start gap-3">
+                            <CheckIcon />
+                            <div>
+                              <h4 className="text-base font-bold text-brand-dark group-hover:text-brand-red transition-colors">
+                                {service.title}
+                              </h4>
+                              <p className="text-sm text-brand-gray mt-1 leading-relaxed line-clamp-2">
+                                {service.description.replace(
+                                  /in Philadelphia/gi,
+                                  `in ${location.name}`
+                                )}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
-                </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -474,7 +491,7 @@ export default async function LocationPage({ params }: PageProps) {
       </section>
 
       {/* ================================================================= */}
-      {/* Neighborhoods / Areas Served                                      */}
+      {/* Neighborhoods / Areas Served — with links to pages                */}
       {/* ================================================================= */}
       {neighborhoods.length > 0 && (
         <section className="bg-brand-light">
@@ -498,17 +515,38 @@ export default async function LocationPage({ params }: PageProps) {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {neighborhoods.map((neighborhood) => (
-                  <div
-                    key={neighborhood}
-                    className="flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3"
-                  >
-                    <MapPinIcon className="w-4 h-4 text-brand-red flex-shrink-0" />
-                    <span className="text-sm font-medium text-brand-dark">
-                      {neighborhood}
-                    </span>
-                  </div>
-                ))}
+                {neighborhoods.map((neighborhood) => {
+                  const matchedLocation = allLocations.find(
+                    (l) =>
+                      l.name.toLowerCase() === neighborhood.toLowerCase() &&
+                      l.slug !== slug
+                  );
+                  if (matchedLocation) {
+                    return (
+                      <Link
+                        key={neighborhood}
+                        href={`/service-areas/${matchedLocation.slug}`}
+                        className="group flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3 hover:shadow-md hover:border-brand-red/30 transition-all"
+                      >
+                        <MapPinIcon className="w-4 h-4 text-brand-red flex-shrink-0" />
+                        <span className="text-sm font-medium text-brand-dark group-hover:text-brand-red transition-colors">
+                          {neighborhood}
+                        </span>
+                      </Link>
+                    );
+                  }
+                  return (
+                    <div
+                      key={neighborhood}
+                      className="flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3"
+                    >
+                      <MapPinIcon className="w-4 h-4 text-brand-red flex-shrink-0" />
+                      <span className="text-sm font-medium text-brand-dark">
+                        {neighborhood}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Zip codes */}

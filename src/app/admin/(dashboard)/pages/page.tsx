@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { createServerSupabaseClient } from "@/lib/supabase-server";
+import { getCurrentUser } from "@/lib/auth";
 import PageListClient from "@/components/admin/PageListClient";
 
 export default async function AdminPagesPage() {
+  const user = await getCurrentUser();
   const supabase = await createServerSupabaseClient();
 
   const { data: pages } = await supabase
@@ -17,12 +19,14 @@ export default async function AdminPagesPage() {
           <h1 className="text-2xl font-bold text-white">Pages</h1>
           <p className="text-gray-400 mt-1">Manage SEO metadata and content for all pages</p>
         </div>
-        <Link
-          href="/admin/pages/new"
-          className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          + Add New Page
-        </Link>
+        {user?.role !== "viewer" && (
+          <Link
+            href="/admin/pages/new"
+            className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-colors"
+          >
+            + Add New Page
+          </Link>
+        )}
       </div>
 
       <PageListClient pages={pages ?? []} />

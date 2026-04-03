@@ -193,7 +193,7 @@ export default function CanonicalsClient({
                     {page.slug}
                   </td>
                   <td className="px-4 py-3">
-                    {editingId === page.id ? (
+                    {editingId === page.id && userRole !== "viewer" ? (
                       <div className="flex gap-2">
                         <input
                           type="text"
@@ -217,8 +217,9 @@ export default function CanonicalsClient({
                       </div>
                     ) : (
                       <span
-                        className="text-gray-400 font-mono text-xs cursor-pointer hover:text-white"
+                        className={`text-gray-400 font-mono text-xs ${userRole !== "viewer" ? "cursor-pointer hover:text-white" : ""}`}
                         onClick={() => {
+                          if (userRole === "viewer") return;
                           setEditingId(page.id);
                           setEditValue(page.canonical_url || "");
                         }}

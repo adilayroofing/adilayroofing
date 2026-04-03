@@ -8,9 +8,9 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
-  title: "Service Areas — Philadelphia, Bucks, Montgomery & Delaware County",
+  title: "Service Areas — Philadelphia, PA & South Jersey",
   description:
-    "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County & Chester County, PA. Local roofer with fast response times. Free estimates — call (888) 823-4766.",
+    "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties PA plus Camden & Burlington Counties NJ. Free estimates — (888) 823-4766.",
   keywords: [
     "roofer near me Philadelphia",
     "roofing contractor near me",
@@ -30,8 +30,26 @@ export const metadata: Metadata = {
   },
 };
 
-const paLocations = locations.filter((l) => l.state === "PA");
-const njLocations = locations.filter((l) => l.state === "NJ");
+// Group locations by county, with the county hub page first
+const countyOrder = [
+  "Philadelphia County",
+  "Montgomery County",
+  "Bucks County",
+  "Delaware County",
+  "Chester County",
+  "Camden County",
+  "Burlington County",
+];
+
+const locationsByCounty = countyOrder
+  .map((county) => {
+    const all = locations.filter((l) => l.county === county);
+    const hub = all.find((l) => l.type === "county");
+    const cities = all.filter((l) => l.type !== "county");
+    const state = all[0]?.state ?? "PA";
+    return { county, hub, cities, state };
+  })
+  .filter((g) => g.hub || g.cities.length > 0);
 
 
 const localBenefits = [
@@ -170,73 +188,46 @@ export default function ServiceAreasPage() {
               </p>
             </div>
 
-            {/* Pennsylvania Areas */}
-            <div className="mb-16">
-              <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-8 flex items-center gap-3">
-                <span className="w-10 h-1 bg-brand-red inline-block" />
-                Pennsylvania
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {paLocations.map((area) => (
-                  <Link
-                    key={area.slug}
-                    href={`/service-areas/${area.slug}`}
-                    className="group border border-brand-border rounded-sm p-6 hover:shadow-md hover:border-brand-red/30 transition-all bg-white"
-                  >
-                    <div className="flex items-start gap-3 mb-3">
-                      <MapPinIcon />
-                      <div>
-                        <h4 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
-                          {area.name}
-                        </h4>
-                        {area.slug === "philadelphia" && (
-                          <span className="inline-block text-xs font-semibold text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-sm mt-1">
-                            Our Home Base
-                          </span>
-                        )}
-                        <span className="inline-block text-xs text-brand-gray mt-1 capitalize">
-                          {area.type === "county" ? "County" : area.type === "neighborhood" ? "Neighborhood" : "City"}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-brand-gray text-sm leading-relaxed line-clamp-2">
-                      {area.metaDescription}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* New Jersey Areas */}
-            {njLocations.length > 0 && (
-              <div className="mb-16">
-                <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-8 flex items-center gap-3">
+            {/* Areas grouped by county */}
+            {locationsByCounty.map((group) => (
+              <div key={group.county} className="mb-16">
+                <div className="flex items-center gap-3 mb-6">
                   <span className="w-10 h-1 bg-brand-red inline-block" />
-                  New Jersey
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {njLocations.map((area) => (
+                  {group.hub ? (
+                    <Link
+                      href={`/service-areas/${group.hub.slug}`}
+                      className="text-2xl md:text-3xl font-bold text-brand-dark hover:text-brand-red transition-colors"
+                    >
+                      {group.county}, {group.state}
+                    </Link>
+                  ) : (
+                    <h3 className="text-2xl md:text-3xl font-bold text-brand-dark">
+                      {group.county}, {group.state}
+                    </h3>
+                  )}
+                  {group.hub?.slug === "philadelphia" && (
+                    <span className="text-xs font-semibold text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-sm">
+                      Our Home Base
+                    </span>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                  {group.cities.map((area) => (
                     <Link
                       key={area.slug}
                       href={`/service-areas/${area.slug}`}
-                      className="group border border-brand-border rounded-sm p-6 hover:shadow-md hover:border-brand-red/30 transition-all bg-white"
+                      className="group flex items-center gap-2 bg-white border border-brand-border rounded-sm px-4 py-3 hover:shadow-md hover:border-brand-red/30 transition-all"
                     >
-                      <div className="flex items-start gap-3 mb-3">
-                        <MapPinIcon />
-                        <div>
-                          <h4 className="text-lg font-bold text-brand-dark group-hover:text-brand-red transition-colors">
-                            {area.name}
-                          </h4>
-                        </div>
-                      </div>
-                      <p className="text-brand-gray text-sm leading-relaxed line-clamp-2">
-                        {area.metaDescription}
-                      </p>
+                      <MapPinIcon />
+                      <span className="text-sm font-medium text-brand-dark group-hover:text-brand-red transition-colors">
+                        {area.name}
+                      </span>
                     </Link>
                   ))}
                 </div>
               </div>
-            )}
+            ))}
 
           </div>
         </div>

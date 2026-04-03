@@ -10,6 +10,7 @@ import StructuredLocationEditor, { type LocationContent } from "./StructuredLoca
 import StructuredFAQEditor, { type FAQPageContent } from "./StructuredFAQEditor";
 import StructuredAboutEditor, { type AboutPageContent } from "./StructuredAboutEditor";
 import StructuredHomeEditor, { type HomePageContent } from "./StructuredHomeEditor";
+import StructuredBlogEditor, { type BlogPostContent } from "./StructuredBlogEditor";
 import { getServiceBySlug } from "@/data/services";
 import { getLocationBySlug } from "@/data/locations";
 import { faqs as hardcodedFaqs } from "@/data/faqs";
@@ -69,6 +70,7 @@ export default function PageEditorClient({
   const isFAQPage = slug === "/faq";
   const isAboutPage = slug === "/about";
   const isHomePage = slug === "/" || slug === "";
+  const isBlogPost = slug.startsWith("/blog/") && slug !== "/blog";
 
   // Find structured content block or rich_text block
   const structuredBlock = contentBlocks.find(
@@ -77,7 +79,8 @@ export default function PageEditorClient({
       b.block_type === "structured_location" ||
       b.block_type === "structured_faq" ||
       b.block_type === "structured_about" ||
-      b.block_type === "structured_home"
+      b.block_type === "structured_home" ||
+      b.block_type === "structured_blog"
   );
   const richTextBlock = contentBlocks.find((b) => b.block_type === "rich_text");
 
@@ -305,6 +308,41 @@ export default function PageEditorClient({
     };
   });
 
+  // Content — structured Blog post
+  const [blogContent, setBlogContent] = useState<BlogPostContent>(() => {
+    if (structuredBlock?.block_type === "structured_blog") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        title: (c.title as string) || "",
+        slug: (c.slug as string) || (isBlogPost ? slug.replace("/blog/", "") : ""),
+        description: (c.description as string) || "",
+        author: (c.author as string) || "Adilay Roofing",
+        date: (c.date as string) || new Date().toISOString().split("T")[0],
+        category: (c.category as string) || "general-roofing",
+        readTime: (c.readTime as string) || "5 min read",
+        featuredImage: (c.featuredImage as string) || "",
+        primaryKeyword: (c.primaryKeyword as string) || "",
+        secondaryKeywords: (c.secondaryKeywords as string[]) || [],
+        bodyHtml: (c.bodyHtml as string) || "",
+        faq: (c.faq as { question: string; answer: string }[]) || [],
+      };
+    }
+    return {
+      title: metaTitle || "",
+      slug: isBlogPost ? slug.replace("/blog/", "") : "",
+      description: metaDescription || "",
+      author: "Adilay Roofing",
+      date: new Date().toISOString().split("T")[0],
+      category: "general-roofing",
+      readTime: "5 min read",
+      featuredImage: "",
+      primaryKeyword: "",
+      secondaryKeywords: [],
+      bodyHtml: "",
+      faq: [],
+    };
+  });
+
   const canonicalValid =
     !canonicalUrl || canonicalUrl.startsWith("https://www.adilayroofing.com");
 
@@ -343,7 +381,9 @@ export default function PageEditorClient({
               ? { blockType: "structured_about" as const, data: aboutContent }
               : isHomePage
                 ? { blockType: "structured_home" as const, data: homeContent }
-                : { blockType: "rich_text" as const, data: { html: editorContent } };
+                : isBlogPost
+                  ? { blockType: "structured_blog" as const, data: blogContent }
+                  : { blockType: "rich_text" as const, data: { html: editorContent } };
 
       if (asPending) {
         // Editor submits for review
@@ -383,6 +423,27 @@ export default function PageEditorClient({
             content: contentPayload.data,
             sort_order: 0,
           });
+
+          // Also save to blog_posts table for blog pages
+          if (isBlogPost && contentPayload.blockType === "structured_blog") {
+            const bp = contentPayload.data as BlogPostContent;
+            await supabase.from("blog_posts").upsert({
+              slug: bp.slug,
+              title: bp.title,
+              description: bp.description,
+              author: bp.author,
+              date: bp.date,
+              category: bp.category,
+              read_time: bp.readTime,
+              featured_image: bp.featuredImage || null,
+              primary_keyword: bp.primaryKeyword || null,
+              secondary_keywords: bp.secondaryKeywords.filter(Boolean),
+              body_html: bp.bodyHtml,
+              faq: bp.faq,
+              status,
+              updated_by: userEmail,
+            }, { onConflict: "slug" });
+          }
 
           await supabase.from("activity_log").insert({
             user_email: userEmail,
@@ -426,6 +487,27 @@ export default function PageEditorClient({
               content: contentPayload.data,
               sort_order: 0,
             });
+          }
+
+          // Also save to blog_posts table for blog pages
+          if (isBlogPost && contentPayload.blockType === "structured_blog") {
+            const bp = contentPayload.data as BlogPostContent;
+            await supabase.from("blog_posts").upsert({
+              slug: bp.slug,
+              title: bp.title,
+              description: bp.description,
+              author: bp.author,
+              date: bp.date,
+              category: bp.category,
+              read_time: bp.readTime,
+              featured_image: bp.featuredImage || null,
+              primary_keyword: bp.primaryKeyword || null,
+              secondary_keywords: bp.secondaryKeywords.filter(Boolean),
+              body_html: bp.bodyHtml,
+              faq: bp.faq,
+              status,
+              updated_by: userEmail,
+            }, { onConflict: "slug" });
           }
 
           await supabase.from("activity_log").insert({
@@ -696,6 +778,13 @@ export default function PageEditorClient({
                 Edit the homepage content below. Each section maps to a styled section on the live site.
               </p>
               <StructuredHomeEditor content={homeContent} onChange={setHomeContent} />
+            </>
+          ) : isBlogPost ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the blog post content below. Add a hero image, write your article with inline images, and optionally add FAQ items for SEO.
+              </p>
+              <StructuredBlogEditor content={blogContent} onChange={setBlogContent} />
             </>
           ) : (
             <>

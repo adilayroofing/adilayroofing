@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LandingPageLayout from "@/components/LandingPageLayout";
 import { getServiceBySlug } from "@/data/services";
 
-const service = getServiceBySlug("gutters")!;
+const service = getServiceBySlug("gutter-installation") || getServiceBySlug("gutter-repair")!;
 
 export const metadata: Metadata = {
   title:

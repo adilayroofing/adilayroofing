@@ -336,17 +336,56 @@ export async function POST(request: Request) {
   // =========================================================================
   // UPSERT ALL PAGES
   // =========================================================================
+  // Remove old service pages that were renamed/split
+  const deprecatedSlugs = ["/services/siding", "/services/windows", "/services/gutters"];
+  await supabase.from("pages").delete().in("slug", deprecatedSlugs);
+
   const { data, error } = await supabase
     .from("pages")
-    .upsert(pages, { onConflict: "slug", ignoreDuplicates: true })
+    .upsert(pages, { onConflict: "slug", ignoreDuplicates: false })
     .select();
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
+  // =========================================================================
+  // SEED BLOG_POSTS TABLE (skeleton rows for SEO team to fill content)
+  // =========================================================================
+  const blogPostRows = blogPosts.map((post) => {
+    const postDate = new Date(post.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const isPublished = postDate <= today;
+
+    return {
+      slug: post.slug.replace("/blog/", ""),
+      title: post.title,
+      description: post.description,
+      author: "Adilay Roofing",
+      date: post.date,
+      category: "general-roofing",
+      read_time: "5 min read",
+      featured_image: null as string | null,
+      primary_keyword: null as string | null,
+      secondary_keywords: [] as string[],
+      body_html: "",
+      faq: [] as { question: string; answer: string }[],
+      status: isPublished ? "published" : "draft",
+      updated_by: "seed-script",
+    };
+  });
+
+  const { error: blogError } = await supabase
+    .from("blog_posts")
+    .upsert(blogPostRows, { onConflict: "slug", ignoreDuplicates: true });
+
+  if (blogError) {
+    console.warn("Blog posts seed warning:", blogError.message);
+  }
+
   return NextResponse.json({
-    message: `Seeded ${data?.length ?? 0} pages`,
+    message: `Seeded ${data?.length ?? 0} pages + ${blogPostRows.length} blog post skeletons`,
     totalAttempted: pages.length,
     breakdown: {
       static: staticPages.length,
@@ -354,6 +393,7 @@ export async function POST(request: Request) {
       locations: locations.length,
       blog: blogPosts.length,
       landing: landingPages.length,
+      blogPostRows: blogPostRows.length,
     },
   });
 }

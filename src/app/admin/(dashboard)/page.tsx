@@ -66,8 +66,10 @@ export default async function AdminDashboard() {
 
       {/* Quick links */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <QuickLink href="/admin/pages" label="Manage Pages" description="Edit SEO & content" />
-        <QuickLink href="/admin/links" label="Internal Links" description="Manage link structure" />
+        <QuickLink href="/admin/pages" label={user?.role === "viewer" ? "Browse Pages" : "Manage Pages"} description={user?.role === "viewer" ? "View SEO & content" : "Edit SEO & content"} />
+        {user?.role !== "viewer" && (
+          <QuickLink href="/admin/links" label="Internal Links" description="Manage link structure" />
+        )}
         <QuickLink href="/admin/canonicals" label="Canonical Audit" description="Review canonical URLs" />
         {user?.role === "admin" && (
           <QuickLink href="/admin/pending" label="Review Changes" description="Approve or reject" />
