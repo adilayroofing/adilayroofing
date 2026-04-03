@@ -345,6 +345,29 @@ export default function PageEditorClient({
     };
   });
 
+  // Sync blog editor fields → page SEO fields
+  function handleBlogContentChange(updated: BlogPostContent) {
+    setBlogContent(updated);
+    // Sync slug
+    if (updated.slug) {
+      const pageSlug = `/blog/${updated.slug}`;
+      setSlug(pageSlug);
+      setCanonicalUrl(`https://www.adilayroofing.com${pageSlug}`);
+    }
+    // Sync title → meta title
+    if (updated.title) {
+      setMetaTitle(`${updated.title} | Adilay Roofing`);
+    }
+    // Sync description → meta description
+    if (updated.description) {
+      setMetaDescription(updated.description);
+    }
+    // Sync featured image → og image
+    if (updated.featuredImage) {
+      setOgImage(updated.featuredImage);
+    }
+  }
+
   const canonicalValid =
     !canonicalUrl || canonicalUrl.startsWith("https://www.adilayroofing.com");
 
@@ -786,7 +809,7 @@ export default function PageEditorClient({
               <p className="text-gray-400 text-sm mb-4">
                 Edit the blog post content below. Add a hero image, write your article with inline images, and optionally add FAQ items for SEO.
               </p>
-              <StructuredBlogEditor content={blogContent} onChange={setBlogContent} />
+              <StructuredBlogEditor content={blogContent} onChange={handleBlogContentChange} />
             </>
           ) : (
             <>

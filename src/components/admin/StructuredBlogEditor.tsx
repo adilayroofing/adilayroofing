@@ -32,9 +32,31 @@ export default function StructuredBlogEditor({
   onChange: (content: BlogPostContent) => void;
 }) {
   const [faqOpen, setFaqOpen] = useState(false);
+  const [slugManuallyEdited, setSlugManuallyEdited] = useState(!!content.slug);
 
   function update(field: keyof BlogPostContent, value: unknown) {
     onChange({ ...content, [field]: value });
+  }
+
+  function generateSlug(title: string): string {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")
+      .slice(0, 80);
+  }
+
+  function handleTitleChange(title: string) {
+    const updates: Partial<BlogPostContent> = { title };
+    if (!slugManuallyEdited) {
+      updates.slug = generateSlug(title);
+    }
+    onChange({ ...content, ...updates });
+  }
+
+  function handleSlugChange(slug: string) {
+    setSlugManuallyEdited(true);
+    onChange({ ...content, slug });
   }
 
   function addFAQ() {
@@ -70,7 +92,7 @@ export default function StructuredBlogEditor({
             <input
               type="text"
               value={content.title}
-              onChange={(e) => update("title", e.target.value)}
+              onChange={(e) => handleTitleChange(e.target.value)}
               placeholder="Blog post title"
               className="input-field"
             />
@@ -80,7 +102,7 @@ export default function StructuredBlogEditor({
             <input
               type="text"
               value={content.slug}
-              onChange={(e) => update("slug", e.target.value)}
+              onChange={(e) => handleSlugChange(e.target.value)}
               placeholder="my-blog-post-slug"
               className="input-field"
             />
