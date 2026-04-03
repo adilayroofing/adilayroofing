@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import SEOPreview from "./SEOPreview";
 import RichTextEditor from "./RichTextEditor";
@@ -47,14 +47,16 @@ export default function PageEditorClient({
   userEmail: string;
 }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const isNew = !page;
+  const isBlogType = searchParams.get("type") === "blog";
 
-  const [tab, setTab] = useState<"seo" | "content">("seo");
+  const [tab, setTab] = useState<"seo" | "content">(isBlogType ? "content" : "seo");
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   // SEO fields
-  const [slug, setSlug] = useState(page?.slug || "");
+  const [slug, setSlug] = useState(page?.slug || (isBlogType ? "/blog/" : ""));
   const [metaTitle, setMetaTitle] = useState(page?.meta_title || "");
   const [metaDescription, setMetaDescription] = useState(page?.meta_description || "");
   const [canonicalUrl, setCanonicalUrl] = useState(page?.canonical_url || "");
