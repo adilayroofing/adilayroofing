@@ -115,8 +115,8 @@ Submitted from Adilay Roofing website.
       phone || "Not provided",
       service,
       message,
-      financingInterested ? "Yes" : "No",
       "Contact Form",
+      financingInterested ? "Yes" : "No",
     ]);
 
     return NextResponse.json({ success: true });
