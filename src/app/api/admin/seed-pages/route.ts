@@ -82,6 +82,11 @@ export async function POST(request: Request) {
       title: "Get a Free Roofing Quote | Adilay Roofing Philadelphia",
       description: "Request a free, no-obligation roofing estimate from Adilay Roofing. Serving Philadelphia and surrounding areas. Licensed PA184779.",
     },
+    {
+      slug: "/financing",
+      title: "Roof Financing Philadelphia | Apply Today | Adilay Roofing",
+      description: "Adilay Roofing offers flexible roof financing through Service Finance Company. Loans from $1,000–$100,000. No payments until job is complete. Serving Philadelphia & surrounding counties.",
+    },
   ];
 
   for (const sp of staticPages) {
@@ -271,6 +276,12 @@ export async function POST(request: Request) {
       title: "Do You Need a Permit to Replace Your Roof in Philadelphia?",
       description: "Learn about Philadelphia building permits roofing requirements. What they cost, who pulls them, and why skipping one is a costly mistake.",
       date: "2026-05-28",
+    },
+    {
+      slug: "/blog/roof-financing-philadelphia",
+      title: "Roof Financing Now Available in Philadelphia — Adilay Roofing Partners with Service Finance Company",
+      description: "Adilay Roofing now offers flexible roof financing through Service Finance Company. Loans from $1,000–$100,000 with no payments until your project is complete.",
+      date: "2026-04-01",
     },
   ];
 

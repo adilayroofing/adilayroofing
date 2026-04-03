@@ -4,31 +4,57 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ScrollReveal from "@/components/ScrollReveal";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "Roof Financing Philadelphia | Apply Today | Adilay Roofing",
-  description:
-    "Adilay Roofing offers flexible roof financing through Service Finance Company. Loans from $1,000\u2013$100,000. No payments until job is complete. Serving Philadelphia & surrounding counties.",
-  keywords: [
-    "roof financing Philadelphia",
-    "finance roof replacement Philadelphia",
-    "Service Finance Company roofing",
-    "roofing payment plan Philadelphia",
-    "roof financing near me",
-    "no money down roofing Philadelphia",
-  ],
-  alternates: { canonical: `${BASE_URL}/financing` },
-  openGraph: {
-    title: "Roof Financing Philadelphia | Adilay Roofing",
-    description:
-      "Flexible roof financing through Service Finance Company. Loans from $1,000\u2013$100,000 with no payments until your project is complete.",
-    url: `${BASE_URL}/financing`,
-  },
-};
+export const revalidate = 60;
 
-const financingFaqs = [
+// ---------------------------------------------------------------------------
+// Dynamic metadata — CMS override with hardcoded fallback
+// ---------------------------------------------------------------------------
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/financing");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "roof financing Philadelphia",
+        "finance roof replacement Philadelphia",
+        "Service Finance Company roofing",
+        "roofing payment plan Philadelphia",
+        "roof financing near me",
+        "no money down roofing Philadelphia",
+      ],
+    };
+  }
+
+  return {
+    title: "Roof Financing Philadelphia | Apply Today | Adilay Roofing",
+    description:
+      "Adilay Roofing offers flexible roof financing through Service Finance Company. Loans from $1,000\u2013$100,000. No payments until job is complete. Serving Philadelphia & surrounding counties.",
+    keywords: [
+      "roof financing Philadelphia",
+      "finance roof replacement Philadelphia",
+      "Service Finance Company roofing",
+      "roofing payment plan Philadelphia",
+      "roof financing near me",
+      "no money down roofing Philadelphia",
+    ],
+    alternates: { canonical: `${BASE_URL}/financing` },
+    openGraph: {
+      title: "Roof Financing Philadelphia | Adilay Roofing",
+      description:
+        "Flexible roof financing through Service Finance Company. Loans from $1,000\u2013$100,000 with no payments until your project is complete.",
+      url: `${BASE_URL}/financing`,
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Hardcoded fallback FAQs
+// ---------------------------------------------------------------------------
+const fallbackFinancingFaqs = [
   {
     question: "Does Adilay Roofing offer financing?",
     answer:
@@ -66,20 +92,104 @@ const financingFaqs = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: financingFaqs.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+// ---------------------------------------------------------------------------
+// Hardcoded fallback content
+// ---------------------------------------------------------------------------
+const fallbackHeroHeadline = "Roof Financing in Philadelphia \u2014 Approved Through Service Finance Company";
+const fallbackHeroDescription = "A new roof is one of the most important investments you can make in your home. Don\u2019t let cost stand in the way of protecting your family. With flexible financing through Service Finance Company, you can get the roof you need now \u2014 and pay over time with manageable monthly payments.";
 
-export default function FinancingPage() {
+const fallbackHowItWorks = [
+  {
+    step: "1",
+    title: "Apply",
+    description: "Fill out a quick application online or over the phone. It only takes a few minutes and checking your eligibility won\u2019t affect your credit score.",
+  },
+  {
+    step: "2",
+    title: "Get Approved",
+    description: "Receive a fast credit decision \u2014 often the same day. Choose the loan product that works best for your budget.",
+  },
+  {
+    step: "3",
+    title: "We Start Work",
+    description: "Once approved, we schedule your project. No payments are due until your job is complete.",
+  },
+];
+
+const fallbackLoanOptions = [
+  {
+    title: "Same-as-Cash",
+    description: "0% interest promotional period \u2014 pay off your balance within the promo window and pay zero interest. A great option if you want to spread payments over a few months.",
+  },
+  {
+    title: "Fixed Monthly Payments",
+    description: "Standard installment loans with fixed monthly payments over 5\u201310 year terms. Predictable payments that fit your budget \u2014 no surprises.",
+  },
+  {
+    title: "Deferred Payment",
+    description: "No payments until your project is complete. This stage-funding approach means you don\u2019t pay a cent until you\u2019re satisfied with the work.",
+  },
+];
+
+const fallbackBenefits = [
+  "Loans from $1,000 to $100,000",
+  "50+ loan products to choose from",
+  "Same-as-cash and 0% promotional options",
+  "No payments until your job is complete",
+  "Fast credit decisions \u2014 often same day",
+  "No prepayment penalties",
+  "Unsecured loans \u2014 home is not used as collateral",
+  "Works with a range of credit profiles",
+  "Available for roof replacement, repair, siding & more",
+  "FHA Title I approved lender",
+];
+
+const fallbackTrustText = "Service Finance Company, LLC is a nationally licensed sales finance company and an approved FHA Title I Lender. With over 50 loan products and a track record of helping homeowners across the country, your financing is in trusted hands.";
+
+const fallbackCtaHeadline = "Ready to Get Started?";
+const fallbackCtaSubtext = "Apply for financing today, or contact us for a free estimate. We\u2019ll help you find the right payment option for your project.";
+
+export default async function FinancingPage() {
+  // Fetch CMS structured content (falls back to hardcoded if none)
+  const cmsData = await getStructuredContent("/financing", "structured_financing");
+
+  // Merge CMS data with hardcoded fallback
+  const heroHeadline = (cmsData?.heroHeadline as string) || fallbackHeroHeadline;
+  const heroDescription = (cmsData?.heroDescription as string) || fallbackHeroDescription;
+
+  const cmsHowItWorks = cmsData?.howItWorks as { step: string; title: string; description: string }[] | undefined;
+  const howItWorks = cmsHowItWorks?.length ? cmsHowItWorks : fallbackHowItWorks;
+
+  const cmsLoanOptions = cmsData?.loanOptions as { title: string; description: string }[] | undefined;
+  const loanOptions = cmsLoanOptions?.length ? cmsLoanOptions : fallbackLoanOptions;
+
+  const cmsBenefits = cmsData?.benefits as string[] | undefined;
+  const benefits = cmsBenefits?.length ? cmsBenefits : fallbackBenefits;
+
+  const trustText = (cmsData?.trustText as string) || fallbackTrustText;
+
+  const cmsFaqs = cmsData?.faq as { question: string; answer: string }[] | undefined;
+  const financingFaqs = cmsFaqs?.length ? cmsFaqs : fallbackFinancingFaqs;
+
+  const ctaHeadline = (cmsData?.ctaHeadline as string) || fallbackCtaHeadline;
+  const ctaSubtext = (cmsData?.ctaSubtext as string) || fallbackCtaSubtext;
+
+  const bottomCtaHeadline = (cmsData?.bottomCtaHeadline as string) || "Protect Your Home Today";
+  const bottomCtaSubtext = (cmsData?.bottomCtaSubtext as string) || "Don\u2019t let cost hold you back. Finance your roofing project with Adilay Roofing and Service Finance Company. No payments until your job is complete.";
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: financingFaqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <script
@@ -99,17 +209,12 @@ export default function FinancingPage() {
           <div className="container-narrow mx-auto text-center">
             <ScrollReveal delay={200} duration={600} distance={28}>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Roof Financing in Philadelphia &mdash; Approved Through Service
-                Finance Company
+                {heroHeadline}
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={400} duration={600} distance={20}>
               <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed">
-                A new roof is one of the most important investments you can make
-                in your home. Don&rsquo;t let cost stand in the way of protecting
-                your family. With flexible financing through Service Finance
-                Company, you can get the roof you need now &mdash; and pay over
-                time with manageable monthly payments.
+                {heroDescription}
               </p>
             </ScrollReveal>
             <ScrollReveal delay={550} duration={600} distance={16}>
@@ -136,26 +241,7 @@ export default function FinancingPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                step: "1",
-                title: "Apply",
-                description:
-                  "Fill out a quick application online or over the phone. It only takes a few minutes and checking your eligibility won\u2019t affect your credit score.",
-              },
-              {
-                step: "2",
-                title: "Get Approved",
-                description:
-                  "Receive a fast credit decision \u2014 often the same day. Choose the loan product that works best for your budget.",
-              },
-              {
-                step: "3",
-                title: "We Start Work",
-                description:
-                  "Once approved, we schedule your project. No payments are due until your job is complete.",
-              },
-            ].map((item, i) => (
+            {howItWorks.map((item, i) => (
               <ScrollReveal key={item.step} delay={i * 120} distance={20}>
                 <div className="text-center">
                   <span className="inline-flex items-center justify-center w-14 h-14 bg-brand-red text-white font-bold text-xl rounded-full mb-4">
@@ -186,50 +272,33 @@ export default function FinancingPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              {
-                title: "Same-as-Cash",
-                description:
-                  "0% interest promotional period \u2014 pay off your balance within the promo window and pay zero interest. A great option if you want to spread payments over a few months.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Fixed Monthly Payments",
-                description:
-                  "Standard installment loans with fixed monthly payments over 5\u201310 year terms. Predictable payments that fit your budget \u2014 no surprises.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Deferred Payment",
-                description:
-                  "No payments until your project is complete. This stage-funding approach means you don\u2019t pay a cent until you\u2019re satisfied with the work.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-              },
-            ].map((option, i) => (
-              <ScrollReveal key={option.title} delay={i * 100} distance={20}>
-                <div className="bg-white rounded-sm border border-brand-border p-6 h-full">
-                  <div className="text-brand-red mb-4">{option.icon}</div>
-                  <h3 className="text-lg font-bold text-brand-dark mb-2">
-                    {option.title}
-                  </h3>
-                  <p className="text-brand-gray text-sm leading-relaxed">
-                    {option.description}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
+            {loanOptions.map((option, i) => {
+              // Icons stay hardcoded (design) — mapped by index
+              const loanIcons = [
+                <svg key="0" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>,
+                <svg key="1" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>,
+                <svg key="2" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>,
+              ];
+              return (
+                <ScrollReveal key={option.title} delay={i * 100} distance={20}>
+                  <div className="bg-white rounded-sm border border-brand-border p-6 h-full">
+                    <div className="text-brand-red mb-4">{loanIcons[i] || loanIcons[0]}</div>
+                    <h3 className="text-lg font-bold text-brand-dark mb-2">
+                      {option.title}
+                    </h3>
+                    <p className="text-brand-gray text-sm leading-relaxed">
+                      {option.description}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
 
           <ScrollReveal delay={300}>
@@ -255,18 +324,7 @@ export default function FinancingPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {[
-              "Loans from $1,000 to $100,000",
-              "50+ loan products to choose from",
-              "Same-as-cash and 0% promotional options",
-              "No payments until your job is complete",
-              "Fast credit decisions \u2014 often same day",
-              "No prepayment penalties",
-              "Unsecured loans \u2014 home is not used as collateral",
-              "Works with a range of credit profiles",
-              "Available for roof replacement, repair, siding & more",
-              "FHA Title I approved lender",
-            ].map((benefit) => (
+            {benefits.map((benefit) => (
               <div
                 key={benefit}
                 className="flex items-start gap-3 bg-brand-light rounded-sm p-4 border border-brand-border"
@@ -307,10 +365,7 @@ export default function FinancingPage() {
               Trusted Lender
             </div>
             <p className="text-white text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Service Finance Company, LLC is a nationally licensed sales finance
-              company and an approved FHA Title I Lender. With over 50 loan
-              products and a track record of helping homeowners across the
-              country, your financing is in trusted hands.
+              {trustText}
             </p>
           </ScrollReveal>
         </div>
@@ -340,11 +395,10 @@ export default function FinancingPage() {
         <div className="container-narrow mx-auto text-center">
           <ScrollReveal>
             <h2 className="section-heading mb-4">
-              Ready to Get Started?
+              {ctaHeadline}
             </h2>
             <p className="text-brand-gray text-lg max-w-2xl mx-auto mb-8">
-              Apply for financing today, or contact us for a free estimate.
-              We&rsquo;ll help you find the right payment option for your project.
+              {ctaSubtext}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact" className="btn-primary w-full sm:w-auto">
@@ -362,8 +416,8 @@ export default function FinancingPage() {
       {/* Bottom CTA                                                        */}
       {/* ================================================================= */}
       <CTASection
-        headline="Protect Your Home Today"
-        subtext="Don't let cost hold you back. Finance your roofing project with Adilay Roofing and Service Finance Company. No payments until your job is complete."
+        headline={bottomCtaHeadline}
+        subtext={bottomCtaSubtext}
       />
     </>
   );
