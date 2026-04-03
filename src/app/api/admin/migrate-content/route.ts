@@ -51,6 +51,7 @@ export async function POST(request: Request) {
     "energy-efficient-roofing-philadelphia",
     "montgomery-county-roofing-weather-solutions",
     "roof-permit-philadelphia",
+    "roof-financing-philadelphia",
   ]);
 
   if (allBlogPages) {
@@ -258,6 +259,56 @@ export async function POST(request: Request) {
               { question: "Do I need to be home during the work?", answer: "You don't need to be home for the entire project, but we ask that you're available at the start and end of each workday so we can go over progress and answer any questions. We'll keep you updated throughout." },
             ],
           },
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // FINANCING PAGE
+    else if (slug === "/financing") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_financing",
+        content: {
+          heroHeadline: "Roof Financing in Philadelphia — Approved Through Service Finance Company",
+          heroDescription: "A new roof is one of the most important investments you can make in your home. Don't let cost stand in the way of protecting your family. With flexible financing through Service Finance Company, you can get the roof you need now — and pay over time with manageable monthly payments.",
+          howItWorks: [
+            { step: "1", title: "Apply", description: "Fill out a quick application online or over the phone. It only takes a few minutes and checking your eligibility won't affect your credit score." },
+            { step: "2", title: "Get Approved", description: "Receive a fast credit decision — often the same day. Choose the loan product that works best for your budget." },
+            { step: "3", title: "We Start Work", description: "Once approved, we schedule your project. No payments are due until your job is complete." },
+          ],
+          loanOptions: [
+            { title: "Same-as-Cash", description: "0% interest promotional period — pay off your balance within the promo window and pay zero interest. A great option if you want to spread payments over a few months." },
+            { title: "Fixed Monthly Payments", description: "Standard installment loans with fixed monthly payments over 5–10 year terms. Predictable payments that fit your budget — no surprises." },
+            { title: "Deferred Payment", description: "No payments until your project is complete. This stage-funding approach means you don't pay a cent until you're satisfied with the work." },
+          ],
+          benefits: [
+            "Loans from $1,000 to $100,000",
+            "50+ loan products to choose from",
+            "Same-as-cash and 0% promotional options",
+            "No payments until your job is complete",
+            "Fast credit decisions — often same day",
+            "No prepayment penalties",
+            "Unsecured loans — home is not used as collateral",
+            "Works with a range of credit profiles",
+            "Available for roof replacement, repair, siding & more",
+            "FHA Title I approved lender",
+          ],
+          trustText: "Service Finance Company, LLC is a nationally licensed sales finance company and an approved FHA Title I Lender. With over 50 loan products and a track record of helping homeowners across the country, your financing is in trusted hands.",
+          faq: [
+            { question: "Does Adilay Roofing offer financing?", answer: "Yes! Adilay Roofing is an authorized contractor through Service Finance Company, LLC — a nationally licensed sales finance company and FHA Title I Lender. We offer a variety of loan products to help you finance your roofing or exterior project." },
+            { question: "What credit score do I need to finance a roof?", answer: "Service Finance Company works with a range of credit profiles. The best way to find out your options is to apply — checking your eligibility typically does not affect your credit score." },
+            { question: "Can I finance a roof if I have insurance?", answer: "Yes. Financing and insurance are separate. If your insurance doesn't cover the full cost of your roof, financing can help you cover the difference — or fund upgrades beyond what your policy pays for." },
+            { question: "How long does it take to get approved?", answer: "Credit decisions are often made the same day you apply. The process is quick and straightforward — you can apply online or over the phone." },
+            { question: "Is my home used as collateral for roof financing?", answer: "No. Loans through Service Finance Company are unsecured, meaning your home is not used as collateral. This provides peace of mind and a simpler process." },
+            { question: "Can I pay off my loan early?", answer: "Yes. There are no prepayment penalties, so you can pay off your loan early without any additional fees." },
+            { question: "What is the minimum and maximum loan amount?", answer: "Loans range from $1,000 to $100,000, depending on your project scope and credit profile." },
+          ],
+          ctaHeadline: "Ready to Get Started?",
+          ctaSubtext: "Apply for financing today, or contact us for a free estimate. We'll help you find the right payment option for your project.",
+          bottomCtaHeadline: "Protect Your Home Today",
+          bottomCtaSubtext: "Don't let cost hold you back. Finance your roofing project with Adilay Roofing and Service Finance Company. No payments until your job is complete.",
         },
         sort_order: 0,
       });
