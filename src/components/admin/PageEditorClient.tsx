@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import SEOPreview from "./SEOPreview";
@@ -344,6 +344,37 @@ export default function PageEditorClient({
       faq: [],
     };
   });
+  // Load blog content from blog_posts table (bypasses content_blocks CHECK constraint issue)
+  useEffect(() => {
+    if (!isBlogPost || isNew || structuredBlock) return;
+    const blogSlug = slug.replace("/blog/", "");
+    if (!blogSlug) return;
+    const supabase = createClient();
+    supabase
+      .from("blog_posts")
+      .select("*")
+      .eq("slug", blogSlug)
+      .single()
+      .then(({ data }) => {
+        if (data) {
+          setBlogContent({
+            title: data.title || "",
+            slug: data.slug || "",
+            description: data.description || "",
+            author: data.author || "Adilay Roofing",
+            date: data.date || new Date().toISOString().split("T")[0],
+            category: data.category || "general-roofing",
+            readTime: data.read_time || "5 min read",
+            featuredImage: data.featured_image || "",
+            primaryKeyword: data.primary_keyword || "",
+            secondaryKeywords: data.secondary_keywords || [],
+            bodyHtml: data.body_html || "",
+            faq: data.faq || [],
+          });
+        }
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Sync blog editor fields → page SEO fields
   function handleBlogContentChange(updated: BlogPostContent) {
@@ -365,6 +396,45 @@ export default function PageEditorClient({
     // Sync featured image → og image
     if (updated.featuredImage) {
       setOgImage(updated.featuredImage);
+    }
+  }
+
+  const [deleting, setDeleting] = useState(false);
+
+  async function handleDeleteBlogPost() {
+    if (!page || !isBlogPost) return;
+    if (!confirm("Are you sure you want to delete this blog post? This cannot be undone.")) return;
+
+    setDeleting(true);
+    setMessage(null);
+    const supabase = createClient();
+    const blogSlug = slug.replace("/blog/", "");
+
+    try {
+      // Delete from blog_posts table
+      await supabase.from("blog_posts").delete().eq("slug", blogSlug);
+      // Delete content blocks
+      await supabase.from("content_blocks").delete().eq("page_id", page.id);
+      // Delete revisions
+      await supabase.from("page_revisions").delete().eq("page_id", page.id);
+      // Delete the page itself
+      const { error } = await supabase.from("pages").delete().eq("id", page.id);
+      if (error) throw error;
+
+      await supabase.from("activity_log").insert({
+        user_email: userEmail,
+        action: `Deleted blog post: ${slug}`,
+        details: { slug, page_id: page.id },
+      });
+
+      setMessage({ type: "success", text: "Blog post deleted. Redirecting..." });
+      await new Promise((r) => setTimeout(r, 1000));
+      router.push("/admin/pages");
+      router.refresh();
+    } catch (err) {
+      setMessage({ type: "error", text: err instanceof Error ? err.message : "Failed to delete" });
+    } finally {
+      setDeleting(false);
     }
   }
 
@@ -476,6 +546,9 @@ export default function PageEditorClient({
             details: { slug, page_id: newPage.id },
           });
 
+          setMessage({ type: "success", text: "Blog post created successfully! Redirecting..." });
+          setSaving(false);
+          await new Promise((r) => setTimeout(r, 1500));
           router.push(`/admin/pages/${newPage.id}`);
           router.refresh();
         } else {
@@ -580,6 +653,15 @@ export default function PageEditorClient({
             </button>
           ) : (
             <>
+              {!isNew && isBlogPost && (
+                <button
+                  onClick={handleDeleteBlogPost}
+                  disabled={deleting}
+                  className="px-4 py-2 bg-gray-700 hover:bg-red-700 disabled:bg-gray-700 text-gray-300 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  {deleting ? "Deleting..." : "Delete Post"}
+                </button>
+              )}
               <button
                 onClick={() => handleSave(false)}
                 disabled={saving || !slug}
