@@ -122,9 +122,19 @@ export default function PageEditorClient({
         heroTitle: (c.heroTitle as string) || "",
         heroTagline: (c.heroTagline as string) || "",
         heroDescription: (c.heroDescription as string) || "",
+        heroCTAText: (c.heroCTAText as string) || "",
         benefits: (c.benefits as string[]) || [],
+        benefitsHeading: (c.benefitsHeading as string) || "",
         features: (c.features as string[]) || [],
+        featuresHeading: (c.featuresHeading as string) || "",
         faq: (c.faq as { question: string; answer: string }[]) || [],
+        faqHeading: (c.faqHeading as string) || "",
+        relatedHeading: (c.relatedHeading as string) || "",
+        relatedSubheading: (c.relatedSubheading as string) || "",
+        financingHeadline: (c.financingHeadline as string) || "",
+        financingBody: (c.financingBody as string) || "",
+        ctaHeadline: (c.ctaHeadline as string) || "",
+        ctaSubtext: (c.ctaSubtext as string) || "",
       };
     }
     // Pre-fill from hardcoded service data if no CMS block exists yet
@@ -136,13 +146,23 @@ export default function PageEditorClient({
           heroTitle: `${hardcoded.title} in Philadelphia, PA`,
           heroTagline: hardcoded.tagline,
           heroDescription: hardcoded.heroDescription,
+          heroCTAText: "Get a FREE Estimate",
           benefits: [...hardcoded.benefits],
+          benefitsHeading: "Benefits",
           features: [...hardcoded.features],
+          featuresHeading: "What's Included",
           faq: hardcoded.faq.map((f) => ({ ...f })),
+          faqHeading: "Frequently Asked Questions",
+          relatedHeading: "Other Services We Offer",
+          relatedSubheading: "Explore more ways Adilay Roofing can protect and improve your property.",
+          financingHeadline: "Don\u2019t let cost hold you back.",
+          financingBody: "Financing is available through Service Finance Company \u2014 loans from $1,000 to $100,000, with no payments until your job is complete.",
+          ctaHeadline: `Ready for ${hardcoded.shortTitle} Services?`,
+          ctaSubtext: `Contact us today for a free estimate on ${hardcoded.title.toLowerCase()}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`,
         };
       }
     }
-    return { heroTitle: "", heroTagline: "", heroDescription: "", benefits: [], features: [], faq: [] };
+    return { heroTitle: "", heroTagline: "", heroDescription: "", heroCTAText: "", benefits: [], benefitsHeading: "", features: [], featuresHeading: "", faq: [], faqHeading: "", relatedHeading: "", relatedSubheading: "", financingHeadline: "", financingBody: "", ctaHeadline: "", ctaSubtext: "" };
   });
 
   // Content — structured location (pre-fill from CMS or hardcoded data)
@@ -152,11 +172,21 @@ export default function PageEditorClient({
       return {
         heroTitle: (c.heroTitle as string) || "",
         heroSubtitle: (c.heroSubtitle as string) || "",
+        heroCTAText: (c.heroCTAText as string) || "",
         intro: (c.intro as string) || "",
+        servicesHeading: (c.servicesHeading as string) || "",
+        servicesSubtext: (c.servicesSubtext as string) || "",
         localContext: (c.localContext as string) || "",
+        localContextHeading: (c.localContextHeading as string) || "",
+        whyChooseItems: (c.whyChooseItems as string[]) || [],
         neighborhoods: (c.neighborhoods as string[]) || [],
+        neighborhoodsHeading: (c.neighborhoodsHeading as string) || "",
+        neighborhoodsSubtext: (c.neighborhoodsSubtext as string) || "",
         zipCodes: (c.zipCodes as string[]) || [],
         faq: (c.faq as { question: string; answer: string }[]) || [],
+        faqHeading: (c.faqHeading as string) || "",
+        ctaHeadline: (c.ctaHeadline as string) || "",
+        ctaSubtext: (c.ctaSubtext as string) || "",
       };
     }
     // Pre-fill from hardcoded location data if no CMS block exists yet
@@ -167,15 +197,32 @@ export default function PageEditorClient({
         return {
           heroTitle: hardcoded.h1,
           heroSubtitle: `Professional roofing services for ${hardcoded.name}, ${hardcoded.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`,
+          heroCTAText: "Get FREE Estimate",
           intro: hardcoded.intro,
+          servicesHeading: `Our Services in ${hardcoded.name}`,
+          servicesSubtext: `We offer a complete range of roofing and exterior services to homeowners and businesses in ${hardcoded.name}, ${hardcoded.state}. Every project is backed by our 20+ years of experience and our commitment to quality workmanship.`,
           localContext: hardcoded.localContext,
+          localContextHeading: `Why ${hardcoded.name} Homeowners Choose Adilay Roofing`,
+          whyChooseItems: [
+            "20+ years of roofing experience",
+            "2,000+ projects completed",
+            "Licensed in Pennsylvania (PA184779)",
+            "Fully insured with workers' comp",
+            "Free on-site estimates \u2014 no pressure",
+            "Emergency service available 24/7",
+          ],
           neighborhoods: [...hardcoded.neighborhoods],
+          neighborhoodsHeading: `${hardcoded.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${hardcoded.name}`,
+          neighborhoodsSubtext: `Our roofing services are available throughout ${hardcoded.name} and the surrounding ${hardcoded.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`,
           zipCodes: [...hardcoded.zipCodes],
           faq: hardcoded.faq.map((f) => ({ ...f })),
+          faqHeading: `Frequently Asked Questions About Roofing in ${hardcoded.name}`,
+          ctaHeadline: `Need a Roofer in ${hardcoded.name}?`,
+          ctaSubtext: `Contact Adilay Roofing today for a free roof inspection and estimate in ${hardcoded.name}, ${hardcoded.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`,
         };
       }
     }
-    return { heroTitle: "", heroSubtitle: "", intro: "", localContext: "", neighborhoods: [], zipCodes: [], faq: [] };
+    return { heroTitle: "", heroSubtitle: "", heroCTAText: "", intro: "", servicesHeading: "", servicesSubtext: "", localContext: "", localContextHeading: "", whyChooseItems: [], neighborhoods: [], neighborhoodsHeading: "", neighborhoodsSubtext: "", zipCodes: [], faq: [], faqHeading: "", ctaHeadline: "", ctaSubtext: "" };
   });
 
   // Content — structured FAQ page (pre-fill from CMS or hardcoded data)

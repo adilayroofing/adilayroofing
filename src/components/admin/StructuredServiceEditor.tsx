@@ -12,9 +12,19 @@ export interface ServiceContent {
   heroTitle: string;
   heroTagline: string;
   heroDescription: string;
+  heroCTAText: string;
   benefits: string[];
+  benefitsHeading: string;
   features: string[];
+  featuresHeading: string;
   faq: FAQItem[];
+  faqHeading: string;
+  relatedHeading: string;
+  relatedSubheading: string;
+  financingHeadline: string;
+  financingBody: string;
+  ctaHeadline: string;
+  ctaSubtext: string;
 }
 
 export default function StructuredServiceEditor({
@@ -99,8 +109,16 @@ export default function StructuredServiceEditor({
           type="text"
           value={content.heroTagline}
           onChange={(e) => onChange({ ...content, heroTagline: e.target.value })}
-          className="input-field"
+          className="input-field mb-3"
           placeholder="e.g. A New Roof That Protects What Matters Most"
+        />
+        <label className="block text-xs text-gray-500 mb-1">CTA Button Text</label>
+        <input
+          type="text"
+          value={content.heroCTAText}
+          onChange={(e) => onChange({ ...content, heroCTAText: e.target.value })}
+          className="input-field"
+          placeholder="e.g. Get a FREE Estimate"
         />
       </Section>
 
@@ -116,6 +134,14 @@ export default function StructuredServiceEditor({
 
       {/* ── Benefits ─────────────────────────────────────────────── */}
       <Section title="Benefits" hint="Shown as a 2-column grid with checkmark icons.">
+        <label className="block text-xs text-gray-500 mb-1">Section Heading</label>
+        <input
+          type="text"
+          value={content.benefitsHeading}
+          onChange={(e) => onChange({ ...content, benefitsHeading: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Benefits"
+        />
         <div className="space-y-2">
           {content.benefits.map((benefit, i) => (
             <div key={i} className="flex items-center gap-2">
@@ -170,6 +196,14 @@ export default function StructuredServiceEditor({
 
       {/* ── Features ─────────────────────────────────────────────── */}
       <Section title="Features (What's Included)" hint="Shown as numbered cards in a 3-column grid.">
+        <label className="block text-xs text-gray-500 mb-1">Section Heading</label>
+        <input
+          type="text"
+          value={content.featuresHeading}
+          onChange={(e) => onChange({ ...content, featuresHeading: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. What's Included"
+        />
         <div className="space-y-2">
           {content.features.map((feature, i) => (
             <div key={i} className="flex items-center gap-2">
@@ -227,6 +261,14 @@ export default function StructuredServiceEditor({
 
       {/* ── FAQ ───────────────────────────────────────────────────── */}
       <Section title="Frequently Asked Questions" hint="Shown as an accordion on the live page.">
+        <label className="block text-xs text-gray-500 mb-1">Section Heading</label>
+        <input
+          type="text"
+          value={content.faqHeading}
+          onChange={(e) => onChange({ ...content, faqHeading: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Frequently Asked Questions"
+        />
         <div className="space-y-4">
           {content.faq.map((item, i) => (
             <div key={i} className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
@@ -266,6 +308,66 @@ export default function StructuredServiceEditor({
         >
           + Add FAQ
         </button>
+      </Section>
+
+      {/* ── Related Services ─────────────────────────────────────── */}
+      <Section title="Related Services Section" hint="Heading and subheading shown above the related services cards.">
+        <label className="block text-xs text-gray-500 mb-1">Heading</label>
+        <input
+          type="text"
+          value={content.relatedHeading}
+          onChange={(e) => onChange({ ...content, relatedHeading: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Other Services We Offer"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Subheading</label>
+        <input
+          type="text"
+          value={content.relatedSubheading}
+          onChange={(e) => onChange({ ...content, relatedSubheading: e.target.value })}
+          className="input-field"
+          placeholder="e.g. Explore more ways Adilay Roofing can protect and improve your property."
+        />
+      </Section>
+
+      {/* ── Financing Callout ────────────────────────────────────── */}
+      <Section title="Financing Callout" hint="The financing banner shown near the bottom of the page.">
+        <label className="block text-xs text-gray-500 mb-1">Headline</label>
+        <input
+          type="text"
+          value={content.financingHeadline}
+          onChange={(e) => onChange({ ...content, financingHeadline: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Don't let cost hold you back."
+        />
+        <label className="block text-xs text-gray-500 mb-1">Body Text</label>
+        <textarea
+          value={content.financingBody}
+          onChange={(e) => onChange({ ...content, financingBody: e.target.value })}
+          className="input-field"
+          rows={3}
+          placeholder="e.g. Financing is available through Service Finance Company..."
+        />
+      </Section>
+
+      {/* ── Bottom CTA ───────────────────────────────────────────── */}
+      <Section title="Bottom CTA" hint="The call-to-action section at the very bottom of the page.">
+        <label className="block text-xs text-gray-500 mb-1">Headline</label>
+        <input
+          type="text"
+          value={content.ctaHeadline}
+          onChange={(e) => onChange({ ...content, ctaHeadline: e.target.value })}
+          className="input-field mb-3"
+          placeholder="e.g. Ready for Roof Replacement Services?"
+        />
+        <label className="block text-xs text-gray-500 mb-1">Subtext</label>
+        <textarea
+          value={content.ctaSubtext}
+          onChange={(e) => onChange({ ...content, ctaSubtext: e.target.value })}
+          className="input-field"
+          rows={3}
+          placeholder="e.g. Contact us today for a free estimate..."
+        />
       </Section>
     </div>
   );

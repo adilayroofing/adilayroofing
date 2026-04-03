@@ -102,6 +102,18 @@ export default async function ServicePage({ params }: PageProps) {
   const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
   const faq = cmsFaq?.length ? cmsFaq : service.faq;
 
+  // Additional CMS text fields with fallbacks
+  const heroCTAText = (cmsData?.heroCTAText as string) || "Get a FREE Estimate";
+  const benefitsHeading = (cmsData?.benefitsHeading as string) || "Benefits";
+  const featuresHeading = (cmsData?.featuresHeading as string) || "What's Included";
+  const faqHeading = (cmsData?.faqHeading as string) || "Frequently Asked Questions";
+  const relatedHeading = (cmsData?.relatedHeading as string) || "Other Services We Offer";
+  const relatedSubheading = (cmsData?.relatedSubheading as string) || "Explore more ways Adilay Roofing can protect and improve your property.";
+  const financingHeadline = (cmsData?.financingHeadline as string) || "Don\u2019t let cost hold you back.";
+  const financingBody = (cmsData?.financingBody as string) || "Financing is available through Service Finance Company \u2014 loans from $1,000 to $100,000, with no payments until your job is complete.";
+  const ctaHeadline = (cmsData?.ctaHeadline as string) || `Ready for ${service.shortTitle} Services?`;
+  const ctaSubtext = (cmsData?.ctaSubtext as string) || `Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation — just honest advice from experienced professionals.`;
+
   // Build related services — exclude the current one, take up to 3
   const relatedServices = services
     .filter((s) => s.slug !== service.slug)
@@ -198,7 +210,7 @@ export default async function ServicePage({ params }: PageProps) {
               {heroTagline}
             </p>
             <Link href="/contact" className="btn-primary">
-              Get a FREE Estimate
+              {heroCTAText}
             </Link>
           </div>
         </div>
@@ -234,7 +246,7 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="bg-brand-light">
         <div className="section-padding">
           <div className="container-narrow mx-auto">
-            <h2 className="section-heading text-center mb-10">Benefits</h2>
+            <h2 className="section-heading text-center mb-10">{benefitsHeading}</h2>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
               {benefits.map((benefit) => (
@@ -272,7 +284,7 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="section-padding">
           <div className="container-narrow mx-auto">
             <h2 className="section-heading text-center mb-10">
-              What&apos;s Included
+              {featuresHeading}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -303,7 +315,7 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="section-padding">
             <div className="container-narrow mx-auto max-w-3xl">
               <h2 className="section-heading text-center mb-10">
-                Frequently Asked Questions
+                {faqHeading}
               </h2>
               <FAQ items={faq} />
             </div>
@@ -318,10 +330,9 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="section-padding">
           <div className="container-wide mx-auto">
             <div className="text-center mb-10">
-              <h2 className="section-heading">Other Services We Offer</h2>
+              <h2 className="section-heading">{relatedHeading}</h2>
               <p className="section-subheading mx-auto">
-                Explore more ways Adilay Roofing can protect and improve your
-                property.
+                {relatedSubheading}
               </p>
             </div>
 
@@ -364,12 +375,10 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="container-narrow mx-auto px-4">
           <div className="border-l-4 border-brand-red bg-brand-light rounded-sm p-5 md:p-6 max-w-3xl mx-auto">
             <p className="text-brand-dark font-bold text-lg mb-2">
-              Don&apos;t let cost hold you back.
+              {financingHeadline}
             </p>
             <p className="text-brand-gray leading-relaxed mb-3">
-              Financing is available through Service Finance Company &mdash; loans
-              from $1,000 to $100,000, with no payments until your job is
-              complete.
+              {financingBody}
             </p>
             <Link
               href="/financing"
@@ -385,8 +394,8 @@ export default async function ServicePage({ params }: PageProps) {
       {/* CTA                                                               */}
       {/* ================================================================= */}
       <CTASection
-        headline={`Ready for ${service.shortTitle} Services?`}
-        subtext={`Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation — just honest advice from experienced professionals.`}
+        headline={ctaHeadline}
+        subtext={ctaSubtext}
       />
     </>
   );

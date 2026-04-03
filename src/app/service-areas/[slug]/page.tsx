@@ -157,6 +157,32 @@ export default async function LocationPage({ params }: PageProps) {
   const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
   const locationFaq = cmsFaq?.length ? cmsFaq : location.faq;
 
+  // Additional CMS fields with fallbacks
+  const heroCTAText = (cmsData?.heroCTAText as string) || "Get FREE Estimate";
+  const servicesHeading = (cmsData?.servicesHeading as string) || `Our Services in ${location.name}`;
+  const servicesSubtext = (cmsData?.servicesSubtext as string) ||
+    `We offer a complete range of roofing and exterior services to homeowners and businesses in ${location.name}, ${location.state}. Every project is backed by our ${company.yearsExperience} years of experience and our commitment to quality workmanship.`;
+  const localContextHeading = (cmsData?.localContextHeading as string) ||
+    `Why ${location.name} Homeowners Choose Adilay Roofing`;
+  const cmsWhyChooseItems = cmsData?.whyChooseItems as string[] | undefined;
+  const whyChooseItems = cmsWhyChooseItems?.length ? cmsWhyChooseItems : [
+    `${company.yearsExperience} years of roofing experience`,
+    `${company.projectsCompleted} projects completed`,
+    "Licensed in Pennsylvania (PA184779)",
+    "Fully insured with workers' comp",
+    "Free on-site estimates \u2014 no pressure",
+    "Emergency service available 24/7",
+  ];
+  const neighborhoodsHeading = (cmsData?.neighborhoodsHeading as string) ||
+    `${location.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${location.name}`;
+  const neighborhoodsSubtext = (cmsData?.neighborhoodsSubtext as string) ||
+    `Our roofing services are available throughout ${location.name} and the surrounding ${location.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`;
+  const faqHeading = (cmsData?.faqHeading as string) ||
+    `Frequently Asked Questions About Roofing in ${location.name}`;
+  const ctaHeadline = (cmsData?.ctaHeadline as string) || `Need a Roofer in ${location.name}?`;
+  const ctaSubtext = (cmsData?.ctaSubtext as string) ||
+    `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`;
+
   // JSON-LD LocalBusiness schema
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -336,7 +362,7 @@ export default async function LocationPage({ params }: PageProps) {
                 href="/contact"
                 className="btn-outline-white w-full sm:w-auto"
               >
-                Get FREE Estimate
+                {heroCTAText}
               </Link>
             </div>
           </div>
@@ -368,14 +394,10 @@ export default async function LocationPage({ params }: PageProps) {
           <div className="container-narrow mx-auto">
             <div className="text-center mb-12">
               <h2 className="section-heading">
-                Our Services in {location.name}
+                {servicesHeading}
               </h2>
               <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
-                We offer a complete range of roofing and exterior services to
-                homeowners and businesses in {location.name},{" "}
-                {location.state}. Every project is backed by our{" "}
-                {company.yearsExperience} years of experience and our
-                commitment to quality workmanship.
+                {servicesSubtext}
               </p>
             </div>
 
@@ -431,7 +453,7 @@ export default async function LocationPage({ params }: PageProps) {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-7">
                   <h2 className="section-heading mb-6">
-                    Why {location.name} Homeowners Choose Adilay Roofing
+                    {localContextHeading}
                   </h2>
                   <SafeHTML
                     html={localContext}
@@ -445,42 +467,14 @@ export default async function LocationPage({ params }: PageProps) {
                       Why Choose Us
                     </h3>
                     <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <CheckIcon />
-                        <span className="text-sm text-brand-dark font-medium">
-                          {company.yearsExperience} years of roofing experience
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckIcon />
-                        <span className="text-sm text-brand-dark font-medium">
-                          {company.projectsCompleted} projects completed
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckIcon />
-                        <span className="text-sm text-brand-dark font-medium">
-                          Licensed in Pennsylvania (PA184779)
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckIcon />
-                        <span className="text-sm text-brand-dark font-medium">
-                          Fully insured with workers&apos; comp
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckIcon />
-                        <span className="text-sm text-brand-dark font-medium">
-                          Free on-site estimates &mdash; no pressure
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckIcon />
-                        <span className="text-sm text-brand-dark font-medium">
-                          Emergency service available 24/7
-                        </span>
-                      </li>
+                      {whyChooseItems.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckIcon />
+                          <span className="text-sm text-brand-dark font-medium">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -499,18 +493,10 @@ export default async function LocationPage({ params }: PageProps) {
             <div className="container-narrow mx-auto">
               <div className="text-center mb-10">
                 <h2 className="section-heading">
-                  {location.type === "county"
-                    ? `Communities We Serve in ${location.name}`
-                    : `Neighborhoods We Serve in ${location.name}`}
+                  {neighborhoodsHeading}
                 </h2>
                 <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
-                  Our roofing services are available throughout{" "}
-                  {location.name} and the surrounding{" "}
-                  {location.type === "neighborhood"
-                    ? "neighborhoods"
-                    : "communities"}
-                  . No matter where you are in the area, we provide the same
-                  quality workmanship and reliable service.
+                  {neighborhoodsSubtext}
                 </p>
               </div>
 
@@ -573,7 +559,7 @@ export default async function LocationPage({ params }: PageProps) {
           <div className="section-padding">
             <div className="container-narrow mx-auto max-w-3xl">
               <h2 className="section-heading text-center mb-10">
-                Frequently Asked Questions About Roofing in {location.name}
+                {faqHeading}
               </h2>
               <FAQ items={locationFaq} />
             </div>
@@ -585,8 +571,8 @@ export default async function LocationPage({ params }: PageProps) {
       {/* CTA Section                                                       */}
       {/* ================================================================= */}
       <CTASection
-        headline={`Need a Roofer in ${location.name}?`}
-        subtext={`Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation — just honest advice from experienced professionals.`}
+        headline={ctaHeadline}
+        subtext={ctaSubtext}
       />
     </>
   );
