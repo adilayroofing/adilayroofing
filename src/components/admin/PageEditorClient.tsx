@@ -64,7 +64,7 @@ export default function PageEditorClient({
   const [ogDescription, setOgDescription] = useState(page?.og_description || "");
   const [ogImage, setOgImage] = useState(page?.og_image || "");
   const [customHeadTags, setCustomHeadTags] = useState(page?.custom_head_tags || "");
-  const [status, setStatus] = useState(page?.status || "draft");
+  const [status, setStatus] = useState(page?.status || (isBlogType ? "published" : "draft"));
 
   // Detect page type from slug
   const isServicePage = slug.startsWith("/services/") && slug !== "/services";
@@ -888,9 +888,26 @@ export default function PageEditorClient({
             </>
           ) : isBlogPost ? (
             <>
-              <p className="text-gray-400 text-sm mb-4">
-                Edit the blog post content below. Add a hero image, write your article with inline images, and optionally add FAQ items for SEO.
-              </p>
+              <div className="flex items-center justify-between mb-4">
+                <p className="text-gray-400 text-sm">
+                  Edit the blog post content below. Add a hero image, write your article with inline images, and optionally add FAQ items for SEO.
+                </p>
+                <div className="flex items-center gap-2 ml-4 shrink-0">
+                  <label className="text-sm font-medium text-gray-300">Status:</label>
+                  <select
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
+                      status === "published"
+                        ? "bg-green-500/10 border-green-500/30 text-green-400"
+                        : "bg-yellow-500/10 border-yellow-500/30 text-yellow-400"
+                    }`}
+                  >
+                    <option value="published">Published</option>
+                    <option value="draft">Draft</option>
+                  </select>
+                </div>
+              </div>
               <StructuredBlogEditor content={blogContent} onChange={handleBlogContentChange} />
             </>
           ) : (
