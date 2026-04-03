@@ -63,13 +63,17 @@ renderer.heading = function ({ tokens, depth }) {
 marked.use({ renderer });
 
 // ─── CMS (Supabase) blog post fetching ──────────────────────────────
-async function getCMSBlogPosts(): Promise<BlogPost[]> {
+async function getCMSBlogPosts(publishedOnly = true): Promise<BlogPost[]> {
   try {
     const supabase = createAdminClient();
-    const { data, error } = await supabase
+    let query = supabase
       .from("blog_posts")
       .select("*")
       .order("date", { ascending: false });
+    if (publishedOnly) {
+      query = query.eq("status", "published");
+    }
+    const { data, error } = await query;
 
     if (error || !data) return [];
 
@@ -185,19 +189,14 @@ function filterPublished(posts: BlogPost[]): BlogPost[] {
 
 /** Get all published posts (CMS + markdown, deduplicated, newest first) */
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const cmsPosts = await getCMSBlogPosts();
+  const cmsPosts = await getCMSBlogPosts(true); // only published
   const mdPosts = getMarkdownPosts();
-  // Filter CMS posts to only published status
-  const publishedCMS = cmsPosts.filter((p) => {
-    // CMS posts respect both status and date
-    return true; // status filtering done in date check below
-  });
-  return filterPublished(mergePosts(publishedCMS, mdPosts));
+  return filterPublished(mergePosts(cmsPosts, mdPosts));
 }
 
 /** Get all posts including future/draft (for static generation) */
 export async function getAllPostsIncludingFuture(): Promise<BlogPost[]> {
-  const cmsPosts = await getCMSBlogPosts();
+  const cmsPosts = await getCMSBlogPosts(false); // include drafts for static generation
   const mdPosts = getMarkdownPosts();
   return mergePosts(cmsPosts, mdPosts);
 }

@@ -4,8 +4,8 @@ import BlogCard from "@/components/blog/BlogCard";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
-// Revalidate every 6 hours so scheduled posts go live automatically
-export const revalidate = 21600;
+// Revalidate every 60 seconds so CMS changes go live quickly
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Roofing Blog — Tips, Guides & Philadelphia Roofing Insights",

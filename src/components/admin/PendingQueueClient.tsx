@@ -84,6 +84,27 @@ export default function PendingQueueClient({
               sort_order: 0,
             });
           }
+
+          // If this is a blog post, also upsert to blog_posts table
+          if (blockType === "structured_blog" && blockContent) {
+            const bp = blockContent as Record<string, unknown>;
+            await supabase.from("blog_posts").upsert({
+              slug: bp.slug as string,
+              title: bp.title as string,
+              description: (bp.description as string) || null,
+              author: (bp.author as string) || "Adilay Roofing",
+              date: bp.date as string,
+              category: (bp.category as string) || "general-roofing",
+              read_time: (bp.readTime as string) || "5 min read",
+              featured_image: (bp.featuredImage as string) || null,
+              primary_keyword: (bp.primaryKeyword as string) || null,
+              secondary_keywords: (bp.secondaryKeywords as string[]) || [],
+              body_html: (bp.bodyHtml as string) || "",
+              faq: bp.faq || [],
+              status: (pageData.status as string) || "published",
+              updated_by: userEmail,
+            }, { onConflict: "slug" });
+          }
         } else if (change_type === "update") {
           // Save revision snapshot before overwriting (for change history)
           const { data: existingBlocks } = await supabase
@@ -134,7 +155,35 @@ export default function PendingQueueClient({
               });
             }
           }
+
+          // If this is a blog post, also upsert to blog_posts table
+          if (blockType === "structured_blog" && blockContent) {
+            const bp = blockContent as Record<string, unknown>;
+            await supabase.from("blog_posts").upsert({
+              slug: bp.slug as string,
+              title: bp.title as string,
+              description: (bp.description as string) || null,
+              author: (bp.author as string) || "Adilay Roofing",
+              date: bp.date as string,
+              category: (bp.category as string) || "general-roofing",
+              read_time: (bp.readTime as string) || "5 min read",
+              featured_image: (bp.featuredImage as string) || null,
+              primary_keyword: (bp.primaryKeyword as string) || null,
+              secondary_keywords: (bp.secondaryKeywords as string[]) || [],
+              body_html: (bp.bodyHtml as string) || "",
+              faq: bp.faq || [],
+              status: (pageData.status as string) || "published",
+              updated_by: userEmail,
+            }, { onConflict: "slug" });
+          }
         } else if (change_type === "delete") {
+          // If deleting a blog post page, also delete from blog_posts
+          const slugVal = (pageData.slug as string) || "";
+          if (slugVal.startsWith("/blog/")) {
+            const blogSlug = slugVal.replace("/blog/", "");
+            await supabase.from("blog_posts").delete().eq("slug", blogSlug);
+          }
+          await supabase.from("content_blocks").delete().eq("page_id", record_id);
           await supabase.from(table_name).delete().eq("id", record_id);
         }
       }
