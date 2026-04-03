@@ -4,31 +4,52 @@ import CTASection from "@/components/CTASection";
 import { company } from "@/data/company";
 import { locations } from "@/data/locations";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "Service Areas — Philadelphia, PA & South Jersey",
-  description:
-    "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties PA plus Camden & Burlington Counties NJ. Free estimates — (888) 823-4766.",
-  keywords: [
-    "roofer near me Philadelphia",
-    "roofing contractor near me",
-    "roofer Bucks County PA",
-    "roofer Montgomery County PA",
-    "roofer Delaware County PA",
-    "Chester County roofer",
-    "roofer near me",
-    "roofing service areas Philadelphia",
-  ],
-  alternates: { canonical: `${BASE_URL}/service-areas` },
-  openGraph: {
-    title: "Adilay Roofing Service Areas — Philadelphia & Surrounding Counties",
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/service-areas");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "roofer near me Philadelphia",
+        "roofing contractor near me",
+        "roofer Bucks County PA",
+        "roofer Montgomery County PA",
+        "roofer Delaware County PA",
+        "Chester County roofer",
+        "roofer near me",
+        "roofing service areas Philadelphia",
+      ],
+    };
+  }
+  return {
+    title: "Service Areas — Philadelphia, PA & South Jersey",
     description:
-      "Professional roofing in Philadelphia, Bucks, Montgomery, Delaware & Chester Counties. Local team, fast response.",
-    url: `${BASE_URL}/service-areas`,
-  },
-};
+      "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties PA plus Camden & Burlington Counties NJ. Free estimates — (888) 823-4766.",
+    keywords: [
+      "roofer near me Philadelphia",
+      "roofing contractor near me",
+      "roofer Bucks County PA",
+      "roofer Montgomery County PA",
+      "roofer Delaware County PA",
+      "Chester County roofer",
+      "roofer near me",
+      "roofing service areas Philadelphia",
+    ],
+    alternates: { canonical: `${BASE_URL}/service-areas` },
+    openGraph: {
+      title: "Adilay Roofing Service Areas — Philadelphia & Surrounding Counties",
+      description:
+        "Professional roofing in Philadelphia, Bucks, Montgomery, Delaware & Chester Counties. Local team, fast response.",
+      url: `${BASE_URL}/service-areas`,
+    },
+  };
+}
 
 // Group locations by county, with the county hub page first
 const countyOrder = [
@@ -52,69 +73,75 @@ const locationsByCounty = countyOrder
   .filter((g) => g.hub || g.cities.length > 0);
 
 
-const localBenefits = [
+const localBenefitIcons = [
+  (
+    <svg
+      key="fast"
+      className="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M13 10V3L4 14h7v7l9-11h-7z"
+      />
+    </svg>
+  ),
+  (
+    <svg
+      key="local"
+      className="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+      />
+    </svg>
+  ),
+  (
+    <svg
+      key="community"
+      className="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+      />
+    </svg>
+  ),
+];
+
+const defaultLocalBenefits = [
   {
     title: "Fast Response Times",
     description:
       "We're nearby and can respond quickly to emergencies and scheduled work alike.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
   },
   {
     title: "Local Knowledge",
     description:
       "We understand Philadelphia's weather patterns, building codes, and common roofing challenges.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-        />
-      </svg>
-    ),
   },
   {
     title: "Community Reputation",
     description:
       "We've built our business on referrals from satisfied neighbors. Our reputation matters to us.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    ),
   },
 ];
 
@@ -144,7 +171,26 @@ function MapPinIcon() {
   );
 }
 
-export default function ServiceAreasPage() {
+export default async function ServiceAreasPage() {
+  const cmsData = await getStructuredContent("/service-areas", "structured_areas_index");
+
+  const heroTitle = (cmsData?.heroTitle as string) || "Areas We Serve";
+  const heroDescription =
+    (cmsData?.heroDescription as string) ||
+    "Professional roofing services across southeastern Pennsylvania. Wherever you are in the greater Philadelphia region, we've got you covered.";
+  const mainHeading =
+    (cmsData?.mainHeading as string) || "Trusted Roofing Services Across the Philadelphia Region";
+  const mainDescription =
+    (cmsData?.mainDescription as string) ||
+    "From our home base in Philadelphia, we serve homeowners and businesses throughout the greater Philadelphia area — including communities across southeastern Pennsylvania. No matter where you are, you get the same quality workmanship and dedicated service.";
+  const whyLocalHeading =
+    (cmsData?.whyLocalHeading as string) || "Why Hiring a Local Roofer Matters";
+  const cmsLocalBenefits = cmsData?.localBenefits as Array<{ title: string; description: string }> | undefined;
+  const localBenefits = (cmsLocalBenefits && cmsLocalBenefits.length > 0 ? cmsLocalBenefits : defaultLocalBenefits).map(
+    (b, i) => ({ ...b, icon: localBenefitIcons[i] || localBenefitIcons[0] })
+  );
+  const ctaHeadline = (cmsData?.ctaHeadline as string) || "Need a Roofer in Your Area?";
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Service Areas", path: "/service-areas" }]} />
@@ -160,12 +206,10 @@ export default function ServiceAreasPage() {
         <div className="relative section-padding">
           <div className="container-narrow mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              Areas We Serve
+              {heroTitle}
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-              Professional roofing services across southeastern Pennsylvania.
-              Wherever you are in the greater Philadelphia region, we&apos;ve
-              got you covered.
+              {heroDescription}
             </p>
           </div>
         </div>
@@ -177,14 +221,10 @@ export default function ServiceAreasPage() {
           <div className="container-narrow mx-auto">
             <div className="text-center mb-16">
               <h2 className="section-heading">
-                Trusted Roofing Services Across the Philadelphia Region
+                {mainHeading}
               </h2>
               <p className="section-subheading mx-auto mt-4">
-                From our home base in Philadelphia, we serve homeowners and
-                businesses throughout the greater Philadelphia area &mdash;
-                including communities across southeastern Pennsylvania. No
-                matter where you are, you get the same quality workmanship and
-                dedicated service.
+                {mainDescription}
               </p>
             </div>
 
@@ -239,7 +279,7 @@ export default function ServiceAreasPage() {
           <div className="container-narrow mx-auto">
             <div className="text-center mb-12">
               <h2 className="section-heading">
-                Why Hiring a Local Roofer Matters
+                {whyLocalHeading}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,7 +305,7 @@ export default function ServiceAreasPage() {
       </section>
 
       {/* CTA Section */}
-      <CTASection headline="Need a Roofer in Your Area?" />
+      <CTASection headline={ctaHeadline} />
     </>
   );
 }

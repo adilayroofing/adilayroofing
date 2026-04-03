@@ -4,30 +4,66 @@ import CTASection from "@/components/CTASection";
 import TrustBar from "@/components/TrustBar";
 import GalleryGrid from "@/components/GalleryGrid";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "Roofing Project Gallery — Before & After Photos | Philadelphia",
-  description:
-    "Browse real before & after roofing photos by Adilay Roofing. See roof replacements, repairs, flat roofs, siding & gutter projects across Philadelphia, PA.",
-  keywords: [
-    "roofing before and after photos",
-    "roof replacement photos Philadelphia",
-    "roofing project gallery",
-    "Philadelphia roofing work examples",
-    "roofing company portfolio",
-  ],
-  alternates: { canonical: `${BASE_URL}/gallery` },
-  openGraph: {
-    title: "Adilay Roofing Project Gallery — Before & After Photos",
-    description:
-      "Real roofing projects across Philadelphia. See the quality of our roof replacements, repairs, siding, and more.",
-    url: `${BASE_URL}/gallery`,
-  },
-};
+export const revalidate = 60;
 
-export default function GalleryPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/gallery");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "roofing before and after photos",
+        "roof replacement photos Philadelphia",
+        "roofing project gallery",
+        "Philadelphia roofing work examples",
+        "roofing company portfolio",
+      ],
+    };
+  }
+  return {
+    title: "Roofing Project Gallery — Before & After Photos | Philadelphia",
+    description:
+      "Browse real before & after roofing photos by Adilay Roofing. See roof replacements, repairs, flat roofs, siding & gutter projects across Philadelphia, PA.",
+    keywords: [
+      "roofing before and after photos",
+      "roof replacement photos Philadelphia",
+      "roofing project gallery",
+      "Philadelphia roofing work examples",
+      "roofing company portfolio",
+    ],
+    alternates: { canonical: `${BASE_URL}/gallery` },
+    openGraph: {
+      title: "Adilay Roofing Project Gallery — Before & After Photos",
+      description:
+        "Real roofing projects across Philadelphia. See the quality of our roof replacements, repairs, siding, and more.",
+      url: `${BASE_URL}/gallery`,
+    },
+  };
+}
+
+export default async function GalleryPage() {
+  const cmsData = await getStructuredContent("/gallery", "structured_gallery");
+
+  const heroLabel = (cmsData?.heroLabel as string) || "Project Gallery";
+  const heroTitle = (cmsData?.heroTitle as string) || "Our Work Speaks";
+  const heroTitleRed = (cmsData?.heroTitleRed as string) || "for Itself";
+  const heroDescription =
+    (cmsData?.heroDescription as string) ||
+    "Browse real projects completed by our team across Philadelphia and surrounding areas. Every job is done right — the first time.";
+  const beforeAfterLabel = (cmsData?.beforeAfterLabel as string) || "Transformations";
+  const beforeAfterHeading = (cmsData?.beforeAfterHeading as string) || "Before & After";
+  const beforeAfterDescription =
+    (cmsData?.beforeAfterDescription as string) ||
+    "See the difference quality craftsmanship makes. Every project starts with a detailed assessment and ends with a result that exceeds expectations.";
+  const ctaHeadline = (cmsData?.ctaHeadline as string) || "Like What You See?";
+  const ctaSubtext =
+    (cmsData?.ctaSubtext as string) ||
+    "Let us transform your roof next. Get a free, no-obligation estimate today.";
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Gallery", path: "/gallery" }]} />
@@ -46,14 +82,13 @@ export default function GalleryPage() {
         <div className="section-padding relative z-10">
           <div className="container-narrow mx-auto text-center">
             <span className="inline-block text-brand-red font-bold text-xs md:text-sm tracking-widest uppercase mb-3 md:mb-4">
-              Project Gallery
+              {heroLabel}
             </span>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-              Our Work Speaks <span className="text-brand-red">for Itself</span>
+              {heroTitle} <span className="text-brand-red">{heroTitleRed}</span>
             </h1>
             <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto">
-              Browse real projects completed by our team across Philadelphia and
-              surrounding areas. Every job is done right — the first time.
+              {heroDescription}
             </p>
 
             {/* Stats inline */}
@@ -83,15 +118,13 @@ export default function GalleryPage() {
           <div className="container-wide mx-auto">
             <div className="text-center mb-8 md:mb-14">
               <span className="inline-block text-brand-red font-bold text-xs md:text-sm tracking-widest uppercase mb-3">
-                Transformations
+                {beforeAfterLabel}
               </span>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-3 md:mb-4">
-                Before &amp; After
+                {beforeAfterHeading}
               </h2>
               <p className="text-base md:text-lg text-brand-gray max-w-xl mx-auto">
-                See the difference quality craftsmanship makes. Every project
-                starts with a detailed assessment and ends with a result that
-                exceeds expectations.
+                {beforeAfterDescription}
               </p>
             </div>
 
@@ -160,8 +193,8 @@ export default function GalleryPage() {
 
       {/* CTA */}
       <CTASection
-        headline="Like What You See?"
-        subtext="Let us transform your roof next. Get a free, no-obligation estimate today."
+        headline={ctaHeadline}
+        subtext={ctaSubtext}
       />
     </>
   );

@@ -2,29 +2,56 @@ import type { Metadata } from "next";
 import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "Contact Us — Free Roofing Estimate | (888) 823-4766",
-  description:
-    "Contact Adilay Roofing for a free roofing estimate in Philadelphia, PA. Call (888) 823-4766, email info@adilayroofing.com, or fill out our quick form. Fast response!",
-  keywords: [
-    "contact roofer Philadelphia",
-    "roofing estimate Philadelphia PA",
-    "roofing company phone number",
-    "free roof inspection Philadelphia",
-  ],
-  alternates: { canonical: `${BASE_URL}/contact` },
-  openGraph: {
-    title: "Contact Adilay Roofing Philadelphia — Free Estimates",
-    description:
-      "Call (888) 823-4766 for a free roofing estimate. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
-    url: `${BASE_URL}/contact`,
-  },
-};
+export const revalidate = 60;
 
-export default function ContactPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/contact");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "contact roofer Philadelphia",
+        "roofing estimate Philadelphia PA",
+        "roofing company phone number",
+        "free roof inspection Philadelphia",
+      ],
+    };
+  }
+  return {
+    title: "Contact Us — Free Roofing Estimate | (888) 823-4766",
+    description:
+      "Contact Adilay Roofing for a free roofing estimate in Philadelphia, PA. Call (888) 823-4766, email info@adilayroofing.com, or fill out our quick form. Fast response!",
+    keywords: [
+      "contact roofer Philadelphia",
+      "roofing estimate Philadelphia PA",
+      "roofing company phone number",
+      "free roof inspection Philadelphia",
+    ],
+    alternates: { canonical: `${BASE_URL}/contact` },
+    openGraph: {
+      title: "Contact Adilay Roofing Philadelphia — Free Estimates",
+      description:
+        "Call (888) 823-4766 for a free roofing estimate. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
+      url: `${BASE_URL}/contact`,
+    },
+  };
+}
+
+export default async function ContactPage() {
+  const cmsData = await getStructuredContent("/contact", "structured_contact");
+
+  const heroTitle = (cmsData?.heroTitle as string) || "Get In Touch";
+  const heroDescription = (cmsData?.heroDescription as string) || "Have a question or ready to get started? We\u2019re here to help.";
+  const officeHeading = (cmsData?.officeHeading as string) || "Meet the Team Behind Your Roof";
+  const officeDescription = (cmsData?.officeDescription as string) || "When you call Adilay Roofing, you\u2019re not dealing with a call center \u2014 you\u2019re speaking directly with the people who run and manage your project. Our family-owned office in Philadelphia is where every estimate, plan, and follow-up is handled with personal attention.";
+  const officeDescription2 = (cmsData?.officeDescription2 as string) || "Stop by, give us a call, or fill out the form below \u2014 we\u2019re always happy to help.";
+  const formHeading = (cmsData?.formHeading as string) || "Send Us a Message";
+  const formDescription = (cmsData?.formDescription as string) || "Fill out the form below and we\u2019ll get back to you as soon as possible.";
+  const emergencyBannerText = (cmsData?.emergencyBannerText as string) || "Roof Emergency? Call us now \u2014 we respond fast.";
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Contact", path: "/contact" }]} />
@@ -33,10 +60,10 @@ export default function ContactPage() {
         <div className="section-padding">
           <div className="container-narrow mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              Get In Touch
+              {heroTitle}
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-              Have a question or ready to get started? We&apos;re here to help.
+              {heroDescription}
             </p>
           </div>
         </div>
@@ -56,18 +83,13 @@ export default function ContactPage() {
               </div>
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
-                  Meet the Team Behind Your Roof
+                  {officeHeading}
                 </h2>
                 <p className="text-brand-gray leading-relaxed">
-                  When you call Adilay Roofing, you&apos;re not dealing with a
-                  call center — you&apos;re speaking directly with the people
-                  who run and manage your project. Our family-owned office in
-                  Philadelphia is where every estimate, plan, and follow-up is
-                  handled with personal attention.
+                  {officeDescription}
                 </p>
                 <p className="text-brand-gray leading-relaxed mt-4">
-                  Stop by, give us a call, or fill out the form below — we&apos;re
-                  always happy to help.
+                  {officeDescription2}
                 </p>
               </div>
             </div>
@@ -84,11 +106,10 @@ export default function ContactPage() {
               <div className="lg:col-span-3">
                 <div className="bg-white border border-brand-border rounded-sm p-6 md:p-10">
                   <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-2">
-                    Send Us a Message
+                    {formHeading}
                   </h2>
                   <p className="text-brand-gray mb-8">
-                    Fill out the form below and we&apos;ll get back to you as
-                    soon as possible.
+                    {formDescription}
                   </p>
                   <ContactForm />
                 </div>
@@ -291,14 +312,13 @@ export default function ContactPage() {
         <div className="py-8 px-4">
           <div className="container-narrow mx-auto text-center">
             <p className="text-white text-lg md:text-xl font-bold">
-              Roof Emergency? Call us now at{" "}
+              {emergencyBannerText}{" "}
               <a
                 href={`tel:${company.phoneRaw}`}
                 className="underline hover:text-white/80 transition-colors"
               >
                 {company.phone}
-              </a>{" "}
-              &mdash; we respond fast.
+              </a>
             </p>
           </div>
         </div>

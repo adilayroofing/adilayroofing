@@ -265,6 +265,139 @@ export async function POST(request: Request) {
       specialCount++;
     }
 
+    // CONTACT PAGE
+    else if (slug === "/contact") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_contact",
+        content: {
+          heroTitle: "Get In Touch",
+          heroDescription: "Have a question or ready to get started? We\u2019re here to help.",
+          officeHeading: "Meet the Team Behind Your Roof",
+          officeDescription: "When you call Adilay Roofing, you\u2019re not dealing with a call center \u2014 you\u2019re speaking directly with the people who run and manage your project. Our family-owned office in Philadelphia is where every estimate, plan, and follow-up is handled with personal attention.",
+          officeDescription2: "Stop by, give us a call, or fill out the form below \u2014 we\u2019re always happy to help.",
+          formHeading: "Send Us a Message",
+          formDescription: "Fill out the form below and we\u2019ll get back to you as soon as possible.",
+          emergencyBannerText: "Roof Emergency? Call us now \u2014 we respond fast.",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // GET QUOTE PAGE
+    else if (slug === "/get-quote") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_quote",
+        content: {
+          heroTitle: "Get Your Free Roofing Estimate",
+          heroDescription: "Fill out the form below and we\u2019ll get back to you within 24 hours with a detailed, no-obligation estimate for your roofing project.",
+          offerBannerText: "Limited Time: Free roof inspection with every estimate request!",
+          trustSignals: [
+            "Licensed & Insured (PA184779)",
+            "20+ Years Experience",
+            "2,000+ Projects Completed",
+            "5-Star Google Rating",
+          ],
+          licenseHeading: "Licensed & Insured for Your Protection",
+          licenseDescription: "Adilay Roofing LLC holds Pennsylvania Home Improvement Contractor License PA184779. We are fully insured with general liability and workers\u2019 compensation coverage, so you\u2019re protected throughout your project.",
+          serviceAreaHeading: "Serving the Greater Philadelphia Area",
+          serviceAreaDescription: "We provide free estimates throughout Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Whether you\u2019re in Center City or the surrounding suburbs, our team is ready to help.",
+          faqHeading: "Common Questions About Getting an Estimate",
+          faqSubheading: "Quick answers to help you understand our process.",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // SERVICES INDEX PAGE
+    else if (slug === "/services") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_services_index",
+        content: {
+          heroTitle: "Our Roofing & Exterior Services",
+          heroDescription: "Comprehensive solutions for Philadelphia properties \u2014 from roof replacement and repair to siding, windows, and gutters. Quality workmanship you can trust.",
+          showcaseHeading: "Real Work. Real Results.",
+          showcaseDescription1: "From full roof replacements to siding overhauls, our crew handles every project with the same level of care and professionalism. We protect your property and leave the job site clean when we\u2019re done.",
+          showcaseDescription2: "Every project is managed by our experienced team \u2014 no subcontractors, no shortcuts. Just quality workmanship from start to finish.",
+          whyChooseHeading: "Why Choose Adilay Roofing",
+          whyChooseSubheading: "We treat every property like it\u2019s our own \u2014 with care, honesty, and attention to detail.",
+          benefits: [
+            { title: "Experienced Crew", description: "Our skilled team brings 20+ years of roofing and exterior experience to every project, large or small." },
+            { title: "Quality Materials", description: "We use manufacturer-backed materials from trusted brands to ensure your roof or exterior stands the test of time." },
+            { title: "Honest Pricing", description: "No hidden fees, no surprise charges. We provide clear, written estimates so you know exactly what to expect." },
+          ],
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // SERVICE AREAS INDEX PAGE
+    else if (slug === "/service-areas") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_areas_index",
+        content: {
+          heroTitle: "Areas We Serve",
+          heroDescription: "Professional roofing services across southeastern Pennsylvania. Wherever you are in the greater Philadelphia region, we\u2019ve got you covered.",
+          mainHeading: "Trusted Roofing Services Across the Philadelphia Region",
+          mainDescription: "From our home base in Philadelphia, we serve homeowners and businesses throughout the greater Philadelphia area \u2014 including communities across southeastern Pennsylvania. No matter where you are, you get the same quality workmanship and dedicated service.",
+          whyLocalHeading: "Why Hiring a Local Roofer Matters",
+          localBenefits: [
+            { title: "Fast Response Times", description: "We\u2019re nearby and can respond quickly to emergencies and scheduled work alike." },
+            { title: "Local Knowledge", description: "We understand Philadelphia\u2019s weather patterns, building codes, and common roofing challenges." },
+            { title: "Community Reputation", description: "We\u2019ve built our business on referrals from satisfied neighbors. Our reputation matters to us." },
+          ],
+          ctaHeadline: "Need a Roofer in Your Area?",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // GALLERY PAGE
+    else if (slug === "/gallery") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_gallery",
+        content: {
+          heroLabel: "Project Gallery",
+          heroTitle: "Our Work Speaks",
+          heroTitleRed: "for Itself",
+          heroDescription: "Browse real projects completed by our team across Philadelphia and surrounding areas. Every job is done right \u2014 the first time.",
+          beforeAfterLabel: "Transformations",
+          beforeAfterHeading: "Before & After",
+          beforeAfterDescription: "See the difference quality craftsmanship makes. Every project starts with a detailed assessment and ends with a result that exceeds expectations.",
+          ctaHeadline: "Like What You See?",
+          ctaSubtext: "Let us transform your roof next. Get a free, no-obligation estimate today.",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
+    // BLOG INDEX PAGE
+    else if (slug === "/blog") {
+      contentBlocksToInsert.push({
+        page_id: page.id,
+        block_type: "structured_blog_index",
+        content: {
+          heroLabel: "Blog",
+          heroTitle: "Roofing Tips & Expert Insights",
+          heroDescription: "Practical advice for Philadelphia homeowners \u2014 from roof maintenance to choosing the right materials for your home.",
+          emptyMessage: "Blog posts coming soon! Check back for expert roofing tips and guides.",
+          ctaHeadline: "Need Roofing Help in Philadelphia?",
+          ctaSubtext: "Contact Adilay Roofing today for a free estimate. Honest advice, quality work, no pressure.",
+        },
+        sort_order: 0,
+      });
+      specialCount++;
+    }
+
     // FINANCING PAGE
     else if (slug === "/financing") {
       contentBlocksToInsert.push({

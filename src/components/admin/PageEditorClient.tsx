@@ -12,6 +12,12 @@ import StructuredAboutEditor, { type AboutPageContent } from "./StructuredAboutE
 import StructuredHomeEditor, { type HomePageContent } from "./StructuredHomeEditor";
 import StructuredBlogEditor, { type BlogPostContent } from "./StructuredBlogEditor";
 import StructuredFinancingEditor, { type FinancingPageContent } from "./StructuredFinancingEditor";
+import StructuredContactEditor, { type ContactPageContent } from "./StructuredContactEditor";
+import StructuredQuoteEditor, { type QuotePageContent } from "./StructuredQuoteEditor";
+import StructuredServicesIndexEditor, { type ServicesIndexPageContent } from "./StructuredServicesIndexEditor";
+import StructuredAreasIndexEditor, { type AreasIndexPageContent } from "./StructuredAreasIndexEditor";
+import StructuredGalleryEditor, { type GalleryPageContent } from "./StructuredGalleryEditor";
+import StructuredBlogIndexEditor, { type BlogIndexPageContent } from "./StructuredBlogIndexEditor";
 import { getServiceBySlug } from "@/data/services";
 import { getLocationBySlug } from "@/data/locations";
 import { faqs as hardcodedFaqs } from "@/data/faqs";
@@ -74,6 +80,12 @@ export default function PageEditorClient({
   const isAboutPage = slug === "/about";
   const isHomePage = slug === "/" || slug === "";
   const isFinancingPage = slug === "/financing";
+  const isContactPage = slug === "/contact";
+  const isQuotePage = slug === "/get-quote";
+  const isServicesIndexPage = slug === "/services";
+  const isAreasIndexPage = slug === "/service-areas";
+  const isGalleryPage = slug === "/gallery";
+  const isBlogIndexPage = slug === "/blog";
   const isBlogPost = slug.startsWith("/blog/") && slug !== "/blog";
 
   // Find structured content block or rich_text block
@@ -85,6 +97,12 @@ export default function PageEditorClient({
       b.block_type === "structured_about" ||
       b.block_type === "structured_home" ||
       b.block_type === "structured_financing" ||
+      b.block_type === "structured_contact" ||
+      b.block_type === "structured_quote" ||
+      b.block_type === "structured_services_index" ||
+      b.block_type === "structured_areas_index" ||
+      b.block_type === "structured_gallery" ||
+      b.block_type === "structured_blog_index" ||
       b.block_type === "structured_blog"
   );
   const richTextBlock = contentBlocks.find((b) => b.block_type === "rich_text");
@@ -379,6 +397,219 @@ export default function PageEditorClient({
     };
   });
 
+  // Content — structured Contact page
+  const [contactContent, setContactContent] = useState<ContactPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_contact") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroTitle: (c.heroTitle as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        officeHeading: (c.officeHeading as string) || "",
+        officeDescription: (c.officeDescription as string) || "",
+        officeDescription2: (c.officeDescription2 as string) || "",
+        formHeading: (c.formHeading as string) || "",
+        formDescription: (c.formDescription as string) || "",
+        emergencyBannerText: (c.emergencyBannerText as string) || "",
+      };
+    }
+    if (isContactPage) {
+      return {
+        heroTitle: "Contact Us",
+        heroDescription: "Have a question or need a free estimate? Reach out to our team — we're here to help with all your roofing needs.",
+        officeHeading: "Our Office",
+        officeDescription: "Adilay Roofing is proudly based in Philadelphia, PA. We serve homeowners and businesses across southeastern Pennsylvania.",
+        officeDescription2: "Stop by our office or give us a call — we'd love to hear from you.",
+        formHeading: "Send Us a Message",
+        formDescription: "Fill out the form below and we'll get back to you within 24 hours.",
+        emergencyBannerText: "Roof emergency? Call us now for immediate assistance.",
+      };
+    }
+    return {
+      heroTitle: "", heroDescription: "", officeHeading: "", officeDescription: "",
+      officeDescription2: "", formHeading: "", formDescription: "", emergencyBannerText: "",
+    };
+  });
+
+  // Content — structured Quote page
+  const [quoteContent, setQuoteContent] = useState<QuotePageContent>(() => {
+    if (structuredBlock?.block_type === "structured_quote") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroTitle: (c.heroTitle as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        offerBannerText: (c.offerBannerText as string) || "",
+        trustSignals: (c.trustSignals as string[]) || [],
+        licenseHeading: (c.licenseHeading as string) || "",
+        licenseDescription: (c.licenseDescription as string) || "",
+        serviceAreaHeading: (c.serviceAreaHeading as string) || "",
+        serviceAreaDescription: (c.serviceAreaDescription as string) || "",
+        faqHeading: (c.faqHeading as string) || "",
+        faqSubheading: (c.faqSubheading as string) || "",
+      };
+    }
+    if (isQuotePage) {
+      return {
+        heroTitle: "Get a Free Roofing Quote",
+        heroDescription: "Fill out the form below for a no-obligation estimate. We'll get back to you within 24 hours.",
+        offerBannerText: "Limited time: Free roof inspection with every quote request!",
+        trustSignals: [
+          "Licensed & Insured",
+          "20+ Years Experience",
+          "5-Star Google Rating",
+          "2,000+ Projects Completed",
+        ],
+        licenseHeading: "Licensed & Insured",
+        licenseDescription: "Adilay Roofing is a fully licensed and insured roofing contractor serving the Philadelphia area.",
+        serviceAreaHeading: "Our Service Area",
+        serviceAreaDescription: "We serve Philadelphia and surrounding counties including Bucks, Montgomery, Delaware, and Chester County.",
+        faqHeading: "Frequently Asked Questions",
+        faqSubheading: "Common questions about getting a roofing quote.",
+      };
+    }
+    return {
+      heroTitle: "", heroDescription: "", offerBannerText: "", trustSignals: [],
+      licenseHeading: "", licenseDescription: "", serviceAreaHeading: "",
+      serviceAreaDescription: "", faqHeading: "", faqSubheading: "",
+    };
+  });
+
+  // Content — structured Services Index page
+  const [servicesIndexContent, setServicesIndexContent] = useState<ServicesIndexPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_services_index") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroTitle: (c.heroTitle as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        showcaseHeading: (c.showcaseHeading as string) || "",
+        showcaseDescription1: (c.showcaseDescription1 as string) || "",
+        showcaseDescription2: (c.showcaseDescription2 as string) || "",
+        whyChooseHeading: (c.whyChooseHeading as string) || "",
+        whyChooseSubheading: (c.whyChooseSubheading as string) || "",
+        benefits: (c.benefits as { title: string; description: string }[]) || [],
+      };
+    }
+    if (isServicesIndexPage) {
+      return {
+        heroTitle: "Our Roofing Services",
+        heroDescription: "From roof replacement and repair to emergency services and inspections — Adilay Roofing has you covered.",
+        showcaseHeading: "Quality Work You Can See",
+        showcaseDescription1: "Every project we complete reflects our commitment to quality craftsmanship and attention to detail.",
+        showcaseDescription2: "Browse our recent projects to see the Adilay Roofing difference for yourself.",
+        whyChooseHeading: "Why Choose Adilay Roofing?",
+        whyChooseSubheading: "Here's what sets us apart from the competition.",
+        benefits: [
+          { title: "20+ Years Experience", description: "Two decades of trusted roofing service in the Philadelphia area." },
+          { title: "Quality Materials", description: "We use only the best materials from trusted manufacturers." },
+          { title: "Honest Pricing", description: "No hidden fees — just clear, written estimates every time." },
+        ],
+      };
+    }
+    return {
+      heroTitle: "", heroDescription: "", showcaseHeading: "", showcaseDescription1: "",
+      showcaseDescription2: "", whyChooseHeading: "", whyChooseSubheading: "", benefits: [],
+    };
+  });
+
+  // Content — structured Areas Index page
+  const [areasIndexContent, setAreasIndexContent] = useState<AreasIndexPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_areas_index") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroTitle: (c.heroTitle as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        mainHeading: (c.mainHeading as string) || "",
+        mainDescription: (c.mainDescription as string) || "",
+        whyLocalHeading: (c.whyLocalHeading as string) || "",
+        localBenefits: (c.localBenefits as { title: string; description: string }[]) || [],
+        ctaHeadline: (c.ctaHeadline as string) || "",
+      };
+    }
+    if (isAreasIndexPage) {
+      return {
+        heroTitle: "Areas We Serve",
+        heroDescription: "Professional roofing services across southeastern Pennsylvania. Wherever you are in the greater Philadelphia region, we've got you covered.",
+        mainHeading: "Trusted Roofing Services Across the Philadelphia Region",
+        mainDescription: "From our home base in Philadelphia, we serve homeowners and businesses throughout the greater Philadelphia area — including communities across southeastern Pennsylvania. No matter where you are, you get the same quality workmanship and dedicated service.",
+        whyLocalHeading: "Why Hiring a Local Roofer Matters",
+        localBenefits: [
+          { title: "Fast Response Times", description: "We're nearby and can respond quickly to emergencies and scheduled work alike." },
+          { title: "Local Knowledge", description: "We understand Philadelphia's weather patterns, building codes, and common roofing challenges." },
+          { title: "Community Reputation", description: "We've built our business on referrals from satisfied neighbors. Our reputation matters to us." },
+        ],
+        ctaHeadline: "Need a Roofer in Your Area?",
+      };
+    }
+    return {
+      heroTitle: "", heroDescription: "", mainHeading: "", mainDescription: "",
+      whyLocalHeading: "", localBenefits: [], ctaHeadline: "",
+    };
+  });
+
+  // Content — structured Gallery page
+  const [galleryContent, setGalleryContent] = useState<GalleryPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_gallery") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroLabel: (c.heroLabel as string) || "",
+        heroTitle: (c.heroTitle as string) || "",
+        heroTitleRed: (c.heroTitleRed as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        beforeAfterLabel: (c.beforeAfterLabel as string) || "",
+        beforeAfterHeading: (c.beforeAfterHeading as string) || "",
+        beforeAfterDescription: (c.beforeAfterDescription as string) || "",
+        ctaHeadline: (c.ctaHeadline as string) || "",
+        ctaSubtext: (c.ctaSubtext as string) || "",
+      };
+    }
+    if (isGalleryPage) {
+      return {
+        heroLabel: "Project Gallery",
+        heroTitle: "Our Work Speaks",
+        heroTitleRed: "for Itself",
+        heroDescription: "Browse real projects completed by our team across Philadelphia and surrounding areas. Every job is done right — the first time.",
+        beforeAfterLabel: "Transformations",
+        beforeAfterHeading: "Before & After",
+        beforeAfterDescription: "See the difference quality craftsmanship makes. Every project starts with a detailed assessment and ends with a result that exceeds expectations.",
+        ctaHeadline: "Like What You See?",
+        ctaSubtext: "Let us transform your roof next. Get a free, no-obligation estimate today.",
+      };
+    }
+    return {
+      heroLabel: "", heroTitle: "", heroTitleRed: "", heroDescription: "",
+      beforeAfterLabel: "", beforeAfterHeading: "", beforeAfterDescription: "",
+      ctaHeadline: "", ctaSubtext: "",
+    };
+  });
+
+  // Content — structured Blog Index page
+  const [blogIndexContent, setBlogIndexContent] = useState<BlogIndexPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_blog_index") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroLabel: (c.heroLabel as string) || "",
+        heroTitle: (c.heroTitle as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        emptyMessage: (c.emptyMessage as string) || "",
+        ctaHeadline: (c.ctaHeadline as string) || "",
+        ctaSubtext: (c.ctaSubtext as string) || "",
+      };
+    }
+    if (isBlogIndexPage) {
+      return {
+        heroLabel: "Blog",
+        heroTitle: "Roofing Tips & Expert Insights",
+        heroDescription: "Practical advice for Philadelphia homeowners — from roof maintenance to choosing the right materials for your home.",
+        emptyMessage: "Blog posts coming soon! Check back for expert roofing tips and guides.",
+        ctaHeadline: "Need Roofing Help in Philadelphia?",
+        ctaSubtext: "Contact Adilay Roofing today for a free estimate. Honest advice, quality work, no pressure.",
+      };
+    }
+    return {
+      heroLabel: "", heroTitle: "", heroDescription: "", emptyMessage: "",
+      ctaHeadline: "", ctaSubtext: "",
+    };
+  });
+
   // Content — structured Blog post
   const [blogContent, setBlogContent] = useState<BlogPostContent>(() => {
     if (structuredBlock?.block_type === "structured_blog") {
@@ -547,6 +778,18 @@ export default function PageEditorClient({
                 ? { blockType: "structured_home" as const, data: homeContent }
                 : isFinancingPage
                   ? { blockType: "structured_financing" as const, data: financingContent }
+                : isContactPage
+                  ? { blockType: "structured_contact" as const, data: contactContent }
+                : isQuotePage
+                  ? { blockType: "structured_quote" as const, data: quoteContent }
+                : isServicesIndexPage
+                  ? { blockType: "structured_services_index" as const, data: servicesIndexContent }
+                : isAreasIndexPage
+                  ? { blockType: "structured_areas_index" as const, data: areasIndexContent }
+                : isGalleryPage
+                  ? { blockType: "structured_gallery" as const, data: galleryContent }
+                : isBlogIndexPage
+                  ? { blockType: "structured_blog_index" as const, data: blogIndexContent }
                 : isBlogPost
                   ? { blockType: "structured_blog" as const, data: blogContent }
                   : { blockType: "rich_text" as const, data: { html: editorContent } };
@@ -963,6 +1206,48 @@ export default function PageEditorClient({
                 Edit the financing page content below. Each section maps to a styled section on the live site.
               </p>
               <StructuredFinancingEditor content={financingContent} onChange={setFinancingContent} />
+            </>
+          ) : isContactPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the contact page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredContactEditor content={contactContent} onChange={setContactContent} />
+            </>
+          ) : isQuotePage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the quote page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredQuoteEditor content={quoteContent} onChange={setQuoteContent} />
+            </>
+          ) : isServicesIndexPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the services index page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredServicesIndexEditor content={servicesIndexContent} onChange={setServicesIndexContent} />
+            </>
+          ) : isAreasIndexPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the service areas index page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredAreasIndexEditor content={areasIndexContent} onChange={setAreasIndexContent} />
+            </>
+          ) : isGalleryPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the gallery page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredGalleryEditor content={galleryContent} onChange={setGalleryContent} />
+            </>
+          ) : isBlogIndexPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the blog index page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredBlogIndexEditor content={blogIndexContent} onChange={setBlogIndexContent} />
             </>
           ) : isBlogPost ? (
             <>

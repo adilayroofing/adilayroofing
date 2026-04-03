@@ -9,28 +9,46 @@ import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
+import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const metadata: Metadata = {
-  title: "Free Roofing Estimate Philadelphia PA",
-  description:
-    "Request your free, no-obligation roofing estimate from Adilay Roofing. Serving Philadelphia & surrounding counties. Call (888) 823-4766 or fill out our quick form.",
-  keywords: [
-    "free roofing estimate Philadelphia",
-    "roof replacement quote Philadelphia",
-    "roofing quote near me",
-    "free roof inspection PA",
-    "roofing estimate Bucks County",
-  ],
-  alternates: { canonical: `${BASE_URL}/get-quote` },
-  openGraph: {
-    title: "Get a Free Roofing Quote — Adilay Roofing Philadelphia",
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dbSeo = await getPageSEO("/get-quote");
+  if (dbSeo) {
+    return {
+      ...buildMetadataFromSEO(dbSeo),
+      keywords: [
+        "free roofing estimate Philadelphia",
+        "roof replacement quote Philadelphia",
+        "roofing quote near me",
+        "free roof inspection PA",
+        "roofing estimate Bucks County",
+      ],
+    };
+  }
+  return {
+    title: "Free Roofing Estimate Philadelphia PA",
     description:
-      "Request your free roofing estimate. No obligation. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
-    url: `${BASE_URL}/get-quote`,
-  },
-};
+      "Request your free, no-obligation roofing estimate from Adilay Roofing. Serving Philadelphia & surrounding counties. Call (888) 823-4766 or fill out our quick form.",
+    keywords: [
+      "free roofing estimate Philadelphia",
+      "roof replacement quote Philadelphia",
+      "roofing quote near me",
+      "free roof inspection PA",
+      "roofing estimate Bucks County",
+    ],
+    alternates: { canonical: `${BASE_URL}/get-quote` },
+    openGraph: {
+      title: "Get a Free Roofing Quote — Adilay Roofing Philadelphia",
+      description:
+        "Request your free roofing estimate. No obligation. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
+      url: `${BASE_URL}/get-quote`,
+    },
+  };
+}
 
 const serviceAreas = [
   "Philadelphia",
@@ -47,7 +65,21 @@ const serviceAreas = [
   "Bensalem",
 ];
 
-export default function GetQuotePage() {
+export default async function GetQuotePage() {
+  const cmsData = await getStructuredContent("/get-quote", "structured_quote");
+
+  const heroTitle = (cmsData?.heroTitle as string) || "GET YOUR FREE QUOTE TODAY!";
+  const heroDescription = (cmsData?.heroDescription as string) || "Fill out this short form and we will send you a detailed proposal tailored to your exact property measurements.";
+  const offerBannerText = (cmsData?.offerBannerText as string) || "\ud83c\udf81 Limited Offer: FREE Gutter Cleaning with Every Roof Replacement \u2014 First-Time Customers";
+  const cmsTrustSignals = cmsData?.trustSignals as string[] | undefined;
+  const trustSignals = cmsTrustSignals?.length ? cmsTrustSignals : ["Free Estimates", "No Obligation", "Response Within 24hrs"];
+  const licenseHeading = (cmsData?.licenseHeading as string) || "PA Licensed Home Improvement Contractor";
+  const licenseDescription = (cmsData?.licenseDescription as string) || "Adilay Roofing is officially registered with the Commonwealth of Pennsylvania as a licensed Home Improvement Contractor. Your project is protected by state-regulated standards.";
+  const serviceAreaHeading = (cmsData?.serviceAreaHeading as string) || "Serving Philadelphia & Beyond";
+  const serviceAreaDescription = (cmsData?.serviceAreaDescription as string) || "We proudly serve homeowners and businesses across southeastern Pennsylvania.";
+  const faqHeading = (cmsData?.faqHeading as string) || "Frequently Asked Questions";
+  const faqSubheading = (cmsData?.faqSubheading as string) || "Get answers to common questions about our roofing services.";
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Get a Quote", path: "/get-quote" }]} />
@@ -60,19 +92,16 @@ export default function GetQuotePage() {
 
           <div className="relative z-10 max-w-md text-center lg:text-left">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 md:mb-4 text-white">
-              GET YOUR{" "}
-              <span className="text-brand-red">FREE QUOTE</span>{" "}
-              TODAY!
+              {heroTitle}
             </h1>
             <p className="text-sm md:text-lg text-white/80 mb-4 md:mb-6">
-              Fill out this short form and we will send you a detailed proposal
-              tailored to your exact property measurements.
+              {heroDescription}
             </p>
 
             {/* Gutter Cleaning Offer Banner */}
             <div className="mb-4 md:mb-6 bg-amber-500/15 border-l-4 border-amber-400 rounded-r-lg px-3 py-2.5 md:px-4 md:py-3 text-center lg:text-left">
               <p className="text-white text-xs md:text-sm font-semibold leading-snug">
-                🎁 Limited Offer: <span className="text-amber-300">FREE Gutter Cleaning</span> with Every Roof Replacement — First-Time Customers
+                {offerBannerText}
               </p>
             </div>
 
@@ -108,16 +137,12 @@ export default function GetQuotePage() {
 
             {/* Trust signals - horizontal on mobile, column on large */}
             <div className="flex flex-row lg:flex-col gap-4 md:gap-4 justify-center lg:justify-start items-start">
-              {[
-                { icon: "✓", text: "Free Estimates" },
-                { icon: "✓", text: "No Obligation" },
-                { icon: "✓", text: "Response Within 24hrs" },
-              ].map((item) => (
-                <div key={item.text} className="flex flex-col md:flex-row items-center gap-1.5 md:gap-3 flex-1 lg:flex-none">
+              {trustSignals.map((text) => (
+                <div key={text} className="flex flex-col md:flex-row items-center gap-1.5 md:gap-3 flex-1 lg:flex-none">
                   <span className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs md:text-sm flex-shrink-0">
-                    {item.icon}
+                    ✓
                   </span>
-                  <span className="text-white/90 font-medium text-[10px] md:text-base text-center md:text-left leading-tight">{item.text}</span>
+                  <span className="text-white/90 font-medium text-[10px] md:text-base text-center md:text-left leading-tight">{text}</span>
                 </div>
               ))}
             </div>
@@ -175,13 +200,11 @@ export default function GetQuotePage() {
                 </div>
 
                 <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 md:mb-6 text-white">
-                  PA Licensed Home Improvement Contractor
+                  {licenseHeading}
                 </h2>
 
                 <p className="text-white/70 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
-                  Adilay Roofing is officially registered with the Commonwealth of
-                  Pennsylvania as a licensed Home Improvement Contractor. Your
-                  project is protected by state-regulated standards.
+                  {licenseDescription}
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-md mx-auto lg:mx-0">
@@ -278,11 +301,10 @@ export default function GetQuotePage() {
             <ScrollReveal direction="right" delay={100} distance={30}>
               <div>
                 <h2 className="section-heading text-left">
-                  Serving Philadelphia &amp; Beyond
+                  {serviceAreaHeading}
                 </h2>
                 <p className="text-brand-gray leading-relaxed mt-4 mb-6">
-                  We proudly serve homeowners and businesses across southeastern
-                  Pennsylvania.
+                  {serviceAreaDescription}
                 </p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
@@ -329,9 +351,9 @@ export default function GetQuotePage() {
         <div className="container-narrow mx-auto">
           <ScrollReveal>
             <div className="text-center mb-6 md:mb-12">
-              <h2 className="section-heading">Frequently Asked Questions</h2>
+              <h2 className="section-heading">{faqHeading}</h2>
               <p className="section-subheading mx-auto mt-4">
-                Get answers to common questions about our roofing services.
+                {faqSubheading}
               </p>
             </div>
           </ScrollReveal>
