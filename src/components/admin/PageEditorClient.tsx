@@ -11,6 +11,7 @@ import StructuredFAQEditor, { type FAQPageContent } from "./StructuredFAQEditor"
 import StructuredAboutEditor, { type AboutPageContent } from "./StructuredAboutEditor";
 import StructuredHomeEditor, { type HomePageContent } from "./StructuredHomeEditor";
 import StructuredBlogEditor, { type BlogPostContent } from "./StructuredBlogEditor";
+import StructuredFinancingEditor, { type FinancingPageContent } from "./StructuredFinancingEditor";
 import { getServiceBySlug } from "@/data/services";
 import { getLocationBySlug } from "@/data/locations";
 import { faqs as hardcodedFaqs } from "@/data/faqs";
@@ -72,6 +73,7 @@ export default function PageEditorClient({
   const isFAQPage = slug === "/faq";
   const isAboutPage = slug === "/about";
   const isHomePage = slug === "/" || slug === "";
+  const isFinancingPage = slug === "/financing";
   const isBlogPost = slug.startsWith("/blog/") && slug !== "/blog";
 
   // Find structured content block or rich_text block
@@ -82,6 +84,7 @@ export default function PageEditorClient({
       b.block_type === "structured_faq" ||
       b.block_type === "structured_about" ||
       b.block_type === "structured_home" ||
+      b.block_type === "structured_financing" ||
       b.block_type === "structured_blog"
   );
   const richTextBlock = contentBlocks.find((b) => b.block_type === "rich_text");
@@ -310,6 +313,72 @@ export default function PageEditorClient({
     };
   });
 
+  // Content — structured Financing page
+  const [financingContent, setFinancingContent] = useState<FinancingPageContent>(() => {
+    if (structuredBlock?.block_type === "structured_financing") {
+      const c = structuredBlock.content as Record<string, unknown>;
+      return {
+        heroHeadline: (c.heroHeadline as string) || "",
+        heroDescription: (c.heroDescription as string) || "",
+        howItWorks: (c.howItWorks as { step: string; title: string; description: string }[]) || [],
+        loanOptions: (c.loanOptions as { title: string; description: string }[]) || [],
+        benefits: (c.benefits as string[]) || [],
+        trustText: (c.trustText as string) || "",
+        faq: (c.faq as { question: string; answer: string }[]) || [],
+        ctaHeadline: (c.ctaHeadline as string) || "",
+        ctaSubtext: (c.ctaSubtext as string) || "",
+        bottomCtaHeadline: (c.bottomCtaHeadline as string) || "",
+        bottomCtaSubtext: (c.bottomCtaSubtext as string) || "",
+      };
+    }
+    if (isFinancingPage) {
+      return {
+        heroHeadline: "Roof Financing in Philadelphia \u2014 Approved Through Service Finance Company",
+        heroDescription: "A new roof is one of the most important investments you can make in your home. Don\u2019t let cost stand in the way of protecting your family. With flexible financing through Service Finance Company, you can get the roof you need now \u2014 and pay over time with manageable monthly payments.",
+        howItWorks: [
+          { step: "1", title: "Apply", description: "Fill out a quick application online or over the phone. It only takes a few minutes and checking your eligibility won\u2019t affect your credit score." },
+          { step: "2", title: "Get Approved", description: "Receive a fast credit decision \u2014 often the same day. Choose the loan product that works best for your budget." },
+          { step: "3", title: "We Start Work", description: "Once approved, we schedule your project. No payments are due until your job is complete." },
+        ],
+        loanOptions: [
+          { title: "Same-as-Cash", description: "0% interest promotional period \u2014 pay off your balance within the promo window and pay zero interest." },
+          { title: "Fixed Monthly Payments", description: "Standard installment loans with fixed monthly payments over 5\u201310 year terms. Predictable payments that fit your budget." },
+          { title: "Deferred Payment", description: "No payments until your project is complete. This stage-funding approach means you don\u2019t pay a cent until you\u2019re satisfied." },
+        ],
+        benefits: [
+          "Loans from $1,000 to $100,000",
+          "50+ loan products to choose from",
+          "Same-as-cash and 0% promotional options",
+          "No payments until your job is complete",
+          "Fast credit decisions \u2014 often same day",
+          "No prepayment penalties",
+          "Unsecured loans \u2014 home is not used as collateral",
+          "Works with a range of credit profiles",
+          "Available for roof replacement, repair, siding & more",
+          "FHA Title I approved lender",
+        ],
+        trustText: "Service Finance Company, LLC is a nationally licensed sales finance company and an approved FHA Title I Lender. With over 50 loan products and a track record of helping homeowners across the country, your financing is in trusted hands.",
+        faq: [
+          { question: "Does Adilay Roofing offer financing?", answer: "Yes! Adilay Roofing is an authorized contractor through Service Finance Company, LLC \u2014 a nationally licensed sales finance company and FHA Title I Lender." },
+          { question: "What credit score do I need to finance a roof?", answer: "Service Finance Company works with a range of credit profiles. The best way to find out your options is to apply." },
+          { question: "Can I finance a roof if I have insurance?", answer: "Yes. Financing and insurance are separate. Financing can help you cover the difference or fund upgrades." },
+          { question: "How long does it take to get approved?", answer: "Credit decisions are often made the same day you apply." },
+          { question: "Is my home used as collateral?", answer: "No. Loans through Service Finance Company are unsecured." },
+          { question: "Can I pay off my loan early?", answer: "Yes. There are no prepayment penalties." },
+          { question: "What is the minimum and maximum loan amount?", answer: "Loans range from $1,000 to $100,000." },
+        ],
+        ctaHeadline: "Ready to Get Started?",
+        ctaSubtext: "Apply for financing today, or contact us for a free estimate. We\u2019ll help you find the right payment option for your project.",
+        bottomCtaHeadline: "Protect Your Home Today",
+        bottomCtaSubtext: "Don\u2019t let cost hold you back. Finance your roofing project with Adilay Roofing and Service Finance Company. No payments until your job is complete.",
+      };
+    }
+    return {
+      heroHeadline: "", heroDescription: "", howItWorks: [], loanOptions: [], benefits: [],
+      trustText: "", faq: [], ctaHeadline: "", ctaSubtext: "", bottomCtaHeadline: "", bottomCtaSubtext: "",
+    };
+  });
+
   // Content — structured Blog post
   const [blogContent, setBlogContent] = useState<BlogPostContent>(() => {
     if (structuredBlock?.block_type === "structured_blog") {
@@ -476,6 +545,8 @@ export default function PageEditorClient({
               ? { blockType: "structured_about" as const, data: aboutContent }
               : isHomePage
                 ? { blockType: "structured_home" as const, data: homeContent }
+                : isFinancingPage
+                  ? { blockType: "structured_financing" as const, data: financingContent }
                 : isBlogPost
                   ? { blockType: "structured_blog" as const, data: blogContent }
                   : { blockType: "rich_text" as const, data: { html: editorContent } };
@@ -885,6 +956,13 @@ export default function PageEditorClient({
                 Edit the homepage content below. Each section maps to a styled section on the live site.
               </p>
               <StructuredHomeEditor content={homeContent} onChange={setHomeContent} />
+            </>
+          ) : isFinancingPage ? (
+            <>
+              <p className="text-gray-400 text-sm mb-4">
+                Edit the financing page content below. Each section maps to a styled section on the live site.
+              </p>
+              <StructuredFinancingEditor content={financingContent} onChange={setFinancingContent} />
             </>
           ) : isBlogPost ? (
             <>
