@@ -5,15 +5,39 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { company } from "@/data/company";
 import { serviceCategories, getServicesByCategory } from "@/data/services";
+import { locations } from "@/data/locations";
+
+// Pre-compute county groups for the nav dropdown
+const countyOrder = [
+  "Philadelphia County",
+  "Montgomery County",
+  "Bucks County",
+  "Delaware County",
+  "Chester County",
+  "Camden County",
+  "Burlington County",
+];
+const locationsByCounty = countyOrder
+  .map((county) => {
+    const all = locations.filter((l) => l.county === county);
+    const hub = all.find((l) => l.type === "county");
+    const children = all.filter((l) => l.type !== "county");
+    return { county, hub, children };
+  })
+  .filter((g) => g.hub || g.children.length > 0);
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [areasDropdownOpen, setAreasDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileAreasOpen, setMobileAreasOpen] = useState(false);
   const [mobileCategoryOpen, setMobileCategoryOpen] = useState<string | null>(null);
+  const [mobileCountyOpen, setMobileCountyOpen] = useState<string | null>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const areasDropdownRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
 
   // Measure header height for mobile menu positioning
@@ -28,7 +52,7 @@ export default function Header() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -36,6 +60,12 @@ export default function Header() {
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setServicesDropdownOpen(false);
+      }
+      if (
+        areasDropdownRef.current &&
+        !areasDropdownRef.current.contains(event.target as Node)
+      ) {
+        setAreasDropdownOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -233,12 +263,79 @@ export default function Header() {
               )}
             </div>
 
-            <Link
-              href="/service-areas"
-              className="text-brand-dark font-semibold hover:text-brand-red transition-colors"
-            >
-              Service Areas
-            </Link>
+            {/* Service Areas Dropdown */}
+            <div ref={areasDropdownRef} className="relative">
+              <button
+                onClick={() => setAreasDropdownOpen(!areasDropdownOpen)}
+                onMouseEnter={() => setAreasDropdownOpen(true)}
+                className="flex items-center gap-1 text-brand-dark font-semibold hover:text-brand-red transition-colors cursor-pointer"
+                aria-expanded={areasDropdownOpen}
+                aria-haspopup="true"
+              >
+                Service Areas
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    areasDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {areasDropdownOpen && (
+                <div
+                  className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-sm shadow-xl border border-brand-border p-4 z-50"
+                  onMouseLeave={() => setAreasDropdownOpen(false)}
+                  role="menu"
+                >
+                  <div className="grid grid-cols-3 gap-4">
+                    {locationsByCounty.map((group) => (
+                      <div key={group.county}>
+                        <Link
+                          href={group.hub ? `/service-areas/${group.hub.slug}` : "/service-areas"}
+                          className="text-xs font-bold text-brand-red uppercase tracking-wider mb-1.5 px-1 block hover:text-brand-red-dark transition-colors"
+                          role="menuitem"
+                          onClick={() => setAreasDropdownOpen(false)}
+                        >
+                          {group.county.replace(" County", "")}
+                        </Link>
+                        {group.children.map((loc) => (
+                          <Link
+                            key={loc.slug}
+                            href={`/service-areas/${loc.slug}`}
+                            className="block px-1 py-0.5 text-sm text-brand-dark hover:text-brand-red transition-colors"
+                            role="menuitem"
+                            onClick={() => setAreasDropdownOpen(false)}
+                          >
+                            {loc.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="border-t border-brand-border mt-3 pt-2">
+                    <Link
+                      href="/service-areas"
+                      className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
+                      role="menuitem"
+                      onClick={() => setAreasDropdownOpen(false)}
+                    >
+                      View All Service Areas &rarr;
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <Link
               href="/about"
               className="text-brand-dark font-semibold hover:text-brand-red transition-colors"
@@ -444,13 +541,91 @@ export default function Header() {
               </div>
             </div>
 
-            <Link
-              href="/service-areas"
-              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Service Areas
-            </Link>
+            {/* Mobile Service Areas Accordion */}
+            <div className="border-b border-brand-border">
+              <button
+                onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
+                className="flex items-center justify-between w-full py-4 text-brand-dark font-semibold text-lg cursor-pointer"
+                aria-expanded={mobileAreasOpen}
+              >
+                Service Areas
+                <svg
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    mobileAreasOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  mobileAreasOpen ? "max-h-[3000px] pb-4" : "max-h-0"
+                }`}
+              >
+                {locationsByCounty.map((group) => {
+                  const isOpen = mobileCountyOpen === group.county;
+                  return (
+                    <div key={group.county} className="border-b border-brand-border/50 last:border-b-0">
+                      <button
+                        onClick={() => setMobileCountyOpen(isOpen ? null : group.county)}
+                        className="flex items-center justify-between w-full py-3 pl-4 pr-2 cursor-pointer"
+                      >
+                        <span className="text-base font-semibold text-brand-dark">
+                          {group.county.replace(" County", "")}
+                        </span>
+                        <svg
+                          className={`w-4 h-4 text-brand-gray transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? "max-h-[600px] pb-2" : "max-h-0"}`}>
+                        {group.hub && (
+                          <Link
+                            href={`/service-areas/${group.hub.slug}`}
+                            className="block py-2 pl-8 text-sm font-semibold text-brand-red hover:text-brand-red-dark active:text-brand-red transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            All {group.county.replace(" County", "")} &rarr;
+                          </Link>
+                        )}
+                        {group.children.map((loc) => (
+                          <Link
+                            key={loc.slug}
+                            href={`/service-areas/${loc.slug}`}
+                            className="block py-2 pl-8 text-sm text-brand-gray hover:text-brand-red active:text-brand-red transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {loc.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+                <Link
+                  href="/service-areas"
+                  className="block pl-4 pt-3 text-sm text-brand-red font-semibold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  View All Service Areas &rarr;
+                </Link>
+              </div>
+            </div>
+
             <Link
               href="/about"
               className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
