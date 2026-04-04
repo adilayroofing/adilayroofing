@@ -195,7 +195,7 @@ export default function Header() {
             <div ref={dropdownRef} className="relative">
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onMouseEnter={() => { setServicesDropdownOpen(true); setAreasDropdownOpen(false); }}
                 className="flex items-center gap-1 text-brand-dark font-semibold hover:text-brand-red transition-colors cursor-pointer"
                 aria-expanded={servicesDropdownOpen}
                 aria-haspopup="true"
@@ -267,7 +267,7 @@ export default function Header() {
             <div ref={areasDropdownRef} className="relative">
               <button
                 onClick={() => setAreasDropdownOpen(!areasDropdownOpen)}
-                onMouseEnter={() => setAreasDropdownOpen(true)}
+                onMouseEnter={() => { setAreasDropdownOpen(true); setServicesDropdownOpen(false); }}
                 className="flex items-center gap-1 text-brand-dark font-semibold hover:text-brand-red transition-colors cursor-pointer"
                 aria-expanded={areasDropdownOpen}
                 aria-haspopup="true"
