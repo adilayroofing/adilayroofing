@@ -134,52 +134,18 @@ export async function POST(request: Request) {
   // =========================================================================
 
   // =========================================================================
-  // LANDING PAGES
+  // LANDING PAGES — excluded from CMS (managed separately, not for SEO team)
   // =========================================================================
-  const landingPages = [
-    {
-      slug: "/lp/roof-replacement",
-      title: "Roof Replacement Philadelphia — Free Estimate | Adilay Roofing",
-      description: "Get a free roof replacement estimate in Philadelphia. Licensed PA184779, 20+ years experience. Call (888) 823-4766.",
-    },
-    {
-      slug: "/lp/roof-repair",
-      title: "Roof Repair Philadelphia — Fast Service | Adilay Roofing",
-      description: "Fast, affordable roof repair in Philadelphia. Licensed PA184779, 20+ years experience. Call (888) 823-4766.",
-    },
-    {
-      slug: "/lp/gutters",
-      title: "Gutter Installation Philadelphia — Free Estimate | Adilay Roofing",
-      description: "Professional gutter installation and repair in Philadelphia. Seamless gutters, leaf guards & more. Free estimates.",
-    },
-    {
-      slug: "/lp/emergency",
-      title: "Emergency Roof Repair Philadelphia — 24/7 | Adilay Roofing",
-      description: "24/7 emergency roof repair in Philadelphia. Fast response, licensed PA184779. Call (888) 823-4766 now.",
-    },
-    {
-      slug: "/lp/free-inspection",
-      title: "Free Roof Inspection Philadelphia | Adilay Roofing",
-      description: "Get a free professional roof inspection in Philadelphia. Licensed PA184779, 20+ years experience. Schedule today.",
-    },
-  ];
-
-  for (const lp of landingPages) {
-    pages.push({
-      slug: lp.slug,
-      meta_title: lp.title,
-      meta_description: lp.description,
-      canonical_url: `${BASE_URL}${lp.slug}`,
-      status: "published",
-      updated_by: "seed-script",
-    });
-  }
 
   // =========================================================================
   // UPSERT ALL PAGES
   // =========================================================================
-  // Remove old service pages that were renamed/split
-  const deprecatedSlugs = ["/services/siding", "/services/windows", "/services/gutters"];
+  // Remove old/deprecated pages
+  const deprecatedSlugs = [
+    "/services/siding", "/services/windows", "/services/gutters",
+    "/lp/roof-replacement", "/lp/roof-repair", "/lp/gutters", "/lp/emergency", "/lp/free-inspection",
+    "/get-quote-ads",
+  ];
   await supabase.from("pages").delete().in("slug", deprecatedSlugs);
 
   const { data, error } = await supabase
@@ -198,7 +164,6 @@ export async function POST(request: Request) {
       static: staticPages.length,
       services: services.length,
       locations: locations.length,
-      landing: landingPages.length,
     },
   });
 }
