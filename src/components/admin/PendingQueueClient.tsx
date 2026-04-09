@@ -105,6 +105,18 @@ export default function PendingQueueClient({
               updated_by: userEmail,
             }, { onConflict: "slug" });
           }
+
+          // Save initial revision snapshot so creation appears in change history
+          if (newPage) {
+            await supabase.from("page_revisions").insert({
+              page_id: newPage.id,
+              slug: (pageData.slug as string) || "",
+              page_data: { ...pageData, id: newPage.id },
+              content_data: blockContent || {},
+              block_type: blockType,
+              saved_by: userEmail,
+            });
+          }
         } else if (change_type === "update") {
           // Save revision snapshot before overwriting (for change history)
           const { data: existingBlocks } = await supabase
@@ -177,14 +189,43 @@ export default function PendingQueueClient({
             }, { onConflict: "slug" });
           }
         } else if (change_type === "delete") {
+          // Capture data before deletion for audit trail
+          const { data: deletingPage } = await supabase
+            .from("pages")
+            .select("*")
+            .eq("id", record_id)
+            .single();
+
+          const { data: deletingBlocks } = await supabase
+            .from("content_blocks")
+            .select("*")
+            .eq("page_id", record_id)
+            .limit(1);
+
           // If deleting a blog post page, also delete from blog_posts
-          const slugVal = (pageData.slug as string) || "";
+          const slugVal = (pageData.slug as string) || (deletingPage?.slug as string) || "";
           if (slugVal.startsWith("/blog/")) {
             const blogSlug = slugVal.replace("/blog/", "");
             await supabase.from("blog_posts").delete().eq("slug", blogSlug);
           }
+          // Delete revisions, content blocks, then page
+          await supabase.from("page_revisions").delete().eq("page_id", record_id);
           await supabase.from("content_blocks").delete().eq("page_id", record_id);
           await supabase.from(table_name).delete().eq("id", record_id);
+
+          // Log deletion with full data so it appears in change history
+          await supabase.from("activity_log").insert({
+            user_email: userEmail,
+            action: `Deleted blog post: ${slugVal}`,
+            details: {
+              slug: slugVal,
+              page_id: record_id,
+              change_type: "delete",
+              page_data: deletingPage || pageData,
+              content_data: deletingBlocks?.[0]?.content || {},
+              block_type: deletingBlocks?.[0]?.block_type || "rich_text",
+            },
+          });
         }
       }
 

@@ -13,7 +13,7 @@ create table public.users (
   id uuid primary key default uuid_generate_v4(),
   email text unique not null,
   name text not null,
-  role text not null check (role in ('admin', 'editor')),
+  role text not null check (role in ('admin', 'editor', 'viewer')),
   created_at timestamptz default now()
 );
 
@@ -44,7 +44,7 @@ create index idx_pages_status on public.pages (status);
 create table public.content_blocks (
   id uuid primary key default uuid_generate_v4(),
   page_id uuid not null references public.pages(id) on delete cascade,
-  block_type text not null check (block_type in ('rich_text', 'heading', 'image', 'cta', 'faq', 'structured_service', 'structured_location', 'structured_faq', 'structured_about', 'structured_home', 'structured_blog')),
+  block_type text not null check (block_type in ('rich_text', 'heading', 'image', 'cta', 'faq', 'structured_service', 'structured_location', 'structured_faq', 'structured_about', 'structured_home', 'structured_blog', 'structured_financing', 'structured_contact', 'structured_quote', 'structured_services_index', 'structured_areas_index', 'structured_gallery', 'structured_blog_index')),
   content jsonb not null default '{}',
   sort_order integer not null default 0,
   updated_at timestamptz default now()
@@ -102,7 +102,25 @@ create index idx_activity_log_created on public.activity_log (created_at desc);
 create index idx_activity_log_user on public.activity_log (user_email);
 
 -- ============================================================================
--- 7. BLOG POSTS TABLE — CMS-managed blog content
+-- 7. PAGE REVISIONS TABLE — change history snapshots
+-- ============================================================================
+create table public.page_revisions (
+  id uuid primary key default uuid_generate_v4(),
+  page_id uuid not null references public.pages(id) on delete cascade,
+  slug text not null default '',
+  page_data jsonb not null default '{}',
+  content_data jsonb not null default '{}',
+  block_type text not null default 'rich_text',
+  saved_by text not null,
+  created_at timestamptz default now(),
+  reverted_at timestamptz
+);
+
+create index idx_page_revisions_page on public.page_revisions (page_id);
+create index idx_page_revisions_created on public.page_revisions (created_at desc);
+
+-- ============================================================================
+-- 8. BLOG POSTS TABLE — CMS-managed blog content
 -- ============================================================================
 create table public.blog_posts (
   id uuid primary key default uuid_generate_v4(),
@@ -264,6 +282,19 @@ create policy "Internal links: public read"
   on public.internal_links for select
   to anon
   using (true);
+
+-- ---- PAGE REVISIONS ----
+alter table public.page_revisions enable row level security;
+
+create policy "Page revisions: anyone authenticated can read"
+  on public.page_revisions for select
+  to authenticated
+  using (true);
+
+create policy "Page revisions: admin full access"
+  on public.page_revisions for all
+  to authenticated
+  using (public.get_user_role() = 'admin');
 
 -- ---- PENDING CHANGES ----
 create policy "Pending changes: editors can insert"

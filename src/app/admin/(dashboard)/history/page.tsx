@@ -20,6 +20,14 @@ export default async function HistoryPage() {
     .order("created_at", { ascending: false })
     .limit(50);
 
+  // Fetch creation/deletion activity log entries to show in history
+  const { data: activityEntries } = await supabase
+    .from("activity_log")
+    .select("*")
+    .or("action.like.Created page:%,action.like.Deleted blog post:%")
+    .order("created_at", { ascending: false })
+    .limit(50);
+
   return (
     <div className="max-w-5xl mx-auto">
       <div className="mb-6">
@@ -31,6 +39,7 @@ export default async function HistoryPage() {
 
       <HistoryClient
         revisions={revisions ?? []}
+        activityEntries={activityEntries ?? []}
         userEmail={user.email}
       />
     </div>

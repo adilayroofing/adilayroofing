@@ -758,6 +758,13 @@ export default function PageEditorClient({
     const blogSlug = slug.replace("/blog/", "");
 
     try {
+      // Capture content before deletion for audit trail
+      const { data: existingBlocks } = await supabase
+        .from("content_blocks")
+        .select("*")
+        .eq("page_id", page.id)
+        .limit(1);
+
       // Delete from blog_posts table
       await supabase.from("blog_posts").delete().eq("slug", blogSlug);
       // Delete content blocks
@@ -768,10 +775,18 @@ export default function PageEditorClient({
       const { error } = await supabase.from("pages").delete().eq("id", page.id);
       if (error) throw error;
 
+      // Log deletion with full page data so it appears in change history
       await supabase.from("activity_log").insert({
         user_email: userEmail,
         action: `Deleted blog post: ${slug}`,
-        details: { slug, page_id: page.id },
+        details: {
+          slug,
+          page_id: page.id,
+          change_type: "delete",
+          page_data: page,
+          content_data: existingBlocks?.[0]?.content || {},
+          block_type: existingBlocks?.[0]?.block_type || "structured_blog",
+        },
       });
 
       setMessage({ type: "success", text: "Blog post deleted. Redirecting..." });
@@ -901,10 +916,27 @@ export default function PageEditorClient({
             }, { onConflict: "slug" });
           }
 
+          // Save initial revision snapshot so creation appears in change history
+          await supabase.from("page_revisions").insert({
+            page_id: newPage.id,
+            slug,
+            page_data: { ...pageData, id: newPage.id },
+            content_data: contentPayload.data,
+            block_type: contentPayload.blockType,
+            saved_by: userEmail,
+          });
+
           await supabase.from("activity_log").insert({
             user_email: userEmail,
             action: `Created page: ${slug}`,
-            details: { slug, page_id: newPage.id },
+            details: {
+              slug,
+              page_id: newPage.id,
+              change_type: "create",
+              page_data: { ...pageData, id: newPage.id },
+              content_data: contentPayload.data,
+              block_type: contentPayload.blockType,
+            },
           });
 
           setMessage({ type: "success", text: "Blog post created successfully! Redirecting..." });

@@ -17,11 +17,34 @@ interface Revision {
   reverted_at: string | null;
 }
 
+interface ActivityEntry {
+  id: string;
+  user_email: string;
+  action: string;
+  details: Record<string, unknown>;
+  created_at: string;
+}
+
+// Unified history item that can represent either a revision or an activity entry
+interface HistoryItem {
+  id: string;
+  slug: string;
+  type: "revision" | "created" | "deleted";
+  saved_by: string;
+  created_at: string;
+  // Revision-specific
+  revision?: Revision;
+  // Activity-specific
+  activity?: ActivityEntry;
+}
+
 export default function HistoryClient({
   revisions,
+  activityEntries = [],
   userEmail,
 }: {
   revisions: Revision[];
+  activityEntries?: ActivityEntry[];
   userEmail: string;
 }) {
   const router = useRouter();
@@ -31,11 +54,36 @@ export default function HistoryClient({
   const [confirmRevertId, setConfirmRevertId] = useState<string | null>(null);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-  const filtered = filter
-    ? revisions.filter((r) => r.slug.toLowerCase().includes(filter.toLowerCase()))
-    : revisions;
+  // Build unified history list
+  const historyItems: HistoryItem[] = [
+    ...revisions.map((r): HistoryItem => ({
+      id: r.id,
+      slug: r.slug,
+      type: "revision",
+      saved_by: r.saved_by,
+      created_at: r.created_at,
+      revision: r,
+    })),
+    ...activityEntries.map((a): HistoryItem => {
+      const details = a.details || {};
+      const slug = (details.slug as string) || "";
+      const isDelete = a.action.startsWith("Deleted");
+      return {
+        id: `activity-${a.id}`,
+        slug,
+        type: isDelete ? "deleted" : "created",
+        saved_by: a.user_email,
+        created_at: a.created_at,
+        activity: a,
+      };
+    }),
+  ].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 
-  const previewRevision = previewId ? revisions.find((r) => r.id === previewId) : null;
+  const filtered = filter
+    ? historyItems.filter((item) => item.slug.toLowerCase().includes(filter.toLowerCase()))
+    : historyItems;
+
+  const previewItem = previewId ? historyItems.find((item) => item.id === previewId) : null;
 
   async function handleRevert(revision: Revision) {
     setRevertingId(revision.id);
@@ -114,6 +162,17 @@ export default function HistoryClient({
     }
   }
 
+  function getTypeLabel(type: HistoryItem["type"]) {
+    switch (type) {
+      case "created":
+        return { text: "Created", className: "bg-green-500/10 text-green-400" };
+      case "deleted":
+        return { text: "Deleted", className: "bg-red-500/10 text-red-400" };
+      default:
+        return { text: "Updated", className: "bg-blue-500/10 text-blue-400" };
+    }
+  }
+
   return (
     <div>
       {/* Message */}
@@ -140,12 +199,12 @@ export default function HistoryClient({
         />
       </div>
 
-      {/* Revisions Table */}
+      {/* History Table */}
       {filtered.length === 0 ? (
         <div className="text-center py-12 text-gray-500">
-          {revisions.length === 0
+          {historyItems.length === 0
             ? "No change history yet. Changes will appear here after you save a page."
-            : "No revisions match your filter."}
+            : "No entries match your filter."}
         </div>
       ) : (
         <div className="border border-gray-700 rounded-lg overflow-hidden">
@@ -153,67 +212,87 @@ export default function HistoryClient({
             <thead>
               <tr className="bg-gray-800/50 text-left">
                 <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider">Page</th>
+                <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider">Action</th>
                 <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider">Changed By</th>
                 <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider">Date</th>
                 <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-700/50">
-              {filtered.map((rev) => (
-                <tr key={rev.id} className="hover:bg-gray-800/30 transition-colors">
-                  <td className="px-4 py-3">
-                    <span className="text-white text-sm font-medium">{rev.slug}</span>
-                    <span className="block text-xs text-gray-500 mt-0.5">{rev.block_type.replace("structured_", "").replace("_", " ")}</span>
-                  </td>
-                  <td className="px-4 py-3 text-gray-400 text-sm">{rev.saved_by}</td>
-                  <td className="px-4 py-3 text-gray-400 text-sm">{formatDate(rev.created_at)}</td>
-                  <td className="px-4 py-3 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <button
-                        onClick={() => setPreviewId(previewId === rev.id ? null : rev.id)}
-                        className="px-3 py-1.5 text-xs font-medium text-blue-400 border border-blue-500/30 rounded-lg hover:bg-blue-500/10 transition-colors"
-                      >
-                        {previewId === rev.id ? "Close" : "Preview"}
-                      </button>
-                      {rev.reverted_at ? (
-                        <span className="px-3 py-1.5 text-xs font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
-                          Reverted ✓
-                        </span>
-                      ) : confirmRevertId === rev.id ? (
-                        <div className="flex items-center gap-1">
-                          <button
-                            onClick={() => handleRevert(rev)}
-                            disabled={revertingId === rev.id}
-                            className="px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:bg-gray-700 transition-colors"
-                          >
-                            {revertingId === rev.id ? "Reverting..." : "Confirm"}
-                          </button>
-                          <button
-                            onClick={() => setConfirmRevertId(null)}
-                            className="px-3 py-1.5 text-xs font-medium text-gray-400 border border-gray-600 rounded-lg hover:bg-gray-700 transition-colors"
-                          >
-                            Cancel
-                          </button>
-                        </div>
-                      ) : (
-                        <button
-                          onClick={() => setConfirmRevertId(rev.id)}
-                          className="px-3 py-1.5 text-xs font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-colors"
-                        >
-                          Revert
-                        </button>
+              {filtered.map((item) => {
+                const label = getTypeLabel(item.type);
+                const blockType = item.revision
+                  ? item.revision.block_type.replace("structured_", "").replace("_", " ")
+                  : ((item.activity?.details?.block_type as string) || "").replace("structured_", "").replace("_", " ");
+
+                return (
+                  <tr key={item.id} className="hover:bg-gray-800/30 transition-colors">
+                    <td className="px-4 py-3">
+                      <span className="text-white text-sm font-medium">{item.slug}</span>
+                      {blockType && (
+                        <span className="block text-xs text-gray-500 mt-0.5">{blockType}</span>
                       )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${label.className}`}>
+                        {label.text}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-gray-400 text-sm">{item.saved_by}</td>
+                    <td className="px-4 py-3 text-gray-400 text-sm">{formatDate(item.created_at)}</td>
+                    <td className="px-4 py-3 text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        {/* Preview button */}
+                        <button
+                          onClick={() => setPreviewId(previewId === item.id ? null : item.id)}
+                          className="px-3 py-1.5 text-xs font-medium text-blue-400 border border-blue-500/30 rounded-lg hover:bg-blue-500/10 transition-colors"
+                        >
+                          {previewId === item.id ? "Close" : "Preview"}
+                        </button>
+
+                        {/* Revert button — only for revisions (not create/delete activity) */}
+                        {item.revision && (
+                          item.revision.reverted_at ? (
+                            <span className="px-3 py-1.5 text-xs font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
+                              Reverted
+                            </span>
+                          ) : confirmRevertId === item.id ? (
+                            <div className="flex items-center gap-1">
+                              <button
+                                onClick={() => handleRevert(item.revision!)}
+                                disabled={revertingId === item.id}
+                                className="px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:bg-gray-700 transition-colors"
+                              >
+                                {revertingId === item.id ? "Reverting..." : "Confirm"}
+                              </button>
+                              <button
+                                onClick={() => setConfirmRevertId(null)}
+                                className="px-3 py-1.5 text-xs font-medium text-gray-400 border border-gray-600 rounded-lg hover:bg-gray-700 transition-colors"
+                              >
+                                Cancel
+                              </button>
+                            </div>
+                          ) : (
+                            <button
+                              onClick={() => setConfirmRevertId(item.id)}
+                              className="px-3 py-1.5 text-xs font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-colors"
+                            >
+                              Revert
+                            </button>
+                          )
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
       )}
 
       {/* Preview Modal */}
-      {previewRevision && (
+      {previewItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/60" onClick={() => setPreviewId(null)} />
           <div className="relative bg-gray-900 border border-gray-700 rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden flex flex-col">
@@ -221,10 +300,10 @@ export default function HistoryClient({
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-700">
               <div>
                 <h3 className="text-white font-semibold">
-                  Revision Preview
+                  {previewItem.type === "revision" ? "Revision Preview" : previewItem.type === "created" ? "Creation Details" : "Deletion Details"}
                 </h3>
                 <p className="text-gray-400 text-xs mt-0.5">
-                  {previewRevision.slug} — {formatDate(previewRevision.created_at)}
+                  {previewItem.slug} — {formatDate(previewItem.created_at)}
                 </p>
               </div>
               <button
@@ -239,28 +318,79 @@ export default function HistoryClient({
 
             {/* Modal Body */}
             <div className="overflow-y-auto p-6 space-y-6">
-              {/* SEO Fields snapshot */}
-              <div>
-                <h4 className="text-sm font-medium text-gray-300 mb-3">SEO Fields (at time of save)</h4>
-                <div className="space-y-2">
-                  {renderField("Meta Title", previewRevision.page_data.meta_title)}
-                  {renderField("Meta Description", previewRevision.page_data.meta_description)}
-                  {renderField("Canonical URL", previewRevision.page_data.canonical_url)}
-                  {renderField("Status", previewRevision.page_data.status)}
-                </div>
-              </div>
+              {previewItem.revision ? (
+                <>
+                  {/* SEO Fields snapshot */}
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-300 mb-3">SEO Fields (at time of save)</h4>
+                    <div className="space-y-2">
+                      {renderField("Meta Title", previewItem.revision.page_data.meta_title)}
+                      {renderField("Meta Description", previewItem.revision.page_data.meta_description)}
+                      {renderField("Canonical URL", previewItem.revision.page_data.canonical_url)}
+                      {renderField("Status", previewItem.revision.page_data.status)}
+                    </div>
+                  </div>
 
-              {/* Content snapshot */}
-              <div>
-                <h4 className="text-sm font-medium text-gray-300 mb-3">
-                  Content ({previewRevision.block_type.replace("structured_", "").replace("_", " ")})
-                </h4>
-                <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4">
-                  <pre className="text-xs text-gray-300 whitespace-pre-wrap break-all font-mono">
-                    {JSON.stringify(previewRevision.content_data, null, 2)}
-                  </pre>
-                </div>
-              </div>
+                  {/* Content snapshot */}
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-300 mb-3">
+                      Content ({previewItem.revision.block_type.replace("structured_", "").replace("_", " ")})
+                    </h4>
+                    <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4">
+                      <pre className="text-xs text-gray-300 whitespace-pre-wrap break-all font-mono">
+                        {JSON.stringify(previewItem.revision.content_data, null, 2)}
+                      </pre>
+                    </div>
+                  </div>
+                </>
+              ) : previewItem.activity ? (
+                <>
+                  {/* Activity entry preview (creation or deletion) */}
+                  <div>
+                    <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium mb-4 ${
+                      previewItem.type === "created"
+                        ? "bg-green-500/10 text-green-400 border border-green-500/20"
+                        : "bg-red-500/10 text-red-400 border border-red-500/20"
+                    }`}>
+                      {previewItem.type === "created" ? "Page Created" : "Page Deleted"}
+                    </div>
+
+                    <h4 className="text-sm font-medium text-gray-300 mb-3">Details</h4>
+                    <div className="space-y-2">
+                      {renderField("Action", previewItem.activity.action)}
+                      {renderField("By", previewItem.activity.user_email)}
+                      {renderField("Date", formatDate(previewItem.activity.created_at))}
+                    </div>
+                  </div>
+
+                  {/* Show page data if available in details */}
+                  {previewItem.activity.details.page_data && (
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-300 mb-3">SEO Fields</h4>
+                      <div className="space-y-2">
+                        {renderField("Meta Title", (previewItem.activity.details.page_data as Record<string, unknown>).meta_title)}
+                        {renderField("Meta Description", (previewItem.activity.details.page_data as Record<string, unknown>).meta_description)}
+                        {renderField("Canonical URL", (previewItem.activity.details.page_data as Record<string, unknown>).canonical_url)}
+                        {renderField("Status", (previewItem.activity.details.page_data as Record<string, unknown>).status)}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Show content data if available */}
+                  {previewItem.activity.details.content_data && (
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-300 mb-3">
+                        Content ({((previewItem.activity.details.block_type as string) || "").replace("structured_", "").replace("_", " ")})
+                      </h4>
+                      <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4">
+                        <pre className="text-xs text-gray-300 whitespace-pre-wrap break-all font-mono">
+                          {JSON.stringify(previewItem.activity.details.content_data, null, 2)}
+                        </pre>
+                      </div>
+                    </div>
+                  )}
+                </>
+              ) : null}
             </div>
 
             {/* Modal Footer */}
@@ -271,20 +401,22 @@ export default function HistoryClient({
               >
                 Close
               </button>
-              {previewRevision.reverted_at ? (
-                <span className="px-4 py-2 text-sm font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
-                  Reverted ✓
-                </span>
-              ) : (
-                <button
-                  onClick={() => {
-                    setConfirmRevertId(previewRevision.id);
-                    setPreviewId(null);
-                  }}
-                  className="px-4 py-2 text-sm font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-colors"
-                >
-                  Revert to This Version
-                </button>
+              {previewItem.revision && (
+                previewItem.revision.reverted_at ? (
+                  <span className="px-4 py-2 text-sm font-medium text-green-400 border border-green-500/30 rounded-lg bg-green-500/10">
+                    Reverted
+                  </span>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setConfirmRevertId(previewItem.id);
+                      setPreviewId(null);
+                    }}
+                    className="px-4 py-2 text-sm font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-colors"
+                  >
+                    Revert to This Version
+                  </button>
+                )
               )}
             </div>
           </div>
