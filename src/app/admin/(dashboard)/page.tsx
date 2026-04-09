@@ -7,7 +7,7 @@ export default async function AdminDashboard() {
   const supabase = await createServerSupabaseClient();
 
   // Fetch stats
-  const [pagesRes, pendingRes, activityRes] = await Promise.all([
+  const [pagesRes, pendingRes, activityRes, myChangesRes] = await Promise.all([
     supabase.from("pages").select("id", { count: "exact", head: true }),
     supabase
       .from("pending_changes")
@@ -18,11 +18,20 @@ export default async function AdminDashboard() {
       .select("*")
       .order("created_at", { ascending: false })
       .limit(10),
+    // Fetch this user's pending submissions count
+    user
+      ? supabase
+          .from("pending_changes")
+          .select("id, status", { count: "exact" })
+          .eq("submitted_by", user.email)
+          .eq("status", "pending")
+      : Promise.resolve({ count: 0, data: [] }),
   ]);
 
   const totalPages = pagesRes.count ?? 0;
   const pendingCount = pendingRes.count ?? 0;
   const recentActivity = activityRes.data ?? [];
+  const myPendingCount = myChangesRes.count ?? 0;
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -32,7 +41,7 @@ export default async function AdminDashboard() {
         <p className="text-gray-400 mt-1">Welcome back, {user?.name}</p>
       </div>
 
-      {/* Pending alert */}
+      {/* Pending alert — admin */}
       {pendingCount > 0 && user?.role === "admin" && (
         <Link
           href="/admin/pending"
@@ -52,15 +61,44 @@ export default async function AdminDashboard() {
         </Link>
       )}
 
+      {/* Pending alert — editor */}
+      {user?.role === "editor" && myPendingCount > 0 && (
+        <Link
+          href="/admin/my-changes"
+          className="block mb-6 bg-blue-500/10 border border-blue-500/30 rounded-xl p-4 hover:bg-blue-500/20 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <svg className="w-6 h-6 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <p className="text-blue-300 font-semibold">
+                {myPendingCount} change{myPendingCount !== 1 ? "s" : ""} awaiting admin approval
+              </p>
+              <p className="text-blue-400/70 text-sm">Click to view your submissions</p>
+            </div>
+          </div>
+        </Link>
+      )}
+
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         <StatCard label="Total Pages" value={totalPages} href="/admin/pages" />
-        <StatCard
-          label="Pending Changes"
-          value={pendingCount}
-          href="/admin/pending"
-          highlight={pendingCount > 0}
-        />
+        {user?.role === "admin" ? (
+          <StatCard
+            label="Pending Changes"
+            value={pendingCount}
+            href="/admin/pending"
+            highlight={pendingCount > 0}
+          />
+        ) : (
+          <StatCard
+            label="My Pending"
+            value={myPendingCount}
+            href="/admin/my-changes"
+            highlight={myPendingCount > 0}
+          />
+        )}
         <StatCard label="Recent Activity" value={recentActivity.length} href="#activity" />
       </div>
 
@@ -73,6 +111,9 @@ export default async function AdminDashboard() {
         <QuickLink href="/admin/canonicals" label="Canonical Audit" description="Review canonical URLs" />
         {user?.role === "admin" && (
           <QuickLink href="/admin/pending" label="Review Changes" description="Approve or reject" />
+        )}
+        {user?.role === "editor" && (
+          <QuickLink href="/admin/my-changes" label="My Changes" description="Track your submissions" />
         )}
       </div>
 
