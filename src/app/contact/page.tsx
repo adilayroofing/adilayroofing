@@ -57,54 +57,26 @@ export default async function ContactPage() {
       <BreadcrumbJsonLd items={[{ name: "Contact", path: "/contact" }]} />
       {/* ── Hero ── */}
       <section className="bg-brand-dark">
-        <div className="section-padding">
+        <div className="py-8 md:py-12 px-4">
           <div className="container-narrow mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
               {heroTitle}
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               {heroDescription}
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Our Office ── */}
-      <section className="bg-white">
-        <div className="section-padding pb-0">
-          <div className="container-wide mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-              <div className="rounded-sm overflow-hidden shadow-lg">
-                <img
-                  src="/images/team-office.jpg"
-                  alt="Adilay Roofing team at the Philadelphia office ready to help with your roofing project"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
-                  {officeHeading}
-                </h2>
-                <p className="text-brand-gray leading-relaxed">
-                  {officeDescription}
-                </p>
-                <p className="text-brand-gray leading-relaxed mt-4">
-                  {officeDescription2}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Two-Column Layout: Form + Contact Info ── */}
       <section className="bg-brand-light">
-        <div className="section-padding">
+        <div className="py-6 px-4 md:py-24">
           <div className="container-wide mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-14">
               {/* Left Column — Contact Form (60%) */}
               <div className="lg:col-span-3">
-                <div className="bg-white border border-brand-border rounded-sm p-6 md:p-10">
+                <div className="bg-white border border-brand-border rounded-sm p-4 md:p-10">
                   <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-2">
                     {formHeading}
                   </h2>
@@ -273,6 +245,34 @@ export default async function ContactPage() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Our Office ── */}
+      <section className="bg-white">
+        <div className="section-padding pb-0">
+          <div className="container-wide mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+              <div className="rounded-sm overflow-hidden shadow-lg">
+                <img
+                  src="/images/team-office.jpg"
+                  alt="Adilay Roofing team at the Philadelphia office ready to help with your roofing project"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
+                  {officeHeading}
+                </h2>
+                <p className="text-brand-gray leading-relaxed">
+                  {officeDescription}
+                </p>
+                <p className="text-brand-gray leading-relaxed mt-4">
+                  {officeDescription2}
+                </p>
               </div>
             </div>
           </div>
