@@ -75,7 +75,7 @@ export default function CanonicalsClient({
 
     if (userRole === "editor") {
       const page = pages.find((p) => p.id === pageId);
-      await supabase.from("pending_changes").insert({
+      const { data: pending } = await supabase.from("pending_changes").insert({
         table_name: "pages",
         record_id: pageId,
         change_type: "update",
@@ -83,7 +83,18 @@ export default function CanonicalsClient({
         new_value: { canonical_url: editValue },
         submitted_by: userEmail,
         status: "pending",
-      });
+      }).select("id").single();
+
+      // Send push notification (fire-and-forget)
+      fetch("/api/admin/notify-pending", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pageName: page?.slug || "unknown page",
+          changeType: "canonical change",
+          pendingId: pending?.id,
+        }),
+      }).catch(() => {});
     } else {
       await supabase
         .from("pages")

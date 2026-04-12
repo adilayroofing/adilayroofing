@@ -59,7 +59,7 @@ export default function LinksManagerClient({
 
     if (userRole === "editor") {
       // Submit as pending change
-      await supabase.from("pending_changes").insert({
+      const { data: pending } = await supabase.from("pending_changes").insert({
         table_name: "internal_links",
         record_id: "00000000-0000-0000-0000-000000000000",
         change_type: "create",
@@ -72,7 +72,18 @@ export default function LinksManagerClient({
         },
         submitted_by: userEmail,
         status: "pending",
-      });
+      }).select("id").single();
+
+      // Send push notification (fire-and-forget)
+      fetch("/api/admin/notify-pending", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pageName: `${newAnchor} (internal link)`,
+          changeType: "link added",
+          pendingId: pending?.id,
+        }),
+      }).catch(() => {});
     } else {
       await supabase.from("internal_links").insert({
         source_page_id: newSource,
@@ -102,7 +113,7 @@ export default function LinksManagerClient({
 
     if (userRole === "editor") {
       const link = links.find((l) => l.id === linkId);
-      await supabase.from("pending_changes").insert({
+      const { data: pending } = await supabase.from("pending_changes").insert({
         table_name: "internal_links",
         record_id: linkId,
         change_type: "update",
@@ -110,7 +121,18 @@ export default function LinksManagerClient({
         new_value: { anchor_text: editAnchor },
         submitted_by: userEmail,
         status: "pending",
-      });
+      }).select("id").single();
+
+      // Send push notification (fire-and-forget)
+      fetch("/api/admin/notify-pending", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pageName: `${editAnchor} (internal link)`,
+          changeType: "link edit",
+          pendingId: pending?.id,
+        }),
+      }).catch(() => {});
     } else {
       await supabase
         .from("internal_links")

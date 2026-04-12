@@ -858,7 +858,7 @@ export default function PageEditorClient({
 
       if (asPending) {
         // Editor submits for review
-        const { error } = await supabase.from("pending_changes").insert({
+        const { data: pending, error } = await supabase.from("pending_changes").insert({
           table_name: "pages",
           record_id: page?.id || "00000000-0000-0000-0000-000000000000",
           change_type: isNew ? "create" : "update",
@@ -866,8 +866,19 @@ export default function PageEditorClient({
           new_value: { ...pageData, content_block_type: contentPayload.blockType, content_data: contentPayload.data },
           submitted_by: userEmail,
           status: "pending",
-        });
+        }).select("id").single();
         if (error) throw error;
+
+        // Send push notification (fire-and-forget)
+        fetch("/api/admin/notify-pending", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            pageName: slug,
+            changeType: isNew ? "new page" : "content edit",
+            pendingId: pending?.id,
+          }),
+        }).catch(() => {});
 
         // Log activity
         await supabase.from("activity_log").insert({
