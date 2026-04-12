@@ -9,8 +9,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Fire-and-forget — don't block response on notification delivery
-    notifyPendingApproval({ pageName, changeType, pendingId });
+    await notifyPendingApproval({ pageName, changeType, pendingId });
 
     return NextResponse.json({ ok: true });
   } catch {
