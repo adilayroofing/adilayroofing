@@ -43,7 +43,7 @@ export async function notifyPendingApproval({
     const res = await fetch(url, {
       method: "POST",
       headers: {
-        Title: "🔔 New Pending Approval",
+        Title: "New Pending Approval",
         Click: clickUrl,
         Priority: "high",
         Tags: "white_check_mark",
