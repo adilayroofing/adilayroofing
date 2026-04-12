@@ -24,6 +24,8 @@ export async function notifyPendingApproval({
   changeType: ChangeType;
   pendingId?: string;
 }) {
+  console.log("[notify] NTFY_TOPIC:", NTFY_TOPIC ? "set" : "NOT SET");
+
   if (!NTFY_TOPIC) {
     console.warn("[notify] NTFY_TOPIC not set — skipping push notification");
     return;
@@ -33,8 +35,12 @@ export async function notifyPendingApproval({
     ? `https://adilayroofing.com/admin/pending?id=${pendingId}`
     : `https://adilayroofing.com/admin/pending`;
 
+  const url = `https://ntfy.sh/${NTFY_TOPIC}`;
+  const message = `${changeType} on "${pageName}" — Tap to review`;
+  console.log("[notify] Sending to:", url, "Message:", message);
+
   try {
-    await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         Title: "🔔 New Pending Approval",
@@ -42,8 +48,9 @@ export async function notifyPendingApproval({
         Priority: "high",
         Tags: "white_check_mark",
       },
-      body: `${changeType} on "${pageName}" — Tap to review`,
+      body: message,
     });
+    console.log("[notify] ntfy response status:", res.status);
   } catch (err) {
     console.error("[notify] Failed to send push notification:", err);
   }
