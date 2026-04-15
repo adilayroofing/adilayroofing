@@ -168,7 +168,7 @@ export default async function Home() {
   // Merge CMS data with hardcoded fallback
   const heroHeadlineWhite = (cmsData?.heroHeadlineWhite as string) || "Philadelphia's Trusted";
   const heroHeadlineRed = (cmsData?.heroHeadlineRed as string) || "Roofing Contractor";
-  const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality test Craftsmanship. Proven Results.";
+  const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
   const heroDescription = (cmsData?.heroDescription as string) ||
     "Looking for a reliable roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated on Google. Get a free estimate today.";
 
@@ -242,7 +242,7 @@ export default async function Home() {
 
           <ScrollReveal delay={400} duration={600} distance={20}>
             <p className="text-xl md:text-2xl font-light text-white/90 mb-4 tracking-wide">
-              {heroSubheadline} test
+              {heroSubheadline}
             </p>
           </ScrollReveal>
 
