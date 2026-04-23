@@ -1099,14 +1099,14 @@ export const services: Service[] = [
     slug: "gutter-cleaning",
     title: "Gutter Cleaning",
     shortTitle: "Gutter Cleaning",
-    tagline: "Professional Gutter Cleaning Services in Philadelphia PA",
+    tagline: "Gutter Cleaning Philadelphia PA — Affordable, Same-Week Scheduling",
     category: "gutters",
     description:
-      "Expert gutter cleaning in Philadelphia. We remove leaves, debris, and blockages to keep your gutters flowing and protect your foundation from water damage.",
+      "Gutter cleaning Philadelphia PA homeowners trust. Hand debris removal, downspout flushing, inspection, and before/after photos. Affordable pricing, licensed PA184779.",
     icon: "",
     image: "/images/gutters-philadelphia.png",
     heroDescription:
-      "Clogged gutters are one of the most common — and most preventable — causes of water damage to Philadelphia homes. When leaves, twigs, shingle granules, and other debris accumulate in your gutters, water cannot flow to your downspouts and instead overflows onto your siding, pools around your foundation, and can seep into your basement. At Adilay Roofing, licensed under PA184779, we provide professional gutter cleaning services throughout Philadelphia and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. Our thorough gutter cleaning process includes removing all debris from your gutters by hand, flushing the gutters and downspouts with water to ensure clear flow, checking for proper pitch and drainage, and inspecting your gutters for damage, loose hangers, or deteriorating seals that could lead to problems. We recommend cleaning your gutters at least twice a year — once in late spring after pollen and seed pods have fallen, and once in late fall after the leaves have dropped. If you have overhanging trees, more frequent cleaning may be necessary to prevent clogs. Regular gutter cleaning is one of the most cost-effective maintenance tasks you can do to protect your home from expensive water damage, foundation problems, and landscape erosion. Contact Adilay Roofing today to schedule a professional gutter cleaning in Philadelphia — affordable pricing, thorough service, and peace of mind.",
+      "Clogged gutters are one of the most common — and most preventable — causes of water damage to Philadelphia homes. When leaves, twigs, shingle granules, and other debris build up, water can't reach your downspouts and instead overflows onto your siding, pools around your foundation, and eventually seeps into your basement. Adilay Roofing provides professional gutter cleaning Philadelphia PA homeowners rely on, licensed under PA184779 and backed by 20+ years on local roofs. We serve Philadelphia and the surrounding counties — Bucks, Montgomery, Delaware, and Chester — with same-week scheduling for most appointments and affordable, transparent pricing. Our gutter cleaning service in Philadelphia is thorough from start to finish: we remove all debris from your gutters by hand (not leaf blowers that just spread the mess across your yard), flush every downspout with water to confirm clear flow, check the pitch and drainage of every run, and inspect your gutter system for loose hangers, damaged seams, sagging, or deteriorating seals — all documented with before-and-after photos we leave with you. Most Philadelphia row homes, twin homes, and Colonials need their gutters cleaned at least twice a year: once in late spring after pollen and seed pods drop, and once in late fall after the leaves come down. Homes in Manayunk, Roxborough, Chestnut Hill, Mount Airy, and the Main Line with mature tree coverage often need 3–4 visits per year to stay ahead of clogs. Regular professional gutter cleaning in Philadelphia is one of the most cost-effective things you can do for your home — it prevents foundation cracks, basement flooding, siding rot, ice dams in winter, and landscape erosion, and it extends the lifespan of the gutter system itself. Call Adilay Roofing today for affordable gutter cleaning Philadelphia PA crews can schedule this week — written quote upfront, no surprises, and before-and-after photos with every job.",
     benefits: [
       "Prevent foundation damage and basement flooding",
       "Protect siding and landscaping from overflow",
@@ -1447,6 +1447,266 @@ export const services: Service[] = [
         question: "What happens if the decking is damaged under the old shingles?",
         answer:
           "During the tear-off process, we inspect every section of decking. If we find damaged, rotted, or soft boards, we replace them before installing the new underlayment and shingles. This ensures your new shingle roof has a solid, secure foundation. We will notify you of any additional costs before proceeding.",
+      },
+    ],
+  },
+  {
+    slug: "storm-damage-roof-repair",
+    title: "Storm Damage Roof Repair",
+    shortTitle: "Storm Damage",
+    tagline: "Storm Damage Roof Repair Philadelphia PA — Insurance Claim Experts",
+    category: "roofing",
+    description:
+      "Storm damage roof repair in Philadelphia PA. Wind, hail, and tree damage — we document, repair, and help with insurance claims. Free inspections, same-day response.",
+    icon: "",
+    image: "/images/roof-repair-philadelphia.jpg",
+    heroDescription:
+      "Severe weather hits Philadelphia hard — nor'easters, summer thunderstorms, high-wind events, hail, and the occasional hurricane remnant all leave their mark on local roofs. If your home has taken a beating, Adilay Roofing provides fast, honest storm damage roof repair Philadelphia PA homeowners trust, backed by a Pennsylvania Home Improvement Contractor license (PA184779) and 20+ years on local roofs. We respond same-day for urgent storm damage calls across Philadelphia and the surrounding counties — from torn-off shingles in Northeast Philadelphia and wind-lifted flashing in Manayunk, to hail-bruised shingles in the Main Line suburbs and fallen-tree damage in South Philly. Our licensed crew arrives with tarps, ladders, and a camera, and the first thing we do is stop the immediate leak and document everything your insurance carrier will need: close-up photos of damaged shingles, ridge caps, flashing, fascia, and any interior water staining, plus a written scope of damage. That documentation is often the difference between a fully paid claim and a denied one. We know how insurance adjusters work, we know what they look for, and we'll meet them on-site if that helps the claim move faster. Once the claim is approved, we handle the full repair — from new shingles, underlayment, and flashing to structural decking replacement and gutter reattachment. Storm damage Philadelphia roofs suffer is rarely just cosmetic; even small cracks in shingles or lifted nail heads let water in over time and cause mold, rotted decking, and interior ceiling damage. Don't wait for the next storm to make it worse. Call Adilay Roofing today for a free storm damage roof inspection in Philadelphia — no obligation, written estimate, and honest guidance on whether to file an insurance claim.",
+    benefits: [
+      "Same-day response for active storm damage in Philadelphia",
+      "Free storm damage roof inspection with written report",
+      "Full insurance claim documentation — photos, scope, measurements",
+      "We meet with your insurance adjuster on-site if needed",
+      "Emergency tarping to stop water damage immediately",
+      "Licensed and insured Pennsylvania contractor (PA184779)",
+      "Experience with all major insurance carriers in PA",
+      "Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties",
+    ],
+    features: [
+      "Wind-damage shingle and ridge cap replacement",
+      "Hail-damage assessment and bruised-shingle repair",
+      "Fallen-tree damage repair — including decking and framing",
+      "Emergency tarping and active-leak stop",
+      "Flashing, step flashing, and chimney repair",
+      "Gutter and downspout storm damage repair",
+      "Interior water damage documentation for claim",
+      "Full written estimate for insurance submission",
+    ],
+    faq: [
+      {
+        question: "Does homeowners insurance cover storm damage roof repair in Philadelphia?",
+        answer:
+          "In most cases, yes. Standard Pennsylvania homeowners policies cover sudden, accidental storm damage — wind, hail, fallen trees, and debris. They generally do not cover wear-and-tear or poor maintenance. We provide the photos, documentation, and written scope of damage your carrier needs, and we can meet the adjuster on-site to make sure nothing is missed.",
+      },
+      {
+        question: "How soon can you respond to storm damage in Philadelphia?",
+        answer:
+          "For active leaks and major storm damage, we offer same-day response across Philadelphia. If water is coming through the ceiling or shingles are scattered across your yard, call (888) 823-4766 — we'll get a crew out with tarps to stop further damage and begin the inspection.",
+      },
+      {
+        question: "Should I file an insurance claim for roof damage?",
+        answer:
+          "It depends. If the damage is clearly from a named storm event and the repair cost exceeds your deductible, filing a claim usually makes sense. For smaller repairs under your deductible, paying out of pocket often avoids a premium increase. During your free inspection we'll give you an honest opinion — we don't push homeowners to file claims that aren't worth it.",
+      },
+      {
+        question: "What kinds of storm damage do roofs in Philadelphia typically suffer?",
+        answer:
+          "Philadelphia roofs see torn or missing shingles from high winds, hail-bruised shingles that lose their granules, lifted or damaged flashing around chimneys and vents, clogged or torn-off gutters from debris, and fallen-tree impact damage. Flat EPDM roofs common on row homes can also develop punctures and torn seams from windblown debris.",
+      },
+      {
+        question: "Can hidden storm damage cause problems later?",
+        answer:
+          "Absolutely. Small cracks, lifted shingles, and compromised flashing may look minor but let water infiltrate over weeks and months, leading to mold, rotted roof decking, and interior ceiling damage. A professional storm damage roof inspection catches these issues early — often before your insurance claim window closes.",
+      },
+      {
+        question: "Are your storm damage inspections really free?",
+        answer:
+          "Yes. Every storm damage roof inspection in Philadelphia is 100% free, with no obligation. You get a written report with photos, a clear explanation of what we found, and honest guidance on whether to file a claim or proceed with a simple repair.",
+      },
+    ],
+  },
+  {
+    slug: "roof-leak-repair",
+    title: "Roof Leak Repair",
+    shortTitle: "Leak Repair",
+    tagline: "Roof Leak Repair Philadelphia — Same-Day Leak Detection & Fix",
+    category: "roofing",
+    description:
+      "Roof leak repair in Philadelphia. Same-day leak detection, tracing, and fix for active roof leaks. Licensed PA184779, 20+ years, free inspection & written quote.",
+    icon: "",
+    image: "/images/roof-repair-philadelphia.jpg",
+    heroDescription:
+      "A roof leak is one of those problems that almost never gets better on its own — left alone, a small drip turns into warped drywall, stained ceilings, mold in the attic, and rotted decking that costs thousands more to repair than it would have a few months earlier. Adilay Roofing specializes in fast, accurate roof leak repair Philadelphia homeowners can count on, with 20+ years diagnosing and fixing leaks across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, all backed by a Pennsylvania contractor license (PA184779). Roof leaks are often misdiagnosed — the water stain on your ceiling is rarely directly under the leak itself, because water follows the roof deck and runs along rafters before dripping down. Our leak detection process starts with a full walk of your roof: we check every flashing, pipe boot, chimney joint, valley, nail pop, and suspect shingle, then go into the attic to trace the water path back to its actual source. We fix leaks in all common Philadelphia roof types: asphalt shingle, flat EPDM rubber (typical on row homes in Fishtown, Kensington, and South Philly), modified bitumen, and metal roofing. Most roof leak repairs in Philadelphia are completed in a single visit — flashing replaced, new pipe boot installed, shingles repaired or replaced, sealant reapplied — and come with a workmanship guarantee. For active leaks dripping into your home right now, we offer same-day response: we'll get a crew out, stop the water, and schedule the permanent fix. Every roof leak repair in Philadelphia comes with a free inspection and a written quote — no high-pressure sales, no hidden fees, just honest answers about what's wrong and what it'll cost to fix. Call (888) 823-4766 and get your roof leak diagnosed by a licensed Philadelphia roofer today.",
+    benefits: [
+      "Same-day response for active roof leaks in Philadelphia",
+      "Free roof leak inspection and written estimate",
+      "Accurate leak tracing — we find the real source, not just the stain",
+      "Interior and exterior inspection (attic + roof)",
+      "Permanent repair, not a temporary patch",
+      "Licensed and insured Philadelphia contractor (PA184779)",
+      "Workmanship guarantee on every roof leak repair",
+      "All roof types — shingle, flat rubber (EPDM), metal",
+    ],
+    features: [
+      "Full roof surface and flashing inspection",
+      "Attic inspection to trace water path",
+      "Pipe boot and vent collar replacement",
+      "Chimney and step-flashing repair",
+      "Valley and ridge leak repair",
+      "Shingle replacement and resealing",
+      "Flat-roof (EPDM) seam and puncture repair",
+      "Post-repair water test when needed",
+    ],
+    faq: [
+      {
+        question: "How quickly can you fix a roof leak in Philadelphia?",
+        answer:
+          "For active leaks, we offer same-day response across Philadelphia. Most roof leak repairs are completed in a single visit — typically 2–4 hours depending on the complexity and location of the leak. Call (888) 823-4766 and we'll get a crew to your home today.",
+      },
+      {
+        question: "How do you find the source of a roof leak?",
+        answer:
+          "Water rarely drips straight down — it follows the roof deck and rafters before showing up on your ceiling. Our leak detection starts on the roof (checking flashing, pipe boots, valleys, nail pops, and shingles), then moves into the attic to trace the water path back to the actual entry point. Only then do we know what to fix.",
+      },
+      {
+        question: "How much does roof leak repair cost in Philadelphia?",
+        answer:
+          "Most single-source roof leak repairs in Philadelphia range from $250 to $900 depending on location, accessibility, and what needs to be replaced — flashing, a pipe boot, a few shingles, or a section of EPDM seam. We provide a written quote before any work begins, and repairs under $150 are rare but possible for very simple fixes.",
+      },
+      {
+        question: "Is it worth repairing a leak, or should I just replace the roof?",
+        answer:
+          "If your roof is under 15 years old and the leak is localized, repair is almost always the right answer. For roofs 20+ years old with multiple leak sources, or widespread shingle granule loss, replacement often makes more sense than chasing leak after leak. Our free inspection gives you an honest, no-pressure recommendation.",
+      },
+      {
+        question: "Can a small roof leak really cause serious damage?",
+        answer:
+          "Yes — faster than most homeowners realize. Within weeks, a slow leak can soak insulation, rot decking, grow mold inside the attic, and warp drywall. Fixing the leak early saves thousands in interior repairs and prevents health issues from mold exposure.",
+      },
+      {
+        question: "Do you handle roof leak repair for flat roofs on Philadelphia row homes?",
+        answer:
+          "Yes. Flat EPDM rubber and modified bitumen roofs are extremely common on Philadelphia row homes — Fishtown, Kensington, South Philly, Point Breeze — and we repair them routinely. Most flat-roof leaks come from seam failures, punctures, or drain flashing, all of which we fix same-day in most cases.",
+      },
+    ],
+  },
+  {
+    slug: "roof-inspection",
+    title: "Roof Inspection",
+    shortTitle: "Inspection",
+    tagline: "Free Roof Inspection Philadelphia — Pre-Purchase, Insurance & Annual",
+    category: "roofing",
+    description:
+      "Free roof inspection in Philadelphia. Pre-purchase, post-storm, annual maintenance — licensed inspector, written report with photos. Licensed PA184779.",
+    icon: "",
+    image: "/images/roof-repair-philadelphia.jpg",
+    heroDescription:
+      "A professional roof inspection is the single most valuable thing a Philadelphia homeowner can do before the next storm season, before signing on a new home, or before filing an insurance claim. Adilay Roofing offers free roof inspection Philadelphia homeowners can rely on — performed by a licensed Pennsylvania contractor (PA184779) with 20+ years on local roofs, and documented with a written report, photos, and honest recommendations. Most of the expensive roof problems we fix in Philadelphia started as tiny, cheap-to-fix issues that went unnoticed for years — a cracked pipe boot, a loose ridge cap, a hairline flashing gap, granule loss from aging shingles. A thorough roof inspection catches those problems before they turn into leaks, mold, and structural damage. We offer several types of roof inspection for Philadelphia properties: (1) Pre-purchase roof inspection — if you're buying a home in Philadelphia, Bucks, Montgomery, Delaware, or Chester County, we inspect the roof before you close and give you a written report you can use to negotiate or walk away. (2) Post-storm inspection — after a major wind, hail, or tree-damage event, we document everything for your insurance claim. (3) Annual or biannual maintenance inspection — catches small issues before they become emergencies. (4) Pre-sale inspection — selling your home? A written roof report from a licensed contractor reassures buyers and speeds up the closing process. Every roof inspection in Philadelphia includes a full roof walk, an attic inspection for water staining and ventilation issues, flashing and chimney check, gutter and drainage review, and a written report with photos and prioritized recommendations. Most inspections take 45–75 minutes and come with zero obligation. Call (888) 823-4766 or fill out the form for a free roof inspection today.",
+    benefits: [
+      "Free roof inspection with written report — no obligation",
+      "Licensed Pennsylvania contractor inspector (PA184779)",
+      "Photos documenting every finding",
+      "Pre-purchase, post-storm, or annual inspection",
+      "Attic inspection included — not just the roof surface",
+      "Insurance-claim-ready documentation when needed",
+      "Serving Philadelphia, Bucks, Montgomery, Delaware, Chester",
+      "Honest recommendations — no upsells, no scare tactics",
+    ],
+    features: [
+      "Full roof surface walk and hands-on inspection",
+      "Attic inspection — ventilation, insulation, water stains",
+      "Flashing, chimney, and penetration check",
+      "Gutter, downspout, and drainage assessment",
+      "Shingle condition, granule loss, and wear analysis",
+      "Written report with photos delivered same-day",
+      "Prioritized recommendation list (critical / soon / optional)",
+      "Storm or hail damage documentation when relevant",
+    ],
+    faq: [
+      {
+        question: "Is your roof inspection really free?",
+        answer:
+          "Yes. Every residential roof inspection in Philadelphia is 100% free, with no obligation. You get a written report with photos and honest recommendations — whether the findings lead to work for us or not. We believe an informed homeowner is the best long-term customer.",
+      },
+      {
+        question: "How long does a roof inspection take?",
+        answer:
+          "Most Philadelphia residential roof inspections take 45–75 minutes. Larger homes, steep roofs, or complex architectural roofs may take longer. We walk the full roof surface, inspect the attic, check the flashings and gutters, and document everything with photos.",
+      },
+      {
+        question: "Do I need a roof inspection before buying a home in Philadelphia?",
+        answer:
+          "Strongly recommended. A standard home inspection usually looks at the roof from the ground or from a ladder — a licensed roofing contractor actually walks the roof and checks the attic. Roof replacement in Philadelphia runs $8,000–$25,000, so finding problems before you close saves real money and gives you leverage in negotiation.",
+      },
+      {
+        question: "When should I get a post-storm roof inspection?",
+        answer:
+          "As soon as possible after a significant wind, hail, or tree-damage event — ideally within 60 days, while the damage is fresh and the storm is documented with local weather records. Most Pennsylvania insurance policies have strict time limits for filing storm-damage claims. A free roof inspection gives you the documentation you need before that window closes.",
+      },
+      {
+        question: "What do you look for during a roof inspection?",
+        answer:
+          "We check shingle condition and granule loss, flashing around chimneys and vents, pipe boots, ridge caps, valleys, gutter and downspout performance, drip edge, attic ventilation, insulation, signs of water staining or mold, and any visible decking damage. We document everything with photos and summarize findings in a written report.",
+      },
+      {
+        question: "Do you do roof inspections for commercial buildings in Philadelphia?",
+        answer:
+          "Yes. We inspect flat (EPDM, TPO, modified bitumen) and low-slope commercial roofs across Philadelphia — warehouses, retail, small office buildings, and multi-family properties. Commercial inspections follow the same thorough process and come with a written report you can share with property managers or insurance carriers.",
+      },
+    ],
+  },
+  {
+    slug: "soffit-repair",
+    title: "Soffit Repair",
+    shortTitle: "Soffit Repair",
+    tagline: "Soffit Repair Philadelphia — Rotted Soffit & Fascia Specialists",
+    category: "roofing",
+    description:
+      "Soffit repair and replacement in Philadelphia PA. Rotted, damaged, or animal-chewed soffit fixed fast. Fascia and ventilation included. Licensed PA184779.",
+    icon: "",
+    image: "/images/roof-repair-philadelphia.jpg",
+    heroDescription:
+      "Your soffit — the underside of your roof's overhang — is one of the most commonly ignored parts of a Philadelphia home, and also one of the first to show signs of trouble. Sagging, peeling paint, dark water stains, chewed-out holes from squirrels or birds, or visible rot along the fascia line all point to soffit damage that needs professional attention. Adilay Roofing provides expert soffit repair Philadelphia homeowners trust, backed by 20+ years of experience and a Pennsylvania contractor license (PA184779). Soffit problems almost always stem from one of three root causes: (1) water infiltration from clogged gutters or damaged flashing soaking the soffit from above; (2) inadequate attic ventilation trapping moisture against the underside of the roof; or (3) animal damage — squirrels, raccoons, and birds love to chew through compromised soffit to nest in your attic. We fix all three. Our soffit repair process starts with a full diagnosis: we identify why the soffit failed, not just where. Then we replace the damaged soffit sections (vinyl, aluminum, or wood — whatever matches your home), repair or replace any rotted fascia board behind it, fix the underlying cause (clean the gutters, correct the flashing, add proper ventilation), and seal the entry point against future animal intrusion. Philadelphia row homes, twin homes, and Colonials across Fishtown, Manayunk, Roxborough, South Philly, and Northeast Philadelphia all have their own soffit styles, and we match materials and profiles to preserve curb appeal. Left alone, rotted soffit spreads fast — it pulls moisture into the attic, ruins insulation, compromises rafters, and invites pests deep into your home. Don't wait. Call Adilay Roofing for a free soffit repair inspection in Philadelphia — we'll diagnose the cause, quote the fix in writing, and get your soffit restored to structural, weatherproof condition.",
+    benefits: [
+      "Free soffit repair inspection in Philadelphia",
+      "Root-cause diagnosis — not just surface patching",
+      "Rotted soffit and fascia replacement",
+      "Animal-damage repair with entry-point sealing",
+      "Proper attic ventilation correction",
+      "Licensed and insured Philadelphia contractor (PA184779)",
+      "Vinyl, aluminum, and wood soffit — color and profile matched",
+      "Workmanship guarantee on every soffit repair",
+    ],
+    features: [
+      "Soffit panel replacement (vinyl, aluminum, wood)",
+      "Rotted fascia board repair and replacement",
+      "Drip edge and gutter-edge flashing repair",
+      "Animal entry-point sealing (squirrel, bird, raccoon)",
+      "Vented soffit installation for proper attic airflow",
+      "Paint and finish matching to existing exterior",
+      "Gutter adjustment to prevent recurring water damage",
+      "Full post-repair inspection and walkthrough",
+    ],
+    faq: [
+      {
+        question: "What causes soffit damage on Philadelphia homes?",
+        answer:
+          "Three things, almost always: clogged gutters that let water overflow onto the soffit from above, poor attic ventilation that traps moisture, or animals (squirrels, raccoons, birds) chewing through weakened soffit to nest. We diagnose the root cause before we repair, so the problem doesn't come back.",
+      },
+      {
+        question: "How much does soffit repair cost in Philadelphia?",
+        answer:
+          "Partial soffit repairs in Philadelphia typically range from $300 to $1,200 depending on the length of damage, material, and whether fascia replacement is needed. Full soffit replacement on a mid-sized home usually runs $1,500–$3,500. Every quote is written, itemized, and free of surprises.",
+      },
+      {
+        question: "Can you match the existing soffit material and color?",
+        answer:
+          "Yes. We carry and install vinyl, aluminum, and wood soffit in the most common Philadelphia profiles and colors. If your soffit is an older custom style, we'll match it as closely as possible or discuss exact-match sourcing options during the inspection.",
+      },
+      {
+        question: "Do I need to replace the fascia too?",
+        answer:
+          "Often, yes. Water that rots the soffit usually damages the fascia board behind it, and installing new soffit over rotted fascia just traps the problem. During your free inspection we'll check the fascia condition and only recommend replacement if it's actually needed.",
+      },
+      {
+        question: "How do you keep animals out after repair?",
+        answer:
+          "Animal damage happens because something was already compromised — we identify every entry point during the inspection and seal them with galvanized metal, durable flashing, and properly fastened soffit panels. We can also add continuous-vent soffit that blocks animal access while preserving attic ventilation.",
+      },
+      {
+        question: "How long does a typical soffit repair take?",
+        answer:
+          "Most residential soffit repairs in Philadelphia are completed in a single day. Full soffit-and-fascia replacements on larger homes may take 2 days. We leave your property clean, haul away all debris, and walk the job with you before we call it done.",
       },
     ],
   },
