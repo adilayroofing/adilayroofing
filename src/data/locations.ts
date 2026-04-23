@@ -1445,31 +1445,42 @@ export const locations: Location[] = [
     state: "PA",
     county: "Bucks County",
     type: "city",
-    metaTitle: "Roofer Langhorne PA — Roof Replacement & Repair",
+    metaTitle: "Roofer Langhorne PA — Shingle, Flat Roof & Emergency Repair",
     metaDescription:
-      "Langhorne roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
-    h1: "Langhorne Roofing Services",
+      "Langhorne roofing experts. Shingle replacement, flat roof, storm damage & emergency repair for Middletown Twp homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+    h1: "Langhorne PA Roofing Services",
     intro:
-      "Langhorne is a historic borough in central lower Bucks County, surrounded by Middletown Township and conveniently located near Sesame Place and the Route 1 corridor. The borough's compact residential streets feature older homes dating to the 1800s and early 1900s, while the surrounding township offers a broader mix of mid-century colonials, ranchers, and newer developments. Langhorne's central location in lower Bucks makes it easily accessible from Adilay Roofing's Philadelphia headquarters via I-95. We provide the full range of roofing services to Langhorne and Middletown Township homeowners, bringing over 20 years of experience and more than 2,000 completed projects to every job.",
+      "Langhorne is a historic borough at the heart of lower Bucks County, surrounded by Middletown Township and bordered by the Route 1 and I-95 corridors that make it one of the most convenient suburban communities to reach from both Philadelphia and central New Jersey. The borough itself covers less than half a square mile but sits within a much larger service area that includes Oxford Valley, Middletown Township, Parkland, Parkland Manor, and the communities around Sesame Place and Oxford Valley Mall. Langhorne's housing stock is remarkably diverse — beautifully preserved Victorian and early-American homes line the streets of the historic borough along Maple, Bellevue, and Pine avenues; mid-century colonials, split-levels, and ranchers fill the broader Middletown Township; and newer developments continue to add construction along the Route 413 and Langhorne-Yardley Road corridors. Most Langhorne-area homes have pitched asphalt shingle roofs, though the older borough homes sometimes feature slate, cedar shake, or complex multi-level shingle systems with dormers and steep valleys. Adilay Roofing has been serving Langhorne and the surrounding Middletown Township for years, handling full roof replacements, shingle repairs, storm-damage claims, gutter installations, and emergency leak response. Our Kensington headquarters is approximately 30 minutes away via I-95, making us one of the most responsive roofers for the Langhorne area.",
     localContext:
-      "Langhorne Borough's older homes may have complex roof lines with dormers, valleys, and chimney penetrations that require experienced craftsmanship. The surrounding Middletown Township development features more standard residential construction. We handle permitting requirements for both Langhorne Borough and Middletown Township.",
-    neighborhoods: [],
-    zipCodes: ["19047"],
+      "Langhorne-area roofing projects fall into two distinct categories. The historic borough homes often require meticulous craftsmanship — matching aging shingles, preserving original flashing details around chimneys and dormers, and working within Langhorne Borough Historic District guidelines where applicable. By contrast, the broader Middletown Township housing stock generally allows for more straightforward architectural shingle replacements with modern warranty-backed systems. The area's mature tree canopy — particularly in the older borough blocks and the wooded developments near Middletown Country Club — creates heavy gutter debris and algae growth on shaded north-facing slopes, so we often recommend algae-resistant shingles and leaf-guard gutter systems. Middletown Township's building department issues permits for full replacements; Langhorne Borough has its own process. We handle all paperwork and inspections for both municipalities.",
+    neighborhoods: [
+      "Langhorne Borough",
+      "Middletown Township",
+      "Oxford Valley",
+      "Parkland",
+      "Penndel",
+    ],
+    zipCodes: ["19047", "19053"],
     faq: [
       {
-        question: "Do you serve Langhorne and the surrounding Middletown Township area?",
+        question: "Do you serve Langhorne Borough and Middletown Township?",
         answer:
-          "Yes. Adilay Roofing serves Langhorne Borough and all of the surrounding Middletown Township area. We handle the specific permitting requirements for each municipality. Licensed PA184779 — call (888) 823-4766 for a free estimate at your Langhorne-area home.",
+          "Yes. Adilay Roofing serves both Langhorne Borough and the surrounding Middletown Township, including Oxford Valley, Parkland, Parkland Manor, and Penndel. Each municipality has its own permitting process, and we handle both. Licensed PA184779 — call (888) 823-4766 for a free estimate anywhere in the Langhorne area.",
       },
       {
         question: "How much does a roof replacement cost in Langhorne?",
         answer:
-          "Langhorne-area roof replacements typically range from $8,000 to $16,000 depending on home size, material choice, and roof complexity. We provide free on-site estimates with transparent, no-surprise pricing. Call Adilay Roofing at (888) 823-4766 to schedule.",
+          "Langhorne-area roof replacements typically range from $8,000 to $16,000 for standard single-family homes, with larger or more complex Victorian and multi-level homes running $15,000 to $25,000+. Premium materials like cedar shake or synthetic slate add to that range. We provide free on-site estimates with transparent, itemized pricing. Call (888) 823-4766.",
       },
       {
         question: "Can you handle emergency roof repairs in Langhorne?",
         answer:
-          "Yes. We respond quickly to emergency calls in Langhorne, providing same-day tarping and assessment for active leaks and storm damage. Our Bucks County response time is among the fastest because of our proximity via I-95. Call (888) 823-4766 for immediate assistance.",
+          "Yes. We respond to Langhorne emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization to prevent further interior damage. Our I-95 proximity means we're among the fastest responders in lower Bucks County. Call (888) 823-4766 for 24/7 emergency service.",
+      },
+      {
+        question: "Do you work on historic homes in Langhorne Borough?",
+        answer:
+          "Yes. Langhorne Borough has a notable collection of Victorian and early-American homes, some within the borough's historic district. We're experienced with historic-sensitive roofing — matching period-appropriate materials, preserving original details, and working within any historic district review requirements. Call (888) 823-4766 for an on-site assessment.",
       },
     ],
   },
@@ -2438,6 +2449,293 @@ export const locations: Location[] = [
         question: "Can you handle new construction roofing in Evesham?",
         answer:
           "Yes. We work with builders and developers on new construction roofing projects throughout Evesham Township. We install modern roof systems, coordinate with other trades, and ensure proper warranty registration. Call (888) 823-4766.",
+      },
+    ],
+  },
+
+  // =========================================================================
+  // PHASE 4 — PHILADELPHIA NEIGHBORHOOD & METRO EXPANSION
+  // =========================================================================
+  {
+    slug: "germantown",
+    name: "Germantown",
+    state: "PA",
+    county: "Philadelphia County",
+    type: "neighborhood",
+    metaTitle: "Roofer Germantown Philadelphia — Historic Home Roofing Experts",
+    metaDescription:
+      "Germantown roofing by Adilay Roofing. Slate, shingle & historic home specialists along Germantown Ave. Licensed PA184779. Free estimates — (888) 823-4766.",
+    h1: "Germantown Roofing Services",
+    intro:
+      "Germantown is one of the oldest and most historically significant neighborhoods in Philadelphia, founded in 1683 and filled with some of the most architecturally distinctive homes in the entire city. Stone twins and detached Victorians line streets like Wayne Avenue, Lincoln Drive, Schoolhouse Lane, and Wissahickon Avenue, many of them featuring original slate roofs, copper gutters, and ornate cornice work that have weathered over a century of Pennsylvania winters. Germantown Avenue itself — the historic spine of the neighborhood — is flanked by Colonial-era buildings and grand 19th-century residences whose roofs demand specialized care that most modern roofing contractors simply are not equipped to provide. The homes here range from modest rowhouses in East Germantown to large Victorian mansions in West Germantown and the adjacent Tulpehocken Station historic district, with a mix of slate, tile, asphalt, and occasional metal roofs throughout. Adilay Roofing has been repairing and replacing Germantown roofs for over two decades. From headquarters just a few miles away in Kensington, we respond quickly and bring the craftsmanship that Germantown's historic housing stock deserves — whether that means matching aging slate tiles, restoring copper flashing, or installing a modern architectural shingle system on a twin home along Greene Street.",
+    localContext:
+      "Germantown's aging housing stock means many homes still have original slate or built-up roofs that are at or past their service life. Slate repair and replacement require specialized skills, and matching weathered tiles takes experience with local suppliers. Many Germantown homes are in designated historic districts — including Tulpehocken Station and Colonial Germantown — where exterior changes may require review. We work within those guidelines and handle L&I permits. The neighborhood's mature tree canopy also creates heavy leaf loads in gutters and moss growth on north-facing slopes, so gutter maintenance and algae-resistant shingles are often part of the recommendation.",
+    neighborhoods: [
+      "Germantown",
+      "East Germantown",
+      "West Germantown",
+      "Tulpehocken Station",
+      "Penn Knox",
+      "Mount Airy",
+    ],
+    zipCodes: ["19144", "19138"],
+    faq: [
+      {
+        question: "Do you work on slate roofs in Germantown?",
+        answer:
+          "Yes. Germantown has one of Philadelphia's largest concentrations of original slate roofs, and we regularly perform slate repair, tile replacement, and full slate-to-architectural-shingle conversions. When a full slate restoration is beyond budget, we can install a premium synthetic slate or heavy architectural shingle that preserves the home's historic appearance. Call (888) 823-4766 for a free slate assessment.",
+      },
+      {
+        question: "Is my Germantown home in a historic district, and does that affect roofing work?",
+        answer:
+          "Parts of Germantown — including Tulpehocken Station, Colonial Germantown, and Deshler-Morris — are designated historic districts where the Philadelphia Historical Commission may review exterior changes. Material and color can matter. We help you determine whether your home is within a protected district and guide you through any required approvals before work begins.",
+      },
+      {
+        question: "How fast can you get to Germantown for an emergency leak?",
+        answer:
+          "Typically within the same day. Germantown is a short drive from our Kensington headquarters, and we prioritize active leaks to prevent interior damage. We'll tarp and stabilize the roof immediately, then schedule permanent repairs once the storm passes. Call (888) 823-4766 for 24/7 emergency service.",
+      },
+    ],
+  },
+  {
+    slug: "old-city",
+    name: "Old City",
+    state: "PA",
+    county: "Philadelphia County",
+    type: "neighborhood",
+    metaTitle: "Roofer Old City Philadelphia — Historic Rowhouse & Loft Roofing",
+    metaDescription:
+      "Old City Philadelphia roofing experts. Flat roof, membrane & historic rowhouse specialists near Independence Mall. Licensed PA184779. Free estimates.",
+    h1: "Old City Roofing Services",
+    intro:
+      "Old City is the historic heart of Philadelphia, a compact neighborhood that encompasses Independence Mall, the Betsy Ross House, Elfreth's Alley, and the blocks of 2nd, 3rd, and Arch Streets where America was founded. The housing stock is a fascinating mix: 18th- and 19th-century rowhouses, converted 19th-century warehouses now serving as loft condos, and modern infill construction. Most Old City roofs are flat or low-slope, typically finished with EPDM rubber membrane, TPO, or modified bitumen, and many sit several stories above the cobblestone streets below. The flat roofs of the converted warehouses along 2nd Street, Market Street, and Arch Street are particularly demanding — they are large, often punctuated by HVAC equipment and skylights, and subject to heavy UV exposure and ponding water if drainage is not properly maintained. Old City's dense urban environment also means rooftop access is often complicated: shared walls, rear alley entry, interior staircases, and tight street frontage all require experienced crews who know how to work safely in the city. Adilay Roofing's headquarters in Kensington is minutes from Old City, and we have completed roofing work on rowhouses, loft buildings, and commercial properties throughout the neighborhood.",
+    localContext:
+      "Old City's mix of historic rowhouses and converted warehouse lofts creates two very different roofing scenarios. The rowhouses typically have small flat roofs with parapet walls that require careful flashing and drainage work, while the large loft buildings have expansive low-slope membrane roofs that need commercial-grade maintenance. Many Old City properties fall under historic preservation guidelines, particularly those near Independence National Historical Park and along Elfreth's Alley. Roof decks are increasingly common on both rowhouses and loft conversions, and proper waterproofing beneath those decks is critical. L&I permits apply to full replacements.",
+    neighborhoods: [
+      "Old City",
+      "Society Hill",
+      "Independence Mall",
+      "Elfreth's Alley",
+      "Franklin Square",
+    ],
+    zipCodes: ["19106"],
+    faq: [
+      {
+        question: "Can you replace the flat rubber roof on an Old City loft?",
+        answer:
+          "Yes. We routinely install and replace EPDM, TPO, and modified bitumen membranes on loft and warehouse buildings throughout Old City. We'll assess the existing substrate, address any structural issues, and install a commercial-grade membrane with proper drainage and flashing. Warranties up to 20 years are available. Call (888) 823-4766 for a free estimate.",
+      },
+      {
+        question: "Do I need historic commission approval for roof work in Old City?",
+        answer:
+          "It depends on your address. Properties within designated historic districts or on the Philadelphia Register of Historic Places may require review before exterior work. Most flat-roof membrane replacements are not visible from the street and do not trigger review, but we verify this for every project in Old City before starting work.",
+      },
+      {
+        question: "Can you install or waterproof a roof deck on my Old City rowhouse?",
+        answer:
+          "Yes. Roof decks are extremely popular in Old City and provide sought-after outdoor space and skyline views. We install fully waterproofed membrane systems beneath deck framing, with proper drainage, reinforced edges, and access points. We can also replace aging roof decks and waterproofing in one project. Call (888) 823-4766 for a design consultation.",
+      },
+    ],
+  },
+  {
+    slug: "northern-liberties",
+    name: "Northern Liberties",
+    state: "PA",
+    county: "Philadelphia County",
+    type: "neighborhood",
+    metaTitle: "Roofer Northern Liberties Philadelphia — Flat Roof & Deck Specialists",
+    metaDescription:
+      "Northern Liberties roofing from Adilay Roofing. Flat roof, roof deck, new construction & rowhouse experts. Licensed PA184779. Free estimates — (888) 823-4766.",
+    h1: "Northern Liberties Roofing Services",
+    intro:
+      "Northern Liberties — \"NoLibs\" to locals — is one of Philadelphia's most rapidly transformed neighborhoods, where 19th-century industrial architecture meets contemporary condo and townhome development. The neighborhood stretches from Spring Garden Street north to Girard Avenue and from the Delaware River west to 6th Street, with key corridors along 2nd Street, 3rd Street, and Liberties Walk. The housing mix is striking: original Philadelphia rowhouses with traditional flat tar and rubber roofs, converted former breweries and factories now serving as loft condos, and a large inventory of new-build three- and four-story townhomes with contemporary rooflines, roof decks, and green roof features. The modern construction throughout Northern Liberties has raised the bar for roofing quality — most new homes come with roof decks built above a fully waterproofed membrane system, and buyers expect this infrastructure to be in excellent condition. Adilay Roofing works extensively in Northern Liberties, handling both traditional rowhouse roof replacements and the more complex membrane and roof deck systems on newer construction. From our Kensington headquarters we can reach any Northern Liberties address in under ten minutes, making emergency response and follow-up visits exceptionally fast.",
+    localContext:
+      "Northern Liberties' new-construction boom has created a high concentration of flat membrane roofs, roof decks, and green roof systems that require specialized expertise. EPDM and TPO membranes beneath roof decks must be installed with protection board and proper drainage to handle foot traffic and furniture weight. Many Northern Liberties homes also feature pilot houses — small stair enclosures leading up to roof decks — where flashing and waterproofing around the transition is a common leak point. The neighborhood's mix of old and new means we see everything from original 19th-century rowhouse tar roofs to 2020s green roof installations.",
+    neighborhoods: [
+      "Northern Liberties",
+      "Liberties Walk",
+      "Poplar",
+      "Ludlow",
+    ],
+    zipCodes: ["19123", "19122"],
+    faq: [
+      {
+        question: "My Northern Liberties roof deck is leaking into my condo below. Can you fix it?",
+        answer:
+          "Yes. Roof deck leaks in Northern Liberties are almost always caused by failed membrane seams, deteriorated flashing around the pilot house, or damaged drainage scuppers. We'll inspect the full system, identify the source, and either repair the existing membrane or — if it's at the end of its service life — remove the deck and install a new waterproofing system beneath a rebuilt deck. Call (888) 823-4766 for an emergency assessment.",
+      },
+      {
+        question: "Do you install green roofs in Northern Liberties?",
+        answer:
+          "Yes. Several Northern Liberties buildings and homes feature extensive or semi-intensive green roof systems with drainage mats, growing medium, and vegetation. We install and repair green roof waterproofing and coordinate with green roof vegetation specialists. These systems require specialized root barriers and extra-heavy-duty membranes.",
+      },
+      {
+        question: "How much does a flat roof replacement cost in Northern Liberties?",
+        answer:
+          "For a standard Northern Liberties rowhouse, a full flat roof replacement with 60-mil EPDM membrane typically ranges from $6,000 to $10,000. Larger loft buildings or townhomes with roof decks are priced individually based on square footage and complexity. We provide free, transparent quotes with no upsells. Call (888) 823-4766.",
+      },
+    ],
+  },
+  {
+    slug: "conshohocken",
+    name: "Conshohocken",
+    state: "PA",
+    county: "Montgomery County",
+    type: "city",
+    metaTitle: "Roofer Conshohocken PA — Roof Replacement & Repair",
+    metaDescription:
+      "Conshohocken roofing by Adilay Roofing. Shingle replacement, flat roof, storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+    h1: "Conshohocken Roofing Services",
+    intro:
+      "Conshohocken is a compact riverfront borough on the Schuylkill, transformed over the past two decades from a former steel and textile mill town into one of Montgomery County's most sought-after communities for young professionals, families, and empty nesters. The housing stock reflects this evolution: tight-knit rows of century-old worker homes along Fayette Street, Hector Street, and Spring Mill Avenue sit alongside newer luxury townhome developments, high-rise condos near the Matsonford Road corridor, and converted mill lofts along the riverfront. Most of the older Conshohocken housing features pitched shingle roofs, while the new-build townhomes often combine pitched and flat roof sections, and the mill conversions typically have commercial-grade membrane roofs. The borough's steep hillside rising from the Schuylkill River creates unique roofing considerations — many homes sit on slopes, with drainage patterns and wind exposure that differ from flatter suburban settings. Adilay Roofing has served Conshohocken and the surrounding Plymouth Township and Whitemarsh Township communities for years, handling everything from full shingle replacements on Fayette Street rowhomes to commercial membrane work on Matsonford Road buildings.",
+    localContext:
+      "Conshohocken's mix of old mill-town housing and contemporary development means roofing projects here span a wide range. The older rowhomes often have original or first-replacement shingles on steep pitches, sometimes with rear flat roof additions that need membrane work. The newer townhomes and condos frequently involve HOA-approved material and color specifications. The borough's hillside orientation means wind exposure can be significant, so we generally recommend architectural shingles rated for 130 mph winds. Borough permits and inspections are required for full replacements — we handle all paperwork.",
+    neighborhoods: [
+      "Conshohocken",
+      "West Conshohocken",
+      "Plymouth Meeting",
+      "Whitemarsh",
+      "Lafayette Hill",
+    ],
+    zipCodes: ["19428", "19429"],
+    faq: [
+      {
+        question: "Do you serve both Conshohocken Borough and West Conshohocken?",
+        answer:
+          "Yes. We serve both boroughs and the surrounding Plymouth and Whitemarsh townships. Each municipality has slightly different permitting requirements, and we handle those differences as part of every project. Call (888) 823-4766 for a free estimate anywhere in the 19428 or 19429 zip codes.",
+      },
+      {
+        question: "Can you replace the roof on my Conshohocken townhome?",
+        answer:
+          "Yes. We regularly work on the newer townhome developments throughout Conshohocken, including HOA-governed communities. We'll review the HOA's material and color specifications, obtain any required approvals, and install architectural shingles that meet or exceed the HOA standards. Warranties up to 50 years are available.",
+      },
+      {
+        question: "How much does a roof replacement cost in Conshohocken?",
+        answer:
+          "Costs vary by home size and roof complexity. A typical Conshohocken rowhome or modest single-family replacement ranges from $7,000 to $14,000, while larger townhomes and single-family homes may range from $12,000 to $22,000+. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+      },
+    ],
+  },
+  {
+    slug: "bala-cynwyd",
+    name: "Bala Cynwyd",
+    state: "PA",
+    county: "Montgomery County",
+    type: "city",
+    metaTitle: "Roofer Bala Cynwyd PA — Main Line Roof Replacement & Repair",
+    metaDescription:
+      "Bala Cynwyd roofing by Adilay Roofing. Slate, cedar, shingle specialists for Main Line homes. Licensed PA184779. Free estimates — call (888) 823-4766.",
+    h1: "Bala Cynwyd Roofing Services",
+    intro:
+      "Bala Cynwyd is the gateway to Philadelphia's Main Line — an affluent, leafy Montgomery County community just across the Schuylkill River from Manayunk and West Philadelphia. The neighborhood is defined by its stately stone twins, large detached colonials, and Tudor-style homes set on generous tree-shaded lots along streets like Bryn Mawr Avenue, Highland Avenue, Bala Avenue, and Montgomery Avenue. Many Bala Cynwyd homes were built between the 1910s and 1940s during the Main Line's residential boom, and their roofs often feature premium materials — natural slate, cedar shake, Spanish tile, and heavy architectural shingles — that reflect the quality expected of Main Line architecture. The mature tree canopy throughout the neighborhood adds beauty but also creates roofing challenges: heavy leaf loads in gutters, moss and algae growth on shaded slopes, and regular risk of falling branches during storms. Adilay Roofing brings over 20 years of experience with premium roofing materials and the meticulous craftsmanship that Main Line homes deserve. We serve Bala Cynwyd alongside the neighboring Main Line communities of Merion, Narberth, Wynnewood, Ardmore, and Penn Valley.",
+    localContext:
+      "Bala Cynwyd's premium housing stock means many homes have natural slate, cedar shake, or tile roofs that require specialized repair and replacement skills. When slate or cedar is beyond restoration, homeowners often choose premium synthetic slate or designer architectural shingles to preserve the home's appearance and value. The neighborhood's dense tree cover makes algae-resistant shingles and leaf-guard gutter systems especially valuable. Lower Merion Township handles permitting and sometimes design review for exterior changes. We manage all paperwork and coordinate with HOAs where applicable.",
+    neighborhoods: [
+      "Bala Cynwyd",
+      "Merion Station",
+      "Narberth",
+      "Penn Valley",
+      "Wynnewood",
+    ],
+    zipCodes: ["19004"],
+    faq: [
+      {
+        question: "Do you work on slate and cedar shake roofs in Bala Cynwyd?",
+        answer:
+          "Yes. Bala Cynwyd has a high concentration of slate and cedar shake roofs, and we regularly perform both repair work and full replacements. For homeowners who want to preserve the look without the slate price tag, we install premium synthetic slate and designer architectural shingles. For cedar, we offer proper re-roofing with new cedar shakes or with synthetic shake alternatives. Call (888) 823-4766 for an assessment.",
+      },
+      {
+        question: "How much does a Main Line roof replacement cost?",
+        answer:
+          "Main Line homes in Bala Cynwyd typically range from $15,000 to $35,000+ for a full replacement, depending on size, complexity, and material. Slate and cedar replacements can exceed $50,000 on larger homes. We provide detailed, transparent estimates that outline every cost. Call (888) 823-4766 for a free on-site quote.",
+      },
+      {
+        question: "Do you serve the rest of the Main Line?",
+        answer:
+          "Absolutely. In addition to Bala Cynwyd, we serve Merion Station, Narberth, Wynnewood, Penn Valley, Ardmore, Haverford, Bryn Mawr, Rosemont, Villanova, and beyond. Our crews are familiar with Lower Merion Township and Haverford Township permitting and HOA processes. Licensed PA184779.",
+      },
+    ],
+  },
+  {
+    slug: "chester",
+    name: "Chester",
+    state: "PA",
+    county: "Delaware County",
+    type: "city",
+    metaTitle: "Roofer Chester PA — Residential & Commercial Roof Replacement",
+    metaDescription:
+      "Chester PA roofing by Adilay Roofing. Residential, commercial & flat roof repair along the Delaware River. Licensed PA184779. Free estimates — (888) 823-4766.",
+    h1: "Chester PA Roofing Services",
+    intro:
+      "Chester is Pennsylvania's oldest city, founded by William Penn in 1682 on the banks of the Delaware River in southern Delaware County. The city's housing stock reflects centuries of history: Colonial-era and early-American homes in the historic downtown, early-20th-century rowhouses on streets like 9th Street, Providence Avenue, and Edgmont Avenue, and mid-century brick twins and singles in residential neighborhoods like Sun Village and Highland Gardens. Chester also has a significant commercial and institutional presence — Widener University, Crozer Chester Medical Center, the Chester riverfront developments, and the Talen Energy Stadium — meaning the city has a substantial inventory of commercial-grade low-slope and flat membrane roofs alongside its residential stock. The city's riverfront location exposes many properties to wind and storm pressure, while its older housing means many roofs are overdue for replacement. Adilay Roofing serves Chester with both residential and commercial roofing capabilities, bringing the same licensed, insured, 20-plus-year expertise to Chester projects that we bring to every Delaware Valley community.",
+    localContext:
+      "Chester's mix of historic, residential, and commercial properties means roofing needs here are highly varied. Rowhouse roofs — many of which are flat or low-slope with aging tar or rubber — often need complete tear-off and membrane replacement. Older pitched-roof homes frequently have deteriorated shingles, worn flashing, and inadequate ventilation. Commercial and institutional properties require proper low-slope membrane expertise with appropriate warranties. The city issues permits and inspections for full replacements; we handle all paperwork and coordinate inspections on the homeowner's behalf. Chester sits within 30 minutes of our Kensington headquarters via I-95.",
+    neighborhoods: [
+      "Chester",
+      "Chester Township",
+      "Upland",
+      "Brookhaven",
+      "Trainer",
+      "Parkside",
+    ],
+    zipCodes: ["19013", "19014", "19015"],
+    faq: [
+      {
+        question: "Do you handle both residential and commercial roofing in Chester?",
+        answer:
+          "Yes. We install and repair residential shingle, flat, and low-slope roofing as well as commercial EPDM, TPO, and modified bitumen membrane systems. For commercial properties we offer manufacturer-backed warranties up to 20 years. Call (888) 823-4766 to discuss your residential or commercial project.",
+      },
+      {
+        question: "How quickly can you respond to a Chester roof emergency?",
+        answer:
+          "We respond to Chester emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization. Chester is a short drive via I-95 from our Philadelphia headquarters, so we can mobilize quickly for storm damage, active leaks, and wind damage. Call (888) 823-4766 for 24/7 emergency response.",
+      },
+      {
+        question: "Can you help with insurance claims for storm damage in Chester?",
+        answer:
+          "Yes. Chester sees its share of severe weather from the Delaware River corridor, and we regularly document storm damage for insurance claims — photos, detailed reports, and meeting with adjusters on site. We work directly with most major carriers to maximize your claim approval. Licensed PA184779.",
+      },
+    ],
+  },
+  {
+    slug: "trenton",
+    name: "Trenton",
+    state: "NJ",
+    county: "Mercer County",
+    type: "city",
+    metaTitle: "Roofer Trenton NJ — Roof Replacement & Repair",
+    metaDescription:
+      "Trenton NJ roofing by Adilay Roofing. Shingle, flat roof & rowhouse specialists across Mercer County. Licensed & insured. Free estimates — (888) 823-4766.",
+    h1: "Trenton NJ Roofing Services",
+    intro:
+      "Trenton is New Jersey's capital city and the largest municipality in Mercer County, sitting directly across the Delaware River from Morrisville, Pennsylvania, and within easy reach of both Philadelphia and central New Jersey. The city's housing stock is dominated by brick and wood-frame rowhouses — particularly in neighborhoods like Chambersburg, Mill Hill, Berkeley Square, and Hiltonia — many of which date to the late 1800s and early 1900s and feature traditional flat or low-slope roofs. Trenton also has a large inventory of detached twins, singles, and Victorians in neighborhoods like Cadwalader Heights and Villa Park, most with pitched shingle roofs showing decades of wear. The city's role as state capital means a significant commercial and institutional roofing presence as well, from the state government complex to Capital Health facilities and commercial buildings along Broad Street and Route 1. Adilay Roofing extends our services across the Delaware River into Trenton and the surrounding Mercer County communities, bringing the same licensed craftsmanship and 20-plus-year experience we provide throughout the Philadelphia metropolitan area.",
+    localContext:
+      "Trenton's dense rowhouse neighborhoods have roofing needs very similar to Philadelphia's — flat and low-slope membrane roofs, aging tar systems that need complete replacement, and shared-wall tie-in considerations that require experienced crews. The city's older housing stock means many roofs are at or past their service life, and storm damage from nor'easters and summer thunderstorms is frequent. Trenton requires construction permits for full replacements; we handle the permit process. Our crews are licensed and insured for work in New Jersey.",
+    neighborhoods: [
+      "Trenton",
+      "Chambersburg",
+      "Mill Hill",
+      "Berkeley Square",
+      "Hiltonia",
+      "Cadwalader Heights",
+      "Villa Park",
+    ],
+    zipCodes: ["08608", "08609", "08610", "08611", "08618", "08629", "08638"],
+    faq: [
+      {
+        question: "Do you serve Trenton and the rest of Mercer County?",
+        answer:
+          "Yes. We serve Trenton and surrounding Mercer County communities including Ewing, Hamilton, Lawrenceville, Princeton, and Hopewell. We're licensed and insured for New Jersey roofing work. Call (888) 823-4766 for a free estimate anywhere in Mercer County.",
+      },
+      {
+        question: "Can you replace the flat rubber roof on my Trenton rowhouse?",
+        answer:
+          "Yes. Trenton rowhouse flat roofs are very similar to the Philadelphia rowhouse roofs we replace every week. We strip the existing membrane down to the deck, make any needed repairs to the substrate, install a fresh 60-mil EPDM rubber membrane with new flashing and drainage, and provide a manufacturer-backed warranty. Call (888) 823-4766 for a free estimate.",
+      },
+      {
+        question: "How much does a roof replacement cost in Trenton?",
+        answer:
+          "Trenton roof replacement costs vary by home type. A typical rowhouse flat roof replacement ranges from $5,000 to $10,000, while pitched-roof single-family homes typically range from $8,000 to $18,000. We provide transparent, on-site estimates with no hidden fees. Call (888) 823-4766.",
       },
     ],
   },
