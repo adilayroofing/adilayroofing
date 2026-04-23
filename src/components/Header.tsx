@@ -249,7 +249,15 @@ export default function Header() {
                       );
                     })}
                   </div>
-                  <div className="border-t border-brand-border mt-3 pt-2">
+                  <div className="border-t border-brand-border mt-3 pt-2 space-y-1">
+                    <Link
+                      href="/roofer-philadelphia"
+                      className="block text-center text-sm text-brand-dark font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
+                      role="menuitem"
+                      onClick={() => setServicesDropdownOpen(false)}
+                    >
+                      Philadelphia Roofer — Full Guide &rarr;
+                    </Link>
                     <Link
                       href="/services"
                       className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
@@ -532,8 +540,15 @@ export default function Header() {
                   );
                 })}
                 <Link
+                  href="/roofer-philadelphia"
+                  className="block pl-4 pt-3 text-sm text-brand-dark font-semibold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Philadelphia Roofer — Full Guide &rarr;
+                </Link>
+                <Link
                   href="/services"
-                  className="block pl-4 pt-3 text-sm text-brand-red font-semibold"
+                  className="block pl-4 pt-2 text-sm text-brand-red font-semibold"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   View All Services &rarr;
