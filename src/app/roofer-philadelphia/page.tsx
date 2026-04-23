@@ -319,7 +319,7 @@ export default function RooferPhiladelphiaPage() {
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-brand-red/10 text-brand-red flex items-center justify-center">
-                    <ServiceIcon category={s.category} />
+                    <ServiceIcon slug={s.slug} className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-brand-dark mb-1 group-hover:text-brand-red transition-colors">
