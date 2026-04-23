@@ -127,7 +127,9 @@ export async function getStructuredContent(
 
 export function buildMetadataFromSEO(seo: PageSEO) {
   return {
-    title: seo.meta_title,
+    // CMS meta_title is already fully-formed (includes brand), so bypass the
+    // root layout's "%s | Adilay Roofing" template with `absolute`.
+    title: seo.meta_title ? { absolute: seo.meta_title } : undefined,
     description: seo.meta_description,
     alternates: seo.canonical_url ? { canonical: seo.canonical_url } : undefined,
     openGraph: {
