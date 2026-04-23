@@ -38,6 +38,7 @@ export const locations: Location[] = [
       "Philadelphia's dense rowhouse blocks create unique roofing conditions. Shared party walls mean a leak on one roof can affect the neighbor's property, so precision work and proper tie-ins are critical. The city's older housing stock often requires custom flashing, parapet wall repairs, and flat-to-pitched transitions that most suburban roofers rarely encounter. Philadelphia's Department of Licenses & Inspections requires permits for full replacements, and we handle that process seamlessly for every project.",
     neighborhoods: [
       "Center City",
+      "Old City",
       "Fishtown",
       "Kensington",
       "Northern Liberties",
@@ -159,6 +160,7 @@ export const locations: Location[] = [
       "Norristown",
       "King of Prussia",
       "Conshohocken",
+      "Bala Cynwyd",
       "Lansdale",
       "Ambler",
       "Blue Bell",
@@ -213,6 +215,7 @@ export const locations: Location[] = [
     neighborhoods: [
       "Upper Darby",
       "Drexel Hill",
+      "Chester",
       "Springfield",
       "Media",
       "Havertown",

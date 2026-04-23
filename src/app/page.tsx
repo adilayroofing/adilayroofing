@@ -684,26 +684,34 @@ export default async function Home() {
                   ))}
                 </div>
 
-                <Link
-                  href="/service-areas"
-                  className="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
-                >
-                  View All Service Areas
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <Link
+                    href="/service-areas"
+                    className="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+                    View All Service Areas
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/roofer-philadelphia"
+                    className="inline-flex items-center gap-2 text-brand-dark font-semibold border-b border-brand-dark/40 hover:text-brand-red hover:border-brand-red transition-colors"
+                  >
+                    Philadelphia Roofer — Full Guide
+                  </Link>
+                </div>
               </div>
             </ScrollReveal>
           </div>

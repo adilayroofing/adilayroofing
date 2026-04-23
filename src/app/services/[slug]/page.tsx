@@ -114,10 +114,14 @@ export default async function ServicePage({ params }: PageProps) {
   const ctaHeadline = (cmsData?.ctaHeadline as string) || `Ready for ${service.shortTitle} Services?`;
   const ctaSubtext = (cmsData?.ctaSubtext as string) || `Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation — just honest advice from experienced professionals.`;
 
-  // Build related services — exclude the current one, take up to 3
-  const relatedServices = services
-    .filter((s) => s.slug !== service.slug)
-    .slice(0, 3);
+  // Build related services — prefer same category, then fill with others
+  const sameCategory = services.filter(
+    (s) => s.slug !== service.slug && s.category === service.category
+  );
+  const otherCategory = services.filter(
+    (s) => s.slug !== service.slug && s.category !== service.category
+  );
+  const relatedServices = [...sameCategory, ...otherCategory].slice(0, 3);
 
   const serviceSchema = {
     "@context": "https://schema.org",
