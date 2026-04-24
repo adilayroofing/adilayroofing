@@ -340,10 +340,61 @@ export default async function Home() {
       </section>
 
       {/* ============================================ */}
+      {/* SERVICES SECTION                             */}
+      {/* ============================================ */}
+      <section className="section-padding bg-white">
+        <div className="container-wide mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="section-heading">
+                Our Roofing &amp; Exterior Services
+              </h2>
+              <p className="section-subheading mx-auto mt-4">
+                Everything your property needs — from the roof down.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8">
+            {services.slice(0, 6).map((service, i) => (
+              <ScrollReveal key={service.slug} delay={i * 80} distance={20}>
+                <ServiceCard service={service} />
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={200}>
+            <div className="text-center mt-12">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-brand-red font-bold text-lg hover:gap-3 transition-all duration-200"
+              >
+                View All Services
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* INTRO / TRUST BODY COPY                      */}
       {/* ============================================ */}
-      <section className="bg-white">
-        <div className="section-padding pb-0">
+      <section className="bg-white border-t border-brand-border">
+        <div className="section-padding">
           <div className="container-narrow mx-auto">
             <ScrollReveal>
               <div className="max-w-3xl mx-auto">
@@ -405,57 +456,6 @@ export default async function Home() {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
-
-      {/* ============================================ */}
-      {/* SERVICES SECTION                             */}
-      {/* ============================================ */}
-      <section className="section-padding bg-white">
-        <div className="container-wide mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-8 md:mb-16">
-              <h2 className="section-heading">
-                Our Roofing &amp; Exterior Services
-              </h2>
-              <p className="section-subheading mx-auto mt-4">
-                Everything your property needs — from the roof down.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8">
-            {services.slice(0, 6).map((service, i) => (
-              <ScrollReveal key={service.slug} delay={i * 80} distance={20}>
-                <ServiceCard service={service} />
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={200}>
-            <div className="text-center mt-12">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 text-brand-red font-bold text-lg hover:gap-3 transition-all duration-200"
-              >
-                View All Services
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
