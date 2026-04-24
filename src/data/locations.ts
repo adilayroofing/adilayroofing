@@ -2,6 +2,11 @@
 // Location / Service Area data for SEO city pages
 // ---------------------------------------------------------------------------
 
+export interface LocationBodySection {
+  heading: string;
+  html: string;
+}
+
 export interface Location {
   slug: string;
   name: string;
@@ -16,6 +21,7 @@ export interface Location {
   neighborhoods: string[];
   zipCodes: string[];
   faq: { question: string; answer: string }[];
+  bodySections?: LocationBodySection[];
 }
 
 export const locations: Location[] = [

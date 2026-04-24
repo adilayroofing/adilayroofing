@@ -156,6 +156,8 @@ export default async function LocationPage({ params }: PageProps) {
   const zipCodes = cmsZipCodes?.length ? cmsZipCodes : location.zipCodes;
   const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
   const locationFaq = cmsFaq?.length ? cmsFaq : location.faq;
+  const cmsBodySections = cmsData?.bodySections as { heading: string; html: string }[] | undefined;
+  const bodySections = cmsBodySections?.length ? cmsBodySections : location.bodySections ?? [];
 
   // Additional CMS fields with fallbacks
   const heroCTAText = (cmsData?.heroCTAText as string) || "Get FREE Estimate";
@@ -483,6 +485,32 @@ export default async function LocationPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* ================================================================= */}
+      {/* Body Sections — deep local content with H2s                       */}
+      {/* ================================================================= */}
+      {bodySections.length > 0 && (
+        <section className="bg-white">
+          <div className="section-padding pt-0">
+            <div className="container-narrow mx-auto">
+              <div className="max-w-3xl mx-auto space-y-10">
+                {bodySections.map((section) => (
+                  <article key={section.heading}>
+                    <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
+                      {section.heading}
+                    </h2>
+                    <SafeHTML
+                      html={section.html}
+                      as="div"
+                      className="text-base md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark"
+                    />
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ================================================================= */}
       {/* Neighborhoods / Areas Served — with links to pages                */}
