@@ -14,6 +14,11 @@ export const serviceCategories: ServiceCategoryInfo[] = [
   { id: "shingles", label: "Shingles", description: "Asphalt shingle installation, repair, and replacement" },
 ];
 
+export interface BodySection {
+  heading: string;
+  html: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -27,6 +32,7 @@ export interface Service {
   benefits: string[];
   features: string[];
   faq: { question: string; answer: string }[];
+  bodySections?: BodySection[];
 }
 
 export function getServicesByCategory(category: ServiceCategory): Service[] {
@@ -92,6 +98,95 @@ export const services: Service[] = [
         answer:
           "For most Philadelphia homes, we recommend architectural asphalt shingles for their balance of durability, appearance, and value. They handle the Mid-Atlantic climate well, including hot summers, cold winters, and heavy rain. We also offer metal roofing and flat roof options depending on your property type and preferences.",
       },
+      {
+        question: "Do you tear off the old roof or install a new roof over it?",
+        answer:
+          "We almost always recommend a full tear-off. An overlay (installing new shingles over the old roof) hides decking damage, shortens the life of the new shingles, adds weight the structure may not be rated for, and voids most manufacturer warranties. A tear-off lets us inspect the decking, replace anything rotted, install ice-and-water shield and new underlayment, and start the new roof from a known-good foundation.",
+      },
+      {
+        question: "How long does a new roof last in Philadelphia?",
+        answer:
+          "Architectural asphalt shingles installed correctly on a well-ventilated Philadelphia roof typically last 25 to 30 years. Designer and impact-rated shingles can last 30 to 50 years. Metal roofs go 40 to 70 years, and proper EPDM flat roofs 20 to 30 years. The biggest factors are attic ventilation, flashing quality, and whether the installer cut corners — all things we control on an Adilay roof replacement.",
+      },
+      {
+        question: "Do you offer financing on roof replacements in Philadelphia?",
+        answer:
+          "Yes. We partner with Service Finance Company to offer roof replacement financing from $1,000 to $100,000, with no payments until the job is complete. See our financing page for loan terms and rate options.",
+      },
+      {
+        question: "What warranties come with a new roof from Adilay Roofing?",
+        answer:
+          "Every roof replacement includes a manufacturer material warranty (typically 25 to 50 years depending on the shingle you choose) plus an Adilay Roofing workmanship warranty in writing. Specific terms vary by product — we put everything on paper with your estimate so you can compare warranties across materials before you decide.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Your Roof Replacement Process — What to Expect From Start to Finish",
+        html: `<p>A full roof replacement in Philadelphia should never feel chaotic. When you hire Adilay Roofing, here is exactly how the project runs from the first call to the final walkthrough.</p>
+<ol>
+  <li><strong>Free on-site estimate.</strong> A licensed Philadelphia roofer walks your roof, inspects the decking access points, measures, and sits down with you to explain what we would do, what materials we recommend, and what it costs. No pressure, no obligation.</li>
+  <li><strong>Written proposal with materials and warranties.</strong> You get an itemized quote — shingles, underlayment, ice-and-water shield, flashing, ventilation, cleanup — with warranty terms in writing so you can compare against other estimates honestly.</li>
+  <li><strong>Permit filing.</strong> Philadelphia's Department of Licenses and Inspections requires a building permit for full replacements. We handle that paperwork under our PA184779 license.</li>
+  <li><strong>Material delivery and jobsite prep.</strong> Shingles, underlayment, and disposal container are staged before work starts. We protect landscaping, windows, and siding with tarps and plywood.</li>
+  <li><strong>Full tear-off down to the decking.</strong> Old shingles, underlayment, flashing, and damaged decking come off. We inspect every square foot of sheathing and replace anything rotted before going further.</li>
+  <li><strong>Ice-and-water shield, underlayment, and drip edge.</strong> Ice-and-water shield at eaves and valleys (critical for Philadelphia's freeze-thaw winters), synthetic underlayment across the field, drip edge on rakes and eaves.</li>
+  <li><strong>New shingles, flashing, and ventilation.</strong> Architectural or designer shingles installed to manufacturer spec, new step flashing, chimney and skylight flashing, pipe boots, and a balanced ridge-and-soffit ventilation system.</li>
+  <li><strong>Full cleanup and magnetic sweep.</strong> Your yard, driveway, and gutters leave spotless. We run a magnetic sweep for stray nails before we pack up.</li>
+  <li><strong>Final walkthrough, warranty paperwork, and photos.</strong> You get photos of the completed work, your written warranty, and a full final walkthrough with the crew lead.</li>
+</ol>
+<p>Most residential roof replacements in Philadelphia are completed in 1–3 days, depending on roof size, complexity, and weather.</p>`,
+      },
+      {
+        heading: "Roofing Materials We Install — Architectural, Designer, and Metal",
+        html: `<p>The roofing material you choose shapes how your new roof looks, how long it lasts, and what it costs. For Philadelphia homes, we install and recommend the following.</p>
+<h3>Architectural asphalt shingles (the Philadelphia standard)</h3>
+<p>Also called dimensional or laminated shingles, these are the right call for the majority of Philadelphia homes. They resist wind up to 110–130 mph depending on the product, carry 25–30 year manufacturer warranties, and handle the Mid-Atlantic freeze-thaw climate well. Better warranty, better wind resistance, and better curb appeal than old-style three-tab shingles for a modest additional cost.</p>
+<h3>Designer and luxury shingles</h3>
+<p>Impact-rated and designer shingles (GAF Grand Sequoia, CertainTeed Grand Manor, and similar) give slate or cedar-shake appearance in asphalt, with 50-year warranties and maximum wind resistance. Worth considering on historic Germantown, Mount Airy, and Chestnut Hill homes where curb appeal matters.</p>
+<h3>Metal roofing</h3>
+<p>Standing-seam metal roofs last 40–70 years and hold up to wind, snow, and ice better than any other residential option. A strong fit for historic homes, modern architecture, and accent sections like porches and bay windows. See our <a href="/services/metal-roofing">metal roofing</a> page for full details on Phase 3.</p>
+<h3>Flat roof systems — EPDM, modified bitumen, TPO</h3>
+<p>For Philadelphia row homes, flat-roof additions, and commercial buildings, we install EPDM rubber, modified bitumen, and TPO single-ply membranes. Full coverage on our <a href="/services/flat-roofing">flat roofing</a> page.</p>
+<h3>Three-tab asphalt shingles</h3>
+<p>We install three-tab shingles when a homeowner specifically requests the lowest-cost option. They carry shorter warranties and less wind resistance — architectural shingles are almost always the better value.</p>`,
+      },
+      {
+        heading: "Tear-Off vs. Overlay — What's Right for Your Philadelphia Home",
+        html: `<p>Some contractors offer to "shingle over" your existing roof to save on labor and disposal. For most Philadelphia homes, we almost always recommend a full tear-off instead. Here is why.</p>
+<ul>
+  <li><strong>You cannot see the decking on an overlay.</strong> Water damage, rot, and nail-popped plywood get trapped underneath the new shingles — guaranteeing another replacement in a fraction of the new roof's expected life.</li>
+  <li><strong>Weight matters.</strong> Two layers of asphalt on older Philadelphia homes adds a significant load the original framing was not designed to carry.</li>
+  <li><strong>Warranties.</strong> Most manufacturer shingle warranties are voided or reduced on overlays. A tear-off preserves the full warranty you paid for.</li>
+  <li><strong>Ventilation, flashing, and ice-and-water shield</strong> all need to be upgraded or reinstalled on a modern roof. Overlays skip all of that.</li>
+  <li><strong>Life of the new roof.</strong> Shingles installed over an old layer of shingles typically lose 3–8 years off the rated lifespan — the new roof runs hotter and traps heat against the shingle mats.</li>
+</ul>
+<p>The only situations where we sometimes agree to an overlay are specific, limited cases with sound decking, one existing layer, and a homeowner who fully understands the trade-off. Even then, tear-off is almost always the better long-term value.</p>`,
+      },
+      {
+        heading: "Warranties That Actually Protect Your Investment",
+        html: `<p>A roof replacement in Philadelphia is a significant investment — so warranty terms matter as much as the price. Every Adilay Roofing roof replacement includes two separate warranties in writing.</p>
+<h3>Manufacturer material warranty</h3>
+<p>The shingle manufacturer warrants the materials against defects — typically 25 to 30 years on architectural shingles, up to 50 years on designer and impact-rated products. We give you the exact warranty document for the shingle you choose before you sign anything, so you can read the terms yourself.</p>
+<h3>Adilay Roofing workmanship warranty</h3>
+<p>Materials fail more rarely than installations do. Our workmanship warranty covers the roof being installed correctly — proper flashing, proper fastening, proper ventilation, proper tie-ins. If a leak develops because of how we installed it, we come back and fix it at no charge. The specific term is on your estimate in writing.</p>
+<p>We recommend any Philadelphia homeowner comparing roof replacement quotes asks every bidder for both warranties in writing. Contractors who cannot produce either document on request are not the right choice for a roof you expect to last 25+ years.</p>`,
+      },
+      {
+        heading: "Roof Replacement Financing — $1,000 to $100,000, No Payments Until Complete",
+        html: `<p>Adilay Roofing partners with Service Finance Company to offer flexible roof replacement financing for Philadelphia homeowners. Loan amounts from $1,000 to $100,000 are available, and you pay nothing until the job is complete and you are satisfied with the work. Multiple rate and term options are available — see our <a href="/financing">financing options</a> page for current offers or ask during your free estimate.</p>`,
+      },
+      {
+        heading: "What Makes a Philadelphia Roof Replacement Different",
+        html: `<p>Roofs in Philadelphia are not the same as roofs in Atlanta or Denver. A few Philadelphia-specific details we always factor into a new roof.</p>
+<ul>
+  <li><strong>Freeze-thaw winters.</strong> Ice-and-water shield at eaves and valleys is non-negotiable. Ice dams on poorly vented roofs in Northeast Philadelphia — Mayfair, Bustleton, Somerton — are a recurring cause of winter leaks.</li>
+  <li><strong>Row home parapets and flat-to-pitched transitions.</strong> Classic South Philly, Fishtown, Kensington, and West Philly row homes often pair a pitched front with a flat rubber back — the tie-in details matter more than the shingles.</li>
+  <li><strong>Shared party walls.</strong> On attached row houses, a leak on your roof can affect your neighbor's property. Proper flashing at shared walls and parapets is critical.</li>
+  <li><strong>Historic and older homes.</strong> In Germantown, Mount Airy, Chestnut Hill, and the older parts of West Philly, many homes still carry slate or original built-up roofs. Material matching and detailing matters.</li>
+  <li><strong>Philadelphia permits.</strong> L&amp;I requires a permit for full replacements; we handle it every time under our PA184779 license.</li>
+</ul>
+<p>If your roof is past 20 years old or showing signs of widespread wear, a <a href="/services/roof-inspection">free Philadelphia roof inspection</a> is the right first step. When replacement is the right answer, we put together an honest written estimate — no pressure, no surprises.</p>`,
+      },
     ],
   },
   {
@@ -151,6 +246,88 @@ export const services: Service[] = [
         question: "Do I need a permit for roof repairs in Philadelphia?",
         answer:
           "Minor roof repairs typically do not require a permit in Philadelphia. However, if the repair involves structural work or covers a significant portion of the roof, a permit may be required. As a licensed contractor (PA184779), we will let you know if a permit is needed and handle the process for you.",
+      },
+      {
+        question: "How do I know whether to repair or replace my roof?",
+        answer:
+          "If the damage is localized — a few shingles, a flashing detail, a punctured section of flat roof — a roof repair is usually the right call. If your roof is over 20 years old, has widespread granule loss, multiple active leaks, or repeated repairs in the same areas, replacement is the better long-term investment. We will give you an honest recommendation during a free Philadelphia roof repair inspection, not a pushy upsell.",
+      },
+      {
+        question: "Do you fix chimney and skylight flashing leaks?",
+        answer:
+          "Yes — chimney and skylight flashing failures are two of the most common sources of roof leaks on Philadelphia homes. We re-flash, reseal, or rebuild the detail using proper step-flashing technique and appropriate sealants, not just a cosmetic caulk fix that will fail again next season.",
+      },
+      {
+        question: "Will my homeowner's insurance cover roof repair in Philadelphia?",
+        answer:
+          "Insurance usually covers sudden events — wind damage, hail, falling trees, storm debris. It generally does not cover wear, age, or poor maintenance. If your roof repair is storm-related, we provide date-stamped photos, a written damage report, and an itemized estimate formatted the way insurance adjusters expect, and we can meet your adjuster on-site.",
+      },
+      {
+        question: "What kind of warranty do you offer on roof repair work?",
+        answer:
+          "Every roof repair we perform in Philadelphia is backed by a workmanship guarantee. The exact warranty length depends on the repair type, materials used, and whether it is a temporary or permanent fix — we put the terms in writing on your estimate so you know exactly what is covered before we start.",
+      },
+      {
+        question: "Do you repair flat EPDM rubber roofs on Philadelphia row homes?",
+        answer:
+          "Yes. Flat-roof repair on EPDM, modified bitumen, and TPO membranes is a daily job for our crew. We repair seam failures, punctures, parapet-wall tie-in leaks, and drain leaks across South Philly, Fishtown, Kensington, West Philadelphia, and the rest of the city.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Roof Leak Repair in Philadelphia — Find It, Fix It, Stop It",
+        html: `<p>A roof leak is rarely where you think it is. Water enters at one point, runs along the decking or rafters, and drips through the ceiling somewhere else entirely. A rushed "repair" at the drip location almost always leaks again the next storm. Our Philadelphia roof repair process starts with proper leak tracing.</p>
+<ul>
+  <li><strong>Attic and interior inspection</strong> — we trace water staining back to the original point of entry, checking sheathing, rafters, and insulation along the way.</li>
+  <li><strong>Roof-top diagnosis</strong> — a licensed roofer walks the roof and inspects flashing, penetrations, valleys, and field shingles for the actual source of the leak.</li>
+  <li><strong>Written diagnosis and photos</strong> before any permanent work — you see what we see, so the repair makes sense.</li>
+  <li><strong>Permanent roof leak repair</strong> matched to the cause, not the symptom. If a flashing failure caused the leak, we re-flash it. If a cracked shingle did, we replace it correctly with the underlayment tied in.</li>
+</ul>
+<p>Every roof leak repair comes with a free estimate and a workmanship guarantee in writing.</p>`,
+      },
+      {
+        heading: "Flashing Repair — Chimney, Skylight, and Vent Pipe Details",
+        html: `<p>On most Philadelphia homes, the flashing fails before the shingles do. Flashing is the metal and sealant that ties your roof into everything that sticks out of it — chimneys, skylights, vent pipes, sidewalls, and dormers. When flashing cracks, corrodes, or pulls loose, water finds a path inside.</p>
+<h3>Chimney flashing repair</h3>
+<p>Older brick chimneys on Philadelphia twins and colonials often have original step flashing and counter-flashing that has simply aged out. We rebuild the flashing properly: step flashing woven into each shingle course, counter-flashing tucked into the brick mortar joints and sealed with a polyurethane or butyl sealant rated for the long haul.</p>
+<h3>Skylight and sun-tunnel flashing</h3>
+<p>Curb-mounted and deck-mounted skylights both develop leaks at the flashing kit. We replace the flashing kit when the underlying hardware is sound, or full skylight replacement when the frame itself is compromised.</p>
+<h3>Plumbing vent and exhaust-pipe boots</h3>
+<p>The rubber boots sealing plumbing vents are the shortest-lived component on most Philadelphia roofs — typically ten to fifteen years. We replace failed boots with commercial-grade or metal-collar replacements that last much longer.</p>
+<h3>Step flashing and sidewall tie-ins</h3>
+<p>Where a dormer or addition meets the main roof, step flashing and kick-out flashing direct water away from siding and interior walls. Missing or corroded step flashing is a classic cause of interior wall leaks — we install it to code and seal the connection permanently.</p>`,
+      },
+      {
+        heading: "Shingle Repair and Replacement in Philadelphia",
+        html: `<p>Shingle damage on Philadelphia homes usually comes from one of three sources: wind, age, or poor original installation. The repair depends on the cause.</p>
+<ul>
+  <li><strong>Wind damage</strong> — after a storm, look for missing tabs, lifted shingles that will not lay flat, and creased shingles where the wind folded them back. We replace damaged shingles and re-seal any that have been lifted, color-matching to your existing roof as closely as possible.</li>
+  <li><strong>Cracked and curling shingles</strong> — as asphalt shingles age, they lose granules, curl at the edges, and crack across the tabs. Isolated areas can be repaired; widespread curling usually means the roof has reached the end of its usable life.</li>
+  <li><strong>Missing shingles</strong> — replaced individually, with the underlayment inspected and new shingles tied into the courses above and below so water sheds correctly.</li>
+  <li><strong>Exposed nail heads and face-nailed shingles</strong> — common on older or rushed installations, these are the exact points where leaks start. We replace the affected shingles and seal the nails properly.</li>
+</ul>
+<p>For a full new roof, see our <a href="/services/roof-replacement">roof replacement in Philadelphia</a> page.</p>`,
+      },
+      {
+        heading: "Flat Roof Repair for Philadelphia Row Homes",
+        html: `<p>If you own a row home in South Philly, Fishtown, Kensington, West Philly, or any of the older city neighborhoods, you almost certainly have a flat roof — and flat roofs fail in predictable ways. We specialize in flat roof repair in Philadelphia and diagnose seam and membrane failures every day.</p>
+<ul>
+  <li><strong>EPDM rubber roof repair</strong> — seam failures, pinholes, punctures, and shrinkage pulling the membrane away from the parapet walls. Most EPDM repairs can be handled same-day with compatible patching material.</li>
+  <li><strong>Modified bitumen repair</strong> — torch-down and peel-and-stick systems split at seams and around drains as they age. We re-seam, patch, and re-detail penetrations properly.</li>
+  <li><strong>Parapet wall tie-in leaks</strong> — the single most common flat-roof leak location on Philadelphia row homes. We cut in new termination bars, install proper counter-flashing, and seal the tie-in so water has nowhere to run.</li>
+  <li><strong>Drain and scupper repair</strong> — standing water around a failing drain eats through any flat roof. We reset drains, rebuild scuppers, and re-pitch low spots where needed.</li>
+</ul>
+<p>See also our dedicated <a href="/services/flat-roof-repair">flat roof repair Philadelphia</a> service page for more detail.</p>`,
+      },
+      {
+        heading: "Chimney, Soffit, and Fascia Repairs",
+        html: `<p>The edge of your roof — soffit, fascia, and the chimney crown — is where roof repair and exterior carpentry meet. Leaks here rot wood out from the inside and often go unnoticed until paint starts bubbling or ceiling drywall stains appear near the exterior wall.</p>
+<p>We repair and replace rotted fascia boards, rebuild soffit panels and vents (maintaining proper attic ventilation), and rebuild chimney crowns and caps so water stops running down the inside of the masonry. Our <a href="/services/soffit-repair">soffit repair</a> service page covers the specific soffit and fascia work we handle across Philadelphia.</p>`,
+      },
+      {
+        heading: "Storm Damage Roof Repair in Philadelphia",
+        html: `<p>Storm damage is its own category of roof repair. The damage is often wider than it looks, the insurance claim process is time-sensitive, and the roof typically needs emergency stabilization before the permanent repair. We handle all three.</p>
+<p>For immediate stabilization — active leaks, wind damage, fallen limbs — see our <a href="/services/emergency-roof-repair">emergency roof repair Philadelphia</a> page. For storm-claim repairs with insurance documentation, our <a href="/services/storm-damage-roof-repair">storm damage roof repair</a> page walks through the process. Either way, call (888) 823-4766 — we will dispatch the same day for active leaks and provide a written, photographed damage report suitable for an insurance claim.</p>`,
       },
     ],
   },
@@ -571,6 +748,125 @@ export const services: Service[] = [
         question: "Do you repair all types of roofs in an emergency?",
         answer:
           "Yes, our emergency roof repair team is equipped to handle all roof types, including asphalt shingle roofs, flat EPDM rubber roofs, metal roofing, and modified bitumen systems. No matter what type of roof you have, we can provide emergency protection and permanent repairs to restore your roof's integrity.",
+      },
+      {
+        question: "Do you work nights and weekends for emergency roof repairs?",
+        answer:
+          "Yes. Adilay Roofing answers the phone 24 hours a day, seven days a week for emergency roof repair calls across Philadelphia. Storms do not wait for business hours and neither do we. Call (888) 823-4766 any time, day or night.",
+      },
+      {
+        question: "Which Philadelphia neighborhoods do you cover for emergency roof repair?",
+        answer:
+          "We respond to emergency roof repair calls across every Philadelphia neighborhood — Northeast Philly, South Philly, Fishtown, Kensington, Manayunk, Roxborough, Germantown, Mount Airy, West Philadelphia, Center City, Northern Liberties, and the rest of the city — plus Bucks, Montgomery, Delaware, and Chester counties. Our office is in Kensington, so we're usually minutes away.",
+      },
+      {
+        question: "How do I stop a roof leak before you arrive?",
+        answer:
+          "If it is safe to do so from inside: place a bucket under the drip, move electronics and valuables away from the affected area, and poke a small hole in a sagging wet ceiling to let trapped water drain into a container instead of collapsing the drywall. Never climb onto the roof during or after a storm. Take photos of everything — they help with both the repair and the insurance claim.",
+      },
+      {
+        question: "Is emergency tarping a permanent fix for a leaking roof?",
+        answer:
+          "No. A properly installed emergency roof tarp is a temporary protective measure — it stops water from entering your Philadelphia home until the permanent repair can be scheduled. Depending on weather, a well-installed tarp will hold for 30 to 90 days. We always return to complete the permanent roof repair and remove the tarp.",
+      },
+      {
+        question: "Will my homeowner's insurance pay for emergency roof repair in Philadelphia?",
+        answer:
+          "Insurance usually covers sudden events — wind damage, hail, a tree falling on your roof, storm debris. It does not typically cover wear, age, or deferred maintenance. Our emergency roof repair documentation (date-stamped photos, written report, itemized estimate) is designed to support a legitimate claim. We can also meet your adjuster on-site and walk the damage with them.",
+      },
+      {
+        question: "How long does an emergency roof tarp last?",
+        answer:
+          "A professionally installed emergency tarp — heavy-gauge polyethylene, secured with batten strips screwed into solid decking, overlapped properly to shed water downslope — will typically hold 30 to 90 days depending on weather. Tarps weighted down with bricks or sandbags blow off in the first windstorm and are not a reliable short-term fix.",
+      },
+      {
+        question: "Do you handle emergency leaks on flat EPDM rubber roofs?",
+        answer:
+          "Yes — flat rubber roof leaks are one of the most common emergency calls we get in South Philly, Fishtown, Kensington, and West Philadelphia. We diagnose EPDM seam failures, punctures, parapet-wall tie-in leaks, and drain leaks, then repair them the same day whenever weather permits.",
+      },
+      {
+        question: "A tree fell on my roof in Philadelphia — what should I do?",
+        answer:
+          "Stay out of the affected rooms if the ceiling is sagging or debris is coming through. Call us at (888) 823-4766 and take photos from a safe distance. Do not attempt to remove the tree yourself — large limbs can shift and cause more damage or injury. We remove the debris safely, tarp the opening, document the damage for insurance, and schedule the permanent repair.",
+      },
+      {
+        question: "Do you repair ice dam leaks in Philadelphia winters?",
+        answer:
+          "Yes. Ice dams are one of the most common emergency roof calls from Northeast Philadelphia — Mayfair, Bustleton, Somerton, the Far Northeast — every January and February. We thaw the dam, stop the active leak, and diagnose the root cause (usually inadequate attic ventilation or insulation). Ice dams left alone will cause the same leak every winter until the underlying problem is fixed.",
+      },
+      {
+        question: "How much does a roof tarp cost in Philadelphia?",
+        answer:
+          "Emergency tarping in Philadelphia typically starts around $300–$500 for a standard residential tarp installation. The price depends on the size of the damaged area, the difficulty of access, and whether any debris needs to be removed first. Permanent repairs are quoted separately — and we always provide a free written estimate before starting permanent work.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Common Philadelphia Roofing Emergencies We Respond To",
+        html: `<p>When your roof fails in a storm, you want a Philadelphia roofer who has already seen exactly what is happening to your house. After two decades responding to emergency roof repair calls across the city, these are the situations we handle week in and week out.</p>
+<h3>Storm wind and hail damage</h3>
+<p>Philadelphia sits in the path of nor'easters rolling up the Delaware Valley and convective summer storms pushing across from central Pennsylvania. Sustained winds above 50 mph lift asphalt shingles off the decking and tear flashing away from chimneys and skylights. Hail cracks shingle mats and punches through aging flat-roof membranes. If your neighbors' roofs look chewed up the morning after a storm, yours probably is too — call for a free inspection before the next rain.</p>
+<h3>Flat rubber roof leaks on row homes</h3>
+<p>Nearly every flat EPDM and modified bitumen roof in South Philly, Fishtown, Kensington, and the older blocks of West Philadelphia eventually fails the same way — at the seams, around the drain, or where the membrane ties into the parapet wall. A pinhole leak in the rubber sends water running along the roof decking until it finds the nearest light fixture or ceiling seam and dumps it inside. Flat-roof leak diagnosis and same-day emergency repair is a daily job for our crew.</p>
+<h3>Ice dam leaks in Northeast Philadelphia</h3>
+<p>Mayfair, Bustleton, Somerton, Rhawnhurst, and the Far Northeast get the coldest, snowiest winter weather in the city. When warm attic air melts snow on the upper roof, water runs down and refreezes at the cold eaves — backing up under the shingles. Ice dams rip out gutters, soak insulation, and drip water through ceilings for weeks. We thaw the ice, stop the active leak, and fix the ventilation problem underneath so it does not happen again next winter.</p>
+<h3>Fallen tree limbs and storm debris</h3>
+<p>The tree canopy across Mount Airy, Chestnut Hill, Roxborough, and the older parts of West Philadelphia is beautiful — and it drops heavy limbs on roofs every time there is a real windstorm. Limbs crack decking, split shingles, and puncture flat roofs. We remove the debris safely, stabilize the opening with an emergency tarp, document the damage for your insurance, and follow up with permanent repairs.</p>
+<h3>Chimney flashing and skylight leaks</h3>
+<p>Most "sudden" roof leaks are actually old flashing or sealant that finally let go. Chimney flashing, skylight curbs, and plumbing boot seals are the three most common culprits on Philadelphia homes. We reseal, re-flash, or rebuild the detail the right way — not just a caulk gun and a prayer.</p>
+<h3>Active leaks from unknown sources</h3>
+<p>When water is dripping through a ceiling and you cannot tell where it is getting in, do not guess — call. We trace the leak back to its source, stop it that day, and give you a written estimate for the permanent fix.</p>`,
+      },
+      {
+        heading: "Our Same-Day Emergency Roof Repair Response Timeline",
+        html: `<p>When you call (888) 823-4766 for emergency roof repair in Philadelphia, here is exactly what happens next.</p>
+<ol>
+  <li><strong>Call received, 24/7.</strong> A real person from Adilay Roofing answers and gets the basics — your address, what you are seeing, and how fast water is coming in. If the leak is actively filling ceilings or pouring down walls, we prioritize your call immediately.</li>
+  <li><strong>Dispatch within hours for active leaks.</strong> For emergency roof repair across Philadelphia, Bucks, Montgomery, Delaware, and Chester counties, our crew is typically on your property the same day. During major storm events we schedule by severity — active interior leaks come first.</li>
+  <li><strong>On-site diagnosis and photo documentation.</strong> A licensed Philadelphia emergency roofer walks the roof, identifies the source of the leak, and photographs every point of damage. You get the photos; so does your insurance adjuster if there is a claim.</li>
+  <li><strong>Emergency tarping or temporary weatherproofing.</strong> If the leak cannot be permanently fixed on the spot — weather, time of day, scope of damage — we install a properly-secured emergency tarp or temporary flashing to stop water from entering until permanent repairs can be completed.</li>
+  <li><strong>Written estimate for the permanent repair.</strong> You get a transparent quote with no hidden fees before we do any chargeable permanent work. If you accept, we schedule the repair. If insurance is involved, we coordinate directly with your adjuster.</li>
+  <li><strong>Permanent repair scheduled quickly.</strong> Most permanent emergency roof repairs in Philadelphia can be completed within 1–3 days of the initial response, weather permitting.</li>
+</ol>`,
+      },
+      {
+        heading: "Emergency Tarping and Temporary Weatherproofing — Done Right",
+        html: `<p>Emergency tarping is not glamorous — but done properly, it saves Philadelphia homeowners thousands of dollars in interior water damage while they wait for permanent repairs. A cheap tarp weighted down with bricks will flap loose in the first gust of wind and make the problem worse. Here is how a professional emergency roof tarp is installed:</p>
+<ul>
+  <li><strong>Heavy-gauge polyethylene tarp sized to overlap the damage by at least three feet on every side.</strong> Larger overlap means less chance of water running under the edge.</li>
+  <li><strong>Battens secured through the tarp into solid decking.</strong> We use 1x3 or 2x4 wood strips screwed through the tarp edges into sound framing — not through rotted areas or over open seams.</li>
+  <li><strong>Orientation that sheds water downslope,</strong> with the top edge tucked under existing shingles wherever possible so rain runs across and off the tarp, not underneath it.</li>
+  <li><strong>Targeted temporary flashing for specific leaks</strong> — a skylight seal failure, a chimney crack, or a plumbing boot tear often needs a small temporary flashing repair instead of a full tarp.</li>
+</ul>
+<p>Emergency tarping is not a permanent fix. Properly installed, a tarp holds for 30 to 90 days depending on weather — enough time to document the damage, work through an insurance claim, and schedule the permanent roof repair. We always return to complete the permanent fix and remove the tarp.</p>`,
+      },
+      {
+        heading: "Working With Your Homeowner's Insurance After Storm Damage",
+        html: `<p>If the damage to your Philadelphia roof was caused by a sudden event — wind, hail, a fallen limb, storm debris — there is a good chance your homeowner's insurance will cover the repair. Insurance policies generally <strong>do not</strong> cover damage caused by wear and tear, deferred maintenance, or old age. Our emergency roof repair documentation is designed to draw a clear line between the two.</p>
+<p>Here is what you get from Adilay Roofing after every emergency response:</p>
+<ul>
+  <li><strong>Date-stamped, high-resolution photographs</strong> of every point of damage, plus wide shots showing the overall condition of the roof.</li>
+  <li><strong>A written damage report</strong> describing the cause of the leak, the roofing systems affected, and the recommended permanent repair.</li>
+  <li><strong>An itemized estimate</strong> for the permanent repair broken out by labor, materials, and disposal — the format adjusters are used to seeing.</li>
+  <li><strong>Direct coordination with your insurance adjuster.</strong> If you want us to, we will meet the adjuster on your property, walk the roof with them, and answer their questions on-site.</li>
+</ul>
+<p>What to do the moment you notice storm damage on your roof: <strong>call us first for emergency stabilization</strong>, then call your insurance carrier to open a claim. Adjusters move faster when the damage is already documented and a licensed PA roofing contractor has eyes on the property.</p>`,
+      },
+      {
+        heading: "Emergency Response Across Philadelphia Neighborhoods",
+        html: `<p>Adilay Roofing responds to emergency roof repair calls across every Philadelphia neighborhood and the surrounding Pennsylvania counties. Our office is at 2020 Dreer Street in Kensington, so we are usually minutes away. Below is a snapshot of the situations we see most often in each area.</p>
+<h3><a href="/service-areas/northeast-philadelphia">Northeast Philadelphia</a></h3>
+<p>Mayfair, Bustleton, Rhawnhurst, and Somerton see the heaviest ice dam and wind damage calls in the city. Twin homes and post-war ranchers on undersized attic ventilation are especially vulnerable. If snow is sliding down your roof into frozen chunks at the gutter line, call before the next thaw.</p>
+<h3><a href="/service-areas/south-philadelphia">South Philadelphia</a></h3>
+<p>Nearly every flat rubber roof in South Philly eventually needs emergency attention. Rowhouse roofs past 20 years old start leaking at seams, drains, and parapet tie-ins — often without warning. We repair EPDM and modified bitumen flat roofs daily in Point Breeze, Passyunk Square, Pennsport, and Grays Ferry.</p>
+<h3><a href="/service-areas/manayunk">Manayunk and Roxborough</a></h3>
+<p>Hillside homes, heavy tree canopies, and older steep-pitched roofs make this corner of the city a recurring emergency call. Fallen limbs and torn flashing top the list.</p>
+<h3><a href="/service-areas/fishtown">Fishtown and Northern Liberties</a></h3>
+<p>Newer rooftop decks and converted warehouses in Fishtown, Northern Liberties, and Kensington rely on flat EPDM and TPO membranes that have to be detailed correctly around deck supports and drains. When a seam fails here, water moves fast.</p>
+<h3><a href="/service-areas/germantown">Germantown, Mount Airy, and Chestnut Hill</a></h3>
+<p>Older Victorians and stone colonials in these neighborhoods often still carry original slate or built-up tar roofs well past their intended lifespan. Sudden failures are common after heavy winter weather.</p>
+<h3><a href="/service-areas/philadelphia">All of Philadelphia County</a></h3>
+<p>From Center City brownstones to the Far Northeast, from West Philly rowhouses to Chestnut Hill — if you need emergency roof repair in Philadelphia PA, Adilay Roofing is already nearby. Call <a href="tel:+18888234766">(888) 823-4766</a> any time.</p>`,
       },
     ],
   },

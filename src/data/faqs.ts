@@ -1,13 +1,18 @@
 export const faqs = [
   {
+    question: "What makes Adilay one of the best roofing companies in Philadelphia?",
+    answer:
+      "We&rsquo;re a family-owned Philadelphia roofing contractor with 20+ years on local roofs, a 5.0 Google rating across 40+ reviews, and a 30-person in-house crew &mdash; no subcontracted labor. We&rsquo;re licensed in Pennsylvania (PA184779), fully insured, and handle every major Philadelphia roof type: architectural shingle, slate, flat EPDM/TPO, and modified bitumen. You get one point of contact from estimate through final inspection.",
+  },
+  {
+    question: "How fast can a Philadelphia roofer get to my home for an emergency?",
+    answer:
+      "For active leaks, storm damage, or missing shingles after high winds, call (888) 823-4766 and we aim to have a crew on-site the same day for emergencies in Philadelphia County and the close suburbs. If we can&rsquo;t get to you that day, we&rsquo;ll walk you through tarping and containment steps over the phone so the damage stops spreading until we arrive.",
+  },
+  {
     question: "How do I know if my roof needs to be replaced?",
     answer:
       "Common signs include shingles that are curling, cracking, or missing; frequent leaks; granules in your gutters; and a roof that's over 20 years old. We offer free inspections to assess your roof's condition and give you an honest recommendation.",
-  },
-  {
-    question: "Do you offer free estimates?",
-    answer:
-      "Yes. We provide free, no-obligation estimates for all our services. We'll inspect your property, discuss your options, and provide a clear, written quote with no hidden fees.",
   },
   {
     question: "What areas do you serve?",
@@ -17,7 +22,7 @@ export const faqs = [
   {
     question: "How long does a roof replacement take?",
     answer:
-      "Most residential roof replacements are completed in 1–3 days, depending on the size of your home, weather conditions, and the complexity of the job. We'll give you a specific timeline during your estimate.",
+      "Most residential roof replacements are completed in 1\u20133 days, depending on the size of your home, weather conditions, and the complexity of the job. We'll give you a specific timeline during your estimate.",
   },
   {
     question: "Do you work with insurance companies on storm damage claims?",
@@ -35,9 +40,14 @@ export const faqs = [
       "Yes. Adilay Roofing LLC is a licensed contractor in Pennsylvania (License #PA184779). We carry full insurance and are happy to provide documentation upon request.",
   },
   {
+    question: "Do you offer free estimates?",
+    answer:
+      "Yes. We provide free, no-obligation estimates for all our services. We'll inspect your property, discuss your options, and provide a clear, written quote with no hidden fees.",
+  },
+  {
     question: "Do you offer any warranties?",
     answer:
-      "We stand behind our work with a workmanship warranty on every project, in addition to manufacturer warranties on materials. The specific terms depend on the project and materials chosen — we cover all warranty details in your project proposal before any work begins. See our Terms of Service for more information.",
+      "We stand behind our work with a workmanship warranty on every project, in addition to manufacturer warranties on materials. The specific terms depend on the project and materials chosen \u2014 we cover all warranty details in your project proposal before any work begins. See our Terms of Service for more information.",
   },
   {
     question: "Can you help with emergency roof repairs?",
