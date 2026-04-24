@@ -49,10 +49,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      absolute: "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
+      absolute: "Philadelphia Roofing Contractor — Adilay Roofing | Free Estimates",
     },
     description:
-      "Looking for a roofer in Philadelphia? Adilay Roofing is a trusted roofing contractor with 20+ years experience, 2,000+ projects & 5-star Google reviews. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Trusted Philadelphia roofing contractors. Roof replacement, repair, flat roofing & 24/7 emergency. Licensed PA184779. Free estimates (888) 823-4766.",
     keywords: [
       "roofer Philadelphia",
       "roofing contractor Philadelphia",
@@ -170,7 +170,7 @@ export default async function Home() {
   const heroHeadlineRed = (cmsData?.heroHeadlineRed as string) || "Roofing Contractor";
   const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
   const heroDescription = (cmsData?.heroDescription as string) ||
-    "Looking for a reliable roofer in Philadelphia? From roof replacement and roof repair to emergency roofing services, Adilay Roofing has served Philadelphia and surrounding areas for over 20 years. Licensed, insured, 5-star rated on Google. Get a free estimate today.";
+    "Looking for trusted roofing contractors in Philadelphia? Adilay Roofing has served Philadelphia homeowners and businesses for more than 20 years — roof replacement, roof repair, flat roofing, and 24/7 emergency response. Licensed in Pennsylvania (PA184779), fully insured, 5.0 rating on Google. Free estimates — call (888) 823-4766.";
 
   const cmsWhyChooseUs = cmsData?.whyChooseUs as { title: string; description: string }[] | undefined;
   const whyChooseUs = cmsWhyChooseUs?.length
@@ -335,6 +335,75 @@ export default async function Home() {
                 Apply Now
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* INTRO / TRUST BODY COPY                      */}
+      {/* ============================================ */}
+      <section className="bg-white">
+        <div className="section-padding pb-0">
+          <div className="container-narrow mx-auto">
+            <ScrollReveal>
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+                  Roofing Contractors Philadelphia Homeowners Trust
+                </h2>
+                <div className="space-y-5 text-brand-gray leading-relaxed text-base md:text-lg">
+                  <p>
+                    Philadelphia roofs take a beating. Row-home flat roofs get ponding water after every nor&rsquo;easter. Slate and Spanish-tile roofs in Chestnut Hill and Mt. Airy shed pieces after every freeze-thaw cycle. Ice dams form behind the parapet walls in Fishtown and Northern Liberties every January. After 20+ years working on Philadelphia homes and businesses, we know exactly how these roofs fail &mdash; and how to fix them so they stay fixed.
+                  </p>
+                  <p>
+                    Adilay Roofing is a family-owned, Philadelphia-based roofing contractor licensed in Pennsylvania (<strong>PA184779</strong>) and fully insured. We&rsquo;ve completed over 2,000 projects across Philadelphia County, Bucks County, Montgomery County, Delaware County, and Chester County. Our 30-person crew handles every job in-house &mdash; no subcontracted labor, no day-of surprises.
+                  </p>
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-brand-dark mt-10 mb-4">
+                  Every Major Roofing Service for Philadelphia Properties
+                </h3>
+                <p className="text-brand-gray leading-relaxed text-base md:text-lg mb-4">
+                  Whether your roof is leaking tonight or you&rsquo;re planning a full replacement this spring, we handle the full scope of Philadelphia roofing work:
+                </p>
+                <ul className="space-y-2 text-brand-gray text-base md:text-lg list-disc pl-6 mb-6">
+                  <li>
+                    <Link href="/services/roof-replacement" className="text-brand-red font-semibold hover:underline">Roof replacement</Link> &mdash; architectural shingles, standing-seam metal, EPDM rubber, TPO, and modified bitumen
+                  </li>
+                  <li>
+                    <Link href="/services/roof-repair" className="text-brand-red font-semibold hover:underline">Roof repair</Link> and <Link href="/services/roof-leak-repair" className="text-brand-red font-semibold hover:underline">roof leak repair</Link> &mdash; flashing, shingle, and flat-roof seam repairs
+                  </li>
+                  <li>
+                    <Link href="/services/emergency-roof-repair" className="text-brand-red font-semibold hover:underline">24/7 emergency roof repair</Link> &mdash; same-day tarping and leak containment
+                  </li>
+                  <li>
+                    <Link href="/services/flat-roof" className="text-brand-red font-semibold hover:underline">Flat roofing</Link> &mdash; the dominant roof style on Philadelphia row homes and commercial buildings
+                  </li>
+                  <li>
+                    <Link href="/services/storm-damage-roof-repair" className="text-brand-red font-semibold hover:underline">Storm damage repair</Link> and insurance-claim documentation
+                  </li>
+                  <li>
+                    <Link href="/services/roof-inspection" className="text-brand-red font-semibold hover:underline">Roof inspections</Link>, <Link href="/services/gutter-cleaning" className="text-brand-red font-semibold hover:underline">gutter cleaning</Link>, <Link href="/services/siding" className="text-brand-red font-semibold hover:underline">siding</Link>, and <Link href="/services/chimney-repair" className="text-brand-red font-semibold hover:underline">chimney repair</Link>
+                  </li>
+                </ul>
+
+                <h3 className="text-xl md:text-2xl font-bold text-brand-dark mt-10 mb-4">
+                  Serving Philadelphia &amp; the Surrounding Counties
+                </h3>
+                <p className="text-brand-gray leading-relaxed text-base md:text-lg mb-4">
+                  We&rsquo;re based at 2020 Dreer St in Fishtown (Philadelphia 19125) and most of our work stays within an hour of the shop. If you&rsquo;re in any of these areas, you&rsquo;re in our service zone:
+                </p>
+                <p className="text-brand-gray leading-relaxed text-base md:text-lg mb-6">
+                  <Link href="/service-areas/philadelphia" className="text-brand-red font-semibold hover:underline">Philadelphia</Link>, <Link href="/service-areas/fishtown" className="text-brand-red font-semibold hover:underline">Fishtown</Link>, <Link href="/service-areas/northern-liberties" className="text-brand-red font-semibold hover:underline">Northern Liberties</Link>, <Link href="/service-areas/south-philadelphia" className="text-brand-red font-semibold hover:underline">South Philadelphia</Link>, <Link href="/service-areas/chestnut-hill" className="text-brand-red font-semibold hover:underline">Chestnut Hill</Link>, <Link href="/service-areas/manayunk" className="text-brand-red font-semibold hover:underline">Manayunk</Link>, <Link href="/service-areas/roxborough" className="text-brand-red font-semibold hover:underline">Roxborough</Link>, <Link href="/service-areas/bucks-county" className="text-brand-red font-semibold hover:underline">Bucks County</Link>, <Link href="/service-areas/montgomery-county" className="text-brand-red font-semibold hover:underline">Montgomery County</Link>, <Link href="/service-areas/delaware-county" className="text-brand-red font-semibold hover:underline">Delaware County</Link>, and <Link href="/service-areas/chester-county" className="text-brand-red font-semibold hover:underline">Chester County</Link>.
+                </p>
+
+                <h3 className="text-xl md:text-2xl font-bold text-brand-dark mt-10 mb-4">
+                  What Makes Us Different
+                </h3>
+                <p className="text-brand-gray leading-relaxed text-base md:text-lg">
+                  You can read our 40+ five-star Google reviews, but the short version is this: we show up when we say we will, we write down what&rsquo;s actually wrong with your roof (not what sells the biggest job), and we stand behind our workmanship in writing. If you&rsquo;d rather talk before you commit to anything, call <a href="tel:+18888234766" className="text-brand-red font-semibold hover:underline">(888) 823-4766</a> or <Link href="/get-quote" className="text-brand-red font-semibold hover:underline">request a free estimate</Link> and we&rsquo;ll be out within a day or two.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
