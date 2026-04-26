@@ -40,6 +40,9 @@ yarn-error.log*
 # .mcp.json.example is the shareable template.
 .mcp.json
 
+# Claude Code personal/local settings (per-developer approvals, etc.)
+.claude/settings.local.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
