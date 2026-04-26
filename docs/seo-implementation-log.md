@@ -71,9 +71,65 @@ is to bring each page to 1,500+ words of locally-specific content, 10+ FAQs
 
 ## Phase 2 — Service-area pages (Weeks 4–7)
 
-_Not yet started._ Planned targets: deepen top-traffic service-area pages
-with location-specific body sections, neighborhood-level internal links,
-local-zip schema, and photo galleries where available.
+Branch: `seo-phase-2-service-areas`
+
+Targets the 8 highest-value service-area pages per gap analysis. Goal is
+~1,200+ words of locally-specific body copy per page, expanded
+location-specific FAQs, deeper neighborhood-level internal linking, and
+sharpened meta. Body sections live authoritatively in
+`src/data/locations.ts`; the template falls through to TS when no CMS
+override exists, identical to the Phase 1 services pattern.
+
+Note on scope: the original gap-analysis target list included
+`chestnut-hill`, which doesn't exist as a route in `locations.ts`.
+Swapped for `germantown` (already exists; same slate / historic premium
+profile) so all 8 Phase 2 targets ship as edits to existing routes — no
+new routes, no nav wiring needed.
+
+| Date       | Path                                  | Target keyword(s)                                                                  | Change                                                                                                                                                              | Phase |
+|------------|---------------------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| 2026-04-26 | `/service-areas/philadelphia`         | "roofer philadelphia", "philadelphia roofing contractor", "rowhouse roof philly"  | Added 5 body sections (housing types, climate, permits/L&I, emergency response by neighborhood, neighborhood link block) + 3 new FAQs. ~1,500 words new copy.       | 2     |
+| 2026-04-26 | `/service-areas/fishtown`             | "roofer fishtown", "fishtown roof deck", "fishtown rowhouse roofer"               | Added 4 body sections (HQ proximity, two Fishtown housing eras, roof decks, pre-listing replacement) + 4 new FAQs. ~1,200 words new copy.                          | 2     |
+| 2026-04-26 | `/service-areas/northern-liberties`   | "roofer northern liberties", "nolibs roof deck", "pilot house roof leak"          | Added 4 body sections (two roof eras, pilot houses & roof decks, green roofs, response time) + 4 new FAQs. ~1,300 words new copy.                                  | 2     |
+| 2026-04-26 | `/service-areas/south-philadelphia`   | "roofer south philly", "south philly rowhouse roof", "south philadelphia flat roof" | Added 4 body sections (5 typical failure points, roof decks, tight-block logistics, neighborhoods served) + 4 new FAQs. ~1,400 words new copy.                    | 2     |
+| 2026-04-26 | `/service-areas/germantown`           | "roofer germantown", "germantown slate roof", "germantown historic home roofer"   | Added 4 body sections (slate restoration vs replacement, three replacement tiers, historic-district process, tree canopy/moss/gutters) + 4 new FAQs. ~1,500 words. | 2     |
+| 2026-04-26 | `/service-areas/manayunk`             | "roofer manayunk", "manayunk steep roof", "manayunk hillside gutters"             | Added 4 body sections (steep-slope methods, oversized gutters, slate/metal premium options, Main Street logistics) + 4 new FAQs. ~1,200 words new copy.            | 2     |
+| 2026-04-26 | `/service-areas/bucks-county`         | "roofer bucks county", "bucks county roof replacement cost", "levittown roof"     | Added 4 body sections (lower/central/upper Bucks markets, Levittown specifics, storm response, communities) + 4 new FAQs. ~1,300 words new copy.                   | 2     |
+| 2026-04-26 | `/service-areas/montgomery-county`    | "roofer montgomery county", "lower merion slate", "montco hoa roof rules"         | Added 4 body sections (housing types, HOAs/historic districts, storm response, communities) + 4 new FAQs. ~1,300 words new copy.                                   | 2     |
+| 2026-04-26 | `scripts/seed-gap-phase2-cms.mjs`     | —                                                                                  | New seed script — upserts sharpened meta (titles ≤62 chars, descriptions ≤155 chars) for the 8 Phase 2 URLs. Filename uses `gap-phase2-` to disambiguate from the legacy GSC-driven `seed-phase2-cms.mjs`. |  2C   |
+
+### Phase 2 notes
+
+- **Internal-linking density:** Every Phase 2 page now contains 5–15
+  internal links to other service-area pages and core services. The
+  Philadelphia pillar links to 13 neighborhood pages; Fishtown / NoLibs
+  / South Philly each link to the pillar plus 4 nearby neighborhoods;
+  county pages link to 7–11 community pages within the county.
+- **Content guardrails:** All claims trace to `src/data/company.ts` —
+  PA184779, 20+ years, 2,000+ projects, 30-person crew, Fishtown HQ at
+  2020 Dreer Street. No fabricated warranty/insurance/certification
+  claims. Local details (Levittown housing eras, Lower Merion HARB,
+  Cheltenham historic districts, PHC review process for Germantown,
+  Fishtown / Lower Kensington Historic District) are matters of public
+  record.
+- **CMS strategy:** Same as Phase 1 — body sections authoritative in
+  TS, CMS overlay handles meta only. Operators can push body sections
+  to CMS later via the admin UI when a specific page needs ad-hoc edits.
+
+### Phase 2 verification checklist (run before merge)
+
+- [ ] `npm run build` passes without TypeScript errors.
+- [ ] Visit each of the 8 Phase 2 URLs in the running preview server and
+      confirm: body sections render between intro and neighborhoods;
+      internal links resolve; FAQ accordion shows new questions.
+- [ ] Run Rich Results Test against each of the 8 URLs — confirm
+      FAQPage and Service/RoofingContractor schema validate.
+- [ ] Word-count spot-check: each of the 8 service-area pages should be
+      ≥1,200 words of body copy.
+- [ ] Lighthouse SEO score ≥95 on philadelphia + fishtown +
+      bucks-county at minimum.
+- [ ] `node scripts/seed-gap-phase2-cms.mjs` runs cleanly against
+      staging Supabase (idempotent — can be re-run).
 
 ---
 
