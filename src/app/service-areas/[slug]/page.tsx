@@ -185,76 +185,15 @@ export default async function LocationPage({ params }: PageProps) {
   const ctaSubtext = (cmsData?.ctaSubtext as string) ||
     `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`;
 
-  // JSON-LD LocalBusiness schema
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "RoofingContractor",
-    name: company.name,
-    description: `Professional roofing services in ${location.name}, ${location.state}. ${company.description}`,
-    url: `${BASE_URL}/service-areas/${slug}`,
-    telephone: company.phoneRaw,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: company.address.street,
-      addressLocality: company.address.city,
-      addressRegion: company.address.state,
-      postalCode: company.address.zip,
-      addressCountry: "US",
-    },
-    areaServed: {
-      "@type":
-        location.type === "county" ? "AdministrativeArea" : "City",
-      name: `${location.name}, ${location.state}`,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "39.9784",
-      longitude: "-75.1348",
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Sunday",
-        ],
-        opens: "00:00",
-        closes: "23:59",
-      },
-    ],
-    sameAs: [company.social.facebook, company.social.instagram],
-    priceRange: "$$",
-  };
-
-  // JSON-LD BreadcrumbList schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: BASE_URL,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Service Areas",
-        item: `${BASE_URL}/service-areas`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: location.name,
-        item: `${BASE_URL}/service-areas/${slug}`,
-      },
-    ],
-  };
+  // The site-wide <JsonLd /> in app/layout.tsx already emits the canonical
+  // RoofingContractor org schema with all areas served (Philadelphia,
+  // Bucks/Montgomery/Delaware/Chester counties) and the canonical address,
+  // phone, hours, and reviews. Page-level location targeting comes from
+  // the canonical URL, breadcrumbs, H1, and body content — no second
+  // RoofingContractor schema is needed here.
+  //
+  // BreadcrumbList JSON-LD is emitted by the <BreadcrumbJsonLd /> component
+  // below.
 
   // JSON-LD FAQPage schema
   const faqSchema = {
@@ -278,18 +217,6 @@ export default async function LocationPage({ params }: PageProps) {
           { name: "Service Areas", path: "/service-areas" },
           { name: location.name, path: `/service-areas/${slug}` },
         ]}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
       />
       <script
         type="application/ld+json"
