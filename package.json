@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cloudinary:upload": "node scripts/upload-images-to-cloudinary.mjs",
+    "cloudinary:upload:force": "node scripts/upload-images-to-cloudinary.mjs --force"
   },
   "dependencies": {
     "@supabase/ssr": "^0.9.0",

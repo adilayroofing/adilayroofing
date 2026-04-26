@@ -1,9 +1,41 @@
 import type { NextConfig } from "next";
 
+// Cloudinary config is read at module-load time. Restart dev server when
+// NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME changes — env reloads alone don't
+// re-evaluate this file.
+const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["http://192.168.68.57:3000", "http://localhost:3000"],
+  images: {
+    // When CLOUD_NAME is set, route every <Image src="/images/..."> through
+    // Cloudinary. The loader file (src/lib/cloudinary.ts) prefixes the folder
+    // and adds f_auto,q_auto for per-request format/quality optimization.
+    ...(cloudName
+      ? { loader: "custom", loaderFile: "./src/lib/cloudinary.ts" }
+      : {}),
+    remotePatterns: [
+      { protocol: "https", hostname: "res.cloudinary.com" },
+    ],
+  },
   async redirects() {
+    const cloudinaryFolder =
+      process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER || "adilayroofing";
+    const cloudinaryRedirects = cloudName
+      ? [
+          // /images/foo.jpg → res.cloudinary.com/<cloud>/image/upload/f_auto,q_auto/<folder>/images/foo.jpg
+          // 308 Permanent Redirect; browsers cache aggressively, so the hop
+          // only happens on first visit. Keeps the codebase free of hardcoded
+          // CDN URLs while still serving every image from Cloudinary.
+          {
+            source: "/images/:path*",
+            destination: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${cloudinaryFolder}/images/:path*`,
+            permanent: true,
+          },
+        ]
+      : [];
     return [
+      ...cloudinaryRedirects,
       // ======================================================================
       // CANONICAL HOST — 301 every non-www request to the www apex
       // Consolidates split SEO authority between adilayroofing.com and
