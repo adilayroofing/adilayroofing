@@ -144,7 +144,7 @@ export const services: Service[] = [
 <h3>Designer and luxury shingles</h3>
 <p>Impact-rated and designer shingles (GAF Grand Sequoia, CertainTeed Grand Manor, and similar) give slate or cedar-shake appearance in asphalt, with 50-year warranties and maximum wind resistance. Worth considering on historic Germantown, Mount Airy, and Chestnut Hill homes where curb appeal matters.</p>
 <h3>Metal roofing</h3>
-<p>Standing-seam metal roofs last 40–70 years and hold up to wind, snow, and ice better than any other residential option. A strong fit for historic homes, modern architecture, and accent sections like porches and bay windows. See our <a href="/services/metal-roofing">metal roofing</a> page for full details on Phase 3.</p>
+<p>Standing-seam metal roofs last 40–70 years and hold up to wind, snow, and ice better than any other residential option. A strong fit for historic homes, modern architecture, and accent sections like porches and bay windows.</p>
 <h3>Flat roof systems — EPDM, modified bitumen, TPO</h3>
 <p>For Philadelphia row homes, flat-roof additions, and commercial buildings, we install EPDM rubber, modified bitumen, and TPO single-ply membranes. Full coverage on our <a href="/services/flat-roofing">flat roofing</a> page.</p>
 <h3>Three-tab asphalt shingles</h3>

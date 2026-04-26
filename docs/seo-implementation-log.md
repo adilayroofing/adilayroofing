@@ -133,9 +133,64 @@ new routes, no nav wiring needed.
 
 ---
 
-## Phase 3 — Missing services + blog (Weeks 8–12)
+## Phase 3 — Blog + internal-link cleanup (Weeks 8–12)
 
-_Not yet started._ Planned targets: audit services.ts for gaps per gap
-analysis (e.g., ice dam removal, skylight repair, roof ventilation); seed a
-markdown-based blog with 4–6 Philadelphia-specific how-to articles linked
-from the homepage and pillar.
+Branch: `seo-phase-3-blog-and-services`
+
+Goal: ship 6 high-quality Philadelphia-specific blog posts targeting
+long-tail informational and commercial-intent keywords, and clean up
+broken internal links discovered during the audit. Services audit
+showed the existing 28-service catalogue covers the gap-analysis
+recommendations; no new service pages added in this phase.
+
+### Blog posts shipped (all live at merge — see Phase 3 user
+discussion for cadence rationale)
+
+| Date       | Path                                                     | Target keyword                              | Source                            | Phase |
+|------------|----------------------------------------------------------|---------------------------------------------|-----------------------------------|-------|
+| 2026-04-26 | `/blog/roof-replacement-cost-philadelphia-2026`          | "roof replacement cost Philadelphia"        | Restored from `content/blog-archived/` (high-quality existing draft, dated 2026-03-08) | 3 |
+| 2026-04-26 | `/blog/signs-you-need-new-roof-philadelphia`             | "signs you need a new roof"                 | Restored from archive (2026-03-12) | 3 |
+| 2026-04-26 | `/blog/emergency-roof-leak-repair-philadelphia`          | "emergency roof repair Philadelphia"        | Restored from archive (2026-04-02) | 3 |
+| 2026-04-26 | `/blog/roof-permit-philadelphia`                         | "Philadelphia building permits roofing"     | Restored from archive (2026-05-28) | 3 |
+| 2026-04-26 | `/blog/slate-roof-repair-vs-replacement-philadelphia`    | "slate roof repair Philadelphia"            | New — written for Phase 3          | 3 |
+| 2026-04-26 | `/blog/ice-dams-philadelphia-prevention-removal`         | "ice dams Philadelphia"                     | New — written for Phase 3          | 3 |
+
+The 4 restored posts came from `content/blog-archived/` which contains
+24 publishable-quality drafts from earlier work that had been moved out
+of the active directory. Restoration was a quick win — no rewriting,
+schema already correct, dates already set, all claims already vetted
+against `src/data/company.ts`. The 2 new posts (slate, ice dams) fill
+gaps not covered by the archive and target keywords explicitly called
+out in the gap analysis.
+
+There are 18 more high-quality posts still in the archive that can be
+restored in a follow-up phase if desired (covering topics like
+seasonal maintenance, EPDM rubber, flat roof guides, county-specific
+posts, and warranty / insurance how-tos).
+
+### Internal-link cleanup (also Phase 3)
+
+Audit caught 5 broken internal links from earlier phases — all fixed in this branch:
+
+| Broken link                          | Fix                                            | File                |
+|--------------------------------------|------------------------------------------------|---------------------|
+| `/service-areas/chestnut-hill`       | Replaced link with plain text "Chestnut Hill" (no chestnut-hill route exists) | `src/app/page.tsx` |
+| `/services/chimney-repair`           | Replaced with link to `/services/soffit-repair` (no chimney-repair service exists; chimney work covered under roof-repair) | `src/app/page.tsx` |
+| `/services/flat-roof`                | Fixed to `/services/flat-roofing` (correct slug) | `src/app/page.tsx` |
+| `/services/metal-roofing`            | Removed link (no metal-roofing service exists; metal info lives within roof-replacement page) | `src/data/services.ts` |
+| `/services/siding`                   | Fixed to `/services/siding-installation` (correct slug) | `src/app/page.tsx` |
+
+After the fix, the link audit script reports zero broken internal
+links across `src/app/page.tsx`, `src/data/services.ts`,
+`src/data/locations.ts`, and `content/blog/*.md`.
+
+### Phase 3 verification checklist (run before merge)
+
+- [ ] `npm run build` passes; sitemap includes all 6 blog post URLs.
+- [ ] Visit each new blog post URL — confirm renders, FAQ schema
+      validates, internal links resolve.
+- [ ] Visit homepage — confirm fixed links (`flat-roofing`,
+      `siding-installation`, `soffit-repair`) resolve, no 404s.
+- [ ] Run Rich Results Test against any 1 of the 6 posts to confirm
+      Article + FAQPage schema.
+- [ ] Lighthouse SEO ≥95 on at least 1 blog post URL.
