@@ -52,16 +52,21 @@ const INITIAL_FORM_DATA: FormData = {
   preferredContact: "",
 };
 
-const TOTAL_STEPS = 7;
+// Compressed from 7 steps → 3 steps for better mobile completion rate.
+// All 16 underlying form fields are preserved (and so are the Google Sheet
+// columns); only the UI grouping changed.
+//   Step 1 — About Your Project: service area + property type + project
+//            type + services needed
+//   Step 2 — Timeline & Property Details: timeline (required) + sq ft +
+//            stories + known issues + financing (all optional)
+//   Step 3 — Contact Info & Review: name + phone + email + preferred
+//            contact, with an inline review of steps 1–2 above the submit
+const TOTAL_STEPS = 3;
 
 const STEP_PROGRESS: Record<number, number> = {
-  1: 12,
-  2: 25,
-  3: 37,
-  4: 50,
-  5: 62,
-  6: 87,
-  7: 100,
+  1: 33,
+  2: 66,
+  3: 100,
 };
 
 const PROJECT_TYPES = [
@@ -182,6 +187,16 @@ function StepHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Sub-heading for grouped sections inside a single step (e.g. "Project type"
+// and "Services needed" share the same step but each gets a SubHeading).
+function SubHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="text-sm md:text-base font-bold text-brand-dark mb-2 md:mb-3 mt-5 md:mt-7 first:mt-0">
+      {children}
+    </h3>
+  );
+}
+
 function ReviewRow({ label, value }: { label: string; value: string }) {
   if (!value) return null;
   return (
@@ -254,24 +269,25 @@ export default function QuoteForm() {
     const newErrors: Record<string, string> = {};
 
     switch (step) {
+      // Step 1 — About Your Project: validate everything that was
+      // previously split across steps 1, 2, and 3.
       case 1:
         if (!formData.serviceArea) newErrors.serviceArea = "Please select a service area.";
-        if (formData.serviceArea === "Other" && !formData.customServiceArea.trim()) newErrors.customServiceArea = "Please enter your location.";
+        if (formData.serviceArea === "Other" && !formData.customServiceArea.trim())
+          newErrors.customServiceArea = "Please enter your location.";
         if (!formData.propertyType) newErrors.propertyType = "Please select property type.";
-        break;
-      case 2:
         if (!formData.projectType) newErrors.projectType = "Please select a project type.";
-        break;
-      case 3:
         if (formData.servicesNeeded.length === 0)
           newErrors.servicesNeeded = "Please select at least one service.";
         break;
-      case 4:
+      // Step 2 — Timeline & Property Details: timeline is required;
+      // square footage / stories / known issues / financing are optional.
+      case 2:
         if (!formData.timeline) newErrors.timeline = "Please select a timeline.";
         break;
-      case 5:
-        break;
-      case 6:
+      // Step 3 — Contact Info & Review: validate contact fields. Review
+      // is read-only on this step; submit happens via the submit button.
+      case 3:
         if (!formData.fullName.trim()) newErrors.fullName = "Full name is required.";
         if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
         if (!formData.email.trim()) newErrors.email = "Email address is required.";
@@ -291,13 +307,9 @@ export default function QuoteForm() {
   /* ---------- navigation ---------- */
 
   const STEP_NAMES: Record<number, string> = {
-    1: "Service Area",
-    2: "Project Type",
-    3: "Services Needed",
-    4: "Timeline",
-    5: "Property Details",
-    6: "Contact Info",
-    7: "Review & Submit",
+    1: "About Your Project",
+    2: "Timeline & Property",
+    3: "Contact & Review",
   };
 
   function goNext() {
@@ -435,16 +447,19 @@ export default function QuoteForm() {
 
   function renderStep() {
     switch (currentStep) {
-      /* ── Step 1: Service Area ── */
+      /* ────────────────────────────────────────────────────────────
+         Step 1 — About Your Project
+         Combines old steps 1+2+3: service area + property type +
+         project type + services needed.
+         ──────────────────────────────────────────────────────────── */
       case 1:
         return (
           <div>
-            <StepHeading>Service Area</StepHeading>
+            <StepHeading>About Your Project</StepHeading>
 
-            <div className="mb-4 md:mb-6">
-              <label htmlFor="serviceArea" className="block text-xs md:text-sm font-semibold text-brand-dark mb-1.5 md:mb-2">
-                Where is your property located?
-              </label>
+            {/* ── Service area ── */}
+            <SubHeading>Where is your property?</SubHeading>
+            <div className="mb-2">
               <select
                 id="serviceArea"
                 value={formData.serviceArea}
@@ -465,7 +480,6 @@ export default function QuoteForm() {
                 <option value="Other">Other</option>
               </select>
               <FieldError field="serviceArea" />
-
               {formData.serviceArea === "Other" && (
                 <div className="mt-3">
                   <label htmlFor="customServiceArea" className="block text-xs md:text-sm font-semibold text-brand-dark mb-1.5">
@@ -486,10 +500,9 @@ export default function QuoteForm() {
               )}
             </div>
 
+            {/* ── Property type (residential / commercial) ── */}
+            <SubHeading>For a home or a business?</SubHeading>
             <div>
-              <label className="block text-xs md:text-sm font-semibold text-brand-dark mb-2 md:mb-3">
-                For a home or a business?
-              </label>
               <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {(["residential", "commercial"] as const).map((type) => (
                   <label
@@ -529,14 +542,9 @@ export default function QuoteForm() {
               </div>
               <FieldError field="propertyType" />
             </div>
-          </div>
-        );
 
-      /* ── Step 2: Project Type ── */
-      case 2:
-        return (
-          <div>
-            <StepHeading>Type of Project</StepHeading>
+            {/* ── Project type ── */}
+            <SubHeading>What kind of project?</SubHeading>
             <div className="grid grid-cols-3 gap-2 md:gap-4">
               {PROJECT_TYPES.map((pt) => (
                 <label
@@ -558,7 +566,6 @@ export default function QuoteForm() {
                     }
                     className="sr-only"
                   />
-                  {/* Selection indicator */}
                   <span
                     className={`absolute top-2 right-2 md:top-3 md:right-3 w-5 h-5 md:w-6 md:h-6 rounded-full border-2 flex items-center justify-center
                                 ${
@@ -586,15 +593,10 @@ export default function QuoteForm() {
               ))}
             </div>
             <FieldError field="projectType" />
-          </div>
-        );
 
-      /* ── Step 3: Services Needed ── */
-      case 3:
-        return (
-          <div>
-            <StepHeading>What Do You Need?</StepHeading>
-            <p className="text-brand-gray text-xs md:text-sm mb-3 md:mb-5">Select all that apply.</p>
+            {/* ── Services needed (multi-select) ── */}
+            <SubHeading>What services do you need?</SubHeading>
+            <p className="text-brand-gray text-xs md:text-sm mb-3 md:mb-4">Select all that apply.</p>
             <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-4">
               {SERVICE_OPTIONS.map((svc) => {
                 const selected = formData.servicesNeeded.includes(svc.value);
@@ -615,7 +617,6 @@ export default function QuoteForm() {
                       onChange={() => toggleService(svc.value)}
                       className="sr-only"
                     />
-                    {/* Checkbox indicator */}
                     <span
                       className={`absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 w-4 h-4 md:w-5 md:h-5 rounded flex items-center justify-center border-2
                                   ${
@@ -646,11 +647,18 @@ export default function QuoteForm() {
           </div>
         );
 
-      /* ── Step 4: Timeline ── */
-      case 4:
+      /* ────────────────────────────────────────────────────────────
+         Step 2 — Timeline & Property Details
+         Combines old steps 4+5: timeline (required) + sq ft + stories
+         + known issues + financing (all optional below timeline).
+         ──────────────────────────────────────────────────────────── */
+      case 2:
         return (
           <div>
-            <StepHeading>When Do You Need This Done?</StepHeading>
+            <StepHeading>Timeline &amp; Property Details</StepHeading>
+
+            {/* ── Timeline (required) ── */}
+            <SubHeading>When do you need this done?</SubHeading>
             <div className="space-y-2 md:space-y-3">
               {TIMELINE_OPTIONS.map((opt) => (
                 <label
@@ -687,15 +695,12 @@ export default function QuoteForm() {
               ))}
             </div>
             <FieldError field="timeline" />
-          </div>
-        );
 
-      /* ── Step 5: Property Details ── */
-      case 5:
-        return (
-          <div>
-            <StepHeading>Tell Us About Your Property</StepHeading>
-
+            {/* ── Property details (all optional) ── */}
+            <SubHeading>
+              Tell us about your property{" "}
+              <span className="text-brand-gray font-normal text-xs md:text-sm">(optional)</span>
+            </SubHeading>
             <div className="space-y-3 md:space-y-5">
               {/* Square footage */}
               <div>
@@ -738,8 +743,7 @@ export default function QuoteForm() {
               {/* Known issues */}
               <div>
                 <label htmlFor="issues" className="block text-xs md:text-sm font-semibold text-brand-dark mb-1.5 md:mb-2">
-                  Any Known Issues?{" "}
-                  <span className="text-brand-gray font-normal">(optional)</span>
+                  Any Known Issues?
                 </label>
                 <textarea
                   id="issues"
@@ -788,8 +792,14 @@ export default function QuoteForm() {
           </div>
         );
 
-      /* ── Step 6: Contact Info ── */
-      case 6:
+      /* ────────────────────────────────────────────────────────────
+         Step 3 — Contact Info & Review
+         Combines old steps 6+7: contact fields + inline review
+         summary above the submit button (the submit button itself
+         lives in the form-level navigation block when
+         currentStep === TOTAL_STEPS).
+         ──────────────────────────────────────────────────────────── */
+      case 3:
         return (
           <div>
             <StepHeading>Your Contact Information</StepHeading>
@@ -882,37 +892,67 @@ export default function QuoteForm() {
                 <FieldError field="preferredContact" />
               </div>
             </div>
-          </div>
-        );
 
-      /* ── Step 7: Review & Submit ── */
-      case 7:
-        return (
-          <div>
-            <StepHeading>Review Your Information</StepHeading>
-            <p className="text-brand-gray text-xs md:text-sm mb-4 md:mb-6">
-              Please review the details below before submitting.
-            </p>
+            {/* ── Primary Submit button (visible right after the contact fields
+                so mobile users don't have to scroll past the review summary
+                to find Submit). The bottom-of-form Back/Submit pair is also
+                rendered (below the review) for users who scroll. ── */}
+            <div className="flex items-center justify-between mt-6 md:mt-8 pt-4 md:pt-5 border-t border-brand-border">
+              <button
+                type="button"
+                onClick={goBack}
+                className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-5 py-2 md:py-2.5 text-brand-gray font-medium hover:text-brand-dark transition-colors cursor-pointer text-sm md:text-base"
+              >
+                <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                Back
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (validateStep(currentStep)) handleSubmit();
+                }}
+                disabled={isSubmitting}
+                className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <>
+                    <svg className="w-4 h-4 mr-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Submit Request
+                    <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </>
+                )}
+              </button>
+            </div>
 
-            <div className="space-y-2 md:space-y-4">
-              <ReviewRow label="Service Area" value={formData.serviceArea === "Other" ? formData.customServiceArea : formData.serviceArea} />
-              <ReviewRow label="Property Type" value={formData.propertyType ? formData.propertyType.charAt(0).toUpperCase() + formData.propertyType.slice(1) : ""} />
-              <ReviewRow label="Project Type" value={getProjectTypeLabel(formData.projectType)} />
-              <ReviewRow label="Services Needed" value={getServicesLabels(formData.servicesNeeded)} />
-              <ReviewRow label="Timeline" value={getTimelineLabel(formData.timeline)} />
-              {formData.squareFootage && (
-                <ReviewRow label="Square Footage" value={formData.squareFootage} />
-              )}
-              {formData.stories && <ReviewRow label="Stories" value={formData.stories} />}
-              {formData.knownIssues && <ReviewRow label="Known Issues" value={formData.knownIssues} />}
-              <ReviewRow label="Financing" value={formData.financingInterested ? "Yes — interested in financing" : "No"} />
-
-              <div className="border-t border-brand-border my-1 md:my-2" />
-
-              <ReviewRow label="Name" value={formData.fullName} />
-              <ReviewRow label="Phone" value={formData.phone} />
-              <ReviewRow label="Email" value={formData.email} />
-              <ReviewRow label="Preferred Contact" value={getContactMethodLabel(formData.preferredContact)} />
+            {/* ── Inline review summary (was step 7) ── */}
+            <div className="mt-7 md:mt-10 pt-5 md:pt-6 border-t border-brand-border">
+              <h3 className="text-base md:text-lg font-bold text-brand-dark mb-2 md:mb-3">
+                Review your information
+              </h3>
+              <div className="space-y-1.5 md:space-y-2 bg-brand-light rounded-lg p-3 md:p-4">
+                <ReviewRow label="Service Area" value={formData.serviceArea === "Other" ? formData.customServiceArea : formData.serviceArea} />
+                <ReviewRow label="Property Type" value={formData.propertyType ? formData.propertyType.charAt(0).toUpperCase() + formData.propertyType.slice(1) : ""} />
+                <ReviewRow label="Project Type" value={getProjectTypeLabel(formData.projectType)} />
+                <ReviewRow label="Services Needed" value={getServicesLabels(formData.servicesNeeded)} />
+                <ReviewRow label="Timeline" value={getTimelineLabel(formData.timeline)} />
+                {formData.squareFootage && (
+                  <ReviewRow label="Square Footage" value={formData.squareFootage} />
+                )}
+                {formData.stories && <ReviewRow label="Stories" value={formData.stories} />}
+                {formData.knownIssues && <ReviewRow label="Known Issues" value={formData.knownIssues} />}
+                <ReviewRow label="Financing" value={formData.financingInterested ? "Yes — interested in financing" : "No"} />
+              </div>
             </div>
 
             {submitError && (
@@ -963,9 +1003,19 @@ export default function QuoteForm() {
         </div>
       </div>
 
-      {/* ── Navigation buttons (TOP — only on review step) ── */}
-      {currentStep === TOTAL_STEPS && (
-        <div className="flex items-center justify-between mb-6 md:mb-8 pb-4 md:pb-6 border-b border-brand-border">
+      {/* ── Step content (inline — no nested components) ── */}
+      <div
+        className={`transition-opacity duration-200 ${
+          isTransitioning ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        {renderStep()}
+      </div>
+
+      {/* ── Navigation buttons (BOTTOM, all steps).
+          Steps 1–2: Back + Next. Step 3 (final): Back + Submit Request. */}
+      <div className="flex items-center justify-between mt-6 md:mt-10 pt-4 md:pt-6 border-t border-brand-border">
+        {currentStep > 1 ? (
           <button
             type="button"
             onClick={goBack}
@@ -976,9 +1026,23 @@ export default function QuoteForm() {
             </svg>
             Back
           </button>
+        ) : (
+          <div />
+        )}
+
+        {currentStep < TOTAL_STEPS ? (
+          <button type="button" onClick={goNext} className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base">
+            Next
+            <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        ) : (
           <button
             type="button"
-            onClick={handleSubmit}
+            onClick={() => {
+              if (validateStep(currentStep)) handleSubmit();
+            }}
             disabled={isSubmitting}
             className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base disabled:opacity-60 disabled:cursor-not-allowed"
           >
@@ -999,43 +1063,8 @@ export default function QuoteForm() {
               </>
             )}
           </button>
-        </div>
-      )}
-
-      {/* ── Step content (inline — no nested components) ── */}
-      <div
-        className={`transition-opacity duration-200 ${
-          isTransitioning ? "opacity-0" : "opacity-100"
-        }`}
-      >
-        {renderStep()}
+        )}
       </div>
-
-      {/* ── Navigation buttons (BOTTOM — for steps 1-6 only) ── */}
-      {currentStep < TOTAL_STEPS && (
-        <div className="flex items-center justify-between mt-6 md:mt-10 pt-4 md:pt-6 border-t border-brand-border">
-          {currentStep > 1 ? (
-            <button
-              type="button"
-              onClick={goBack}
-              className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-5 py-2 md:py-2.5 text-brand-gray font-medium hover:text-brand-dark transition-colors cursor-pointer text-sm md:text-base"
-            >
-              <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-              Back
-            </button>
-          ) : (
-            <div />
-          )}
-          <button type="button" onClick={goNext} className="btn-primary !py-2.5 md:!py-3 !px-6 md:!px-10 text-sm md:text-base">
-            Next
-            <svg className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1.5 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
-        </div>
-      )}
     </div>
   );
 }

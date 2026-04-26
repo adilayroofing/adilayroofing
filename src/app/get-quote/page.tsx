@@ -209,27 +209,57 @@ export default async function GetQuotePage() {
       {/* =================================================================== */}
       {/* Hero / Split Layout                                                 */}
       {/* =================================================================== */}
-      <section className="relative min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row">
-        {/* Left Panel - Dark CTA side */}
-        <div className="relative lg:w-[40%] bg-brand-darker text-white flex items-center justify-center px-4 md:px-6 py-10 md:py-16 lg:py-0">
+      <section className="relative lg:min-h-screen flex flex-col lg:flex-row">
+        {/* Left Panel - Dark CTA side. On mobile, kept very compact (just
+            H1 + offer banner) so the form on the right panel is visible
+            without scrolling. Phone/text CTAs are already in the sticky
+            site header; trust signals + BBB seal are below the form on
+            mobile to keep the hero fold short. */}
+        <div className="relative lg:w-[40%] bg-brand-darker text-white flex items-center justify-center px-4 md:px-6 py-4 md:py-16 lg:py-0">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-darker via-brand-dark to-brand-darker opacity-95" />
 
-          <div className="relative z-10 max-w-md text-center lg:text-left">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 md:mb-4 text-white">
+          <div className="relative z-10 max-w-md text-center lg:text-left w-full">
+            <h1 className="text-xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2 md:mb-4 text-white">
               {heroTitle}
             </h1>
-            <p className="text-sm md:text-lg text-white/80 mb-4 md:mb-6">
+            <p className="hidden md:block text-sm md:text-lg text-white/80 mb-4 md:mb-6">
               {heroDescription}
             </p>
 
             {/* Gutter Cleaning Offer Banner */}
-            <div className="mb-4 md:mb-6 bg-amber-500/15 border-l-4 border-amber-400 rounded-r-lg px-3 py-2.5 md:px-4 md:py-3 text-center lg:text-left">
+            <div className="mb-2 md:mb-6 bg-amber-500/15 border-l-4 border-amber-400 rounded-r-lg px-3 py-1.5 md:px-4 md:py-3 text-center lg:text-left">
               <p className="text-white text-xs md:text-sm font-semibold leading-snug">
                 {offerBannerText}
               </p>
             </div>
 
-            <div className="mb-5 md:mb-8">
+            {/* Mobile-only compact CTA row — phone | text on a single line so
+                the form below stays visible without scrolling. Desktop uses
+                the larger phone/text block below this. */}
+            <div className="md:hidden flex items-center justify-center gap-3 mb-3 text-sm font-semibold">
+              <a
+                href={`tel:${company.phoneRaw}`}
+                className="text-brand-red hover:text-brand-red-dark inline-flex items-center gap-1.5 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                {company.phone}
+              </a>
+              <span className="text-white/40" aria-hidden="true">|</span>
+              <a
+                href="sms:+12672553620&body=Hi%2C%20I%27m%20interested%20in%20a%20free%20roofing%20estimate."
+                className="text-white hover:text-white/80 inline-flex items-center gap-1.5 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Text Us
+              </a>
+            </div>
+
+            {/* Phone / Text CTAs — desktop only on this panel; mobile uses the compact one-row CTA above */}
+            <div className="hidden md:block mb-5 md:mb-8">
               <p className="text-white/60 text-xs md:text-sm mb-1 md:mb-2">
                 Or contact us directly:
               </p>
@@ -261,8 +291,8 @@ export default async function GetQuotePage() {
               </a>
             </div>
 
-            {/* Trust signals */}
-            <div className="flex flex-row lg:flex-col gap-4 md:gap-4 justify-center lg:justify-start items-start">
+            {/* Trust signals — hidden on mobile to keep hero compact */}
+            <div className="hidden md:flex flex-row lg:flex-col gap-4 md:gap-4 justify-center lg:justify-start items-start">
               {trustSignals.map((text) => (
                 <div
                   key={text}
@@ -278,17 +308,26 @@ export default async function GetQuotePage() {
               ))}
             </div>
 
-            <div className="mt-6 flex justify-center lg:justify-start">
+            {/* BBB seal — desktop only; mobile shows it elsewhere on the page */}
+            <div className="hidden md:flex mt-6 justify-center lg:justify-start">
               <BBBSeal />
             </div>
           </div>
         </div>
 
         {/* Right Panel - Form */}
-        <div className="lg:w-[60%] bg-brand-light flex items-start lg:items-center justify-center px-3 md:px-4 py-6 md:py-10 lg:py-16">
+        <div className="lg:w-[60%] bg-brand-light flex items-start lg:items-center justify-center px-3 md:px-4 py-3 md:py-10 lg:py-16">
           <div className="w-full max-w-2xl">
             <div id="quote-form-top" style={{ scrollMarginTop: "120px" }} />
             <QuoteForm />
+
+            {/* Mobile-only BBB seal under the form. The desktop hero panel
+                already shows the BBB seal on its own; on mobile that panel
+                is hidden for compactness, so we surface it here below the
+                form so the trust signal still appears on the page. */}
+            <div className="md:hidden flex justify-center mt-6 mb-2">
+              <BBBSeal />
+            </div>
           </div>
         </div>
       </section>
