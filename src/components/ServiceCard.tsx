@@ -2,44 +2,43 @@ import Link from "next/link";
 import type { Service } from "@/data/services";
 import ServiceIcon from "@/components/ServiceIcon";
 
-/* Map service slug → background image. Every service slug should map to a
-   topically relevant Cloudinary photo so cards never render bare. Variant
-   slugs (siding-installation, window-replacement, etc.) reuse the parent
-   category photo. */
+/* Map service slug → background image. Every service slug maps to a
+   topically relevant Cloudinary photo so cards never render bare and
+   each service shows the work it actually describes. */
 const serviceImages: Record<string, string> = {
   // Core roofing
   "roof-replacement": "/images/roof-replacement-philadelphia.jpg",
   "roof-repair": "/images/roof-repair-philadelphia.jpg",
-  "flat-roofing": "/images/flat-roof-philadelphia.jpg",
-  "flat-roof-repair": "/images/crew-flat-roof-action.png",
+  "flat-roofing": "/images/flat-roofing-white-coating.jpg",
+  "flat-roof-repair": "/images/flat-roof-repair-philadelphia-skyline.jpg",
   "shingle-roofing": "/images/roof-shingles-philadelphia.jpg",
   "asphalt-shingle-roofing": "/images/roof-shingles-philadelphia.jpg",
   "shingle-repair": "/images/roof-shingles-philadelphia.jpg",
-  "shingle-replacement": "/images/roof-shingles-philadelphia.jpg",
+  "shingle-replacement": "/images/shingle-replacement-roof-decking.jpg",
   "residential-roofing": "/images/experienced-crew-adilay-roofing-philadelphia.jpg",
   "emergency-roof-repair": "/images/emergency-roof-repair-philadelphia.jpg",
   "commercial-roofing": "/images/commercial-roofing-philadelphia.jpg",
-  "storm-damage-roof-repair": "/images/emergency-roof-repair-philadelphia.jpg",
-  "roof-leak-repair": "/images/roof-repair-philadelphia.jpg",
+  "storm-damage-roof-repair": "/images/storm-damage-roof-sealing-crew.jpg",
+  "roof-leak-repair": "/images/roof-leak-repair-drain-sealing.jpg",
   "roof-inspection": "/images/metal-roof-crew.jpg",
   "soffit-repair": "/images/quality-roofing-materials-adilay.jpg",
 
   // Siding
   siding: "/images/siding-philadelphia.jpg",
-  "siding-installation": "/images/siding-philadelphia.jpg",
-  "siding-repair": "/images/siding-philadelphia.jpg",
+  "siding-installation": "/images/siding-installation-house-wrap.jpg",
+  "siding-repair": "/images/siding-repair-mid-renovation.jpg",
   "commercial-siding": "/images/siding-philadelphia.jpg",
   "residential-siding": "/images/siding-philadelphia.jpg",
-  "vinyl-siding": "/images/siding-philadelphia.jpg",
+  "vinyl-siding": "/images/vinyl-siding-installation-crew.jpg",
 
   // Windows
   windows: "/images/window-installation-philadelphia.jpg",
-  "window-installation": "/images/window-installation-philadelphia.jpg",
+  "window-installation": "/images/window-installation-scaffold-crew.jpg",
   "window-replacement": "/images/window-installation-philadelphia.jpg",
-  "window-repair": "/images/window-installation-philadelphia.jpg",
+  "window-repair": "/images/window-repair-detail-crew.jpg",
   "window-companies": "/images/window-installation-philadelphia.jpg",
 
-  // Gutters
+  // Gutters (no dedicated gutter shots yet — all reuse the same photo)
   gutters: "/images/gutters-philadelphia.png",
   "gutter-repair": "/images/gutters-philadelphia.png",
   "gutter-cleaning": "/images/gutters-philadelphia.png",
