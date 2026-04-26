@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# MCP config — contains Cloudinary API key/secret. Keep local only.
+# .mcp.json.example is the shareable template.
+.mcp.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

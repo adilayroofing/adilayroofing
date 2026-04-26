@@ -1,0 +1,14 @@
+{
+  "_comment": "Copy this to .mcp.json and replace the placeholders with the values from .env.local. .mcp.json is gitignored so your secrets stay local.",
+  "mcpServers": {
+    "cloudinary": {
+      "command": "npx",
+      "args": ["-y", "cloudinary-mcp-server"],
+      "env": {
+        "CLOUDINARY_CLOUD_NAME": "<your cloud name>",
+        "CLOUDINARY_API_KEY": "<your api key>",
+        "CLOUDINARY_API_SECRET": "<your api secret>"
+      }
+    }
+  }
+}
