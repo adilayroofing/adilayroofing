@@ -90,6 +90,54 @@ export const locations: Location[] = [
         answer:
           "For flat-roof rowhouses, EPDM rubber roofing is the most popular and cost-effective option, offering excellent waterproofing and a 20–30 year lifespan. For pitched sections, architectural shingles provide great durability against our freeze-thaw climate. We'll recommend the best option based on your specific roof during a free inspection.",
       },
+      {
+        question: "How fast can a Philadelphia roofer get to my house for an emergency leak?",
+        answer:
+          "From our shop at 2020 Dreer Street in Kensington, we can be on most Philadelphia blocks within 30–60 minutes for active leaks during business hours. Same-day tarping and leak containment are standard for emergencies anywhere inside the city limits. Call (888) 823-4766 — the closer your neighborhood is to Center City, Fishtown, Northern Liberties, or Port Richmond, the faster the response.",
+      },
+      {
+        question: "What's the difference between a Philadelphia trinity, twin, and rowhouse roof?",
+        answer:
+          "All three are common Philadelphia housing types but they roof very differently. A trinity (the small three-story Center City and Society Hill homes) usually has a tiny pitched or near-flat roof and is often shared with neighbors via a parapet wall. A rowhouse has a fully flat roof typically covered in EPDM, modified bitumen, or aging tar — the dominant style across Fishtown, South Philly, and Kensington. A twin (Northwest Philly, parts of West Philly) has a pitched shingle or slate roof shared down the middle with one neighbor. Each type has its own flashing, drainage, and tie-in requirements — we work on all three regularly.",
+      },
+      {
+        question: "Does my Philadelphia rowhouse need a new roof or just a repair?",
+        answer:
+          "Most flat Philadelphia rowhouse roofs last 20–30 years if they were installed correctly with EPDM or modified bitumen. Signs you need replacement instead of repair: visible bubbling or alligatoring across most of the surface, multiple separate leaks, ponding water that never dries, or seams that have lifted in more than one place. If the roof is dry around drains and parapets and only one isolated area is leaking, a targeted repair often buys you 5–10 more years. We'll tell you honestly which one applies after a free inspection.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Roofing Every Type of Philadelphia Home",
+        html: `<p>Philadelphia's housing stock is unlike any other major U.S. city, and a roofing contractor who only knows asphalt shingles on suburban colonials will be in over their head here within a week. We've worked on every Philadelphia roof type:</p>
+<ul>
+  <li><strong>Flat rowhouse roofs</strong> — the dominant style across Fishtown, Kensington, Port Richmond, South Philadelphia, and most of North Philly. Typically covered in EPDM rubber, modified bitumen, or older built-up tar systems. Parapet walls, scupper drains, and shared party walls require precise flashing.</li>
+  <li><strong>Pitched twin and triplex roofs</strong> — common in Mount Airy, Germantown, West Philadelphia, and Mayfair. Asphalt or architectural shingle, with shared roof planes and complex valley details where one home meets the next.</li>
+  <li><strong>Slate and Spanish-tile roofs</strong> — Chestnut Hill, sections of Mount Airy, and older Center City and Society Hill homes. Original slate from the early 1900s often outlasts modern materials but needs careful matching when individual pieces fail.</li>
+  <li><strong>Trinity roofs</strong> — the iconic three-story Center City and Old City homes have small near-flat roofs squeezed between neighbors, often with original built-up tar that's well past its lifespan.</li>
+  <li><strong>Modern condo and roof-deck systems</strong> — new construction throughout Northern Liberties, Fishtown, and the Navy Yard increasingly features reinforced membrane systems beneath roof decks, green roofs, and complex drainage.</li>
+</ul>
+<p>We handle all of these in-house with a 30-person crew — no subcontracting out the unfamiliar work to whoever's available.</p>`,
+      },
+      {
+        heading: "Philadelphia's Climate and What It Does to Roofs",
+        html: `<p>Roofs in Philadelphia have to survive a punishing four-season cycle that few other cities throw at them. Winter brings nor'easters off the Atlantic that drop heavy wet snow on top of single-ply membranes never designed for that load — by February, ice dams form behind parapet walls in Fishtown, Northern Liberties, and South Philly as snow melts during the day and refreezes at night. Spring arrives with weeks of soaking rain that finds every pinhole in tar seams and worn flashing. Summer convective storms can drop 2 inches of rain in 30 minutes; if your scuppers or interior drains are partially clogged with leaves from a Mt. Airy or Chestnut Hill canopy, water backs up and finds the path of least resistance — usually your living-room ceiling. Hot July afternoons push EPDM surface temperatures above 150&deg;F, accelerating UV degradation. Fall leaf drop fills gutters in West Philadelphia, Roxborough, and East Falls within weeks. We see the same failure patterns repeat every year, and we know which ones are quick fixes versus which ones mean the roof has reached end of life.</p>`,
+      },
+      {
+        heading: "Permits, Insurance, and L&I — How We Handle the Paperwork",
+        html: `<p>Roof work inside Philadelphia city limits is regulated by the <a href="https://www.phila.gov/departments/department-of-licenses-and-inspections/" target="_blank" rel="noopener">Department of Licenses &amp; Inspections (L&amp;I)</a>. A building permit is required for a full roof replacement and most major repairs that change the roof system, and the contractor must be licensed and insured — we are (PA184779), and we're happy to provide certificates on request. We pull the permit, schedule the post-installation L&amp;I inspection, and hand you closed paperwork at the end of the job. If your roof failure was caused by a covered event — a wind storm, hail, fallen tree limb — we document the damage thoroughly, photograph everything before tarping, and provide a detailed scope and pricing breakdown your insurance adjuster can work with directly. We've been through enough Philadelphia insurance claims to know what carriers expect to see.</p>`,
+      },
+      {
+        heading: "Emergency and Same-Day Response Across the City",
+        html: `<p>If your roof is leaking right now, call <a href="tel:+18888234766">(888) 823-4766</a>. Our shop is at 2020 Dreer Street in Kensington — from there we can get a tarping crew to most of Philadelphia within 30–60 minutes during business hours, and we maintain a 24/7 emergency line for after-hours leaks. Response time depends on traffic and what's already in progress, but the closer your home is to North Philly, Fishtown, Northern Liberties, Port Richmond, Kensington, or Center City, the faster we'll be there. We carry full tarping kits, leak-tracing tools, and temporary patch materials on every truck so the first visit can stop the active damage before we even talk about permanent repair.</p>
+<p>For non-emergency repairs and replacements, we typically schedule on-site free estimates within 1–3 business days.</p>`,
+      },
+      {
+        heading: "Other Philadelphia Neighborhood Roofing Pages",
+        html: `<p>We work across the entire city. For neighborhood-specific roofing pages with local housing context, FAQs, and pricing ranges, see:</p>
+<p><a href="/service-areas/fishtown">Fishtown</a> &middot; <a href="/service-areas/northern-liberties">Northern Liberties</a> &middot; <a href="/service-areas/kensington">Kensington</a> &middot; <a href="/service-areas/south-philadelphia">South Philadelphia</a> &middot; <a href="/service-areas/north-philadelphia">North Philadelphia</a> &middot; <a href="/service-areas/west-philadelphia">West Philadelphia</a> &middot; <a href="/service-areas/center-city">Center City</a> &middot; <a href="/service-areas/old-city">Old City</a> &middot; <a href="/service-areas/manayunk">Manayunk</a> &middot; <a href="/service-areas/roxborough">Roxborough</a> &middot; <a href="/service-areas/germantown">Germantown</a> &middot; <a href="/service-areas/northeast-philadelphia">Northeast Philadelphia</a> &middot; <a href="/service-areas/university-city">University City</a></p>
+<p>If you don't see your neighborhood listed, we still service it — call <a href="tel:+18888234766">(888) 823-4766</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
+      },
     ],
   },
   {
@@ -146,6 +194,46 @@ export const locations: Location[] = [
         answer:
           "In many cases, yes. We carry a wide selection of shingle brands and colors and can closely match your existing roof for localized repairs. If your shingles are discontinued or severely faded, we'll discuss your best options, which may include re-roofing one full slope for a uniform appearance.",
       },
+      {
+        question: "How much does a roof replacement cost in Bucks County?",
+        answer:
+          "Most Bucks County roof replacements fall between $9,000 and $20,000 for standard single-family homes — a Levittown rancher or Bensalem split-level on the lower end, larger Newtown or Doylestown colonials toward the upper end. Premium materials like cedar shake or synthetic slate, common on upper-Bucks heritage homes, can push pricing to $25,000–$40,000+. We provide free written estimates with line-item pricing.",
+      },
+      {
+        question: "Do Bucks County townships require roof replacement permits?",
+        answer:
+          "Yes — every Bucks County municipality (Bensalem Twp, Middletown Twp, Lower Makefield, Doylestown Twp, etc.) requires a building permit for full roof replacements, and most require contractor licensing on file. We pull permits with each township directly and handle the post-installation inspection. Heritage homes in Doylestown Borough or New Hope may also fall under historic district review — we work within those guidelines when applicable.",
+      },
+      {
+        question: "How quickly can you respond to storm damage in Bucks County?",
+        answer:
+          "For lower Bucks (Bensalem, Levittown, Langhorne, Bristol, Yardley) we're typically on-site within 2–4 hours via I-95 or Route 1. For central Bucks (Newtown, Doylestown, Warrington, Warminster) plan on 3–5 hours during business hours. Upper Bucks (Quakertown, Perkasie) can be later in the day depending on traffic. Our 24/7 line takes calls overnight — we'll dispatch as soon as it's safe to be on a roof.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Lower, Central, and Upper Bucks — Three Different Roofing Markets",
+        html: `<p>Bucks County is geographically and architecturally three different markets, and we work all of them:</p>
+<ul>
+  <li><strong>Lower Bucks</strong> — <a href="/service-areas/levittown">Levittown</a>, <a href="/service-areas/bensalem">Bensalem</a>, <a href="/service-areas/langhorne">Langhorne</a>, <a href="/service-areas/bristol">Bristol</a>, <a href="/service-areas/yardley">Yardley</a>, <a href="/service-areas/feasterville">Feasterville</a>. Dominated by 1950s–1960s Levittowner Cape Cods, Jubilees, and ranchers on small lots; postwar split-levels in Bensalem and Middletown Twp; mid-century ranchers in Bristol Twp. Mostly architectural shingle replacements, often with attic ventilation upgrades to fix chronic ice damming.</li>
+  <li><strong>Central Bucks</strong> — <a href="/service-areas/newtown">Newtown</a>, <a href="/service-areas/doylestown">Doylestown</a>, <a href="/service-areas/warminster">Warminster</a>, Warrington, Buckingham. Larger colonials and traditional two-story homes built mostly 1980s–2000s on bigger lots. Standard architectural shingle work, more dimensional shingle and designer profile choices, more dormers and complex roof geometry.</li>
+  <li><strong>Upper Bucks</strong> — Perkasie, Quakertown, Sellersville, Riegelsville, New Hope. Heritage stone farmhouses, restored barns, and 18th–19th-century colonials. Standing-seam metal, cedar shake, and synthetic slate are common premium choices. Historic district review applies in Doylestown Borough and New Hope Borough.</li>
+</ul>`,
+      },
+      {
+        heading: "Levittown Roofs — A Specific Bucks County Story",
+        html: `<p>If your Bucks County home is in Levittown — Birch Valley, Vermillion Hills, Quincy Hollow, Whitehorse, or any of the original 41 sections — your roof has a few things in common with about 17,000 other homes built between 1952 and 1958. Original construction used 3-tab asphalt shingles directly over plank decking with minimal attic ventilation. Most Levittown homes have already had at least one re-roof, often a layover (new shingles installed over the old) which is no longer code-compliant in Pennsylvania for a third roof. We handle the full tear-off, install new ice-and-water shield at eaves and valleys, replace any rotted decking, add ridge or static vents to actually let the attic breathe, and warranty the new system. Ice damming along the front porch eave is the #1 winter issue in Levittown — proper insulation and ventilation usually solves it.</p>`,
+      },
+      {
+        heading: "Storm Response, Insurance, and Tree Damage",
+        html: `<p>Bucks County sits in the storm corridor between Philadelphia and the Lehigh Valley. Spring and summer thunderstorms regularly drop large hail across central and upper Bucks. Nor'easters in winter dump heavy wet snow on lower-pitch ranch roofs in lower Bucks. Tree damage is constant — mature oaks and maples in Newtown, Yardley, and Doylestown Twp drop limbs through roofs every storm season. We document every storm-damage job thoroughly: pre-tarping photos, detailed scope of damage by elevation, materials list with current pricing, and insurance-ready PDFs your adjuster can review directly. Most Bucks County insurance claims we handle close cleanly within 4–8 weeks. We're licensed (PA184779), fully insured, and have completed enough Bucks County storm jobs to know what carriers expect.</p>`,
+      },
+      {
+        heading: "Bucks County Towns With Their Own Roofing Pages",
+        html: `<p>From our Philadelphia shop we cover all of Bucks County — every township, every borough. For community-specific roofing pages with local housing context and FAQs, see:</p>
+<p><a href="/service-areas/levittown">Levittown</a> &middot; <a href="/service-areas/bensalem">Bensalem</a> &middot; <a href="/service-areas/langhorne">Langhorne</a> &middot; <a href="/service-areas/bristol">Bristol</a> &middot; <a href="/service-areas/newtown">Newtown</a> &middot; <a href="/service-areas/doylestown">Doylestown</a> &middot; <a href="/service-areas/yardley">Yardley</a> &middot; <a href="/service-areas/warminster">Warminster</a> &middot; <a href="/service-areas/feasterville">Feasterville</a></p>
+<p>Don't see your township? We almost certainly still service it — call <a href="tel:+18888234766">(888) 823-4766</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
+      },
     ],
   },
   {
@@ -201,6 +289,48 @@ export const locations: Location[] = [
         question: "What is the best roofing material for a Montgomery County colonial home?",
         answer:
           "Architectural shingles are the most popular choice for colonial-style homes in Montgomery County due to their dimensional appearance, durability, and value. For homeowners seeking a premium look, designer shingles that mimic the appearance of slate or cedar shake are an excellent option. We'll help you choose the right material and color during your free consultation.",
+      },
+      {
+        question: "How much does a roof replacement cost in Montgomery County?",
+        answer:
+          "Montgomery County roof replacements typically run $10,000–$22,000 for standard single-family homes — Norristown twins and Conshohocken row-style homes on the lower end, Lower Merion and Blue Bell colonials toward the upper end. Larger Lower Merion estates and historic homes with slate or cedar can easily reach $30,000–$60,000+. We provide free written estimates with itemized pricing.",
+      },
+      {
+        question: "Do Lower Merion and Cheltenham historic districts affect my roof project?",
+        answer:
+          "They can. Lower Merion Township's Historic Architectural Review Board (HARB) reviews exterior changes to designated historic properties — material, color, and profile may need approval before work begins. Cheltenham Twp has similar review processes for properties in its historic districts. We're familiar with both and will guide you through any required submissions before pulling the permit. For non-historic properties, standard township permitting applies.",
+      },
+      {
+        question: "What's the permit process across Montgomery County townships?",
+        answer:
+          "Each Montgomery County municipality (Lower Merion, Cheltenham, Abington, Plymouth, Whitemarsh, Lower Providence, etc.) issues its own building permit for full roof replacements. Most also require a contractor license on file, which we maintain. We pull the permit, schedule the post-installation inspection with the township, and provide closed paperwork at job completion. HOA architectural review (where applicable) is handled in parallel.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Montgomery County Housing — From Norristown Twins to Lower Merion Estates",
+        html: `<p>Montgomery County is one of the most architecturally varied counties in the Delaware Valley. We see all of it:</p>
+<ul>
+  <li><strong>Norristown, Conshohocken, Jenkintown</strong> — older boroughs with tightly-spaced twins, three-stories, and Victorians built late 1800s through 1920s. Pitched shingle or slate roofs, parapet walls between attached homes, and party-wall flashing details that resemble Philadelphia rowhouse work more than typical suburbia.</li>
+  <li><strong>Lower Merion (Bala Cynwyd, Narberth, Wynnewood, Ardmore)</strong> — large estate homes, gracious twin-and-triplex Tudor and Stone Center-Hall colonials, slate and cedar premium materials, complex roof geometry with multiple dormers and chimneys.</li>
+  <li><strong>King of Prussia, Plymouth Meeting, Blue Bell, Horsham</strong> — newer (1980s–2010s) single-family colonials and Cape Cods on bigger lots, mostly architectural shingle, often inside HOA-governed developments with material/color rules.</li>
+  <li><strong>Lansdale, North Wales, Hatfield, Souderton</strong> — mix of mid-century ranchers and newer single-family construction, standard architectural shingle work.</li>
+  <li><strong>Abington, Cheltenham, Glenside</strong> — older inner-ring suburbs with mid-century split-levels, Cape Cods, and turn-of-the-century twins, similar housing stock to lower Bucks and Northeast Philly.</li>
+</ul>`,
+      },
+      {
+        heading: "HOAs, Historic Districts, and Material Rules",
+        html: `<p>More Montgomery County roofs come with paperwork than Philadelphia roofs. Larger developments in Plymouth Meeting, Blue Bell, Horsham, and parts of Lower Gwynedd have HOAs that specify shingle profile, color (often \"weathered wood,\" \"charcoal,\" or \"driftwood\" only), and sometimes pre-approved manufacturers — we pull the rules sheet before we estimate. Lower Merion Township and Cheltenham Township both have historic districts that require HARB review for exterior changes on designated properties; Lower Merion is particularly active about preserving slate roofs on the original Main Line estates. We've worked through both processes — material samples to the board, drawings if required, then permit. Standard township permits cover everything else and we pull those too. The bottom line: nothing about your project hits a delay because of paperwork. That's our job.</p>`,
+      },
+      {
+        heading: "Storm Damage Across Montgomery County",
+        html: `<p>Montgomery County storm patterns mirror the rest of the Delaware Valley — nor'easters in winter, severe convective storms in spring and summer, occasional hail events. Mature tree canopy in Lower Merion, Wyndmoor, Glenside, and Ambler means tree-limb roof damage is one of the most common claims we handle in this county. We respond fastest to lower Montgomery (Bala Cynwyd, Narberth, Wynnewood, Cheltenham, Jenkintown, Abington) — typically within 2–3 hours via the Schuylkill Expressway, Route 1, or City Avenue. Central Montgomery (Norristown, Plymouth Meeting, King of Prussia) takes 3–4 hours via I-476. Upper Montgomery (Lansdale, North Wales, Souderton) plan on 4+ hours during business hours. We document everything for your insurance claim and pull the permit once approval comes through.</p>`,
+      },
+      {
+        heading: "Montgomery County Towns With Their Own Roofing Pages",
+        html: `<p>For community-specific roofing pages with local context and FAQs, see:</p>
+<p><a href="/service-areas/norristown">Norristown</a> &middot; <a href="/service-areas/king-of-prussia">King of Prussia</a> &middot; <a href="/service-areas/conshohocken">Conshohocken</a> &middot; <a href="/service-areas/bala-cynwyd">Bala Cynwyd</a> &middot; <a href="/service-areas/lansdale">Lansdale</a> &middot; <a href="/service-areas/jenkintown">Jenkintown</a> &middot; <a href="/service-areas/abington">Abington</a> &middot; <a href="/service-areas/cheltenham">Cheltenham</a> &middot; <a href="/service-areas/willow-grove">Willow Grove</a> &middot; <a href="/service-areas/plymouth-meeting">Plymouth Meeting</a> &middot; <a href="/service-areas/ardmore">Ardmore</a></p>
+<p>Don't see your township? Call <a href="tel:+18888234766">(888) 823-4766</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
       },
     ],
   },
@@ -535,6 +665,56 @@ export const locations: Location[] = [
         answer:
           "We are experienced working on the tight streets of South Philadelphia. Our crews use ladders from rear alleys when available, and we can arrange temporary parking permits when front access is needed for material delivery. We keep our footprint small and clean up thoroughly — your neighbors will appreciate the care we take.",
       },
+      {
+        question: "How much does a South Philly rowhouse roof replacement cost?",
+        answer:
+          "Most South Philadelphia rowhouse flat-roof replacements run $5,500–$11,000 depending on roof size, parapet height, drainage type (scupper vs. interior drain), and roof-deck waterproofing if applicable. Larger Packer Park or Girard Estates pitched-roof homes typically run $9,000–$16,000. Tear-off of multi-layer old tar roofs adds to the cost. We provide free written estimates with itemized pricing.",
+      },
+      {
+        question: "My South Philly neighbor's roof leaks into my house — who's responsible?",
+        answer:
+          "This is one of the most common questions we get in South Philadelphia. The leak is almost always coming through a shared party-wall seam or a parapet flashing on the higher roof. Pennsylvania law generally puts repair responsibility on the owner whose roof is failing, but in practice both neighbors usually need to coordinate access. We're happy to inspect both roofs and provide an honest written assessment of where the failure is — homeowners and adjusters use our reports to settle who pays.",
+      },
+      {
+        question: "What signs mean my South Philly flat roof needs replacement, not repair?",
+        answer:
+          "Bubbles or alligator-cracking across most of the surface, ponding water that doesn't dry within 48 hours after rain, lifted seams in more than one spot, visible underlying tar showing through worn EPDM, or interior leaks from multiple separate locations all point to end of life. If only one isolated area is leaking and the rest of the field is intact, a targeted repair often buys 5–10 more years. We'll give you a straight answer after a free inspection.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "South Philly Flat Roofs — How They Fail and How We Fix Them",
+        html: `<p>Just about every flat roof in South Philadelphia fails in one of five places, and we&rsquo;ve seen all of them on every block from Pennsport to Packer Park:</p>
+<ol>
+  <li><strong>Parapet wall flashing</strong> &mdash; the most common leak source. The metal cap or flashing where the rubber meets the brick parapet wears, lifts, or pulls away. Water runs down the inside of the parapet and shows up as ceiling stains on your top floor or in stairwells.</li>
+  <li><strong>Scupper or drain seams</strong> &mdash; clogged scuppers cause ponding, and the seam where the membrane meets the drain hardware is the first thing to fail under standing water.</li>
+  <li><strong>Field seams</strong> &mdash; older EPDM was glued with adhesives that fail at 15&ndash;20 years. New systems use heat-welded or factory-seamed membrane that lasts much longer.</li>
+  <li><strong>Roof deck penetrations</strong> &mdash; railings, lighting, planters, and HVAC condenser bases all penetrate the membrane. Each penetration is a leak waiting to happen if the boot isn&rsquo;t maintained.</li>
+  <li><strong>Aging tar membranes</strong> &mdash; if your last roof was 20+ years ago and was a torch-down or built-up tar system, it&rsquo;s probably alligator-cracked across most of the field. Replacement, not repair.</li>
+</ol>
+<p>We bring leak-tracing dye, infrared scanners on call when needed, and decades of South Philly flat-roof experience to every inspection.</p>`,
+      },
+      {
+        heading: "Roof Decks — The South Philly Outdoor Living Upgrade",
+        html: `<p>Roof decks are everywhere in South Philadelphia &mdash; Pennsport, Passyunk Square, East Passyunk, Newbold &mdash; and they&rsquo;re one of the most-requested projects we handle. The roof under a deck has to do everything a normal flat roof does <em>plus</em> survive constant foot traffic, furniture weight, planter moisture, and railing penetrations. We install reinforced EPDM or modified bitumen below the deck with protection board, proper crickets to direct water to the drains, and stainless-steel-flashed penetrations at every railing post and pergola foot. The deck framing is supported on rubber-isolated pedestals so the joists never sit directly on the membrane. If your existing roof deck is leaking, we can usually pull a section of decking, find and repair the membrane, and put the deck back together &mdash; a much better outcome than full deck demolition.</p>`,
+      },
+      {
+        heading: "Working on Tight South Philly Blocks",
+        html: `<p>Most South Philadelphia rowhouses are 14&ndash;18 feet wide on streets where parking is already at war. We plan around that:</p>
+<ul>
+  <li>Material deliveries timed to morning hours when curb space opens up</li>
+  <li>Rear-alley access from Mifflin, Tasker, Wharton, Reed, or whichever alley your block has, when available &mdash; often the cleanest option</li>
+  <li>Temporary parking permits arranged through the Philadelphia Parking Authority for projects that need front-curb staging</li>
+  <li>Daily site cleanup &mdash; we leave your sidewalk, your steps, and your neighbor&rsquo;s sidewalk cleaner than we found them</li>
+  <li>Magnet sweeps for stray nails before we leave each day, full sweeps at job completion</li>
+</ul>
+<p>The neighbors notice. The good reviews on East Passyunk and Pennsport blocks aren&rsquo;t accidents.</p>`,
+      },
+      {
+        heading: "Other South Philly & Nearby Roofing Pages",
+        html: `<p>We work every block from Washington Avenue south to Oregon Avenue, river to river. Heaviest project density: <strong>Passyunk Square, East Passyunk, Pennsport, Newbold, Point Breeze, Dickinson Narrows, Whitman, Packer Park, Girard Estates, Wharton, Grays Ferry, and Lower Moyamensing</strong>.</p>
+<p>For related neighborhood pages, see <a href="/service-areas/center-city">Center City</a> &middot; <a href="/service-areas/fishtown">Fishtown</a> &middot; <a href="/service-areas/kensington">Kensington</a> &middot; <a href="/service-areas/west-philadelphia">West Philadelphia</a> &middot; <a href="/service-areas/philadelphia">all Philadelphia neighborhoods</a>.</p>`,
+      },
     ],
   },
   {
@@ -615,6 +795,44 @@ export const locations: Location[] = [
         question: "How close is Adilay Roofing to Fishtown?",
         answer:
           "Our headquarters at 2020 Dreer Street in Kensington is just blocks from Fishtown — literally a 2-minute drive. This means we can respond to emergency calls faster than any other roofer and can easily stop by for quick inspections or follow-up visits. When you hire us, you're hiring your neighbor.",
+      },
+      {
+        question: "How much does a Fishtown rowhouse roof replacement cost?",
+        answer:
+          "Most Fishtown rowhouse flat-roof replacements run $5,500–$11,000 for a standard 2-story home, depending on size, parapet height, and whether tear-off of multi-layer old tar is needed. Larger 3- and 4-story new-construction townhomes with roof decks typically run $9,000–$18,000 for the membrane work alone. Pre-listing roof replacements are very common here — buyers expect a recent roof, and a new system usually pays for itself in the sale price.",
+      },
+      {
+        question: "Can you do an emergency roof tarp in Fishtown today?",
+        answer:
+          "Almost always — yes. From our Kensington shop we can have a tarping crew on most Fishtown blocks within 20–40 minutes during business hours, and our 24/7 emergency line covers nights and weekends. Active leak in your living room? Call (888) 823-4766 right now.",
+      },
+      {
+        question: "Are there any historic restrictions on roofing materials in Fishtown?",
+        answer:
+          "Most of Fishtown sits inside the Fishtown / Lower Kensington Historic District boundaries, but the historic designation primarily affects facade work — front-elevation changes, windows, doors, cornices. Roof systems on the back of the home (which is most of the roof on a typical rowhouse) are generally not regulated as long as the streetscape isn't visibly altered. We've handled enough Fishtown projects to know what triggers a historic review and what doesn't.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Fishtown Is Our Backyard",
+        html: `<p>Adilay Roofing&rsquo;s shop is on Dreer Street in Kensington, three blocks from the Fishtown line. Most days the closest job to our front door is on Cedar, Edgemont, Berks, Norris, Susquehanna, Tilton, or one of the cross-streets between Frankford and Aramingo. We&rsquo;ve worked roofs on nearly every block in 19125 and we know the specific quirks of Fishtown housing &mdash; which streets have the worst parking, which alleys actually open to pull-through access for material delivery, which blocks have nineteenth-century homes with original wood plank decking under the tar, which new-construction blocks have city-required green-roof or roof-deck systems. Driving in from the suburbs to fix a Fishtown roof is harder than it looks. We don&rsquo;t have to.</p>`,
+      },
+      {
+        heading: "Two Fishtowns: Original Rowhouses and New Construction",
+        html: `<p>The roofs we work on in Fishtown fall into two very different categories:</p>
+<ul>
+  <li><strong>Original 1880s&ndash;1920s rowhouses</strong> &mdash; the small two-story brick homes on side streets like York, Thompson, Palmer, Cedar, Earl, Letterly, and Wildey. These have flat roofs over plank or board decking, often with multiple layers of old tar built up over a century of patches. When a roof on one of these homes finally fails, we tear off everything down to the deck, replace any rotted boards, install a fresh layer of underlayment, and apply a new EPDM or modified bitumen membrane with proper parapet flashing and scupper drains. Most of these projects also need new roof penetrations boots for plumbing vents and HVAC where homes have been modernized over the decades.</li>
+  <li><strong>2010s&ndash;present new construction</strong> &mdash; the three- and four-story townhomes and condos that have filled in along Frankford, Girard, and the side streets between Aramingo and the river. These were built with single-ply TPO or PVC membrane systems, complex drainage from interior drains rather than scuppers, and almost always with roof decks above the membrane. The new construction is generally well-built, but the membrane manufacturers&rsquo; warranties run 15&ndash;25 years and we&rsquo;re now seeing the first wave of 2010-era buildings need their first round of seam repairs and flashing maintenance.</li>
+</ul>`,
+      },
+      {
+        heading: "Roof Decks — The Fishtown Specialty",
+        html: `<p>If there&rsquo;s one architectural feature that defines new Fishtown construction, it&rsquo;s the roof deck. We&rsquo;ve installed and repaired more roof decks in this neighborhood than anywhere else in the city. The fundamentals: a roof under a deck still has to be a real waterproof roof first &mdash; reinforced EPDM or modified bitumen, properly seamed, with crickets to direct water to drains, protection board between the membrane and any deck framing, and stainless flashings at every railing post penetration. Most new-construction roof decks in Fishtown were built reasonably well; the failures we see most often are: (1) clogged interior drains causing ponding above the unit below, (2) failed sealant at railing posts after 8&ndash;12 years, (3) cracked membrane where pergola feet sat without protection pads. All fixable. We can usually pull a section of decking, address the membrane issue, and reset the deck without a full demolition.</p>`,
+      },
+      {
+        heading: "Pre-Listing Roof Replacements for Fishtown Sellers",
+        html: `<p>Fishtown property sells fast and the roof comes up in every inspection. If you&rsquo;re planning to list, a new roof before listing usually pays for itself in the sale price &mdash; buyers know they don&rsquo;t have to negotiate $8,000 off after the inspector finds bubbling membrane and lifted seams. We can usually do a pre-listing flat-roof replacement on a standard rowhouse in 1&ndash;2 days, with full documentation (photos, materials list, manufacturer warranty paperwork) ready to hand the buyer&rsquo;s agent. We&rsquo;ve done this for dozens of Fishtown listings on Cedar, Hewson, Tulip, Belgrade, and the rest of the side-street grid.</p>
+<p>For related neighborhood roofing pages, see <a href="/service-areas/kensington">Kensington</a> &middot; <a href="/service-areas/northern-liberties">Northern Liberties</a> &middot; <a href="/service-areas/old-city">Old City</a> &middot; <a href="/service-areas/center-city">Center City</a> &middot; <a href="/service-areas/philadelphia">all Philadelphia neighborhoods</a>.</p>`,
       },
     ],
   },
@@ -795,6 +1013,40 @@ export const locations: Location[] = [
         question: "What roofing material is best for Manayunk's steep roofs?",
         answer:
           "Architectural shingles rated for high wind resistance are ideal for Manayunk's steep, exposed roofs. The enhanced adhesive strips and heavier weight of architectural shingles provide superior protection against wind uplift. For the steepest pitches, we ensure proper starter strip and ridge cap installation for maximum hold. Free estimates available.",
+      },
+      {
+        question: "How much does a roof replacement cost in Manayunk?",
+        answer:
+          "Manayunk roof replacements typically run $9,000–$18,000 for standard hillside rowhouses and twins, with steeper-pitch homes and difficult-access properties on the higher end of that range. The hillside geometry sometimes means added labor for safety scaffolding and material staging — we factor that into the written estimate so there are no surprises. Premium materials (designer shingle, standing-seam metal) push pricing higher.",
+      },
+      {
+        question: "Do you handle moss and algae on Manayunk roofs?",
+        answer:
+          "Yes — moss and algae growth is one of the most common issues we see in Manayunk because of the tree canopy and humidity off the river. For mild surface algae, we can clean and treat the existing roof; for heavier moss growth that's already lifted shingles, replacement is usually the smarter spend. New roofs in Manayunk should always include algae-resistant (AR-rated) shingles to slow regrowth.",
+      },
+      {
+        question: "How do you access Manayunk's narrow hillside streets?",
+        answer:
+          "We plan every Manayunk job around access. Many homes are only reachable from rear alleys or via the lower street with stair access to the upper roof. Our crews carry portable scaffold systems for steep-slope work, we time material deliveries for off-peak hours on Main Street and the side streets, and we coordinate with neighbors when alley access requires temporary blockage. We've worked Cresson, Leverington, Cotton, Shurs, Lemonte, Roxborough Avenue, and most of the Manayunk grid.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Steep-Slope Roofing on the Manayunk Hillside",
+        html: `<p>Manayunk roofs are different. Most are pitched at 8/12 to 12/12 or steeper, exposed to wind off the river and the hillside, and sit on lots that drop 10&ndash;30 feet from front sidewalk to rear yard. Working safely on Manayunk roofs requires the right gear &mdash; harnesses, anchors, scaffold systems for the upper elevations &mdash; and crews who&rsquo;ve done this work before. We bring all of it. Wind uplift is the failure mode we see most: standard 3-tab shingles can&rsquo;t hold against the gust patterns that funnel up from the Schuylkill, especially on the front-facing slopes of homes on the lower blocks like Cotton, Cresson, and the river-side stretches of Main. We install heavier architectural shingles with 6-nail patterns, enhanced starter strips at all eaves and rakes, and sealed ridge caps so the system holds even in 60&ndash;70 mph nor&rsquo;easter winds.</p>`,
+      },
+      {
+        heading: "Manayunk Gutters — A Bigger Job Than People Think",
+        html: `<p>Gutters in Manayunk aren&rsquo;t an accessory &mdash; they&rsquo;re infrastructure. Hillside runoff during a heavy summer storm or a fast January thaw can dump hundreds of gallons toward your foundation in minutes. We see undersized 5-inch gutters overflow regularly on Manayunk homes; the water pools at the foundation, runs down the hillside, and erodes the retaining walls that everyone here depends on. We install 6-inch seamless aluminum gutters with oversized 3x4 downspouts on most Manayunk properties, route the discharge well away from foundations and walls, and add gutter guards to handle the constant leaf load from the surrounding tree canopy. If your retaining wall is already showing erosion, gutter and downspout work is usually the first fix &mdash; before any masonry repair has a chance of holding.</p>`,
+      },
+      {
+        heading: "Slate, Metal, and Designer Shingle — Manayunk's Premium Options",
+        html: `<p>Some Manayunk homes &mdash; particularly the older stone houses on the upper blocks of Roxborough Avenue, Levering, and the streets along the ridge &mdash; carry slate or designer shingle that&rsquo;s worth preserving. We work on slate when it makes sense (individual piece replacement, ridge re-pointing, valley work), and we install synthetic slate or premium designer shingle profiles when full replacement is the right call. Standing-seam metal is also a great fit for steep Manayunk roofs &mdash; long panels, no fasteners exposed to weather, 50+ year service life. We carry samples and pricing for all three options so you can decide based on the look you want and how long you plan to own the home.</p>`,
+      },
+      {
+        heading: "Working Around Main Street",
+        html: `<p>Manayunk&rsquo;s commercial Main Street and the residential blocks above it share parking, access, and patience. We plan deliveries around the morning rush at the businesses on Main, we use rear-alley access where possible (Lemonte, Hermitage, etc.), and we pull permits with the city for any project requiring street-side dumpster placement. Every Manayunk project ends with a magnet sweep of the street, sidewalk, and any driveway we touched &mdash; we don&rsquo;t leave nails behind for the neighbors&rsquo; tires to find.</p>
+<p>For nearby roofing pages, see <a href="/service-areas/roxborough">Roxborough</a> &middot; <a href="/service-areas/conshohocken">Conshohocken</a> &middot; <a href="/service-areas/bala-cynwyd">Bala Cynwyd</a> &middot; <a href="/service-areas/philadelphia">all Philadelphia neighborhoods</a>.</p>`,
       },
     ],
   },
@@ -2504,6 +2756,56 @@ export const locations: Location[] = [
         answer:
           "Typically within the same day. Germantown is a short drive from our Kensington headquarters, and we prioritize active leaks to prevent interior damage. We'll tarp and stabilize the roof immediately, then schedule permanent repairs once the storm passes. Call (888) 823-4766 for 24/7 emergency service.",
       },
+      {
+        question: "How much does it cost to replace a slate roof in Germantown?",
+        answer:
+          "Full natural slate replacement on a typical Germantown twin or detached Victorian runs $25,000–$60,000+ depending on roof size, complexity (dormers, valleys, turrets), and slate quality. Synthetic slate that mimics the look but cuts the cost roughly in half ($14,000–$30,000) is a popular middle-ground choice. Heavy architectural shingle in a slate-look profile is the most affordable option ($10,000–$18,000) and works well on homes outside designated historic districts. We'll walk you through all three options with samples and pricing.",
+      },
+      {
+        question: "Should I repair my Germantown slate roof or replace it?",
+        answer:
+          "Depends on the roof's age and condition. If the slates themselves are still sound and only flashings, ridges, or a handful of pieces have failed, repair is almost always the right call — natural slate can outlast 100 years and is irreplaceable on a historic Germantown home. If you're seeing widespread cracking, multiple slipped tiles per slope, or the underlying nails are corroding (a process called 'nail sickness'), you're approaching end of life and replacement planning makes sense. Free on-site assessments — call (888) 823-4766.",
+      },
+      {
+        question: "Do you do gutter and downspout work on Germantown historic homes?",
+        answer:
+          "Yes — copper, half-round aluminum, and standard K-style. Many Germantown historic homes originally had copper or galvanized half-round gutters that look correct on the architecture and last decades. Modern aluminum K-style is the affordable standard and works well on most twins. We can match what's there or upgrade to half-round if the historic look matters. Gutter sizing matters more than people realize given Germantown's tree canopy — we'll spec the right capacity for your specific roof and slope.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Germantown's Roofs Are Older Than Your Grandparents — and Worth Saving",
+        html: `<p>Germantown was founded in 1683. The roofs we work on here are sometimes 100&ndash;130 years old, still made of natural slate quarried in Pennsylvania or Vermont, and still doing their job &mdash; if a competent roofer maintains them. The homes along Wayne Avenue, Greene Street, Schoolhouse Lane, Wissahickon Avenue, and Germantown Avenue itself are some of the most architecturally significant residential buildings in Philadelphia. Most modern roofing contractors won&rsquo;t touch slate &mdash; they&rsquo;ll quote you a tear-off and shingle replacement because that&rsquo;s what they know how to do. We work on slate. We carry hooks for individual piece replacement, we have suppliers who can match weathered Pennsylvania slate to your existing roof, and we know how to re-point ridges, re-flash chimneys, and rebuild copper valleys without destroying a roof that has 30&ndash;50 years of life left in it. If your slate roof is genuinely at end of life, we&rsquo;ll tell you straight and walk through replacement options. But we won&rsquo;t push you to tear off a perfectly good slate roof to make our job easier.</p>`,
+      },
+      {
+        heading: "The Three Replacement Tiers for a Germantown Slate Roof",
+        html: `<p>When slate replacement is the right call, you have three real choices:</p>
+<ol>
+  <li><strong>Natural slate replacement</strong> &mdash; the historic-correct, longest-lasting option. 75&ndash;100+ year service life. Highest cost. Required on properties inside designated historic districts where the Philadelphia Historical Commission reviews material changes.</li>
+  <li><strong>Synthetic (composite) slate</strong> &mdash; recycled rubber and polymer products that closely mimic the look and weight of natural slate. 50-year manufacturer warranties are common. Roughly half the cost of natural slate. Approved by some historic district reviews and not others &mdash; we&rsquo;ll check before quoting.</li>
+  <li><strong>Heavy architectural shingle in a slate profile</strong> &mdash; the most affordable option, suitable for Germantown homes outside historic districts. Designer profiles like CertainTeed Grand Manor or GAF Slateline give a credible slate look at a fraction of the cost. 30&ndash;50 year warranties.</li>
+</ol>
+<p>We&rsquo;ll bring samples of all three to the on-site estimate so you can see them against your existing roof and adjacent neighbors&rsquo; homes.</p>`,
+      },
+      {
+        heading: "Historic District Work in Germantown",
+        html: `<p>Several Germantown areas fall inside Philadelphia Historical Commission&ndash;designated districts:</p>
+<ul>
+  <li><strong>Colonial Germantown Historic District</strong> &mdash; covers a large stretch of Germantown Avenue and side streets. Material and color reviews apply to roof replacements visible from the street.</li>
+  <li><strong>Tulpehocken Station Historic District</strong> &mdash; the area around the SEPTA station and the Victorian streetscapes nearby.</li>
+  <li><strong>Awbury Historic District</strong> and <strong>Deshler-Morris House surrounds</strong> &mdash; smaller designated zones with active review.</li>
+</ul>
+<p>Inside these districts we file the required Application for Building Permit with Historical Review, submit material samples and shop drawings if required, and don&rsquo;t start work until approval comes through. Outside the designated districts &mdash; which is most of Germantown &mdash; standard L&amp;I permitting applies and we handle that too.</p>`,
+      },
+      {
+        heading: "Tree Canopy, Moss, and Gutter Work in Germantown",
+        html: `<p>Germantown has one of the densest mature tree canopies of any Philadelphia neighborhood &mdash; oaks, maples, sycamores, and lindens that drop leaves continuously from October through December and shed pollen and small debris year-round. Two practical consequences for your roof:</p>
+<ol>
+  <li><strong>Gutters fill fast.</strong> A standard 5-inch gutter on a Germantown twin can fill in one weekend after a leaf event. We install 6-inch seamless gutters with oversized 3x4 downspouts on most projects, and we&rsquo;ll quote leaf-guard systems if you want to be done thinking about it.</li>
+  <li><strong>Moss grows on north-facing slopes.</strong> Germantown north slopes &mdash; especially under heavy tree shade &mdash; develop moss within a few years of a new roof if AR-rated (algae-resistant) shingles weren&rsquo;t specified. We always spec AR-rated shingles for Germantown work, and we can install zinc or copper strips at the ridge to inhibit regrowth on existing roofs.</li>
+</ol>
+<p>For nearby roofing pages, see <a href="/service-areas/manayunk">Manayunk</a> &middot; <a href="/service-areas/roxborough">Roxborough</a> &middot; <a href="/service-areas/cheltenham">Cheltenham</a> &middot; <a href="/service-areas/jenkintown">Jenkintown</a> &middot; <a href="/service-areas/philadelphia">all Philadelphia neighborhoods</a>.</p>`,
+      },
     ],
   },
   {
@@ -2582,6 +2884,51 @@ export const locations: Location[] = [
         question: "How much does a flat roof replacement cost in Northern Liberties?",
         answer:
           "For a standard Northern Liberties rowhouse, a full flat roof replacement with 60-mil EPDM membrane typically ranges from $6,000 to $10,000. Larger loft buildings or townhomes with roof decks are priced individually based on square footage and complexity. We provide free, transparent quotes with no upsells. Call (888) 823-4766.",
+      },
+      {
+        question: "Can you do an emergency roof tarp in Northern Liberties today?",
+        answer:
+          "Almost always. From our Kensington shop we can reach any Northern Liberties address — 2nd Street, 3rd, Lawrence, American, North Bodine, Hancock — within 10–20 minutes during business hours. For active leaks call (888) 823-4766 right now and we'll dispatch a tarping crew immediately.",
+      },
+      {
+        question: "What's the difference between TPO, EPDM, and PVC for a Northern Liberties new-construction roof?",
+        answer:
+          "All three are single-ply membranes used under roof decks and on flat new-construction roofs. EPDM (rubber) is black, very flexible, 20–30 year service life, and the most common in older Philadelphia work. TPO is white or grey, reflects heat (which lowers cooling costs in summer), and is what most Northern Liberties developers spec on new construction. PVC is similar to TPO but more chemical-resistant and slightly more expensive. We install and repair all three. If your existing roof is failing we'll match the original system unless there's a good reason to switch.",
+      },
+      {
+        question: "How long do Northern Liberties new-construction roofs last before they need work?",
+        answer:
+          "Most NoLibs new-construction roofs from the 2010–2018 wave are 7–15 years old now. Manufacturer warranties on the membrane run 15–25 years, but the first issues typically show up at 8–12 years: failed sealant at railing posts on roof decks, clogged interior drains causing ponding, lifted seams at penetrations. None of those are full-replacement issues — they're maintenance items, and addressing them at year 8–12 typically extends total roof life to 25+ years. Annual inspections are worth it on these buildings.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Two Roof Worlds in Northern Liberties",
+        html: `<p>Northern Liberties has two completely different roof types coexisting block by block:</p>
+<ul>
+  <li><strong>Original 19th-century rowhouses</strong> &mdash; the smaller two-story brick homes on side streets like Lawrence, American, North Bodine, Hancock, Wallace, and the cross-streets between 2nd and 6th. Flat roofs over plank decking, often with multiple layers of old tar and modified bitumen built up over decades. When these roofs fail we tear off everything down to the deck, replace any rotted boards, and install a fresh EPDM or modified bitumen system with proper parapet flashing.</li>
+  <li><strong>2005&ndash;2020 new construction</strong> &mdash; the three- and four-story condos and townhomes that have transformed the neighborhood, particularly along 2nd Street, 3rd Street, Liberties Walk, and the in-fill blocks east of 5th. These were built with TPO or PVC membrane, interior drains, pilot-house stairs, and roof decks above the membrane. The construction is generally good, but the first wave is now 10&ndash;18 years old and starting to need its first round of seam, flashing, and drain maintenance.</li>
+</ul>`,
+      },
+      {
+        heading: "Roof Decks and Pilot Houses — Where NoLibs Roofs Leak First",
+        html: `<p>Almost every new-construction home in Northern Liberties has a roof deck and a pilot-house stair leading up to it. These are great features but they create predictable leak points:</p>
+<ol>
+  <li><strong>Pilot-house base flashing</strong> &mdash; where the small stair enclosure meets the membrane field. Sealant at this transition fails first, usually at year 8&ndash;12. Reflashing is a half-day job; left alone, it leaks into the top-floor ceiling.</li>
+  <li><strong>Railing post penetrations</strong> &mdash; every railing post is a hole in the membrane. Stainless flashings should be installed at every post. When they aren&rsquo;t (or when caulk-only construction was used), water finds the framing within a few years.</li>
+  <li><strong>Interior drains</strong> &mdash; clogged drains cause ponding above the unit below. Annual cleaning prevents this. We can do it as a maintenance call.</li>
+  <li><strong>Pergola feet and planter bases</strong> &mdash; anything sitting directly on the membrane needs protection pads. We see cracked membrane under pergola feet on roof decks all over NoLibs.</li>
+</ol>
+<p>If your roof deck is leaking but you don&rsquo;t want to demo the whole deck, we can usually pull a section of decking, locate and repair the failure, and reset the deck.</p>`,
+      },
+      {
+        heading: "Green Roofs in Northern Liberties",
+        html: `<p>A handful of Northern Liberties buildings have semi-intensive or extensive green roofs &mdash; vegetated roof systems with growing medium, drainage mats, and root barriers above a heavy-duty membrane. These are excellent for stormwater management and building cooling, but the membrane underneath needs to be specifically rated for green-roof use (root barrier, EPDM or modified bitumen with FLL or equivalent certification). When repairs are needed, we coordinate the vegetation removal with a green-roof landscape specialist, address the membrane, and oversee replanting. We&rsquo;ve worked on green-roof systems on multiple NoLibs buildings.</p>`,
+      },
+      {
+        heading: "Northern Liberties Is 10 Minutes From Our Shop",
+        html: `<p>2020 Dreer Street to any address in Northern Liberties is a 5&ndash;15 minute drive depending on traffic and time of day. That means same-day estimates are realistic, emergency tarping is fast, and follow-up visits don&rsquo;t require scheduling around a contractor driving in from a suburb. Most of our NoLibs work happens on Lawrence, American, 2nd Street, 3rd Street, Hancock, Bodine, Wallace, Cambridge, and the cross-streets between Spring Garden and Girard.</p>
+<p>For nearby roofing pages, see <a href="/service-areas/fishtown">Fishtown</a> &middot; <a href="/service-areas/kensington">Kensington</a> &middot; <a href="/service-areas/old-city">Old City</a> &middot; <a href="/service-areas/center-city">Center City</a> &middot; <a href="/service-areas/philadelphia">all Philadelphia neighborhoods</a>.</p>`,
       },
     ],
   },
