@@ -163,4 +163,68 @@ const icons: Record<string, React.ReactNode> = {
       />
     </>
   ),
+
+  // Storm Damage Roof Repair — cloud + lightning bolt
+  "storm-damage-roof-repair": (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11 13l-2 4h3l-2 4"
+      />
+    </>
+  ),
+
+  // Roof Leak Repair — water droplet
+  "roof-leak-repair": (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 2.25c-3 4.5-6 7.5-6 11.25a6 6 0 0012 0c0-3.75-3-6.75-6-11.25z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 14.25a3 3 0 003 3"
+      />
+    </>
+  ),
+
+  // Roof Inspection — magnifying glass over a roofline
+  "roof-inspection": (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 12l5-5 5 5"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M15.75 15.75a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM18.75 18.75l-3.375-3.375"
+      />
+    </>
+  ),
+
+  // Soffit Repair — horizontal eave panels under a roof
+  "soffit-repair": (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9l9-6 9 6"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 12h16.5M3.75 15h16.5M3.75 18h16.5"
+      />
+    </>
+  ),
 };

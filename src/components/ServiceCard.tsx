@@ -2,17 +2,49 @@ import Link from "next/link";
 import type { Service } from "@/data/services";
 import ServiceIcon from "@/components/ServiceIcon";
 
-/* Map service slug → background image */
+/* Map service slug → background image. Every service slug should map to a
+   topically relevant Cloudinary photo so cards never render bare. Variant
+   slugs (siding-installation, window-replacement, etc.) reuse the parent
+   category photo. */
 const serviceImages: Record<string, string> = {
+  // Core roofing
   "roof-replacement": "/images/roof-replacement-philadelphia.jpg",
   "roof-repair": "/images/roof-repair-philadelphia.jpg",
   "flat-roofing": "/images/flat-roof-philadelphia.jpg",
+  "flat-roof-repair": "/images/crew-flat-roof-action.png",
   "shingle-roofing": "/images/roof-shingles-philadelphia.jpg",
-  siding: "/images/siding-philadelphia.jpg",
-  windows: "/images/window-installation-philadelphia.jpg",
-  gutters: "/images/gutters-philadelphia.png",
+  "asphalt-shingle-roofing": "/images/roof-shingles-philadelphia.jpg",
+  "shingle-repair": "/images/roof-shingles-philadelphia.jpg",
+  "shingle-replacement": "/images/roof-shingles-philadelphia.jpg",
+  "residential-roofing": "/images/experienced-crew-adilay-roofing-philadelphia.jpg",
   "emergency-roof-repair": "/images/emergency-roof-repair-philadelphia.jpg",
   "commercial-roofing": "/images/commercial-roofing-philadelphia.jpg",
+  "storm-damage-roof-repair": "/images/emergency-roof-repair-philadelphia.jpg",
+  "roof-leak-repair": "/images/roof-repair-philadelphia.jpg",
+  "roof-inspection": "/images/metal-roof-crew.jpg",
+  "soffit-repair": "/images/quality-roofing-materials-adilay.jpg",
+
+  // Siding
+  siding: "/images/siding-philadelphia.jpg",
+  "siding-installation": "/images/siding-philadelphia.jpg",
+  "siding-repair": "/images/siding-philadelphia.jpg",
+  "commercial-siding": "/images/siding-philadelphia.jpg",
+  "residential-siding": "/images/siding-philadelphia.jpg",
+  "vinyl-siding": "/images/siding-philadelphia.jpg",
+
+  // Windows
+  windows: "/images/window-installation-philadelphia.jpg",
+  "window-installation": "/images/window-installation-philadelphia.jpg",
+  "window-replacement": "/images/window-installation-philadelphia.jpg",
+  "window-repair": "/images/window-installation-philadelphia.jpg",
+  "window-companies": "/images/window-installation-philadelphia.jpg",
+
+  // Gutters
+  gutters: "/images/gutters-philadelphia.png",
+  "gutter-repair": "/images/gutters-philadelphia.png",
+  "gutter-cleaning": "/images/gutters-philadelphia.png",
+  "gutter-installation": "/images/gutters-philadelphia.png",
+  "gutter-screening": "/images/gutters-philadelphia.png",
 };
 
 /* Custom object-position so people in Adilay shirts stay visible above text */

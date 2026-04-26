@@ -12,7 +12,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "6 min read"
 category: "general-roofing"
-featuredImage: "/images/blog/roof-permit-philadelphia.jpg"
+featuredImage: "/images/experienced-crew-adilay-roofing-philadelphia.jpg"
 faq:
   - question: "How much does a roofing permit cost in Philadelphia?"
     answer: "A roof permit in Philadelphia typically costs between 40 and 200 dollars, depending on the scope of work and the total project value. The Philadelphia Department of Licenses and Inspections uses a fee schedule based on the estimated construction cost. For a standard residential roof replacement valued between 5,000 and 15,000 dollars, expect a permit fee in the 75 to 150 dollar range. Your contractor should include the permit cost in their project estimate."

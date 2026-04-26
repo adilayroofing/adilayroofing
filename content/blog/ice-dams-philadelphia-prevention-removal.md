@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "9 min read"
 category: "roof-repair"
-featuredImage: "/images/blog/ice-dams-philadelphia-prevention-removal.jpg"
+featuredImage: "/images/roof-shingles-philadelphia.jpg"
 faq:
   - question: "What is an ice dam and why does it cause a leak?"
     answer: "An ice dam is a ridge of ice that forms at the eaves of your roof when warm attic air melts the underside of snow on the upper roof. The melted water flows down to the cold eaves, refreezes, and builds up into a wall of ice. As more snow melts above, water pools behind the dam — and because most roof shingles are designed to shed water flowing downward, not water pooled and standing, that water finds its way under the shingles, into the attic, and through the ceiling below. Active interior leaks during a cold snap with snow on the roof are almost always ice-dam related in Philadelphia."

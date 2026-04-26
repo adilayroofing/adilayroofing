@@ -12,7 +12,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "6 min read"
 category: "roof-repair"
-featuredImage: "/images/blog/emergency-roof-leak-repair-philadelphia.jpg"
+featuredImage: "/images/emergency-roof-repair-philadelphia.jpg"
 faq:
   - question: "Does Adilay Roofing offer 24/7 emergency roof repair?"
     answer: "Yes. Adilay Roofing LLC provides 24/7 emergency roofing service across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Call (888) 823-4766 any time, day or night. We will dispatch a crew to stabilize your roof and prevent further water damage as quickly as possible."

@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "9 min read"
 category: "roof-repair"
-featuredImage: "/images/blog/slate-roof-repair-vs-replacement-philadelphia.jpg"
+featuredImage: "/images/roof-replacement-philadelphia.jpg"
 faq:
   - question: "Can a leaking slate roof actually be repaired, or do I need to replace it?"
     answer: "Most leaking slate roofs in Philadelphia can be repaired. Slate itself is one of the most durable roofing materials ever made and routinely lasts 75 to 100 years or more. The leaks are almost always caused by failed flashings, lifted ridges, slipped or cracked individual tiles, or aging fasteners — not by the slate itself reaching end of life. A full replacement is only needed when widespread cracking, multiple slipped pieces per slope, or 'nail sickness' (corroded fasteners failing across the whole roof) appears. We'll inspect honestly and tell you which one applies."
