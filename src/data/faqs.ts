@@ -2,12 +2,12 @@ export const faqs = [
   {
     question: "What makes Adilay one of the best roofing companies in Philadelphia?",
     answer:
-      "We&rsquo;re a family-owned Philadelphia roofing contractor with 20+ years on local roofs, a 5.0 Google rating across 40+ reviews, and a 30-person in-house crew &mdash; no subcontracted labor. We&rsquo;re licensed in Pennsylvania (PA184779), fully insured, and handle every major Philadelphia roof type: architectural shingle, slate, flat EPDM/TPO, and modified bitumen. You get one point of contact from estimate through final inspection.",
+      "We’re a family-owned Philadelphia roofing contractor with 20+ years on local roofs, a 5.0 Google rating across 40+ reviews, and a 30-person in-house crew — no subcontracted labor. We’re licensed in Pennsylvania (PA184779), fully insured, and handle every major Philadelphia roof type: architectural shingle, slate, flat EPDM/TPO, and modified bitumen. You get one point of contact from estimate through final inspection.",
   },
   {
     question: "How fast can a Philadelphia roofer get to my home for an emergency?",
     answer:
-      "For active leaks, storm damage, or missing shingles after high winds, call (888) 823-4766 and we aim to have a crew on-site the same day for emergencies in Philadelphia County and the close suburbs. If we can&rsquo;t get to you that day, we&rsquo;ll walk you through tarping and containment steps over the phone so the damage stops spreading until we arrive.",
+      "For active leaks, storm damage, or missing shingles after high winds, call (888) 823-4766 and we aim to have a crew on-site the same day for emergencies in Philadelphia County and the close suburbs. If we can’t get to you that day, we’ll walk you through tarping and containment steps over the phone so the damage stops spreading until we arrive.",
   },
   {
     question: "How do I know if my roof needs to be replaced?",
@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "How long does a roof replacement take?",
     answer:
-      "Most residential roof replacements are completed in 1\u20133 days, depending on the size of your home, weather conditions, and the complexity of the job. We'll give you a specific timeline during your estimate.",
+      "Most residential roof replacements are completed in 1–3 days, depending on the size of your home, weather conditions, and the complexity of the job. We'll give you a specific timeline during your estimate.",
   },
   {
     question: "Do you work with insurance companies on storm damage claims?",
@@ -47,7 +47,7 @@ export const faqs = [
   {
     question: "Do you offer any warranties?",
     answer:
-      "We stand behind our work with a workmanship warranty on every project, in addition to manufacturer warranties on materials. The specific terms depend on the project and materials chosen \u2014 we cover all warranty details in your project proposal before any work begins. See our Terms of Service for more information.",
+      "We stand behind our work with a workmanship warranty on every project, in addition to manufacturer warranties on materials. The specific terms depend on the project and materials chosen — we cover all warranty details in your project proposal before any work begins. See our Terms of Service for more information.",
   },
   {
     question: "Can you help with emergency roof repairs?",
@@ -57,11 +57,11 @@ export const faqs = [
   {
     question: "Do you offer financing for roof replacement or repair?",
     answer:
-      'Yes! Adilay Roofing is approved through Service Finance Company, LLC, a nationally licensed lender. You can finance your roofing project from $1,000 to $100,000, with no payments due until the job is complete. <a href="/financing">Learn more about financing \u2192</a>',
+      'Yes! Adilay Roofing is approved through Service Finance Company, LLC, a nationally licensed lender. You can finance your roofing project from $1,000 to $100,000, with no payments due until the job is complete. <a href="/financing">Learn more about financing →</a>',
   },
   {
     question: "What credit score do I need to finance a roof with Adilay?",
     answer:
-      "Service Finance Company works with a range of credit profiles. The best way to find out your options is to apply \u2014 checking your eligibility typically does not affect your credit score.",
+      "Service Finance Company works with a range of credit profiles. The best way to find out your options is to apply — checking your eligibility typically does not affect your credit score.",
   },
 ];

@@ -15,6 +15,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
+import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -194,16 +195,18 @@ export default async function Home() {
   const serviceAreasDescription = (cmsData?.serviceAreasDescription as string) ||
     "We proudly serve homeowners and businesses across southeastern Pennsylvania.";
 
-  // FAQPage schema for the 6 homepage FAQs
+  // FAQPage schema — must match the 8 FAQs rendered by <FAQ items={faqs.slice(0, 8)} />
+  // below. stripHtml removes any inline anchors (e.g. financing link) and
+  // decodes entities so Google sees clean plain-text Q&A.
   const homepageFaqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.slice(0, 8).map((faq) => ({
       "@type": "Question",
-      name: faq.question,
+      name: stripHtml(faq.question),
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: stripHtml(faq.answer),
       },
     })),
   };

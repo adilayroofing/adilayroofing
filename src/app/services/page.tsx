@@ -5,8 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
-
-const BASE_URL = "https://www.adilayroofing.com";
+import { BASE_URL, ORG_REF, decodeEntities } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -146,9 +145,37 @@ export default async function ServicesPage() {
     (b, i) => ({ ...b, icon: benefitIcons[i] || benefitIcons[0] })
   );
 
+  const servicesCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${BASE_URL}/services#collection`,
+    url: `${BASE_URL}/services`,
+    name: "Roofing & Exterior Services",
+    description:
+      "Roofing, siding, windows, gutters, and shingle services from Adilay Roofing — Philadelphia's licensed PA184779 contractor.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    about: ORG_REF,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      numberOfItems: services.length,
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `${BASE_URL}/services/${service.slug}`,
+        name: service.title,
+        description: decodeEntities(service.description),
+      })),
+    },
+  };
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Services", path: "/services" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesCollectionSchema) }}
+      />
       {/* Hero Banner */}
       <section className="relative bg-brand-darker overflow-hidden">
         <img

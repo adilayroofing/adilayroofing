@@ -19,6 +19,8 @@ import BlogFAQSection from "@/components/blog/BlogFAQSection";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import StickyMobileCTA from "@/components/blog/StickyMobileCTA";
 import CTASection from "@/components/CTASection";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { ORG_REF, stripHtml } from "@/lib/schema";
 
 // Revalidate every 60 seconds for CMS changes (also handles scheduled posts)
 export const revalidate = 60;
@@ -105,33 +107,41 @@ export default async function BlogPostPage({ params }: PageProps) {
   const postUrl = `${BASE_URL}/blog/${fm.slug}`;
 
   // BlogPosting JSON-LD
+  const featuredImageUrl = fm.featuredImage
+    ? fm.featuredImage.startsWith("http")
+      ? fm.featuredImage
+      : `${BASE_URL}${fm.featuredImage}`
+    : undefined;
+
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${postUrl}#article`,
     headline: fm.title,
     description: fm.description,
     url: postUrl,
     datePublished: fm.date,
-    dateModified: fm.date,
+    dateModified: fm.dateModified || fm.date,
     author: {
-      "@type": "Organization",
-      name: "Adilay Roofing",
-      url: BASE_URL,
+      "@type": "Person",
+      name: fm.author || "Adilay Roofing Team",
+      affiliation: ORG_REF,
     },
-    publisher: {
-      "@type": "Organization",
-      name: "Adilay Roofing",
-      logo: {
-        "@type": "ImageObject",
-        url: `${BASE_URL}/images/logo-new.png`,
-      },
-    },
-    image: fm.featuredImage ? `${BASE_URL}${fm.featuredImage}` : undefined,
+    publisher: ORG_REF,
+    image: featuredImageUrl
+      ? {
+          "@type": "ImageObject",
+          url: featuredImageUrl,
+          contentUrl: featuredImageUrl,
+        }
+      : undefined,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": postUrl,
     },
-    keywords: [fm.primaryKeyword, ...fm.secondaryKeywords].join(", "),
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${BASE_URL}/blog#blog` },
+    keywords: [fm.primaryKeyword, ...fm.secondaryKeywords].filter(Boolean).join(", "),
   };
 
   // FAQ JSON-LD
@@ -142,40 +152,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           "@type": "FAQPage",
           mainEntity: fm.faq.map((item) => ({
             "@type": "Question",
-            name: item.question,
+            name: stripHtml(item.question),
             acceptedAnswer: {
               "@type": "Answer",
-              text: item.answer,
+              text: stripHtml(item.answer),
             },
           })),
         }
       : null;
-
-  // Breadcrumb JSON-LD
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: BASE_URL,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blog",
-        item: `${BASE_URL}/blog`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: fm.title,
-        item: postUrl,
-      },
-    ],
-  };
 
   return (
     <>
@@ -194,11 +178,11 @@ export default async function BlogPostPage({ params }: PageProps) {
           }}
         />
       )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Blog", path: "/blog" },
+          { name: fm.title, path: `/blog/${fm.slug}` },
+        ]}
       />
 
       {/* Breadcrumbs */}

@@ -10,6 +10,13 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
+import {
+  AREA_SERVED,
+  BASE_URL,
+  ORG_REF,
+  decodeEntities,
+  stripHtml,
+} from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -24,8 +31,6 @@ export function generateStaticParams() {
 // Dynamic metadata per service
 // ---------------------------------------------------------------------------
 type PageProps = { params: Promise<{ slug: string }> };
-
-const BASE_URL = "https://www.adilayroofing.com";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -128,30 +133,12 @@ export default async function ServicePage({ params }: PageProps) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${BASE_URL}/services/${slug}#service`,
     serviceType: service.title,
     name: `${service.title} in Philadelphia`,
-    description: service.description,
-    provider: {
-      "@type": "RoofingContractor",
-      name: "Adilay Roofing",
-      url: BASE_URL,
-      telephone: "+18888234766",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "2020 Dreer St., Unit 101",
-        addressLocality: "Philadelphia",
-        addressRegion: "PA",
-        postalCode: "19125",
-        addressCountry: "US",
-      },
-    },
-    areaServed: [
-      { "@type": "City", name: "Philadelphia" },
-      { "@type": "AdministrativeArea", name: "Bucks County" },
-      { "@type": "AdministrativeArea", name: "Montgomery County" },
-      { "@type": "AdministrativeArea", name: "Delaware County" },
-      { "@type": "AdministrativeArea", name: "Chester County" },
-    ],
+    description: decodeEntities(service.description),
+    provider: ORG_REF,
+    areaServed: AREA_SERVED,
     url: `${BASE_URL}/services/${slug}`,
     image: service.image ? `${BASE_URL}${service.image}` : undefined,
   };
@@ -163,10 +150,10 @@ export default async function ServicePage({ params }: PageProps) {
           "@type": "FAQPage",
           mainEntity: faq.map((item) => ({
             "@type": "Question",
-            name: item.question,
+            name: stripHtml(item.question),
             acceptedAnswer: {
               "@type": "Answer",
-              text: item.answer,
+              text: stripHtml(item.answer),
             },
           })),
         }

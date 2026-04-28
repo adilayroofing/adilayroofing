@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -175,10 +176,10 @@ export default async function FAQPage() {
     "@type": "FAQPage",
     mainEntity: allFaqs.map((faq) => ({
       "@type": "Question",
-      name: faq.question,
+      name: stripHtml(faq.question),
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: stripHtml(faq.answer),
       },
     })),
   };

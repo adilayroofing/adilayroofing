@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
+import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -23,8 +24,6 @@ export function generateStaticParams() {
 // Dynamic metadata per location
 // ---------------------------------------------------------------------------
 type PageProps = { params: Promise<{ slug: string }> };
-
-const BASE_URL = "https://www.adilayroofing.com";
 
 export async function generateMetadata({
   params,
@@ -185,15 +184,35 @@ export default async function LocationPage({ params }: PageProps) {
   const ctaSubtext = (cmsData?.ctaSubtext as string) ||
     `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`;
 
-  // The site-wide <JsonLd /> in app/layout.tsx already emits the canonical
-  // RoofingContractor org schema with all areas served (Philadelphia,
-  // Bucks/Montgomery/Delaware/Chester counties) and the canonical address,
-  // phone, hours, and reviews. Page-level location targeting comes from
-  // the canonical URL, breadcrumbs, H1, and body content — no second
-  // RoofingContractor schema is needed here.
-  //
-  // BreadcrumbList JSON-LD is emitted by the <BreadcrumbJsonLd /> component
-  // below.
+  // Per-location Service schema — narrows areaServed to just this location
+  // and references the canonical RoofingContractor by @id (emitted sitewide
+  // via <JsonLd /> in app/layout.tsx).
+  const locationAreaServed =
+    location.type === "county"
+      ? {
+          "@type": "AdministrativeArea",
+          name: `${location.name}${location.county === location.name ? "" : `, ${location.state}`}`,
+        }
+      : {
+          "@type": "City",
+          name: `${location.name}, ${location.state}`,
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: location.county,
+          },
+        };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${BASE_URL}/service-areas/${slug}#service`,
+    serviceType: "Roofing Contractor",
+    name: `Roofing Services in ${location.name}, ${location.state}`,
+    description: stripHtml(location.intro).slice(0, 300),
+    provider: ORG_REF,
+    areaServed: locationAreaServed,
+    url: `${BASE_URL}/service-areas/${slug}`,
+  };
 
   // JSON-LD FAQPage schema
   const faqSchema = {
@@ -201,10 +220,10 @@ export default async function LocationPage({ params }: PageProps) {
     "@type": "FAQPage",
     mainEntity: locationFaq.map((item) => ({
       "@type": "Question",
-      name: item.question,
+      name: stripHtml(item.question),
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: stripHtml(item.answer),
       },
     })),
   };
@@ -217,6 +236,12 @@ export default async function LocationPage({ params }: PageProps) {
           { name: "Service Areas", path: "/service-areas" },
           { name: location.name, path: `/service-areas/${slug}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
       />
       <script
         type="application/ld+json"

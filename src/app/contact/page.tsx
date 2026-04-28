@@ -3,8 +3,7 @@ import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
-
-const BASE_URL = "https://www.adilayroofing.com";
+import { BASE_URL, ORG_REF } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -52,9 +51,25 @@ export default async function ContactPage() {
   const formHeading = (cmsData?.formHeading as string) || "Send Us a Message";
   const formDescription = (cmsData?.formDescription as string) || "Fill out the form below and we\u2019ll get back to you as soon as possible.";
   const emergencyBannerText = (cmsData?.emergencyBannerText as string) || "Roof Emergency? Call us now \u2014 we respond fast.";
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${BASE_URL}/contact#contactpage`,
+    url: `${BASE_URL}/contact`,
+    name: "Contact Adilay Roofing",
+    description:
+      "Call (888) 823-4766, email info@adilayroofing.com, or send a message. Free roofing estimates in Philadelphia and surrounding counties.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    mainEntity: ORG_REF,
+  };
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Contact", path: "/contact" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
       {/* ── Hero ── */}
       <section className="bg-brand-dark">
         <div className="py-8 md:py-12 px-4">

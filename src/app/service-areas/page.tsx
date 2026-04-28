@@ -5,8 +5,7 @@ import { company } from "@/data/company";
 import { locations } from "@/data/locations";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
-
-const BASE_URL = "https://www.adilayroofing.com";
+import { BASE_URL, ORG_REF } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -191,9 +190,36 @@ export default async function ServiceAreasPage() {
   );
   const ctaHeadline = (cmsData?.ctaHeadline as string) || "Need a Roofer in Your Area?";
 
+  const areasCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${BASE_URL}/service-areas#collection`,
+    url: `${BASE_URL}/service-areas`,
+    name: "Service Areas — Adilay Roofing",
+    description:
+      "Cities, counties, and neighborhoods in southeastern Pennsylvania served by Adilay Roofing.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    about: ORG_REF,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      numberOfItems: locations.length,
+      itemListElement: locations.map((loc, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `${BASE_URL}/service-areas/${loc.slug}`,
+        name: `${loc.name}, ${loc.state}`,
+      })),
+    },
+  };
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Service Areas", path: "/service-areas" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(areasCollectionSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative bg-brand-dark overflow-hidden">
         <img

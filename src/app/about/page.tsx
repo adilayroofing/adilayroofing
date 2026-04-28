@@ -6,8 +6,7 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
-
-const BASE_URL = "https://www.adilayroofing.com";
+import { BASE_URL, ORG_REF } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -122,9 +121,25 @@ export default async function AboutPage() {
   const teamDescription = (cmsData?.teamDescription as string) ||
     `Our crew of ${company.teamMembers} experienced professionals brings decades of combined roofing expertise to every project. Led by owner ${company.owner}, we treat every property like it's our own.`;
 
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${BASE_URL}/about#aboutpage`,
+    url: `${BASE_URL}/about`,
+    name: "About Adilay Roofing",
+    description:
+      "Family-owned, Philadelphia-based roofing contractor with 20+ years of experience, a 30-person in-house crew, and PA184779 licensing.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    mainEntity: ORG_REF,
+  };
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "About", path: "/about" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       {/* Hero Section */}
       <section className="bg-brand-dark">
         <div className="section-padding">

@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ScrollReveal from "@/components/ScrollReveal";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
@@ -182,10 +183,10 @@ export default async function FinancingPage() {
     "@type": "FAQPage",
     mainEntity: financingFaqs.map((item) => ({
       "@type": "Question",
-      name: item.question,
+      name: stripHtml(item.question),
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: stripHtml(item.answer),
       },
     })),
   };

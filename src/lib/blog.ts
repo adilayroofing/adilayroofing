@@ -17,6 +17,8 @@ export interface BlogPostFrontmatter {
   title: string;
   slug: string;
   date: string;
+  /** Optional ISO date — falls back to `date` when absent. Used for schema.org dateModified. */
+  dateModified?: string;
   description: string;
   primaryKeyword: string;
   secondaryKeywords: string[];
@@ -90,6 +92,7 @@ async function getCMSBlogPosts(publishedOnly = true): Promise<BlogPost[]> {
         title: row.title,
         slug: row.slug,
         date: row.date,
+        dateModified: row.updated_at || row.date,
         description: row.description || "",
         primaryKeyword: row.primary_keyword || "",
         secondaryKeywords: row.secondary_keywords || [],
@@ -125,6 +128,7 @@ async function getCMSBlogPost(slug: string): Promise<BlogPost | undefined> {
         title: data.title,
         slug: data.slug,
         date: data.date,
+        dateModified: data.updated_at || data.date,
         description: data.description || "",
         primaryKeyword: data.primary_keyword || "",
         secondaryKeywords: data.secondary_keywords || [],

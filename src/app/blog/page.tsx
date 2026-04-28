@@ -4,6 +4,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
+import { BASE_URL, ORG_REF } from "@/lib/schema";
 
 // Revalidate every 60 seconds so CMS changes go live quickly
 export const revalidate = 60;
@@ -65,9 +66,35 @@ export default async function BlogIndex() {
     (cmsData?.ctaSubtext as string) ||
     "Contact Adilay Roofing today for a free estimate. Honest advice, quality work, no pressure.";
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${BASE_URL}/blog#blog`,
+    url: `${BASE_URL}/blog`,
+    name: "Adilay Roofing Blog",
+    description:
+      "Practical roofing advice, cost guides, and Philadelphia-specific insights from Adilay Roofing.",
+    inLanguage: "en-US",
+    publisher: ORG_REF,
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.frontmatter.title,
+      url: `${BASE_URL}/blog/${post.frontmatter.slug}`,
+      datePublished: post.frontmatter.date,
+      author: {
+        "@type": "Person",
+        name: post.frontmatter.author || "Adilay Roofing",
+      },
+    })),
+  };
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Blog", path: "/blog" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       {/* Hero */}
       <section className="bg-brand-dark">
         <div className="section-padding">

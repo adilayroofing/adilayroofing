@@ -9,8 +9,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
-
-const BASE_URL = "https://www.adilayroofing.com";
+import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -145,31 +144,13 @@ export default async function GetQuotePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${BASE_URL}/get-quote#service`,
     serviceType: "Free Roofing Estimate",
     name: "Free No-Obligation Roofing Quote in Philadelphia",
     description:
       "Free, no-obligation roofing quote for Philadelphia homeowners. Same-day response, written estimate, 20+ years experience, licensed PA184779.",
-    provider: {
-      "@type": "RoofingContractor",
-      name: "Adilay Roofing",
-      url: BASE_URL,
-      telephone: company.phoneRaw,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: company.address.street,
-        addressLocality: company.address.city,
-        addressRegion: company.address.state,
-        postalCode: company.address.zip,
-        addressCountry: "US",
-      },
-    },
-    areaServed: [
-      { "@type": "City", name: "Philadelphia" },
-      { "@type": "AdministrativeArea", name: "Bucks County" },
-      { "@type": "AdministrativeArea", name: "Montgomery County" },
-      { "@type": "AdministrativeArea", name: "Delaware County" },
-      { "@type": "AdministrativeArea", name: "Chester County" },
-    ],
+    provider: ORG_REF,
+    areaServed: AREA_SERVED,
     offers: {
       "@type": "Offer",
       price: "0",
@@ -186,10 +167,10 @@ export default async function GetQuotePage() {
     "@type": "FAQPage",
     mainEntity: quoteFaqs.map((item) => ({
       "@type": "Question",
-      name: item.question,
+      name: stripHtml(item.question),
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: stripHtml(item.answer),
       },
     })),
   };

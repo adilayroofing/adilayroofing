@@ -12,8 +12,7 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
 import ServiceIcon from "@/components/ServiceIcon";
 import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
-
-const BASE_URL = "https://www.adilayroofing.com";
+import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -146,28 +145,15 @@ export default function RooferPhiladelphiaPage() {
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "RoofingContractor",
-    name: "Adilay Roofing",
+    "@type": "Service",
+    "@id": `${BASE_URL}/roofer-philadelphia#service`,
+    serviceType: "Roofing Contractor",
+    name: "Roofer in Philadelphia",
     description:
       "Licensed Philadelphia roofer — 20+ years, PA184779, free estimates, same-day response for emergencies. Residential and commercial roofing across Philadelphia and surrounding counties.",
+    provider: ORG_REF,
+    areaServed: AREA_SERVED,
     url: `${BASE_URL}/roofer-philadelphia`,
-    telephone: company.phoneRaw,
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: company.address.street,
-      addressLocality: company.address.city,
-      addressRegion: company.address.state,
-      postalCode: company.address.zip,
-      addressCountry: "US",
-    },
-    areaServed: [
-      { "@type": "City", name: "Philadelphia" },
-      { "@type": "AdministrativeArea", name: "Bucks County" },
-      { "@type": "AdministrativeArea", name: "Montgomery County" },
-      { "@type": "AdministrativeArea", name: "Delaware County" },
-      { "@type": "AdministrativeArea", name: "Chester County" },
-    ],
   };
 
   const faqSchema = {
@@ -175,8 +161,8 @@ export default function RooferPhiladelphiaPage() {
     "@type": "FAQPage",
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
-      name: f.question,
-      acceptedAnswer: { "@type": "Answer", text: f.answer },
+      name: stripHtml(f.question),
+      acceptedAnswer: { "@type": "Answer", text: stripHtml(f.answer) },
     })),
   };
 
