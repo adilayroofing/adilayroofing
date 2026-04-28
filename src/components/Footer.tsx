@@ -1,16 +1,33 @@
 import Link from "next/link";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
+import { locations } from "@/data/locations";
 import BBBSeal from "@/components/BBBSeal";
+
+const TOP_AREA_SLUGS = [
+  "philadelphia",
+  "fishtown",
+  "northern-liberties",
+  "south-philadelphia",
+  "northeast-philadelphia",
+  "manayunk",
+  "bucks-county",
+  "montgomery-county",
+  "delaware-county",
+  "chester-county",
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const topAreas = TOP_AREA_SLUGS.map((slug) =>
+    locations.find((l) => l.slug === slug)
+  ).filter((l): l is NonNullable<typeof l> => Boolean(l));
 
   return (
     <footer className="bg-brand-navy text-white" role="contentinfo">
       {/* Main Footer */}
       <div className="container-wide mx-auto section-padding">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Column 1: Company Info */}
           <div>
             <Link
@@ -100,7 +117,32 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Quick Links */}
+          {/* Column 3: Top Service Areas */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-white">Top Service Areas</h3>
+            <ul className="space-y-2">
+              {topAreas.map((area) => (
+                <li key={area.slug}>
+                  <Link
+                    href={`/service-areas/${area.slug}`}
+                    className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
+                  >
+                    {area.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/service-areas"
+                  className="text-brand-red hover:underline transition-colors text-sm font-semibold"
+                >
+                  View all areas →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">

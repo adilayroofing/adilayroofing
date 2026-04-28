@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { company } from "@/data/company";
 import { serviceCategories, getServicesByCategory } from "@/data/services";
-import { getAllLocations, getLocationBySlug, type Location } from "@/data/locations";
+import { getAllLocations, getLocationBySlug, getNearbyLocations, type Location } from "@/data/locations";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
@@ -546,6 +546,43 @@ export default async function LocationPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      {/* ================================================================= */}
+      {/* Nearby Areas We Serve — sibling cross-linking for crawl/SEO        */}
+      {/* ================================================================= */}
+      {(() => {
+        const nearby = getNearbyLocations(slug, 6);
+        if (nearby.length === 0) return null;
+        return (
+          <section className="bg-brand-light">
+            <div className="section-padding">
+              <div className="container-narrow mx-auto">
+                <h2 className="section-heading text-center mb-3">
+                  Nearby Areas We Serve
+                </h2>
+                <p className="text-brand-gray text-center mb-10 max-w-2xl mx-auto">
+                  Adilay Roofing also serves homeowners in these neighboring
+                  communities. Same crew, same {location.state === "PA" ? "Pennsylvania" : "New Jersey"} licensing,
+                  same straightforward pricing.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                  {nearby.map((area) => (
+                    <Link
+                      key={area.slug}
+                      href={`/service-areas/${area.slug}`}
+                      className="group flex items-center justify-center bg-white border border-brand-border rounded-sm px-4 py-3 hover:shadow-md hover:border-brand-red/40 transition-all"
+                    >
+                      <span className="text-sm font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">
+                        {area.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ================================================================= */}
       {/* CTA Section                                                       */}

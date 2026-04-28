@@ -3,6 +3,7 @@ import Link from "next/link";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
 import { faqs } from "@/data/faqs";
+import { locations } from "@/data/locations";
 import { getAllPosts } from "@/lib/blog";
 import ServiceCard from "@/components/ServiceCard";
 import TrustBar from "@/components/TrustBar";
@@ -90,20 +91,51 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const serviceAreas = [
-  "Philadelphia",
-  "Bucks County",
-  "Montgomery County",
-  "Delaware County",
-  "Chester County",
-  "Norristown",
-  "Cheltenham",
-  "Abington",
-  "Jenkintown",
-  "Willow Grove",
-  "Levittown",
-  "Bensalem",
-];
+// Priority service-area slugs surfaced on the homepage so Googlebot can crawl
+// them at depth 1. Grouped by county; order within each group reflects
+// search/business priority, not alphabetical.
+const HOMEPAGE_AREA_SLUGS: Record<string, string[]> = {
+  "Philadelphia & Neighborhoods": [
+    "philadelphia",
+    "fishtown",
+    "northern-liberties",
+    "south-philadelphia",
+    "northeast-philadelphia",
+    "center-city",
+    "manayunk",
+    "roxborough",
+    "west-philadelphia",
+    "north-philadelphia",
+  ],
+  "Montgomery County, PA": [
+    "montgomery-county",
+    "norristown",
+    "king-of-prussia",
+    "abington",
+    "cheltenham",
+    "conshohocken",
+  ],
+  "Bucks County, PA": [
+    "bucks-county",
+    "levittown",
+    "bensalem",
+    "doylestown",
+  ],
+  "Delaware County, PA": [
+    "delaware-county",
+    "upper-darby",
+    "media",
+    "drexel-hill",
+    "havertown",
+  ],
+  "Chester County, PA": ["chester-county", "west-chester"],
+  "South Jersey": [
+    "camden-county",
+    "cherry-hill",
+    "burlington-county",
+    "mount-laurel",
+  ],
+};
 
 // ---------------------------------------------------------------------------
 // Hardcoded fallback data
@@ -447,7 +479,7 @@ export default async function Home() {
                   We&rsquo;re based at 2020 Dreer St in Fishtown (Philadelphia 19125) and most of our work stays within an hour of the shop. If you&rsquo;re in any of these areas, you&rsquo;re in our service zone:
                 </p>
                 <p className="text-brand-gray leading-relaxed text-base md:text-lg mb-6">
-                  <Link href="/service-areas/philadelphia" className="text-brand-red font-semibold hover:underline">Philadelphia</Link>, <Link href="/service-areas/fishtown" className="text-brand-red font-semibold hover:underline">Fishtown</Link>, <Link href="/service-areas/northern-liberties" className="text-brand-red font-semibold hover:underline">Northern Liberties</Link>, <Link href="/service-areas/south-philadelphia" className="text-brand-red font-semibold hover:underline">South Philadelphia</Link>, Chestnut Hill, <Link href="/service-areas/manayunk" className="text-brand-red font-semibold hover:underline">Manayunk</Link>, <Link href="/service-areas/roxborough" className="text-brand-red font-semibold hover:underline">Roxborough</Link>, <Link href="/service-areas/bucks-county" className="text-brand-red font-semibold hover:underline">Bucks County</Link>, <Link href="/service-areas/montgomery-county" className="text-brand-red font-semibold hover:underline">Montgomery County</Link>, <Link href="/service-areas/delaware-county" className="text-brand-red font-semibold hover:underline">Delaware County</Link>, and <Link href="/service-areas/chester-county" className="text-brand-red font-semibold hover:underline">Chester County</Link>.
+                  <Link href="/service-areas/philadelphia" className="text-brand-red font-semibold hover:underline">Philadelphia</Link>, <Link href="/service-areas/fishtown" className="text-brand-red font-semibold hover:underline">Fishtown</Link>, <Link href="/service-areas/northern-liberties" className="text-brand-red font-semibold hover:underline">Northern Liberties</Link>, <Link href="/service-areas/south-philadelphia" className="text-brand-red font-semibold hover:underline">South Philadelphia</Link>, <Link href="/service-areas/northeast-philadelphia" className="text-brand-red font-semibold hover:underline">Northeast Philadelphia</Link>, <Link href="/service-areas/center-city" className="text-brand-red font-semibold hover:underline">Center City</Link>, <Link href="/service-areas/west-philadelphia" className="text-brand-red font-semibold hover:underline">West Philadelphia</Link>, <Link href="/service-areas/north-philadelphia" className="text-brand-red font-semibold hover:underline">North Philadelphia</Link>, <Link href="/service-areas/manayunk" className="text-brand-red font-semibold hover:underline">Manayunk</Link>, <Link href="/service-areas/roxborough" className="text-brand-red font-semibold hover:underline">Roxborough</Link>, <Link href="/service-areas/bucks-county" className="text-brand-red font-semibold hover:underline">Bucks County</Link>, <Link href="/service-areas/montgomery-county" className="text-brand-red font-semibold hover:underline">Montgomery County</Link>, <Link href="/service-areas/delaware-county" className="text-brand-red font-semibold hover:underline">Delaware County</Link>, and <Link href="/service-areas/chester-county" className="text-brand-red font-semibold hover:underline">Chester County</Link>.
                 </p>
 
                 <h3 className="text-xl md:text-2xl font-bold text-brand-dark mt-10 mb-4">
@@ -745,15 +777,31 @@ export default async function Home() {
                   className="text-brand-gray leading-relaxed mt-4 mb-6 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
                 />
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
-                  {serviceAreas.slice(0, 9).map((area) => (
-                    <div
-                      key={area}
-                      className="bg-brand-light rounded-sm px-3 py-2 text-center text-xs font-medium text-brand-dark border border-brand-border"
-                    >
-                      {area}
-                    </div>
-                  ))}
+                <div className="space-y-4 mb-8">
+                  {Object.entries(HOMEPAGE_AREA_SLUGS).map(([groupName, slugs]) => {
+                    const items = slugs
+                      .map((s) => locations.find((l) => l.slug === s))
+                      .filter((l): l is NonNullable<typeof l> => Boolean(l));
+                    if (items.length === 0) return null;
+                    return (
+                      <div key={groupName}>
+                        <h3 className="text-[11px] font-bold tracking-widest uppercase text-brand-gray mb-2">
+                          {groupName}
+                        </h3>
+                        <div className="flex flex-wrap gap-1.5">
+                          {items.map((loc) => (
+                            <Link
+                              key={loc.slug}
+                              href={`/service-areas/${loc.slug}`}
+                              className="bg-brand-light hover:bg-brand-red hover:text-white rounded-sm px-3 py-1.5 text-xs font-medium text-brand-dark border border-brand-border hover:border-brand-red transition-colors"
+                            >
+                              {loc.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3">

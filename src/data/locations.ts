@@ -3108,3 +3108,82 @@ export function getLocationBySlug(slug: string): Location | undefined {
 export function getAllLocations(): Location[] {
   return locations;
 }
+
+// Adjacent-county fallback: used when a location's own county yields fewer
+// than `count` siblings (e.g. Trenton in Mercer County). Order = preferred
+// first when filling slots.
+const ADJACENT_COUNTIES: Record<string, string[]> = {
+  "Philadelphia County": ["Montgomery County", "Bucks County", "Delaware County", "Chester County"],
+  "Montgomery County": ["Philadelphia County", "Bucks County", "Chester County", "Delaware County"],
+  "Bucks County": ["Philadelphia County", "Montgomery County", "Burlington County"],
+  "Delaware County": ["Philadelphia County", "Montgomery County", "Chester County"],
+  "Chester County": ["Montgomery County", "Delaware County", "Bucks County"],
+  "Camden County": ["Burlington County", "Philadelphia County"],
+  "Burlington County": ["Camden County", "Bucks County", "Mercer County"],
+  "Mercer County": ["Bucks County", "Burlington County"],
+};
+
+/**
+ * Returns up to `count` (default 6) geographically adjacent locations, used
+ * to power the "Nearby Areas We Serve" section on each city page.
+ *
+ * Selection priority:
+ *  1. The county hub for the location's own county (always pinned first when
+ *     the page itself isn't the hub).
+ *  2. Other locations in the same county (excluding self).
+ *  3. If still under `count`, fill from adjacent-county hubs and cities.
+ */
+export function getNearbyLocations(slug: string, count = 6): Location[] {
+  const self = getLocationBySlug(slug);
+  if (!self) return [];
+
+  const seen = new Set<string>([self.slug]);
+  const out: Location[] = [];
+
+  const push = (loc?: Location) => {
+    if (!loc || seen.has(loc.slug)) return;
+    seen.add(loc.slug);
+    out.push(loc);
+  };
+
+  // 1. County hub first (unless self is the hub)
+  if (self.type !== "county") {
+    const hub = locations.find(
+      (l) => l.county === self.county && l.type === "county"
+    );
+    push(hub);
+  }
+
+  // 2. Same-county siblings (cities/neighborhoods first, hub already pinned)
+  const sameCounty = locations.filter(
+    (l) => l.county === self.county && l.type !== "county"
+  );
+  for (const loc of sameCounty) {
+    if (out.length >= count) break;
+    push(loc);
+  }
+
+  // 3. Fill from adjacent counties if still short
+  if (out.length < count) {
+    const adjCounties = ADJACENT_COUNTIES[self.county] || [];
+    for (const adjCounty of adjCounties) {
+      if (out.length >= count) break;
+      // Adjacent-county hub first
+      const hub = locations.find(
+        (l) => l.county === adjCounty && l.type === "county"
+      );
+      push(hub);
+      if (out.length >= count) break;
+      // Then top cities from that county
+      const cities = locations.filter(
+        (l) => l.county === adjCounty && l.type !== "county"
+      );
+      for (const c of cities) {
+        if (out.length >= count) break;
+        push(c);
+      }
+    }
+  }
+
+  return out.slice(0, count);
+}
