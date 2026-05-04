@@ -17,10 +17,11 @@ const lato = Lato({
 });
 
 export const viewport: Viewport = {
+  // Don't pin maximumScale or set userScalable=false — Google Mobile
+  // Usability flags zoom-blocked viewports as an accessibility issue.
+  // Letting users zoom is also a WCAG 2.1 SC 1.4.4 requirement.
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 const BASE_URL = "https://www.adilayroofing.com";

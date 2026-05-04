@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "@/data/services";
+import { SERVICE_BODY_SECTIONS } from "@/data/serviceBodySections";
 import ServiceCard from "@/components/ServiceCard";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
@@ -106,8 +107,16 @@ export default async function ServicePage({ params }: PageProps) {
   const features = cmsFeatures?.length ? cmsFeatures : service.features;
   const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
   const faq = cmsFaq?.length ? cmsFaq : service.faq;
+  // bodySections resolution order: CMS override → service data → fallback
+  // file (src/data/serviceBodySections.ts). The fallback file adds 4-5 unique
+  // H3 sections per service to break the templated-content fingerprint that
+  // was keeping these pages out of Google's index.
   const cmsBodySections = cmsData?.bodySections as { heading: string; html: string }[] | undefined;
-  const bodySections = cmsBodySections?.length ? cmsBodySections : service.bodySections ?? [];
+  const bodySections = cmsBodySections?.length
+    ? cmsBodySections
+    : service.bodySections?.length
+      ? service.bodySections
+      : SERVICE_BODY_SECTIONS[slug] ?? [];
 
   // Additional CMS text fields with fallbacks
   const heroCTAText = (cmsData?.heroCTAText as string) || "Get a FREE Estimate";
