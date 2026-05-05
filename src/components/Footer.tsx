@@ -17,6 +17,25 @@ const TOP_AREA_SLUGS = [
   "chester-county",
 ];
 
+// Pre-compute county groups for the "All Service Areas" footer block.
+// Built dynamically from locations data so every county is included
+// (no hardcoded list — guarantees Trenton/Mercer and any future county is covered).
+const allCounties = Array.from(new Set(locations.map((l) => l.county)));
+const allLocationGroups = allCounties
+  .map((county) => {
+    const all = locations.filter((l) => l.county === county);
+    const hub = all.find((l) => l.type === "county");
+    const children = all.filter((l) => l.type !== "county");
+    return { county, hub, children };
+  })
+  .filter((g) => g.hub || g.children.length > 0)
+  // Sort: PA Philadelphia first, then alphabetical by county name
+  .sort((a, b) => {
+    if (a.county === "Philadelphia County") return -1;
+    if (b.county === "Philadelphia County") return 1;
+    return a.county.localeCompare(b.county);
+  });
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const topAreas = TOP_AREA_SLUGS.map((slug) =>
@@ -285,6 +304,45 @@ export default function Footer() {
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* All Service Areas — every area linked from every page for crawlable internal linking.
+          Grouped by county so the visual stays organized. This is the SEO mesh that lifts
+          orphan area pages out of "Discovered – currently not indexed". */}
+      <div className="border-t border-white/10">
+        <div className="container-wide mx-auto px-4 py-10">
+          <h3 className="text-lg font-bold mb-6 text-white">All Service Areas</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-7">
+            {allLocationGroups.map((group) => (
+              <div key={group.county}>
+                {group.hub ? (
+                  <Link
+                    href={`/service-areas/${group.hub.slug}`}
+                    className="block text-xs font-bold text-white uppercase tracking-wider mb-2.5 hover:text-brand-red transition-colors"
+                  >
+                    {group.county.replace(" County", "")}
+                  </Link>
+                ) : (
+                  <p className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                    {group.county.replace(" County", "")}
+                  </p>
+                )}
+                <ul className="space-y-1.5">
+                  {group.children.map((loc) => (
+                    <li key={loc.slug}>
+                      <Link
+                        href={`/service-areas/${loc.slug}`}
+                        className="text-white/50 hover:text-brand-red active:text-brand-red transition-colors text-xs"
+                      >
+                        {loc.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

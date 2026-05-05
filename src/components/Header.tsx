@@ -219,56 +219,63 @@ export default function Header() {
                 </svg>
               </button>
 
-              {servicesDropdownOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-[540px] bg-white rounded-sm shadow-xl border border-brand-border p-4 z-50"
-                  onMouseLeave={() => setServicesDropdownOpen(false)}
-                  role="menu"
-                >
-                  <div className="grid grid-cols-2 gap-4">
-                    {serviceCategories.map((cat) => {
-                      const catServices = getServicesByCategory(cat.id);
-                      if (catServices.length === 0) return null;
-                      return (
-                        <div key={cat.id}>
-                          <p className="text-xs font-bold text-brand-red uppercase tracking-wider mb-1.5 px-1">
-                            {cat.label}
-                          </p>
-                          {catServices.map((service) => (
-                            <Link
-                              key={service.slug}
-                              href={`/services/${service.slug}`}
-                              className="block px-1 py-1 text-sm text-brand-dark hover:text-brand-red transition-colors"
-                              role="menuitem"
-                              onClick={() => setServicesDropdownOpen(false)}
-                            >
-                              {service.shortTitle}
-                            </Link>
-                          ))}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className="border-t border-brand-border mt-3 pt-2 space-y-1">
-                    <Link
-                      href="/roofer-philadelphia"
-                      className="block text-center text-sm text-brand-dark font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
-                      role="menuitem"
-                      onClick={() => setServicesDropdownOpen(false)}
-                    >
-                      Philadelphia Roofer — Full Guide &rarr;
-                    </Link>
-                    <Link
-                      href="/services"
-                      className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
-                      role="menuitem"
-                      onClick={() => setServicesDropdownOpen(false)}
-                    >
-                      View All Services &rarr;
-                    </Link>
-                  </div>
+              {/* Always render so dropdown links are in SSR HTML for crawlers; toggle visibility via classes */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-[540px] bg-white rounded-sm shadow-xl border border-brand-border p-4 z-50 transition-opacity duration-150 ${
+                  servicesDropdownOpen
+                    ? "visible opacity-100 pointer-events-auto"
+                    : "invisible opacity-0 pointer-events-none"
+                }`}
+                onMouseLeave={() => setServicesDropdownOpen(false)}
+                role="menu"
+                aria-hidden={!servicesDropdownOpen}
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  {serviceCategories.map((cat) => {
+                    const catServices = getServicesByCategory(cat.id);
+                    if (catServices.length === 0) return null;
+                    return (
+                      <div key={cat.id}>
+                        <p className="text-xs font-bold text-brand-red uppercase tracking-wider mb-1.5 px-1">
+                          {cat.label}
+                        </p>
+                        {catServices.map((service) => (
+                          <Link
+                            key={service.slug}
+                            href={`/services/${service.slug}`}
+                            className="block px-1 py-1 text-sm text-brand-dark hover:text-brand-red transition-colors"
+                            role="menuitem"
+                            tabIndex={servicesDropdownOpen ? 0 : -1}
+                            onClick={() => setServicesDropdownOpen(false)}
+                          >
+                            {service.shortTitle}
+                          </Link>
+                        ))}
+                      </div>
+                    );
+                  })}
                 </div>
-              )}
+                <div className="border-t border-brand-border mt-3 pt-2 space-y-1">
+                  <Link
+                    href="/roofer-philadelphia"
+                    className="block text-center text-sm text-brand-dark font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
+                    role="menuitem"
+                    tabIndex={servicesDropdownOpen ? 0 : -1}
+                    onClick={() => setServicesDropdownOpen(false)}
+                  >
+                    Philadelphia Roofer — Full Guide &rarr;
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
+                    role="menuitem"
+                    tabIndex={servicesDropdownOpen ? 0 : -1}
+                    onClick={() => setServicesDropdownOpen(false)}
+                  >
+                    View All Services &rarr;
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Service Areas Dropdown */}
@@ -299,49 +306,56 @@ export default function Header() {
                 </svg>
               </button>
 
-              {areasDropdownOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-sm shadow-xl border border-brand-border p-4 z-50"
-                  onMouseLeave={() => setAreasDropdownOpen(false)}
-                  role="menu"
-                >
-                  <div className="grid grid-cols-3 gap-4">
-                    {locationsByCounty.map((group) => (
-                      <div key={group.county}>
+              {/* Always render so dropdown links are in SSR HTML for crawlers; toggle visibility via classes */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-[600px] bg-white rounded-sm shadow-xl border border-brand-border p-4 z-50 transition-opacity duration-150 ${
+                  areasDropdownOpen
+                    ? "visible opacity-100 pointer-events-auto"
+                    : "invisible opacity-0 pointer-events-none"
+                }`}
+                onMouseLeave={() => setAreasDropdownOpen(false)}
+                role="menu"
+                aria-hidden={!areasDropdownOpen}
+              >
+                <div className="grid grid-cols-3 gap-4">
+                  {locationsByCounty.map((group) => (
+                    <div key={group.county}>
+                      <Link
+                        href={group.hub ? `/service-areas/${group.hub.slug}` : "/service-areas"}
+                        className="text-xs font-bold text-brand-red uppercase tracking-wider mb-1.5 px-1 block hover:text-brand-red-dark transition-colors"
+                        role="menuitem"
+                        tabIndex={areasDropdownOpen ? 0 : -1}
+                        onClick={() => setAreasDropdownOpen(false)}
+                      >
+                        {group.county.replace(" County", "")}
+                      </Link>
+                      {group.children.map((loc) => (
                         <Link
-                          href={group.hub ? `/service-areas/${group.hub.slug}` : "/service-areas"}
-                          className="text-xs font-bold text-brand-red uppercase tracking-wider mb-1.5 px-1 block hover:text-brand-red-dark transition-colors"
+                          key={loc.slug}
+                          href={`/service-areas/${loc.slug}`}
+                          className="block px-1 py-0.5 text-sm text-brand-dark hover:text-brand-red transition-colors"
                           role="menuitem"
+                          tabIndex={areasDropdownOpen ? 0 : -1}
                           onClick={() => setAreasDropdownOpen(false)}
                         >
-                          {group.county.replace(" County", "")}
+                          {loc.name}
                         </Link>
-                        {group.children.map((loc) => (
-                          <Link
-                            key={loc.slug}
-                            href={`/service-areas/${loc.slug}`}
-                            className="block px-1 py-0.5 text-sm text-brand-dark hover:text-brand-red transition-colors"
-                            role="menuitem"
-                            onClick={() => setAreasDropdownOpen(false)}
-                          >
-                            {loc.name}
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="border-t border-brand-border mt-3 pt-2">
-                    <Link
-                      href="/service-areas"
-                      className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
-                      role="menuitem"
-                      onClick={() => setAreasDropdownOpen(false)}
-                    >
-                      View All Service Areas &rarr;
-                    </Link>
-                  </div>
+                      ))}
+                    </div>
+                  ))}
                 </div>
-              )}
+                <div className="border-t border-brand-border mt-3 pt-2">
+                  <Link
+                    href="/service-areas"
+                    className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
+                    role="menuitem"
+                    tabIndex={areasDropdownOpen ? 0 : -1}
+                    onClick={() => setAreasDropdownOpen(false)}
+                  >
+                    View All Service Areas &rarr;
+                  </Link>
+                </div>
+              </div>
             </div>
 
             <Link
@@ -463,13 +477,19 @@ export default function Header() {
 
       </nav>
 
-      {/* Mobile Menu — outside nav, inside header for correct stacking */}
-      {mobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden fixed inset-0 bg-white z-[60] overflow-y-auto"
-          style={{ top: headerHeight }}
-        >
+      {/* Mobile Menu — outside nav, inside header for correct stacking.
+          Always rendered so all nav links are in SSR HTML for crawlers (mobile-first indexing).
+          Visibility toggled via classes; pointer-events-none keeps the overlay non-interactive when closed. */}
+      <div
+        id="mobile-menu"
+        className={`lg:hidden fixed inset-0 bg-white z-[60] overflow-y-auto transition-opacity duration-200 ${
+          mobileMenuOpen
+            ? "visible opacity-100 pointer-events-auto"
+            : "invisible opacity-0 pointer-events-none"
+        }`}
+        style={{ top: headerHeight }}
+        aria-hidden={!mobileMenuOpen}
+      >
           <div className="flex flex-col p-6">
             {/* Mobile Services Accordion */}
             <div className="border-b border-brand-border">
@@ -710,7 +730,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-      )}
     </header>
   );
 }

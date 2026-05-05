@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "@/data/services";
+import { locations } from "@/data/locations";
 import { SERVICE_BODY_SECTIONS } from "@/data/serviceBodySections";
 import ServiceCard from "@/components/ServiceCard";
 import FAQ from "@/components/FAQ";
@@ -20,6 +21,25 @@ import {
 } from "@/lib/schema";
 
 export const revalidate = 60;
+
+// Pre-compute county groupings once for the "Service Areas" cross-link block.
+// Built dynamically from locations data so every county is included.
+const SERVICE_LOCATION_GROUPS = (() => {
+  const allCounties = Array.from(new Set(locations.map((l) => l.county)));
+  return allCounties
+    .map((county) => {
+      const all = locations.filter((l) => l.county === county);
+      const hub = all.find((l) => l.type === "county");
+      const children = all.filter((l) => l.type !== "county");
+      return { county, hub, children };
+    })
+    .filter((g) => g.hub || g.children.length > 0)
+    .sort((a, b) => {
+      if (a.county === "Philadelphia County") return -1;
+      if (b.county === "Philadelphia County") return 1;
+      return a.county.localeCompare(b.county);
+    });
+})();
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render all 7 service pages
@@ -376,6 +396,81 @@ export default async function ServicePage({ params }: PageProps) {
                 className="inline-flex items-center gap-2 text-brand-red font-semibold hover:gap-3 transition-all duration-200"
               >
                 View All Services
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* Service Areas — every area linked from every service detail page  */}
+      {/* so each location page collects ~28 inlinks (one per service).     */}
+      {/* ================================================================= */}
+      <section className="bg-brand-light">
+        <div className="section-padding">
+          <div className="container-wide mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="section-heading">
+                {service.title} — Service Areas We Cover
+              </h2>
+              <p className="section-subheading mx-auto mt-3">
+                We provide {service.title.toLowerCase()} throughout Philadelphia
+                and the surrounding Delaware Valley. Click your area for
+                details specific to your neighborhood.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-7">
+              {SERVICE_LOCATION_GROUPS.map((group) => (
+                <div key={group.county}>
+                  {group.hub ? (
+                    <Link
+                      href={`/service-areas/${group.hub.slug}`}
+                      className="block text-xs font-bold text-brand-red uppercase tracking-wider mb-2.5 hover:text-brand-red-dark transition-colors"
+                    >
+                      {group.county.replace(" County", "")}
+                    </Link>
+                  ) : (
+                    <p className="text-xs font-bold text-brand-red uppercase tracking-wider mb-2.5">
+                      {group.county.replace(" County", "")}
+                    </p>
+                  )}
+                  <ul className="space-y-1.5">
+                    {group.children.map((loc) => (
+                      <li key={loc.slug}>
+                        <Link
+                          href={`/service-areas/${loc.slug}`}
+                          className="text-sm text-brand-dark hover:text-brand-red active:text-brand-red transition-colors"
+                        >
+                          {loc.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Link
+                href="/service-areas"
+                className="inline-flex items-center gap-2 text-brand-red font-semibold hover:gap-3 transition-all duration-200"
+              >
+                View All Service Areas
                 <svg
                   className="w-4 h-4"
                   fill="none"
