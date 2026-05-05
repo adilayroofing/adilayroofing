@@ -302,13 +302,26 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-function StarRating({ count }: { count: number }) {
+function StarRating({
+  count,
+  size = "sm",
+}: {
+  count: number;
+  size?: "sm" | "md" | "lg";
+}) {
+  const sizeClasses =
+    size === "lg"
+      ? "w-6 h-6 md:w-7 md:h-7"
+      : size === "md"
+      ? "w-4 h-4 md:w-5 md:h-5"
+      : "w-3.5 h-3.5 md:w-4 md:h-4";
+  const gap = size === "lg" ? "gap-1" : "gap-0.5";
   return (
-    <div className="flex items-center gap-0.5" aria-label={`${count} out of 5 stars`}>
+    <div className={`flex items-center ${gap}`} aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, i) => (
         <svg
           key={i}
-          className={`w-3.5 h-3.5 md:w-4 md:h-4 ${
+          className={`${sizeClasses} ${
             i < count ? "text-brand-star" : "text-brand-border"
           }`}
           fill="currentColor"
@@ -369,12 +382,12 @@ function ReviewCard({ review }: { review: Testimonial }) {
     <div className="bg-white rounded-sm p-4 md:p-6 shadow-sm border border-brand-border flex flex-col h-full">
       {/* Top: Google + time */}
       <div className="flex items-center justify-between mb-2">
-        <GoogleIcon className="w-4 h-4" />
+        <GoogleIcon className="w-5 h-5 md:w-6 md:h-6" />
         <span className="text-[10px] md:text-xs text-brand-gray">{review.timeAgo}</span>
       </div>
 
       {/* Stars */}
-      <StarRating count={review.stars} />
+      <StarRating count={review.stars} size="md" />
 
       {/* Quote */}
       <blockquote className="mt-2 md:mt-3 flex-1">
@@ -504,12 +517,17 @@ export default function TestimonialsSection() {
         <ScrollReveal>
         <div className="text-center mb-6 md:mb-10">
           <h2 className="section-heading">What Our Customers Say</h2>
-          <div className="flex items-center justify-center gap-2 mt-3 md:mt-4">
-            <GoogleIcon />
-            <span className="text-brand-dark font-bold text-sm md:text-base">5.0</span>
-            <StarRating count={5} />
-            <span className="text-brand-gray text-xs md:text-sm">
-              ({total} reviews)
+
+          {/* Google trust badge */}
+          <div className="mt-4 md:mt-6 inline-flex items-center gap-3 md:gap-4 bg-white border border-brand-border rounded-full px-4 py-2 md:px-6 md:py-3 shadow-sm">
+            <GoogleIcon className="w-6 h-6 md:w-8 md:h-8" />
+            <span className="text-brand-dark font-bold text-2xl md:text-3xl leading-none">
+              5.0
+            </span>
+            <StarRating count={5} size="lg" />
+            <span className="hidden sm:inline-block w-px h-5 md:h-6 bg-brand-border" />
+            <span className="text-brand-gray text-xs md:text-sm font-medium whitespace-nowrap">
+              {total} Google reviews
             </span>
           </div>
 
