@@ -519,17 +519,23 @@ export default function TestimonialsSection() {
           <h2 className="section-heading">What Our Customers Say</h2>
 
           {/* Google trust badge */}
-          <div className="mt-4 md:mt-6 inline-flex items-center gap-3 md:gap-4 bg-white border border-brand-border rounded-full px-4 py-2 md:px-6 md:py-3 shadow-sm">
+          <div className="mt-4 md:mt-6 inline-flex items-center gap-2 md:gap-4 bg-white border border-brand-border rounded-full px-4 py-2 md:px-6 md:py-3 shadow-sm">
             <GoogleIcon className="w-6 h-6 md:w-8 md:h-8" />
             <span className="text-brand-dark font-bold text-2xl md:text-3xl leading-none">
               5.0
             </span>
             <StarRating count={5} size="lg" />
-            <span className="hidden sm:inline-block w-px h-5 md:h-6 bg-brand-border" />
-            <span className="text-brand-gray text-xs md:text-sm font-medium whitespace-nowrap">
-              {total} Google reviews
+            <span className="hidden md:inline-block w-px h-5 md:h-6 bg-brand-border" />
+            <span className="hidden md:inline-block text-brand-dark text-xs md:text-sm font-semibold whitespace-nowrap">
+              Across {total} Google reviews
             </span>
           </div>
+          <p className="mt-2 text-brand-gray text-[11px] md:text-xs">
+            <span className="md:hidden">
+              Across {total} Google reviews ·{" "}
+            </span>
+            Every Adilay Roofing customer who has reviewed us on Google has given a 5-star rating
+          </p>
 
           {/* Navigation arrows + counter — right under the stars */}
           <div className="flex items-center justify-center gap-4 mt-4 md:mt-5">
