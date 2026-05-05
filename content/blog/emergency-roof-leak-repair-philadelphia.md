@@ -26,7 +26,7 @@ faq:
 
 # Emergency Roof Leak Repair in Philadelphia: What to Do Right Now
 
-If you are reading this with water dripping through your ceiling, here is what you need to know immediately: emergency roof repair Philadelphia homeowners can count on is one phone call away. **Call Adilay Roofing LLC at [(888) 823-4766](tel:8882348766) right now.** We provide 24/7 emergency roofing service across Philadelphia and all surrounding counties. We will get a crew to your home as fast as possible to stop the water and protect your property.
+If you're reading this with water dripping through your ceiling, here's what you need to know right now: emergency roof repair Philadelphia homeowners can count on is one phone call away. **Call Adilay Roofing LLC at [(888) 823-4766](tel:8882348766) right now.** We provide 24/7 emergency roofing service across Philadelphia and all surrounding counties, and we'll get a crew to your home as fast as we possibly can to stop the water and protect your property.
 
 While you wait, or if you are reading this to prepare for a future emergency, this guide walks you through exactly what to do during an active roof leak, when to call for professional help, and what to expect from the emergency repair process.
 
@@ -47,6 +47,8 @@ When a roof leak emergency strikes, your immediate priority is minimizing interi
 5. **Turn off electricity** to any rooms where water is actively entering near light fixtures, outlets, or electrical panels. Water and electricity are a lethal combination.
 
 6. **Take photos and video of everything.** Document the leak, the water damage, the affected areas, and any visible roof damage from the ground. This documentation is essential for your insurance claim.
+
+![Adilay Roofing crew sealing a storm-damaged roof in Philadelphia after an emergency call](/images/storm-damage-roof-sealing-crew.jpg "Adilay Roofing crew stabilizing a storm-damaged roof on an emergency call in Philadelphia, PA")
 
 ## Step 2: Assess the Situation Safely
 
@@ -70,6 +72,8 @@ Once you have contained the immediate interior damage, take a breath and evaluat
 Contact a licensed emergency roofing service as soon as you have protected the interior and assessed the situation. Not every roofing company offers true 24/7 response, so make sure you are calling a company that will actually answer and dispatch.
 
 **Adilay Roofing LLC provides genuine 24/7 emergency service.** When you call [(888) 823-4766](tel:8882348766), you reach our team directly, not a call center or answering service. We serve Philadelphia and all surrounding counties including Bucks, Montgomery, Delaware, and Chester County.
+
+![Adilay Roofing service van parked at a Philadelphia row home jobsite](/images/adilay-van-jobsite.jpg "Our Adilay Roofing van rolling up to a Philadelphia jobsite, ready to tarp and stabilize a leaking roof")
 
 **What to tell the dispatcher:**
 
@@ -108,6 +112,8 @@ Philadelphia's winter temperature swings create perfect conditions for ice dams.
 ### Failed Flat Roof Membranes
 
 Philadelphia's thousands of flat-roofed row homes rely on membrane systems that can fail suddenly when seams open, membranes puncture, or drainage clogs. A failed flat roof membrane during heavy rain can send water cascading through the home rapidly. Neighborhoods like South Philadelphia, Fishtown, Kensington, and Port Richmond see a high volume of flat roof emergencies, particularly during spring storms when accumulated winter stress meets heavy rain.
+
+![Adilay Roofing emergency repair on a Philadelphia flat roof drain](/images/roof-leak-repair-drain-sealing.jpg "Sealing a failed roof drain on a flat-roofed Philadelphia row home, a common source of sudden interior leaks")
 
 ### Aging Infrastructure
 
@@ -158,6 +164,8 @@ Adilay Roofing LLC has been the trusted emergency roofing service for Philadelph
 
 - **True 24/7 availability.** We answer calls day and night, Sunday through Friday, with full emergency service. We are closed Saturday but maintain emergency response capability.
 - **No subcontractors.** Our own licensed, insured crew handles your emergency from start to finish.
+
+![Experienced Adilay Roofing crew on a Philadelphia jobsite](/images/experienced-crew-adilay-roofing-philadelphia.jpg "Our Philadelphia-based crew, in business 20+ years, handles every emergency call directly. No subcontractors.")
 - **Over 1,000 happy clients** across the [areas we serve](/service-areas): Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County.
 - **Honest emergency pricing.** We provide clear costs before any work begins. No surprises, no gouging.
 - **Insurance claim support.** We document damage thoroughly and work with all major insurance carriers.

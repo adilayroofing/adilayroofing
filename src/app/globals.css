@@ -148,6 +148,19 @@
   margin: 1.5rem 0;
   width: 100%;
 }
+.blog-prose figure {
+  margin: 1.5rem 0;
+}
+.blog-prose figure img {
+  margin: 0 0 0.5rem 0;
+}
+.blog-prose figcaption {
+  font-size: 0.875rem;
+  color: #717171;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+}
 .blog-prose hr {
   margin: 2rem 0;
   border-color: #ebebea;

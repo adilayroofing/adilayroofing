@@ -26,11 +26,11 @@ faq:
 
 # 7 Signs You Need a New Roof (Philadelphia Homeowner's Checklist)
 
-Knowing the **signs you need a new roof** can save you thousands of dollars and a lot of headaches. As Philadelphia homeowners, our roofs take a beating -- from summer thunderstorms that roll up the Delaware Valley to nor'easters that dump ice and snow for days, to the relentless freeze-thaw cycles that crack and lift shingles all winter long.
+Knowing the **signs you need a new roof** can save you thousands of dollars and a lot of headaches. As Philadelphia homeowners, our roofs take a beating: summer thunderstorms that roll up the Delaware Valley, nor'easters that dump ice and snow for days, and the relentless freeze-thaw cycles that crack and lift shingles all winter long.
 
 At Adilay Roofing, we've inspected thousands of roofs across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County over our 20+ years in business. We've seen roofs that looked fine from the street but were one storm away from catastrophic failure, and we've seen homeowners catch problems early and save thousands.
 
-Here are the seven **roof damage signs** every Philadelphia homeowner should know -- and what to do about each one.
+Here are the seven **roof damage signs** every Philadelphia homeowner should know, plus what to do about each one.
 
 ## 1. Your Roof Is Over 20 Years Old
 
@@ -70,6 +70,8 @@ Some granule loss is normal on a brand-new roof (manufacturing excess). But on a
 
 This is especially common on south-facing slopes in Philadelphia, which take the full force of summer sun. Homes in neighborhoods with minimal tree cover, like parts of Northeast Philly and much of South Philadelphia, tend to lose granules faster.
 
+![Aging asphalt shingles photographed on a Philadelphia roof inspection by Adilay Roofing](/images/roof-shingles-philadelphia.jpg "Asphalt shingles on a Philadelphia roof showing granule loss and weathering. Once you can see the dark patches, you're past the cosmetic stage.")
+
 ## 4. You Can See Daylight Through the Roof Boards
 
 Head up to your attic on a sunny day and turn off all the lights. If you can see pinpoints of daylight coming through the roof boards, you have a problem. Those gaps mean water is getting in too.
@@ -83,6 +85,8 @@ While you're up there, look for:
 Philadelphia's older homes, especially row homes built before 1960, sometimes have skip sheathing (spaced boards) instead of solid plywood decking. This makes attic inspections particularly important because leaks can travel along boards before dripping down, making the source hard to pinpoint.
 
 If you see any of these **roof damage signs** in your attic, don't wait. Contact a professional for [roof replacement services](/services/roof-replacement) or [professional roof repair](/services/roof-repair) depending on the extent of the damage.
+
+![Adilay Roofing crew exposing decking during a Philadelphia roof replacement](/images/shingle-replacement-roof-decking.jpg "Daylight from the attic usually means soft decking up top. We pull the shingles to confirm exactly how many sheets need to be replaced.")
 
 ## 5. Your Roof Is Sagging
 
@@ -121,6 +125,8 @@ Damaged, rusted, or missing flashing is one of the top causes of roof leaks in P
 
 On Philadelphia row homes, parapet wall flashing (sometimes called "counter flashing" or "cap flashing") is absolutely critical. The shared walls between row homes are prime leak locations, and failed flashing at these joints causes more service calls in our experience than any other single issue.
 
+![Adilay Roofing crew sealing flashing after storm damage on a Philadelphia roof](/images/storm-damage-roof-sealing-crew.jpg "Re-flashing the parapet wall on a Philadelphia row home. This is the single most common leak point we see across the city.")
+
 ## What to Do If You Spot These Signs
 
 If you've identified one or more of these **signs you need a new roof**, here's your action plan:
@@ -150,6 +156,8 @@ With [20+ years of experience](/about) and 2,080+ completed projects, we know Ph
 We're a family-owned company, and we never use subcontractors. When you call Adilay Roofing, you get our crew, our quality standards, and our direct accountability. We hold an active PA license (PA184779), carry full insurance, and stand behind every project we complete.
 
 Want to see what our work looks like? [See our completed projects](/gallery) in neighborhoods across Philadelphia and the surrounding counties.
+
+![Before and after of an Adilay Roofing roof replacement in Philadelphia](/images/before-after-2-after.jpg "After: a finished Adilay Roofing replacement on a Philadelphia home. The before/after pairs in our gallery are all from real customer jobs across the city.")
 
 ## Schedule Your Free Roof Inspection Today
 

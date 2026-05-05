@@ -46,31 +46,36 @@ export interface TOCItem {
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 export const BASE_URL = "https://www.adilayroofing.com";
 
-// ─── Markdown renderer with heading IDs ─────────────────────────────
-const renderer = new Renderer();
-
-renderer.heading = function ({ tokens, depth }) {
-  const text = this.parser.parseInline(tokens);
-  if (depth === 2) {
-    const id = text
-      .toLowerCase()
-      .replace(/<[^>]*>/g, "")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-    return `<h2 id="${id}">${text}</h2>\n`;
-  }
-  if (depth === 3) {
-    const id = text
-      .toLowerCase()
-      .replace(/<[^>]*>/g, "")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-    return `<h3 id="${id}">${text}</h3>\n`;
-  }
-  return `<h${depth}>${text}</h${depth}>\n`;
-};
-
-marked.use({ renderer });
+// ─── Markdown renderer with heading IDs and image figcaptions ───────
+marked.use({
+  renderer: {
+    heading({ tokens, depth }) {
+      const text = (this as Renderer).parser.parseInline(tokens);
+      if (depth === 2 || depth === 3) {
+        const id = text
+          .toLowerCase()
+          .replace(/<[^>]*>/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "");
+        return `<h${depth} id="${id}">${text}</h${depth}>\n`;
+      }
+      return `<h${depth}>${text}</h${depth}>\n`;
+    },
+    // Wrap images in <figure> with <figcaption> when the markdown image
+    // includes a title: ![alt](/images/foo.jpg "Caption text"). Caption
+    // shows on the page and reinforces the alt text for SEO.
+    image({ href, title, text }) {
+      const safeAlt = (text || "").replace(/"/g, "&quot;");
+      const safeTitle = title ? title.replace(/"/g, "&quot;") : "";
+      const titleAttr = safeTitle ? ` title="${safeTitle}"` : "";
+      const img = `<img src="${href}" alt="${safeAlt}"${titleAttr} loading="lazy" decoding="async" />`;
+      if (safeTitle) {
+        return `<figure>${img}<figcaption>${safeTitle}</figcaption></figure>\n`;
+      }
+      return `${img}\n`;
+    },
+  },
+});
 
 // ─── CMS (Supabase) blog post fetching ──────────────────────────────
 async function getCMSBlogPosts(publishedOnly = true): Promise<BlogPost[]> {

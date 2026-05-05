@@ -66,6 +66,8 @@ The material you choose has the single biggest impact on your **roof replacement
 
 For the majority of Philadelphia homes, architectural shingles offer the best combination of durability, aesthetics, and value. If you're curious about specific shingle options, check out our guide on the best roofing materials for Philadelphia's climate.
 
+![Quality roofing materials staged on an Adilay Roofing job in Philadelphia](/images/quality-roofing-materials-adilay.jpg "Materials staged on a Philadelphia roof replacement. The shingle line you pick is the single biggest cost lever on the whole project.")
+
 ## What Factors Affect Your Roof Replacement Cost in Philadelphia?
 
 **How much to replace a roof** isn't just about square footage and materials. Here are the real-world factors that move the needle on price in Philadelphia specifically.
@@ -90,6 +92,8 @@ Once the old shingles come off, we often find damaged plywood decking, especiall
 
 Row homes built before 1950 sometimes have skip sheathing (boards with gaps) instead of plywood. Converting to solid decking is an additional cost but one that's absolutely worth it for long-term performance.
 
+![Adilay Roofing crew exposing roof decking during shingle replacement on a Philadelphia row home](/images/shingle-replacement-roof-decking.jpg "Once the old shingles come off, the decking gets a real look. This is when the surprises (and any change orders) actually show up.")
+
 ### 4. Philadelphia's Row Home Factor
 
 Row homes present unique challenges that affect pricing:
@@ -97,6 +101,8 @@ Row homes present unique challenges that affect pricing:
 - **Party walls:** The shared walls between row homes require careful flashing at the parapet walls. Poor flashing is the number one cause of leaks in Philadelphia row homes.
 - **Access:** Many row homes have limited rear access, meaning materials need to be carried through the house or lifted over the building. This adds labor time.
 - **Flat-to-pitched transitions:** Some row homes have a flat rear section and pitched front, requiring two different roofing systems on one project.
+
+![Adilay Roofing flat roof project with the Philadelphia skyline in the background](/images/flat-roof-repair-philadelphia-skyline.jpg "Working on a flat-roofed Philadelphia row home, with center-city in view. Row homes are most of what we do.")
 
 ### 5. Permits and Code Compliance
 
@@ -171,6 +177,8 @@ As a family-owned business with [20+ years of experience](/about), we approach e
 - **Licensed and insured.** Our PA license (PA184779) is active and in good standing through July 2027. We carry full liability insurance and workers' compensation.
 - **Honest, detailed estimates.** We itemize everything so you know exactly where your money goes. No bait-and-switch pricing.
 - **2,080+ completed projects.** We've worked on row homes in Passyunk, Colonials in Cheltenham, ranchers in Bucks County, and everything in between. [See our completed projects](/gallery) to get a feel for our work.
+
+![Adilay Roofing before and after roof replacement on a Philadelphia home](/images/before-after-1-after.jpg "After: a finished Adilay Roofing replacement on a Philadelphia home. We document every project before and after.")
 - **1,000+ happy clients.** Our reputation is built on word-of-mouth referrals from homeowners who trust us.
 
 ## Ready to Get an Accurate Roof Replacement Cost?

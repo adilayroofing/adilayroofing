@@ -71,6 +71,8 @@ The permit application is submitted to Philadelphia L&I, either online through t
 
 At Adilay Roofing, we prepare and submit this application as part of our standard project process. Our Pennsylvania contractor license, PA184779, is active and valid through July 2027, and we maintain full liability and workers' compensation insurance, so all the required documentation is always ready.
 
+![Adilay Roofing Pennsylvania contractor license PA184779](/images/pa-license.jpg "Our active Pennsylvania contractor license, PA184779. The license number goes on every Philadelphia L&I permit application we file.")
+
 ### Step 2: Review and Approval
 
 L&I reviews the application to confirm the contractor is properly licensed and the proposed work meets Philadelphia's building code requirements. For a straightforward residential roof replacement with no structural changes, approval typically takes 5 to 10 business days.
@@ -136,6 +138,8 @@ A question we hear regularly is whether the homeowner or the contractor should b
 
 **It shows accountability.** A contractor who handles permits is a contractor who plans to do the work right and stand behind it. They are not trying to avoid the inspection process.
 
+![Adilay Roofing honest written proposal handed to a Philadelphia homeowner](/images/adilay-roofing-honest-pricing-proposal.jpg "Every Adilay Roofing proposal lists the permit fee as a line item. No surprises, no skipped permits.")
+
 At Adilay Roofing, we manage the entire permit process from application through final inspection on every project we complete. It is included in our service at no additional charge. This is part of what it means to work with a legitimate, licensed contractor. For more guidance on evaluating contractors, read our guide on choosing a roofing contractor in Philadelphia.
 
 ## Permits in Surrounding Counties
@@ -143,6 +147,8 @@ At Adilay Roofing, we manage the entire permit process from application through 
 If you live in Bucks County, Montgomery County, Delaware County, or Chester County, the permit requirements differ from Philadelphia. Each township and borough in these counties has its own building code office and permit process. Requirements vary significantly. Some municipalities require permits for any roofing work, while others only require them for full replacements.
 
 Regardless of where your home is located within our [areas we serve](/service-areas), Adilay Roofing handles the local permit requirements for your specific municipality. We know the rules in every community we work in because we have been working in them for over two decades.
+
+![Adilay Roofing van marked with the counties we cover around Philadelphia](/images/adilay-van-service-areas.jpg "Our crew pulls permits in Philadelphia, Bucks, Montgomery, Delaware, and Chester County. Each township has its own quirks, and we've learned them.")
 
 ## Get Your Roof Replaced the Right Way
 
