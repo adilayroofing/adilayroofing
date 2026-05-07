@@ -119,6 +119,41 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+
+              // Capture UTM / click-id params on landing so every custom event
+              // can attribute back to the originating channel (esp. GBP, where
+              // utm_campaign=gbp is the only way to separate from organic search).
+              try {
+                var __qs = new URLSearchParams(window.location.search);
+                var __keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','gbraid','wbraid','msclkid'];
+                var __captured = {};
+                __keys.forEach(function(k){ var v = __qs.get(k); if (v) __captured[k] = v; });
+                if (Object.keys(__captured).length) {
+                  __captured.__landing_path = window.location.pathname;
+                  __captured.__landing_ts = Date.now();
+                  sessionStorage.setItem('__campaign_ctx', JSON.stringify(__captured));
+                }
+              } catch (e) {}
+
+              // Monkey-patch gtag so every custom event auto-includes the
+              // captured campaign context as event parameters.
+              var __origGtag = window.gtag = window.gtag || gtag;
+              window.gtag = function() {
+                var args = Array.prototype.slice.call(arguments);
+                if (args[0] === 'event' && args[2] && typeof args[2] === 'object') {
+                  try {
+                    var ctx = JSON.parse(sessionStorage.getItem('__campaign_ctx') || '{}');
+                    if (ctx && Object.keys(ctx).length) {
+                      var merged = {};
+                      Object.keys(ctx).forEach(function(k){ if (k.indexOf('__') !== 0) merged[k] = ctx[k]; });
+                      Object.keys(args[2]).forEach(function(k){ merged[k] = args[2][k]; });
+                      args[2] = merged;
+                    }
+                  } catch (e) {}
+                }
+                return __origGtag.apply(window, args);
+              };
+
               gtag('config', '${GOOGLE_ADS_ID}');
               gtag('config', '${GA_MEASUREMENT_ID}');
             `,
