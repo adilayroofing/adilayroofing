@@ -7,7 +7,7 @@ const service = getServiceBySlug("roof-repair")!;
 export const metadata: Metadata = {
   title: "Roof Repair in Philadelphia | Same-Day Service — Adilay Roofing",
   description:
-    "Fast, affordable roof leak repair in Philadelphia. Same-day service available. 20+ years experience. Licensed PA184779. Free estimates — call (888) 823-4766.",
+    "Fast, affordable roof leak repair in Philadelphia. Same-day service available. 20+ years experience. Licensed PA184779. Free estimates — call (267) 255-3620.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.adilayroofing.com/lp/roof-repair" },
 };
@@ -24,7 +24,7 @@ export default function RoofRepairLP() {
       features={service.features}
       faqs={service.faq}
       primaryCtaText="Get Your FREE Quote"
-      secondaryCtaText="Call (888) 823-4766"
+      secondaryCtaText="Call (267) 255-3620"
       offerText="FREE Gutter Cleaning With Every Roof Replacement — Limited Time Offer"
       galleryImage="/images/crew-working.jpg"
       galleryImageAlt="Adilay Roofing crew performing roof repair in Philadelphia"

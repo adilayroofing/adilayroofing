@@ -31,7 +31,7 @@ const updates = [
     meta_title:
       "Storm Damage Roof Repair Philadelphia PA | Insurance Claims | Adilay Roofing",
     meta_description:
-      "Storm damage roof repair in Philadelphia PA. Wind, hail, fallen-tree damage — we document, repair, and help with insurance claims. Same-day response. Call (888) 823-4766.",
+      "Storm damage roof repair in Philadelphia PA. Wind, hail, fallen-tree damage — we document, repair, and help with insurance claims. Same-day response. Call (267) 255-3620.",
     og_title:
       "Storm Damage Roof Repair Philadelphia — Insurance Claim Experts | Adilay Roofing",
     og_description:
@@ -42,7 +42,7 @@ const updates = [
     meta_title:
       "Roof Leak Repair Philadelphia | Same-Day Leak Fix | Adilay Roofing",
     meta_description:
-      "Roof leak repair Philadelphia homeowners trust. Same-day leak detection and fix. All roof types — shingle, flat rubber, metal. Licensed PA184779. Call (888) 823-4766.",
+      "Roof leak repair Philadelphia homeowners trust. Same-day leak detection and fix. All roof types — shingle, flat rubber, metal. Licensed PA184779. Call (267) 255-3620.",
     og_title:
       "Roof Leak Repair Philadelphia — Same-Day Detection & Fix | Adilay Roofing",
     og_description:
@@ -53,7 +53,7 @@ const updates = [
     meta_title:
       "Free Roof Inspection Philadelphia | Pre-Purchase & Storm | Adilay Roofing",
     meta_description:
-      "Free roof inspection in Philadelphia — pre-purchase, post-storm, or annual. Licensed PA inspector (PA184779), written report with photos. Call (888) 823-4766.",
+      "Free roof inspection in Philadelphia — pre-purchase, post-storm, or annual. Licensed PA inspector (PA184779), written report with photos. Call (267) 255-3620.",
     og_title:
       "Free Roof Inspection Philadelphia — Written Report & Photos | Adilay Roofing",
     og_description:
@@ -75,7 +75,7 @@ const updates = [
     meta_title:
       "Gutter Cleaning Philadelphia PA | Affordable & Same-Week | Adilay Roofing",
     meta_description:
-      "Gutter cleaning Philadelphia PA. Hand debris removal, downspout flushing, inspection, before/after photos. Affordable pricing, same-week scheduling. Call (888) 823-4766.",
+      "Gutter cleaning Philadelphia PA. Hand debris removal, downspout flushing, inspection, before/after photos. Affordable pricing, same-week scheduling. Call (267) 255-3620.",
     og_title:
       "Gutter Cleaning Philadelphia PA — Affordable, Same-Week Scheduling | Adilay Roofing",
     og_description:

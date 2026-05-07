@@ -36,7 +36,7 @@ const updates = [
     meta_title:
       "Roof Repair Philadelphia PA — Free Same-Day Estimates | Adilay Roofing",
     meta_description:
-      "Fast roof repair in Philadelphia PA. Same-day response for leaks, storm damage & missing shingles. Free roof repair estimates — no obligation. Call (888) 823-4766.",
+      "Fast roof repair in Philadelphia PA. Same-day response for leaks, storm damage & missing shingles. Free roof repair estimates — no obligation. Call (267) 255-3620.",
     og_title:
       "Roof Repair Philadelphia PA — Free Same-Day Estimates | Adilay Roofing",
     og_description:
@@ -48,7 +48,7 @@ const updates = [
     meta_title:
       "24/7 Emergency Roof Repair Philadelphia PA | Same-Day Response | Adilay Roofing",
     meta_description:
-      "24/7 emergency roof repair in Philadelphia PA. Same-day tarping, active-leak stops, storm damage response. Licensed contractor, 20+ years. Call (888) 823-4766.",
+      "24/7 emergency roof repair in Philadelphia PA. Same-day tarping, active-leak stops, storm damage response. Licensed contractor, 20+ years. Call (267) 255-3620.",
     og_title:
       "24/7 Emergency Roof Repair Philadelphia — Same-Day Response | Adilay Roofing",
     og_description:
@@ -60,7 +60,7 @@ const updates = [
     meta_title:
       "Asphalt Shingle Roofing Philadelphia PA | GAF & CertainTeed Installer",
     meta_description:
-      "Asphalt shingle roof installation in Philadelphia PA. Certified GAF, CertainTeed & Owens Corning installer. Free estimates, 20+ years. Call (888) 823-4766.",
+      "Asphalt shingle roof installation in Philadelphia PA. Certified GAF, CertainTeed & Owens Corning installer. Free estimates, 20+ years. Call (267) 255-3620.",
     og_title:
       "Asphalt Shingle Roofing Philadelphia — GAF & CertainTeed Installer | Adilay Roofing",
     og_description:

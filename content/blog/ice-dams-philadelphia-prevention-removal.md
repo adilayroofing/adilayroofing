@@ -18,7 +18,7 @@ faq:
   - question: "What is an ice dam and why does it cause a leak?"
     answer: "An ice dam is a ridge of ice that forms at the eaves of your roof when warm attic air melts the underside of snow on the upper roof. The melted water flows down to the cold eaves, refreezes, and builds up into a wall of ice. As more snow melts above, water pools behind the dam, and because most roof shingles are designed to shed water flowing downward (not water pooled and standing), that water finds its way under the shingles, into the attic, and through the ceiling below. Active interior leaks during a cold snap with snow on the roof are almost always ice-dam related in Philadelphia."
   - question: "How do I get rid of an ice dam without damaging my roof?"
-    answer: "Never use an axe, chisel, hammer, or rock salt directly on shingles. All four destroy the roof. Safe options for active ice dams include: (1) using a roof rake from the ground to clear snow off the lower 3-4 feet of roof immediately above the eave, (2) running calcium chloride (NOT rock salt) inside a fabric sleeve laid across the dam to melt a channel, or (3) calling a professional with a low-pressure steam machine, which is the only method that actually removes a dam without damaging shingles. Avoid pressure washers and any heat source. If you have an active interior leak, call (888) 823-4766 for emergency response."
+    answer: "Never use an axe, chisel, hammer, or rock salt directly on shingles. All four destroy the roof. Safe options for active ice dams include: (1) using a roof rake from the ground to clear snow off the lower 3-4 feet of roof immediately above the eave, (2) running calcium chloride (NOT rock salt) inside a fabric sleeve laid across the dam to melt a channel, or (3) calling a professional with a low-pressure steam machine, which is the only method that actually removes a dam without damaging shingles. Avoid pressure washers and any heat source. If you have an active interior leak, call (267) 255-3620 for emergency response."
   - question: "Why do some Philadelphia houses get ice dams every winter and others never do?"
     answer: "It comes down to attic temperature. A roof with a properly cold attic (meaning good air-sealing between the heated living space below and the attic, plus enough insulation, plus proper ventilation) stays uniformly cold across the whole roof surface. Snow on a cold roof simply doesn't melt. Houses that get ice dams every year typically have warm air leaking up from the living space (recessed lights, attic stairs, plumbing penetrations, gaps around the chimney chase) combined with insufficient insulation and inadequate roof ventilation. Fixing those three things almost always solves chronic ice dam problems."
   - question: "Are ice dams covered by homeowners insurance?"
@@ -36,7 +36,7 @@ Every January, somewhere in Philadelphia or Bucks or Montgomery County, the same
 
 That's an ice dam. They are the single most common cause of winter roof leaks in the Philadelphia region, and they're entirely preventable. This guide explains exactly what causes ice dams, what to do if you have one right now, and how to make sure you never get another one.
 
-**Got water coming through your ceiling right now?** Call **[(888) 823-4766](tel:8882348766)**. We provide 24/7 emergency response across Philadelphia and the surrounding counties. Adilay Roofing crews can be on most Philadelphia blocks within an hour during business hours and will tarp, contain the leak, and walk you through what comes next.
+**Got water coming through your ceiling right now?** Call **[(267) 255-3620](tel:+12672553620)**. We provide 24/7 emergency response across Philadelphia and the surrounding counties. Adilay Roofing crews can be on most Philadelphia blocks within an hour during business hours and will tarp, contain the leak, and walk you through what comes next.
 
 ## What Actually Causes an Ice Dam
 
@@ -87,7 +87,7 @@ This is where most homeowners cause more damage than the ice dam itself. Specifi
 
 - **Roof rake from the ground.** A long-handled aluminum or plastic rake designed for this. Pull snow off the lower 3-4 feet of roof immediately above the eave to remove the source of additional melt water. Do this BEFORE the next storm if you know dams are forming.
 - **Calcium chloride sock.** Fill a fabric sleeve (an old pantyhose leg works) with calcium chloride pellets (NOT rock salt) and lay it across the dam perpendicular to the eave. Calcium chloride melts a channel through the dam at much lower temperatures than rock salt and is far less corrosive. The melted channel relieves the water pressure behind the dam and lets it drain.
-- **Professional steam removal.** A low-pressure steam machine designed for ice dam work melts the ice directly without damaging shingles. This is the method we use on customer homes when the dam is severe enough to need immediate removal. Call **[(888) 823-4766](tel:8882348766)** to schedule.
+- **Professional steam removal.** A low-pressure steam machine designed for ice dam work melts the ice directly without damaging shingles. This is the method we use on customer homes when the dam is severe enough to need immediate removal. Call **[(267) 255-3620](tel:+12672553620)** to schedule.
 
 ### Step 4: Document Everything for Insurance
 
@@ -142,7 +142,7 @@ We sometimes install heat cables as a supplemental measure on homes where full i
 
 ## When to Call Us
 
-Call **[(888) 823-4766](tel:8882348766)** or [request a free inspection](/get-quote) when:
+Call **[(267) 255-3620](tel:+12672553620)** or [request a free inspection](/get-quote) when:
 
 - Water is actively coming through your ceiling during a snow event (emergency response)
 - You can see ice building up along the eaves and want it removed before damage starts (preventive call)

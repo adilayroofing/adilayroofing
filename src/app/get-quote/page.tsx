@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Free No-Obligation Roofing Quote Philadelphia | Adilay Roofing",
     description:
-      "Get a free, no-obligation roofing quote in Philadelphia. Same-day response, written estimate, no pressure. Licensed contractor, 20+ years. Call (888) 823-4766.",
+      "Get a free, no-obligation roofing quote in Philadelphia. Same-day response, written estimate, no pressure. Licensed contractor, 20+ years. Call (267) 255-3620.",
     keywords: [
       "no-obligation roofing quote",
       "free roofing quote",
@@ -78,7 +78,7 @@ const quoteFaqs = [
   {
     question: "How quickly can I get a same-day roof estimate in Philadelphia?",
     answer:
-      "For most Philadelphia properties, if you call us before noon we can schedule a same-day roof estimate the same afternoon. For complex commercial roofs or out-of-town properties we typically schedule within 24–48 hours. Call (888) 823-4766 for the fastest response.",
+      "For most Philadelphia properties, if you call us before noon we can schedule a same-day roof estimate the same afternoon. For complex commercial roofs or out-of-town properties we typically schedule within 24–48 hours. Call (267) 255-3620 for the fastest response.",
   },
   {
     question: "What's included in your free roofing estimate?",
@@ -98,7 +98,7 @@ const quoteFaqs = [
   {
     question: "How do I schedule my free roofing estimate?",
     answer:
-      "Fill out the quick form on this page, call us at (888) 823-4766, or text us — whichever is easiest. Tell us a bit about your property and what you're seeing on your roof, and we'll get back to you the same day to confirm a time for your free, no-obligation roofing quote.",
+      "Fill out the quick form on this page, call us at (267) 255-3620, or text us — whichever is easiest. Tell us a bit about your property and what you're seeing on your roof, and we'll get back to you the same day to confirm a time for your free, no-obligation roofing quote.",
   },
 ];
 
@@ -403,7 +403,7 @@ export default async function GetQuotePage() {
             {[
               {
                 h: "You reach out",
-                p: "Fill out the form on this page, call (888) 823-4766, or text us. Tell us the basics — your address, what you\u2019re seeing on your roof, and when you\u2019re free.",
+                p: "Fill out the form on this page, call (267) 255-3620, or text us. Tell us the basics — your address, what you\u2019re seeing on your roof, and when you\u2019re free.",
               },
               {
                 h: "We confirm same-day",

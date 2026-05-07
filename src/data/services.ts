@@ -327,7 +327,7 @@ export const services: Service[] = [
       {
         heading: "Storm Damage Roof Repair in Philadelphia",
         html: `<p>Storm damage is its own category of roof repair. The damage is often wider than it looks, the insurance claim process is time-sensitive, and the roof typically needs emergency stabilization before the permanent repair. We handle all three.</p>
-<p>For immediate stabilization — active leaks, wind damage, fallen limbs — see our <a href="/services/emergency-roof-repair">emergency roof repair Philadelphia</a> page. For storm-claim repairs with insurance documentation, our <a href="/services/storm-damage-roof-repair">storm damage roof repair</a> page walks through the process. Either way, call (888) 823-4766 — we will dispatch the same day for active leaks and provide a written, photographed damage report suitable for an insurance claim.</p>`,
+<p>For immediate stabilization — active leaks, wind damage, fallen limbs — see our <a href="/services/emergency-roof-repair">emergency roof repair Philadelphia</a> page. For storm-claim repairs with insurance documentation, our <a href="/services/storm-damage-roof-repair">storm damage roof repair</a> page walks through the process. Either way, call (267) 255-3620 — we will dispatch the same day for active leaks and provide a written, photographed damage report suitable for an insurance claim.</p>`,
       },
     ],
   },
@@ -698,11 +698,11 @@ export const services: Service[] = [
     tagline: "24/7 Emergency Roof Repair Philadelphia — Same-Day Response",
     category: "roofing",
     description:
-      "Emergency roof repair Philadelphia — 24/7 response for active leaks, storm damage, and fallen debris. Licensed PA184779, insured, same-day tarping. Call (888) 823-4766.",
+      "Emergency roof repair Philadelphia — 24/7 response for active leaks, storm damage, and fallen debris. Licensed PA184779, insured, same-day tarping. Call (267) 255-3620.",
     icon: "",
     image: "/images/emergency-roof-repair-philadelphia.jpg",
     heroDescription:
-      "When a roofing emergency strikes, every minute matters. Whether it's a violent storm that rips shingles off your roof, a tree limb that crashes through, or an active leak pouring water into your living room, you need emergency roof repair Philadelphia PA homeowners can actually reach — day or night. Adilay Roofing provides 24/7 emergency roof repair in Philadelphia and across Northeast Philadelphia, South Philly, Manayunk, Roxborough, Fishtown, Germantown, and the surrounding counties of Bucks, Montgomery, Delaware, and Chester. Licensed under PA184779 and fully insured, our Philadelphia emergency roof repair crew is equipped to stabilize your property fast. Storm damage and roof leaks don't wait for business hours — and we don't either. When you call, we dispatch an emergency roofer to your Philadelphia property for rapid tarping, leak containment, and temporary weatherproofing, then return for permanent repairs once the situation is secure. Our experienced crew has handled every kind of Philadelphia roofing emergency: wind damage, hail damage, ice dam leaks, fallen trees, and structural collapse. We also provide detailed photo and written damage documentation to support your homeowner's insurance claim — we'll work directly with your carrier if needed. Don't let an emergency roof situation turn into thousands of dollars in interior water damage. Call Adilay Roofing at (888) 823-4766 for the fastest emergency roof repair in Philadelphia — free estimates, honest pricing, and a licensed Philadelphia roofer on your property the same day whenever possible.",
+      "When a roofing emergency strikes, every minute matters. Whether it's a violent storm that rips shingles off your roof, a tree limb that crashes through, or an active leak pouring water into your living room, you need emergency roof repair Philadelphia PA homeowners can actually reach — day or night. Adilay Roofing provides 24/7 emergency roof repair in Philadelphia and across Northeast Philadelphia, South Philly, Manayunk, Roxborough, Fishtown, Germantown, and the surrounding counties of Bucks, Montgomery, Delaware, and Chester. Licensed under PA184779 and fully insured, our Philadelphia emergency roof repair crew is equipped to stabilize your property fast. Storm damage and roof leaks don't wait for business hours — and we don't either. When you call, we dispatch an emergency roofer to your Philadelphia property for rapid tarping, leak containment, and temporary weatherproofing, then return for permanent repairs once the situation is secure. Our experienced crew has handled every kind of Philadelphia roofing emergency: wind damage, hail damage, ice dam leaks, fallen trees, and structural collapse. We also provide detailed photo and written damage documentation to support your homeowner's insurance claim — we'll work directly with your carrier if needed. Don't let an emergency roof situation turn into thousands of dollars in interior water damage. Call Adilay Roofing at (267) 255-3620 for the fastest emergency roof repair in Philadelphia — free estimates, honest pricing, and a licensed Philadelphia roofer on your property the same day whenever possible.",
     benefits: [
       "24/7 emergency response for urgent roof situations",
       "Rapid tarping and temporary protection to stop active leaks",
@@ -752,7 +752,7 @@ export const services: Service[] = [
       {
         question: "Do you work nights and weekends for emergency roof repairs?",
         answer:
-          "Yes. Adilay Roofing answers the phone 24 hours a day, seven days a week for emergency roof repair calls across Philadelphia. Storms do not wait for business hours and neither do we. Call (888) 823-4766 any time, day or night.",
+          "Yes. Adilay Roofing answers the phone 24 hours a day, seven days a week for emergency roof repair calls across Philadelphia. Storms do not wait for business hours and neither do we. Call (267) 255-3620 any time, day or night.",
       },
       {
         question: "Which Philadelphia neighborhoods do you cover for emergency roof repair?",
@@ -787,7 +787,7 @@ export const services: Service[] = [
       {
         question: "A tree fell on my roof in Philadelphia — what should I do?",
         answer:
-          "Stay out of the affected rooms if the ceiling is sagging or debris is coming through. Call us at (888) 823-4766 and take photos from a safe distance. Do not attempt to remove the tree yourself — large limbs can shift and cause more damage or injury. We remove the debris safely, tarp the opening, document the damage for insurance, and schedule the permanent repair.",
+          "Stay out of the affected rooms if the ceiling is sagging or debris is coming through. Call us at (267) 255-3620 and take photos from a safe distance. Do not attempt to remove the tree yourself — large limbs can shift and cause more damage or injury. We remove the debris safely, tarp the opening, document the damage for insurance, and schedule the permanent repair.",
       },
       {
         question: "Do you repair ice dam leaks in Philadelphia winters?",
@@ -819,7 +819,7 @@ export const services: Service[] = [
       },
       {
         heading: "Our Same-Day Emergency Roof Repair Response Timeline",
-        html: `<p>When you call (888) 823-4766 for emergency roof repair in Philadelphia, here is exactly what happens next.</p>
+        html: `<p>When you call (267) 255-3620 for emergency roof repair in Philadelphia, here is exactly what happens next.</p>
 <ol>
   <li><strong>Call received, 24/7.</strong> A real person from Adilay Roofing answers and gets the basics — your address, what you are seeing, and how fast water is coming in. If the leak is actively filling ceilings or pouring down walls, we prioritize your call immediately.</li>
   <li><strong>Dispatch within hours for active leaks.</strong> For emergency roof repair across Philadelphia, Bucks, Montgomery, Delaware, and Chester counties, our crew is typically on your property the same day. During major storm events we schedule by severity — active interior leaks come first.</li>
@@ -866,7 +866,7 @@ export const services: Service[] = [
 <h3><a href="/service-areas/germantown">Germantown, Mount Airy, and Chestnut Hill</a></h3>
 <p>Older Victorians and stone colonials in these neighborhoods often still carry original slate or built-up tar roofs well past their intended lifespan. Sudden failures are common after heavy winter weather.</p>
 <h3><a href="/service-areas/philadelphia">All of Philadelphia County</a></h3>
-<p>From Center City brownstones to the Far Northeast, from West Philly rowhouses to Chestnut Hill — if you need emergency roof repair in Philadelphia PA, Adilay Roofing is already nearby. Call <a href="tel:+18888234766">(888) 823-4766</a> any time.</p>`,
+<p>From Center City brownstones to the Far Northeast, from West Philly rowhouses to Chestnut Hill — if you need emergency roof repair in Philadelphia PA, Adilay Roofing is already nearby. Call <a href="tel:+12672553620">(267) 255-3620</a> any time.</p>`,
       },
     ],
   },
@@ -1573,7 +1573,7 @@ export const services: Service[] = [
     tagline: "Asphalt Shingle Roofing Philadelphia — GAF, CertainTeed & Owens Corning Installers",
     category: "shingles",
     description:
-      "Asphalt shingle roofing Philadelphia specialists. 3-tab & architectural shingles from GAF, CertainTeed, Owens Corning. Free estimates, licensed PA184779. Call (888) 823-4766.",
+      "Asphalt shingle roofing Philadelphia specialists. 3-tab & architectural shingles from GAF, CertainTeed, Owens Corning. Free estimates, licensed PA184779. Call (267) 255-3620.",
     icon: "",
     image: "/images/roof-shingles-philadelphia.jpg",
     heroDescription:
@@ -1787,7 +1787,7 @@ export const services: Service[] = [
       {
         question: "How soon can you respond to storm damage in Philadelphia?",
         answer:
-          "For active leaks and major storm damage, we offer same-day response across Philadelphia. If water is coming through the ceiling or shingles are scattered across your yard, call (888) 823-4766 — we'll get a crew out with tarps to stop further damage and begin the inspection.",
+          "For active leaks and major storm damage, we offer same-day response across Philadelphia. If water is coming through the ceiling or shingles are scattered across your yard, call (267) 255-3620 — we'll get a crew out with tarps to stop further damage and begin the inspection.",
       },
       {
         question: "Should I file an insurance claim for roof damage?",
@@ -1822,7 +1822,7 @@ export const services: Service[] = [
     icon: "",
     image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:
-      "A roof leak is one of those problems that almost never gets better on its own — left alone, a small drip turns into warped drywall, stained ceilings, mold in the attic, and rotted decking that costs thousands more to repair than it would have a few months earlier. Adilay Roofing specializes in fast, accurate roof leak repair Philadelphia homeowners can count on, with 20+ years diagnosing and fixing leaks across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, all backed by a Pennsylvania contractor license (PA184779). Roof leaks are often misdiagnosed — the water stain on your ceiling is rarely directly under the leak itself, because water follows the roof deck and runs along rafters before dripping down. Our leak detection process starts with a full walk of your roof: we check every flashing, pipe boot, chimney joint, valley, nail pop, and suspect shingle, then go into the attic to trace the water path back to its actual source. We fix leaks in all common Philadelphia roof types: asphalt shingle, flat EPDM rubber (typical on row homes in Fishtown, Kensington, and South Philly), modified bitumen, and metal roofing. Most roof leak repairs in Philadelphia are completed in a single visit — flashing replaced, new pipe boot installed, shingles repaired or replaced, sealant reapplied — and come with a workmanship guarantee. For active leaks dripping into your home right now, we offer same-day response: we'll get a crew out, stop the water, and schedule the permanent fix. Every roof leak repair in Philadelphia comes with a free inspection and a written quote — no high-pressure sales, no hidden fees, just honest answers about what's wrong and what it'll cost to fix. Call (888) 823-4766 and get your roof leak diagnosed by a licensed Philadelphia roofer today.",
+      "A roof leak is one of those problems that almost never gets better on its own — left alone, a small drip turns into warped drywall, stained ceilings, mold in the attic, and rotted decking that costs thousands more to repair than it would have a few months earlier. Adilay Roofing specializes in fast, accurate roof leak repair Philadelphia homeowners can count on, with 20+ years diagnosing and fixing leaks across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, all backed by a Pennsylvania contractor license (PA184779). Roof leaks are often misdiagnosed — the water stain on your ceiling is rarely directly under the leak itself, because water follows the roof deck and runs along rafters before dripping down. Our leak detection process starts with a full walk of your roof: we check every flashing, pipe boot, chimney joint, valley, nail pop, and suspect shingle, then go into the attic to trace the water path back to its actual source. We fix leaks in all common Philadelphia roof types: asphalt shingle, flat EPDM rubber (typical on row homes in Fishtown, Kensington, and South Philly), modified bitumen, and metal roofing. Most roof leak repairs in Philadelphia are completed in a single visit — flashing replaced, new pipe boot installed, shingles repaired or replaced, sealant reapplied — and come with a workmanship guarantee. For active leaks dripping into your home right now, we offer same-day response: we'll get a crew out, stop the water, and schedule the permanent fix. Every roof leak repair in Philadelphia comes with a free inspection and a written quote — no high-pressure sales, no hidden fees, just honest answers about what's wrong and what it'll cost to fix. Call (267) 255-3620 and get your roof leak diagnosed by a licensed Philadelphia roofer today.",
     benefits: [
       "Same-day response for active roof leaks in Philadelphia",
       "Free roof leak inspection and written estimate",
@@ -1847,7 +1847,7 @@ export const services: Service[] = [
       {
         question: "How quickly can you fix a roof leak in Philadelphia?",
         answer:
-          "For active leaks, we offer same-day response across Philadelphia. Most roof leak repairs are completed in a single visit — typically 2–4 hours depending on the complexity and location of the leak. Call (888) 823-4766 and we'll get a crew to your home today.",
+          "For active leaks, we offer same-day response across Philadelphia. Most roof leak repairs are completed in a single visit — typically 2–4 hours depending on the complexity and location of the leak. Call (267) 255-3620 and we'll get a crew to your home today.",
       },
       {
         question: "How do you find the source of a roof leak?",
@@ -1887,7 +1887,7 @@ export const services: Service[] = [
     icon: "",
     image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:
-      "A professional roof inspection is the single most valuable thing a Philadelphia homeowner can do before the next storm season, before signing on a new home, or before filing an insurance claim. Adilay Roofing offers free roof inspection Philadelphia homeowners can rely on — performed by a licensed Pennsylvania contractor (PA184779) with 20+ years on local roofs, and documented with a written report, photos, and honest recommendations. Most of the expensive roof problems we fix in Philadelphia started as tiny, cheap-to-fix issues that went unnoticed for years — a cracked pipe boot, a loose ridge cap, a hairline flashing gap, granule loss from aging shingles. A thorough roof inspection catches those problems before they turn into leaks, mold, and structural damage. We offer several types of roof inspection for Philadelphia properties: (1) Pre-purchase roof inspection — if you're buying a home in Philadelphia, Bucks, Montgomery, Delaware, or Chester County, we inspect the roof before you close and give you a written report you can use to negotiate or walk away. (2) Post-storm inspection — after a major wind, hail, or tree-damage event, we document everything for your insurance claim. (3) Annual or biannual maintenance inspection — catches small issues before they become emergencies. (4) Pre-sale inspection — selling your home? A written roof report from a licensed contractor reassures buyers and speeds up the closing process. Every roof inspection in Philadelphia includes a full roof walk, an attic inspection for water staining and ventilation issues, flashing and chimney check, gutter and drainage review, and a written report with photos and prioritized recommendations. Most inspections take 45–75 minutes and come with zero obligation. Call (888) 823-4766 or fill out the form for a free roof inspection today.",
+      "A professional roof inspection is the single most valuable thing a Philadelphia homeowner can do before the next storm season, before signing on a new home, or before filing an insurance claim. Adilay Roofing offers free roof inspection Philadelphia homeowners can rely on — performed by a licensed Pennsylvania contractor (PA184779) with 20+ years on local roofs, and documented with a written report, photos, and honest recommendations. Most of the expensive roof problems we fix in Philadelphia started as tiny, cheap-to-fix issues that went unnoticed for years — a cracked pipe boot, a loose ridge cap, a hairline flashing gap, granule loss from aging shingles. A thorough roof inspection catches those problems before they turn into leaks, mold, and structural damage. We offer several types of roof inspection for Philadelphia properties: (1) Pre-purchase roof inspection — if you're buying a home in Philadelphia, Bucks, Montgomery, Delaware, or Chester County, we inspect the roof before you close and give you a written report you can use to negotiate or walk away. (2) Post-storm inspection — after a major wind, hail, or tree-damage event, we document everything for your insurance claim. (3) Annual or biannual maintenance inspection — catches small issues before they become emergencies. (4) Pre-sale inspection — selling your home? A written roof report from a licensed contractor reassures buyers and speeds up the closing process. Every roof inspection in Philadelphia includes a full roof walk, an attic inspection for water staining and ventilation issues, flashing and chimney check, gutter and drainage review, and a written report with photos and prioritized recommendations. Most inspections take 45–75 minutes and come with zero obligation. Call (267) 255-3620 or fill out the form for a free roof inspection today.",
     benefits: [
       "Free roof inspection with written report — no obligation",
       "Licensed Pennsylvania contractor inspector (PA184779)",

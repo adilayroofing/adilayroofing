@@ -7,7 +7,7 @@ const service = getServiceBySlug("emergency-roof-repair")!;
 export const metadata: Metadata = {
   title: "Emergency Roof Repair 24/7 Philadelphia — Adilay Roofing",
   description:
-    "24/7 emergency roof repair in Philadelphia. Storm damage? Leaking roof? We respond fast. Licensed PA184779, fully insured. Call now (888) 823-4766.",
+    "24/7 emergency roof repair in Philadelphia. Storm damage? Leaking roof? We respond fast. Licensed PA184779, fully insured. Call now (267) 255-3620.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.adilayroofing.com/lp/emergency" },
 };
@@ -24,7 +24,7 @@ export default function EmergencyLP() {
       benefits={service.benefits}
       features={service.features}
       faqs={service.faq}
-      primaryCtaText="Call Now (888) 823-4766"
+      primaryCtaText="Call Now (267) 255-3620"
       secondaryCtaText="Request Emergency Service"
       offerText="FREE Emergency Roof Estimate — Same-Day Response Available"
       submitButtonText="Request Emergency Service"

@@ -46,73 +46,73 @@ const metaPayloads = [
     slug: "/service-areas/philadelphia",
     meta_title: "Roofer Philadelphia PA — Rowhouse, Slate & Flat Roof",
     meta_description:
-      "Trusted Philadelphia roofing contractor. Rowhouse flat roofs, slate, shingle & 24/7 emergency repair. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Trusted Philadelphia roofing contractor. Rowhouse flat roofs, slate, shingle & 24/7 emergency repair. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Philadelphia PA — Rowhouse, Slate & Flat Roof | Adilay Roofing",
     og_description:
-      "Family-owned Philadelphia roofer. 20+ years on local rowhouses, slate, & flat roofs. Licensed PA184779. (888) 823-4766.",
+      "Family-owned Philadelphia roofer. 20+ years on local rowhouses, slate, & flat roofs. Licensed PA184779. (267) 255-3620.",
   },
   {
     slug: "/service-areas/fishtown",
     meta_title: "Roofer Fishtown — Flat Roof, Roof Deck & Same-Day Repair",
     meta_description:
-      "Fishtown roofing from your neighbors. Flat roof, EPDM, roof deck & emergency tarping minutes from your block. Licensed PA184779. Call (888) 823-4766.",
+      "Fishtown roofing from your neighbors. Flat roof, EPDM, roof deck & emergency tarping minutes from your block. Licensed PA184779. Call (267) 255-3620.",
     og_title: "Roofer Fishtown — Flat Roof & Roof Deck Specialists | Adilay Roofing",
     og_description:
-      "Adilay Roofing is based in Kensington — minutes from every Fishtown block. Flat roof, EPDM, roof deck. (888) 823-4766.",
+      "Adilay Roofing is based in Kensington — minutes from every Fishtown block. Flat roof, EPDM, roof deck. (267) 255-3620.",
   },
   {
     slug: "/service-areas/northern-liberties",
     meta_title: "Roofer Northern Liberties — Flat Roof, Roof Deck & Pilot House",
     meta_description:
-      "Northern Liberties roofing — TPO, EPDM, roof deck waterproofing & pilot-house flashing. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Northern Liberties roofing — TPO, EPDM, roof deck waterproofing & pilot-house flashing. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Northern Liberties — Flat Roof & Roof Deck | Adilay Roofing",
     og_description:
-      "Northern Liberties new-construction & rowhouse roofing experts. Licensed PA184779, 10 minutes from any NoLibs block. (888) 823-4766.",
+      "Northern Liberties new-construction & rowhouse roofing experts. Licensed PA184779, 10 minutes from any NoLibs block. (267) 255-3620.",
   },
   {
     slug: "/service-areas/south-philadelphia",
     meta_title: "Roofer South Philadelphia — Rowhouse Flat Roof Experts",
     meta_description:
-      "South Philly rowhouse roofing — EPDM, modified bitumen, roof decks & parapet flashing. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "South Philly rowhouse roofing — EPDM, modified bitumen, roof decks & parapet flashing. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer South Philadelphia — Rowhouse Flat Roof Experts | Adilay Roofing",
     og_description:
-      "South Philly rowhouse roofing specialists. Flat roof, roof decks, parapet flashing. Licensed PA184779. (888) 823-4766.",
+      "South Philly rowhouse roofing specialists. Flat roof, roof decks, parapet flashing. Licensed PA184779. (267) 255-3620.",
   },
   {
     slug: "/service-areas/germantown",
     meta_title: "Roofer Germantown Philadelphia — Slate & Historic Home Experts",
     meta_description:
-      "Germantown slate, designer shingle & historic home roofing. PHC review handled. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Germantown slate, designer shingle & historic home roofing. PHC review handled. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Germantown Philadelphia — Slate & Historic Home Experts | Adilay Roofing",
     og_description:
-      "Germantown slate roof specialists. Natural slate, synthetic slate, designer shingle. Historic district approved. (888) 823-4766.",
+      "Germantown slate roof specialists. Natural slate, synthetic slate, designer shingle. Historic district approved. (267) 255-3620.",
   },
   {
     slug: "/service-areas/manayunk",
     meta_title: "Roofer Manayunk — Steep-Slope Hillside Roofing Experts",
     meta_description:
-      "Manayunk hillside roofing — wind-rated shingle, oversized gutters, slate & metal options. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Manayunk hillside roofing — wind-rated shingle, oversized gutters, slate & metal options. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Manayunk — Steep-Slope Hillside Roofing | Adilay Roofing",
     og_description:
-      "Manayunk hillside roofing specialists. Wind-rated shingle, oversized gutters, slate & metal. Licensed PA184779. (888) 823-4766.",
+      "Manayunk hillside roofing specialists. Wind-rated shingle, oversized gutters, slate & metal. Licensed PA184779. (267) 255-3620.",
   },
   {
     slug: "/service-areas/bucks-county",
     meta_title: "Roofer Bucks County PA — Levittown to Doylestown Roofing",
     meta_description:
-      "Bucks County roofing — Levittown to Doylestown. Shingle, flat roof, storm damage, ice-dam fixes. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Bucks County roofing — Levittown to Doylestown. Shingle, flat roof, storm damage, ice-dam fixes. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Bucks County PA — Levittown to Doylestown | Adilay Roofing",
     og_description:
-      "Bucks County roofing — lower Bucks to upper Bucks. Levittown ranchers, Doylestown colonials, heritage homes. (888) 823-4766.",
+      "Bucks County roofing — lower Bucks to upper Bucks. Levittown ranchers, Doylestown colonials, heritage homes. (267) 255-3620.",
   },
   {
     slug: "/service-areas/montgomery-county",
     meta_title: "Roofer Montgomery County PA — Norristown to Lower Merion",
     meta_description:
-      "Montgomery County roofing — Norristown twins to Lower Merion estates. HOA & historic district experienced. Licensed PA184779. (888) 823-4766.",
+      "Montgomery County roofing — Norristown twins to Lower Merion estates. HOA & historic district experienced. Licensed PA184779. (267) 255-3620.",
     og_title: "Roofer Montgomery County PA — Norristown to Lower Merion | Adilay Roofing",
     og_description:
-      "Montgomery County roofer — Norristown, KOP, Lower Merion, Cheltenham. HOA & historic review experienced. (888) 823-4766.",
+      "Montgomery County roofer — Norristown, KOP, Lower Merion, Cheltenham. HOA & historic review experienced. (267) 255-3620.",
   },
 ];
 

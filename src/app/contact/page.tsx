@@ -21,9 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
   return {
-    title: "Contact Us — Free Roofing Estimate | (888) 823-4766",
+    title: "Contact Us — Free Roofing Estimate | (267) 255-3620",
     description:
-      "Contact Adilay Roofing for a free roofing estimate in Philadelphia, PA. Call (888) 823-4766, email info@adilayroofing.com, or fill out our quick form. Fast response!",
+      "Contact Adilay Roofing for a free roofing estimate in Philadelphia, PA. Call (267) 255-3620, email info@adilayroofing.com, or fill out our quick form. Fast response!",
     keywords: [
       "contact roofer Philadelphia",
       "roofing estimate Philadelphia PA",
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "Contact Adilay Roofing Philadelphia — Free Estimates",
       description:
-        "Call (888) 823-4766 for a free roofing estimate. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
+        "Call (267) 255-3620 for a free roofing estimate. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester Counties.",
       url: `${BASE_URL}/contact`,
     },
   };
@@ -58,7 +58,7 @@ export default async function ContactPage() {
     url: `${BASE_URL}/contact`,
     name: "Contact Adilay Roofing",
     description:
-      "Call (888) 823-4766, email info@adilayroofing.com, or send a message. Free roofing estimates in Philadelphia and surrounding counties.",
+      "Call (267) 255-3620, email info@adilayroofing.com, or send a message. Free roofing estimates in Philadelphia and surrounding counties.",
     isPartOf: { "@id": `${BASE_URL}/#website` },
     mainEntity: ORG_REF,
   };
@@ -297,8 +297,8 @@ export default async function ContactPage() {
       {/* ── Map Section ── */}
       <section className="relative">
         <iframe
-          title="Adilay Roofing Service Area"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d392483.05756051!2d-75.4455701!3d40.0713949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa0bd1e455cbe4473%3A0x74b01e3f11e033a2!2sAdilay%20roofing!5e0!3m2!1sen!2sus!4v1"
+          title="Adilay Roofing — 2020 Dreer St, Philadelphia, PA 19125"
+          src="https://www.google.com/maps?q=Adilay+Roofing,+2020+Dreer+St+Unit+101,+Philadelphia,+PA+19125&output=embed"
           width="100%"
           height="400"
           style={{ border: 0 }}
@@ -309,7 +309,7 @@ export default async function ContactPage() {
         />
         <div className="bg-white border-t border-brand-border py-3 px-4 text-center">
           <a
-            href="https://www.google.com/maps/place/Adilay+roofing/@40.0713949,-75.4455701,10z/data=!3m1!4b1!4m6!3m5!1s0xa0bd1e455cbe4473:0x74b01e3f11e033a2!8m2!3d40.071862!4d-75.115953!16s%2Fg%2F11ww__wfkd"
+            href={company.mapUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red-dark transition-colors text-sm md:text-base"

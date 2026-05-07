@@ -39,10 +39,10 @@ const LANGHORNE_SLUG = "/service-areas/langhorne";
 const langhorneMeta = {
   meta_title: "Roofer Langhorne PA — Shingle, Flat Roof & Emergency Repair",
   meta_description:
-    "Langhorne roofing experts. Shingle replacement, flat roof, storm damage & emergency repair for Middletown Twp homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+    "Langhorne roofing experts. Shingle replacement, flat roof, storm damage & emergency repair for Middletown Twp homes. Licensed PA184779. Free estimates — (267) 255-3620.",
   og_title: "Roofer Langhorne PA — Shingle, Flat Roof & Emergency Repair | Adilay Roofing",
   og_description:
-    "Langhorne PA roofing by your trusted local contractor. Licensed PA184779, 20+ years, free on-site estimates. Call (888) 823-4766.",
+    "Langhorne PA roofing by your trusted local contractor. Licensed PA184779, 20+ years, free on-site estimates. Call (267) 255-3620.",
   canonical_url: `${BASE}/service-areas/langhorne`,
 };
 
@@ -66,22 +66,22 @@ const langhorneStructured = {
     {
       question: "Do you serve Langhorne Borough and Middletown Township?",
       answer:
-        "Yes. Adilay Roofing serves both Langhorne Borough and the surrounding Middletown Township, including Oxford Valley, Parkland, Parkland Manor, and Penndel. Each municipality has its own permitting process, and we handle both. Licensed PA184779 — call (888) 823-4766 for a free estimate anywhere in the Langhorne area.",
+        "Yes. Adilay Roofing serves both Langhorne Borough and the surrounding Middletown Township, including Oxford Valley, Parkland, Parkland Manor, and Penndel. Each municipality has its own permitting process, and we handle both. Licensed PA184779 — call (267) 255-3620 for a free estimate anywhere in the Langhorne area.",
     },
     {
       question: "How much does a roof replacement cost in Langhorne?",
       answer:
-        "Langhorne-area roof replacements typically range from $8,000 to $16,000 for standard single-family homes, with larger or more complex Victorian and multi-level homes running $15,000 to $25,000+. Premium materials like cedar shake or synthetic slate add to that range. We provide free on-site estimates with transparent, itemized pricing. Call (888) 823-4766.",
+        "Langhorne-area roof replacements typically range from $8,000 to $16,000 for standard single-family homes, with larger or more complex Victorian and multi-level homes running $15,000 to $25,000+. Premium materials like cedar shake or synthetic slate add to that range. We provide free on-site estimates with transparent, itemized pricing. Call (267) 255-3620.",
     },
     {
       question: "Can you handle emergency roof repairs in Langhorne?",
       answer:
-        "Yes. We respond to Langhorne emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization to prevent further interior damage. Our I-95 proximity means we're among the fastest responders in lower Bucks County. Call (888) 823-4766 for 24/7 emergency service.",
+        "Yes. We respond to Langhorne emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization to prevent further interior damage. Our I-95 proximity means we're among the fastest responders in lower Bucks County. Call (267) 255-3620 for 24/7 emergency service.",
     },
     {
       question: "Do you work on historic homes in Langhorne Borough?",
       answer:
-        "Yes. Langhorne Borough has a notable collection of Victorian and early-American homes, some within the borough's historic district. We're experienced with historic-sensitive roofing — matching period-appropriate materials, preserving original details, and working within any historic district review requirements. Call (888) 823-4766 for an on-site assessment.",
+        "Yes. Langhorne Borough has a notable collection of Victorian and early-American homes, some within the borough's historic district. We're experienced with historic-sensitive roofing — matching period-appropriate materials, preserving original details, and working within any historic district review requirements. Call (267) 255-3620 for an on-site assessment.",
     },
   ],
 };
@@ -94,10 +94,10 @@ const newPages = [
     slug: "/service-areas/germantown",
     meta_title: "Roofer Germantown Philadelphia — Historic Home Roofing Experts",
     meta_description:
-      "Germantown roofing by Adilay Roofing. Slate, shingle & historic home specialists along Germantown Ave. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Germantown roofing by Adilay Roofing. Slate, shingle & historic home specialists along Germantown Ave. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Germantown Philadelphia — Historic Home Roofing Experts | Adilay Roofing",
     og_description:
-      "Germantown's historic slate & shingle roof specialists. Licensed PA184779, 20+ years, same-day emergency response. Call (888) 823-4766.",
+      "Germantown's historic slate & shingle roof specialists. Licensed PA184779, 20+ years, same-day emergency response. Call (267) 255-3620.",
   },
   {
     slug: "/service-areas/old-city",
@@ -106,52 +106,52 @@ const newPages = [
       "Old City Philadelphia roofing experts. Flat roof, membrane & historic rowhouse specialists near Independence Mall. Licensed PA184779. Free estimates.",
     og_title: "Roofer Old City Philadelphia — Historic Rowhouse & Loft Roofing | Adilay Roofing",
     og_description:
-      "Old City Philadelphia flat roof, loft & rowhouse roofing experts. Licensed PA184779. Call (888) 823-4766 for a free estimate.",
+      "Old City Philadelphia flat roof, loft & rowhouse roofing experts. Licensed PA184779. Call (267) 255-3620 for a free estimate.",
   },
   {
     slug: "/service-areas/northern-liberties",
     meta_title: "Roofer Northern Liberties Philadelphia — Flat Roof & Deck Specialists",
     meta_description:
-      "Northern Liberties roofing from Adilay Roofing. Flat roof, roof deck, new construction & rowhouse experts. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Northern Liberties roofing from Adilay Roofing. Flat roof, roof deck, new construction & rowhouse experts. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Northern Liberties Philadelphia — Flat Roof & Deck Specialists | Adilay Roofing",
     og_description:
-      "Northern Liberties flat roof & roof deck waterproofing experts. Licensed PA184779, 20+ years. Call (888) 823-4766.",
+      "Northern Liberties flat roof & roof deck waterproofing experts. Licensed PA184779, 20+ years. Call (267) 255-3620.",
   },
   {
     slug: "/service-areas/conshohocken",
     meta_title: "Roofer Conshohocken PA — Roof Replacement & Repair",
     meta_description:
-      "Conshohocken roofing by Adilay Roofing. Shingle replacement, flat roof, storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Conshohocken roofing by Adilay Roofing. Shingle replacement, flat roof, storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     og_title: "Roofer Conshohocken PA — Roof Replacement & Repair | Adilay Roofing",
     og_description:
-      "Conshohocken roofing contractor. Licensed PA184779, 20+ years, free on-site estimates. Call (888) 823-4766.",
+      "Conshohocken roofing contractor. Licensed PA184779, 20+ years, free on-site estimates. Call (267) 255-3620.",
   },
   {
     slug: "/service-areas/bala-cynwyd",
     meta_title: "Roofer Bala Cynwyd PA — Main Line Roof Replacement & Repair",
     meta_description:
-      "Bala Cynwyd roofing by Adilay Roofing. Slate, cedar, shingle specialists for Main Line homes. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Bala Cynwyd roofing by Adilay Roofing. Slate, cedar, shingle specialists for Main Line homes. Licensed PA184779. Free estimates — call (267) 255-3620.",
     og_title: "Roofer Bala Cynwyd PA — Main Line Roof Replacement & Repair | Adilay Roofing",
     og_description:
-      "Main Line roofing experts serving Bala Cynwyd and surrounding communities. Slate, cedar & premium shingle specialists. Call (888) 823-4766.",
+      "Main Line roofing experts serving Bala Cynwyd and surrounding communities. Slate, cedar & premium shingle specialists. Call (267) 255-3620.",
   },
   {
     slug: "/service-areas/chester",
     meta_title: "Roofer Chester PA — Residential & Commercial Roof Replacement",
     meta_description:
-      "Chester PA roofing by Adilay Roofing. Residential, commercial & flat roof repair along the Delaware River. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Chester PA roofing by Adilay Roofing. Residential, commercial & flat roof repair along the Delaware River. Licensed PA184779. Free estimates — (267) 255-3620.",
     og_title: "Roofer Chester PA — Residential & Commercial Roof Replacement | Adilay Roofing",
     og_description:
-      "Chester PA residential & commercial roofing. Licensed PA184779, 20+ years, free estimates. Call (888) 823-4766.",
+      "Chester PA residential & commercial roofing. Licensed PA184779, 20+ years, free estimates. Call (267) 255-3620.",
   },
   {
     slug: "/service-areas/trenton",
     meta_title: "Roofer Trenton NJ — Roof Replacement & Repair",
     meta_description:
-      "Trenton NJ roofing by Adilay Roofing. Shingle, flat roof & rowhouse specialists across Mercer County. Licensed & insured. Free estimates — (888) 823-4766.",
+      "Trenton NJ roofing by Adilay Roofing. Shingle, flat roof & rowhouse specialists across Mercer County. Licensed & insured. Free estimates — (267) 255-3620.",
     og_title: "Roofer Trenton NJ — Roof Replacement & Repair | Adilay Roofing",
     og_description:
-      "Trenton NJ & Mercer County roofing experts. Licensed & insured, 20+ years of experience. Call (888) 823-4766 for a free estimate.",
+      "Trenton NJ & Mercer County roofing experts. Licensed & insured, 20+ years of experience. Call (267) 255-3620 for a free estimate.",
   },
 ];
 

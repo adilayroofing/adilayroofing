@@ -140,8 +140,8 @@ export default function LPLeadForm({
         </p>
         <p className="text-green-600 text-xs mt-2">
           Need immediate help? Call{" "}
-          <a href="tel:+18888234766" className="font-bold underline">
-            (888) 823-4766
+          <a href="tel:+12672553620" className="font-bold underline">
+            (267) 255-3620
           </a>
         </p>
       </div>

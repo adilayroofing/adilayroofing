@@ -529,7 +529,7 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
     {
       heading: "Active Leak Emergency Response",
-      html: "<p>If you have water actively coming through your ceiling, follow this in order: <strong>contain the water</strong> (place a bucket and put a hole in the ceiling drywall to release trapped water — sounds counterintuitive but prevents the entire ceiling from collapsing under the water weight), <strong>protect electronics and valuables</strong> in the affected area, <strong>call us at (888) 823-4766</strong> for same-day emergency response (24/7 for active leaks), and <strong>document with photos</strong> for any insurance claim. Our typical response time for active leaks in Philadelphia is 2-6 hours during business hours, same-day after hours.</p>",
+      html: "<p>If you have water actively coming through your ceiling, follow this in order: <strong>contain the water</strong> (place a bucket and put a hole in the ceiling drywall to release trapped water — sounds counterintuitive but prevents the entire ceiling from collapsing under the water weight), <strong>protect electronics and valuables</strong> in the affected area, <strong>call us at (267) 255-3620</strong> for same-day emergency response (24/7 for active leaks), and <strong>document with photos</strong> for any insurance claim. Our typical response time for active leaks in Philadelphia is 2-6 hours during business hours, same-day after hours.</p>",
     },
   ],
 };

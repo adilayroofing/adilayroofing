@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title:
     "Free Roof Inspection Philadelphia | No Cost, No Obligation — Adilay Roofing",
   description:
-    "Free roof inspection in Philadelphia. Know your roof's condition with no cost and no obligation. Licensed PA184779. Call (888) 823-4766 to schedule.",
+    "Free roof inspection in Philadelphia. Know your roof's condition with no cost and no obligation. Licensed PA184779. Call (267) 255-3620 to schedule.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.adilayroofing.com/lp/free-inspection" },
 };
@@ -55,7 +55,7 @@ export default function FreeInspectionLP() {
         },
       ]}
       primaryCtaText="Schedule Free Inspection"
-      secondaryCtaText="Call (888) 823-4766"
+      secondaryCtaText="Call (267) 255-3620"
       offerText="FREE Gutter Cleaning With Every Roof Replacement — Limited Time Offer"
       submitButtonText="Schedule My Free Inspection"
       galleryImage="/images/experienced-crew-adilay-roofing-philadelphia.jpg"

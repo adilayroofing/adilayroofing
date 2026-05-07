@@ -7,7 +7,7 @@ const service = getServiceBySlug("roof-replacement")!;
 export const metadata: Metadata = {
   title: "Roof Replacement in Philadelphia | Free Estimate — Adilay Roofing",
   description:
-    "Professional roof replacement in Philadelphia. 20+ years experience, 2,000+ projects. Free gutter cleaning included. Licensed PA184779. Call (888) 823-4766 for a free estimate.",
+    "Professional roof replacement in Philadelphia. 20+ years experience, 2,000+ projects. Free gutter cleaning included. Licensed PA184779. Call (267) 255-3620 for a free estimate.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.adilayroofing.com/lp/roof-replacement" },
 };
@@ -24,7 +24,7 @@ export default function RoofReplacementLP() {
       features={service.features}
       faqs={service.faq}
       primaryCtaText="Get Your FREE Quote"
-      secondaryCtaText="Call (888) 823-4766"
+      secondaryCtaText="Call (267) 255-3620"
       offerText="FREE Gutter Cleaning With Every Roof Replacement — Limited Time Offer"
       galleryImage="/images/adilay-crew-at-work.jpg"
       galleryImageAlt="Adilay Roofing crew completing a roof replacement in Philadelphia"

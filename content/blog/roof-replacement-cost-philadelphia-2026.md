@@ -187,7 +187,7 @@ Every roof is different, and online estimates can only take you so far. The best
 
 At Adilay Roofing, our estimates are always free, always honest, and always obligation-free. We'll walk your roof, check the decking, measure accurately, and give you a price that won't change on installation day.
 
-**Call us at (888) 823-4766** or [get a free roof estimate](/get-quote) online. We're available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent roof issues.
+**Call us at (267) 255-3620** or [get a free roof estimate](/get-quote) online. We're available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent roof issues.
 
 **Adilay Roofing LLC**
 2020 Dreer St., Unit 101, Philadelphia, PA 19125

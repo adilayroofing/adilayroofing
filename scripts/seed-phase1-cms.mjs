@@ -47,37 +47,37 @@ const metaPayloads = [
     slug: "/",
     meta_title: "Philadelphia Roofing Contractor — Adilay Roofing | Free Estimates",
     meta_description:
-      "Trusted Philadelphia roofing contractors. Roof replacement, repair, flat roofing & 24/7 emergency. Licensed PA184779. Free estimates (888) 823-4766.",
+      "Trusted Philadelphia roofing contractors. Roof replacement, repair, flat roofing & 24/7 emergency. Licensed PA184779. Free estimates (267) 255-3620.",
     og_title: "Philadelphia Roofing Contractor — Adilay Roofing",
     og_description:
-      "Family-owned Philadelphia roofing contractor, 20+ years local experience. Licensed PA184779, 5.0 Google rating. Free estimates — (888) 823-4766.",
+      "Family-owned Philadelphia roofing contractor, 20+ years local experience. Licensed PA184779, 5.0 Google rating. Free estimates — (267) 255-3620.",
   },
   {
     slug: "/services/emergency-roof-repair",
     meta_title: "Emergency Roof Repair Philadelphia — 24/7 Response",
     meta_description:
-      "Active leak or storm damage? 24/7 emergency roof repair in Philadelphia. Same-day tarping & leak stabilization. Licensed PA184779. Call (888) 823-4766.",
+      "Active leak or storm damage? 24/7 emergency roof repair in Philadelphia. Same-day tarping & leak stabilization. Licensed PA184779. Call (267) 255-3620.",
     og_title: "Emergency Roof Repair Philadelphia — 24/7 Response | Adilay Roofing",
     og_description:
-      "Same-day tarping and emergency roof repair across Philadelphia & surrounding counties. Licensed PA184779. Call (888) 823-4766 anytime.",
+      "Same-day tarping and emergency roof repair across Philadelphia & surrounding counties. Licensed PA184779. Call (267) 255-3620 anytime.",
   },
   {
     slug: "/services/roof-repair",
     meta_title: "Roof Repair Philadelphia — Leak, Flashing & Shingle Fixes",
     meta_description:
-      "Philadelphia roof repair — leaks, flashing, shingles, flat roofs & chimney repair. 20+ years local experience. Licensed PA184779. Call (888) 823-4766.",
+      "Philadelphia roof repair — leaks, flashing, shingles, flat roofs & chimney repair. 20+ years local experience. Licensed PA184779. Call (267) 255-3620.",
     og_title: "Roof Repair Philadelphia — Leak, Flashing & Shingle Fixes | Adilay Roofing",
     og_description:
-      "Expert roof repair across Philadelphia — leaks, flashing, shingle, and flat-roof seam work. Licensed PA184779, 20+ years. Call (888) 823-4766.",
+      "Expert roof repair across Philadelphia — leaks, flashing, shingle, and flat-roof seam work. Licensed PA184779, 20+ years. Call (267) 255-3620.",
   },
   {
     slug: "/services/roof-replacement",
     meta_title: "Roof Replacement Philadelphia — Shingle, Metal & Flat Roofs",
     meta_description:
-      "Philadelphia roof replacement — architectural shingle, metal, EPDM rubber & TPO. Free estimates, financing available. Licensed PA184779. (888) 823-4766.",
+      "Philadelphia roof replacement — architectural shingle, metal, EPDM rubber & TPO. Free estimates, financing available. Licensed PA184779. (267) 255-3620.",
     og_title: "Roof Replacement Philadelphia — Shingle, Metal & Flat Roofs | Adilay Roofing",
     og_description:
-      "Full roof replacement across Philadelphia — shingle, metal, EPDM & TPO. 20+ years local, financing available. Licensed PA184779. (888) 823-4766.",
+      "Full roof replacement across Philadelphia — shingle, metal, EPDM & TPO. 20+ years local, financing available. Licensed PA184779. (267) 255-3620.",
   },
 ];
 
@@ -88,7 +88,7 @@ const metaPayloads = [
 // ---------------------------------------------------------------------------
 const homeStructured = {
   heroDescription:
-    "Looking for trusted roofing contractors in Philadelphia? Adilay Roofing has served Philadelphia homeowners and businesses for more than 20 years — roof replacement, roof repair, flat roofing, and 24/7 emergency response. Licensed in Pennsylvania (PA184779), fully insured, 5.0 rating on Google. Free estimates — call (888) 823-4766.",
+    "Looking for trusted roofing contractors in Philadelphia? Adilay Roofing has served Philadelphia homeowners and businesses for more than 20 years — roof replacement, roof repair, flat roofing, and 24/7 emergency response. Licensed in Pennsylvania (PA184779), fully insured, 5.0 rating on Google. Free estimates — call (267) 255-3620.",
 };
 
 // ---------------------------------------------------------------------------

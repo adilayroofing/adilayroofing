@@ -35,7 +35,7 @@ const CANONICAL = "https://www.adilayroofing.com/get-quote";
 const pageUpdates = {
   meta_title: "Free No-Obligation Roofing Quote Philadelphia | Adilay Roofing",
   meta_description:
-    "Get a free, no-obligation roofing quote in Philadelphia. Same-day response, written estimate, no pressure. Licensed contractor, 20+ years. Call (888) 823-4766.",
+    "Get a free, no-obligation roofing quote in Philadelphia. Same-day response, written estimate, no pressure. Licensed contractor, 20+ years. Call (267) 255-3620.",
   canonical_url: CANONICAL,
   og_title: "Free No-Obligation Roofing Quote in Philadelphia — Adilay Roofing",
   og_description:

@@ -171,7 +171,7 @@ Submitted from Adilay Roofing Google Ads landing page.
     return NextResponse.json(
       {
         error:
-          "Failed to submit. Please try again or call us directly at (888) 823-4766.",
+          "Failed to submit. Please try again or call us directly at (267) 255-3620.",
       },
       { status: 500 }
     );

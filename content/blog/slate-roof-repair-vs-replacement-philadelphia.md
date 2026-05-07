@@ -38,7 +38,7 @@ The single most important thing to understand about slate roofs is this: **slate
 
 This guide walks you through how to know which category your roof falls into: the one that needs targeted repair, or the one that's genuinely reached end of life and needs replacement.
 
-**Need an honest assessment now?** [Request a free slate roof inspection](/get-quote) or call **[(888) 823-4766](tel:8882348766)**. We'll come out, climb the roof, and tell you straight whether you need repair or replacement.
+**Need an honest assessment now?** [Request a free slate roof inspection](/get-quote) or call **[(267) 255-3620](tel:+12672553620)**. We'll come out, climb the roof, and tell you straight whether you need repair or replacement.
 
 ![Adilay Roofing repair work on a Philadelphia roof](/images/roof-repair-philadelphia.jpg "On a slate roof inspection in Philadelphia, the goal is to figure out what's actually failing. Most of the time it isn't the slate.")
 
@@ -149,6 +149,6 @@ We've worked on slate roofs across Chestnut Hill, Germantown, Mount Airy, Wissah
 
 ![Adilay Roofing experienced crew on a Philadelphia slate roof inspection](/images/experienced-crew-adilay-roofing-philadelphia.jpg "Our crew on a slate roof inspection in Philadelphia. The right tools and a careful walk are what tell you whether to repair or replace.")
 
-**[Schedule a free slate roof inspection](/get-quote)** or call **[(888) 823-4766](tel:8882348766)**. We'll climb the roof, take photographs of every issue we find, and give you a written assessment that tells you exactly what's needed and what it costs (repair OR replacement, whichever the roof actually requires).
+**[Schedule a free slate roof inspection](/get-quote)** or call **[(267) 255-3620](tel:+12672553620)**. We'll climb the roof, take photographs of every issue we find, and give you a written assessment that tells you exactly what's needed and what it costs (repair OR replacement, whichever the roof actually requires).
 
 For neighborhood-specific roofing pages with more local context, see [Germantown roofing](/service-areas/germantown), [Manayunk roofing](/service-areas/manayunk), or our full [Philadelphia roofing service page](/service-areas/philadelphia).

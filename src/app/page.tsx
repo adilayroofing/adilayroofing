@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
       absolute: "Philadelphia Roofing Contractor — Adilay Roofing | Free Estimates",
     },
     description:
-      "Trusted Philadelphia roofing contractors. Roof replacement, repair, flat roofing & 24/7 emergency. Licensed PA184779. Free estimates (888) 823-4766.",
+      "Trusted Philadelphia roofing contractors. Roof replacement, repair, flat roofing & 24/7 emergency. Licensed PA184779. Free estimates (267) 255-3620.",
     keywords: [
       "roofer Philadelphia",
       "roofing contractor Philadelphia",
@@ -203,7 +203,7 @@ export default async function Home() {
   const heroHeadlineRed = (cmsData?.heroHeadlineRed as string) || "Roofing Contractor";
   const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
   const heroDescription = (cmsData?.heroDescription as string) ||
-    "Looking for trusted roofing contractors in Philadelphia? Adilay Roofing has served Philadelphia homeowners and businesses for more than 20 years — roof replacement, roof repair, flat roofing, and 24/7 emergency response. Licensed in Pennsylvania (PA184779), fully insured, 5.0 rating on Google. Free estimates — call (888) 823-4766.";
+    "Looking for trusted roofing contractors in Philadelphia? Adilay Roofing has served Philadelphia homeowners and businesses for more than 20 years — roof replacement, roof repair, flat roofing, and 24/7 emergency response. Licensed in Pennsylvania (PA184779), fully insured, 5.0 rating on Google. Free estimates — call (267) 255-3620.";
 
   const cmsWhyChooseUs = cmsData?.whyChooseUs as { title: string; description: string }[] | undefined;
   const whyChooseUs = cmsWhyChooseUs?.length
@@ -486,7 +486,7 @@ export default async function Home() {
                   What Makes Us Different
                 </h3>
                 <p className="text-brand-gray leading-relaxed text-base md:text-lg">
-                  You can read our 40+ five-star Google reviews, but the short version is this: we show up when we say we will, we write down what&rsquo;s actually wrong with your roof (not what sells the biggest job), and we stand behind our workmanship in writing. If you&rsquo;d rather talk before you commit to anything, call <a href="tel:+18888234766" className="text-brand-red font-semibold hover:underline">(888) 823-4766</a> or <Link href="/get-quote" className="text-brand-red font-semibold hover:underline">request a free estimate</Link> and we&rsquo;ll be out within a day or two.
+                  You can read our 40+ five-star Google reviews, but the short version is this: we show up when we say we will, we write down what&rsquo;s actually wrong with your roof (not what sells the biggest job), and we stand behind our workmanship in writing. If you&rsquo;d rather talk before you commit to anything, call <a href="tel:+12672553620" className="text-brand-red font-semibold hover:underline">(267) 255-3620</a> or <Link href="/get-quote" className="text-brand-red font-semibold hover:underline">request a free estimate</Link> and we&rsquo;ll be out within a day or two.
                 </p>
               </div>
             </ScrollReveal>

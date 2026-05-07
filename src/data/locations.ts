@@ -36,7 +36,7 @@ export const locations: Location[] = [
     type: "county",
     metaTitle: "Roofer Philadelphia PA — Roof Replacement & Repair",
     metaDescription:
-      "Trusted Philadelphia roofer. Roof replacement, repair, flat roofing for rowhouses & more. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Trusted Philadelphia roofer. Roof replacement, repair, flat roofing for rowhouses & more. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Philadelphia Roofing Services",
     intro:
       "Philadelphia is a city built on brick, stone, and generations of craftsmanship — and the roofs that protect its homes demand the same level of care. From the flat rubber roofs on Fishtown rowhouses along Frankford Avenue to the steep slate roofs of Chestnut Hill colonials, every neighborhood in the city presents distinct roofing challenges. The Mid-Atlantic climate pushes roofing materials to their limits: heavy snowfall in January and February piles weight on aging structures, summer thunderstorms drive rain under worn flashing, and the freeze-thaw cycles between seasons crack shingles and loosen mortar caps. Many Philadelphia homes were built in the early 1900s with original slate or built-up tar roofs that have long exceeded their intended lifespan. Whether you own a classic twin in Mayfair, a renovated trinity in South Philly, or a modern build in Northern Liberties, maintaining a watertight roof is essential. Adilay Roofing is headquartered right here at 2020 Dreer Street in Kensington, so we understand Philadelphia construction inside and out. We have completed over 2,000 projects across the city and respond quickly because we are your neighbors — not a crew driving in from the suburbs.",
@@ -93,7 +93,7 @@ export const locations: Location[] = [
       {
         question: "How fast can a Philadelphia roofer get to my house for an emergency leak?",
         answer:
-          "From our shop at 2020 Dreer Street in Kensington, we can be on most Philadelphia blocks within 30–60 minutes for active leaks during business hours. Same-day tarping and leak containment are standard for emergencies anywhere inside the city limits. Call (888) 823-4766 — the closer your neighborhood is to Center City, Fishtown, Northern Liberties, or Port Richmond, the faster the response.",
+          "From our shop at 2020 Dreer Street in Kensington, we can be on most Philadelphia blocks within 30–60 minutes for active leaks during business hours. Same-day tarping and leak containment are standard for emergencies anywhere inside the city limits. Call (267) 255-3620 — the closer your neighborhood is to Center City, Fishtown, Northern Liberties, or Port Richmond, the faster the response.",
       },
       {
         question: "What's the difference between a Philadelphia trinity, twin, and rowhouse roof?",
@@ -129,14 +129,14 @@ export const locations: Location[] = [
       },
       {
         heading: "Emergency and Same-Day Response Across the City",
-        html: `<p>If your roof is leaking right now, call <a href="tel:+18888234766">(888) 823-4766</a>. Our shop is at 2020 Dreer Street in Kensington — from there we can get a tarping crew to most of Philadelphia within 30–60 minutes during business hours, and we maintain a 24/7 emergency line for after-hours leaks. Response time depends on traffic and what's already in progress, but the closer your home is to North Philly, Fishtown, Northern Liberties, Port Richmond, Kensington, or Center City, the faster we'll be there. We carry full tarping kits, leak-tracing tools, and temporary patch materials on every truck so the first visit can stop the active damage before we even talk about permanent repair.</p>
+        html: `<p>If your roof is leaking right now, call <a href="tel:+12672553620">(267) 255-3620</a>. Our shop is at 2020 Dreer Street in Kensington — from there we can get a tarping crew to most of Philadelphia within 30–60 minutes during business hours, and we maintain a 24/7 emergency line for after-hours leaks. Response time depends on traffic and what's already in progress, but the closer your home is to North Philly, Fishtown, Northern Liberties, Port Richmond, Kensington, or Center City, the faster we'll be there. We carry full tarping kits, leak-tracing tools, and temporary patch materials on every truck so the first visit can stop the active damage before we even talk about permanent repair.</p>
 <p>For non-emergency repairs and replacements, we typically schedule on-site free estimates within 1–3 business days.</p>`,
       },
       {
         heading: "Other Philadelphia Neighborhood Roofing Pages",
         html: `<p>We work across the entire city. For neighborhood-specific roofing pages with local housing context, FAQs, and pricing ranges, see:</p>
 <p><a href="/service-areas/fishtown">Fishtown</a> &middot; <a href="/service-areas/northern-liberties">Northern Liberties</a> &middot; <a href="/service-areas/kensington">Kensington</a> &middot; <a href="/service-areas/south-philadelphia">South Philadelphia</a> &middot; <a href="/service-areas/north-philadelphia">North Philadelphia</a> &middot; <a href="/service-areas/west-philadelphia">West Philadelphia</a> &middot; <a href="/service-areas/center-city">Center City</a> &middot; <a href="/service-areas/old-city">Old City</a> &middot; <a href="/service-areas/manayunk">Manayunk</a> &middot; <a href="/service-areas/roxborough">Roxborough</a> &middot; <a href="/service-areas/germantown">Germantown</a> &middot; <a href="/service-areas/northeast-philadelphia">Northeast Philadelphia</a> &middot; <a href="/service-areas/university-city">University City</a></p>
-<p>If you don't see your neighborhood listed, we still service it — call <a href="tel:+18888234766">(888) 823-4766</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
+<p>If you don't see your neighborhood listed, we still service it — call <a href="tel:+12672553620">(267) 255-3620</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
       },
     ],
   },
@@ -232,7 +232,7 @@ export const locations: Location[] = [
         heading: "Bucks County Towns With Their Own Roofing Pages",
         html: `<p>From our Philadelphia shop we cover all of Bucks County — every township, every borough. For community-specific roofing pages with local housing context and FAQs, see:</p>
 <p><a href="/service-areas/levittown">Levittown</a> &middot; <a href="/service-areas/bensalem">Bensalem</a> &middot; <a href="/service-areas/langhorne">Langhorne</a> &middot; <a href="/service-areas/bristol">Bristol</a> &middot; <a href="/service-areas/newtown">Newtown</a> &middot; <a href="/service-areas/doylestown">Doylestown</a> &middot; <a href="/service-areas/yardley">Yardley</a> &middot; <a href="/service-areas/warminster">Warminster</a> &middot; <a href="/service-areas/feasterville">Feasterville</a></p>
-<p>Don't see your township? We almost certainly still service it — call <a href="tel:+18888234766">(888) 823-4766</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
+<p>Don't see your township? We almost certainly still service it — call <a href="tel:+12672553620">(267) 255-3620</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
       },
     ],
   },
@@ -330,7 +330,7 @@ export const locations: Location[] = [
         heading: "Montgomery County Towns With Their Own Roofing Pages",
         html: `<p>For community-specific roofing pages with local context and FAQs, see:</p>
 <p><a href="/service-areas/norristown">Norristown</a> &middot; <a href="/service-areas/king-of-prussia">King of Prussia</a> &middot; <a href="/service-areas/conshohocken">Conshohocken</a> &middot; <a href="/service-areas/bala-cynwyd">Bala Cynwyd</a> &middot; <a href="/service-areas/lansdale">Lansdale</a> &middot; <a href="/service-areas/jenkintown">Jenkintown</a> &middot; <a href="/service-areas/abington">Abington</a> &middot; <a href="/service-areas/cheltenham">Cheltenham</a> &middot; <a href="/service-areas/willow-grove">Willow Grove</a> &middot; <a href="/service-areas/plymouth-meeting">Plymouth Meeting</a> &middot; <a href="/service-areas/ardmore">Ardmore</a></p>
-<p>Don't see your township? Call <a href="tel:+18888234766">(888) 823-4766</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
+<p>Don't see your township? Call <a href="tel:+12672553620">(267) 255-3620</a> or <a href="/get-quote">request a free estimate</a>.</p>`,
       },
     ],
   },
@@ -458,7 +458,7 @@ export const locations: Location[] = [
     type: "county",
     metaTitle: "Roofer Camden County NJ — Roof Replacement & Repair",
     metaDescription:
-      "Camden County NJ roofing contractor. Serving Cherry Hill, Haddonfield, Collingswood & more. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Camden County NJ roofing contractor. Serving Cherry Hill, Haddonfield, Collingswood & more. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Camden County Roofing Services",
     intro:
       "Camden County, New Jersey sits directly across the Delaware River from Philadelphia, making it a natural extension of Adilay Roofing's service area. From the tree-lined suburban streets of Cherry Hill and Haddonfield to the revitalizing urban core of Camden City along the waterfront, the county offers a wide range of housing styles and roofing needs. Mid-century colonials and split-levels dominate the established neighborhoods of Voorhees and Pennsauken, while charming Victorian and early American homes line the walkable downtown streets of Collingswood and Haddonfield. Camden County's climate mirrors Philadelphia's — hot, humid summers that wear down shingles, cold winters with nor'easters that dump heavy snow, and spring storms that bring damaging wind and hail. Adilay Roofing crosses the Ben Franklin Bridge and the Betsy Ross Bridge to bring our 20-plus years of Philadelphia roofing expertise to every Camden County community. We treat every New Jersey project with the same professionalism and urgency our Pennsylvania customers expect.",
@@ -497,7 +497,7 @@ export const locations: Location[] = [
       {
         question: "How quickly can you respond to Camden County roofing emergencies?",
         answer:
-          "Our Philadelphia headquarters is just minutes from Camden County via the Ben Franklin or Betsy Ross Bridge. We can typically have a crew on-site within an hour for emergency tarping and damage assessment. For scheduled estimates, we usually arrive within 24–48 hours of your call to (888) 823-4766.",
+          "Our Philadelphia headquarters is just minutes from Camden County via the Ben Franklin or Betsy Ross Bridge. We can typically have a crew on-site within an hour for emergency tarping and damage assessment. For scheduled estimates, we usually arrive within 24–48 hours of your call to (267) 255-3620.",
       },
       {
         question: "What roofing materials do you recommend for Camden County homes?",
@@ -518,7 +518,7 @@ export const locations: Location[] = [
     type: "county",
     metaTitle: "Roofer Burlington County NJ — Roof Replacement & Repair",
     metaDescription:
-      "Burlington County NJ roofing experts. Serving Mount Laurel, Marlton, Willingboro & more. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Burlington County NJ roofing experts. Serving Mount Laurel, Marlton, Willingboro & more. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Burlington County Roofing Services",
     intro:
       "Burlington County is New Jersey's largest county by area, stretching from the Delaware River communities of Burlington City and Riverside eastward through the established suburbs of Mount Laurel, Marlton, and Moorestown. The county's western communities are just a short bridge crossing from Philadelphia, making them a natural extension of Adilay Roofing's service territory. Housing styles range from the planned mid-century developments of Willingboro — New Jersey's own Levittown — to the upscale colonials and newer construction of Mount Laurel and Evesham Township. Burlington County faces the same Delaware Valley weather challenges as the Philadelphia region: heavy winter snow loads, summer thunderstorms with damaging hail, and the relentless freeze-thaw cycling that deteriorates roofing materials over time. Adilay Roofing brings over 20 years of experience and more than 2,000 completed projects to every Burlington County home, delivering Philadelphia-caliber craftsmanship at competitive prices.",
@@ -550,7 +550,7 @@ export const locations: Location[] = [
       {
         question: "How far is Adilay Roofing from Burlington County?",
         answer:
-          "Our Philadelphia headquarters is approximately 20–30 minutes from most Burlington County communities via the Tacony-Palmyra Bridge or the Burlington-Bristol Bridge. This proximity means fast response times for estimates, emergencies, and project completion. Call us at (888) 823-4766 to schedule your free inspection.",
+          "Our Philadelphia headquarters is approximately 20–30 minutes from most Burlington County communities via the Tacony-Palmyra Bridge or the Burlington-Bristol Bridge. This proximity means fast response times for estimates, emergencies, and project completion. Call us at (267) 255-3620 to schedule your free inspection.",
       },
       {
         question: "Do you work on the Willingboro planned community homes?",
@@ -804,7 +804,7 @@ export const locations: Location[] = [
       {
         question: "Can you do an emergency roof tarp in Fishtown today?",
         answer:
-          "Almost always — yes. From our Kensington shop we can have a tarping crew on most Fishtown blocks within 20–40 minutes during business hours, and our 24/7 emergency line covers nights and weekends. Active leak in your living room? Call (888) 823-4766 right now.",
+          "Almost always — yes. From our Kensington shop we can have a tarping crew on most Fishtown blocks within 20–40 minutes during business hours, and our 24/7 emergency line covers nights and weekends. Active leak in your living room? Call (267) 255-3620 right now.",
       },
       {
         question: "Are there any historic restrictions on roofing materials in Fishtown?",
@@ -888,7 +888,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer West Philadelphia PA — Roof Replacement & Repair",
     metaDescription:
-      "West Philadelphia roofing by Adilay Roofing. Shingle, flat roof & rubber roofing for rowhouses and twins. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "West Philadelphia roofing by Adilay Roofing. Shingle, flat roof & rubber roofing for rowhouses and twins. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "West Philadelphia Roofing Services",
     intro:
       "West Philadelphia is a sprawling residential area stretching from the Schuylkill River westward through neighborhoods like Cobbs Creek, Cedar Park, Spruce Hill, and Overbrook. The housing stock is among the most diverse in the city, ranging from grand Victorian twins along Baltimore Avenue and Chester Avenue to brick rowhouses in Cobbs Creek, stone colonials in Overbrook, and mid-century apartment buildings throughout the area. Many homes date to the late 1800s and early 1900s, with original slate or aging multi-layer shingle roofs that are well past their useful life. West Philadelphia's tree-lined blocks, especially in Spruce Hill and Cedar Park, create heavy shade that promotes moss and algae growth on north-facing roof slopes. Adilay Roofing serves all of West Philadelphia from our Kensington headquarters, providing expert roof replacement, flat roof repair, and gutter services to homeowners throughout the neighborhood.",
@@ -900,7 +900,7 @@ export const locations: Location[] = [
       {
         question: "What roofing services do you offer in West Philadelphia?",
         answer:
-          "Adilay Roofing provides complete roofing services in West Philadelphia including shingle roof replacement, flat roof EPDM rubber membrane installation, storm damage repair, gutter installation, and free roof inspections. We are licensed (PA184779) and insured with 20+ years of experience. Call (888) 823-4766 for a free estimate.",
+          "Adilay Roofing provides complete roofing services in West Philadelphia including shingle roof replacement, flat roof EPDM rubber membrane installation, storm damage repair, gutter installation, and free roof inspections. We are licensed (PA184779) and insured with 20+ years of experience. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in West Philadelphia?",
@@ -910,7 +910,7 @@ export const locations: Location[] = [
       {
         question: "Do you handle flat roof repairs on West Philadelphia rowhouses?",
         answer:
-          "Yes. Flat roofs are common on West Philadelphia rowhouses and twins, and EPDM rubber membrane is our specialty. We repair leaks, replace aging membranes, address ponding water issues, and ensure proper flashing at parapet walls and penetrations. Contact Adilay Roofing at (888) 823-4766 for fast, reliable flat roof service.",
+          "Yes. Flat roofs are common on West Philadelphia rowhouses and twins, and EPDM rubber membrane is our specialty. We repair leaks, replace aging membranes, address ponding water issues, and ensure proper flashing at parapet walls and penetrations. Contact Adilay Roofing at (267) 255-3620 for fast, reliable flat roof service.",
       },
     ],
   },
@@ -922,7 +922,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer North Philadelphia PA — Roof Replacement & Repair",
     metaDescription:
-      "North Philadelphia roofing contractor. Flat roof, shingle & rubber roofing for rowhouses. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "North Philadelphia roofing contractor. Flat roof, shingle & rubber roofing for rowhouses. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "North Philadelphia Roofing Services",
     intro:
       "North Philadelphia encompasses a vast stretch of the city running from Spring Garden northward through Brewerytown, Strawberry Mansion, and up to Hunting Park and Nicetown. The neighborhood is defined by its dense blocks of two- and three-story brick rowhouses, many built between the 1880s and 1930s, with flat or low-slope roofs that require specialized rubber membrane systems. North Philadelphia is experiencing significant reinvestment, with renovation projects breathing new life into blocks that have long been underserved. New construction and gut-rehab projects along Broad Street, Ridge Avenue, and Temple University's expanding campus are transforming the roofscape. Adilay Roofing is just minutes from any North Philadelphia address — our Kensington headquarters on Dreer Street puts us closer to North Philly than virtually any other roofing contractor in the region.",
@@ -934,7 +934,7 @@ export const locations: Location[] = [
       {
         question: "Do you provide roofing services for rental properties in North Philadelphia?",
         answer:
-          "Yes. Adilay Roofing works with landlords, property managers, and investors throughout North Philadelphia. We offer competitive pricing, efficient scheduling, and volume discounts for portfolio owners. Every project is completed to the same high standard, whether owner-occupied or rental. Call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing works with landlords, property managers, and investors throughout North Philadelphia. We offer competitive pricing, efficient scheduling, and volume discounts for portfolio owners. Every project is completed to the same high standard, whether owner-occupied or rental. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How quickly can you respond to a leak in North Philadelphia?",
@@ -956,7 +956,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer Center City Philadelphia PA — Roof Replacement & Repair",
     metaDescription:
-      "Center City Philadelphia roofing experts. Flat roof, shingle & historic roof services. Licensed PA184779, 20+ yrs experience. Free estimates — (888) 823-4766.",
+      "Center City Philadelphia roofing experts. Flat roof, shingle & historic roof services. Licensed PA184779, 20+ yrs experience. Free estimates — (267) 255-3620.",
     h1: "Center City Roofing Services",
     intro:
       "Center City is the commercial and cultural heart of Philadelphia, stretching from the Delaware River to the Schuylkill between South Street and Vine Street. While much of Center City is commercial high-rise, the residential blocks of Rittenhouse Square, Washington Square West, Society Hill, and the Gayborhood are home to thousands of historic rowhouses, brownstones, and converted commercial buildings that all need expert roofing care. Center City's architectural heritage includes some of Philadelphia's oldest structures — Federal-era brick homes in Society Hill, ornate Victorian brownstones near Rittenhouse, and early American rowhouses along Pine and Spruce Streets. These homes feature a mix of flat rubber roofs, steep slate pitches, and complex transitions that demand a roofer with deep Philadelphia experience. Adilay Roofing brings over 20 years of expertise to Center City's unique roofing challenges.",
@@ -978,7 +978,7 @@ export const locations: Location[] = [
       {
         question: "What roofing systems work best for Center City rowhouses?",
         answer:
-          "EPDM rubber membrane is the standard for Center City's flat-roof rowhouses, offering reliable waterproofing and a 20–30 year lifespan. For pitched sections and slate-style roofs, we offer architectural shingles and synthetic slate options that complement the historic streetscape. Call Adilay Roofing at (888) 823-4766 for a free consultation.",
+          "EPDM rubber membrane is the standard for Center City's flat-roof rowhouses, offering reliable waterproofing and a 20–30 year lifespan. For pitched sections and slate-style roofs, we offer architectural shingles and synthetic slate options that complement the historic streetscape. Call Adilay Roofing at (267) 255-3620 for a free consultation.",
       },
     ],
   },
@@ -990,7 +990,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer Manayunk Philadelphia PA — Roof Replacement & Repair",
     metaDescription:
-      "Manayunk roofing experts. Steep-slope shingle, flat roof & gutter services for hillside homes. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Manayunk roofing experts. Steep-slope shingle, flat roof & gutter services for hillside homes. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Manayunk Roofing Services",
     intro:
       "Manayunk is one of Philadelphia's most distinctive neighborhoods, built on the steep hillside rising above the Schuylkill River and the Manayunk Canal. Main Street anchors the commercial district, while the residential blocks climb sharply up streets like Leverington Avenue, Cresson Street, Cotton Street, and Shurs Lane. The housing stock is a charming mix of stone and brick rowhouses from the late 1800s, many perched on hillside lots with dramatic elevation changes from front to back. These steep lots mean steep roofs, and the angle and wind exposure create roofing challenges that flat-terrain contractors rarely encounter. Manayunk's position along the river corridor also brings humidity and moisture that can accelerate shingle wear and promote moss growth. Adilay Roofing brings our full range of roofing services to Manayunk, with crews experienced in steep-slope work and the unique access challenges of hillside properties.",
@@ -1007,7 +1007,7 @@ export const locations: Location[] = [
       {
         question: "How important are gutters for Manayunk homes?",
         answer:
-          "Gutters are critical for Manayunk homes because of the steep terrain. Water runoff is substantial during heavy rains, and without properly sized gutters and downspouts, water can erode hillside foundations and damage retaining walls. We install seamless aluminum gutters and can add gutter guards to manage the heavy leaf debris from Manayunk's tree canopy. Call (888) 823-4766.",
+          "Gutters are critical for Manayunk homes because of the steep terrain. Water runoff is substantial during heavy rains, and without properly sized gutters and downspouts, water can erode hillside foundations and damage retaining walls. We install seamless aluminum gutters and can add gutter guards to manage the heavy leaf debris from Manayunk's tree canopy. Call (267) 255-3620.",
       },
       {
         question: "What roofing material is best for Manayunk's steep roofs?",
@@ -1058,7 +1058,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer University City Philadelphia PA — Roof Replacement & Repair",
     metaDescription:
-      "University City roofing by Adilay Roofing. Shingle, flat roof & rubber roofing near Penn & Drexel. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "University City roofing by Adilay Roofing. Shingle, flat roof & rubber roofing near Penn & Drexel. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "University City Roofing Services",
     intro:
       "University City is a vibrant Philadelphia neighborhood anchored by the University of Pennsylvania and Drexel University, stretching from the Schuylkill River westward through Spruce Hill, Cedar Park, and Garden Court. The housing stock is eclectic — grand Victorian twins and triples along Baltimore Avenue and Woodland Avenue, brick rowhouses on the side streets, and modern apartment and condo developments near the campuses. Many of the older homes in Spruce Hill and Cedar Park date to the late 1800s and feature original slate roofs, steep cross-gabled pitches, and ornate architectural details that require careful roofing work. The neighborhood also includes a significant number of rental properties serving the student population, where landlords need reliable, cost-effective roofing solutions. Adilay Roofing provides comprehensive roofing services to University City homeowners, landlords, and property managers alike.",
@@ -1070,7 +1070,7 @@ export const locations: Location[] = [
       {
         question: "Do you work with landlords and property managers in University City?",
         answer:
-          "Yes. Adilay Roofing works with many landlords and property management companies in University City. We understand the need for efficient scheduling between tenant leases, competitive pricing for multiple properties, and minimal disruption to residents. Licensed PA184779 — call (888) 823-4766 for volume pricing and portfolio consultations.",
+          "Yes. Adilay Roofing works with many landlords and property management companies in University City. We understand the need for efficient scheduling between tenant leases, competitive pricing for multiple properties, and minimal disruption to residents. Licensed PA184779 — call (267) 255-3620 for volume pricing and portfolio consultations.",
       },
       {
         question: "Can you replace a slate roof on a University City Victorian?",
@@ -1080,7 +1080,7 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in University City?",
         answer:
-          "Costs vary based on home size, roof complexity, and material choice. Typical University City rowhouse or twin replacements range from $6,000 to $14,000, while larger Victorian homes with complex roof lines may be $15,000 to $25,000+. Adilay Roofing provides free on-site estimates with transparent pricing — call (888) 823-4766.",
+          "Costs vary based on home size, roof complexity, and material choice. Typical University City rowhouse or twin replacements range from $6,000 to $14,000, while larger Victorian homes with complex roof lines may be $15,000 to $25,000+. Adilay Roofing provides free on-site estimates with transparent pricing — call (267) 255-3620.",
       },
     ],
   },
@@ -1096,7 +1096,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Norristown PA — Affordable Roof Replacement & Repair",
     metaDescription:
-      "Norristown roofing contractor. Shingle, flat roof & storm damage repair for homes near Main St & beyond. Licensed PA184779, free estimates — (888) 823-4766.",
+      "Norristown roofing contractor. Shingle, flat roof & storm damage repair for homes near Main St & beyond. Licensed PA184779, free estimates — (267) 255-3620.",
     h1: "Norristown Roofing Services",
     intro:
       "Norristown is the county seat of Montgomery County and one of the most densely built boroughs in the Philadelphia suburbs. The downtown core along Main Street and DeKalb Street features a mix of commercial buildings and attached residential properties that share many characteristics with Philadelphia's rowhouse architecture — flat roofs, parapet walls, and tight lot lines. Move beyond the borough center into the surrounding residential blocks along Markley Street, Fornance Street, and Stanbridge Street, and you find a mix of older twins, detached colonials, and Victorian-era homes that have served families for generations. Norristown's proximity to the Schuylkill River means the borough occasionally deals with flooding concerns, and the overall humidity near the waterway accelerates wear on roofing materials. The housing stock in Norristown tends to be older, with many roofs original to homes built between 1900 and 1960, making regular inspection and timely replacement critical. Adilay Roofing provides Norristown homeowners with affordable, high-quality roofing services. We are a quick drive from our Philadelphia headquarters via I-76 and the Schuylkill Expressway, and we treat every Norristown project with the same care and professionalism we bring to our own neighborhood.",
@@ -1364,7 +1364,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer King of Prussia PA — Roof Replacement & Repair",
     metaDescription:
-      "King of Prussia roofing by Adilay Roofing. Shingle, flat roof & storm damage repair. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "King of Prussia roofing by Adilay Roofing. Shingle, flat roof & storm damage repair. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "King of Prussia Roofing Services",
     intro:
       "King of Prussia is one of Montgomery County's most dynamic communities, known for the King of Prussia Mall and the thriving commercial corridor along Route 202 and the Pennsylvania Turnpike. Beyond the commercial center, KOP's residential neighborhoods feature a mix of mid-century ranch homes and split-levels in established developments, newer colonial and contemporary homes in planned communities, and upscale townhome complexes built in recent decades. The housing diversity means roofing needs range from straightforward shingle replacements on ranch homes to complex multi-plane roof systems on larger colonials. King of Prussia's weather follows the Delaware Valley pattern — hot summers, cold winters with nor'easters, and spring storms that bring hail and damaging wind. Adilay Roofing serves King of Prussia from our Philadelphia headquarters, bringing over 20 years of experience and more than 2,000 completed projects to every KOP home.",
@@ -1376,7 +1376,7 @@ export const locations: Location[] = [
       {
         question: "Do you work with HOAs in King of Prussia?",
         answer:
-          "Yes. Many King of Prussia neighborhoods have homeowners associations with specific roofing requirements. Adilay Roofing (PA184779) is experienced in meeting HOA guidelines for materials, colors, and documentation. We help you navigate the architectural review process and ensure your new roof meets all community standards. Call (888) 823-4766.",
+          "Yes. Many King of Prussia neighborhoods have homeowners associations with specific roofing requirements. Adilay Roofing (PA184779) is experienced in meeting HOA guidelines for materials, colors, and documentation. We help you navigate the architectural review process and ensure your new roof meets all community standards. Call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in King of Prussia?",
@@ -1386,7 +1386,7 @@ export const locations: Location[] = [
       {
         question: "Can you handle storm damage repairs in King of Prussia?",
         answer:
-          "Absolutely. We respond quickly to storm damage calls in King of Prussia, providing emergency tarping and thorough damage documentation for insurance claims. Our crews can typically be on-site within 24 hours for assessment. We handle the full repair or replacement process from start to finish. Call (888) 823-4766 for emergency service.",
+          "Absolutely. We respond quickly to storm damage calls in King of Prussia, providing emergency tarping and thorough damage documentation for insurance claims. Our crews can typically be on-site within 24 hours for assessment. We handle the full repair or replacement process from start to finish. Call (267) 255-3620 for emergency service.",
       },
     ],
   },
@@ -1398,7 +1398,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Ardmore PA — Roof Replacement & Repair",
     metaDescription:
-      "Ardmore roofing contractor. Shingle, slate & flat roof services for Main Line homes. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Ardmore roofing contractor. Shingle, slate & flat roof services for Main Line homes. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Ardmore Roofing Services",
     intro:
       "Ardmore straddles the border of Montgomery and Delaware Counties along the historic Main Line, offering a charming mix of residential streets anchored by the revitalized Suburban Square shopping district. The housing stock ranges from grand stone colonials and Tudor-revival homes on tree-lined streets to more modest twin homes and Victorian-era rowhouses near the commercial center. Many Ardmore homes date to the early 1900s and feature original slate roofs, copper flashing, and complex roof geometries with multiple dormers and valleys. The area's mature tree canopy creates heavy shade that promotes moss and algae growth on north-facing roof slopes. Adilay Roofing brings expert craftsmanship to Ardmore's diverse housing stock, handling everything from premium slate-to-shingle conversions to routine shingle replacements with the same attention to detail.",
@@ -1410,7 +1410,7 @@ export const locations: Location[] = [
       {
         question: "Can you work on historic Main Line homes in Ardmore?",
         answer:
-          "Yes. Adilay Roofing has extensive experience with the older, architecturally significant homes found throughout Ardmore and the Main Line. We work with slate, copper, and premium shingle materials that complement the character of these properties. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing has extensive experience with the older, architecturally significant homes found throughout Ardmore and the Main Line. We work with slate, copper, and premium shingle materials that complement the character of these properties. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "What roofing materials do you recommend for Ardmore homes?",
@@ -1420,7 +1420,7 @@ export const locations: Location[] = [
       {
         question: "How do you handle moss and algae on Ardmore roofs?",
         answer:
-          "Ardmore's heavy tree canopy creates ideal conditions for moss and algae growth. We safely remove existing growth and can install zinc or copper ridge strips that inhibit regrowth. We also recommend algae-resistant shingles for replacements. Regular tree trimming helps increase sunlight exposure and reduce future growth. Call (888) 823-4766.",
+          "Ardmore's heavy tree canopy creates ideal conditions for moss and algae growth. We safely remove existing growth and can install zinc or copper ridge strips that inhibit regrowth. We also recommend algae-resistant shingles for replacements. Regular tree trimming helps increase sunlight exposure and reduce future growth. Call (267) 255-3620.",
       },
     ],
   },
@@ -1432,7 +1432,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Abington PA — Roof Replacement & Repair",
     metaDescription:
-      "Abington roofing contractor. Shingle roof replacement, storm damage repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Abington roofing contractor. Shingle roof replacement, storm damage repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Abington Roofing Services",
     intro:
       "Abington Township is a large, established residential community in eastern Montgomery County, directly bordering Philadelphia's Cheltenham neighborhood. The township encompasses well-known communities including Abington proper, Glenside, Roslyn, and McKinley Park. The housing stock is predominantly mid-century — colonials, Cape Cods, and split-levels built during the postwar suburban expansion of the 1950s and 1960s line the streets along Old York Road, Susquehanna Road, and Edge Hill Road. Many of these homes are now 60-plus years old with aging roof systems that need attention. Abington's mature tree canopy creates shade that promotes moss growth and deposits heavy leaf debris in gutters and valleys. Adilay Roofing provides comprehensive roofing services to Abington homeowners, bringing our Philadelphia expertise to this established suburban community.",
@@ -1444,17 +1444,17 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Abington?",
         answer:
-          "A typical Abington home roof replacement ranges from $8,000 to $16,000, depending on size, material choice, and complexity. Larger colonials with dormers and multiple roof planes may be higher. Adilay Roofing (PA184779) provides free on-site estimates with transparent pricing. Call (888) 823-4766 to schedule yours.",
+          "A typical Abington home roof replacement ranges from $8,000 to $16,000, depending on size, material choice, and complexity. Larger colonials with dormers and multiple roof planes may be higher. Adilay Roofing (PA184779) provides free on-site estimates with transparent pricing. Call (267) 255-3620 to schedule yours.",
       },
       {
         question: "Do you offer gutter services in Abington?",
         answer:
-          "Yes. Abington's mature trees make gutter maintenance essential. We install seamless aluminum gutters, gutter guards, and provide gutter repair services. We can often coordinate gutter work with your roof replacement for efficiency and better value. Call (888) 823-4766 for a free estimate.",
+          "Yes. Abington's mature trees make gutter maintenance essential. We install seamless aluminum gutters, gutter guards, and provide gutter repair services. We can often coordinate gutter work with your roof replacement for efficiency and better value. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "Can you fix ice dam damage on my Abington home?",
         answer:
-          "Yes. Ice dams are common on Abington's mid-century homes due to older ventilation systems. We repair the damage caused by ice dams and address the root cause by improving attic ventilation and ensuring proper ice and water shield installation along the eaves. Prevention is key — call (888) 823-4766 for an inspection.",
+          "Yes. Ice dams are common on Abington's mid-century homes due to older ventilation systems. We repair the damage caused by ice dams and address the root cause by improving attic ventilation and ensuring proper ice and water shield installation along the eaves. Prevention is key — call (267) 255-3620 for an inspection.",
       },
     ],
   },
@@ -1478,7 +1478,7 @@ export const locations: Location[] = [
       {
         question: "Do you serve all of Cheltenham Township?",
         answer:
-          "Yes. Adilay Roofing serves every community within Cheltenham Township, including Elkins Park, Wyncote, Cheltenham Village, Melrose Park, and LaMott. Our Philadelphia headquarters is just minutes from Cheltenham via Route 309 or Old York Road. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing serves every community within Cheltenham Township, including Elkins Park, Wyncote, Cheltenham Village, Melrose Park, and LaMott. Our Philadelphia headquarters is just minutes from Cheltenham via Route 309 or Old York Road. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "Can you work on the older stone homes in Elkins Park?",
@@ -1488,7 +1488,7 @@ export const locations: Location[] = [
       {
         question: "How quickly can you respond to Cheltenham roofing emergencies?",
         answer:
-          "Cheltenham is one of the closest communities to our Philadelphia headquarters — we can typically arrive within 20–30 minutes. For emergency leaks or storm damage, we prioritize rapid response and can often have a crew on-site the same day. Call Adilay Roofing at (888) 823-4766 for immediate assistance.",
+          "Cheltenham is one of the closest communities to our Philadelphia headquarters — we can typically arrive within 20–30 minutes. For emergency leaks or storm damage, we prioritize rapid response and can often have a crew on-site the same day. Call Adilay Roofing at (267) 255-3620 for immediate assistance.",
       },
     ],
   },
@@ -1500,7 +1500,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Jenkintown PA — Roof Replacement & Repair",
     metaDescription:
-      "Jenkintown roofing experts. Shingle, flat roof & historic home roofing. Licensed PA184779, 20+ yrs experience. Free estimates — call (888) 823-4766 today.",
+      "Jenkintown roofing experts. Shingle, flat roof & historic home roofing. Licensed PA184779, 20+ yrs experience. Free estimates — call (267) 255-3620 today.",
     h1: "Jenkintown Roofing Services",
     intro:
       "Jenkintown is a compact, walkable borough in eastern Montgomery County known for its charming downtown along Old York Road and its collection of well-maintained residential properties. Despite its small size — just 0.6 square miles — Jenkintown packs a remarkable variety of housing styles, from Victorian-era homes near the train station to brick twins, stone colonials, and mid-century Cape Cods throughout the borough's tree-lined blocks. Many homes date to the late 1800s and early 1900s, with aging roof systems that need expert attention. Jenkintown's tight lot lines and older construction share characteristics with Philadelphia's rowhouse neighborhoods, making Adilay Roofing's urban expertise a perfect fit. We provide comprehensive roofing services to Jenkintown homeowners, from routine shingle replacements to complex historic roof restorations.",
@@ -1512,7 +1512,7 @@ export const locations: Location[] = [
       {
         question: "Can you work on Victorian homes in Jenkintown?",
         answer:
-          "Yes. Adilay Roofing has extensive experience with the Victorian-era homes found throughout Jenkintown. We handle complex steep-pitched roofs, slate repairs, and decorative elements with the care these older properties deserve. Licensed PA184779 — call (888) 823-4766 for a free estimate on your Jenkintown home.",
+          "Yes. Adilay Roofing has extensive experience with the Victorian-era homes found throughout Jenkintown. We handle complex steep-pitched roofs, slate repairs, and decorative elements with the care these older properties deserve. Licensed PA184779 — call (267) 255-3620 for a free estimate on your Jenkintown home.",
       },
       {
         question: "How long does a Jenkintown roof replacement take?",
@@ -1522,7 +1522,7 @@ export const locations: Location[] = [
       {
         question: "Do you offer free roof inspections in Jenkintown?",
         answer:
-          "Yes. We provide free, no-obligation roof inspections for all Jenkintown homeowners. Our inspector will assess your roof's condition, document any issues with photos, and provide an honest recommendation — we only suggest replacement when it is truly necessary. Call (888) 823-4766 to schedule.",
+          "Yes. We provide free, no-obligation roof inspections for all Jenkintown homeowners. Our inspector will assess your roof's condition, document any issues with photos, and provide an honest recommendation — we only suggest replacement when it is truly necessary. Call (267) 255-3620 to schedule.",
       },
     ],
   },
@@ -1534,7 +1534,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Lansdale PA — Roof Replacement & Repair",
     metaDescription:
-      "Lansdale roofing contractor. Shingle replacement, storm damage repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Lansdale roofing contractor. Shingle replacement, storm damage repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Lansdale Roofing Services",
     intro:
       "Lansdale is a thriving borough in northern Montgomery County, anchored by its revitalized downtown along Main Street and surrounded by established residential neighborhoods. The housing stock ranges from Victorian-era homes near the SEPTA rail station to mid-century colonials, Cape Cods, and ranchers that fill the borough's tree-lined streets. Newer townhome and condo developments on the borough's edges add contemporary housing options. Lansdale's position in northern Montco means slightly colder winter temperatures than the inner suburbs, with heavier snow accumulations that test roof systems. Adilay Roofing provides Lansdale homeowners with expert roofing services backed by over 20 years of experience and the proven craftsmanship we bring from our Philadelphia headquarters.",
@@ -1546,7 +1546,7 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Lansdale?",
         answer:
-          "A typical Lansdale home roof replacement ranges from $8,000 to $16,000 depending on size, material choice, and roof complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Adilay Roofing (PA184779) — call (888) 823-4766 to schedule your free estimate.",
+          "A typical Lansdale home roof replacement ranges from $8,000 to $16,000 depending on size, material choice, and roof complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Adilay Roofing (PA184779) — call (267) 255-3620 to schedule your free estimate.",
       },
       {
         question: "Do you handle snow and ice damage repairs in Lansdale?",
@@ -1556,7 +1556,7 @@ export const locations: Location[] = [
       {
         question: "Can you work on the older homes near downtown Lansdale?",
         answer:
-          "Absolutely. The Victorian and early American homes near downtown Lansdale often have complex roof systems with steep pitches, dormers, and decorative elements. Our crews have extensive experience with these older construction styles. We will preserve the character of your home while ensuring a modern, watertight roof system. Call (888) 823-4766.",
+          "Absolutely. The Victorian and early American homes near downtown Lansdale often have complex roof systems with steep pitches, dormers, and decorative elements. Our crews have extensive experience with these older construction styles. We will preserve the character of your home while ensuring a modern, watertight roof system. Call (267) 255-3620.",
       },
     ],
   },
@@ -1568,7 +1568,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Willow Grove PA — Roof Replacement & Repair",
     metaDescription:
-      "Willow Grove roofing by Adilay Roofing. Shingle replacement, storm repairs & gutters. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Willow Grove roofing by Adilay Roofing. Shingle replacement, storm repairs & gutters. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Willow Grove Roofing Services",
     intro:
       "Willow Grove is a well-established community in eastern Montgomery County, centered around the Willow Grove Park Mall area and surrounded by residential neighborhoods that span Abington and Upper Moreland Townships. The housing stock is predominantly mid-century — colonials, split-levels, and ranchers from the 1950s and 1960s line the residential streets near Easton Road, Davisville Road, and Moreland Road. Many of these homes are now 60-plus years old with aging shingle roofs that need replacement. Willow Grove also has pockets of newer construction and townhome developments. Adilay Roofing serves Willow Grove homeowners with the full range of roofing services, bringing our proven Philadelphia expertise to this established suburban community just a short drive from our headquarters.",
@@ -1580,17 +1580,17 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Willow Grove?",
         answer:
-          "A typical Willow Grove home roof replacement ranges from $8,000 to $15,000 depending on size, material, and complexity. Colonial homes with dormers and multiple planes may be higher. Adilay Roofing (PA184779) provides free on-site estimates. Call (888) 823-4766 to schedule yours.",
+          "A typical Willow Grove home roof replacement ranges from $8,000 to $15,000 depending on size, material, and complexity. Colonial homes with dormers and multiple planes may be higher. Adilay Roofing (PA184779) provides free on-site estimates. Call (267) 255-3620 to schedule yours.",
       },
       {
         question: "Do you serve the areas around Willow Grove?",
         answer:
-          "Yes. We serve Willow Grove and all surrounding communities including Abington, Upper Moreland, Horsham, Warminster, and Hatboro. Our Montgomery County service area covers the full eastern portion of the county. Call (888) 823-4766 for a free estimate anywhere in the area.",
+          "Yes. We serve Willow Grove and all surrounding communities including Abington, Upper Moreland, Horsham, Warminster, and Hatboro. Our Montgomery County service area covers the full eastern portion of the county. Call (267) 255-3620 for a free estimate anywhere in the area.",
       },
       {
         question: "Can you replace my roof and gutters at the same time?",
         answer:
-          "Yes, and we recommend it. Coordinating roof and gutter replacement ensures a seamless connection between the drip edge, fascia, and gutter system. This approach also saves time and can reduce overall project costs compared to doing the work separately. Call (888) 823-4766 for a combined estimate.",
+          "Yes, and we recommend it. Coordinating roof and gutter replacement ensures a seamless connection between the drip edge, fascia, and gutter system. This approach also saves time and can reduce overall project costs compared to doing the work separately. Call (267) 255-3620 for a combined estimate.",
       },
     ],
   },
@@ -1602,7 +1602,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Plymouth Meeting PA — Roof Replacement & Repair",
     metaDescription:
-      "Plymouth Meeting roofing by Adilay Roofing. Shingle, flat roof & storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Plymouth Meeting roofing by Adilay Roofing. Shingle, flat roof & storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Plymouth Meeting Roofing Services",
     intro:
       "Plymouth Meeting is a thriving community in central Montgomery County, situated at the intersection of I-476 (the Blue Route) and the Pennsylvania Turnpike. Known for the Plymouth Meeting Mall and its excellent connectivity to Philadelphia and the western suburbs, the area features a mix of established residential neighborhoods and newer developments. Housing ranges from mid-century colonials and ranchers in the older sections of Plymouth Township to upscale townhomes and single-family homes in newer planned communities. The area's mature trees provide beautiful shade but also contribute to moss growth and gutter debris that challenge roof systems. Adilay Roofing brings our full suite of roofing services to Plymouth Meeting homeowners, delivering the same quality craftsmanship we are known for throughout the Philadelphia region.",
@@ -1614,12 +1614,12 @@ export const locations: Location[] = [
       {
         question: "Do you work with HOAs in Plymouth Meeting?",
         answer:
-          "Yes. Many Plymouth Meeting developments have homeowners associations with specific roofing requirements. Adilay Roofing (PA184779) is experienced in meeting HOA guidelines and can provide all documentation needed for architectural review. Call (888) 823-4766 for a free consultation.",
+          "Yes. Many Plymouth Meeting developments have homeowners associations with specific roofing requirements. Adilay Roofing (PA184779) is experienced in meeting HOA guidelines and can provide all documentation needed for architectural review. Call (267) 255-3620 for a free consultation.",
       },
       {
         question: "How quickly can you get to Plymouth Meeting?",
         answer:
-          "Plymouth Meeting is approximately 25–30 minutes from our Philadelphia headquarters via I-76 and I-476. For emergencies, we prioritize rapid response and can often have a crew on-site the same day. For scheduled estimates, we typically arrive within 24–48 hours of your call to (888) 823-4766.",
+          "Plymouth Meeting is approximately 25–30 minutes from our Philadelphia headquarters via I-76 and I-476. For emergencies, we prioritize rapid response and can often have a crew on-site the same day. For scheduled estimates, we typically arrive within 24–48 hours of your call to (267) 255-3620.",
       },
       {
         question: "What roofing materials work best for Plymouth Meeting homes?",
@@ -1640,7 +1640,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Doylestown PA — Roof Replacement & Repair",
     metaDescription:
-      "Doylestown roofing experts. Shingle, slate & cedar shake roofing for borough & township homes. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Doylestown roofing experts. Shingle, slate & cedar shake roofing for borough & township homes. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Doylestown Roofing Services",
     intro:
       "Doylestown is the county seat of Bucks County and one of the most charming boroughs in the Philadelphia suburbs, known for its vibrant arts scene, historic architecture, and walkable downtown centered around State and Main Streets. The housing stock includes beautifully preserved Victorian homes near the Mercer Museum, early American colonials throughout the borough, and newer construction in the surrounding Doylestown Township. Doylestown's position in central Bucks County means slightly colder winters and heavier snowfalls than the lower county, putting extra stress on roof systems. Adilay Roofing provides Doylestown homeowners with expert roofing services, from historic roof restoration to modern shingle replacement, backed by over 20 years of experience.",
@@ -1652,17 +1652,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on historic homes in Doylestown Borough?",
         answer:
-          "Yes. Adilay Roofing has experience with the Victorian and early American homes found throughout Doylestown's historic borough. We select materials that respect the architectural character while providing modern waterproofing performance. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing has experience with the Victorian and early American homes found throughout Doylestown's historic borough. We select materials that respect the architectural character while providing modern waterproofing performance. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Doylestown?",
         answer:
-          "Doylestown home roof replacements typically range from $10,000 to $20,000 depending on size, material, and complexity. Historic homes with complex roof lines and premium materials may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Doylestown home roof replacements typically range from $10,000 to $20,000 depending on size, material, and complexity. Historic homes with complex roof lines and premium materials may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Do you handle snow and ice damage in Doylestown?",
         answer:
-          "Yes. Doylestown's central Bucks County location brings heavier snow loads than the lower county. We repair ice dam damage, wind-damaged shingles, and structural issues from heavy snow. We also install proper ice and water shield and improve attic ventilation to prevent future problems. Call (888) 823-4766.",
+          "Yes. Doylestown's central Bucks County location brings heavier snow loads than the lower county. We repair ice dam damage, wind-damaged shingles, and structural issues from heavy snow. We also install proper ice and water shield and improve attic ventilation to prevent future problems. Call (267) 255-3620.",
       },
     ],
   },
@@ -1674,7 +1674,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Bristol PA — Roof Replacement & Repair",
     metaDescription:
-      "Bristol PA roofing contractor. Shingle, flat roof & storm damage repair. Licensed PA184779, 20+ yrs experience. Free estimates — call (888) 823-4766.",
+      "Bristol PA roofing contractor. Shingle, flat roof & storm damage repair. Licensed PA184779, 20+ yrs experience. Free estimates — call (267) 255-3620.",
     h1: "Bristol Roofing Services",
     intro:
       "Bristol Borough and Bristol Township sit along the Delaware River in lower Bucks County, offering a mix of historic riverfront homes and mid-century suburban development. The borough's downtown along Mill Street features charming older homes and commercial buildings dating to the 1800s, while Bristol Township's residential neighborhoods are filled with postwar ranchers, Cape Cods, and colonials similar to nearby Levittown. Bristol's riverfront location means increased humidity and moisture exposure that can accelerate roofing material degradation. Many homes in the area have aging roofs that are well past their useful life. Adilay Roofing serves Bristol homeowners from our Philadelphia headquarters, just a short drive via I-95, providing expert roofing services at competitive prices.",
@@ -1686,17 +1686,17 @@ export const locations: Location[] = [
       {
         question: "Do you serve both Bristol Borough and Bristol Township?",
         answer:
-          "Yes. Adilay Roofing serves all of Bristol — both the historic borough along the Delaware River and the surrounding township. We handle the specific permitting requirements for each municipality. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing serves all of Bristol — both the historic borough along the Delaware River and the surrounding township. We handle the specific permitting requirements for each municipality. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How quickly can you get to Bristol from Philadelphia?",
         answer:
-          "Bristol is approximately 25 minutes from our Philadelphia headquarters via I-95. We can respond quickly to estimates and emergencies. For active leaks or storm damage, we prioritize rapid response and can often be on-site the same day. Call (888) 823-4766.",
+          "Bristol is approximately 25 minutes from our Philadelphia headquarters via I-95. We can respond quickly to estimates and emergencies. For active leaks or storm damage, we prioritize rapid response and can often be on-site the same day. Call (267) 255-3620.",
       },
       {
         question: "What roofing material is best for Bristol homes near the river?",
         answer:
-          "For Bristol's riverfront homes, we recommend moisture-resistant materials. Architectural shingles with algae resistance perform well in humid conditions, and EPDM rubber membrane is ideal for flat or low-slope sections. Proper ventilation is also critical to managing moisture in river-adjacent homes. Free estimates available — call (888) 823-4766.",
+          "For Bristol's riverfront homes, we recommend moisture-resistant materials. Architectural shingles with algae resistance perform well in humid conditions, and EPDM rubber membrane is ideal for flat or low-slope sections. Proper ventilation is also critical to managing moisture in river-adjacent homes. Free estimates available — call (267) 255-3620.",
       },
     ],
   },
@@ -1708,7 +1708,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Langhorne PA — Shingle, Flat Roof & Emergency Repair",
     metaDescription:
-      "Langhorne roofing experts. Shingle replacement, flat roof, storm damage & emergency repair for Middletown Twp homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Langhorne roofing experts. Shingle replacement, flat roof, storm damage & emergency repair for Middletown Twp homes. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Langhorne PA Roofing Services",
     intro:
       "Langhorne is a historic borough at the heart of lower Bucks County, surrounded by Middletown Township and bordered by the Route 1 and I-95 corridors that make it one of the most convenient suburban communities to reach from both Philadelphia and central New Jersey. The borough itself covers less than half a square mile but sits within a much larger service area that includes Oxford Valley, Middletown Township, Parkland, Parkland Manor, and the communities around Sesame Place and Oxford Valley Mall. Langhorne's housing stock is remarkably diverse — beautifully preserved Victorian and early-American homes line the streets of the historic borough along Maple, Bellevue, and Pine avenues; mid-century colonials, split-levels, and ranchers fill the broader Middletown Township; and newer developments continue to add construction along the Route 413 and Langhorne-Yardley Road corridors. Most Langhorne-area homes have pitched asphalt shingle roofs, though the older borough homes sometimes feature slate, cedar shake, or complex multi-level shingle systems with dormers and steep valleys. Adilay Roofing has been serving Langhorne and the surrounding Middletown Township for years, handling full roof replacements, shingle repairs, storm-damage claims, gutter installations, and emergency leak response. Our Kensington headquarters is approximately 30 minutes away via I-95, making us one of the most responsive roofers for the Langhorne area.",
@@ -1726,22 +1726,22 @@ export const locations: Location[] = [
       {
         question: "Do you serve Langhorne Borough and Middletown Township?",
         answer:
-          "Yes. Adilay Roofing serves both Langhorne Borough and the surrounding Middletown Township, including Oxford Valley, Parkland, Parkland Manor, and Penndel. Each municipality has its own permitting process, and we handle both. Licensed PA184779 — call (888) 823-4766 for a free estimate anywhere in the Langhorne area.",
+          "Yes. Adilay Roofing serves both Langhorne Borough and the surrounding Middletown Township, including Oxford Valley, Parkland, Parkland Manor, and Penndel. Each municipality has its own permitting process, and we handle both. Licensed PA184779 — call (267) 255-3620 for a free estimate anywhere in the Langhorne area.",
       },
       {
         question: "How much does a roof replacement cost in Langhorne?",
         answer:
-          "Langhorne-area roof replacements typically range from $8,000 to $16,000 for standard single-family homes, with larger or more complex Victorian and multi-level homes running $15,000 to $25,000+. Premium materials like cedar shake or synthetic slate add to that range. We provide free on-site estimates with transparent, itemized pricing. Call (888) 823-4766.",
+          "Langhorne-area roof replacements typically range from $8,000 to $16,000 for standard single-family homes, with larger or more complex Victorian and multi-level homes running $15,000 to $25,000+. Premium materials like cedar shake or synthetic slate add to that range. We provide free on-site estimates with transparent, itemized pricing. Call (267) 255-3620.",
       },
       {
         question: "Can you handle emergency roof repairs in Langhorne?",
         answer:
-          "Yes. We respond to Langhorne emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization to prevent further interior damage. Our I-95 proximity means we're among the fastest responders in lower Bucks County. Call (888) 823-4766 for 24/7 emergency service.",
+          "Yes. We respond to Langhorne emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization to prevent further interior damage. Our I-95 proximity means we're among the fastest responders in lower Bucks County. Call (267) 255-3620 for 24/7 emergency service.",
       },
       {
         question: "Do you work on historic homes in Langhorne Borough?",
         answer:
-          "Yes. Langhorne Borough has a notable collection of Victorian and early-American homes, some within the borough's historic district. We're experienced with historic-sensitive roofing — matching period-appropriate materials, preserving original details, and working within any historic district review requirements. Call (888) 823-4766 for an on-site assessment.",
+          "Yes. Langhorne Borough has a notable collection of Victorian and early-American homes, some within the borough's historic district. We're experienced with historic-sensitive roofing — matching period-appropriate materials, preserving original details, and working within any historic district review requirements. Call (267) 255-3620 for an on-site assessment.",
       },
     ],
   },
@@ -1753,7 +1753,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Newtown PA — Roof Replacement & Repair",
     metaDescription:
-      "Newtown PA roofing experts. Shingle, slate & premium roofing for borough & township homes. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Newtown PA roofing experts. Shingle, slate & premium roofing for borough & township homes. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Newtown Roofing Services",
     intro:
       "Newtown is one of Bucks County's most desirable communities, encompassing the historic Newtown Borough with its charming State Street downtown and the surrounding Newtown Township with its upscale residential developments. The borough features beautifully preserved colonial and Federal-era homes dating to the 1700s and 1800s, while the township offers larger contemporary colonials, Tudors, and custom homes on wooded lots. Newtown's homes often feature complex roof systems with multiple planes, dormers, and premium materials that demand expert installation. Adilay Roofing brings over 20 years of experience to Newtown's diverse housing stock, providing premium roofing services that match the quality these homes deserve.",
@@ -1765,17 +1765,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on historic homes in Newtown Borough?",
         answer:
-          "Yes. Adilay Roofing has experience with the colonial and Federal-era homes found throughout Newtown Borough. We select materials that complement the historic character while providing modern performance. We work within any applicable preservation guidelines. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing has experience with the colonial and Federal-era homes found throughout Newtown Borough. We select materials that complement the historic character while providing modern performance. We work within any applicable preservation guidelines. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "What roofing materials do you recommend for Newtown homes?",
         answer:
-          "For Newtown's upscale colonials and Tudors, we recommend architectural or designer shingles that offer premium appearance and durability. For historic homes, synthetic slate can replicate the original look at a lower cost. We assess each home individually and recommend the ideal material during a free inspection. Call (888) 823-4766.",
+          "For Newtown's upscale colonials and Tudors, we recommend architectural or designer shingles that offer premium appearance and durability. For historic homes, synthetic slate can replicate the original look at a lower cost. We assess each home individually and recommend the ideal material during a free inspection. Call (267) 255-3620.",
       },
       {
         question: "Do you work with HOAs in Newtown Township developments?",
         answer:
-          "Yes. Many Newtown Township neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines, providing the required documentation, and helping homeowners navigate the architectural review process. Call (888) 823-4766 for a free consultation.",
+          "Yes. Many Newtown Township neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines, providing the required documentation, and helping homeowners navigate the architectural review process. Call (267) 255-3620 for a free consultation.",
       },
     ],
   },
@@ -1787,7 +1787,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Yardley PA — Roof Replacement & Repair",
     metaDescription:
-      "Yardley roofing by Adilay Roofing. Shingle, slate & premium roofing services. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Yardley roofing by Adilay Roofing. Shingle, slate & premium roofing services. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Yardley Roofing Services",
     intro:
       "Yardley is a picturesque borough along the Delaware River in lower Bucks County, known for its historic Main Street, canal towpath, and beautifully preserved homes. The borough features colonial-era stone homes, Victorian-era residences, and carefully maintained properties that reflect centuries of Bucks County history. The surrounding Lower Makefield Township adds upscale residential developments with larger contemporary homes. Yardley's riverfront location brings increased humidity and moisture exposure, while its mature tree canopy promotes moss growth and creates gutter debris. Adilay Roofing provides Yardley homeowners with expert roofing services that respect the character of this historic community while delivering modern waterproofing performance.",
@@ -1799,17 +1799,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on Yardley's historic stone homes?",
         answer:
-          "Yes. Adilay Roofing has experience with the historic stone and colonial homes found throughout Yardley. We handle slate repairs, copper flashing, and premium shingle installations that complement these properties' architectural character. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing has experience with the historic stone and colonial homes found throughout Yardley. We handle slate repairs, copper flashing, and premium shingle installations that complement these properties' architectural character. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How do you handle the moisture challenges near the Delaware River?",
         answer:
-          "Yardley's riverfront location increases humidity and moisture exposure. We use moisture-resistant materials, ensure proper ventilation, and pay extra attention to drainage and gutter systems. Algae-resistant shingles are recommended for homes in humid areas. Call (888) 823-4766 for an assessment.",
+          "Yardley's riverfront location increases humidity and moisture exposure. We use moisture-resistant materials, ensure proper ventilation, and pay extra attention to drainage and gutter systems. Algae-resistant shingles are recommended for homes in humid areas. Call (267) 255-3620 for an assessment.",
       },
       {
         question: "Do you serve Lower Makefield Township around Yardley?",
         answer:
-          "Yes. We serve Yardley Borough and all of the surrounding Lower Makefield Township. We handle the specific permitting requirements for each municipality and provide the same quality service throughout the area. Call Adilay Roofing at (888) 823-4766.",
+          "Yes. We serve Yardley Borough and all of the surrounding Lower Makefield Township. We handle the specific permitting requirements for each municipality and provide the same quality service throughout the area. Call Adilay Roofing at (267) 255-3620.",
       },
     ],
   },
@@ -1821,7 +1821,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Warminster PA — Roof Replacement & Repair",
     metaDescription:
-      "Warminster roofing contractor. Shingle replacement, storm repairs & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Warminster roofing contractor. Shingle replacement, storm repairs & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Warminster Roofing Services",
     intro:
       "Warminster Township is a large, established residential community in central Bucks County, stretching along the Route 263 and Street Road corridors. The township's housing stock is predominantly mid-century — colonials, split-levels, and ranchers built during the suburban expansion of the 1950s through 1970s, along with newer developments that have filled in over recent decades. Many of Warminster's older homes are now 50-plus years old with aging roof systems that need attention. The township's location in central Bucks means it experiences the full range of Delaware Valley weather extremes, from heavy winter snow to summer hail storms. Adilay Roofing provides comprehensive roofing services to Warminster homeowners, delivering expert craftsmanship and competitive pricing from our nearby Philadelphia headquarters.",
@@ -1833,17 +1833,17 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Warminster?",
         answer:
-          "A typical Warminster home roof replacement ranges from $8,000 to $16,000 depending on size, material choice, and complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Adilay Roofing (PA184779) — call (888) 823-4766 to schedule.",
+          "A typical Warminster home roof replacement ranges from $8,000 to $16,000 depending on size, material choice, and complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Adilay Roofing (PA184779) — call (267) 255-3620 to schedule.",
       },
       {
         question: "Do you handle storm damage repairs in Warminster?",
         answer:
-          "Yes. We respond quickly to storm damage calls in Warminster, providing emergency tarping and thorough damage documentation for insurance claims. Our crews can typically be on-site within 24 hours. We handle the full repair process from assessment to completion. Call (888) 823-4766.",
+          "Yes. We respond quickly to storm damage calls in Warminster, providing emergency tarping and thorough damage documentation for insurance claims. Our crews can typically be on-site within 24 hours. We handle the full repair process from assessment to completion. Call (267) 255-3620.",
       },
       {
         question: "Can you improve my attic ventilation during a Warminster roof replacement?",
         answer:
-          "Yes. Many mid-century Warminster homes have inadequate attic ventilation by modern standards. During a roof replacement, we can add ridge vents, upgrade soffit vents, and ensure proper airflow to prevent ice dams and extend your new roof's lifespan. We assess ventilation on every project. Call (888) 823-4766.",
+          "Yes. Many mid-century Warminster homes have inadequate attic ventilation by modern standards. During a roof replacement, we can add ridge vents, upgrade soffit vents, and ensure proper airflow to prevent ice dams and extend your new roof's lifespan. We assess ventilation on every project. Call (267) 255-3620.",
       },
     ],
   },
@@ -1855,7 +1855,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Feasterville PA — Roof Replacement & Repair",
     metaDescription:
-      "Feasterville roofing by Adilay Roofing. Shingle replacement, storm repairs & gutters. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Feasterville roofing by Adilay Roofing. Shingle replacement, storm repairs & gutters. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Feasterville Roofing Services",
     intro:
       "Feasterville-Trevose is a well-established community in lower Bucks County, straddling the border between Bensalem and Lower Southampton Townships along the Route 1 corridor. The residential neighborhoods feature a mix of mid-century ranchers, split-levels, and colonials built during the 1950s and 1960s, along with newer developments and townhome communities. Feasterville's proximity to both Philadelphia and the Route 1 commercial corridor makes it easily accessible from Adilay Roofing's headquarters. Many homes in the area have aging roofs that need expert attention, and the Delaware Valley weather — nor'easters, summer storms, and freeze-thaw cycling — takes its toll on roof systems year after year. Adilay Roofing provides Feasterville homeowners with comprehensive roofing services backed by over 20 years of experience.",
@@ -1867,17 +1867,17 @@ export const locations: Location[] = [
       {
         question: "How close is Adilay Roofing to Feasterville?",
         answer:
-          "Feasterville is approximately 20–25 minutes from our Philadelphia headquarters via I-95 or Route 1. We can respond quickly to estimates and emergencies. For active leaks or storm damage, we can often be on-site the same day. Licensed PA184779 — call (888) 823-4766.",
+          "Feasterville is approximately 20–25 minutes from our Philadelphia headquarters via I-95 or Route 1. We can respond quickly to estimates and emergencies. For active leaks or storm damage, we can often be on-site the same day. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Feasterville?",
         answer:
-          "A typical Feasterville home roof replacement ranges from $8,000 to $15,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no surprises. Call Adilay Roofing at (888) 823-4766 to schedule your free estimate.",
+          "A typical Feasterville home roof replacement ranges from $8,000 to $15,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no surprises. Call Adilay Roofing at (267) 255-3620 to schedule your free estimate.",
       },
       {
         question: "Do you offer gutter services in Feasterville?",
         answer:
-          "Yes. We install seamless aluminum gutters, gutter guards, and provide gutter repair services. We often coordinate gutter work with roof replacements for maximum efficiency and value. Proper gutters are essential for protecting your home's foundation and fascia. Call (888) 823-4766.",
+          "Yes. We install seamless aluminum gutters, gutter guards, and provide gutter repair services. We often coordinate gutter work with roof replacements for maximum efficiency and value. Proper gutters are essential for protecting your home's foundation and fascia. Call (267) 255-3620.",
       },
     ],
   },
@@ -1893,7 +1893,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Media PA — Roof Replacement & Repair",
     metaDescription:
-      "Media PA roofing experts. Shingle, slate & flat roof services for borough homes. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Media PA roofing experts. Shingle, slate & flat roof services for borough homes. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Media Roofing Services",
     intro:
       "Media is the county seat of Delaware County and one of the most charming boroughs in the Philadelphia suburbs, known as \"Everybody's Hometown\" for its walkable State Street lined with restaurants, shops, and cultural venues. The residential streets surrounding downtown feature a beautiful collection of Victorian homes, stone colonials, and early American properties, many dating to the late 1800s and early 1900s. These older homes often have complex roof systems with steep pitches, decorative slate, dormers, and copper flashing that require experienced craftsmanship. The surrounding Upper Providence and Nether Providence Townships add mid-century colonials and newer developments. Adilay Roofing brings our proven Philadelphia expertise to Media and the surrounding communities, providing premium roofing services that match the character and quality of this beloved borough.",
@@ -1905,17 +1905,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on Victorian homes in Media Borough?",
         answer:
-          "Yes. Adilay Roofing has extensive experience with the Victorian and early American homes found throughout Media. We handle complex steep-pitched roofs, slate repairs, and decorative elements with the care these properties deserve. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing has extensive experience with the Victorian and early American homes found throughout Media. We handle complex steep-pitched roofs, slate repairs, and decorative elements with the care these properties deserve. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Media?",
         answer:
-          "Media home roof replacements typically range from $8,000 to $18,000 depending on size, material, and complexity. Historic homes with slate or complex roof lines may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Media home roof replacements typically range from $8,000 to $18,000 depending on size, material, and complexity. Historic homes with slate or complex roof lines may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Do you serve the townships around Media?",
         answer:
-          "Yes. We serve Media Borough and all surrounding communities including Upper Providence, Nether Providence, Springfield, and Swarthmore. We handle the specific permitting requirements for each municipality. Call Adilay Roofing at (888) 823-4766.",
+          "Yes. We serve Media Borough and all surrounding communities including Upper Providence, Nether Providence, Springfield, and Swarthmore. We handle the specific permitting requirements for each municipality. Call Adilay Roofing at (267) 255-3620.",
       },
     ],
   },
@@ -1927,7 +1927,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Drexel Hill PA — Roof Replacement & Repair",
     metaDescription:
-      "Drexel Hill roofing contractor. Shingle & flat roof services for twins & detached homes. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Drexel Hill roofing contractor. Shingle & flat roof services for twins & detached homes. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Drexel Hill Roofing Services",
     intro:
       "Drexel Hill is one of Delaware County's largest and most established communities, located within Upper Darby Township just west of the Philadelphia city line. The neighborhood is defined by its tree-lined streets and dense blocks of brick and stone twin homes built predominantly in the 1920s through 1940s, along with larger detached colonials and newer townhome developments. Drexel Hill's twin homes share the same construction characteristics as Philadelphia rowhouses — party walls, flat porch roofs, and aging shingle systems — making Adilay Roofing's urban expertise a perfect fit. Many homes are approaching their centennial with roofs that have been patched and re-layered multiple times. Adilay Roofing provides Drexel Hill homeowners with expert roofing services backed by over 20 years of experience with this exact type of construction.",
@@ -1939,17 +1939,17 @@ export const locations: Location[] = [
       {
         question: "Do you specialize in Drexel Hill twin homes?",
         answer:
-          "Yes. Drexel Hill's brick and stone twins are built with the same construction methods as Philadelphia rowhouses — our core expertise. We understand party wall flashing, shared drainage, and the challenges of attached-home roofing. Adilay Roofing (PA184779) has completed numerous twin projects throughout Drexel Hill. Call (888) 823-4766.",
+          "Yes. Drexel Hill's brick and stone twins are built with the same construction methods as Philadelphia rowhouses — our core expertise. We understand party wall flashing, shared drainage, and the challenges of attached-home roofing. Adilay Roofing (PA184779) has completed numerous twin projects throughout Drexel Hill. Call (267) 255-3620.",
       },
       {
         question: "How much does a Drexel Hill twin roof replacement cost?",
         answer:
-          "A typical Drexel Hill twin roof replacement ranges from $5,000 to $12,000, depending on size and material choice. Larger detached homes may range higher. We provide free on-site estimates with transparent, no-surprise pricing. Call (888) 823-4766 to schedule.",
+          "A typical Drexel Hill twin roof replacement ranges from $5,000 to $12,000, depending on size and material choice. Larger detached homes may range higher. We provide free on-site estimates with transparent, no-surprise pricing. Call (267) 255-3620 to schedule.",
       },
       {
         question: "Can you fix the flat porch roof on my Drexel Hill twin?",
         answer:
-          "Yes. Flat porch roofs are one of the most common sources of leaks on Drexel Hill twins. We install EPDM rubber roofing membrane on these flat sections, ensuring proper drainage and sealed transitions to the main pitched roof. This is one of our most frequently performed repairs in the area. Call (888) 823-4766.",
+          "Yes. Flat porch roofs are one of the most common sources of leaks on Drexel Hill twins. We install EPDM rubber roofing membrane on these flat sections, ensuring proper drainage and sealed transitions to the main pitched roof. This is one of our most frequently performed repairs in the area. Call (267) 255-3620.",
       },
     ],
   },
@@ -1961,7 +1961,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Havertown PA — Roof Replacement & Repair",
     metaDescription:
-      "Havertown roofing by Adilay Roofing. Shingle replacement, storm repair & gutters for Haverford Twp homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Havertown roofing by Adilay Roofing. Shingle replacement, storm repair & gutters for Haverford Twp homes. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Havertown Roofing Services",
     intro:
       "Havertown is the commercial and residential heart of Haverford Township in Delaware County, known for its excellent schools, family-friendly neighborhoods, and convenient access to Center City Philadelphia via the SEPTA Media/Elwyn line. The housing stock is predominantly mid-century — stone colonials, Cape Cods, and split-levels built during the 1940s through 1960s line the residential streets along Darby Road, Eagle Road, and Brookline Boulevard. Many of these homes are now 60-plus years old with aging roof systems. Havertown also features pockets of older Victorian-era homes and newer construction. The area's mature tree canopy provides beautiful shade but also promotes moss growth and generates heavy gutter debris. Adilay Roofing provides comprehensive roofing services to Havertown homeowners, delivering expert craftsmanship at competitive prices.",
@@ -1973,17 +1973,17 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Havertown?",
         answer:
-          "A typical Havertown home roof replacement ranges from $9,000 to $18,000 depending on size, material choice, and complexity. Stone colonials with dormers and complex roof lines may be at the higher end. Adilay Roofing (PA184779) provides free on-site estimates. Call (888) 823-4766.",
+          "A typical Havertown home roof replacement ranges from $9,000 to $18,000 depending on size, material choice, and complexity. Stone colonials with dormers and complex roof lines may be at the higher end. Adilay Roofing (PA184779) provides free on-site estimates. Call (267) 255-3620.",
       },
       {
         question: "Do you offer gutter services in Havertown?",
         answer:
-          "Yes. Havertown's heavy tree canopy makes gutter maintenance essential. We install seamless aluminum gutters, gutter guards, and provide gutter repair services. We can coordinate gutter work with your roof replacement for better efficiency and value. Call (888) 823-4766.",
+          "Yes. Havertown's heavy tree canopy makes gutter maintenance essential. We install seamless aluminum gutters, gutter guards, and provide gutter repair services. We can coordinate gutter work with your roof replacement for better efficiency and value. Call (267) 255-3620.",
       },
       {
         question: "Can you address moss and algae on my Havertown roof?",
         answer:
-          "Yes. Havertown's shaded, tree-lined streets create ideal conditions for moss and algae growth. We safely remove existing growth and can install zinc or copper ridge strips to inhibit regrowth. We also recommend algae-resistant shingles for replacements. Call Adilay Roofing at (888) 823-4766 for an assessment.",
+          "Yes. Havertown's shaded, tree-lined streets create ideal conditions for moss and algae growth. We safely remove existing growth and can install zinc or copper ridge strips to inhibit regrowth. We also recommend algae-resistant shingles for replacements. Call Adilay Roofing at (267) 255-3620 for an assessment.",
       },
     ],
   },
@@ -1995,7 +1995,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Springfield PA — Roof Replacement & Repair",
     metaDescription:
-      "Springfield PA roofing contractor. Shingle replacement, storm repairs & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Springfield PA roofing contractor. Shingle replacement, storm repairs & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Springfield Roofing Services",
     intro:
       "Springfield Township is one of Delaware County's largest and most established residential communities, centered around the busy Baltimore Pike and Springfield Road corridors. The housing stock is predominantly mid-century — stone colonials, Cape Cods, split-levels, and ranchers built during the suburban expansion of the 1940s through 1960s. Springfield is known for its excellent schools, well-maintained properties, and strong community identity. Many homes are now 60-plus years old with aging roof systems that need expert attention. The area's mature tree canopy provides welcome shade but also contributes to moss growth and gutter debris that challenge roof systems. Adilay Roofing provides Springfield homeowners with comprehensive roofing services, bringing our proven Philadelphia expertise to this established Delaware County community.",
@@ -2007,17 +2007,17 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Springfield, PA?",
         answer:
-          "A typical Springfield home roof replacement ranges from $9,000 to $18,000 depending on size, material, and complexity. Larger colonials with dormers may be higher. Adilay Roofing (PA184779) provides free on-site estimates with transparent pricing. Call (888) 823-4766 to schedule.",
+          "A typical Springfield home roof replacement ranges from $9,000 to $18,000 depending on size, material, and complexity. Larger colonials with dormers may be higher. Adilay Roofing (PA184779) provides free on-site estimates with transparent pricing. Call (267) 255-3620 to schedule.",
       },
       {
         question: "Do you handle storm damage repairs in Springfield?",
         answer:
-          "Yes. We respond quickly to storm damage calls in Springfield, providing emergency tarping and thorough damage documentation for insurance claims. Our crews can typically be on-site within 24 hours for assessment. Call (888) 823-4766 for immediate assistance.",
+          "Yes. We respond quickly to storm damage calls in Springfield, providing emergency tarping and thorough damage documentation for insurance claims. Our crews can typically be on-site within 24 hours for assessment. Call (267) 255-3620 for immediate assistance.",
       },
       {
         question: "What shingle brands do you install in Springfield?",
         answer:
-          "We install top-tier shingles from trusted manufacturers including GAF, CertainTeed, and Owens Corning. We will recommend the best brand and product line for your Springfield home based on your budget, aesthetic preferences, and performance needs during a free consultation. Call (888) 823-4766.",
+          "We install top-tier shingles from trusted manufacturers including GAF, CertainTeed, and Owens Corning. We will recommend the best brand and product line for your Springfield home based on your budget, aesthetic preferences, and performance needs during a free consultation. Call (267) 255-3620.",
       },
     ],
   },
@@ -2029,7 +2029,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Clifton Heights PA — Roof Replacement & Repair",
     metaDescription:
-      "Clifton Heights roofing by Adilay Roofing. Shingle & flat roof services for twins & rowhouses. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Clifton Heights roofing by Adilay Roofing. Shingle & flat roof services for twins & rowhouses. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Clifton Heights Roofing Services",
     intro:
       "Clifton Heights is a compact borough in Delaware County, situated along Baltimore Pike between Upper Darby and Springfield. The borough's residential streets are lined with brick and stone twin homes and rowhouses built predominantly in the early 1900s, sharing the same construction characteristics as Philadelphia's inner-city housing stock. These attached homes feature flat or low-slope porch roofs, shared party walls, and aging shingle systems that require experienced urban roofing expertise. Clifton Heights' tight lot lines and dense construction mirror the conditions Adilay Roofing works in every day in Philadelphia, making us ideally suited for this community. We provide comprehensive roofing services to Clifton Heights homeowners at competitive prices, backed by over 20 years of hands-on experience.",
@@ -2041,17 +2041,17 @@ export const locations: Location[] = [
       {
         question: "Do you specialize in Clifton Heights twin homes?",
         answer:
-          "Yes. Clifton Heights' attached twins and rowhouses are built with the same methods as Philadelphia row homes — our core expertise. We understand party wall flashing, shared drainage, and the unique challenges of dense construction. Adilay Roofing (PA184779) — call (888) 823-4766 for a free estimate.",
+          "Yes. Clifton Heights' attached twins and rowhouses are built with the same methods as Philadelphia row homes — our core expertise. We understand party wall flashing, shared drainage, and the unique challenges of dense construction. Adilay Roofing (PA184779) — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a twin home roof cost in Clifton Heights?",
         answer:
-          "A typical Clifton Heights twin roof replacement ranges from $5,000 to $10,000 depending on size and material. We provide free on-site estimates with transparent pricing and no hidden fees. Call Adilay Roofing at (888) 823-4766 to schedule your free estimate.",
+          "A typical Clifton Heights twin roof replacement ranges from $5,000 to $10,000 depending on size and material. We provide free on-site estimates with transparent pricing and no hidden fees. Call Adilay Roofing at (267) 255-3620 to schedule your free estimate.",
       },
       {
         question: "Do you work with landlords in Clifton Heights?",
         answer:
-          "Yes. We work with many landlords and property managers in Clifton Heights, offering competitive pricing, efficient scheduling, and volume discounts for multiple properties. Every project is completed to the same high standard. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. We work with many landlords and property managers in Clifton Heights, offering competitive pricing, efficient scheduling, and volume discounts for multiple properties. Every project is completed to the same high standard. Licensed PA184779 — call (267) 255-3620.",
       },
     ],
   },
@@ -2063,7 +2063,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Lansdowne PA — Roof Replacement & Repair",
     metaDescription:
-      "Lansdowne roofing contractor. Shingle, flat roof & storm repairs for twins & homes. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Lansdowne roofing contractor. Shingle, flat roof & storm repairs for twins & homes. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Lansdowne Roofing Services",
     intro:
       "Lansdowne is a charming Delaware County borough directly bordering southwest Philadelphia, known for its tree-lined residential streets, the historic Lansdowne Theater, and its diverse, welcoming community. The housing stock is predominantly early 20th century — brick and stone twin homes, larger Victorian-era detached homes, and some smaller rowhouses line the blocks along Lansdowne Avenue, Baltimore Avenue, and the surrounding residential streets. Many of these homes are 80 to 100 years old with aging roof systems that have been patched and re-layered multiple times. Lansdowne's proximity to Philadelphia means it shares many of the same construction characteristics and roofing challenges. Adilay Roofing is just minutes from Lansdowne and provides expert roofing services that this established community deserves.",
@@ -2075,17 +2075,17 @@ export const locations: Location[] = [
       {
         question: "How close is Adilay Roofing to Lansdowne?",
         answer:
-          "Lansdowne borders southwest Philadelphia, making it one of the closest suburban communities to our headquarters. We can typically arrive within 20 minutes. For emergencies, we can often be on-site the same day. Licensed PA184779 — call (888) 823-4766.",
+          "Lansdowne borders southwest Philadelphia, making it one of the closest suburban communities to our headquarters. We can typically arrive within 20 minutes. For emergencies, we can often be on-site the same day. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Lansdowne?",
         answer:
-          "A typical Lansdowne twin or rowhouse roof replacement ranges from $5,000 to $11,000. Larger detached Victorian homes may range from $10,000 to $18,000 depending on complexity. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "A typical Lansdowne twin or rowhouse roof replacement ranges from $5,000 to $11,000. Larger detached Victorian homes may range from $10,000 to $18,000 depending on complexity. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Can you repair flat porch roofs on Lansdowne twins?",
         answer:
-          "Yes. Flat porch roofs are extremely common on Lansdowne's older twins and are a frequent source of leaks. We install EPDM rubber roofing membrane on these sections, ensuring proper drainage and sealed transitions to the main roof. This is one of our most popular repairs in the area. Call (888) 823-4766.",
+          "Yes. Flat porch roofs are extremely common on Lansdowne's older twins and are a frequent source of leaks. We install EPDM rubber roofing membrane on these sections, ensuring proper drainage and sealed transitions to the main roof. This is one of our most popular repairs in the area. Call (267) 255-3620.",
       },
     ],
   },
@@ -2097,7 +2097,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Ridley Park PA — Roof Replacement & Repair",
     metaDescription:
-      "Ridley Park roofing by Adilay Roofing. Shingle replacement, storm repairs & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Ridley Park roofing by Adilay Roofing. Shingle replacement, storm repairs & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Ridley Park Roofing Services",
     intro:
       "Ridley Park is a charming residential borough in Delaware County, known for its beautiful Ridley Park Lake, tree-lined streets, and well-maintained Victorian and early American homes. The borough was developed in the late 1800s as one of the Philadelphia area's first planned suburban communities, and its housing stock reflects that heritage — ornate Victorian homes near the lake, stone colonials along Chester Pike, and early 20th-century twins and Cape Cods throughout the residential blocks. Many homes are over 100 years old with original or aging roof systems that demand expert attention. Adilay Roofing brings our Philadelphia craftsmanship to Ridley Park, providing roofing services that respect the character of this historic borough while delivering modern performance.",
@@ -2109,17 +2109,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on Victorian homes in Ridley Park?",
         answer:
-          "Yes. Adilay Roofing has experience with the Victorian and early American homes that give Ridley Park its character. We handle complex steep-pitched roofs, slate repairs, and decorative elements with expertise. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing has experience with the Victorian and early American homes that give Ridley Park its character. We handle complex steep-pitched roofs, slate repairs, and decorative elements with expertise. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Ridley Park?",
         answer:
-          "Ridley Park roof replacements typically range from $7,000 to $16,000 depending on size, material, and complexity. Historic Victorian homes with complex roof lines may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Ridley Park roof replacements typically range from $7,000 to $16,000 depending on size, material, and complexity. Historic Victorian homes with complex roof lines may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Do you handle storm damage in Ridley Park?",
         answer:
-          "Yes. We respond quickly to storm damage calls in Ridley Park, providing emergency tarping and thorough damage documentation for insurance claims. We handle the full repair process from assessment to completion. Call Adilay Roofing at (888) 823-4766 for immediate assistance.",
+          "Yes. We respond quickly to storm damage calls in Ridley Park, providing emergency tarping and thorough damage documentation for insurance claims. We handle the full repair process from assessment to completion. Call Adilay Roofing at (267) 255-3620 for immediate assistance.",
       },
     ],
   },
@@ -2135,7 +2135,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Malvern PA — Roof Replacement & Repair",
     metaDescription:
-      "Malvern roofing by Adilay Roofing. Shingle, slate & premium roofing for borough & township homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Malvern roofing by Adilay Roofing. Shingle, slate & premium roofing for borough & township homes. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Malvern Roofing Services",
     intro:
       "Malvern is an upscale community in Chester County, encompassing the historic Malvern Borough with its charming King Street downtown and the surrounding Willistown and East Whiteland Townships. The borough features beautifully maintained older homes, while the surrounding area offers larger colonials, Tudors, and contemporary homes on wooded lots along the Route 30 corridor and the Great Valley area. Malvern's homes often feature premium materials, complex roof geometries, and architectural details that demand expert craftsmanship. The area's wooded lots promote moss growth and generate heavy gutter debris. Adilay Roofing provides Malvern homeowners with premium roofing services backed by over 20 years of experience and our proven Philadelphia workmanship.",
@@ -2147,17 +2147,17 @@ export const locations: Location[] = [
       {
         question: "What premium roofing materials do you offer in Malvern?",
         answer:
-          "For Malvern's upscale homes, we offer designer architectural shingles, synthetic slate, composite cedar shake, and premium metal roofing options. We will assess your home's architecture and recommend the ideal material during a free consultation. Adilay Roofing (PA184779) — call (888) 823-4766.",
+          "For Malvern's upscale homes, we offer designer architectural shingles, synthetic slate, composite cedar shake, and premium metal roofing options. We will assess your home's architecture and recommend the ideal material during a free consultation. Adilay Roofing (PA184779) — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Malvern?",
         answer:
-          "Malvern home roof replacements typically range from $12,000 to $25,000+ depending on size, material, and complexity. Larger homes with premium materials may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Malvern home roof replacements typically range from $12,000 to $25,000+ depending on size, material, and complexity. Larger homes with premium materials may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Do you work with HOAs in Malvern developments?",
         answer:
-          "Yes. Many Malvern-area developments have HOAs with specific roofing requirements. We are experienced in meeting these guidelines, providing required documentation, and helping homeowners navigate architectural review. Call Adilay Roofing at (888) 823-4766.",
+          "Yes. Many Malvern-area developments have HOAs with specific roofing requirements. We are experienced in meeting these guidelines, providing required documentation, and helping homeowners navigate architectural review. Call Adilay Roofing at (267) 255-3620.",
       },
     ],
   },
@@ -2169,7 +2169,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Downingtown PA — Roof Replacement & Repair",
     metaDescription:
-      "Downingtown roofing contractor. Shingle replacement, storm repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Downingtown roofing contractor. Shingle replacement, storm repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Downingtown Roofing Services",
     intro:
       "Downingtown is a charming borough in central Chester County, situated along the Brandywine Creek and anchored by a revitalized downtown along East Lancaster Avenue. The borough features a mix of historic homes from the 1800s, early 20th-century colonials and twins, and mid-century residential construction. The surrounding East Caln and West Whiteland Townships add newer colonial developments and townhome communities. Downingtown's position in the Brandywine Valley means slightly colder winters than Philadelphia, with heavier snow accumulations and more frequent ice events. The area's wooded lots contribute to moss growth and gutter debris. Adilay Roofing extends our full suite of roofing services to Downingtown homeowners, bringing our proven Philadelphia craftsmanship to Chester County's diverse housing stock.",
@@ -2181,17 +2181,17 @@ export const locations: Location[] = [
       {
         question: "Do you serve both Downingtown Borough and the surrounding townships?",
         answer:
-          "Yes. Adilay Roofing serves Downingtown Borough and all surrounding communities including East Caln, West Whiteland, and Uwchlan Townships. We handle the specific permitting requirements for each municipality. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing serves Downingtown Borough and all surrounding communities including East Caln, West Whiteland, and Uwchlan Townships. We handle the specific permitting requirements for each municipality. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Downingtown?",
         answer:
-          "Downingtown home roof replacements typically range from $8,000 to $18,000 depending on size, material, and complexity. Historic borough homes with complex roof lines may be at the higher end. We provide free on-site estimates. Call (888) 823-4766.",
+          "Downingtown home roof replacements typically range from $8,000 to $18,000 depending on size, material, and complexity. Historic borough homes with complex roof lines may be at the higher end. We provide free on-site estimates. Call (267) 255-3620.",
       },
       {
         question: "Can you handle ice dam damage in Downingtown?",
         answer:
-          "Yes. Downingtown's Chester County location brings colder winters and more ice events than Philadelphia. We repair ice dam damage and address root causes by improving attic ventilation and ensuring proper ice and water shield installation. Prevention is key — call (888) 823-4766 for an inspection.",
+          "Yes. Downingtown's Chester County location brings colder winters and more ice events than Philadelphia. We repair ice dam damage and address root causes by improving attic ventilation and ensuring proper ice and water shield installation. Prevention is key — call (267) 255-3620 for an inspection.",
       },
     ],
   },
@@ -2203,7 +2203,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Exton PA — Roof Replacement & Repair",
     metaDescription:
-      "Exton roofing by Adilay Roofing. Shingle replacement, storm repair & gutters for West Whiteland Twp homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Exton roofing by Adilay Roofing. Shingle replacement, storm repair & gutters for West Whiteland Twp homes. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Exton Roofing Services",
     intro:
       "Exton is a thriving community in West Whiteland Township, Chester County, centered around the busy Route 30 and Route 100 corridors. Known for the Exton Square Mall and its excellent access to the Pennsylvania Turnpike, Exton has experienced significant residential growth over the past several decades. The housing stock ranges from established mid-century colonials and ranchers to newer upscale developments with contemporary architectural designs. Exton's homes often feature complex multi-plane roof systems that require meticulous installation. The area's Chester County location means slightly colder winters than Philadelphia, with heavier snow and more ice events. Adilay Roofing provides Exton homeowners with comprehensive roofing services, bringing our proven Philadelphia expertise to Chester County's growing communities.",
@@ -2215,17 +2215,17 @@ export const locations: Location[] = [
       {
         question: "Do you work with HOAs in Exton developments?",
         answer:
-          "Yes. Many Exton neighborhoods have HOAs with specific roofing requirements. Adilay Roofing (PA184779) is experienced in meeting these guidelines and providing documentation for architectural review. Call (888) 823-4766 for a free consultation.",
+          "Yes. Many Exton neighborhoods have HOAs with specific roofing requirements. Adilay Roofing (PA184779) is experienced in meeting these guidelines and providing documentation for architectural review. Call (267) 255-3620 for a free consultation.",
       },
       {
         question: "How much does a roof replacement cost in Exton?",
         answer:
-          "Exton home roof replacements typically range from $10,000 to $20,000 depending on size, material, and complexity. Larger homes with complex roof systems may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Exton home roof replacements typically range from $10,000 to $20,000 depending on size, material, and complexity. Larger homes with complex roof systems may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "How quickly can you respond to storm damage in Exton?",
         answer:
-          "We respond promptly to storm damage calls throughout Chester County, including Exton. Our crews can typically be on-site within 24 hours for emergency tarping and assessment. We document all damage thoroughly for insurance claims. Call (888) 823-4766 for immediate assistance.",
+          "We respond promptly to storm damage calls throughout Chester County, including Exton. Our crews can typically be on-site within 24 hours for emergency tarping and assessment. We document all damage thoroughly for insurance claims. Call (267) 255-3620 for immediate assistance.",
       },
     ],
   },
@@ -2237,7 +2237,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Phoenixville PA — Roof Replacement & Repair",
     metaDescription:
-      "Phoenixville roofing experts. Shingle, flat roof & historic home roofing. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766 today.",
+      "Phoenixville roofing experts. Shingle, flat roof & historic home roofing. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620 today.",
     h1: "Phoenixville Roofing Services",
     intro:
       "Phoenixville is one of Chester County's most exciting communities, experiencing a dramatic revitalization centered around the historic Bridge Street corridor. The borough's housing stock tells the story of its industrial heritage and reinvention — worker's rowhouses from the steel mill era line the side streets, while grander Victorian and Edwardian homes occupy the hillside blocks above downtown. New construction along the Schuylkill River adds contemporary townhomes and condos. Phoenixville's position along the river means increased humidity, while its Chester County location brings colder winters than Philadelphia. The borough's mix of old and new construction creates diverse roofing needs that Adilay Roofing is uniquely equipped to handle, bringing both our urban rowhouse expertise and suburban residential experience to every project.",
@@ -2249,17 +2249,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on Phoenixville's older industrial-era rowhouses?",
         answer:
-          "Yes. Phoenixville's worker's rowhouses share many characteristics with Philadelphia's rowhouse stock — our core expertise. We handle flat roofs, party wall flashing, and tight-quarters construction with deep experience. Adilay Roofing (PA184779) — call (888) 823-4766 for a free estimate.",
+          "Yes. Phoenixville's worker's rowhouses share many characteristics with Philadelphia's rowhouse stock — our core expertise. We handle flat roofs, party wall flashing, and tight-quarters construction with deep experience. Adilay Roofing (PA184779) — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "Do you work on new construction in Phoenixville?",
         answer:
-          "Yes. We work with developers and general contractors on new construction roofing in Phoenixville, including the contemporary townhomes and condos being built along the riverfront. We install modern roof systems, handle membrane waterproofing, and coordinate with other trades. Call (888) 823-4766.",
+          "Yes. We work with developers and general contractors on new construction roofing in Phoenixville, including the contemporary townhomes and condos being built along the riverfront. We install modern roof systems, handle membrane waterproofing, and coordinate with other trades. Call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Phoenixville?",
         answer:
-          "Phoenixville roof replacements typically range from $6,000 to $16,000 depending on home size, type, and material. Rowhouse replacements tend to be more affordable, while larger Victorian homes may be at the higher end. Free on-site estimates — call (888) 823-4766.",
+          "Phoenixville roof replacements typically range from $6,000 to $16,000 depending on home size, type, and material. Rowhouse replacements tend to be more affordable, while larger Victorian homes may be at the higher end. Free on-site estimates — call (267) 255-3620.",
       },
     ],
   },
@@ -2271,7 +2271,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Kennett Square PA — Roof Replacement & Repair",
     metaDescription:
-      "Kennett Square roofing by Adilay Roofing. Shingle, slate & premium roofing services. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Kennett Square roofing by Adilay Roofing. Shingle, slate & premium roofing services. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Kennett Square Roofing Services",
     intro:
       "Kennett Square is a charming borough in southern Chester County, known as the \"Mushroom Capital of the World\" and home to a vibrant State Street downtown, Longwood Gardens nearby, and some of the most beautiful residential properties in the Brandywine Valley. The borough features a mix of historic Federal and Victorian-era homes, early American colonials, and mid-century residential construction. The surrounding Kennett Township adds larger estate-style properties and farmhouses with premium roofing materials including slate, cedar shake, and standing-seam metal. Kennett Square's southern Chester County position means slightly milder winters than upper Chester County but still the full range of Delaware Valley weather challenges. Adilay Roofing brings our proven craftsmanship to Kennett Square, providing premium roofing services that match the quality of this exceptional community.",
@@ -2283,17 +2283,17 @@ export const locations: Location[] = [
       {
         question: "Do you handle slate and cedar shake roofs in Kennett Square?",
         answer:
-          "Yes. Many Kennett Square properties feature premium materials including natural slate and cedar shake. We perform repairs using matching materials, or if the roof has reached end of life, we offer synthetic slate and composite shake that replicate the original appearance. Adilay Roofing (PA184779) — call (888) 823-4766.",
+          "Yes. Many Kennett Square properties feature premium materials including natural slate and cedar shake. We perform repairs using matching materials, or if the roof has reached end of life, we offer synthetic slate and composite shake that replicate the original appearance. Adilay Roofing (PA184779) — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Kennett Square?",
         answer:
-          "Kennett Square roof replacements typically range from $10,000 to $25,000+ depending on home size, material, and complexity. Estate-style homes with premium materials may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Kennett Square roof replacements typically range from $10,000 to $25,000+ depending on home size, material, and complexity. Estate-style homes with premium materials may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Can you work on the historic homes in Kennett Square Borough?",
         answer:
-          "Yes. We have experience with the Federal and Victorian-era homes in Kennett Square's historic borough. We select materials that complement the architectural character while delivering modern performance. We work within any applicable preservation guidelines. Call (888) 823-4766 for a free consultation.",
+          "Yes. We have experience with the Federal and Victorian-era homes in Kennett Square's historic borough. We select materials that complement the architectural character while delivering modern performance. We work within any applicable preservation guidelines. Call (267) 255-3620 for a free consultation.",
       },
     ],
   },
@@ -2309,7 +2309,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Cherry Hill NJ — Roof Replacement & Repair",
     metaDescription:
-      "Cherry Hill NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Cherry Hill NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Cherry Hill Roofing Services",
     intro:
       "Cherry Hill is one of South Jersey's most desirable suburban communities, located just across the Delaware River from Philadelphia in Camden County. The township's housing stock spans decades of development — from established mid-century colonials and split-levels in neighborhoods like Barclay, Erlton, and Kingston Estates to newer upscale developments along Route 70 and Kresson Road. Cherry Hill's homes often feature complex multi-plane roof systems with dormers, skylights, and architectural details that demand expert installation. The area experiences the same Delaware Valley weather patterns as Philadelphia — hot summers, cold winters with nor'easters, and spring storms with hail potential. Adilay Roofing crosses the Ben Franklin Bridge to bring our 20-plus years of Philadelphia roofing expertise to Cherry Hill homeowners, delivering the same quality and responsiveness our Pennsylvania customers rely on.",
@@ -2321,17 +2321,17 @@ export const locations: Location[] = [
       {
         question: "Is Adilay Roofing licensed to work in Cherry Hill, NJ?",
         answer:
-          "Yes. Adilay Roofing (PA184779) maintains all necessary credentials for roofing work in Cherry Hill and throughout New Jersey. We carry full liability insurance and workers' compensation coverage for all NJ projects. Call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing (PA184779) maintains all necessary credentials for roofing work in Cherry Hill and throughout New Jersey. We carry full liability insurance and workers' compensation coverage for all NJ projects. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Cherry Hill?",
         answer:
-          "Cherry Hill roof replacements typically range from $9,000 to $20,000 depending on home size, material, and complexity. Larger colonial homes with complex roof lines may be higher. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Cherry Hill roof replacements typically range from $9,000 to $20,000 depending on home size, material, and complexity. Larger colonial homes with complex roof lines may be higher. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "Do you work with Cherry Hill HOAs?",
         answer:
-          "Yes. Many Cherry Hill neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines, providing required documentation, and helping homeowners through the architectural review process. Call (888) 823-4766 for a free consultation.",
+          "Yes. Many Cherry Hill neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines, providing required documentation, and helping homeowners through the architectural review process. Call (267) 255-3620 for a free consultation.",
       },
     ],
   },
@@ -2343,7 +2343,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Camden NJ — Roof Replacement & Repair",
     metaDescription:
-      "Camden NJ roofing contractor. Flat roof, shingle & rubber roofing for rowhouses. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Camden NJ roofing contractor. Flat roof, shingle & rubber roofing for rowhouses. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Camden Roofing Services",
     intro:
       "Camden is a city undergoing significant revitalization, sitting directly across the Delaware River from Philadelphia with dramatic waterfront development and neighborhood reinvestment transforming the community. The city's residential blocks feature dense rowhouse construction similar to Philadelphia — two- and three-story brick and frame homes with flat or low-slope roofs that require specialized rubber membrane roofing systems. Camden's housing stock is predominantly older, with many homes dating to the early 1900s, and the city's ongoing revitalization means renovation and rehab projects are creating new demand for quality roofing work. Adilay Roofing's deep experience with Philadelphia rowhouse construction translates directly to Camden's similar housing stock. We are just minutes across the Ben Franklin Bridge and bring the same expertise and urgency to every Camden project.",
@@ -2355,17 +2355,17 @@ export const locations: Location[] = [
       {
         question: "Do you have experience with Camden's rowhouse construction?",
         answer:
-          "Yes. Camden's rowhouses are built with the same construction methods as Philadelphia's — which is our core expertise. We understand flat rubber roofs, party wall flashing, and the challenges of dense urban construction. Adilay Roofing (PA184779) is just minutes from Camden. Call (888) 823-4766.",
+          "Yes. Camden's rowhouses are built with the same construction methods as Philadelphia's — which is our core expertise. We understand flat rubber roofs, party wall flashing, and the challenges of dense urban construction. Adilay Roofing (PA184779) is just minutes from Camden. Call (267) 255-3620.",
       },
       {
         question: "Do you work with investors and developers in Camden?",
         answer:
-          "Yes. We work with investors, developers, and property managers throughout Camden on renovation and rehab roofing projects. We offer competitive pricing, efficient scheduling, and volume discounts for multiple properties. Call (888) 823-4766 for a consultation.",
+          "Yes. We work with investors, developers, and property managers throughout Camden on renovation and rehab roofing projects. We offer competitive pricing, efficient scheduling, and volume discounts for multiple properties. Call (267) 255-3620 for a consultation.",
       },
       {
         question: "How quickly can you respond to Camden roofing emergencies?",
         answer:
-          "Camden is just minutes from our Philadelphia headquarters via the Ben Franklin Bridge. For emergency leaks or storm damage, we can often be on-site the same day. Licensed PA184779, fully insured — call (888) 823-4766 for immediate assistance.",
+          "Camden is just minutes from our Philadelphia headquarters via the Ben Franklin Bridge. For emergency leaks or storm damage, we can often be on-site the same day. Licensed PA184779, fully insured — call (267) 255-3620 for immediate assistance.",
       },
     ],
   },
@@ -2377,7 +2377,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Pennsauken NJ — Roof Replacement & Repair",
     metaDescription:
-      "Pennsauken NJ roofing by Adilay Roofing. Shingle replacement, storm repairs & flat roofing. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Pennsauken NJ roofing by Adilay Roofing. Shingle replacement, storm repairs & flat roofing. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Pennsauken Roofing Services",
     intro:
       "Pennsauken Township sits in western Camden County along the Delaware River, directly accessible from Philadelphia via the Betsy Ross Bridge. The township's housing stock is predominantly mid-century — ranchers, Cape Cods, split-levels, and colonials built during the 1950s and 1960s fill the residential neighborhoods. Many of these homes are now 60-plus years old with aging roof systems that need replacement. Pennsauken's proximity to Philadelphia and its diverse, working-class character make it a natural extension of Adilay Roofing's service area. We bring the same quality and competitive pricing to Pennsauken that our Philadelphia customers rely on, with fast response times thanks to our proximity just across the river.",
@@ -2389,17 +2389,17 @@ export const locations: Location[] = [
       {
         question: "How close is Adilay Roofing to Pennsauken?",
         answer:
-          "Pennsauken is approximately 15–20 minutes from our Philadelphia headquarters via the Betsy Ross Bridge. We can respond quickly to estimates and emergencies. Licensed PA184779 — call (888) 823-4766 for a free estimate at your Pennsauken home.",
+          "Pennsauken is approximately 15–20 minutes from our Philadelphia headquarters via the Betsy Ross Bridge. We can respond quickly to estimates and emergencies. Licensed PA184779 — call (267) 255-3620 for a free estimate at your Pennsauken home.",
       },
       {
         question: "How much does a roof replacement cost in Pennsauken?",
         answer:
-          "A typical Pennsauken home roof replacement ranges from $7,000 to $15,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Call Adilay Roofing at (888) 823-4766 to schedule.",
+          "A typical Pennsauken home roof replacement ranges from $7,000 to $15,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Call Adilay Roofing at (267) 255-3620 to schedule.",
       },
       {
         question: "Do you handle insurance claims for storm damage in Pennsauken?",
         answer:
-          "We thoroughly document storm damage with photos and detailed reports to support your insurance claim. We provide all information your adjuster needs and can meet with them on-site. Many Pennsauken homeowners have filed successful claims with our documentation. Call (888) 823-4766.",
+          "We thoroughly document storm damage with photos and detailed reports to support your insurance claim. We provide all information your adjuster needs and can meet with them on-site. Many Pennsauken homeowners have filed successful claims with our documentation. Call (267) 255-3620.",
       },
     ],
   },
@@ -2411,7 +2411,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Gloucester City NJ — Roof Replacement & Repair",
     metaDescription:
-      "Gloucester City NJ roofing contractor. Shingle, flat roof & storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Gloucester City NJ roofing contractor. Shingle, flat roof & storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Gloucester City Roofing Services",
     intro:
       "Gloucester City is a compact borough along the Delaware River in Camden County, featuring a mix of older rowhomes, twins, and detached homes that reflect its working-class heritage. The borough's residential streets are lined with early 20th-century construction — brick and frame homes with flat or pitched roofs, many of which are approaching or past their centennial. Gloucester City's riverfront location means increased humidity and moisture exposure that can accelerate roofing material degradation. The borough's dense construction and older housing stock share many characteristics with Philadelphia's inner-city neighborhoods, making Adilay Roofing's urban expertise an ideal fit. We are just minutes across the river and provide affordable, high-quality roofing services to Gloucester City homeowners.",
@@ -2423,17 +2423,17 @@ export const locations: Location[] = [
       {
         question: "Do you work on rowhomes in Gloucester City?",
         answer:
-          "Yes. Gloucester City's rowhomes are similar to Philadelphia's — our core expertise. We understand flat roofs, party wall flashing, and the challenges of attached-home construction. Adilay Roofing (PA184779) provides affordable, expert service. Call (888) 823-4766.",
+          "Yes. Gloucester City's rowhomes are similar to Philadelphia's — our core expertise. We understand flat roofs, party wall flashing, and the challenges of attached-home construction. Adilay Roofing (PA184779) provides affordable, expert service. Call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Gloucester City?",
         answer:
-          "A typical Gloucester City home roof replacement ranges from $5,000 to $12,000 depending on size, type, and material. Rowhome replacements tend to be more affordable. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "A typical Gloucester City home roof replacement ranges from $5,000 to $12,000 depending on size, type, and material. Rowhome replacements tend to be more affordable. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
       {
         question: "How quickly can you get to Gloucester City from Philadelphia?",
         answer:
-          "Gloucester City is approximately 15–20 minutes from our headquarters via I-676 and I-76. For emergencies, we can often be on-site the same day. Our proximity means fast response times and competitive pricing. Call (888) 823-4766.",
+          "Gloucester City is approximately 15–20 minutes from our headquarters via I-676 and I-76. For emergencies, we can often be on-site the same day. Our proximity means fast response times and competitive pricing. Call (267) 255-3620.",
       },
     ],
   },
@@ -2445,7 +2445,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Haddonfield NJ — Roof Replacement & Repair",
     metaDescription:
-      "Haddonfield NJ roofing experts. Shingle, slate & premium roofing for historic homes. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Haddonfield NJ roofing experts. Shingle, slate & premium roofing for historic homes. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Haddonfield Roofing Services",
     intro:
       "Haddonfield is one of South Jersey's most prestigious communities, known for its beautifully preserved historic downtown along Kings Highway, excellent schools, and stunning residential architecture. The borough's housing stock is remarkably rich — colonial-era homes dating to the 1700s, grand Victorian mansions with ornate detailing, Craftsman bungalows, and Georgian colonials line the tree-shaded streets. Many of these homes feature original slate roofs, copper flashing, and complex architectural roof lines that demand expert craftsmanship. Haddonfield's mature tree canopy creates shade that promotes moss growth and deposits heavy debris in gutters. Adilay Roofing provides Haddonfield homeowners with premium roofing services that match the exceptional quality of this historic community, bringing our Philadelphia expertise across the river.",
@@ -2457,17 +2457,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on Haddonfield's historic homes?",
         answer:
-          "Yes. Adilay Roofing has experience with the historic properties found throughout Haddonfield, from colonial-era homes to Victorian mansions. We handle slate, copper, and premium materials with expert care. We work within any applicable preservation guidelines. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing has experience with the historic properties found throughout Haddonfield, from colonial-era homes to Victorian mansions. We handle slate, copper, and premium materials with expert care. We work within any applicable preservation guidelines. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "What roofing materials do you recommend for Haddonfield homes?",
         answer:
-          "For Haddonfield's grand homes, we recommend designer architectural shingles or synthetic slate that complement the historic architecture. For original slate roofs, we can perform repairs with matching material. We assess each home individually during a free consultation. Call (888) 823-4766.",
+          "For Haddonfield's grand homes, we recommend designer architectural shingles or synthetic slate that complement the historic architecture. For original slate roofs, we can perform repairs with matching material. We assess each home individually during a free consultation. Call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Haddonfield?",
         answer:
-          "Haddonfield roof replacements typically range from $12,000 to $25,000+ depending on size, material, and complexity. Historic homes with slate and complex roof lines may be at the higher end. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Haddonfield roof replacements typically range from $12,000 to $25,000+ depending on size, material, and complexity. Historic homes with slate and complex roof lines may be at the higher end. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
     ],
   },
@@ -2479,7 +2479,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Collingswood NJ — Roof Replacement & Repair",
     metaDescription:
-      "Collingswood NJ roofing by Adilay Roofing. Shingle, flat roof & storm repairs. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Collingswood NJ roofing by Adilay Roofing. Shingle, flat roof & storm repairs. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Collingswood Roofing Services",
     intro:
       "Collingswood is a vibrant, walkable borough in Camden County, known for its thriving Haddon Avenue restaurant row, arts community, and beautifully maintained residential streets. The housing stock is a charming mix of early 20th-century architectural styles — Craftsman bungalows, colonial revivals, Victorian twins, and Dutch colonials line the tree-shaded blocks throughout the borough. Many homes date to the 1910s through 1930s and feature original or aging roof systems that need expert attention. Collingswood's compact borough layout and attached-home construction in some sections share characteristics with Philadelphia's older neighborhoods. Adilay Roofing provides Collingswood homeowners with expert roofing services, bringing our deep Philadelphia experience to this charming South Jersey community just minutes across the river.",
@@ -2491,17 +2491,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on Collingswood's older Craftsman and colonial homes?",
         answer:
-          "Yes. Adilay Roofing has experience with the diverse early 20th-century housing styles found in Collingswood. We handle complex roof lines, dormers, and decorative elements with the care these homes deserve. Licensed PA184779 — call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing has experience with the diverse early 20th-century housing styles found in Collingswood. We handle complex roof lines, dormers, and decorative elements with the care these homes deserve. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Collingswood?",
         answer:
-          "A typical Collingswood home roof replacement ranges from $7,000 to $16,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing. Call Adilay Roofing at (888) 823-4766 to schedule.",
+          "A typical Collingswood home roof replacement ranges from $7,000 to $16,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing. Call Adilay Roofing at (267) 255-3620 to schedule.",
       },
       {
         question: "How quickly can you get to Collingswood?",
         answer:
-          "Collingswood is approximately 15–20 minutes from our Philadelphia headquarters via the Ben Franklin Bridge and Route 130. For emergencies, we can often be on-site the same day. Call (888) 823-4766 for immediate assistance.",
+          "Collingswood is approximately 15–20 minutes from our Philadelphia headquarters via the Ben Franklin Bridge and Route 130. For emergencies, we can often be on-site the same day. Call (267) 255-3620 for immediate assistance.",
       },
     ],
   },
@@ -2513,7 +2513,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Voorhees NJ — Roof Replacement & Repair",
     metaDescription:
-      "Voorhees NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Voorhees NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Voorhees Roofing Services",
     intro:
       "Voorhees Township is an established suburban community in eastern Camden County, known for the Voorhees Town Center, excellent schools, and well-maintained residential neighborhoods. The housing stock ranges from mid-century colonials and ranchers in older sections to newer upscale developments with contemporary colonial and traditional designs. Voorhees' homes often feature complex multi-plane roof systems with dormers and architectural details that require expert installation. The township's tree-lined streets provide welcome shade but also promote moss growth and create gutter debris. Adilay Roofing extends our Philadelphia-quality roofing services to Voorhees homeowners, delivering expert craftsmanship, competitive pricing, and fast response times from just across the Delaware River.",
@@ -2525,17 +2525,17 @@ export const locations: Location[] = [
       {
         question: "Do you serve Voorhees Township?",
         answer:
-          "Yes. Adilay Roofing provides full roofing services to Voorhees Township, including shingle replacement, storm damage repair, gutter installation, and free roof inspections. We maintain all necessary NJ credentials. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing provides full roofing services to Voorhees Township, including shingle replacement, storm damage repair, gutter installation, and free roof inspections. We maintain all necessary NJ credentials. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Voorhees?",
         answer:
-          "Voorhees home roof replacements typically range from $9,000 to $18,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Call (888) 823-4766 to schedule.",
+          "Voorhees home roof replacements typically range from $9,000 to $18,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no hidden fees. Call (267) 255-3620 to schedule.",
       },
       {
         question: "Do you work with Voorhees HOAs?",
         answer:
-          "Yes. Many Voorhees neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines and can provide all necessary documentation for architectural review. Call Adilay Roofing at (888) 823-4766.",
+          "Yes. Many Voorhees neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines and can provide all necessary documentation for architectural review. Call Adilay Roofing at (267) 255-3620.",
       },
     ],
   },
@@ -2551,7 +2551,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Mount Laurel NJ — Roof Replacement & Repair",
     metaDescription:
-      "Mount Laurel NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Mount Laurel NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Mount Laurel Roofing Services",
     intro:
       "Mount Laurel is one of Burlington County's most desirable communities, located along the Route 73 and I-295 corridors with excellent access to both Philadelphia and the New Jersey Shore. The township's housing stock spans from established mid-century colonials and ranchers in older developments to upscale newer construction in planned communities throughout the township. Mount Laurel's homes often feature complex roof systems that require expert installation, and the area's tree-lined streets promote moss growth and generate gutter debris. The Delaware Valley weather — nor'easters, summer hail storms, and freeze-thaw cycling — takes its toll on roof systems across the township. Adilay Roofing provides Mount Laurel homeowners with comprehensive roofing services, bringing our 20-plus years of Philadelphia experience across the river to Burlington County.",
@@ -2563,17 +2563,17 @@ export const locations: Location[] = [
       {
         question: "Is Adilay Roofing licensed to work in Mount Laurel?",
         answer:
-          "Yes. Adilay Roofing (PA184779) maintains all necessary credentials for roofing work in Mount Laurel and throughout New Jersey. We carry full liability insurance and workers' compensation for all NJ projects. Call (888) 823-4766 for a free estimate.",
+          "Yes. Adilay Roofing (PA184779) maintains all necessary credentials for roofing work in Mount Laurel and throughout New Jersey. We carry full liability insurance and workers' compensation for all NJ projects. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Mount Laurel?",
         answer:
-          "Mount Laurel roof replacements typically range from $9,000 to $20,000 depending on home size, material, and complexity. We provide free on-site estimates with transparent pricing. Call (888) 823-4766 to schedule your free estimate.",
+          "Mount Laurel roof replacements typically range from $9,000 to $20,000 depending on home size, material, and complexity. We provide free on-site estimates with transparent pricing. Call (267) 255-3620 to schedule your free estimate.",
       },
       {
         question: "Do you work with Mount Laurel HOAs?",
         answer:
-          "Yes. Many Mount Laurel neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines and providing documentation for architectural review. Call (888) 823-4766 for a free consultation.",
+          "Yes. Many Mount Laurel neighborhoods have HOAs with specific roofing requirements. We are experienced in meeting these guidelines and providing documentation for architectural review. Call (267) 255-3620 for a free consultation.",
       },
     ],
   },
@@ -2585,7 +2585,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Marlton NJ — Roof Replacement & Repair",
     metaDescription:
-      "Marlton NJ roofing contractor. Shingle replacement, storm repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (888) 823-4766.",
+      "Marlton NJ roofing contractor. Shingle replacement, storm repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
     h1: "Marlton Roofing Services",
     intro:
       "Marlton is a thriving community within Evesham Township in Burlington County, centered around the busy Route 70 and Route 73 corridors. Known for excellent shopping, dining, and schools, Marlton features a diverse housing stock ranging from established mid-century colonials and split-levels to newer upscale developments with contemporary designs. Many homes in the older sections are 40-plus years old with roof systems approaching end of life, while newer developments may need storm damage repairs or maintenance. Marlton's South Jersey location brings the full range of Delaware Valley weather challenges. Adilay Roofing provides Marlton homeowners with expert roofing services at competitive prices, bringing our proven Philadelphia craftsmanship across the river to Burlington County.",
@@ -2597,17 +2597,17 @@ export const locations: Location[] = [
       {
         question: "How far is Adilay Roofing from Marlton?",
         answer:
-          "Marlton is approximately 25–30 minutes from our Philadelphia headquarters via the Ben Franklin Bridge and Route 70. We serve Marlton with the same priority and fast response times as all our service areas. Licensed PA184779 — call (888) 823-4766.",
+          "Marlton is approximately 25–30 minutes from our Philadelphia headquarters via the Ben Franklin Bridge and Route 70. We serve Marlton with the same priority and fast response times as all our service areas. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Marlton?",
         answer:
-          "Marlton home roof replacements typically range from $9,000 to $18,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing. Call Adilay Roofing at (888) 823-4766 to schedule.",
+          "Marlton home roof replacements typically range from $9,000 to $18,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing. Call Adilay Roofing at (267) 255-3620 to schedule.",
       },
       {
         question: "Do you handle commercial roofing in Marlton?",
         answer:
-          "Yes. We provide flat roofing services for commercial properties along Marlton's busy corridors, including EPDM and TPO membrane systems. Our experience with commercial buildings in Philadelphia translates directly to Marlton's retail and office properties. Call (888) 823-4766.",
+          "Yes. We provide flat roofing services for commercial properties along Marlton's busy corridors, including EPDM and TPO membrane systems. Our experience with commercial buildings in Philadelphia translates directly to Marlton's retail and office properties. Call (267) 255-3620.",
       },
     ],
   },
@@ -2619,7 +2619,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Willingboro NJ — Roof Replacement & Repair",
     metaDescription:
-      "Willingboro NJ roofing by Adilay Roofing. Shingle replacement experts for planned community homes. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Willingboro NJ roofing by Adilay Roofing. Shingle replacement experts for planned community homes. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Willingboro Roofing Services",
     intro:
       "Willingboro is a planned community in Burlington County, developed in the 1950s and 1960s as New Jersey's version of Levittown. The township features thousands of mid-century ranch homes, Cape Cods, split-levels, and colonials spread across named neighborhoods including Buckingham Park, Garfield East, Pennypacker Park, and Rittenhouse. Like Levittown, PA, these homes share common construction characteristics — similar roof configurations, moderate slopes, and aging shingle systems that are now well past their original lifespan. Adilay Roofing's deep familiarity with Levittown's identical housing stock translates directly to Willingboro. We know these home models, their common trouble spots, and the most efficient approach to delivering quality roof replacements at competitive prices.",
@@ -2631,17 +2631,17 @@ export const locations: Location[] = [
       {
         question: "Do you know the Willingboro house models?",
         answer:
-          "Yes. Willingboro's planned community homes are very similar to Levittown, PA — a community we know inside and out. Our familiarity with these mid-century home designs allows us to work efficiently and anticipate common issues. Adilay Roofing (PA184779) — call (888) 823-4766 for a free estimate.",
+          "Yes. Willingboro's planned community homes are very similar to Levittown, PA — a community we know inside and out. Our familiarity with these mid-century home designs allows us to work efficiently and anticipate common issues. Adilay Roofing (PA184779) — call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Willingboro?",
         answer:
-          "A typical Willingboro home roof replacement ranges from $7,000 to $14,000 depending on model, size, and material. The relatively straightforward roof geometry of most Willingboro homes keeps costs reasonable. Free on-site estimates — call (888) 823-4766.",
+          "A typical Willingboro home roof replacement ranges from $7,000 to $14,000 depending on model, size, and material. The relatively straightforward roof geometry of most Willingboro homes keeps costs reasonable. Free on-site estimates — call (267) 255-3620.",
       },
       {
         question: "Can you improve ventilation during a Willingboro roof replacement?",
         answer:
-          "Yes. Many Willingboro mid-century homes have inadequate attic ventilation by modern standards. During a roof replacement, we add ridge vents, upgrade soffit vents, and ensure proper airflow to prevent ice dams and extend roof lifespan. We assess ventilation on every project. Call (888) 823-4766.",
+          "Yes. Many Willingboro mid-century homes have inadequate attic ventilation by modern standards. During a roof replacement, we add ridge vents, upgrade soffit vents, and ensure proper airflow to prevent ice dams and extend roof lifespan. We assess ventilation on every project. Call (267) 255-3620.",
       },
     ],
   },
@@ -2653,7 +2653,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Burlington NJ — Roof Replacement & Repair",
     metaDescription:
-      "Burlington NJ roofing contractor. Shingle, flat roof & historic home roofing. Licensed PA184779. Free estimates — call (888) 823-4766 today.",
+      "Burlington NJ roofing contractor. Shingle, flat roof & historic home roofing. Licensed PA184779. Free estimates — call (267) 255-3620 today.",
     h1: "Burlington Roofing Services",
     intro:
       "Burlington City is a historic community along the Delaware River in Burlington County, connected to Pennsylvania via the Burlington-Bristol Bridge. The city's residential streets feature a remarkable collection of historic homes — colonial-era properties along High Street, Victorian-era homes near the waterfront, and early 20th-century construction throughout the residential neighborhoods. Burlington's older housing stock means many roofs are well past their useful life and need expert attention. The city's riverfront location increases humidity and moisture exposure. Adilay Roofing provides Burlington City homeowners with expert roofing services, bringing our Philadelphia craftsmanship just across the bridge to this historic New Jersey community.",
@@ -2665,17 +2665,17 @@ export const locations: Location[] = [
       {
         question: "Can you work on historic homes in Burlington City?",
         answer:
-          "Yes. Adilay Roofing has experience with the colonial and Victorian-era homes found throughout Burlington City. We handle complex roof systems, premium materials, and historic preservation considerations with expert care. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing has experience with the colonial and Victorian-era homes found throughout Burlington City. We handle complex roof systems, premium materials, and historic preservation considerations with expert care. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How close is Adilay Roofing to Burlington City?",
         answer:
-          "Burlington City is approximately 20–25 minutes from our Philadelphia headquarters via the Burlington-Bristol Bridge. We can respond quickly to estimates and emergencies. For active leaks, we can often be on-site the same day. Call (888) 823-4766.",
+          "Burlington City is approximately 20–25 minutes from our Philadelphia headquarters via the Burlington-Bristol Bridge. We can respond quickly to estimates and emergencies. For active leaks, we can often be on-site the same day. Call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Burlington City?",
         answer:
-          "Burlington City roof replacements typically range from $7,000 to $16,000 depending on home size, material, and complexity. Historic homes with complex roof lines may be at the higher end. Free on-site estimates — call (888) 823-4766.",
+          "Burlington City roof replacements typically range from $7,000 to $16,000 depending on home size, material, and complexity. Historic homes with complex roof lines may be at the higher end. Free on-site estimates — call (267) 255-3620.",
       },
     ],
   },
@@ -2687,7 +2687,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Evesham NJ — Roof Replacement & Repair",
     metaDescription:
-      "Evesham Township NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Evesham Township NJ roofing by Adilay Roofing. Shingle replacement, storm repair & gutters. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Evesham Roofing Services",
     intro:
       "Evesham Township is one of Burlington County's largest and fastest-growing communities, encompassing Marlton and surrounding neighborhoods along the Route 70 and Route 73 corridors. The township's housing stock spans decades — from established mid-century colonials and ranchers in older sections to brand-new construction in growing developments. Evesham's diverse housing creates a wide range of roofing needs, from aging roof replacements to new construction installs and storm damage repairs. The Delaware Valley weather patterns — hot summers, cold winters with nor'easters, and spring storms — affect every roof in the township. Adilay Roofing brings our 20-plus years of experience to Evesham homeowners, providing expert roofing services at competitive prices.",
@@ -2699,17 +2699,17 @@ export const locations: Location[] = [
       {
         question: "Do you serve all of Evesham Township?",
         answer:
-          "Yes. Adilay Roofing serves all of Evesham Township, including Marlton and the surrounding neighborhoods. We handle the township's specific permitting requirements and work within HOA guidelines for planned developments. Licensed PA184779 — call (888) 823-4766.",
+          "Yes. Adilay Roofing serves all of Evesham Township, including Marlton and the surrounding neighborhoods. We handle the township's specific permitting requirements and work within HOA guidelines for planned developments. Licensed PA184779 — call (267) 255-3620.",
       },
       {
         question: "How much does a roof replacement cost in Evesham?",
         answer:
-          "Evesham home roof replacements typically range from $9,000 to $18,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no surprises. Call (888) 823-4766 to schedule.",
+          "Evesham home roof replacements typically range from $9,000 to $18,000 depending on size, material, and complexity. We provide free on-site estimates with transparent pricing and no surprises. Call (267) 255-3620 to schedule.",
       },
       {
         question: "Can you handle new construction roofing in Evesham?",
         answer:
-          "Yes. We work with builders and developers on new construction roofing projects throughout Evesham Township. We install modern roof systems, coordinate with other trades, and ensure proper warranty registration. Call (888) 823-4766.",
+          "Yes. We work with builders and developers on new construction roofing projects throughout Evesham Township. We install modern roof systems, coordinate with other trades, and ensure proper warranty registration. Call (267) 255-3620.",
       },
     ],
   },
@@ -2725,7 +2725,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer Germantown Philadelphia — Historic Home Roofing Experts",
     metaDescription:
-      "Germantown roofing by Adilay Roofing. Slate, shingle & historic home specialists along Germantown Ave. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Germantown roofing by Adilay Roofing. Slate, shingle & historic home specialists along Germantown Ave. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Germantown Roofing Services",
     intro:
       "Germantown is one of the oldest and most historically significant neighborhoods in Philadelphia, founded in 1683 and filled with some of the most architecturally distinctive homes in the entire city. Stone twins and detached Victorians line streets like Wayne Avenue, Lincoln Drive, Schoolhouse Lane, and Wissahickon Avenue, many of them featuring original slate roofs, copper gutters, and ornate cornice work that have weathered over a century of Pennsylvania winters. Germantown Avenue itself — the historic spine of the neighborhood — is flanked by Colonial-era buildings and grand 19th-century residences whose roofs demand specialized care that most modern roofing contractors simply are not equipped to provide. The homes here range from modest rowhouses in East Germantown to large Victorian mansions in West Germantown and the adjacent Tulpehocken Station historic district, with a mix of slate, tile, asphalt, and occasional metal roofs throughout. Adilay Roofing has been repairing and replacing Germantown roofs for over two decades. From headquarters just a few miles away in Kensington, we respond quickly and bring the craftsmanship that Germantown's historic housing stock deserves — whether that means matching aging slate tiles, restoring copper flashing, or installing a modern architectural shingle system on a twin home along Greene Street.",
@@ -2744,7 +2744,7 @@ export const locations: Location[] = [
       {
         question: "Do you work on slate roofs in Germantown?",
         answer:
-          "Yes. Germantown has one of Philadelphia's largest concentrations of original slate roofs, and we regularly perform slate repair, tile replacement, and full slate-to-architectural-shingle conversions. When a full slate restoration is beyond budget, we can install a premium synthetic slate or heavy architectural shingle that preserves the home's historic appearance. Call (888) 823-4766 for a free slate assessment.",
+          "Yes. Germantown has one of Philadelphia's largest concentrations of original slate roofs, and we regularly perform slate repair, tile replacement, and full slate-to-architectural-shingle conversions. When a full slate restoration is beyond budget, we can install a premium synthetic slate or heavy architectural shingle that preserves the home's historic appearance. Call (267) 255-3620 for a free slate assessment.",
       },
       {
         question: "Is my Germantown home in a historic district, and does that affect roofing work?",
@@ -2754,7 +2754,7 @@ export const locations: Location[] = [
       {
         question: "How fast can you get to Germantown for an emergency leak?",
         answer:
-          "Typically within the same day. Germantown is a short drive from our Kensington headquarters, and we prioritize active leaks to prevent interior damage. We'll tarp and stabilize the roof immediately, then schedule permanent repairs once the storm passes. Call (888) 823-4766 for 24/7 emergency service.",
+          "Typically within the same day. Germantown is a short drive from our Kensington headquarters, and we prioritize active leaks to prevent interior damage. We'll tarp and stabilize the roof immediately, then schedule permanent repairs once the storm passes. Call (267) 255-3620 for 24/7 emergency service.",
       },
       {
         question: "How much does it cost to replace a slate roof in Germantown?",
@@ -2764,7 +2764,7 @@ export const locations: Location[] = [
       {
         question: "Should I repair my Germantown slate roof or replace it?",
         answer:
-          "Depends on the roof's age and condition. If the slates themselves are still sound and only flashings, ridges, or a handful of pieces have failed, repair is almost always the right call — natural slate can outlast 100 years and is irreplaceable on a historic Germantown home. If you're seeing widespread cracking, multiple slipped tiles per slope, or the underlying nails are corroding (a process called 'nail sickness'), you're approaching end of life and replacement planning makes sense. Free on-site assessments — call (888) 823-4766.",
+          "Depends on the roof's age and condition. If the slates themselves are still sound and only flashings, ridges, or a handful of pieces have failed, repair is almost always the right call — natural slate can outlast 100 years and is irreplaceable on a historic Germantown home. If you're seeing widespread cracking, multiple slipped tiles per slope, or the underlying nails are corroding (a process called 'nail sickness'), you're approaching end of life and replacement planning makes sense. Free on-site assessments — call (267) 255-3620.",
       },
       {
         question: "Do you do gutter and downspout work on Germantown historic homes?",
@@ -2834,7 +2834,7 @@ export const locations: Location[] = [
       {
         question: "Can you replace the flat rubber roof on an Old City loft?",
         answer:
-          "Yes. We routinely install and replace EPDM, TPO, and modified bitumen membranes on loft and warehouse buildings throughout Old City. We'll assess the existing substrate, address any structural issues, and install a commercial-grade membrane with proper drainage and flashing. Warranties up to 20 years are available. Call (888) 823-4766 for a free estimate.",
+          "Yes. We routinely install and replace EPDM, TPO, and modified bitumen membranes on loft and warehouse buildings throughout Old City. We'll assess the existing substrate, address any structural issues, and install a commercial-grade membrane with proper drainage and flashing. Warranties up to 20 years are available. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "Do I need historic commission approval for roof work in Old City?",
@@ -2844,7 +2844,7 @@ export const locations: Location[] = [
       {
         question: "Can you install or waterproof a roof deck on my Old City rowhouse?",
         answer:
-          "Yes. Roof decks are extremely popular in Old City and provide sought-after outdoor space and skyline views. We install fully waterproofed membrane systems beneath deck framing, with proper drainage, reinforced edges, and access points. We can also replace aging roof decks and waterproofing in one project. Call (888) 823-4766 for a design consultation.",
+          "Yes. Roof decks are extremely popular in Old City and provide sought-after outdoor space and skyline views. We install fully waterproofed membrane systems beneath deck framing, with proper drainage, reinforced edges, and access points. We can also replace aging roof decks and waterproofing in one project. Call (267) 255-3620 for a design consultation.",
       },
     ],
   },
@@ -2856,7 +2856,7 @@ export const locations: Location[] = [
     type: "neighborhood",
     metaTitle: "Roofer Northern Liberties Philadelphia — Flat Roof & Deck Specialists",
     metaDescription:
-      "Northern Liberties roofing from Adilay Roofing. Flat roof, roof deck, new construction & rowhouse experts. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Northern Liberties roofing from Adilay Roofing. Flat roof, roof deck, new construction & rowhouse experts. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Northern Liberties Roofing Services",
     intro:
       "Northern Liberties — \"NoLibs\" to locals — is one of Philadelphia's most rapidly transformed neighborhoods, where 19th-century industrial architecture meets contemporary condo and townhome development. The neighborhood stretches from Spring Garden Street north to Girard Avenue and from the Delaware River west to 6th Street, with key corridors along 2nd Street, 3rd Street, and Liberties Walk. The housing mix is striking: original Philadelphia rowhouses with traditional flat tar and rubber roofs, converted former breweries and factories now serving as loft condos, and a large inventory of new-build three- and four-story townhomes with contemporary rooflines, roof decks, and green roof features. The modern construction throughout Northern Liberties has raised the bar for roofing quality — most new homes come with roof decks built above a fully waterproofed membrane system, and buyers expect this infrastructure to be in excellent condition. Adilay Roofing works extensively in Northern Liberties, handling both traditional rowhouse roof replacements and the more complex membrane and roof deck systems on newer construction. From our Kensington headquarters we can reach any Northern Liberties address in under ten minutes, making emergency response and follow-up visits exceptionally fast.",
@@ -2873,7 +2873,7 @@ export const locations: Location[] = [
       {
         question: "My Northern Liberties roof deck is leaking into my condo below. Can you fix it?",
         answer:
-          "Yes. Roof deck leaks in Northern Liberties are almost always caused by failed membrane seams, deteriorated flashing around the pilot house, or damaged drainage scuppers. We'll inspect the full system, identify the source, and either repair the existing membrane or — if it's at the end of its service life — remove the deck and install a new waterproofing system beneath a rebuilt deck. Call (888) 823-4766 for an emergency assessment.",
+          "Yes. Roof deck leaks in Northern Liberties are almost always caused by failed membrane seams, deteriorated flashing around the pilot house, or damaged drainage scuppers. We'll inspect the full system, identify the source, and either repair the existing membrane or — if it's at the end of its service life — remove the deck and install a new waterproofing system beneath a rebuilt deck. Call (267) 255-3620 for an emergency assessment.",
       },
       {
         question: "Do you install green roofs in Northern Liberties?",
@@ -2883,12 +2883,12 @@ export const locations: Location[] = [
       {
         question: "How much does a flat roof replacement cost in Northern Liberties?",
         answer:
-          "For a standard Northern Liberties rowhouse, a full flat roof replacement with 60-mil EPDM membrane typically ranges from $6,000 to $10,000. Larger loft buildings or townhomes with roof decks are priced individually based on square footage and complexity. We provide free, transparent quotes with no upsells. Call (888) 823-4766.",
+          "For a standard Northern Liberties rowhouse, a full flat roof replacement with 60-mil EPDM membrane typically ranges from $6,000 to $10,000. Larger loft buildings or townhomes with roof decks are priced individually based on square footage and complexity. We provide free, transparent quotes with no upsells. Call (267) 255-3620.",
       },
       {
         question: "Can you do an emergency roof tarp in Northern Liberties today?",
         answer:
-          "Almost always. From our Kensington shop we can reach any Northern Liberties address — 2nd Street, 3rd, Lawrence, American, North Bodine, Hancock — within 10–20 minutes during business hours. For active leaks call (888) 823-4766 right now and we'll dispatch a tarping crew immediately.",
+          "Almost always. From our Kensington shop we can reach any Northern Liberties address — 2nd Street, 3rd, Lawrence, American, North Bodine, Hancock — within 10–20 minutes during business hours. For active leaks call (267) 255-3620 right now and we'll dispatch a tarping crew immediately.",
       },
       {
         question: "What's the difference between TPO, EPDM, and PVC for a Northern Liberties new-construction roof?",
@@ -2940,7 +2940,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Conshohocken PA — Roof Replacement & Repair",
     metaDescription:
-      "Conshohocken roofing by Adilay Roofing. Shingle replacement, flat roof, storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — (888) 823-4766.",
+      "Conshohocken roofing by Adilay Roofing. Shingle replacement, flat roof, storm repair. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Conshohocken Roofing Services",
     intro:
       "Conshohocken is a compact riverfront borough on the Schuylkill, transformed over the past two decades from a former steel and textile mill town into one of Montgomery County's most sought-after communities for young professionals, families, and empty nesters. The housing stock reflects this evolution: tight-knit rows of century-old worker homes along Fayette Street, Hector Street, and Spring Mill Avenue sit alongside newer luxury townhome developments, high-rise condos near the Matsonford Road corridor, and converted mill lofts along the riverfront. Most of the older Conshohocken housing features pitched shingle roofs, while the new-build townhomes often combine pitched and flat roof sections, and the mill conversions typically have commercial-grade membrane roofs. The borough's steep hillside rising from the Schuylkill River creates unique roofing considerations — many homes sit on slopes, with drainage patterns and wind exposure that differ from flatter suburban settings. Adilay Roofing has served Conshohocken and the surrounding Plymouth Township and Whitemarsh Township communities for years, handling everything from full shingle replacements on Fayette Street rowhomes to commercial membrane work on Matsonford Road buildings.",
@@ -2958,7 +2958,7 @@ export const locations: Location[] = [
       {
         question: "Do you serve both Conshohocken Borough and West Conshohocken?",
         answer:
-          "Yes. We serve both boroughs and the surrounding Plymouth and Whitemarsh townships. Each municipality has slightly different permitting requirements, and we handle those differences as part of every project. Call (888) 823-4766 for a free estimate anywhere in the 19428 or 19429 zip codes.",
+          "Yes. We serve both boroughs and the surrounding Plymouth and Whitemarsh townships. Each municipality has slightly different permitting requirements, and we handle those differences as part of every project. Call (267) 255-3620 for a free estimate anywhere in the 19428 or 19429 zip codes.",
       },
       {
         question: "Can you replace the roof on my Conshohocken townhome?",
@@ -2968,7 +2968,7 @@ export const locations: Location[] = [
       {
         question: "How much does a roof replacement cost in Conshohocken?",
         answer:
-          "Costs vary by home size and roof complexity. A typical Conshohocken rowhome or modest single-family replacement ranges from $7,000 to $14,000, while larger townhomes and single-family homes may range from $12,000 to $22,000+. We provide free on-site estimates with transparent pricing. Call (888) 823-4766.",
+          "Costs vary by home size and roof complexity. A typical Conshohocken rowhome or modest single-family replacement ranges from $7,000 to $14,000, while larger townhomes and single-family homes may range from $12,000 to $22,000+. We provide free on-site estimates with transparent pricing. Call (267) 255-3620.",
       },
     ],
   },
@@ -2980,7 +2980,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Bala Cynwyd PA — Main Line Roof Replacement & Repair",
     metaDescription:
-      "Bala Cynwyd roofing by Adilay Roofing. Slate, cedar, shingle specialists for Main Line homes. Licensed PA184779. Free estimates — call (888) 823-4766.",
+      "Bala Cynwyd roofing by Adilay Roofing. Slate, cedar, shingle specialists for Main Line homes. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Bala Cynwyd Roofing Services",
     intro:
       "Bala Cynwyd is the gateway to Philadelphia's Main Line — an affluent, leafy Montgomery County community just across the Schuylkill River from Manayunk and West Philadelphia. The neighborhood is defined by its stately stone twins, large detached colonials, and Tudor-style homes set on generous tree-shaded lots along streets like Bryn Mawr Avenue, Highland Avenue, Bala Avenue, and Montgomery Avenue. Many Bala Cynwyd homes were built between the 1910s and 1940s during the Main Line's residential boom, and their roofs often feature premium materials — natural slate, cedar shake, Spanish tile, and heavy architectural shingles — that reflect the quality expected of Main Line architecture. The mature tree canopy throughout the neighborhood adds beauty but also creates roofing challenges: heavy leaf loads in gutters, moss and algae growth on shaded slopes, and regular risk of falling branches during storms. Adilay Roofing brings over 20 years of experience with premium roofing materials and the meticulous craftsmanship that Main Line homes deserve. We serve Bala Cynwyd alongside the neighboring Main Line communities of Merion, Narberth, Wynnewood, Ardmore, and Penn Valley.",
@@ -2998,12 +2998,12 @@ export const locations: Location[] = [
       {
         question: "Do you work on slate and cedar shake roofs in Bala Cynwyd?",
         answer:
-          "Yes. Bala Cynwyd has a high concentration of slate and cedar shake roofs, and we regularly perform both repair work and full replacements. For homeowners who want to preserve the look without the slate price tag, we install premium synthetic slate and designer architectural shingles. For cedar, we offer proper re-roofing with new cedar shakes or with synthetic shake alternatives. Call (888) 823-4766 for an assessment.",
+          "Yes. Bala Cynwyd has a high concentration of slate and cedar shake roofs, and we regularly perform both repair work and full replacements. For homeowners who want to preserve the look without the slate price tag, we install premium synthetic slate and designer architectural shingles. For cedar, we offer proper re-roofing with new cedar shakes or with synthetic shake alternatives. Call (267) 255-3620 for an assessment.",
       },
       {
         question: "How much does a Main Line roof replacement cost?",
         answer:
-          "Main Line homes in Bala Cynwyd typically range from $15,000 to $35,000+ for a full replacement, depending on size, complexity, and material. Slate and cedar replacements can exceed $50,000 on larger homes. We provide detailed, transparent estimates that outline every cost. Call (888) 823-4766 for a free on-site quote.",
+          "Main Line homes in Bala Cynwyd typically range from $15,000 to $35,000+ for a full replacement, depending on size, complexity, and material. Slate and cedar replacements can exceed $50,000 on larger homes. We provide detailed, transparent estimates that outline every cost. Call (267) 255-3620 for a free on-site quote.",
       },
       {
         question: "Do you serve the rest of the Main Line?",
@@ -3020,7 +3020,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Chester PA — Residential & Commercial Roof Replacement",
     metaDescription:
-      "Chester PA roofing by Adilay Roofing. Residential, commercial & flat roof repair along the Delaware River. Licensed PA184779. Free estimates — (888) 823-4766.",
+      "Chester PA roofing by Adilay Roofing. Residential, commercial & flat roof repair along the Delaware River. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Chester PA Roofing Services",
     intro:
       "Chester is Pennsylvania's oldest city, founded by William Penn in 1682 on the banks of the Delaware River in southern Delaware County. The city's housing stock reflects centuries of history: Colonial-era and early-American homes in the historic downtown, early-20th-century rowhouses on streets like 9th Street, Providence Avenue, and Edgmont Avenue, and mid-century brick twins and singles in residential neighborhoods like Sun Village and Highland Gardens. Chester also has a significant commercial and institutional presence — Widener University, Crozer Chester Medical Center, the Chester riverfront developments, and the Talen Energy Stadium — meaning the city has a substantial inventory of commercial-grade low-slope and flat membrane roofs alongside its residential stock. The city's riverfront location exposes many properties to wind and storm pressure, while its older housing means many roofs are overdue for replacement. Adilay Roofing serves Chester with both residential and commercial roofing capabilities, bringing the same licensed, insured, 20-plus-year expertise to Chester projects that we bring to every Delaware Valley community.",
@@ -3039,12 +3039,12 @@ export const locations: Location[] = [
       {
         question: "Do you handle both residential and commercial roofing in Chester?",
         answer:
-          "Yes. We install and repair residential shingle, flat, and low-slope roofing as well as commercial EPDM, TPO, and modified bitumen membrane systems. For commercial properties we offer manufacturer-backed warranties up to 20 years. Call (888) 823-4766 to discuss your residential or commercial project.",
+          "Yes. We install and repair residential shingle, flat, and low-slope roofing as well as commercial EPDM, TPO, and modified bitumen membrane systems. For commercial properties we offer manufacturer-backed warranties up to 20 years. Call (267) 255-3620 to discuss your residential or commercial project.",
       },
       {
         question: "How quickly can you respond to a Chester roof emergency?",
         answer:
-          "We respond to Chester emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization. Chester is a short drive via I-95 from our Philadelphia headquarters, so we can mobilize quickly for storm damage, active leaks, and wind damage. Call (888) 823-4766 for 24/7 emergency response.",
+          "We respond to Chester emergency calls typically within 2–4 hours, providing same-day tarping and leak stabilization. Chester is a short drive via I-95 from our Philadelphia headquarters, so we can mobilize quickly for storm damage, active leaks, and wind damage. Call (267) 255-3620 for 24/7 emergency response.",
       },
       {
         question: "Can you help with insurance claims for storm damage in Chester?",
@@ -3061,7 +3061,7 @@ export const locations: Location[] = [
     type: "city",
     metaTitle: "Roofer Trenton NJ — Roof Replacement & Repair",
     metaDescription:
-      "Trenton NJ roofing by Adilay Roofing. Shingle, flat roof & rowhouse specialists across Mercer County. Licensed & insured. Free estimates — (888) 823-4766.",
+      "Trenton NJ roofing by Adilay Roofing. Shingle, flat roof & rowhouse specialists across Mercer County. Licensed & insured. Free estimates — (267) 255-3620.",
     h1: "Trenton NJ Roofing Services",
     intro:
       "Trenton is New Jersey's capital city and the largest municipality in Mercer County, sitting directly across the Delaware River from Morrisville, Pennsylvania, and within easy reach of both Philadelphia and central New Jersey. The city's housing stock is dominated by brick and wood-frame rowhouses — particularly in neighborhoods like Chambersburg, Mill Hill, Berkeley Square, and Hiltonia — many of which date to the late 1800s and early 1900s and feature traditional flat or low-slope roofs. Trenton also has a large inventory of detached twins, singles, and Victorians in neighborhoods like Cadwalader Heights and Villa Park, most with pitched shingle roofs showing decades of wear. The city's role as state capital means a significant commercial and institutional roofing presence as well, from the state government complex to Capital Health facilities and commercial buildings along Broad Street and Route 1. Adilay Roofing extends our services across the Delaware River into Trenton and the surrounding Mercer County communities, bringing the same licensed craftsmanship and 20-plus-year experience we provide throughout the Philadelphia metropolitan area.",
@@ -3081,17 +3081,17 @@ export const locations: Location[] = [
       {
         question: "Do you serve Trenton and the rest of Mercer County?",
         answer:
-          "Yes. We serve Trenton and surrounding Mercer County communities including Ewing, Hamilton, Lawrenceville, Princeton, and Hopewell. We're licensed and insured for New Jersey roofing work. Call (888) 823-4766 for a free estimate anywhere in Mercer County.",
+          "Yes. We serve Trenton and surrounding Mercer County communities including Ewing, Hamilton, Lawrenceville, Princeton, and Hopewell. We're licensed and insured for New Jersey roofing work. Call (267) 255-3620 for a free estimate anywhere in Mercer County.",
       },
       {
         question: "Can you replace the flat rubber roof on my Trenton rowhouse?",
         answer:
-          "Yes. Trenton rowhouse flat roofs are very similar to the Philadelphia rowhouse roofs we replace every week. We strip the existing membrane down to the deck, make any needed repairs to the substrate, install a fresh 60-mil EPDM rubber membrane with new flashing and drainage, and provide a manufacturer-backed warranty. Call (888) 823-4766 for a free estimate.",
+          "Yes. Trenton rowhouse flat roofs are very similar to the Philadelphia rowhouse roofs we replace every week. We strip the existing membrane down to the deck, make any needed repairs to the substrate, install a fresh 60-mil EPDM rubber membrane with new flashing and drainage, and provide a manufacturer-backed warranty. Call (267) 255-3620 for a free estimate.",
       },
       {
         question: "How much does a roof replacement cost in Trenton?",
         answer:
-          "Trenton roof replacement costs vary by home type. A typical rowhouse flat roof replacement ranges from $5,000 to $10,000, while pitched-roof single-family homes typically range from $8,000 to $18,000. We provide transparent, on-site estimates with no hidden fees. Call (888) 823-4766.",
+          "Trenton roof replacement costs vary by home type. A typical rowhouse flat roof replacement ranges from $5,000 to $10,000, while pitched-roof single-family homes typically range from $8,000 to $18,000. We provide transparent, on-site estimates with no hidden fees. Call (267) 255-3620.",
       },
     ],
   },

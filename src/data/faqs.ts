@@ -7,7 +7,7 @@ export const faqs = [
   {
     question: "How fast can a Philadelphia roofer get to my home for an emergency?",
     answer:
-      "For active leaks, storm damage, or missing shingles after high winds, call (888) 823-4766 and we aim to have a crew on-site the same day for emergencies in Philadelphia County and the close suburbs. If we can’t get to you that day, we’ll walk you through tarping and containment steps over the phone so the damage stops spreading until we arrive.",
+      "For active leaks, storm damage, or missing shingles after high winds, call (267) 255-3620 and we aim to have a crew on-site the same day for emergencies in Philadelphia County and the close suburbs. If we can’t get to you that day, we’ll walk you through tarping and containment steps over the phone so the damage stops spreading until we arrive.",
   },
   {
     question: "How do I know if my roof needs to be replaced?",
@@ -52,7 +52,7 @@ export const faqs = [
   {
     question: "Can you help with emergency roof repairs?",
     answer:
-      "Absolutely. We offer 24/7 emergency roof repair service. If you have an active leak or storm damage, call us right away at (888) 823-4766. We respond quickly to prevent further damage to your property.",
+      "Absolutely. We offer 24/7 emergency roof repair service. If you have an active leak or storm damage, call us right away at (267) 255-3620. We respond quickly to prevent further damage to your property.",
   },
   {
     question: "Do you offer financing for roof replacement or repair?",

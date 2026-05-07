@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
   },
   description:
-    "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779, insured. 5-star rated on Google, 2,000+ projects. Free estimates — (888) 823-4766.",
+    "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779, insured. 5-star rated on Google, 2,000+ projects. Free estimates — (267) 255-3620.",
   keywords: [
     "roofer Philadelphia",
     "roofing contractor Philadelphia",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Adilay Roofing | Philadelphia's Trusted Roofing Experts",
     description:
-      "20+ years of roofing excellence in Philadelphia. Free estimates — call (888) 823-4766.",
+      "20+ years of roofing excellence in Philadelphia. Free estimates — call (267) 255-3620.",
   },
   alternates: {
     canonical: BASE_URL,

@@ -156,6 +156,6 @@ Permits are not bureaucratic obstacles. They are a safeguard that protects your 
 
 Adilay Roofing LLC is a family-owned, fully licensed and insured roofing company with over 20 years of experience and 1,000-plus satisfied clients across Philadelphia and the surrounding counties. We never use subcontractors, we offer honest pricing, and we handle every aspect of your project from permits to final cleanup.
 
-Ready to get started? [Get a free roof estimate](/get-quote) from Adilay Roofing today, or call us at (888) 823-4766. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service. Visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125, or learn more [about Adilay Roofing](/about) and the [roof replacement services](/services/roof-replacement) we provide across the region.
+Ready to get started? [Get a free roof estimate](/get-quote) from Adilay Roofing today, or call us at (267) 255-3620. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service. Visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125, or learn more [about Adilay Roofing](/about) and the [roof replacement services](/services/roof-replacement) we provide across the region.
 
 When it comes to **Philadelphia building permits roofing** compliance, do not leave it to chance. Work with a contractor who handles it all, does it right the first time, and stands behind every project with a name and a license number.

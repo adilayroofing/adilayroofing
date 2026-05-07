@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     {
       slug: "/",
       title: "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
-      description: "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (888) 823-4766.",
+      description: "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779. Free estimates — (267) 255-3620.",
     },
     {
       slug: "/about",
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     {
       slug: "/contact",
       title: "Contact Adilay Roofing | Free Estimate Philadelphia",
-      description: "Contact Adilay Roofing for a free roofing estimate in Philadelphia. Call (888) 823-4766 or fill out our online form. Licensed PA184779.",
+      description: "Contact Adilay Roofing for a free roofing estimate in Philadelphia. Call (267) 255-3620 or fill out our online form. Licensed PA184779.",
     },
     {
       slug: "/faq",
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
     {
       slug: "/service-areas",
       title: "Service Areas | Adilay Roofing Philadelphia",
-      description: "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County, Chester County & Riverside NJ. Free estimates — (888) 823-4766.",
+      description: "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County, Chester County & Riverside NJ. Free estimates — (267) 255-3620.",
     },
     {
       slug: "/blog",

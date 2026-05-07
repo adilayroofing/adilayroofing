@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Service Areas — Philadelphia, PA & South Jersey",
     description:
-      "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties PA plus Camden & Burlington Counties NJ. Free estimates — (888) 823-4766.",
+      "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties PA plus Camden & Burlington Counties NJ. Free estimates — (267) 255-3620.",
     keywords: [
       "roofer near me Philadelphia",
       "roofing contractor near me",

@@ -118,7 +118,7 @@ const faqs = [
   {
     question: "Can I get a free quote from a Philadelphia roofer?",
     answer:
-      "Yes. Adilay Roofing provides 100% free, no-obligation roofing quotes in Philadelphia for repairs, replacements, and inspections. You get a written estimate with itemized materials and labor — no pressure, no follow-up sales calls. Request yours by filling out the form on our get-a-quote page or calling (888) 823-4766.",
+      "Yes. Adilay Roofing provides 100% free, no-obligation roofing quotes in Philadelphia for repairs, replacements, and inspections. You get a written estimate with itemized materials and labor — no pressure, no follow-up sales calls. Request yours by filling out the form on our get-a-quote page or calling (267) 255-3620.",
   },
   {
     question: "What should I look for when hiring a roofer in Philadelphia?",
