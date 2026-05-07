@@ -12,7 +12,7 @@ export const company = {
     zip: "19125",
     full: "2020 Dreer St., Unit 101, Philadelphia, PA 19125",
   },
-  mapUrl: "https://maps.google.com/?cid=6532235387027120529",
+  mapUrl: "https://www.google.com/maps?q=Adilay+Roofing,+2020+Dreer+St+Unit+101,+Philadelphia,+PA+19125",
   googleReviewsUrl: "https://www.google.com/maps/search/?api=1&query=Adilay+Roofing+Philadelphia+PA",
   yearsExperience: "20+",
   projectsCompleted: "2,000+",
