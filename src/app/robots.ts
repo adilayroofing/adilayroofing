@@ -44,7 +44,19 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/lp/", "/get-quote-ads", "/api/"],
+        disallow: [
+          "/admin/",
+          "/lp/",
+          "/get-quote-ads",
+          "/api/",
+          // Tracking-param URLs from the old WP/WooCommerce site (e.g.
+          // `?ref=aftership`) — GSC was wasting crawl budget on these.
+          "/*?ref=",
+          // Next.js React Server Component prefetch payloads. They were
+          // 74% of Googlebot's crawl bytes; blocking keeps budget on real
+          // pages. Doesn't affect user-facing prefetching.
+          "/*?_rsc=",
+        ],
       },
       ...BLOCKED_AI_BOTS.map((bot) => ({
         userAgent: bot,

@@ -131,6 +131,21 @@ const nextConfig: NextConfig = {
       { source: "/shop/:path*", destination: "/", permanent: true },
       { source: "/wishlist", destination: "/", permanent: true },
       { source: "/wishlist/:path*", destination: "/", permanent: true },
+      { source: "/checkout", destination: "/", permanent: true },
+      { source: "/checkout/:path*", destination: "/", permanent: true },
+      { source: "/checkout-2", destination: "/", permanent: true },
+      { source: "/checkout-2/:path*", destination: "/", permanent: true },
+      { source: "/cart", destination: "/", permanent: true },
+      { source: "/cart/:path*", destination: "/", permanent: true },
+      { source: "/my-account", destination: "/", permanent: true },
+      { source: "/my-account/:path*", destination: "/", permanent: true },
+
+      // Default WordPress placeholder pages — surfaced in GSC "Crawled, not
+      // indexed". Send to home so Google drops them on next recrawl.
+      { source: "/sample-page", destination: "/", permanent: true },
+      { source: "/sample-page/:path*", destination: "/", permanent: true },
+      { source: "/hello-world", destination: "/blog", permanent: true },
+
       { source: "/test", destination: "/", permanent: true },
       { source: "/test/:path*", destination: "/", permanent: true },
     ];
