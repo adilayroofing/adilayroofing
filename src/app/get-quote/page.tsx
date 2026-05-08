@@ -11,7 +11,7 @@ import BBBSeal from "@/components/BBBSeal";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
-export const revalidate = 60;
+export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
   const dbSeo = await getPageSEO("/get-quote");

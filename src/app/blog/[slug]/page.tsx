@@ -22,8 +22,9 @@ import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { ORG_REF, stripHtml } from "@/lib/schema";
 
-// Revalidate every 60 seconds for CMS changes (also handles scheduled posts)
-export const revalidate = 60;
+// Revalidate daily. Deploys regenerate immediately; CMS-only edits and scheduled-post
+// flips propagate within 24h.
+export const revalidate = 86400;
 
 // ─── Helpers ────────────────────────────────────────────────────────
 function isPostPublished(dateStr: string): boolean {

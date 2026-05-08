@@ -10,7 +10,7 @@ import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const revalidate = 60;
+export const revalidate = 86400;
 
 // ---------------------------------------------------------------------------
 // Hardcoded fallback data

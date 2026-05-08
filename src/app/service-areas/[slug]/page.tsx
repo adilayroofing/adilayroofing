@@ -11,7 +11,7 @@ import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/se
 import SafeHTML from "@/components/SafeHTML";
 import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
-export const revalidate = 60;
+export const revalidate = 86400;
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render all location pages

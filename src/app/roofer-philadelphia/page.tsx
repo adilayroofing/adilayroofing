@@ -14,7 +14,7 @@ import ServiceIcon from "@/components/ServiceIcon";
 import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
 import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
-export const revalidate = 60;
+export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
   const dbSeo = await getPageSEO("/roofer-philadelphia");

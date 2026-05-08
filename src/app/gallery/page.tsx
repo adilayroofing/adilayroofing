@@ -8,7 +8,7 @@ import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/se
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const revalidate = 60;
+export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
   const dbSeo = await getPageSEO("/gallery");

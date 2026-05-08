@@ -20,7 +20,7 @@ import {
   stripHtml,
 } from "@/lib/schema";
 
-export const revalidate = 60;
+export const revalidate = 86400;
 
 // Pre-compute county groupings once for the "Service Areas" cross-link block.
 // Built dynamically from locations data so every county is included.

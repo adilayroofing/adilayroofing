@@ -20,7 +20,11 @@ import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const revalidate = 60;
+// 24h ISR window. Vercel Hobby ISR-write budget = 200K/mo, and a 60s window
+// across ~120 ISR routes burned the cap in days once crawler activity ramped
+// up. Content here changes infrequently; a fresh deploy regenerates everything
+// instantly anyway, so 24h is plenty for CMS-edit propagation.
+export const revalidate = 86400;
 
 // ---------------------------------------------------------------------------
 // Dynamic metadata

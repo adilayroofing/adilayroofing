@@ -6,8 +6,8 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { BASE_URL, ORG_REF } from "@/lib/schema";
 
-// Revalidate every 60 seconds so CMS changes go live quickly
-export const revalidate = 60;
+// Revalidate daily. Deploys regenerate immediately; CMS-only edits propagate within 24h.
+export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
   const dbSeo = await getPageSEO("/blog");
