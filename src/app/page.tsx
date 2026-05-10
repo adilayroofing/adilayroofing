@@ -311,20 +311,20 @@ export default async function Home() {
 
             <ScrollReveal delay={150} duration={500} distance={12}>
               <ul className="mt-5 md:mt-7 mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-sm md:max-w-3xl">
-                <li className="bg-white rounded-md flex items-center justify-center px-3 py-2 md:py-3 h-16 md:h-20">
+                <li className="bg-white rounded-md flex items-center justify-center px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
                   <img
                     src="/images/google-business-review-5-stars.png"
                     alt="Adilay Roofing — 5.0 stars on Google Business Reviews"
                     loading="lazy"
-                    className="max-h-9 md:max-h-12 w-auto object-contain"
+                    className="max-h-12 md:max-h-14 max-w-full w-auto object-contain"
                   />
                 </li>
-                <li className="bg-white rounded-md flex items-center justify-center px-3 py-2 md:py-3 h-16 md:h-20">
+                <li className="bg-white rounded-md flex items-center justify-center px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
                   <a
                     href="https://www.bbb.org/us/pa/philadelphia/profile/roofing-contractors/adilay-roofing-llc-0241-236104655/#sealclick"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
-                    className="inline-flex items-center justify-center"
+                    className="inline-flex items-center justify-center h-full"
                   >
                     <img
                       src="https://seal-dc-easternpa.bbb.org/seals/blue-seal-160-82-bbb-236104655.png"
@@ -332,27 +332,27 @@ export default async function Home() {
                       loading="lazy"
                       width={160}
                       height={82}
-                      className="max-h-10 md:max-h-14 w-auto object-contain"
+                      className="max-h-12 md:max-h-16 max-w-full w-auto object-contain"
                       style={{ border: 0 }}
                     />
                   </a>
                 </li>
-                <li className="bg-white rounded-md flex items-center justify-center gap-2 px-3 py-2 md:py-3 h-16 md:h-20">
+                <li className="bg-white rounded-md flex items-center justify-center gap-2 px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
                   <img
                     src="/images/gaf-certified-logo.jpg"
                     alt="GAF Certified Contractor"
                     loading="lazy"
-                    className="h-9 w-9 md:h-12 md:w-12 object-contain flex-shrink-0"
+                    className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0"
                   />
-                  <span className="text-brand-dark font-bold text-xs md:text-sm leading-tight text-left">
+                  <span className="text-brand-dark font-bold text-sm md:text-base leading-tight text-left">
                     GAF<br />Certified
                   </span>
                 </li>
-                <li className="bg-white rounded-md flex flex-col items-center justify-center px-3 py-2 md:py-3 h-16 md:h-20">
-                  <span className="text-[10px] md:text-xs text-brand-gray font-semibold uppercase tracking-wider">
+                <li className="bg-white rounded-md flex flex-col items-center justify-center px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
+                  <span className="text-[11px] md:text-xs text-brand-gray font-semibold uppercase tracking-wider">
                     Licensed PA
                   </span>
-                  <span className="text-brand-dark font-extrabold text-sm md:text-lg leading-tight mt-0.5">
+                  <span className="text-brand-dark font-extrabold text-base md:text-xl leading-tight mt-0.5">
                     #PA184779
                   </span>
                 </li>
