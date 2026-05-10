@@ -1,13 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-/** Lightweight anon client for public SEO reads (no auth needed) */
-function getAnonClient() {
-  if (!supabaseUrl || !supabaseAnonKey) return null;
-  return createClient(supabaseUrl, supabaseAnonKey);
-}
+// CMS deprecated 2026-05-10. The Supabase client and DB query bodies were
+// removed; the exported function signatures are kept (returning null) so
+// existing page templates with `if (dbSeo) ...` fallback chains still
+// compile and use their hardcoded data files. See cms-backup-2026-05-10.json
+// for a snapshot of the removed CMS data.
 
 export interface PageSEO {
   id: string;
@@ -26,23 +21,15 @@ export interface PageSEO {
  * Fetch SEO metadata for a page from Supabase.
  * Returns null if not found or Supabase is not configured (graceful fallback).
  */
-export async function getPageSEO(slug: string): Promise<PageSEO | null> {
-  const client = getAnonClient();
-  if (!client) return null;
-
-  try {
-    const { data, error } = await client
-      .from("pages")
-      .select("*")
-      .eq("slug", slug)
-      .eq("status", "published")
-      .single();
-
-    if (error || !data) return null;
-    return data as PageSEO;
-  } catch {
-    return null;
-  }
+export async function getPageSEO(_slug: string): Promise<PageSEO | null> {
+  // CMS deprecated 2026-05-10. All page metadata now lives in the data files
+  // (src/data/services.ts, src/data/locations.ts, and per-page page.tsx
+  // metadata blocks). This function is kept as a no-op so the existing
+  // `if (dbSeo) ...` fallback chains in page templates still compile and
+  // automatically use the hardcoded data. Safe to delete after every page
+  // template has been migrated off these calls. See cms-backup-2026-05-10.json
+  // for a snapshot of the old CMS data if reference is ever needed.
+  return null;
 }
 
 /**
@@ -53,39 +40,9 @@ export async function getPageSEO(slug: string): Promise<PageSEO | null> {
  * Fetch CMS content (rich_text block) for a page from Supabase.
  * Returns the HTML string if found, or null (caller falls back to hardcoded).
  */
-export async function getPageContent(slug: string): Promise<string | null> {
-  const client = getAnonClient();
-  if (!client) return null;
-
-  try {
-    // First get the page ID
-    const { data: page, error: pageError } = await client
-      .from("pages")
-      .select("id")
-      .eq("slug", slug)
-      .eq("status", "published")
-      .single();
-
-    if (pageError || !page) return null;
-
-    // Then get the rich_text content block
-    const { data: block, error: blockError } = await client
-      .from("content_blocks")
-      .select("content")
-      .eq("page_id", page.id)
-      .eq("block_type", "rich_text")
-      .order("sort_order", { ascending: true })
-      .limit(1)
-      .single();
-
-    if (blockError || !block) return null;
-
-    // content is stored as { html: "..." }
-    const html = block.content?.html;
-    return typeof html === "string" && html.trim().length > 0 ? html : null;
-  } catch {
-    return null;
-  }
+export async function getPageContent(_slug: string): Promise<string | null> {
+  // CMS deprecated 2026-05-10 — see getPageSEO comment.
+  return null;
 }
 
 /**
@@ -93,36 +50,11 @@ export async function getPageContent(slug: string): Promise<string | null> {
  * Returns the JSONB content object or null (caller falls back to hardcoded data).
  */
 export async function getStructuredContent(
-  slug: string,
-  blockType: "structured_service" | "structured_location" | "structured_faq" | "structured_about" | "structured_home" | "structured_financing" | "structured_contact" | "structured_quote" | "structured_services_index" | "structured_areas_index" | "structured_gallery" | "structured_blog_index"
+  _slug: string,
+  _blockType: "structured_service" | "structured_location" | "structured_faq" | "structured_about" | "structured_home" | "structured_financing" | "structured_contact" | "structured_quote" | "structured_services_index" | "structured_areas_index" | "structured_gallery" | "structured_blog_index"
 ): Promise<Record<string, unknown> | null> {
-  const client = getAnonClient();
-  if (!client) return null;
-
-  try {
-    const { data: page, error: pageError } = await client
-      .from("pages")
-      .select("id")
-      .eq("slug", slug)
-      .eq("status", "published")
-      .single();
-
-    if (pageError || !page) return null;
-
-    const { data: block, error: blockError } = await client
-      .from("content_blocks")
-      .select("content")
-      .eq("page_id", page.id)
-      .eq("block_type", blockType)
-      .limit(1)
-      .single();
-
-    if (blockError || !block) return null;
-
-    return block.content as Record<string, unknown>;
-  } catch {
-    return null;
-  }
+  // CMS deprecated 2026-05-10 — see getPageSEO comment.
+  return null;
 }
 
 export function buildMetadataFromSEO(seo: PageSEO) {

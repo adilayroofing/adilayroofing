@@ -7,11 +7,11 @@ import { getAllLocations, getLocationBySlug, getNearbyLocations, type Location }
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
 import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
-export const revalidate = 86400;
+// Fully static — every location page is generated at build time from
+// src/data/locations.ts. No runtime CMS lookup, no revalidation needed.
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render all location pages
@@ -35,25 +35,6 @@ export async function generateMetadata({
     return { title: "Location Not Found" };
   }
 
-  // Check Supabase for CMS-managed SEO data first
-  const dbSeo = await getPageSEO(`/service-areas/${slug}`);
-  if (dbSeo) {
-    return {
-      ...buildMetadataFromSEO(dbSeo),
-      keywords: [
-        `roofer ${location.name}`,
-        `roofing contractor ${location.name}`,
-        `roof replacement ${location.name}`,
-        `roof repair ${location.name}`,
-        `${location.name} roofer`,
-        `${location.name} roofing`,
-        `trusted roofer ${location.name} ${location.state}`,
-        `roofer near me ${location.name}`,
-      ],
-    };
-  }
-
-  // Fallback to hardcoded metadata
   return {
     title: location.metaTitle,
     description: location.metaDescription,
@@ -140,33 +121,21 @@ export default async function LocationPage({ params }: PageProps) {
   // All locations for linking in "Communities We Serve"
   const allLocations = getAllLocations();
 
-  // Fetch CMS structured content (falls back to hardcoded if none)
-  const cmsData = await getStructuredContent(`/service-areas/${slug}`, "structured_location");
+  // All content sourced directly from src/data/locations.ts (single source of truth).
+  const heroTitle = location.h1;
+  const heroSubtitle = `Professional roofing services for ${location.name}, ${location.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`;
+  const intro = location.intro;
+  const localContext = location.localContext;
+  const neighborhoods = location.neighborhoods;
+  const zipCodes = location.zipCodes;
+  const locationFaq = location.faq;
+  const bodySections = location.bodySections ?? [];
 
-  // Merge: CMS data overrides hardcoded, with fallback
-  const heroTitle = (cmsData?.heroTitle as string) || location.h1;
-  const heroSubtitle = (cmsData?.heroSubtitle as string) ||
-    `Professional roofing services for ${location.name}, ${location.state} and surrounding areas. Licensed, insured, and trusted by local homeowners.`;
-  const intro = (cmsData?.intro as string) || location.intro;
-  const localContext = (cmsData?.localContext as string) || location.localContext;
-  const cmsNeighborhoods = cmsData?.neighborhoods as string[] | undefined;
-  const neighborhoods = cmsNeighborhoods?.length ? cmsNeighborhoods : location.neighborhoods;
-  const cmsZipCodes = cmsData?.zipCodes as string[] | undefined;
-  const zipCodes = cmsZipCodes?.length ? cmsZipCodes : location.zipCodes;
-  const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
-  const locationFaq = cmsFaq?.length ? cmsFaq : location.faq;
-  const cmsBodySections = cmsData?.bodySections as { heading: string; html: string }[] | undefined;
-  const bodySections = cmsBodySections?.length ? cmsBodySections : location.bodySections ?? [];
-
-  // Additional CMS fields with fallbacks
-  const heroCTAText = (cmsData?.heroCTAText as string) || "Get FREE Estimate";
-  const servicesHeading = (cmsData?.servicesHeading as string) || `Our Services in ${location.name}`;
-  const servicesSubtext = (cmsData?.servicesSubtext as string) ||
-    `We offer a complete range of roofing and exterior services to homeowners and businesses in ${location.name}, ${location.state}. Every project is backed by our ${company.yearsExperience} years of experience and our commitment to quality workmanship.`;
-  const localContextHeading = (cmsData?.localContextHeading as string) ||
-    `Why ${location.name} Homeowners Choose Adilay Roofing`;
-  const cmsWhyChooseItems = cmsData?.whyChooseItems as string[] | undefined;
-  const whyChooseItems = cmsWhyChooseItems?.length ? cmsWhyChooseItems : [
+  const heroCTAText = "Get FREE Estimate";
+  const servicesHeading = `Our Services in ${location.name}`;
+  const servicesSubtext = `We offer a complete range of roofing and exterior services to homeowners and businesses in ${location.name}, ${location.state}. Every project is backed by our ${company.yearsExperience} years of experience and our commitment to quality workmanship.`;
+  const localContextHeading = `Why ${location.name} Homeowners Choose Adilay Roofing`;
+  const whyChooseItems = [
     `${company.yearsExperience} years of roofing experience`,
     `${company.projectsCompleted} projects completed`,
     "Licensed in Pennsylvania (PA184779)",
@@ -174,15 +143,11 @@ export default async function LocationPage({ params }: PageProps) {
     "Free on-site estimates \u2014 no pressure",
     "Emergency service available 24/7",
   ];
-  const neighborhoodsHeading = (cmsData?.neighborhoodsHeading as string) ||
-    `${location.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${location.name}`;
-  const neighborhoodsSubtext = (cmsData?.neighborhoodsSubtext as string) ||
-    `Our roofing services are available throughout ${location.name} and the surrounding ${location.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`;
-  const faqHeading = (cmsData?.faqHeading as string) ||
-    `Frequently Asked Questions About Roofing in ${location.name}`;
-  const ctaHeadline = (cmsData?.ctaHeadline as string) || `Need a Roofer in ${location.name}?`;
-  const ctaSubtext = (cmsData?.ctaSubtext as string) ||
-    `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`;
+  const neighborhoodsHeading = `${location.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${location.name}`;
+  const neighborhoodsSubtext = `Our roofing services are available throughout ${location.name} and the surrounding ${location.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`;
+  const faqHeading = `Frequently Asked Questions About Roofing in ${location.name}`;
+  const ctaHeadline = `Need a Roofer in ${location.name}?`;
+  const ctaSubtext = `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`;
 
   // Per-location Service schema — narrows areaServed to just this location
   // and references the canonical RoofingContractor by @id (emitted sitewide

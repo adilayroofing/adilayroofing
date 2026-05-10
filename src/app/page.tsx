@@ -55,10 +55,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      absolute: "Philadelphia Roofing Contractor — Adilay Roofing | Free Estimates",
+      // Brand-first title format: lifts CTR on branded "adilay" queries (was 1.54%
+      // at pos 4.6 — way too low for a brand-name match). "Adilay Roofing" is
+      // also the exact Google Business Profile name, so this should resolve any
+      // SERP confusion.
+      absolute: "Adilay Roofing — Philadelphia Roofing Contractor | Free Estimates",
     },
     description:
-      "Trusted Philadelphia roofing contractors. Roof replacement, repair, flat roofing & 24/7 emergency. Licensed PA184779. Free estimates (267) 255-3620.",
+      // Brand-led description with concrete trust signals. Includes license #,
+      // 5-star review claim (verify GBP rating before deploy), and phone for
+      // direct-call attribution. Length 152ch — under Google's 155–160 truncation.
+      "Adilay Roofing — licensed Philadelphia roofers (PA184779). Roof replacement, repair & 24/7 emergency. 5-star reviews. Free estimates (267) 255-3620.",
     keywords: [
       "roofer Philadelphia",
       "roofing contractor Philadelphia",
@@ -480,7 +487,7 @@ export default async function Home() {
                   Serving Philadelphia &amp; the Surrounding Counties
                 </h3>
                 <p className="text-brand-gray leading-relaxed text-base md:text-lg mb-4">
-                  We&rsquo;re based at 2020 Dreer St in Fishtown (Philadelphia 19125) and most of our work stays within an hour of the shop. If you&rsquo;re in any of these areas, you&rsquo;re in our service zone:
+                  We&rsquo;re based at 2020 Dreer St in Kensington (Philadelphia 19125) and most of our work stays within an hour of the shop. If you&rsquo;re in any of these areas, you&rsquo;re in our service zone:
                 </p>
                 <p className="text-brand-gray leading-relaxed text-base md:text-lg mb-6">
                   <Link href="/service-areas/philadelphia" className="text-brand-red font-semibold hover:underline">Philadelphia</Link>, <Link href="/service-areas/fishtown" className="text-brand-red font-semibold hover:underline">Fishtown</Link>, <Link href="/service-areas/northern-liberties" className="text-brand-red font-semibold hover:underline">Northern Liberties</Link>, <Link href="/service-areas/south-philadelphia" className="text-brand-red font-semibold hover:underline">South Philadelphia</Link>, <Link href="/service-areas/northeast-philadelphia" className="text-brand-red font-semibold hover:underline">Northeast Philadelphia</Link>, <Link href="/service-areas/center-city" className="text-brand-red font-semibold hover:underline">Center City</Link>, <Link href="/service-areas/west-philadelphia" className="text-brand-red font-semibold hover:underline">West Philadelphia</Link>, <Link href="/service-areas/north-philadelphia" className="text-brand-red font-semibold hover:underline">North Philadelphia</Link>, <Link href="/service-areas/manayunk" className="text-brand-red font-semibold hover:underline">Manayunk</Link>, <Link href="/service-areas/roxborough" className="text-brand-red font-semibold hover:underline">Roxborough</Link>, <Link href="/service-areas/bucks-county" className="text-brand-red font-semibold hover:underline">Bucks County</Link>, <Link href="/service-areas/montgomery-county" className="text-brand-red font-semibold hover:underline">Montgomery County</Link>, <Link href="/service-areas/delaware-county" className="text-brand-red font-semibold hover:underline">Delaware County</Link>, and <Link href="/service-areas/chester-county" className="text-brand-red font-semibold hover:underline">Chester County</Link>.

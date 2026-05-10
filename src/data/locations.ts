@@ -1785,31 +1785,69 @@ export const locations: Location[] = [
     state: "PA",
     county: "Bucks County",
     type: "city",
-    metaTitle: "Roofer Yardley PA — Roof Replacement & Repair",
+    // Title pattern rotation: this page uses the "{City} Roofing Contractor" form
+    // to match DEEP RANK queries "roofing contractor yardley" (142 impr) and
+    // "roof replacement yardley" (136 impr) verbatim.
+    metaTitle: "Yardley Roofing Contractor — Roof Repair & Replacement, PA",
     metaDescription:
-      "Yardley roofing by Adilay Roofing. Shingle, slate & premium roofing services. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
-    h1: "Yardley Roofing Services",
+      "Yardley roofing contractor — slate, shingle and storm-damage work in Yardley Borough and Lower Makefield Township. Licensed PA184779 — (267) 255-3620.",
+    h1: "Yardley, PA Roofing Contractor — Repair & Replacement",
     intro:
-      "Yardley is a picturesque borough along the Delaware River in lower Bucks County, known for its historic Main Street, canal towpath, and beautifully preserved homes. The borough features colonial-era stone homes, Victorian-era residences, and carefully maintained properties that reflect centuries of Bucks County history. The surrounding Lower Makefield Township adds upscale residential developments with larger contemporary homes. Yardley's riverfront location brings increased humidity and moisture exposure, while its mature tree canopy promotes moss growth and creates gutter debris. Adilay Roofing provides Yardley homeowners with expert roofing services that respect the character of this historic community while delivering modern waterproofing performance.",
+      "Yardley Borough sits on the Delaware River in lower Bucks County, connected to Trenton by the historic Yardley-Morrisville bridge and bounded by the Delaware Canal towpath that runs along its eastern edge. Adilay Roofing has worked Yardley's roofs from both sides of the line — the dense, walkable borough where 1800s stone colonials and Federal-style homes line South Main Street near the Yardley Inn, and the surrounding Lower Makefield Township, where mid-century ranches in Yardley Hunt and Brookstone share streets with newer estate homes in Edgewood Estates and Heacock Meadows. Yardley's roofing problems split clean along that geography. In the borough proper, around the train station and Lake Afton, you find old slate roofs at end-of-life, copper flashing that's lost its temper, and steep pitches that demand fall protection no shortcut crew is set up for. Across Yardley-Newtown Road in Lower Makefield, the issue is different: 1960s through 1980s asphalt shingles, originally built with minimal ventilation, are now on their second or third re-roof and showing the cumulative damage — ice damming in February, granule loss after every Bucks County hailstorm, and decking softer than the new shingles deserve. We pull permits at both Yardley Borough Hall (56 South Main Street) and Lower Makefield Township (1100 Edgewood Road) regularly enough that the inspectors know our crews by sight. That matters when your timeline is tight or your insurance adjuster is waiting on permit numbers. Whether you're in a Federal-period home built before the canal opened in 1832 or in a recent build off Stony Hill Road, the pricing structure is the same: free, no-obligation estimate, written scope, fixed price.",
     localContext:
-      "Yardley's historic properties may have original slate roofs, stone construction, and complex architectural details that require specialized roofing knowledge. The surrounding township features larger homes with multi-plane roof systems. Yardley's Delaware River location increases moisture-related roofing challenges. We handle all Yardley Borough and Lower Makefield Township permitting requirements.",
-    neighborhoods: [],
+      "Yardley splits between Yardley Borough (the historic riverfront grid) and the surrounding Lower Makefield Township (Yardley Hunt, Edgewood Estates, Heacock Meadows, Brookstone). Each has its own permit office and its own inspection rhythm, and both fall in the Pennsbury School District. Slate-roof work concentrates in the borough; shingle-and-flat work concentrates in the township subdivisions. Storm patterns hit Lower Makefield hardest because of the river's effect on overnight winter temperatures.",
+    neighborhoods: [
+      "Yardley Borough",
+      "Lower Makefield Township",
+      "Yardley Hunt",
+      "Edgewood Estates",
+      "Heacock Meadows",
+      "Brookstone",
+    ],
     zipCodes: ["19067"],
     faq: [
       {
-        question: "Can you work on Yardley's historic stone homes?",
+        question: "Do you work on Yardley Borough's slate roofs?",
         answer:
-          "Yes. Adilay Roofing has experience with the historic stone and colonial homes found throughout Yardley. We handle slate repairs, copper flashing, and premium shingle installations that complement these properties' architectural character. Licensed PA184779 — call (267) 255-3620 for a free estimate.",
+          "Yes — we do slate repair and full slate replacement in Yardley Borough regularly. Most original slate in town is Pennsylvania Buckingham, quarried in Lehigh and Northampton counties, rated S1 (the hardest grade). We handle individual slate replacement, copper flashing rework, ridge mortar replacement, and full tear-offs with new slate or synthetic alternatives like DaVinci or Brava. Call (267) 255-3620 for an honest repair-vs-replace assessment.",
       },
       {
-        question: "How do you handle the moisture challenges near the Delaware River?",
+        question: "How do permits work in Yardley vs Lower Makefield?",
         answer:
-          "Yardley's riverfront location increases humidity and moisture exposure. We use moisture-resistant materials, ensure proper ventilation, and pay extra attention to drainage and gutter systems. Algae-resistant shingles are recommended for homes in humid areas. Call (267) 255-3620 for an assessment.",
+          "Yardley Borough permits go through Borough Hall at 56 South Main Street; Lower Makefield Township permits go through 1100 Edgewood Road. We pull permits in both jurisdictions weekly and handle all paperwork as part of the project. If your insurance adjuster needs a permit number to close a claim, we get it fast.",
       },
       {
-        question: "Do you serve Lower Makefield Township around Yardley?",
+        question: "What's the typical roof replacement cost in Yardley?",
         answer:
-          "Yes. We serve Yardley Borough and all of the surrounding Lower Makefield Township. We handle the specific permitting requirements for each municipality and provide the same quality service throughout the area. Call Adilay Roofing at (267) 255-3620.",
+          "For Lower Makefield ranches and colonials with architectural shingles (GAF Timberline HDZ or CertainTeed Landmark), most jobs run $11,000–$22,000 depending on roof complexity, decking condition, and ventilation upgrades. Yardley Borough slate replacements run $35,000–$80,000+ with new Buckingham slate, or $20,000–$45,000 with synthetic slate. We give written, fixed-price estimates so you know exactly what you're paying.",
+      },
+      {
+        question: "Will you work with my insurance after a hail or ice storm?",
+        answer:
+          "Yes. We work with all major homeowners insurers — State Farm, Allstate, Liberty Mutual, USAA, Travelers, Erie — and we know which adjusters cover Lower Makefield Township. We document hail damage with date-stamped photos showing the bruising pattern, granule loss in gutters, and soft-metal indicators. We never inflate scope, and if we don't think a claim is defensible, we tell you before you file.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Slate Roofs in Yardley Borough — When to Repair, When to Replace",
+        html: `<p>Yardley Borough has more original slate roofs per block than any other Bucks County town we serve. The 1800s-era homes along South Main Street, Letchworth Avenue, and the side streets near Edgewood Cemetery were originally roofed with Pennsylvania slate quarried from Lehigh and Northampton counties, and a meaningful percentage of those original installations are still in place 130+ years later.</p>
+<p>The honest math on whether to repair or replace a slate roof in Yardley comes down to three things: the slate's hardness rating, the condition of the underlayment and decking beneath it, and whether the copper flashing has reached the end of its working life. Pennsylvania Buckingham slate, the most common Yardley original, is rated S1 — the hardest grade — and routinely outlasts the metal flashing it sits next to.</p>
+<p>When we open a Yardley slate roof for inspection, we're really evaluating four things:</p>
+<ul>
+  <li><strong>The slates themselves</strong> — delamination, crumbling at edges, hairline cracks across the face.</li>
+  <li><strong>Copper flashing</strong> at valleys, ridges, and chimneys — green patina giving way to thin pinholes.</li>
+  <li><strong>Ridge cap mortar</strong> — every 100-year ridge has had its mortar age out at least once.</li>
+  <li><strong>Wood decking</strong> — skip-sheathed or tongue-and-groove boards that may need partial replacement, especially under valleys that have leaked.</li>
+</ul>
+<p>A repair-only approach makes sense when the slate is mostly sound and you're addressing maybe 10–20 individual broken slates plus reflashing one valley. We've done $2,800 repairs that buy a Yardley homeowner another decade of life from their original roof. A full replacement starts making sense when you're at 40–60% slate compromise, all the flashing needs to be redone anyway, and the underlayment is at end-of-life. Yardley borough replacements with new Buckingham slate run $35,000–$80,000+ depending on roof complexity. Synthetic slate alternatives — <strong>DaVinci Multi-Width</strong> or <strong>Brava Old World Slate</strong> — give a lower-cost option that holds up to Bucks County winters and weighs about a third of natural slate, which matters on framing that wasn't necessarily designed for the load.</p>`,
+      },
+      {
+        heading: "Storm Damage in Lower Makefield Township — Insurance Claims We Know",
+        html: `<p>Lower Makefield Township takes a beating in two specific kinds of weather: late-summer hailstorms moving up the I-95 corridor from the southwest, and February ice storms that load the eastern side of the township heaviest because of the Delaware River's effect on overnight temperatures. Both produce insurance-claimable damage, but the documentation is different.</p>
+<p>For hail, the assessment is visual and tactile. A 1-inch or larger hailstone — the size that gets cited in NWS storm reports — will leave visible bruising on asphalt shingles: round dark spots where granules have been knocked loose. We do hail inspections within the 12-month window most insurance carriers allow for damage reporting, and we document with date-stamped photos showing the bruising pattern, granule loss in gutters, and soft-metal indicators (gutter aprons and roof vents that show round dimpling).</p>
+<p>Ice damage works differently. The classic Lower Makefield ice claim is February ice damming on a 1960s–1970s ranch with under-ventilated attic space — heat from inside pushes snow on the roof to melt, refreeze at the eaves, and back water up under the shingles into the soffit and ceiling. The visible damage is interior (ceiling stains in the upstairs back bedrooms is the giveaway), but the proximate cause is the roof's failure to vent properly. The long-term fix is an ice-and-water-shield retrofit at the eaves combined with proper ridge-vent installation; the immediate water damage is what the insurance claim covers.</p>
+<p>We work with all major homeowners insurers — <strong>State Farm</strong>, <strong>Allstate</strong>, <strong>Liberty Mutual</strong>, <strong>USAA</strong>, <strong>Travelers</strong>, <strong>Erie</strong> — and we know which adjusters cover Lower Makefield Township. We never inflate scope to chase the deductible, and we put everything in writing. If we don't think the claim's defensible, we'll tell you before you file. After the storm, the next call should be us, not your insurer — get a real assessment first so you know what you're filing for.</p>
+<p>For nearby Bucks County roofing, see <a href="/service-areas/newtown">Newtown</a> · <a href="/service-areas/langhorne">Langhorne</a> · <a href="/service-areas/yardley">Yardley</a> · <a href="/service-areas/bucks-county">all Bucks County</a>.</p>`,
       },
     ],
   },

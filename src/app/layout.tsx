@@ -28,11 +28,10 @@ const BASE_URL = "https://www.adilayroofing.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: {
-    template: "%s | Adilay Roofing",
-    default:
-      "Roofer Philadelphia | Trusted Roofing Contractor — Adilay Roofing",
-  },
+  // No global template — each page sets a complete, brand-bearing title.
+  // Adding "| Adilay Roofing" via a template here pushed every page title
+  // past Google's ~60-char SERP truncation point.
+  title: "Adilay Roofing — Philadelphia Roofing Contractor | Free Estimates",
   description:
     "Adilay Roofing — Philadelphia's trusted roofer with 20+ years experience. Roof replacement, repair, flat roofing, siding & windows. Licensed PA184779, insured. 5-star rated on Google, 2,000+ projects. Free estimates — (267) 255-3620.",
   keywords: [

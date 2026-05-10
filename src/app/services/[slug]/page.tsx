@@ -9,7 +9,6 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import ServiceIcon from "@/components/ServiceIcon";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import {
@@ -20,7 +19,8 @@ import {
   stripHtml,
 } from "@/lib/schema";
 
-export const revalidate = 86400;
+// Fully static — every service page is generated at build time from
+// src/data/services.ts and src/data/serviceBodySections.ts. No runtime CMS.
 
 // Pre-compute county groupings once for the "Service Areas" cross-link block.
 // Built dynamically from locations data so every county is included.
@@ -61,25 +61,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Service Not Found" };
   }
 
-  // Check Supabase for CMS-managed SEO data first
-  const dbSeo = await getPageSEO(`/services/${slug}`);
-  if (dbSeo) {
-    return {
-      ...buildMetadataFromSEO(dbSeo),
-      keywords: [
-        `${service.title.toLowerCase()} Philadelphia`,
-        `${service.title.toLowerCase()} Philadelphia PA`,
-        `${service.title.toLowerCase()} near me`,
-        `trusted ${service.title.toLowerCase()} Philadelphia`,
-        `Philadelphia ${service.title.toLowerCase()} contractor`,
-        `affordable ${service.title.toLowerCase()} Philadelphia`,
-        "roofer Philadelphia",
-        "roofing contractor Philadelphia",
-      ],
-    };
-  }
-
-  // Fallback to hardcoded metadata
   return {
     title: `${service.title} Philadelphia PA | Free Estimates`,
     description: `Need ${service.title.toLowerCase()} in Philadelphia? Adilay Roofing offers professional ${service.title.toLowerCase()} services with 20+ years experience. Licensed PA184779, 5-star rated on Google. Free estimates — call (267) 255-3620.`,
@@ -114,41 +95,30 @@ export default async function ServicePage({ params }: PageProps) {
     notFound();
   }
 
-  // Fetch CMS structured content (falls back to hardcoded if none)
-  const cmsData = await getStructuredContent(`/services/${slug}`, "structured_service");
+  // All content sourced directly from src/data/services.ts and serviceBodySections.ts.
+  const heroTitle = `${service.title} in Philadelphia, PA`;
+  const heroTagline = service.tagline;
+  const heroDescription = service.heroDescription;
+  const benefits = service.benefits;
+  const features = service.features;
+  const faq = service.faq;
+  // bodySections: per-service inline first, else centralized SERVICE_BODY_SECTIONS
+  // map (4-5 unique H3 sections per service to break the templated-content
+  // fingerprint that was keeping these pages out of Google's index).
+  const bodySections = service.bodySections?.length
+    ? service.bodySections
+    : SERVICE_BODY_SECTIONS[slug] ?? [];
 
-  // Merge: CMS data overrides hardcoded, with fallback
-  const heroTitle = (cmsData?.heroTitle as string) || `${service.title} in Philadelphia, PA`;
-  const heroTagline = (cmsData?.heroTagline as string) || service.tagline;
-  const heroDescription = (cmsData?.heroDescription as string) || service.heroDescription;
-  const cmsBenefits = cmsData?.benefits as string[] | undefined;
-  const benefits = cmsBenefits?.length ? cmsBenefits : service.benefits;
-  const cmsFeatures = cmsData?.features as string[] | undefined;
-  const features = cmsFeatures?.length ? cmsFeatures : service.features;
-  const cmsFaq = cmsData?.faq as { question: string; answer: string }[] | undefined;
-  const faq = cmsFaq?.length ? cmsFaq : service.faq;
-  // bodySections resolution order: CMS override → service data → fallback
-  // file (src/data/serviceBodySections.ts). The fallback file adds 4-5 unique
-  // H3 sections per service to break the templated-content fingerprint that
-  // was keeping these pages out of Google's index.
-  const cmsBodySections = cmsData?.bodySections as { heading: string; html: string }[] | undefined;
-  const bodySections = cmsBodySections?.length
-    ? cmsBodySections
-    : service.bodySections?.length
-      ? service.bodySections
-      : SERVICE_BODY_SECTIONS[slug] ?? [];
-
-  // Additional CMS text fields with fallbacks
-  const heroCTAText = (cmsData?.heroCTAText as string) || "Get a FREE Estimate";
-  const benefitsHeading = (cmsData?.benefitsHeading as string) || "Benefits";
-  const featuresHeading = (cmsData?.featuresHeading as string) || "What's Included";
-  const faqHeading = (cmsData?.faqHeading as string) || "Frequently Asked Questions";
-  const relatedHeading = (cmsData?.relatedHeading as string) || "Other Services We Offer";
-  const relatedSubheading = (cmsData?.relatedSubheading as string) || "Explore more ways Adilay Roofing can protect and improve your property.";
-  const financingHeadline = (cmsData?.financingHeadline as string) || "Don\u2019t let cost hold you back.";
-  const financingBody = (cmsData?.financingBody as string) || "Financing is available through Service Finance Company \u2014 loans from $1,000 to $100,000, with no payments until your job is complete.";
-  const ctaHeadline = (cmsData?.ctaHeadline as string) || `Ready for ${service.shortTitle} Services?`;
-  const ctaSubtext = (cmsData?.ctaSubtext as string) || `Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation — just honest advice from experienced professionals.`;
+  const heroCTAText = "Get a FREE Estimate";
+  const benefitsHeading = "Benefits";
+  const featuresHeading = "What's Included";
+  const faqHeading = "Frequently Asked Questions";
+  const relatedHeading = "Other Services We Offer";
+  const relatedSubheading = "Explore more ways Adilay Roofing can protect and improve your property.";
+  const financingHeadline = "Don\u2019t let cost hold you back.";
+  const financingBody = "Financing is available through Service Finance Company \u2014 loans from $1,000 to $100,000, with no payments until your job is complete.";
+  const ctaHeadline = `Ready for ${service.shortTitle} Services?`;
+  const ctaSubtext = `Contact us today for a free estimate on ${service.title.toLowerCase()}. No pressure, no obligation — just honest advice from experienced professionals.`;
 
   // Build related services — prefer same category, then fill with others
   const sameCategory = services.filter(

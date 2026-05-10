@@ -933,7 +933,7 @@ export const services: Service[] = [
   // === NEW SERVICE PAGES ===
   {
     slug: "residential-roofing",
-    title: "Residential Roofing Contractor",
+    title: "Residential Roofing",
     shortTitle: "Residential Roofing",
     tagline: "Trusted Residential Roofing Contractor in Philadelphia PA",
     category: "roofing",
@@ -1048,7 +1048,7 @@ export const services: Service[] = [
   },
   {
     slug: "commercial-siding",
-    title: "Commercial Siding Contractor",
+    title: "Commercial Siding",
     shortTitle: "Commercial Siding",
     tagline: "Professional Commercial Siding Contractor in Philadelphia",
     category: "siding",
@@ -1103,7 +1103,7 @@ export const services: Service[] = [
   },
   {
     slug: "residential-siding",
-    title: "Residential Siding Contractor",
+    title: "Residential Siding",
     shortTitle: "Residential Siding",
     tagline: "Trusted Residential Siding Contractor in Philadelphia PA",
     category: "siding",
@@ -1338,7 +1338,7 @@ export const services: Service[] = [
   },
   {
     slug: "window-companies",
-    title: "Window Companies in Philadelphia",
+    title: "Window Companies",
     shortTitle: "Window Companies",
     tagline: "Trusted Window Company in Philadelphia PA — Adilay Roofing",
     category: "windows",
@@ -1688,7 +1688,7 @@ export const services: Service[] = [
   },
   {
     slug: "shingle-replacement",
-    title: "Philadelphia Shingle Replacement",
+    title: "Shingle Replacement",
     shortTitle: "Shingle Replace",
     tagline: "Complete Shingle Replacement in Philadelphia PA — A Fresh Start for Your Roof",
     category: "shingles",
