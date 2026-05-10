@@ -230,7 +230,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* HERO SECTION                                 */}
       {/* ============================================ */}
-      <section className="relative min-h-[640px] md:min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
+      <section className="relative min-h-[580px] md:min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
         {/* Hero background image */}
         <img
           src="/images/hero-van.jpg"
@@ -259,19 +259,19 @@ export default async function Home() {
 
           {/* Bottom: CTAs, text-us link, trust-badge cards */}
           <div className="mt-8 md:mt-0">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <div className="flex flex-row items-center justify-center gap-2 sm:gap-4">
               <Link
                 href="/get-quote"
-                className="btn-primary px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+                className="btn-primary border-2 border-transparent px-3 py-2 text-xs sm:px-8 sm:py-4 sm:text-lg"
               >
                 Get Your FREE Quote
               </Link>
               <a
                 href={`tel:${company.phoneRaw}`}
-                className="btn-outline-white px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+                className="btn-outline-white px-3 py-2 text-xs sm:px-8 sm:py-4 sm:text-lg"
               >
                 <svg
-                  className="w-4 h-4 mr-1.5 sm:w-5 sm:h-5 sm:mr-2"
+                  className="w-3.5 h-3.5 mr-1 sm:w-5 sm:h-5 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -311,20 +311,20 @@ export default async function Home() {
 
             <ScrollReveal delay={150} duration={500} distance={12}>
               <ul className="mt-5 md:mt-7 mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-sm md:max-w-3xl">
-                <li className="bg-white rounded-md flex items-center justify-center px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
+                <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-20 overflow-hidden">
                   <img
                     src="/images/google-business-review-5-stars.png"
                     alt="Adilay Roofing — 5.0 stars on Google Business Reviews"
                     loading="lazy"
-                    className="max-h-12 md:max-h-14 max-w-full w-auto object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </li>
-                <li className="bg-white rounded-md flex items-center justify-center px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
+                <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-20 overflow-hidden">
                   <a
                     href="https://www.bbb.org/us/pa/philadelphia/profile/roofing-contractors/adilay-roofing-llc-0241-236104655/#sealclick"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
-                    className="inline-flex items-center justify-center h-full"
+                    className="block h-full w-full"
                   >
                     <img
                       src="https://seal-dc-easternpa.bbb.org/seals/blue-seal-160-82-bbb-236104655.png"
@@ -332,27 +332,27 @@ export default async function Home() {
                       loading="lazy"
                       width={160}
                       height={82}
-                      className="max-h-12 md:max-h-16 max-w-full w-auto object-contain"
+                      className="h-full w-full object-contain"
                       style={{ border: 0 }}
                     />
                   </a>
                 </li>
-                <li className="bg-white rounded-md flex items-center justify-center gap-2 px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
+                <li className="bg-white rounded-md flex items-center justify-center gap-2 p-1.5 h-20">
                   <img
                     src="/images/gaf-certified-logo.jpg"
                     alt="GAF Certified Contractor"
                     loading="lazy"
-                    className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0"
+                    className="h-full w-auto aspect-square object-contain flex-shrink-0"
                   />
-                  <span className="text-brand-dark font-bold text-sm md:text-base leading-tight text-left">
+                  <span className="text-brand-dark font-bold text-xs md:text-sm leading-tight text-left">
                     GAF<br />Certified
                   </span>
                 </li>
-                <li className="bg-white rounded-md flex flex-col items-center justify-center px-2 py-1.5 md:px-3 md:py-2 h-16 md:h-20">
+                <li className="bg-white rounded-md flex flex-col items-center justify-center p-1.5 h-20">
                   <span className="text-[11px] md:text-xs text-brand-gray font-semibold uppercase tracking-wider">
                     Licensed PA
                   </span>
-                  <span className="text-brand-dark font-extrabold text-base md:text-xl leading-tight mt-0.5">
+                  <span className="text-brand-dark font-extrabold text-lg md:text-2xl leading-tight mt-0.5">
                     #PA184779
                   </span>
                 </li>
