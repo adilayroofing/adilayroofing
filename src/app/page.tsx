@@ -262,16 +262,16 @@ export default async function Home() {
             <div className="flex flex-row items-center justify-center gap-2 sm:gap-4">
               <Link
                 href="/get-quote"
-                className="btn-primary border-2 border-transparent px-3 py-2 text-xs sm:px-8 sm:py-4 sm:text-lg"
+                className="btn-primary border-2 border-transparent px-4 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg"
               >
                 Get Your FREE Quote
               </Link>
               <a
                 href={`tel:${company.phoneRaw}`}
-                className="btn-outline-white px-3 py-2 text-xs sm:px-8 sm:py-4 sm:text-lg"
+                className="btn-outline-white px-4 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg"
               >
                 <svg
-                  className="w-3.5 h-3.5 mr-1 sm:w-5 sm:h-5 sm:mr-2"
+                  className="w-4 h-4 mr-1.5 sm:w-5 sm:h-5 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -290,7 +290,7 @@ export default async function Home() {
 
             <a
               href="sms:+12672553620&body=Hi%2C%20I%27m%20interested%20in%20a%20free%20roofing%20estimate."
-              className="inline-flex items-center gap-1.5 mt-3 sm:mt-4 text-sm font-bold text-white hover:text-white/80 transition-colors"
+              className="inline-flex items-center gap-1.5 mt-3 sm:mt-4 text-base font-bold text-white hover:text-white/80 transition-colors"
             >
               <svg
                 className="w-4 h-4"
