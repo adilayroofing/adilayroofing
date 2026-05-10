@@ -230,7 +230,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* HERO SECTION                                 */}
       {/* ============================================ */}
-      <section className="relative min-h-[520px] md:min-h-[600px] lg:min-h-[640px] flex items-center justify-center bg-brand-darker overflow-hidden">
+      <section className="relative min-h-[640px] md:min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
         {/* Hero background image */}
         <img
           src="/images/hero-van.jpg"
@@ -240,31 +240,60 @@ export default async function Home() {
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/55" />
 
-        {/* Content */}
-        <div className="relative z-10 container-wide mx-auto px-4 py-10 md:py-16 lg:py-20 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 md:mb-5 text-balance">
-            {heroHeadlineWhite}
-            <br />
-            <span className="text-brand-red">{heroHeadlineRed}</span>
-          </h1>
+        {/* Content — on mobile splits into top (heading) + bottom (CTAs + trust)
+            so the van branding stays visible in the middle. On md+ it's a normal
+            vertically-centered block. */}
+        <div className="relative z-10 container-wide mx-auto px-4 py-10 md:py-16 lg:py-20 text-center w-full flex flex-col justify-between md:block">
+          {/* Top: headline + subtitle */}
+          <div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 md:mb-5 text-balance">
+              {heroHeadlineWhite}
+              <br />
+              <span className="text-brand-red">{heroHeadlineRed}</span>
+            </h1>
 
-          <p className="text-base md:text-lg lg:text-xl font-light text-white/90 mb-6 md:mb-8 max-w-xl mx-auto leading-snug">
-            {heroSubheadline}
-          </p>
+            <p className="text-base md:text-lg lg:text-xl font-light text-white/90 mb-0 md:mb-8 max-w-xl mx-auto leading-snug">
+              {heroSubheadline}
+            </p>
+          </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <Link
-              href="/get-quote"
-              className="btn-primary px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
-            >
-              Get Your FREE Quote
-            </Link>
+          {/* Bottom: CTAs, text-us link, trust-badge cards */}
+          <div className="mt-8 md:mt-0">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+              <Link
+                href="/get-quote"
+                className="btn-primary px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+              >
+                Get Your FREE Quote
+              </Link>
+              <a
+                href={`tel:${company.phoneRaw}`}
+                className="btn-outline-white px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+              >
+                <svg
+                  className="w-4 h-4 mr-1.5 sm:w-5 sm:h-5 sm:mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                Call {company.phone}
+              </a>
+            </div>
+
             <a
-              href={`tel:${company.phoneRaw}`}
-              className="btn-outline-white px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+              href="sms:+12672553620&body=Hi%2C%20I%27m%20interested%20in%20a%20free%20roofing%20estimate."
+              className="inline-flex items-center gap-1.5 mt-3 sm:mt-4 text-sm text-white/75 hover:text-white transition-colors"
             >
               <svg
-                className="w-4 h-4 mr-1.5 sm:w-5 sm:h-5 sm:mr-2"
+                className="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -274,50 +303,62 @@ export default async function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>
-              Call {company.phone}
+              or text us — fast response
             </a>
+
+            <ScrollReveal delay={150} duration={500} distance={12}>
+              <ul className="mt-5 md:mt-7 mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-sm md:max-w-3xl">
+                <li className="bg-white rounded-md flex items-center justify-center px-3 py-2 md:py-3 h-16 md:h-20">
+                  <img
+                    src="/images/google-business-review-5-stars.png"
+                    alt="Adilay Roofing — 5.0 stars on Google Business Reviews"
+                    loading="lazy"
+                    className="max-h-9 md:max-h-12 w-auto object-contain"
+                  />
+                </li>
+                <li className="bg-white rounded-md flex items-center justify-center px-3 py-2 md:py-3 h-16 md:h-20">
+                  <a
+                    href="https://www.bbb.org/us/pa/philadelphia/profile/roofing-contractors/adilay-roofing-llc-0241-236104655/#sealclick"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="inline-flex items-center justify-center"
+                  >
+                    <img
+                      src="https://seal-dc-easternpa.bbb.org/seals/blue-seal-160-82-bbb-236104655.png"
+                      alt="Adilay Roofing — BBB Accredited Business"
+                      loading="lazy"
+                      width={160}
+                      height={82}
+                      className="max-h-10 md:max-h-14 w-auto object-contain"
+                      style={{ border: 0 }}
+                    />
+                  </a>
+                </li>
+                <li className="bg-white rounded-md flex items-center justify-center gap-2 px-3 py-2 md:py-3 h-16 md:h-20">
+                  <img
+                    src="/images/gaf-certified-logo.jpg"
+                    alt="GAF Certified Contractor"
+                    loading="lazy"
+                    className="h-9 w-9 md:h-12 md:w-12 object-contain flex-shrink-0"
+                  />
+                  <span className="text-brand-dark font-bold text-xs md:text-sm leading-tight text-left">
+                    GAF<br />Certified
+                  </span>
+                </li>
+                <li className="bg-white rounded-md flex flex-col items-center justify-center px-3 py-2 md:py-3 h-16 md:h-20">
+                  <span className="text-[10px] md:text-xs text-brand-gray font-semibold uppercase tracking-wider">
+                    Licensed PA
+                  </span>
+                  <span className="text-brand-dark font-extrabold text-sm md:text-lg leading-tight mt-0.5">
+                    #PA184779
+                  </span>
+                </li>
+              </ul>
+            </ScrollReveal>
           </div>
-
-          <a
-            href="sms:+12672553620&body=Hi%2C%20I%27m%20interested%20in%20a%20free%20roofing%20estimate."
-            className="inline-flex items-center gap-1.5 mt-3 sm:mt-4 text-sm text-white/75 hover:text-white transition-colors"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              />
-            </svg>
-            or text us — fast response
-          </a>
-
-          <ScrollReveal delay={150} duration={500} distance={12}>
-            <ul className="mt-7 md:mt-9 max-w-md md:max-w-none mx-auto grid grid-cols-2 gap-y-2 md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-1 text-[13px] md:text-sm text-white/85 font-medium">
-              <li className="text-center md:after:content-['·'] md:after:mx-3 md:after:text-white/40 md:last:after:content-none">
-                20+ Years
-              </li>
-              <li className="text-center md:after:content-['·'] md:after:mx-3 md:after:text-white/40 md:last:after:content-none">
-                2,000+ Projects
-              </li>
-              <li className="text-center md:after:content-['·'] md:after:mx-3 md:after:text-white/40 md:last:after:content-none">
-                <span className="text-brand-star" aria-hidden="true">★</span> 5.0 Google
-              </li>
-              <li className="text-center md:after:content-['·'] md:after:mx-3 md:after:text-white/40 md:last:after:content-none">
-                Licensed PA184779
-              </li>
-            </ul>
-          </ScrollReveal>
         </div>
       </section>
 
