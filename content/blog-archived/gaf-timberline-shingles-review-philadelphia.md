@@ -154,4 +154,4 @@ Ready to see what GAF Timberline shingles would look like on your home? [Get a f
 
 You can also view examples of our shingle installations in our [project gallery](/gallery) or learn more about [our experienced team](/about) and why over 1,000 homeowners across the Philadelphia area have trusted us with their roofs.
 
-**Call (888) 823-4766** to schedule your free estimate. We are available Sunday through Friday, 24 hours, with 24/7 emergency service for existing customers. Visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125.
+**Call (267) 255-3620** to schedule your free estimate. We are available Sunday through Friday, 24 hours, with 24/7 emergency service for existing customers. Visit us at 2020 Dreer St Unit 101, Philadelphia, PA 19125.

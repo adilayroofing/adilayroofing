@@ -28,7 +28,7 @@ faq:
 
 When it comes time to replace the roof on your Philadelphia home, one of the first decisions you will face is the shingle comparison between 3-tab and architectural shingles. The debate over **asphalt shingles vs architectural shingles** comes down to cost, durability, appearance, and how well each option handles the demands of Mid-Atlantic weather. Both are asphalt-based products, but the similarities end there. The differences in construction, performance, and long-term value are significant, especially for homes in the Philadelphia area.
 
-At Adilay Roofing LLC, we have installed both types of shingles on over 2,080 projects across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. We have seen how each product performs through nor'easters, summer heat waves, ice storms, and everything in between. This guide breaks down the honest pros and cons so you can make an informed decision for your home.
+At Adilay Roofing, we have installed both types of shingles on over 2,080 projects across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. We have seen how each product performs through nor'easters, summer heat waves, ice storms, and everything in between. This guide breaks down the honest pros and cons so you can make an informed decision for your home.
 
 ## Understanding the Basics: What Sets These Shingles Apart
 
@@ -152,6 +152,6 @@ We serve Philadelphia, Bucks County, Montgomery County, Delaware County, and Che
 
 Still deciding between 3-tab and architectural shingles? Let us help. We will inspect your roof, discuss your goals and budget, and give you an honest recommendation with a detailed written estimate. There is no pressure and no obligation.
 
-Call Adilay Roofing today at **(888) 823-4766** or [get a free roof estimate](/get-quote) online. We are available Sunday through Friday, 24 hours a day, and we offer [roof replacement services](/services/roof-replacement) with financing options to make the best shingles for Philadelphia affordable for every homeowner.
+Call Adilay Roofing today at **(267) 255-3620** or [get a free roof estimate](/get-quote) online. We are available Sunday through Friday, 24 hours a day, and we offer [roof replacement services](/services/roof-replacement) with financing options to make the best shingles for Philadelphia affordable for every homeowner.
 
 For more on choosing the right roofing materials for our climate, read our guide on the best roofing materials for the Philadelphia climate.

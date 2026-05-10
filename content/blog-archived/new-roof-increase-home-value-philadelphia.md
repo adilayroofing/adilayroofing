@@ -28,7 +28,7 @@ faq:
 
 If you are a Philadelphia homeowner thinking about selling, renovating, or simply protecting your investment, you have probably asked yourself: **does a new roof increase home value?** The short answer is yes, and in the Philadelphia market specifically, the data strongly supports roof replacement as one of the smartest home improvement investments you can make. A new roof delivers measurable financial returns, faster home sales, and a competitive edge in one of the most active real estate markets on the East Coast.
 
-At Adilay Roofing LLC, we have seen firsthand how a new roof transforms a property's marketability. Over 20 years and 2,080+ completed projects across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, we have worked with homeowners at every stage, from those upgrading for their own comfort to those preparing their homes for the market. This guide lays out the real numbers, the local factors, and the practical considerations for Philadelphia homeowners.
+At Adilay Roofing, we have seen firsthand how a new roof transforms a property's marketability. Over 20 years and 2,080+ completed projects across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, we have worked with homeowners at every stage, from those upgrading for their own comfort to those preparing their homes for the market. This guide lays out the real numbers, the local factors, and the practical considerations for Philadelphia homeowners.
 
 ## The Numbers: New Roof ROI in 2026
 
@@ -182,6 +182,6 @@ Whether you are preparing to sell or investing in your home for the long term, A
 - **Family-owned, no subcontractors:** Consistent quality on every project
 - **Honest pricing:** Detailed written estimates, no surprises
 
-Call us at **(888) 823-4766** or [get a free roof estimate](/get-quote) today. Our [roof replacement services](/services/roof-replacement) are designed to deliver maximum value whether you are staying in your home for decades or listing it next month.
+Call us at **(267) 255-3620** or [get a free roof estimate](/get-quote) today. Our [roof replacement services](/services/roof-replacement) are designed to deliver maximum value whether you are staying in your home for decades or listing it next month.
 
 We serve Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. See examples of our work in the [project gallery](/gallery), and learn how to choose the right roofing contractor for your project.

@@ -49,3 +49,7 @@ next-env.d.ts
 
 # CMS backup snapshots (local-only)
 cms-backup-*.json
+
+# Local-only files
+.claude/
+seo-tracker.csv

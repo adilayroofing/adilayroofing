@@ -6,11 +6,11 @@ export const company = {
   phoneRaw: "+12672553620",
   email: "info@adilayroofing.com",
   address: {
-    street: "2020 Dreer St., Unit 101",
+    street: "2020 Dreer St Unit 101",
     city: "Philadelphia",
     state: "PA",
     zip: "19125",
-    full: "2020 Dreer St., Unit 101, Philadelphia, PA 19125",
+    full: "2020 Dreer St Unit 101, Philadelphia, PA 19125",
   },
   mapUrl: "https://www.google.com/maps?q=Adilay+Roofing,+2020+Dreer+St+Unit+101,+Philadelphia,+PA+19125",
   googleReviewsUrl: "https://www.google.com/maps/search/?api=1&query=Adilay+Roofing+Philadelphia+PA",

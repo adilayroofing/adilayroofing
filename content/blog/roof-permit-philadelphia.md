@@ -28,7 +28,7 @@ faq:
 
 It is one of the most common questions we hear from homeowners planning a roof replacement: do I actually need a permit for this? The short answer regarding **Philadelphia building permits roofing** is yes. Philadelphia's Department of Licenses and Inspections, commonly known as L&I, requires a building permit for roof replacement work on residential properties. Skipping this step might seem like a way to save time or money, but it creates serious problems that can cost you far more in the long run.
 
-At Adilay Roofing LLC, we have navigated the Philadelphia permit process on over 2,080 completed projects across more than 20 years of business. We handle permits on every single job because cutting corners is never how we operate. Here is everything you need to know about the **roof permit Philadelphia** process so you can move forward with confidence.
+At Adilay Roofing, we have navigated the Philadelphia permit process on over 2,080 completed projects across more than 20 years of business. We handle permits on every single job because cutting corners is never how we operate. Here is everything you need to know about the **roof permit Philadelphia** process so you can move forward with confidence.
 
 ## What Philadelphia L&I Requires for Roof Work
 
@@ -154,8 +154,8 @@ Regardless of where your home is located within our [areas we serve](/service-ar
 
 Permits are not bureaucratic obstacles. They are a safeguard that protects your investment, ensures your roof is built to code, and preserves your warranty and insurance coverage. The small cost and short wait are nothing compared to the problems you avoid by doing things properly.
 
-Adilay Roofing LLC is a family-owned, fully licensed and insured roofing company with over 20 years of experience and 1,000-plus satisfied clients across Philadelphia and the surrounding counties. We never use subcontractors, we offer honest pricing, and we handle every aspect of your project from permits to final cleanup.
+Adilay Roofing is a family-owned, fully licensed and insured roofing company with over 20 years of experience and 1,000-plus satisfied clients across Philadelphia and the surrounding counties. We never use subcontractors, we offer honest pricing, and we handle every aspect of your project from permits to final cleanup.
 
-Ready to get started? [Get a free roof estimate](/get-quote) from Adilay Roofing today, or call us at (267) 255-3620. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service. Visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125, or learn more [about Adilay Roofing](/about) and the [roof replacement services](/services/roof-replacement) we provide across the region.
+Ready to get started? [Get a free roof estimate](/get-quote) from Adilay Roofing today, or call us at (267) 255-3620. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service. Visit us at 2020 Dreer St Unit 101, Philadelphia, PA 19125, or learn more [about Adilay Roofing](/about) and the [roof replacement services](/services/roof-replacement) we provide across the region.
 
 When it comes to **Philadelphia building permits roofing** compliance, do not leave it to chance. Work with a contractor who handles it all, does it right the first time, and stands behind every project with a name and a license number.

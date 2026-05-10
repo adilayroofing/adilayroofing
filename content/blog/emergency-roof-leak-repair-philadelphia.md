@@ -15,7 +15,7 @@ category: "roof-repair"
 featuredImage: "/images/emergency-roof-repair-philadelphia.jpg"
 faq:
   - question: "Does Adilay Roofing offer 24/7 emergency roof repair?"
-    answer: "Yes. Adilay Roofing LLC provides 24/7 emergency roofing service across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Call (267) 255-3620 any time, day or night. We will dispatch a crew to stabilize your roof and prevent further water damage as quickly as possible."
+    answer: "Yes. Adilay Roofing provides 24/7 emergency roofing service across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Call (267) 255-3620 any time, day or night. We will dispatch a crew to stabilize your roof and prevent further water damage as quickly as possible."
   - question: "How much does emergency roof repair cost in Philadelphia?"
     answer: "Emergency stabilization, including tarping and temporary waterproofing, typically costs $300-$800. The full permanent repair is priced separately based on the extent of the damage, ranging from $500 for minor fixes to several thousand for major storm damage. We provide a full written estimate for permanent repairs after the emergency is contained."
   - question: "What temporary fixes can I do while waiting for a roofer?"
@@ -26,7 +26,7 @@ faq:
 
 # Emergency Roof Leak Repair in Philadelphia: What to Do Right Now
 
-If you're reading this with water dripping through your ceiling, here's what you need to know right now: emergency roof repair Philadelphia homeowners can count on is one phone call away. **Call Adilay Roofing LLC at [(267) 255-3620](tel:+12672553620) right now.** We provide 24/7 emergency roofing service across Philadelphia and all surrounding counties, and we'll get a crew to your home as fast as we possibly can to stop the water and protect your property.
+If you're reading this with water dripping through your ceiling, here's what you need to know right now: emergency roof repair Philadelphia homeowners can count on is one phone call away. **Call Adilay Roofing at [(267) 255-3620](tel:+12672553620) right now.** We provide 24/7 emergency roofing service across Philadelphia and all surrounding counties, and we'll get a crew to your home as fast as we possibly can to stop the water and protect your property.
 
 While you wait, or if you are reading this to prepare for a future emergency, this guide walks you through exactly what to do during an active roof leak, when to call for professional help, and what to expect from the emergency repair process.
 
@@ -71,7 +71,7 @@ Once you have contained the immediate interior damage, take a breath and evaluat
 
 Contact a licensed emergency roofing service as soon as you have protected the interior and assessed the situation. Not every roofing company offers true 24/7 response, so make sure you are calling a company that will actually answer and dispatch.
 
-**Adilay Roofing LLC provides genuine 24/7 emergency service.** When you call [(267) 255-3620](tel:+12672553620), you reach our team directly, not a call center or answering service. We serve Philadelphia and all surrounding counties including Bucks, Montgomery, Delaware, and Chester County.
+**Adilay Roofing provides genuine 24/7 emergency service.** When you call [(267) 255-3620](tel:+12672553620), you reach our team directly, not a call center or answering service. We serve Philadelphia and all surrounding counties including Bucks, Montgomery, Delaware, and Chester County.
 
 ![Adilay Roofing service van parked at a Philadelphia row home jobsite](/images/adilay-van-jobsite.jpg "Our Adilay Roofing van rolling up to a Philadelphia jobsite, ready to tarp and stabilize a leaking roof")
 
@@ -131,7 +131,7 @@ This covers the immediate response: dispatching a crew, emergency tarping, tempo
 
 Once the emergency is contained, the permanent repair is priced based on the type and extent of damage at standard rates. Minor repairs start around $300-$1,000, moderate repairs run $1,000-$3,000, and major repairs can reach $10,000 or more depending on the scope. For a complete breakdown of repair costs by type and severity, see our roof repair cost guide for Philadelphia.
 
-After-hours and weekend emergency calls may include a modest service premium, but at Adilay Roofing LLC, we keep emergency pricing fair and transparent. We will never inflate a quote because you are in a desperate situation. Honest pricing is a core value of our family-owned business.
+After-hours and weekend emergency calls may include a modest service premium, but at Adilay Roofing, we keep emergency pricing fair and transparent. We will never inflate a quote because you are in a desperate situation. Honest pricing is a core value of our family-owned business.
 
 ## Insurance and Emergency Roof Repairs
 
@@ -158,7 +158,7 @@ Review our seasonal roof maintenance checklist for a complete guide to keeping y
 
 ## Adilay Roofing: Your 24/7 Emergency Partner
 
-Adilay Roofing LLC has been the trusted emergency roofing service for Philadelphia homeowners for over 20 years. When your roof fails, you need a company that answers the phone, shows up fast, does quality work, and charges fairly. That is what we deliver, every call, every time.
+Adilay Roofing has been the trusted emergency roofing service for Philadelphia homeowners for over 20 years. When your roof fails, you need a company that answers the phone, shows up fast, does quality work, and charges fairly. That is what we deliver, every call, every time.
 
 **Why Philadelphia homeowners trust us in emergencies:**
 

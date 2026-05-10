@@ -304,7 +304,7 @@ export default function PageEditorClient({
         heroDescription: "Serving the Philadelphia region with honest, high-quality roofing services for over 20 years.",
         storyHeading: "Roofing Done Right — For Over 20 Years",
         storyParagraphs: [
-          "Founded by Adilay, Adilay Roofing LLC has been a trusted name in the Philadelphia roofing industry for over two decades. What started as a small, dedicated crew has grown into a full-service roofing and exterior company with 30+ professionals serving homeowners and businesses across Pennsylvania.",
+          "Founded by Adilay, Adilay Roofing has been a trusted name in the Philadelphia roofing industry for over two decades. What started as a small, dedicated crew has grown into a full-service roofing and exterior company with 30+ professionals serving homeowners and businesses across Pennsylvania.",
           "Our mission is simple: deliver the highest standard of roofing services with integrity, quality craftsmanship, and genuine care for every customer. We don't cut corners, and we don't disappear after the job is done.",
           "With over 2,000+ completed projects and a growing list of satisfied customers, we've built our reputation on referrals, repeat business, and doing right by every property we touch.",
         ],

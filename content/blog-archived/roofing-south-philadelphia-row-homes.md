@@ -26,7 +26,7 @@ faq:
 
 # Roofing for South Philadelphia Row Homes: Your Flat Roof Experts
 
-If you own a row home in South Philadelphia, your roof faces challenges that most suburban homes never deal with. From shared party walls to flat roof drainage issues, **roofing South Philadelphia** properties requires specialized knowledge that only comes from years of hands-on experience in these neighborhoods. At Adilay Roofing LLC, we have spent over 20 years working on row homes across Passyunk, Point Breeze, Grays Ferry, Pennsport, and every block in between.
+If you own a row home in South Philadelphia, your roof faces challenges that most suburban homes never deal with. From shared party walls to flat roof drainage issues, **roofing South Philadelphia** properties requires specialized knowledge that only comes from years of hands-on experience in these neighborhoods. At Adilay Roofing, we have spent over 20 years working on row homes across Passyunk, Point Breeze, Grays Ferry, Pennsport, and every block in between.
 
 We are a family-owned company with over 2,080 completed projects under our belt, and a significant portion of those are South Philly row homes. We understand the building codes, the common failure points, and the materials that actually hold up in this part of the city. If your row home roof is leaking, aging, or just due for an inspection, [get a free roof estimate](/get-quote) and let us take a look.
 
@@ -108,7 +108,7 @@ South Philadelphia homeowners have plenty of roofing companies to choose from, a
 - **No subcontractors:** Every crew member works directly for Adilay Roofing.
 - **Licensed and insured:** PA License 184779, active and in good standing.
 - **Family-owned values:** We treat your home the way we would treat our own.
-- **24/7 emergency service:** Roof leaks do not wait for business hours, and neither do we. Call us at **(888) 823-4766** any time.
+- **24/7 emergency service:** Roof leaks do not wait for business hours, and neither do we. Call us at **(267) 255-3620** any time.
 
 We are proud to serve all of the [areas we serve](/service-areas) across Philadelphia and the surrounding counties, but South Philly holds a special place for us. These row homes are the heart of working-class Philadelphia, and keeping them dry and safe is work we take seriously.
 
@@ -129,6 +129,6 @@ For a closer look at what these repairs might cost, check out our breakdown of r
 
 Whether you are in Passyunk, Point Breeze, Grays Ferry, Pennsport, or anywhere else in South Philadelphia, Adilay Roofing is ready to help. With [20+ years of experience](/about), over 2,080 completed projects, and a commitment to honest pricing and quality workmanship, we are the South Philadelphia roofer your neighbors trust.
 
-Call us today at **(888) 823-4766** or [get a free roof estimate](/get-quote) online. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent leaks. Let us show you why Adilay Roofing is South Philly's go-to roofing company.
+Call us today at **(267) 255-3620** or [get a free roof estimate](/get-quote) online. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent leaks. Let us show you why Adilay Roofing is South Philly's go-to roofing company.
 
 [See our completed projects](/gallery) across South Philadelphia and the rest of the city to see the quality of work we deliver on every job.

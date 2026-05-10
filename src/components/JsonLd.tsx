@@ -45,7 +45,7 @@ export default function JsonLd() {
       "@id": `${BASE_URL}/#logo`,
       url: ORG_LOGO,
       contentUrl: ORG_LOGO,
-      caption: company.legalName,
+      caption: company.name,
     },
     sameAs: SAME_AS,
     areaServed: AREA_SERVED,

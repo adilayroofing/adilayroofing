@@ -30,7 +30,7 @@ faq:
 
 Understanding how much roof repair cost Philadelphia homeowners should expect is the first step toward making smart decisions about your home. Whether you have noticed a water stain spreading across your ceiling, shingles scattered in your yard after a nor'easter, or a slow drip that has been getting worse for months, the question is always the same: how much is this going to cost me?
 
-After completing over 2,080 roofing projects across Philadelphia and the surrounding counties, Adilay Roofing LLC has a deep understanding of what drives roof repair pricing in our area. In this guide, we break down real-world costs based on the type and severity of damage, so you know what to expect before you call.
+After completing over 2,080 roofing projects across Philadelphia and the surrounding counties, Adilay Roofing has a deep understanding of what drives roof repair pricing in our area. In this guide, we break down real-world costs based on the type and severity of damage, so you know what to expect before you call.
 
 ## What Determines Roof Repair Cost in Philadelphia?
 
@@ -100,7 +100,7 @@ Major repairs involve extensive damage, often structural, that requires signific
 
 ## Emergency Roof Repair Cost in Philadelphia
 
-When a tree limb crashes through your roof during a nor'easter or you wake up at 2 AM to water pouring through the ceiling, you need emergency service, and you need it now. Adilay Roofing LLC provides 24/7 emergency service because we understand that roof emergencies do not wait for business hours.
+When a tree limb crashes through your roof during a nor'easter or you wake up at 2 AM to water pouring through the ceiling, you need emergency service, and you need it now. Adilay Roofing provides 24/7 emergency service because we understand that roof emergencies do not wait for business hours.
 
 **Emergency roof repair cost typically breaks into two phases:**
 
@@ -174,10 +174,10 @@ We understand the temptation to save money with a DIY approach, but roof repair 
 
 ## Get an Honest Roof Repair Estimate
 
-At Adilay Roofing LLC, we provide free, no-obligation roof repair estimates across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. We are a family-owned company that does not use subcontractors, which means the crew that inspects your roof is the same crew that will do the work.
+At Adilay Roofing, we provide free, no-obligation roof repair estimates across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. We are a family-owned company that does not use subcontractors, which means the crew that inspects your roof is the same crew that will do the work.
 
 We believe in honest pricing. When we inspect your roof, we will tell you exactly what needs to be done, what it will cost, and whether repair or replacement makes more sense for your situation. No upselling, no pressure, just straight answers from licensed professionals with over 1,000 happy clients behind us.
 
-**[Get a free roof estimate](/get-quote)** or call us at **(888) 823-4766**. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent situations.
+**[Get a free roof estimate](/get-quote)** or call us at **(267) 255-3620**. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent situations.
 
 Want to explore your options? Check out our [professional roof repair](/services/roof-repair) services, browse our [completed projects gallery](/gallery), or learn about the [areas we serve](/service-areas) across the greater Philadelphia region. For seasonal upkeep that helps prevent costly repairs, see our seasonal roof maintenance checklist.

@@ -28,9 +28,9 @@ faq:
 
 Choosing new siding is one of the most impactful decisions a Philadelphia homeowner can make. It affects your home's curb appeal, energy efficiency, weather protection, and resale value for decades. When it comes to **siding installation Philadelphia** homeowners choose most often, the decision usually comes down to two leading options: vinyl siding and fiber cement siding (most commonly James Hardie brand).
 
-At Adilay Roofing LLC, we have installed both materials on hundreds of homes across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County over our [20+ years of experience](/about). We have seen how each product performs through Philadelphia's demanding four-season climate -- the nor'easters, the summer heat waves, the freeze-thaw cycles that test every exterior material on your home. This guide gives you the honest, detailed comparison you need to make the right choice.
+At Adilay Roofing, we have installed both materials on hundreds of homes across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County over our [20+ years of experience](/about). We have seen how each product performs through Philadelphia's demanding four-season climate -- the nor'easters, the summer heat waves, the freeze-thaw cycles that test every exterior material on your home. This guide gives you the honest, detailed comparison you need to make the right choice.
 
-Ready to start your siding project? Call us at **(888) 823-4766** or [get a free roof estimate](/get-quote) -- we provide free consultations for all exterior projects.
+Ready to start your siding project? Call us at **(267) 255-3620** or [get a free roof estimate](/get-quote) -- we provide free consultations for all exterior projects.
 
 ## Vinyl Siding: Overview, Costs, and Performance in Philadelphia
 
@@ -200,6 +200,6 @@ You can [see our completed projects](/gallery) to get a sense of the quality we 
 
 Whether you are leaning toward vinyl or fiber cement, the best next step is a free, no-obligation consultation with our team. We will assess your home's specific needs, discuss your budget and goals, and provide an honest recommendation -- not a sales pitch.
 
-Call Adilay Roofing LLC at **(888) 823-4766** or [get a free roof estimate](/get-quote) online. We serve homeowners throughout the [areas we serve](/service-areas), including Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Our hours are Sunday through Friday, 24 hours, with Saturday closed.
+Call Adilay Roofing at **(267) 255-3620** or [get a free roof estimate](/get-quote) online. We serve homeowners throughout the [areas we serve](/service-areas), including Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. Our hours are Sunday through Friday, 24 hours, with Saturday closed.
 
 Over 1,000 happy clients trust Adilay Roofing for their exterior projects. Let us show you why.

@@ -39,7 +39,7 @@ The best time to understand your insurance coverage is before you need to file a
 1. **Review your policy declarations page.** Know your dwelling coverage amount, your standard deductible, and whether you have a separate wind/hail deductible (increasingly common in the Philadelphia market).
 2. **Document your roof's current condition.** Take clear photos of your roof from multiple angles on a clear day. Date-stamped photos of a roof in good condition are powerful evidence when filing a claim later.
 3. **Keep maintenance records.** Receipts from inspections, repairs, gutter cleaning, and any roofing work demonstrate that damage is from a covered event, not neglect. Insurance adjusters look for evidence of deferred maintenance as a reason to reduce or deny claims.
-4. **Know your contractor.** Having a relationship with a trusted roofing company before an emergency means you will not be scrambling to find one when time matters. Keep our number saved: **(888) 823-4766**.
+4. **Know your contractor.** Having a relationship with a trusted roofing company before an emergency means you will not be scrambling to find one when time matters. Keep our number saved: **(267) 255-3620**.
 
 ## Step 1: Document the Damage Immediately
 
@@ -200,4 +200,4 @@ Filing a roof insurance claim Philadelphia homeowners can navigate confidently i
 
 If your roof has been damaged and you need guidance on whether to file a claim, or if you are already in the process and need a contractor estimate, [get a free roof estimate](/get-quote) from our licensed (PA #PA184779) and insured team.
 
-**Call (888) 823-4766** anytime. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for active leaks and storm damage. You can also visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125.
+**Call (267) 255-3620** anytime. We are available Sunday through Friday, 24 hours a day, with 24/7 emergency service for active leaks and storm damage. You can also visit us at 2020 Dreer St Unit 101, Philadelphia, PA 19125.

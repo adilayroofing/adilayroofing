@@ -28,7 +28,7 @@ faq:
 
 Knowing the **best time to replace roof PA** homeowners face is one of the smartest ways to save money, avoid delays, and get a better installation. Pennsylvania's four distinct seasons each bring different conditions for roofing work, and the timing of your project can affect everything from material performance to scheduling availability and even pricing. Whether you are in Philadelphia, Bucks County, Montgomery County, or anywhere in southeastern Pennsylvania, this seasonal guide will help you plan the right time for your roof replacement.
 
-At Adilay Roofing LLC, we have completed over 2,080 roofing projects across more than 20 years in the Philadelphia metro area. We have installed roofs in every month of the year and through every type of weather Pennsylvania throws at us. Here is what our experience has taught us about when to replace roof Pennsylvania homeowners should know.
+At Adilay Roofing, we have completed over 2,080 roofing projects across more than 20 years in the Philadelphia metro area. We have installed roofs in every month of the year and through every type of weather Pennsylvania throws at us. Here is what our experience has taught us about when to replace roof Pennsylvania homeowners should know.
 
 ## Fall: The Ideal Roof Replacement Season (September - November)
 
@@ -104,7 +104,7 @@ Winter roof replacement is the least ideal timing when to replace roof Pennsylva
 
 ### When Winter Installation Makes Sense
 
-Despite the challenges, winter installation is absolutely doable and sometimes necessary. If your roof is actively leaking, you cannot wait until spring. Our crews are trained and equipped for cold-weather installations, and we have successfully replaced roofs in every winter month. We also offer 24/7 emergency service for urgent situations. Call us at **(888) 823-4766** any time.
+Despite the challenges, winter installation is absolutely doable and sometimes necessary. If your roof is actively leaking, you cannot wait until spring. Our crews are trained and equipped for cold-weather installations, and we have successfully replaced roofs in every winter month. We also offer 24/7 emergency service for urgent situations. Call us at **(267) 255-3620** any time.
 
 Additionally, winter often means lower demand, which can translate to shorter wait times and potentially better pricing. If your roof can hold up through winter but needs replacement, locking in a late-winter installation for a March start can be a smart financial move.
 
@@ -146,6 +146,6 @@ We serve Philadelphia, Bucks County, Montgomery County, Delaware County, and Che
 
 The best time to replace your roof is before it becomes an emergency. Whether you are planning for this fall, next spring, or need help now, Adilay Roofing is ready.
 
-Call us at **(888) 823-4766** or [get a free roof estimate](/get-quote) online. Our [roof replacement services](/services/roof-replacement) come with honest pricing, expert installation, and a commitment to getting your project done right, no matter what Pennsylvania's weather has in store.
+Call us at **(267) 255-3620** or [get a free roof estimate](/get-quote) online. Our [roof replacement services](/services/roof-replacement) come with honest pricing, expert installation, and a commitment to getting your project done right, no matter what Pennsylvania's weather has in store.
 
 Visit [our experienced team](/about) page to learn more about the family behind Adilay Roofing and why over 1,000 homeowners across the Philadelphia region have trusted us with their roofs.

@@ -226,10 +226,10 @@ We serve all of Philadelphia plus Bucks County, Montgomery County, Delaware Coun
 
 Whether you're dealing with an active leak, ponding water, or just want peace of mind before the next big storm, a professional inspection is the first step. We'll identify any issues, explain your options, and give you a straight answer on whether you need a repair or replacement.
 
-[Get a free roof estimate](/get-quote) or call **(888) 823-4766**. We're available Sunday through Friday, 24 hours a day, with 24/7 emergency service for active leaks. For our [flat roofing services](/services/flat-roofing), no job is too small or too complicated.
+[Get a free roof estimate](/get-quote) or call **(267) 255-3620**. We're available Sunday through Friday, 24 hours a day, with 24/7 emergency service for active leaks. For our [flat roofing services](/services/flat-roofing), no job is too small or too complicated.
 
-**Adilay Roofing LLC**
-2020 Dreer St., Unit 101, Philadelphia, PA 19125
+**Adilay Roofing**
+2020 Dreer St Unit 101, Philadelphia, PA 19125
 PA License: PA184779
 
 ---

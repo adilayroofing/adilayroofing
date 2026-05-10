@@ -70,7 +70,7 @@ A trustworthy **Philadelphia roofing company** has:
 
 Why does this matter? Because if something goes wrong two years after your roof is installed, you need to be able to find the contractor. A local company that's been here for years isn't going anywhere.
 
-Adilay Roofing has been operating from 2020 Dreer St., Unit 101, Philadelphia, PA 19125 for years. We're part of this community, and our reputation depends on standing behind every roof we install. Learn more [about Adilay Roofing](/about) and our history serving Philadelphia.
+Adilay Roofing has been operating from 2020 Dreer St Unit 101, Philadelphia, PA 19125 for years. We're part of this community, and our reputation depends on standing behind every roof we install. Learn more [about Adilay Roofing](/about) and our history serving Philadelphia.
 
 ### 4. Detailed Written Estimates
 
@@ -215,10 +215,10 @@ Take your time, do your research, ask the tough questions, and don't let anyone 
 
 If you're looking for a **roofing contractor near me** in the Philadelphia area, we'd welcome the opportunity to earn your trust. [Get a free roof estimate](/get-quote) and see for yourself why over 1,000 Philadelphia-area homeowners have chosen Adilay Roofing.
 
-**Call us at (888) 823-4766.** We're available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent roof issues. Whether you need [roof replacement services](/services/roof-replacement), a repair, or just an honest inspection, we're here to help.
+**Call us at (267) 255-3620.** We're available Sunday through Friday, 24 hours a day, with 24/7 emergency service for urgent roof issues. Whether you need [roof replacement services](/services/roof-replacement), a repair, or just an honest inspection, we're here to help.
 
-**Adilay Roofing LLC**
-2020 Dreer St., Unit 101, Philadelphia, PA 19125
+**Adilay Roofing**
+2020 Dreer St Unit 101, Philadelphia, PA 19125
 PA License: PA184779
 
 ---

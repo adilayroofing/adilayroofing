@@ -28,7 +28,7 @@ faq:
 
 When you invest $8,000 to $15,000 in a new roof, the warranty backing that investment matters just as much as the shingles themselves. Having a **roof warranty explained** clearly before you sign a contract can save you thousands of dollars down the road. Yet in our 20-plus years of roofing across Philadelphia, we have seen too many homeowners confused about what their warranty actually covers, and what it does not.
 
-At Adilay Roofing LLC, we believe informed homeowners make better decisions. That is why we are breaking down every type of roofing guarantee you will encounter, what the fine print really means, and how to make sure your warranty protects you when it matters most.
+At Adilay Roofing, we believe informed homeowners make better decisions. That is why we are breaking down every type of roofing guarantee you will encounter, what the fine print really means, and how to make sure your warranty protects you when it matters most.
 
 ## Understanding the Two Main Types of Roofing Warranties
 
@@ -140,7 +140,7 @@ When evaluating a contractor's warranty, ask these questions:
 
 At Adilay Roofing, we have been answering these questions for over 20 years. We never use subcontractors. Every project is completed by our own trained crews. We are fully licensed (PA184779, active through July 2027) and insured. And with over 1,000 happy clients across the Philadelphia region, our track record speaks for itself.
 
-Ready to get an honest assessment of your roof and learn about the warranty options available for your home? [Get a free roof estimate](/get-quote) from our team. You can also call us directly at (888) 823-4766. We are available Sunday through Friday, 24 hours a day, with emergency service around the clock.
+Ready to get an honest assessment of your roof and learn about the warranty options available for your home? [Get a free roof estimate](/get-quote) from our team. You can also call us directly at (267) 255-3620. We are available Sunday through Friday, 24 hours a day, with emergency service around the clock.
 
 ## The Bottom Line on Roof Warranties
 
@@ -148,4 +148,4 @@ Having your **roof warranty explained** upfront, before a single shingle is nail
 
 Your roof is one of the biggest investments you will make in your home. Protect that investment with the right warranty coverage and a contractor who will be here to honor it for decades to come.
 
-Contact Adilay Roofing LLC today at (888) 823-4766 or visit us at 2020 Dreer St., Unit 101, Philadelphia, PA 19125. With [our experienced team](/about), your [roof replacement services](/services/roof-replacement) and [shingle roofing installation](/services/shingle-roofing) are backed by warranties you can count on.
+Contact Adilay Roofing today at (267) 255-3620 or visit us at 2020 Dreer St Unit 101, Philadelphia, PA 19125. With [our experienced team](/about), your [roof replacement services](/services/roof-replacement) and [shingle roofing installation](/services/shingle-roofing) are backed by warranties you can count on.

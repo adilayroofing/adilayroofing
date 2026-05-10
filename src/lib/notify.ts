@@ -32,8 +32,8 @@ export async function notifyPendingApproval({
   }
 
   const clickUrl = pendingId
-    ? `https://adilayroofing.com/admin/pending?id=${pendingId}`
-    : `https://adilayroofing.com/admin/pending`;
+    ? `https://www.adilayroofing.com/admin/pending?id=${pendingId}`
+    : `https://www.adilayroofing.com/admin/pending`;
 
   const url = `https://ntfy.sh/${NTFY_TOPIC}`;
   const message = `${changeType} on "${pageName}" — Tap to review`;

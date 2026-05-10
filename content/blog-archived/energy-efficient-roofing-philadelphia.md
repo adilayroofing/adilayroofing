@@ -28,7 +28,7 @@ faq:
 
 Philadelphia summers are getting hotter. The city has recorded more 90-degree days per year in the past decade than in any previous ten-year stretch, and that trend is not slowing down. For homeowners watching their PECO bills climb every July and August, **energy efficient roofing Philadelphia** solutions offer a practical way to fight back against rising utility costs while keeping your home comfortable year-round.
 
-At Adilay Roofing LLC, we have spent over 20 years helping Philadelphia homeowners make smart roofing decisions. We have seen firsthand how the right roofing materials and installation techniques can transform a sweltering top floor into a comfortable living space and shave hundreds of dollars off annual energy bills. Here is everything you need to know about your energy-efficient roofing options.
+At Adilay Roofing, we have spent over 20 years helping Philadelphia homeowners make smart roofing decisions. We have seen firsthand how the right roofing materials and installation techniques can transform a sweltering top floor into a comfortable living space and shave hundreds of dollars off annual energy bills. Here is everything you need to know about your energy-efficient roofing options.
 
 ## What Makes a Roof Energy Efficient?
 
@@ -148,10 +148,10 @@ The best energy-efficient roofing option depends on several factors specific to 
 
 ## Get a Professional Energy Assessment for Your Philadelphia Home
 
-At Adilay Roofing LLC, we do not just install roofs. We help Philadelphia homeowners make informed decisions about the best roofing investment for their specific home and budget. With over 2,080 completed projects and more than 1,000 happy clients across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, we bring [20+ years of experience](/about) to every project.
+At Adilay Roofing, we do not just install roofs. We help Philadelphia homeowners make informed decisions about the best roofing investment for their specific home and budget. With over 2,080 completed projects and more than 1,000 happy clients across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County, we bring [20+ years of experience](/about) to every project.
 
 We are a family-owned company that never uses subcontractors. Every installation is performed by our own trained crews under Pennsylvania license PA184779. We offer honest pricing with no hidden fees.
 
-Ready to explore energy-efficient roofing options for your home? [Get a free roof estimate](/get-quote) from Adilay Roofing today. Call us at (888) 823-4766, available Sunday through Friday, 24 hours a day. You can also visit our office at 2020 Dreer St., Unit 101, Philadelphia, PA 19125, or [see our completed projects](/gallery) to see the quality of our work firsthand.
+Ready to explore energy-efficient roofing options for your home? [Get a free roof estimate](/get-quote) from Adilay Roofing today. Call us at (267) 255-3620, available Sunday through Friday, 24 hours a day. You can also visit our office at 2020 Dreer St Unit 101, Philadelphia, PA 19125, or [see our completed projects](/gallery) to see the quality of our work firsthand.
 
 Your roof should work as hard as you do. Let us help you choose **energy efficient roofing Philadelphia** homeowners can count on for decades of comfort, savings, and protection.

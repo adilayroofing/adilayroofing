@@ -28,7 +28,7 @@ faq:
 
 If you own a row home in Philadelphia, there is a strong chance your roof is flat or nearly flat, and that means you need a roofing material built specifically for low-slope applications. EPDM roofing Philadelphia contractors have relied on for decades remains the gold standard for flat roof protection, and for good reason. This synthetic rubber membrane handles everything our Mid-Atlantic climate can throw at it, from summer heat waves to winter freeze-thaw cycles to pounding nor'easters.
 
-At Adilay Roofing LLC, we have installed and repaired hundreds of EPDM flat roof systems across Philadelphia's row home neighborhoods. With [20+ years of experience](/about) and more than 2,080 completed projects, we know this material inside and out. In this guide, we cover everything you need to know about EPDM: what it is, why it outperforms alternatives for Philadelphia flat roofs, how installation works, what it costs, and how to keep it performing for decades.
+At Adilay Roofing, we have installed and repaired hundreds of EPDM flat roof systems across Philadelphia's row home neighborhoods. With [20+ years of experience](/about) and more than 2,080 completed projects, we know this material inside and out. In this guide, we cover everything you need to know about EPDM: what it is, why it outperforms alternatives for Philadelphia flat roofs, how installation works, what it costs, and how to keep it performing for decades.
 
 ## What Is EPDM Rubber Roofing?
 
@@ -167,7 +167,7 @@ Even the best EPDM roofing Philadelphia installations can develop issues over ti
 
 ## Why Choose Adilay Roofing for Your EPDM Installation
 
-Philadelphia has no shortage of roofers who claim to handle flat roofs, but EPDM installation requires specific expertise that many general roofers lack. At Adilay Roofing LLC, flat roofing is a core specialty, not an afterthought.
+Philadelphia has no shortage of roofers who claim to handle flat roofs, but EPDM installation requires specific expertise that many general roofers lack. At Adilay Roofing, flat roofing is a core specialty, not an afterthought.
 
 **What sets us apart:**
 
@@ -179,10 +179,10 @@ Philadelphia has no shortage of roofers who claim to handle flat roofs, but EPDM
 
 ## Get Your Free EPDM Roof Estimate
 
-Whether your flat roof is leaking now, showing its age, or you are simply planning ahead, Adilay Roofing LLC is ready to help. We provide free, detailed estimates for EPDM installation and repair across all the [areas we serve](/service-areas) in the greater Philadelphia region.
+Whether your flat roof is leaking now, showing its age, or you are simply planning ahead, Adilay Roofing is ready to help. We provide free, detailed estimates for EPDM installation and repair across all the [areas we serve](/service-areas) in the greater Philadelphia region.
 
 Our process is straightforward: we inspect your roof, explain exactly what we find, provide a written estimate with transparent pricing, and let you decide on your timeline. No high-pressure sales, no surprises.
 
-**[Get a free roof estimate](/get-quote)** or call **(888) 823-4766** today. We are available Sunday through Friday, 24 hours a day. For emergency flat roof leaks, we offer 24/7 response.
+**[Get a free roof estimate](/get-quote)** or call **(267) 255-3620** today. We are available Sunday through Friday, 24 hours a day. For emergency flat roof leaks, we offer 24/7 response.
 
 Explore our full range of [flat roofing services](/services/flat-roofing) or learn about roofing challenges specific to South Philadelphia row homes. If you are weighing a repair versus full replacement, our roof repair cost guide breaks down the numbers to help you decide.

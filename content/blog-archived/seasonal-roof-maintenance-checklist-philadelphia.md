@@ -28,9 +28,9 @@ faq:
 
 A solid **roof maintenance checklist** is the single most effective way to extend your roof's lifespan, prevent emergency repairs, and protect your Philadelphia home's value year-round. Our Mid-Atlantic climate puts roofs through a punishing annual cycle -- from heavy snow and ice in January to brutal UV exposure and thunderstorms in July -- and without regular maintenance, even a well-installed roof deteriorates faster than it should.
 
-At Adilay Roofing LLC, our [experienced team](/about) has completed over 2,080 roofing projects across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. One pattern we see consistently is that homeowners who follow a preventive roof care routine spend dramatically less on repairs over the life of their roof. This season-by-season checklist gives you everything you need to stay ahead of problems.
+At Adilay Roofing, our [experienced team](/about) has completed over 2,080 roofing projects across Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County. One pattern we see consistently is that homeowners who follow a preventive roof care routine spend dramatically less on repairs over the life of their roof. This season-by-season checklist gives you everything you need to stay ahead of problems.
 
-Save this page, print it out, or bookmark it -- and if anything on this list raises a concern, call us at **(888) 823-4766** for a free inspection.
+Save this page, print it out, or bookmark it -- and if anything on this list raises a concern, call us at **(267) 255-3620** for a free inspection.
 
 ## Spring Roof Maintenance Checklist (March - May)
 
@@ -103,7 +103,7 @@ Philadelphia has one of the highest concentrations of flat-roof row homes in the
 - **Ensure all drains and scuppers are flowing freely.**
 - **Look for ponding areas** and address drainage problems before winter snow adds weight.
 
-Need [professional roof repair](/services/roof-repair) before winter arrives? Do not wait -- our schedule fills up fast in October and November. Call **(888) 823-4766** to get on the calendar.
+Need [professional roof repair](/services/roof-repair) before winter arrives? Do not wait -- our schedule fills up fast in October and November. Call **(267) 255-3620** to get on the calendar.
 
 ## Winter Roof Maintenance Checklist (December - February)
 
@@ -159,6 +159,6 @@ With over 1,000 happy clients across the [areas we serve](/service-areas), we br
 
 Consistent seasonal roofing maintenance is the most cost-effective investment you can make in your home. The Philadelphia climate is demanding, but a roof that receives regular attention will protect your family for decades.
 
-Need a professional inspection or repair? Call Adilay Roofing LLC at **(888) 823-4766** or [get a free roof estimate](/get-quote) online today. We serve Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County -- and we are available Sunday through Friday, with 24/7 emergency service for urgent situations. You can also [see our completed projects](/gallery) to see the quality of work we deliver across the region.
+Need a professional inspection or repair? Call Adilay Roofing at **(267) 255-3620** or [get a free roof estimate](/get-quote) online today. We serve Philadelphia, Bucks County, Montgomery County, Delaware County, and Chester County -- and we are available Sunday through Friday, with 24/7 emergency service for urgent situations. You can also [see our completed projects](/gallery) to see the quality of work we deliver across the region.
 
 Your roof works hard for you every day. A little maintenance goes a long way.
