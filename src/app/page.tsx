@@ -230,7 +230,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* HERO SECTION                                 */}
       {/* ============================================ */}
-      <section className="relative min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
+      <section className="relative min-h-[clamp(540px,70vh,640px)] md:min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
         {/* Hero background image */}
         <img
           src="/images/hero-van.jpg"
@@ -243,7 +243,7 @@ export default async function Home() {
         {/* Content — on mobile splits into top (heading) + bottom (CTAs + trust)
             so the van branding stays visible in the middle. On md+ it's a normal
             vertically-centered block. */}
-        <div className="relative z-10 container-wide mx-auto px-4 py-10 md:py-16 lg:py-20 text-center w-full flex flex-col justify-between md:block">
+        <div className="relative z-10 container-wide mx-auto px-4 pt-10 pb-3 md:py-16 lg:py-20 text-center w-full flex flex-col justify-between md:block">
           {/* Top: headline + subtitle */}
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 md:mb-5 text-balance">
