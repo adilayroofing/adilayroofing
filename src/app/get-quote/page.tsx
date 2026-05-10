@@ -8,28 +8,11 @@ import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
-import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dbSeo = await getPageSEO("/get-quote");
-  if (dbSeo) {
-    return {
-      ...buildMetadataFromSEO(dbSeo),
-      keywords: [
-        "no-obligation roofing quote",
-        "free roofing quote",
-        "roofers free estimate",
-        "roof free estimate",
-        "roofing estimate Philadelphia PA",
-        "same-day roof estimate",
-        "roof repair quote no obligation",
-        "free roofing estimate Philadelphia",
-      ],
-    };
-  }
   return {
     title: "Free No-Obligation Roofing Quote Philadelphia | Adilay Roofing",
     description:
@@ -103,39 +86,17 @@ const quoteFaqs = [
 ];
 
 export default async function GetQuotePage() {
-  const cmsData = await getStructuredContent("/get-quote", "structured_quote");
-
-  const heroTitle =
-    (cmsData?.heroTitle as string) ||
-    "Free No-Obligation Roofing Quote in Philadelphia";
-  const heroDescription =
-    (cmsData?.heroDescription as string) ||
-    "Fill out the short form and a licensed Philadelphia roofer will follow up the same day with a written, no-pressure quote tailored to your property.";
-  const offerBannerText =
-    (cmsData?.offerBannerText as string) ||
-    "\ud83c\udf81 Limited Offer: FREE Gutter Cleaning with Every Roof Replacement \u2014 First-Time Customers";
-  const cmsTrustSignals = cmsData?.trustSignals as string[] | undefined;
-  const trustSignals = cmsTrustSignals?.length
-    ? cmsTrustSignals
-    : ["Free Estimates", "No Obligation", "Response Within 24hrs"];
-  const licenseHeading =
-    (cmsData?.licenseHeading as string) ||
-    "PA Licensed Home Improvement Contractor";
-  const licenseDescription =
-    (cmsData?.licenseDescription as string) ||
-    "Adilay Roofing is officially registered with the Commonwealth of Pennsylvania as a licensed Home Improvement Contractor. Your project is protected by state-regulated standards.";
-  const serviceAreaHeading =
-    (cmsData?.serviceAreaHeading as string) ||
-    "Same-Day Estimates Available Across Philadelphia & Surrounding Areas";
-  const serviceAreaDescription =
-    (cmsData?.serviceAreaDescription as string) ||
-    "Need a roofing estimate in Philadelphia PA today? We cover the entire five-county region with same-day roof estimate slots for urgent jobs — from Northeast Philadelphia and South Philly to Bucks, Montgomery, Delaware, and Chester County.";
-  const faqHeading =
-    (cmsData?.faqHeading as string) ||
-    "Frequently Asked Questions About Our Free Roofing Quotes";
-  const faqSubheading =
-    (cmsData?.faqSubheading as string) ||
-    "Everything you need to know before requesting your free roofing quote in Philadelphia.";
+  // All content sourced directly from this file. CMS deprecated 2026-05-10.
+  const heroTitle = "Free No-Obligation Roofing Quote in Philadelphia";
+  const heroDescription = "Fill out the short form and a licensed Philadelphia roofer will follow up the same day with a written, no-pressure quote tailored to your property.";
+  const offerBannerText = "\ud83c\udf81 Limited Offer: FREE Gutter Cleaning with Every Roof Replacement \u2014 First-Time Customers";
+  const trustSignals = ["Free Estimates", "No Obligation", "Response Within 24hrs"];
+  const licenseHeading = "PA Licensed Home Improvement Contractor";
+  const licenseDescription = "Adilay Roofing is officially registered with the Commonwealth of Pennsylvania as a licensed Home Improvement Contractor. Your project is protected by state-regulated standards.";
+  const serviceAreaHeading = "Same-Day Estimates Available Across Philadelphia & Surrounding Areas";
+  const serviceAreaDescription = "Need a roofing estimate in Philadelphia PA today? We cover the entire five-county region with same-day roof estimate slots for urgent jobs — from Northeast Philadelphia and South Philly to Bucks, Montgomery, Delaware, and Chester County.";
+  const faqHeading = "Frequently Asked Questions About Our Free Roofing Quotes";
+  const faqSubheading = "Everything you need to know before requesting your free roofing quote in Philadelphia.";
 
   // ---------------------------------------------------------------------------
   // Structured data — Service + FAQ (LocalBusiness/RoofingContractor is emitted
@@ -317,6 +278,80 @@ export default async function GetQuotePage() {
       {/* TRUST BAR                                                           */}
       {/* =================================================================== */}
       <TrustBar />
+
+      {/* =================================================================== */}
+      {/* SEO CONTENT — Why a free roof quote is worth your time              */}
+      {/* Captures DEEP RANK queries: "free roof quote" (177), "free roofing  */}
+      {/* quotes" (176), "free roof quotes" (157), "roofing free estimate"    */}
+      {/* (248) — 758 combined monthly impressions, currently page 4–6.       */}
+      {/* =================================================================== */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="section-heading">
+                Why a Free Roof Quote Matters — And What Yours Should Include
+              </h2>
+              <p className="section-subheading mx-auto mt-3">
+                A real roofing estimate is more than a number on a sticky
+                note. Here&apos;s what to expect when you ask Adilay Roofing
+                for a free roof quote in Philadelphia.
+              </p>
+            </div>
+            <div className="space-y-5 text-brand-gray leading-relaxed">
+              <p>
+                When most Philadelphia homeowners search for{" "}
+                <strong>free roofing quotes</strong>, they&apos;re hoping to
+                find out two things: <em>is my roof actually a problem yet</em>,
+                and <em>what&apos;s it going to cost to fix or replace?</em>{" "}
+                Both deserve real answers, not a salesperson&apos;s guess. A
+                proper free roof quote starts with a 30-minute on-site
+                inspection &mdash; your roof from the surface, your attic
+                from inside, and the full perimeter of flashing, gutters,
+                and drainage. That&apos;s the only way to give you a number
+                that actually holds up when the work begins.
+              </p>
+              <p>
+                Adilay&apos;s <strong>free roof quotes</strong> are written,
+                line-itemized, and fixed-price. You get the materials
+                specified by manufacturer and product line (GAF Timberline
+                HDZ vs CertainTeed Landmark vs Owens Corning Duration; EPDM
+                vs TPO for flat roofs), the labor cost, the permit cost, the
+                tear-off scope, the dumpster fee, and the warranty terms
+                &mdash; all on one document you can compare against any
+                other roofer in Philadelphia. No mystery line items, no
+                &ldquo;we&apos;ll see when we get up there&rdquo; hedge
+                language.
+              </p>
+              <p>
+                Most importantly, our{" "}
+                <strong>roofing free estimate</strong> isn&apos;t a sales
+                call in disguise. If your roof has 5&ndash;10 years of life
+                left and just needs a chimney flashing reworked, we quote
+                the repair, not a replacement. If you have storm damage, we
+                document it for your insurance carrier (State Farm,
+                Allstate, Liberty Mutual, USAA, Travelers, Erie &mdash; all
+                the major Pennsylvania carriers) and write the kind of
+                scope adjusters approve without bouncing back. We&apos;d
+                rather save you a $20,000 replacement and earn the small
+                repair than burn the trust to chase a bigger ticket.
+              </p>
+              <p>
+                Same-day response is real. If you call (267) 255-3620
+                before noon on a weekday, we&apos;ll be on your roof that
+                afternoon. Evening or weekend? We schedule
+                next-business-day. After-hours emergencies (active leaks
+                during a storm) get a 2&ndash;6 hour response window. Once
+                your <strong>free roof quote</strong> is in your hands, take
+                your time &mdash; we don&apos;t follow up with pressure
+                calls or &ldquo;limited time&rdquo; expirations. The quote
+                is honest, the price is firm, and you decide when (or
+                whether) to move forward.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* =================================================================== */}
       {/* SEO CONTENT — What's included in the free roofing estimate          */}

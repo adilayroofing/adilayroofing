@@ -11,29 +11,11 @@ import ScrollReveal from "@/components/ScrollReveal";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
 import ServiceIcon from "@/components/ServiceIcon";
-import { getPageSEO, buildMetadataFromSEO } from "@/lib/seo";
 import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
-export const revalidate = 86400;
+// Fully static — content sourced from this file. CMS deprecated 2026-05-10.
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dbSeo = await getPageSEO("/roofer-philadelphia");
-  if (dbSeo) {
-    return {
-      ...buildMetadataFromSEO(dbSeo),
-      keywords: [
-        "roofer Philadelphia",
-        "Philadelphia roofer",
-        "roofing contractor Philadelphia",
-        "Philadelphia roofing company",
-        "best roofer in Philadelphia",
-        "licensed roofer Philadelphia PA",
-        "roofer near me Philadelphia",
-        "residential roofer Philadelphia",
-        "commercial roofer Philadelphia",
-      ],
-    };
-  }
   return {
     title: {
       absolute:
@@ -276,6 +258,100 @@ export default function RooferPhiladelphiaPage() {
             >
               Request Your Free Estimate
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PHILADELPHIA ROOF TYPES BY NEIGHBORHOOD — entity-rich SEO content */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <h2 className="section-heading">
+                Philadelphia Roof Types by Neighborhood — What We Install Where
+              </h2>
+              <p className="section-subheading mx-auto mt-4">
+                Philly's housing stock spans 200+ years and a dozen distinct
+                roof systems. Here's what we work on in each part of the city.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="max-w-3xl mx-auto space-y-6 text-brand-gray leading-relaxed">
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-2">
+                Flat-Roof Rowhomes — Fishtown, Kensington, Northern Liberties, South Philly, Point Breeze
+              </h3>
+              <p>
+                The dominant roof style across Philadelphia's row-house
+                neighborhoods is a low-slope or fully-flat roof, originally
+                covered in built-up tar-and-gravel and now usually re-roofed
+                in <strong>EPDM rubber</strong> (60-mil black or white) or{" "}
+                <strong>TPO</strong> (heat-welded white membrane). On a typical
+                Philly rowhouse roof we recommend EPDM for proven longevity in
+                our freeze-thaw climate. Common failure points: shared parapet
+                flashing with neighbors, scuppers and internal drains, and
+                chimney back-flashing where snow accumulates. Replacement
+                pricing on a 600–1,000 sq ft rowhouse roof typically runs
+                $4,500–$11,000 depending on tear-off complexity.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-2">
+                Architectural Shingle Twins & Singles — Northeast Philly, Roxborough, Manayunk, Mt. Airy
+              </h3>
+              <p>
+                Mid-century twins and singles in the Northeast and the river
+                wards of the Schuylkill use pitched roofs covered in{" "}
+                <strong>architectural asphalt shingles</strong>. We install GAF
+                Timberline HDZ, CertainTeed Landmark, and Owens Corning
+                Duration as our standard architectural lines (25-30 year
+                lifespan, 110-130 mph wind warranty). Older homes in this
+                stock often need ventilation upgrades — ridge vents, soffit
+                intake, and balanced airflow — to prevent the ice dams that
+                are the #1 cause of February ceiling leaks across these
+                neighborhoods. Typical replacement: $11,000–$22,000 for a
+                1,800–2,400 sq ft home.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-2">
+                Slate & Designer Shingle — Center City, Chestnut Hill, Mt. Airy, West Philly
+              </h3>
+              <p>
+                Center City Victorians, Chestnut Hill estate homes, and the
+                university-area Tudor and Colonial Revival homes were
+                originally roofed in <strong>Pennsylvania Buckingham slate</strong>{" "}
+                (S1-grade, the hardest rating, often still in place after 130
+                years). We do slate repair (individual slate replacement,
+                copper flashing rework, ridge mortar replacement) and full
+                slate replacement when the underlayment is gone. Where natural
+                slate isn't in the budget, we install synthetic alternatives —
+                DaVinci Multi-Width and Brava Old World Slate — at roughly
+                half the cost with similar visual character. Designer
+                composition shingles (CertainTeed Grand Manor, GAF Slateline)
+                round out the Chestnut Hill and Mt. Airy historic-district
+                options.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-brand-dark mb-2">
+                Commercial & Mixed-Use — TPO and Modified Bitumen Across the Center City Skyline
+              </h3>
+              <p>
+                Philadelphia commercial roofs — warehouses in Port Richmond
+                and Tioga, mixed-use buildings in Old City, retail along
+                Roosevelt Boulevard — are predominantly{" "}
+                <strong>TPO</strong> or <strong>modified bitumen</strong>{" "}
+                installations on flat or low-slope decks. We're approved
+                installers for Carlisle, GAF EverGuard, and Firestone TPO
+                systems, and we coordinate with property managers and L&amp;I
+                inspectors to keep tenant disruption minimal. Commercial work
+                includes optional inspection-and-maintenance contracts that
+                catch small membrane failures before they turn into claim
+                events.
+              </p>
+            </div>
           </div>
         </div>
       </section>

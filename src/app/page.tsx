@@ -13,7 +13,6 @@ import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/blog/BlogCard";
 import ScrollReveal from "@/components/ScrollReveal";
-import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import { stripHtml } from "@/lib/schema";
@@ -30,29 +29,6 @@ export const revalidate = 86400;
 // Dynamic metadata
 // ---------------------------------------------------------------------------
 export async function generateMetadata(): Promise<Metadata> {
-  const dbSeo = await getPageSEO("/");
-  if (dbSeo) {
-    return {
-      ...buildMetadataFromSEO(dbSeo),
-      keywords: [
-        "roofer Philadelphia",
-        "roofing contractor Philadelphia",
-        "trusted roofer Philadelphia",
-        "roof replacement Philadelphia",
-        "roof repair Philadelphia",
-        "Philadelphia roofer",
-        "roofer near me",
-        "roofing company near me",
-        "affordable roofer Philadelphia",
-        "flat roofing Philadelphia",
-        "siding installation Philadelphia",
-        "emergency roof repair Philadelphia",
-        "licensed roofer PA",
-        "free roofing estimate Philadelphia",
-      ],
-    };
-  }
-
   return {
     title: {
       // Brand-first title format: lifts CTR on branded "adilay" queries (was 1.54%
@@ -206,37 +182,28 @@ const whyChooseUsBgImages = [
 // Page component
 // ---------------------------------------------------------------------------
 export default async function Home() {
-  // Fetch CMS structured content (falls back to hardcoded if none)
-  const cmsData = await getStructuredContent("/", "structured_home");
+  // All content sourced directly from this file — CMS deprecated 2026-05-10.
+  // H1 leads with "Philadelphia Roofer" to match the highest-impression DEEP RANK
+  // query (`roofer philadelphia`, 1,139 monthly impr at avg pos 48).
+  const heroHeadlineWhite = "Philadelphia Roofer —";
+  const heroHeadlineRed = "Roof Repair, Replacement & 24/7 Emergency";
+  const heroSubheadline = "20+ years on Philly roofs. Family-owned. 2,000+ projects.";
+  // Geo + entity-rich description: names neighborhoods, materials, and trust signals
+  // Google's quality classifier scores well. Targets `roofer philadelphia`,
+  // `roofing philadelphia`, `roofers in philadelphia`, plus material long-tails.
+  const heroDescription =
+    "Adilay Roofing is a family-owned, fully-licensed Philadelphia roofer (PA184779) with over 20 years of work on the city's distinct roofs — from flat-roof rowhomes in Fishtown and Kensington and brownstones in Northern Liberties to slate-roof Victorians in Center City and the suburban shingle stock that fills out Bucks, Montgomery, Delaware, and Chester counties. We've completed 2,000+ projects across the Delaware Valley, all installed by our own crews (we don't subcontract), with a 5.0 average on Google. We do the full range: replacement and re-roofing on shingle, slate, metal, EPDM rubber, TPO, and modified bitumen; targeted leak repair, flashing rework, and storm-damage insurance claims; gutter, soffit, fascia, and siding work; and 24/7 emergency tarping when a storm catches you off-guard. Free, no-pressure estimates — written, fixed-price scopes. Call (267) 255-3620.";
 
-  // Merge CMS data with hardcoded fallback
-  const heroHeadlineWhite = (cmsData?.heroHeadlineWhite as string) || "Philadelphia's Trusted";
-  const heroHeadlineRed = (cmsData?.heroHeadlineRed as string) || "Roofing Contractor";
-  const heroSubheadline = (cmsData?.heroSubheadline as string) || "Quality Craftsmanship. Proven Results.";
-  const heroDescription = (cmsData?.heroDescription as string) ||
-    "Looking for trusted roofing contractors in Philadelphia? Adilay Roofing has served Philadelphia homeowners and businesses for more than 20 years — roof replacement, roof repair, flat roofing, and 24/7 emergency response. Licensed in Pennsylvania (PA184779), fully insured, 5.0 rating on Google. Free estimates — call (267) 255-3620.";
+  const whyChooseUs = fallbackWhyChooseUs;
 
-  const cmsWhyChooseUs = cmsData?.whyChooseUs as { title: string; description: string }[] | undefined;
-  const whyChooseUs = cmsWhyChooseUs?.length
-    ? cmsWhyChooseUs.map((item, i) => ({
-        ...item,
-        bgImage: whyChooseUsBgImages[i] || whyChooseUsBgImages[0],
-      }))
-    : fallbackWhyChooseUs;
+  const teamHeading = "Family-Owned. Locally Trusted.";
+  const teamParagraphs = [
+    "Adilay Roofing is a family-run business built on hard work, honest service, and a genuine commitment to every homeowner we serve. From our office in Philadelphia, we manage every project personally — no subcontractors, no runaround.",
+    "With over 20 years of experience and a crew that treats your home like their own, you get more than a contractor — you get a team that stands behind every shingle, every seam, and every promise.",
+  ];
 
-  const teamHeading = (cmsData?.teamHeading as string) || "Family-Owned. Locally Trusted.";
-
-  const cmsTeamParagraphs = cmsData?.teamParagraphs as string[] | undefined;
-  const teamParagraphs = cmsTeamParagraphs?.length
-    ? cmsTeamParagraphs
-    : [
-        "Adilay Roofing is a family-run business built on hard work, honest service, and a genuine commitment to every homeowner we serve. From our office in Philadelphia, we manage every project personally — no subcontractors, no runaround.",
-        "With over 20 years of experience and a crew that treats your home like their own, you get more than a contractor — you get a team that stands behind every shingle, every seam, and every promise.",
-      ];
-
-  const serviceAreasHeading = (cmsData?.serviceAreasHeading as string) || "Serving Philadelphia & Beyond";
-  const serviceAreasDescription = (cmsData?.serviceAreasDescription as string) ||
-    "We proudly serve homeowners and businesses across southeastern Pennsylvania.";
+  const serviceAreasHeading = "Serving Philadelphia & Beyond";
+  const serviceAreasDescription = "We proudly serve homeowners and businesses across southeastern Pennsylvania.";
 
   // FAQPage schema — must match the 8 FAQs rendered by <FAQ items={faqs.slice(0, 8)} />
   // below. stripHtml removes any inline anchors (e.g. financing link) and
