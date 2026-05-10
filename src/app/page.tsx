@@ -230,7 +230,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* HERO SECTION                                 */}
       {/* ============================================ */}
-      <section className="relative min-h-[580px] md:min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
+      <section className="relative min-h-[600px] lg:min-h-[640px] flex items-stretch md:items-center justify-center bg-brand-darker overflow-hidden">
         {/* Hero background image */}
         <img
           src="/images/hero-van.jpg"
@@ -290,7 +290,7 @@ export default async function Home() {
 
             <a
               href="sms:+12672553620&body=Hi%2C%20I%27m%20interested%20in%20a%20free%20roofing%20estimate."
-              className="inline-flex items-center gap-1.5 mt-3 sm:mt-4 text-sm text-white/75 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 mt-3 sm:mt-4 text-sm font-bold text-white hover:text-white/80 transition-colors"
             >
               <svg
                 className="w-4 h-4"
