@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { company } from "@/data/company";
-import QuoteForm from "@/components/QuoteForm";
+import ContactForm from "@/components/ContactForm";
 import TrustBar from "@/components/TrustBar";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQ from "@/components/FAQ";
@@ -261,7 +261,7 @@ export default async function GetQuotePage() {
         <div className="lg:w-[60%] bg-brand-light flex items-start lg:items-center justify-center px-3 md:px-4 py-3 md:py-10 lg:py-16">
           <div className="w-full max-w-2xl">
             <div id="quote-form-top" style={{ scrollMarginTop: "120px" }} />
-            <QuoteForm />
+            <ContactForm />
 
             {/* Mobile-only BBB seal under the form. The desktop hero panel
                 already shows the BBB seal on its own; on mobile that panel
