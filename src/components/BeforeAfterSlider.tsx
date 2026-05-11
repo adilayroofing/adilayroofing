@@ -3,14 +3,24 @@
 /**
  * Draggable before/after image comparison slider.
  *
- * - Both images stack absolutely; the "before" is clipped on the right
- *   based on `position` (0–100%) so the "after" shows through.
- * - Pointer-down anywhere on the image jumps the handle to that x and
- *   starts a drag; pointer-move while dragging updates position; pointer
- *   release ends the drag. Pointer Events cover mouse + touch + stylus.
- * - On first scroll-into-view we run a short auto-animation (50 → 80 →
- *   20 → 50) so users see it's interactive without a separate label.
- *   The auto-animation is canceled as soon as the user touches it.
+ * Mobile-friendliness:
+ * - Container uses `touch-action: pan-y` so a finger landing on the image
+ *   can still swipe-scroll the page vertically. Only the small drag
+ *   handle disables touch-action, so horizontal drag on the handle works.
+ * - On touch input, the container does NOT jump to wherever you tap; only
+ *   the handle is interactive. (On a mouse or pen, clicking anywhere on
+ *   the image still jumps the handle — desktop "bonus" interaction.)
+ * - Drag handle is 48 px on mobile / 52 px on desktop — comfortably above
+ *   the 44 px iOS minimum touch target.
+ *
+ * Hint animation:
+ * - On first scroll-into-view we run a short auto-animation
+ *   (50 → 80 → 20 → 50) so users see it's interactive without a separate
+ *   "drag me" callout. Canceled the moment they grab it.
+ *
+ * Accessibility:
+ * - Handle is a button with role="slider", aria-valuenow, and arrow-key
+ *   support (±4, ±10 with shift, Home/End for 0/100).
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -20,8 +30,9 @@ interface Props {
   beforeAlt: string;
   afterSrc: string;
   afterAlt: string;
-  /** Tailwind aspect class. Defaults to aspect-[7/6] to match the homepage
-   *  Victorian-house photos (1352x1163 / 1200x1045 — both ~1.16). */
+  /** Tailwind aspect class. Defaults to aspect-[7/6] to match the
+   *  homepage Victorian-house photos (1352x1163 / 1200x1045 — both
+   *  about 1.16). */
   aspectClass?: string;
   className?: string;
 }
@@ -35,21 +46,22 @@ export default function BeforeAfterSlider({
   className = "",
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const handleRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
 
   // ── Auto-hint animation on first scroll into view ───────────────────────
   useEffect(() => {
-    if (hasInteracted) return;
     const el = containerRef.current;
     if (!el) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || hasInteracted) return;
+        if (!entry.isIntersecting) return;
         observer.disconnect();
-        // 50 → 80 → 20 → 50, ~2.4s total
+        // 50 → 80 → 20 → 50, ~2.4s total. Bails out if the user grabs
+        // the slider mid-animation (check hasInteracted inside each tick).
         const seq: { at: number; value: number }[] = [
           { at: 350, value: 80 },
           { at: 1250, value: 20 },
@@ -57,9 +69,7 @@ export default function BeforeAfterSlider({
         ];
         seq.forEach(({ at, value }) => {
           window.setTimeout(() => {
-            // Bail out if the user grabbed it during the hint
-            setPosition((curr) => (curr === position && !hasInteracted ? value : curr));
-            setPosition(value);
+            setPosition((curr) => (hasInteractedRef.current ? curr : value));
           }, at);
         });
       },
@@ -68,11 +78,19 @@ export default function BeforeAfterSlider({
 
     observer.observe(el);
     return () => observer.disconnect();
-    // We intentionally only register once on mount.
+    // Run once on mount; we read hasInteracted via a ref so we don't
+    // re-register the observer on every state change.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // ── Pointer handlers ────────────────────────────────────────────────────
+  // Keep a ref in sync with hasInteracted so the setTimeout closures above
+  // can read the current value without rebinding.
+  const hasInteractedRef = useRef(false);
+  useEffect(() => {
+    hasInteractedRef.current = hasInteracted;
+  }, [hasInteracted]);
+
+  // ── Pointer helpers ─────────────────────────────────────────────────────
   function getPercent(clientX: number): number {
     const rect = containerRef.current?.getBoundingClientRect();
     if (!rect || rect.width === 0) return 50;
@@ -80,30 +98,49 @@ export default function BeforeAfterSlider({
     return Math.min(100, Math.max(0, raw));
   }
 
-  function onPointerDown(e: React.PointerEvent<HTMLDivElement>) {
-    e.preventDefault();
+  function startDrag(e: React.PointerEvent<HTMLElement>) {
     setHasInteracted(true);
     setIsDragging(true);
-    containerRef.current?.setPointerCapture(e.pointerId);
-    setPosition(getPercent(e.clientX));
+    e.currentTarget.setPointerCapture(e.pointerId);
   }
 
-  function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
-    if (!isDragging) return;
-    setPosition(getPercent(e.clientX));
-  }
-
-  function onPointerUp(e: React.PointerEvent<HTMLDivElement>) {
+  function endDrag(e: React.PointerEvent<HTMLElement>) {
     if (!isDragging) return;
     setIsDragging(false);
     try {
-      containerRef.current?.releasePointerCapture(e.pointerId);
+      e.currentTarget.releasePointerCapture(e.pointerId);
     } catch {
       // ignore — pointer may have already been released
     }
   }
 
-  // ── Keyboard accessibility (left/right arrows when handle focused) ──────
+  // ── Container handlers: mouse/pen click-to-jump (desktop bonus) ─────────
+  // Skipped on touch so the page can scroll vertically when a finger
+  // lands inside the slider area.
+  function onContainerPointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType === "touch") return;
+    if (e.button !== 0) return;
+    e.preventDefault();
+    setPosition(getPercent(e.clientX));
+    startDrag(e);
+  }
+  function onContainerPointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (!isDragging || e.pointerType === "touch") return;
+    setPosition(getPercent(e.clientX));
+  }
+
+  // ── Handle handlers: ALL pointer types ──────────────────────────────────
+  function onHandlePointerDown(e: React.PointerEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    e.stopPropagation();
+    startDrag(e);
+  }
+  function onHandlePointerMove(e: React.PointerEvent<HTMLButtonElement>) {
+    if (!isDragging) return;
+    setPosition(getPercent(e.clientX));
+  }
+
+  // ── Keyboard ────────────────────────────────────────────────────────────
   function onHandleKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
     const step = e.shiftKey ? 10 : 4;
     if (e.key === "ArrowLeft") {
@@ -132,11 +169,11 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-      onPointerCancel={onPointerUp}
-      className={`relative w-full overflow-hidden rounded-sm select-none touch-none cursor-ew-resize shadow-lg ${aspectClass} ${className}`}
+      onPointerDown={onContainerPointerDown}
+      onPointerMove={onContainerPointerMove}
+      onPointerUp={endDrag}
+      onPointerCancel={endDrag}
+      className={`relative w-full overflow-hidden rounded-sm select-none touch-pan-y shadow-lg ${aspectClass} ${className}`}
       role="region"
       aria-label="Before and after roof replacement comparison"
     >
@@ -181,16 +218,24 @@ export default function BeforeAfterSlider({
         }}
       />
 
-      {/* Drag handle (circle) */}
+      {/* Drag handle — owns its own pointer capture so it works on
+          mouse + touch + pen. `touch-none` lets a horizontal touch drag
+          through (would otherwise be intercepted by `touch-pan-y` on the
+          parent). */}
       <button
+        ref={handleRef}
         type="button"
+        onPointerDown={onHandlePointerDown}
+        onPointerMove={onHandlePointerMove}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
         onKeyDown={onHandleKeyDown}
         aria-label="Drag to compare before and after"
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(position)}
         role="slider"
-        className="absolute top-1/2 w-11 h-11 md:w-12 md:h-12 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg ring-1 ring-black/10 flex items-center justify-center cursor-ew-resize focus:outline-none focus:ring-2 focus:ring-brand-red"
+        className="absolute top-1/2 w-12 h-12 md:w-14 md:h-14 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg ring-1 ring-black/10 flex items-center justify-center touch-none cursor-grab active:cursor-grabbing focus:outline-none focus:ring-2 focus:ring-brand-red"
         style={{
           left: `${position}%`,
           transition,
