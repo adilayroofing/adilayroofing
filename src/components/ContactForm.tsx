@@ -36,7 +36,7 @@ const INITIAL: FormData = {
 };
 
 const inputClass =
-  "w-full px-4 py-3 border border-brand-border rounded-sm text-brand-dark placeholder:text-brand-gray/50 " +
+  "w-full px-3.5 py-2.5 md:px-4 md:py-3 border border-brand-border rounded-sm text-brand-dark placeholder:text-brand-gray/50 " +
   "focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-colors";
 
 export default function ContactForm() {
@@ -176,7 +176,7 @@ export default function ContactForm() {
   return (
     <div ref={formTopRef} style={{ scrollMarginTop: "120px" }}>
       {/* Progress indicator: ○ ────── ○ */}
-      <div className="flex items-center justify-center mb-6" aria-label={`Step ${step} of 2`}>
+      <div className="flex items-center justify-center mb-4 md:mb-6" aria-label={`Step ${step} of 2`}>
         <StepCircle n={1} active={step >= 1} complete={step > 1} />
         <div
           className={`flex-1 max-w-[200px] h-0.5 mx-2 transition-colors duration-300 ${
@@ -186,12 +186,12 @@ export default function ContactForm() {
         <StepCircle n={2} active={step >= 2} complete={false} />
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      <form onSubmit={handleSubmit} className="space-y-3 md:space-y-5" noValidate>
         {step === 1 ? (
           <>
             {/* Stage 1 — Contact basics */}
             <div>
-              <label htmlFor="name" className="block text-sm font-bold text-brand-dark mb-2">
+              <label htmlFor="name" className="block text-sm font-bold text-brand-dark mb-1.5">
                 Full Name <span className="text-brand-red">*</span>
               </label>
               <input
@@ -211,7 +211,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-bold text-brand-dark mb-2">
+              <label htmlFor="email" className="block text-sm font-bold text-brand-dark mb-1.5">
                 Email Address <span className="text-brand-red">*</span>
               </label>
               <input
@@ -232,7 +232,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-bold text-brand-dark mb-2">
+              <label htmlFor="phone" className="block text-sm font-bold text-brand-dark mb-1.5">
                 Phone Number <span className="text-brand-gray font-normal">(optional)</span>
               </label>
               <input
@@ -251,7 +251,7 @@ export default function ContactForm() {
             <button
               type="button"
               onClick={goNext}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-red text-white font-bold rounded-sm hover:bg-brand-red-dark active:scale-[0.97] transition-all"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 md:py-3.5 bg-brand-red text-white font-bold rounded-sm hover:bg-brand-red-dark active:scale-[0.97] transition-all"
             >
               Next
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -263,7 +263,7 @@ export default function ContactForm() {
           <>
             {/* Stage 2 — Project details */}
             <div>
-              <label htmlFor="service" className="block text-sm font-bold text-brand-dark mb-2">
+              <label htmlFor="service" className="block text-sm font-bold text-brand-dark mb-1.5">
                 Service Needed <span className="text-brand-red">*</span>
               </label>
               <select
@@ -285,7 +285,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-bold text-brand-dark mb-2">
+              <label htmlFor="message" className="block text-sm font-bold text-brand-dark mb-1.5">
                 How can we help? <span className="text-brand-red">*</span>
               </label>
               <textarea

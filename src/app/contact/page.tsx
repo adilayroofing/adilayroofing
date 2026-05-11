@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
+import TrustBadgeRow from "@/components/TrustBadgeRow";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { BASE_URL, ORG_REF } from "@/lib/schema";
@@ -72,12 +73,12 @@ export default async function ContactPage() {
       />
       {/* ── Hero ── */}
       <section className="bg-brand-dark">
-        <div className="py-8 md:py-12 px-4">
+        <div className="py-5 md:py-12 px-4">
           <div className="container-narrow mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-1 md:mb-2">
               {heroTitle}
             </h1>
-            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-sm md:text-lg text-white/70 max-w-2xl mx-auto">
               {heroDescription}
             </p>
           </div>
@@ -86,26 +87,31 @@ export default async function ContactPage() {
 
       {/* ── Two-Column Layout: Form + Contact Info ── */}
       <section className="bg-brand-light">
-        <div className="py-6 px-4 md:py-24">
+        <div className="py-4 px-4 md:py-24">
           <div className="container-wide mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-14">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-14">
               {/* Left Column — Contact Form (60%) */}
               <div className="lg:col-span-3">
                 <div className="bg-white border border-brand-border rounded-sm p-4 md:p-10">
-                  <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-2">
+                  <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-1 md:mb-2">
                     {formHeading}
                   </h2>
-                  <p className="text-brand-gray mb-8">
+                  <p className="text-brand-gray text-sm md:text-base mb-4 md:mb-8">
                     {formDescription}
                   </p>
                   <ContactForm />
                 </div>
+
+                {/* Trust badges — under the form on /contact */}
+                <div className="mt-4 md:mt-6">
+                  <TrustBadgeRow />
+                </div>
               </div>
 
               {/* Right Column — Contact Info (40%) */}
-              <div className="lg:col-span-2 space-y-6">
+              <div className="lg:col-span-2 space-y-3 md:space-y-6">
                 {/* Phone Card */}
-                <div className="bg-white border border-brand-border rounded-sm p-6">
+                <div className="bg-white border border-brand-border rounded-sm p-4 md:p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-brand-red/10 rounded-sm flex items-center justify-center">
                       <svg
@@ -141,7 +147,7 @@ export default async function ContactPage() {
                 </div>
 
                 {/* Email Card */}
-                <div className="bg-white border border-brand-border rounded-sm p-6">
+                <div className="bg-white border border-brand-border rounded-sm p-4 md:p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-brand-red/10 rounded-sm flex items-center justify-center">
                       <svg
@@ -174,7 +180,7 @@ export default async function ContactPage() {
                 </div>
 
                 {/* Address Card */}
-                <div className="bg-white border border-brand-border rounded-sm p-6">
+                <div className="bg-white border border-brand-border rounded-sm p-4 md:p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-brand-red/10 rounded-sm flex items-center justify-center">
                       <svg
@@ -218,7 +224,7 @@ export default async function ContactPage() {
                 </div>
 
                 {/* Hours Card */}
-                <div className="bg-white border border-brand-border rounded-sm p-6">
+                <div className="bg-white border border-brand-border rounded-sm p-4 md:p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-brand-red/10 rounded-sm flex items-center justify-center">
                       <svg

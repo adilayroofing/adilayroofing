@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
+import TrustBadgeRow from "@/components/TrustBadgeRow";
 import TrustBar from "@/components/TrustBar";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQ from "@/components/FAQ";
@@ -263,12 +264,11 @@ export default async function GetQuotePage() {
             <div id="quote-form-top" style={{ scrollMarginTop: "120px" }} />
             <ContactForm />
 
-            {/* Mobile-only BBB seal under the form. The desktop hero panel
-                already shows the BBB seal on its own; on mobile that panel
-                is hidden for compactness, so we surface it here below the
-                form so the trust signal still appears on the page. */}
-            <div className="md:hidden flex justify-center mt-6 mb-2">
-              <BBBSeal />
+            {/* Trust badges (Google / BBB / GAF / License) — replaces the
+                old mobile-only BBB seal with a fuller row of trust signals.
+                Renders below the form on every viewport. */}
+            <div className="mt-4 md:mt-6">
+              <TrustBadgeRow />
             </div>
           </div>
         </div>
