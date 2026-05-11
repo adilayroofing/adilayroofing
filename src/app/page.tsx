@@ -479,7 +479,7 @@ export default async function Home() {
                     afterSrc="/images/victorian-roof-replacement-philadelphia-after.jpg"
                     afterAlt="Completed Victorian slate roof replacement by Adilay Roofing in Philadelphia — finished home with new shingles and turret"
                   />
-                  <figcaption className="text-center text-sm text-brand-gray mt-3">
+                  <figcaption className="text-center text-sm font-bold text-brand-dark mt-3">
                     Drag the handle &mdash; full Victorian roof replacement in Philadelphia.
                   </figcaption>
                 </figure>

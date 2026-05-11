@@ -60,12 +60,16 @@ export default function BeforeAfterSlider({
       ([entry]) => {
         if (!entry.isIntersecting) return;
         observer.disconnect();
-        // 50 → 80 → 20 → 50, ~2.4s total. Bails out if the user grabs
-        // the slider mid-animation (check hasInteracted inside each tick).
+        // Hint sequence: reveal the FULL after (100), then the FULL
+        // before (0), then settle in the middle (50). Each step is a
+        // 700ms cubic-bezier transition, with deliberate pauses at the
+        // extremes so users get a clean look at each state before the
+        // next slide. Total ~2.9s. Bails out if the user grabs the
+        // slider mid-animation (checked inside each setState callback).
         const seq: { at: number; value: number }[] = [
-          { at: 350, value: 80 },
-          { at: 1250, value: 20 },
-          { at: 2150, value: 50 },
+          { at: 400, value: 100 },
+          { at: 1600, value: 0 },
+          { at: 2900, value: 50 },
         ];
         seq.forEach(({ at, value }) => {
           window.setTimeout(() => {
