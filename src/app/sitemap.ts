@@ -21,10 +21,10 @@ const BASE_URL = "https://www.adilayroofing.com";
 //  - BLOG_*: handled per-post via frontmatter dateModified (see below).
 //
 // Format: YYYY-MM-DD (ISO date). Next.js will serialize as the W3C datetime.
-const SERVICES_LASTMOD = "2026-04-28";
-const LOCATIONS_LASTMOD = "2026-04-28";
-const STATIC_LASTMOD = "2026-04-28";
-const HOMEPAGE_LASTMOD = "2026-04-28";
+const SERVICES_LASTMOD = "2026-05-10";
+const LOCATIONS_LASTMOD = "2026-05-10";
+const STATIC_LASTMOD = "2026-05-11";
+const HOMEPAGE_LASTMOD = "2026-05-11";
 const LEGAL_LASTMOD = "2026-03-15"; // privacy/terms — rarely change
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
