@@ -133,7 +133,7 @@ export default async function LocationPage({ params }: PageProps) {
 
   const heroCTAText = "Get FREE Estimate";
   const servicesHeading = `Our Services in ${location.name}`;
-  const servicesSubtext = `We offer a complete range of roofing and exterior services to homeowners and businesses in ${location.name}, ${location.state}. Every project is backed by our ${company.yearsExperience} years of experience and our commitment to quality workmanship.`;
+  const servicesSubtext = `Roofing, siding, gutters, and windows for ${location.name} homeowners and businesses.`;
   const localContextHeading = `Why ${location.name} Homeowners Choose Adilay Roofing`;
   const whyChooseItems = [
     `${company.yearsExperience} years of roofing experience`,
@@ -144,7 +144,7 @@ export default async function LocationPage({ params }: PageProps) {
     "Emergency service available 24/7",
   ];
   const neighborhoodsHeading = `${location.type === "county" ? "Communities" : "Neighborhoods"} We Serve in ${location.name}`;
-  const neighborhoodsSubtext = `Our roofing services are available throughout ${location.name} and the surrounding ${location.type === "county" ? "communities" : "neighborhoods"}. No matter where you are in the area, we provide the same quality workmanship and reliable service.`;
+  const neighborhoodsSubtext = `${location.type === "county" ? "Communities" : "Neighborhoods"} we cover across ${location.name}.`;
   const faqHeading = `Frequently Asked Questions About Roofing in ${location.name}`;
   const ctaHeadline = `Need a Roofer in ${location.name}?`;
   const ctaSubtext = `Contact Adilay Roofing today for a free roof inspection and estimate in ${location.name}, ${location.state}. No pressure, no obligation \u2014 just honest advice from experienced professionals.`;
@@ -330,20 +330,20 @@ export default async function LocationPage({ params }: PageProps) {
                       <span className="w-6 h-0.5 bg-brand-red inline-block" />
                       {cat.label}
                     </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
                       {catServices.map((service) => (
                         <Link
                           key={service.slug}
                           href={`/services/${service.slug}`}
-                          className="group bg-white border border-brand-border rounded-sm p-5 hover:shadow-md transition-shadow"
+                          className="group bg-white border border-brand-border rounded-sm p-3 sm:p-5 hover:shadow-md transition-shadow"
                         >
-                          <div className="flex items-start gap-3">
+                          <div className="flex items-start gap-2 sm:gap-3">
                             <CheckIcon />
                             <div>
-                              <h4 className="text-base font-bold text-brand-dark group-hover:text-brand-red transition-colors">
+                              <h4 className="text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-red transition-colors leading-tight">
                                 {service.title}
                               </h4>
-                              <p className="text-sm text-brand-gray mt-1 leading-relaxed line-clamp-2">
+                              <p className="hidden sm:block text-sm text-brand-gray mt-1 leading-relaxed line-clamp-2">
                                 {service.description.replace(
                                   /in Philadelphia/gi,
                                   `in ${location.name}`

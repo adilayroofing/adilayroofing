@@ -266,11 +266,11 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="container-narrow mx-auto">
             <h2 className="section-heading text-center mb-10">{benefitsHeading}</h2>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <ul className="grid grid-cols-2 md:grid-cols-2 gap-2 sm:gap-4 max-w-3xl mx-auto">
               {benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex items-start gap-3 bg-white rounded-sm p-5 border border-brand-border"
+                  className="flex items-start gap-2 sm:gap-3 bg-white rounded-sm p-3 sm:p-5 border border-brand-border"
                 >
                   {/* Checkmark icon */}
                   <svg
@@ -287,7 +287,7 @@ export default async function ServicePage({ params }: PageProps) {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-brand-dark font-medium">{benefit}</span>
+                  <span className="text-brand-dark font-medium text-sm sm:text-base leading-tight">{benefit}</span>
                 </li>
               ))}
             </ul>
@@ -305,17 +305,17 @@ export default async function ServicePage({ params }: PageProps) {
               {featuresHeading}
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto">
               {features.map((feature, index) => (
                 <div
                   key={feature}
-                  className="flex items-start gap-3 p-5 bg-brand-light rounded-sm border border-brand-border"
+                  className="flex items-start gap-2 sm:gap-3 p-3 sm:p-5 bg-brand-light rounded-sm border border-brand-border"
                 >
                   {/* Numbered icon */}
-                  <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-brand-red text-white font-bold text-sm rounded-full">
+                  <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-brand-red text-white font-bold text-xs sm:text-sm rounded-full">
                     {index + 1}
                   </span>
-                  <span className="text-brand-dark text-sm leading-relaxed font-medium pt-1">
+                  <span className="text-brand-dark text-sm leading-snug sm:leading-relaxed font-medium pt-0.5 sm:pt-1">
                     {feature}
                   </span>
                 </div>
