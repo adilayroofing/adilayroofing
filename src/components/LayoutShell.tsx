@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingQuoteTab from "@/components/FloatingQuoteTab";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function LayoutShell({
@@ -24,7 +23,6 @@ export default function LayoutShell({
       <Header />
       <main>{children}</main>
       <Footer />
-      <FloatingQuoteTab />
     </>
   );
 }

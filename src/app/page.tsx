@@ -16,6 +16,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import VanBanner from "@/components/VanBanner";
 import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
@@ -263,13 +264,13 @@ export default async function Home() {
             <div className="flex flex-row items-center justify-center gap-2 sm:gap-4">
               <Link
                 href="/get-quote"
-                className="btn-primary border-2 border-transparent px-4 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg"
+                className="btn-primary border-2 border-transparent px-5 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg whitespace-nowrap"
               >
-                Get Your FREE Quote
+                FREE Estimate
               </Link>
               <a
                 href={`tel:${company.phoneRaw}`}
-                className="btn-outline-white px-4 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg"
+                className="btn-outline-white px-3 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg whitespace-nowrap"
               >
                 <svg
                   className="w-4 h-4 mr-1.5 sm:w-5 sm:h-5 sm:mr-2"
@@ -311,8 +312,8 @@ export default async function Home() {
             </a>
 
             <ScrollReveal delay={150} duration={500} distance={12}>
-              <ul className="mt-5 md:mt-7 mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-sm md:max-w-3xl">
-                <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-20 overflow-hidden">
+              <ul className="mt-4 md:mt-7 mx-auto grid grid-cols-4 gap-1.5 md:gap-3 max-w-[360px] md:max-w-3xl">
+                <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-12 md:h-20 overflow-hidden">
                   <img
                     src="/images/google-business-review-5-stars.png"
                     alt="Adilay Roofing — 5.0 stars on Google Business Reviews"
@@ -320,7 +321,7 @@ export default async function Home() {
                     className="h-full w-full object-contain"
                   />
                 </li>
-                <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-20 overflow-hidden">
+                <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-12 md:h-20 overflow-hidden">
                   <a
                     href="https://www.bbb.org/us/pa/philadelphia/profile/roofing-contractors/adilay-roofing-llc-0241-236104655/#sealclick"
                     target="_blank"
@@ -338,22 +339,22 @@ export default async function Home() {
                     />
                   </a>
                 </li>
-                <li className="bg-white rounded-md flex items-center justify-center gap-2 p-1.5 h-20">
+                <li className="bg-white rounded-md flex items-center justify-center gap-1 md:gap-2 p-1 md:p-1.5 h-12 md:h-20">
                   <img
                     src="/images/gaf-certified-logo.jpg"
                     alt="GAF Certified Contractor"
                     loading="lazy"
                     className="h-full w-auto aspect-square object-contain flex-shrink-0"
                   />
-                  <span className="text-brand-dark font-bold text-xs md:text-sm leading-tight text-left">
+                  <span className="text-brand-dark font-bold text-[10px] md:text-sm leading-tight text-left">
                     GAF<br />Certified
                   </span>
                 </li>
-                <li className="bg-white rounded-md flex flex-col items-center justify-center p-1.5 h-20">
-                  <span className="text-[11px] md:text-xs text-brand-gray font-semibold uppercase tracking-wider">
+                <li className="bg-white rounded-md flex flex-col items-center justify-center p-1 md:p-1.5 h-12 md:h-20">
+                  <span className="text-[9px] md:text-xs text-brand-gray font-semibold uppercase tracking-wider leading-none">
                     Licensed PA
                   </span>
-                  <span className="text-brand-dark font-extrabold text-lg md:text-2xl leading-tight mt-0.5">
+                  <span className="text-brand-dark font-extrabold text-xs md:text-2xl leading-tight mt-0.5">
                     #PA184779
                   </span>
                 </li>
@@ -367,6 +368,19 @@ export default async function Home() {
       {/* TRUST BAR                                    */}
       {/* ============================================ */}
       <TrustBar />
+
+      {/* ============================================ */}
+      {/* VAN BANNER — same-day on-site estimate         */}
+      {/* ============================================ */}
+      <section className="bg-white">
+        <div className="container-wide mx-auto px-4 py-6 md:py-8">
+          <VanBanner
+            href="/contact"
+            text="We come to your home for a {highlight} — and you get a written quote the same day."
+            highlight="free roof inspection"
+          />
+        </div>
+      </section>
 
       {/* ============================================ */}
       {/* FINANCING BANNER                             */}

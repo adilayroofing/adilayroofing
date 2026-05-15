@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SafeHTML from "@/components/SafeHTML";
+import VanBanner from "@/components/VanBanner";
 import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 // Fully static — every location page is generated at build time from
@@ -250,10 +251,10 @@ export default async function LocationPage({ params }: PageProps) {
               <span className="text-white/80">{location.name}</span>
             </nav>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h1 className="text-[26px] md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
               {heroTitle}
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-6 md:mb-8">
               {heroSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -298,8 +299,15 @@ export default async function LocationPage({ params }: PageProps) {
               <SafeHTML
                 html={intro}
                 as="div"
-                className="text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
+                className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-2 [&_p:last-child]:mb-0"
               />
+              <div className="mt-6 md:mt-8">
+                <VanBanner
+                  href="/contact"
+                  text={`Local crew already working in ${location.name} — get a {highlight} on your roof this week.`}
+                  highlight="free on-site quote"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -413,13 +421,13 @@ export default async function LocationPage({ params }: PageProps) {
               <div className="max-w-3xl mx-auto space-y-10">
                 {bodySections.map((section) => (
                   <article key={section.heading}>
-                    <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
+                    <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-3 md:mb-4">
                       {section.heading}
                     </h2>
                     <SafeHTML
                       html={section.html}
                       as="div"
-                      className="text-base md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark"
+                      className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-base md:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark"
                     />
                   </article>
                 ))}
