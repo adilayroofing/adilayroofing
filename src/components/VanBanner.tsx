@@ -57,7 +57,8 @@ export default function VanBanner({ text, highlight, href, variant = "red" }: Pr
     <div
       ref={ref}
       className={`relative ${bgClass} rounded-r-2xl rounded-l-sm shadow-sm mb-8 md:mb-10
-                  min-h-[120px] md:min-h-[150px] lg:min-h-[170px]`}
+                  min-h-[120px] md:min-h-[150px] lg:min-h-[170px]
+                  max-w-3xl md:max-w-4xl mx-auto`}
     >
       <div
         className={`absolute left-0 top-0 bottom-0 w-1.5 md:w-2 ${accentClass} rounded-l-sm`}
