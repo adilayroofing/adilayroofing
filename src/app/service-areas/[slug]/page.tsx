@@ -61,10 +61,10 @@ export async function generateMetadata({
 // ---------------------------------------------------------------------------
 // Checkmark icon used in service cards
 // ---------------------------------------------------------------------------
-function CheckIcon() {
+function CheckIcon({ small = false }: { small?: boolean } = {}) {
   return (
     <svg
-      className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"
+      className={`${small ? "w-4 h-4 mt-0" : "w-5 h-5 mt-0.5"} text-brand-red flex-shrink-0`}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -338,17 +338,17 @@ export default async function LocationPage({ params }: PageProps) {
                       <span className="w-6 h-0.5 bg-brand-red inline-block" />
                       {cat.label}
                     </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-1.5 sm:gap-3">
                       {catServices.map((service) => (
                         <Link
                           key={service.slug}
                           href={`/services/${service.slug}`}
-                          className="group bg-white border border-brand-border rounded-sm p-3 sm:p-5 hover:shadow-md transition-shadow"
+                          className="group bg-white border border-brand-border rounded-sm p-2 sm:p-4 hover:shadow-md hover:border-brand-red/30 transition-all"
                         >
-                          <div className="flex items-start gap-2 sm:gap-3">
-                            <CheckIcon />
+                          <div className="flex items-start gap-1.5 sm:gap-3">
+                            <CheckIcon small />
                             <div>
-                              <h4 className="text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-red transition-colors leading-tight">
+                              <h4 className="text-[13px] sm:text-base font-bold text-brand-dark group-hover:text-brand-red transition-colors leading-tight">
                                 {service.title}
                               </h4>
                               <p className="hidden sm:block text-sm text-brand-gray mt-1 leading-relaxed line-clamp-2">
@@ -418,18 +418,35 @@ export default async function LocationPage({ params }: PageProps) {
         <section className="bg-white">
           <div className="section-padding pt-0">
             <div className="container-narrow mx-auto">
-              <div className="max-w-3xl mx-auto space-y-10">
-                {bodySections.map((section) => (
-                  <article key={section.heading}>
-                    <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-3 md:mb-4">
-                      {section.heading}
-                    </h2>
-                    <SafeHTML
-                      html={section.html}
-                      as="div"
-                      className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-base md:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark"
-                    />
-                  </article>
+              <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
+                {bodySections.map((section, i) => (
+                  <details
+                    key={section.heading}
+                    open={i === 0}
+                    className="group border border-brand-border rounded-sm bg-white open:shadow-sm transition-shadow"
+                  >
+                    <summary className="list-none cursor-pointer flex items-center justify-between gap-3 px-4 md:px-6 py-4 md:py-5 [&::-webkit-details-marker]:hidden">
+                      <h2 className="text-base md:text-xl font-bold text-brand-dark leading-snug">
+                        {section.heading}
+                      </h2>
+                      <svg
+                        className="w-5 h-5 md:w-6 md:h-6 text-brand-red flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-4 md:px-6 pb-5 md:pb-6 -mt-1">
+                      <SafeHTML
+                        html={section.html}
+                        as="div"
+                        className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-base md:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark"
+                      />
+                    </div>
+                  </details>
                 ))}
               </div>
             </div>
