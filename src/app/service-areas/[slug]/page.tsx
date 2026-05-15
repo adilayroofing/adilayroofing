@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SafeHTML from "@/components/SafeHTML";
 import VanBanner from "@/components/VanBanner";
+import LocationMap from "@/components/LocationMap";
 import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 // Fully static — every location page is generated at build time from
@@ -410,6 +411,18 @@ export default async function LocationPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* ================================================================= */}
+      {/* Local Map — interactive Google Maps embed                         */}
+      {/* ================================================================= */}
+      <LocationMap
+        name={location.name}
+        state={location.state}
+        county={location.county}
+        isCounty={location.type === "county"}
+        neighborhoods={neighborhoods}
+        mapUrl={company.mapUrl}
+      />
 
       {/* ================================================================= */}
       {/* Body Sections — deep local content with H2s                       */}
