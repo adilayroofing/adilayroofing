@@ -51,10 +51,13 @@ export default function VanBanner({ text, highlight, href, variant = "red" }: Pr
     : text;
 
   const inner = (
-    // mb-* leaves room for the van to overflow below without overlapping next section
+    // mb-* leaves room for the van to overflow below without overlapping next section.
+    // min-h-* gives the van a tall enough banner on desktop so it stays "inside"
+    // vertically (only the wheels poke out) instead of bleeding way above the top.
     <div
       ref={ref}
-      className={`relative ${bgClass} rounded-r-2xl rounded-l-sm shadow-sm mb-10 md:mb-14`}
+      className={`relative ${bgClass} rounded-r-2xl rounded-l-sm shadow-sm mb-8 md:mb-10
+                  min-h-[120px] md:min-h-[150px] lg:min-h-[170px]`}
     >
       <div
         className={`absolute left-0 top-0 bottom-0 w-1.5 md:w-2 ${accentClass} rounded-l-sm`}
@@ -62,7 +65,7 @@ export default function VanBanner({ text, highlight, href, variant = "red" }: Pr
       />
       <p
         className="text-white text-sm md:text-base font-medium leading-snug
-                   pl-5 md:pl-7 pr-36 sm:pr-52 md:pr-64 py-5 md:py-6 max-w-[42rem]"
+                   pl-5 md:pl-7 pr-32 sm:pr-44 md:pr-52 lg:pr-56 py-5 md:py-6 max-w-[42rem]"
       >
         {renderedText}
       </p>
@@ -72,13 +75,13 @@ export default function VanBanner({ text, highlight, href, variant = "red" }: Pr
         aria-hidden="true"
         loading="lazy"
         className="pointer-events-none absolute right-0 sm:right-2 md:right-4 bottom-0
-                   w-40 sm:w-56 md:w-72 lg:w-80 h-auto drop-shadow-xl
+                   w-40 sm:w-44 md:w-48 lg:w-52 h-auto drop-shadow-xl
                    transition-all duration-[900ms] ease-out"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible
-            ? "translate(0, 28px) rotate(0deg)"
-            : "translate(80px, 28px) rotate(2deg)",
+            ? "translate(0, 22px) rotate(0deg)"
+            : "translate(80px, 22px) rotate(2deg)",
         }}
       />
     </div>
