@@ -74,13 +74,17 @@
   }
 
   /* Subtle shingle texture for section backgrounds.
-     brand-light color renders first as a fallback, so there is no
-     flash/layout shift while the image streams in from Cloudinary
-     (served as WebP/AVIF via f_auto,q_auto — ~80KB, cached after
+     A translucent brand-light wash sits ON TOP of the photo so the
+     texture reads as a faint hint and any text placed over it stays
+     readable. brand-light also renders first as a solid fallback, so
+     there is no flash/layout shift while the image streams in from
+     Cloudinary (WebP/AVIF via f_auto,q_auto — ~80KB, cached after
      first paint and reused by every .bg-shingle section). */
   .bg-shingle {
     background-color: var(--color-brand-light);
-    background-image: url("/images/shingle-bg.jpg");
+    background-image:
+      linear-gradient(rgba(248, 247, 247, 0.7), rgba(248, 247, 247, 0.7)),
+      url("/images/shingle-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

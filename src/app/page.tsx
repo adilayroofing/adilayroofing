@@ -944,7 +944,9 @@ export default async function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <FAQ items={faqs.slice(0, 8)} />
+            <div className="bg-white rounded-sm border border-brand-border shadow-sm px-5 md:px-8">
+              <FAQ items={faqs.slice(0, 8)} />
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
