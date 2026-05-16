@@ -73,6 +73,19 @@
     @apply text-[22px] md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4;
   }
 
+  /* Subtle shingle texture for section backgrounds.
+     brand-light color renders first as a fallback, so there is no
+     flash/layout shift while the image streams in from Cloudinary
+     (served as WebP/AVIF via f_auto,q_auto — ~80KB, cached after
+     first paint and reused by every .bg-shingle section). */
+  .bg-shingle {
+    background-color: var(--color-brand-light);
+    background-image: url("/images/shingle-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .section-subheading {
     @apply text-sm md:text-xl text-brand-gray max-w-2xl;
   }

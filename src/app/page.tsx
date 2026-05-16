@@ -624,7 +624,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* WHY CHOOSE US SECTION                        */}
       {/* ============================================ */}
-      <section className="section-padding bg-brand-light">
+      <section className="section-padding bg-shingle">
         <div className="container-wide mx-auto">
           <ScrollReveal>
             <div className="text-center mb-8 md:mb-16">
@@ -932,7 +932,7 @@ export default async function Home() {
       {/* ============================================ */}
       {/* FAQ SECTION                                  */}
       {/* ============================================ */}
-      <section className="section-padding bg-brand-light">
+      <section className="section-padding bg-shingle">
         <div className="container-narrow mx-auto">
           <ScrollReveal>
             <div className="text-center mb-6 md:mb-12">
@@ -978,7 +978,7 @@ export default async function Home() {
       {/* BLOG / LATEST INSIGHTS                       */}
       {/* ============================================ */}
       {latestPosts.length > 0 && (
-          <section className="bg-brand-light section-padding">
+          <section className="bg-shingle section-padding">
             <div className="container-wide mx-auto">
               <ScrollReveal distance={20}>
                 <div className="text-center mb-10 md:mb-14">
