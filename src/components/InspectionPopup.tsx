@@ -183,21 +183,21 @@ export default function InspectionPopup() {
             ~18.5-83% wide and the full-width rectangle runs ~38-86.5%
             of the image height. The box stays safely inside that. */}
         <div
-          className="absolute z-10 flex flex-col items-center justify-center text-center"
-          style={{ top: "37%", left: "22%", right: "22%", bottom: "14%" }}
+          className="absolute z-10 flex flex-col items-center text-center"
+          style={{ top: "33%", left: "22%", right: "22%", bottom: "15%" }}
         >
           <h2
             id="inspection-popup-headline"
-            className="w-full text-[22px] md:text-[30px] font-extrabold leading-tight text-brand-dark"
+            className="w-full text-[24px] md:text-[32px] font-extrabold leading-tight text-brand-dark"
           >
             Free Roof Inspection.
           </h2>
 
-          <p className="mt-1 w-full text-[15px] md:text-[19px] font-semibold leading-snug text-brand-red">
+          <p className="mt-2 w-full text-[16px] md:text-[20px] font-semibold leading-snug text-brand-red">
             Same-Day Quote.
           </p>
 
-          <p className="mt-1.5 w-full text-[12px] md:text-[14px] font-semibold leading-snug text-[#2a2a2a]">
+          <p className="mt-2 w-full text-[13px] md:text-[15px] font-semibold leading-snug text-[#2a2a2a]">
             Full photo report. No pressure. Licensed pros.
           </p>
 
@@ -205,8 +205,8 @@ export default function InspectionPopup() {
             href="/contact?source=popup-inspection"
             data-source="popup"
             onClick={closePopup}
-            className={`mt-2.5 flex w-full items-center justify-center gap-1.5
-                        rounded-md bg-brand-dark px-3 py-2.5 md:py-3.5 text-[13px] md:text-[15px]
+            className={`mt-auto flex w-full items-center justify-center gap-1.5
+                        rounded-md bg-brand-dark px-3 py-2.5 md:py-3.5 text-[14px] md:text-[16px]
                         font-bold text-white transition-colors duration-200
                         hover:bg-brand-red active:bg-brand-red
                         focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-dark
