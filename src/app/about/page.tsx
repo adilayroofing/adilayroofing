@@ -8,8 +8,6 @@ import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import { BASE_URL, ORG_REF } from "@/lib/schema";
 
-export const revalidate = 86400;
-
 // ---------------------------------------------------------------------------
 // Dynamic metadata
 // ---------------------------------------------------------------------------

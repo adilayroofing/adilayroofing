@@ -11,8 +11,6 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
 import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
-export const revalidate = 86400;
-
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Free No-Obligation Roofing Quote Philadelphia | Adilay Roofing",

@@ -9,8 +9,6 @@ import { stripHtml } from "@/lib/schema";
 
 const BASE_URL = "https://www.adilayroofing.com";
 
-export const revalidate = 86400;
-
 // ---------------------------------------------------------------------------
 // Dynamic metadata — CMS override with hardcoded fallback
 // ---------------------------------------------------------------------------
