@@ -13,6 +13,7 @@ export default function LayoutShell({
 }) {
   const pathname = usePathname();
   const isLandingPage = pathname.startsWith("/lp") || pathname.startsWith("/get-quote-ads") || pathname.startsWith("/admin");
+  const isHomePage = pathname === "/";
 
   if (isLandingPage) {
     return <>{children}</>;
@@ -24,7 +25,7 @@ export default function LayoutShell({
       <Header />
       <main>{children}</main>
       <Footer />
-      <InspectionPopup />
+      {isHomePage && <InspectionPopup />}
     </>
   );
 }

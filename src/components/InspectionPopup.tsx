@@ -197,7 +197,7 @@ export default function InspectionPopup() {
             Same-Day Quote.
           </p>
 
-          <p className="mt-1.5 w-full text-[12px] md:text-[14px] leading-snug text-[#2a2a2a]">
+          <p className="mt-1.5 w-full text-[12px] md:text-[14px] font-semibold leading-snug text-[#2a2a2a]">
             Full photo report. No pressure. Licensed pros.
           </p>
 
