@@ -449,6 +449,11 @@ export const services: Service[] = [
         answer:
           "We work with top-tier shingle manufacturers including GAF, CertainTeed, and Owens Corning. Each brand offers excellent warranties and products specifically designed to handle the Mid-Atlantic climate. During your free estimate, we can discuss which brand and product line best fits your needs and budget.",
       },
+      {
+        question: "What happens if the roof decking is damaged under the old shingles?",
+        answer:
+          "During tear-off we inspect every section of decking. If we find damaged, rotted, or soft boards, we replace them before installing new underlayment and shingles — so your new roof has a solid foundation. We notify you of any decking costs before proceeding, never after the fact.",
+      },
     ],
   },
   {
@@ -508,6 +513,11 @@ export const services: Service[] = [
         question: "How long does new siding last in the Philadelphia climate?",
         answer:
           "Vinyl siding typically lasts 20–40 years with minimal maintenance. Fiber cement siding (like James Hardie) can last 30–50 years and is highly resistant to the moisture, temperature swings, and UV exposure common in the Philadelphia area. Both options are excellent long-term investments for your home.",
+      },
+      {
+        question: "Do you install siding on commercial buildings?",
+        answer:
+          "Yes. We install and replace siding on commercial properties across Philadelphia — retail storefronts, office buildings, warehouses, restaurants, and multi-unit residential buildings — in vinyl, fiber cement, metal panel, and composite cladding. We schedule commercial work around your business hours to minimize disruption to operations, tenants, and customers.",
       },
     ],
   },
@@ -628,6 +638,11 @@ export const services: Service[] = [
         question: "What type of windows do you install for Philadelphia homes?",
         answer:
           "We install double-pane and triple-pane vinyl windows with low-E glass coatings for Philadelphia homes. These windows provide excellent insulation against both summer heat and winter cold, reduce condensation, and block UV rays that can fade furniture and flooring. During your free estimate, we will help you choose the best window style and glass options for your home.",
+      },
+      {
+        question: "How do I know if my windows need replacing?",
+        answer:
+          "Common signs: drafts near closed windows, difficulty opening or closing, condensation trapped between the glass panes, visible rot or damage to the frames, and rising energy bills. If your windows are over 15–20 years old, replacement usually pays for itself in comfort and energy savings. We remove the old windows, inspect the framing for moisture damage, and install energy-efficient replacements with a weathertight seal.",
       },
     ],
   },
@@ -1047,121 +1062,6 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "commercial-siding",
-    title: "Commercial Siding",
-    shortTitle: "Commercial Siding",
-    tagline: "Professional Commercial Siding Contractor in Philadelphia",
-    category: "siding",
-    description:
-      "Adilay Roofing provides commercial siding installation and repair services in Philadelphia. Durable, professional exterior solutions for businesses, retail, and multi-unit properties.",
-    icon: "",
-    image: "/images/siding-philadelphia.jpg",
-    heroDescription:
-      "The exterior of your commercial property is the first thing customers, tenants, and visitors see — and deteriorating or outdated siding sends the wrong message about your business. Adilay Roofing is a licensed commercial siding contractor (PA184779) serving businesses throughout Philadelphia and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. We install and repair commercial siding on retail storefronts, office buildings, warehouses, multi-unit residential buildings, restaurants, and mixed-use properties. Our commercial siding services include vinyl siding, fiber cement siding (James Hardie), metal panel siding, and composite cladding systems — each selected for durability, low maintenance, and professional appearance in high-traffic commercial environments. We understand that commercial siding projects require careful coordination to minimize disruption to your business operations, tenants, and customers. Our experienced crew works around your schedule and follows strict safety protocols to complete the project efficiently without compromising quality. Whether you need a complete exterior renovation to modernize your building's appearance, siding replacement to address weather damage and deterioration, or targeted repairs to maintain your property, Adilay Roofing delivers dependable results backed by manufacturer warranties and our own workmanship guarantee. Contact us today for a free commercial siding estimate — professional service, transparent pricing, and a team that understands the unique needs of commercial property owners in Philadelphia.",
-    benefits: [
-      "Professional exterior solutions for commercial properties",
-      "Vinyl, fiber cement, metal, and composite siding options",
-      "Minimal disruption to business operations",
-      "Durable materials for high-traffic environments",
-      "Licensed and insured commercial contractor (PA184779)",
-      "Manufacturer warranties on all materials",
-      "Serving Philadelphia and surrounding counties",
-      "Free estimates with transparent pricing",
-    ],
-    features: [
-      "Commercial vinyl siding installation",
-      "Fiber cement (HardiePlank) commercial installation",
-      "Metal panel and composite cladding systems",
-      "Commercial siding repair and replacement",
-      "Soffit, fascia, and trim work",
-      "Moisture barrier and insulation installation",
-      "Multi-unit building exterior renovation",
-      "ADA-compliant access maintained during work",
-    ],
-    faq: [
-      {
-        question: "What siding materials do you recommend for commercial buildings?",
-        answer:
-          "For most commercial properties, we recommend fiber cement (James Hardie) or metal panel siding for their superior durability, fire resistance, and low maintenance. Vinyl siding is a cost-effective option for multi-unit residential buildings. We will assess your property and recommend the best material for your needs.",
-      },
-      {
-        question: "How much does commercial siding cost in Philadelphia?",
-        answer:
-          "Commercial siding costs vary widely based on the material, the size of the building, and the complexity of the installation. We provide free, detailed estimates for every commercial project so you can plan your budget with confidence.",
-      },
-      {
-        question: "Can you work around our business hours?",
-        answer:
-          "Absolutely. We schedule commercial siding work around your operating hours and take precautions to minimize noise, debris, and disruption to your employees, customers, and tenants.",
-      },
-      {
-        question: "Do you handle commercial siding repairs?",
-        answer:
-          "Yes, we repair all types of commercial siding including damaged panels, failed caulking, moisture intrusion issues, and storm damage. We also provide insurance documentation for storm-related commercial siding damage.",
-      },
-    ],
-  },
-  {
-    slug: "residential-siding",
-    title: "Residential Siding",
-    shortTitle: "Residential Siding",
-    tagline: "Trusted Residential Siding Contractor in Philadelphia PA",
-    category: "siding",
-    description:
-      "Adilay Roofing is Philadelphia's trusted residential siding contractor. We install and repair vinyl, fiber cement, and wood siding for homes throughout the Philadelphia area.",
-    icon: "",
-    image: "/images/siding-philadelphia.jpg",
-    heroDescription:
-      "Your home's siding does much more than define its appearance — it provides a critical barrier against moisture, wind, temperature extremes, and pest intrusion. At Adilay Roofing, licensed under PA184779, we are a dedicated residential siding contractor serving homeowners throughout Philadelphia and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. We specialize in siding installation and repair for single-family homes, row homes, twin homes, townhouses, and residential additions. Our residential siding services include vinyl siding, fiber cement siding (James Hardie HardiePlank), and wood siding, with expert guidance to help you choose the material, color, and style that best complements your home's architecture and your personal preferences. Whether your existing siding is old and deteriorating, you are dealing with storm damage, or you simply want to give your home a fresh, modern look, our experienced crew delivers professional results that enhance your home's curb appeal, energy efficiency, and long-term value. Every residential siding project includes proper house wrap installation, insulation board placement, and meticulous trim finishing to ensure a weathertight, beautiful result. Contact us today for a free residential siding estimate — honest advice, transparent pricing, and workmanship you can trust.",
-    benefits: [
-      "Dedicated residential siding expertise",
-      "Vinyl, fiber cement, and wood siding options",
-      "Enhanced curb appeal and property value",
-      "Improved energy efficiency and insulation",
-      "Expert color and style guidance",
-      "Licensed and insured contractor (PA184779)",
-      "Manufacturer warranties on all materials",
-      "Free estimates for Philadelphia and surrounding counties",
-    ],
-    features: [
-      "Vinyl siding installation for residential homes",
-      "Fiber cement (HardiePlank) residential installation",
-      "Wood siding installation and finishing",
-      "House wrap and moisture barrier installation",
-      "Insulation board beneath siding",
-      "Soffit, fascia, and trim work",
-      "Old siding removal and disposal",
-      "Custom color matching and style selection",
-    ],
-    faq: [
-      {
-        question: "What siding material is best for Philadelphia homes?",
-        answer:
-          "Vinyl siding is the most popular choice for its affordability and low maintenance. Fiber cement (James Hardie) is ideal for homeowners who want a premium look with superior durability. We will help you choose the best option during your free consultation.",
-      },
-      {
-        question: "How much does residential siding cost in Philadelphia?",
-        answer:
-          "Residential siding costs depend on the material, the size of your home, and the complexity of the installation. Vinyl siding typically costs $4–$8 per square foot, while fiber cement ranges from $8–$14 per square foot. We provide free, detailed estimates with no hidden fees.",
-      },
-      {
-        question: "How long does residential siding last?",
-        answer:
-          "Vinyl siding typically lasts 20–40 years with minimal maintenance. Fiber cement siding can last 30–50 years. Proper installation is key to maximizing the lifespan of any siding material, which is why choosing an experienced contractor matters.",
-      },
-      {
-        question: "Will new siding improve my home's energy efficiency?",
-        answer:
-          "Yes, new siding combined with proper house wrap and insulation board installation can significantly reduce heat loss in winter and heat gain in summer, leading to lower energy bills year-round.",
-      },
-      {
-        question: "Do you work with Philadelphia row homes and twin homes?",
-        answer:
-          "Yes, we have extensive experience with the unique siding requirements of Philadelphia row homes and twin homes, including shared walls, narrow lot access, and matching existing materials on adjacent properties.",
-      },
-    ],
-  },
-  {
     slug: "vinyl-siding",
     title: "Vinyl Siding",
     shortTitle: "Vinyl Siding",
@@ -1222,66 +1122,6 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "window-replacement",
-    title: "Window Replacement",
-    shortTitle: "Window Replace",
-    tagline: "Professional Window Replacement in Philadelphia — Upgrade Your Home",
-    category: "windows",
-    description:
-      "Expert window replacement services in Philadelphia. We remove old, drafty windows and install energy-efficient replacements that save money and improve comfort.",
-    icon: "",
-    image: "/images/window-installation-philadelphia.jpg",
-    heroDescription:
-      "Old, drafty windows are one of the biggest sources of energy loss in Philadelphia homes — driving up heating costs in winter, cooling costs in summer, and letting in noise, dust, and moisture year-round. At Adilay Roofing, licensed under PA184779, we provide professional window replacement services throughout Philadelphia and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. Our window replacement process starts with carefully removing your existing windows, inspecting the surrounding framing for moisture damage or rot, and then installing new, energy-efficient replacement windows with precision fit and proper insulation. We install high-quality double-pane and triple-pane vinyl replacement windows with low-E glass coatings that dramatically reduce heat transfer, block UV rays, and cut outside noise. Our experienced installers specialize in window replacement for Philadelphia row homes, twin homes, and older single-family homes that often require custom sizing to fit non-standard window openings. Every window replacement includes proper shimming, insulation around the frame, interior and exterior trim work, and a final quality check to ensure smooth operation and a weathertight seal. Replacing your windows is one of the most impactful home improvement projects you can undertake — improving comfort, reducing energy bills, and increasing your home's value. Contact Adilay Roofing today for a free window replacement estimate in Philadelphia — honest pricing, expert installation, and windows built to last.",
-    benefits: [
-      "Eliminate drafts and reduce energy loss",
-      "Lower monthly heating and cooling bills",
-      "Reduce outside noise for a quieter home",
-      "Increase property value and curb appeal",
-      "Custom sizing for older Philadelphia homes",
-      "Licensed and insured installation (PA184779)",
-      "Manufacturer warranties on all windows",
-      "Free estimates for Philadelphia and surrounding counties",
-    ],
-    features: [
-      "Complete old window removal and disposal",
-      "Frame inspection for moisture damage and rot",
-      "Energy-efficient double and triple-pane replacements",
-      "Low-E glass coating options",
-      "Proper shimming, insulation, and sealing",
-      "Interior and exterior trim finishing",
-      "Custom sizing for non-standard openings",
-      "Final operation check and quality inspection",
-    ],
-    faq: [
-      {
-        question: "How do I know if my windows need replacement?",
-        answer:
-          "Common signs include drafts near closed windows, difficulty opening or closing, condensation between glass panes, visible rot or damage to frames, and noticeably higher energy bills. If your windows are over 15–20 years old, replacement is often a worthwhile investment.",
-      },
-      {
-        question: "How much does window replacement cost in Philadelphia?",
-        answer:
-          "Window replacement costs in Philadelphia typically range from $300 to $1,200 per window depending on size, style, and glass options. A full-home window replacement usually falls between $5,000 and $15,000. We provide free estimates with no obligation.",
-      },
-      {
-        question: "How long does window replacement take?",
-        answer:
-          "Most whole-home window replacement projects are completed in 1–3 days depending on the number of windows. Individual windows can typically be replaced in under an hour each. We minimize disruption and clean up thoroughly after every project.",
-      },
-      {
-        question: "Will new windows really save money on energy bills?",
-        answer:
-          "Yes, upgrading from old single-pane or failing double-pane windows to modern energy-efficient replacement windows can reduce energy loss through windows by up to 50%, leading to meaningful savings on heating and cooling costs.",
-      },
-      {
-        question: "Do you replace windows in Philadelphia row homes?",
-        answer:
-          "Yes, we specialize in window replacement for Philadelphia row homes, including custom sizing for the non-standard window openings commonly found in older row home construction. Our team has extensive experience working with these properties.",
-      },
-    ],
-  },
-  {
     slug: "window-repair",
     title: "Window Repair",
     shortTitle: "Window Repair",
@@ -1333,61 +1173,6 @@ export const services: Service[] = [
         question: "Do you repair wood windows in older Philadelphia homes?",
         answer:
           "Yes, we have experience repairing wood windows commonly found in older Philadelphia homes, including sash repair, frame restoration, reglazing, and hardware replacement. We can help preserve the character of your older windows while improving their function.",
-      },
-    ],
-  },
-  {
-    slug: "window-companies",
-    title: "Window Companies",
-    shortTitle: "Window Companies",
-    tagline: "Trusted Window Company in Philadelphia PA — Adilay Roofing",
-    category: "windows",
-    description:
-      "Looking for reliable window companies in Philadelphia? Adilay Roofing provides expert window installation, replacement, and repair services with transparent pricing and quality workmanship.",
-    icon: "",
-    image: "/images/window-installation-philadelphia.jpg",
-    heroDescription:
-      "When searching for window companies in Philadelphia, you want a contractor you can trust — one that is licensed, insured, experienced, and committed to honest pricing and quality workmanship. Adilay Roofing has been one of the most trusted window companies in Philadelphia for over 20 years, serving homeowners throughout the city and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. Licensed under PA184779 and fully insured, we provide comprehensive window services including new window installation, full window replacement, window repair, and energy-efficient upgrades. What sets us apart from other window companies in Philadelphia is our commitment to doing the job right without the high-pressure sales tactics. We do not employ commission-based salespeople who inflate prices to pad their commissions. Instead, you work directly with our experienced team from estimate to completion, and you get fair, transparent pricing based on the actual cost of materials and labor. We install high-quality double-pane and triple-pane vinyl windows with low-E glass from trusted manufacturers, and we specialize in the unique window requirements of Philadelphia row homes, twin homes, and older properties that need custom sizing. Every window project includes proper insulation, interior and exterior trim work, and a thorough final inspection. Contact Adilay Roofing today for a free estimate and see why Philadelphia homeowners choose us over the big-box window companies.",
-    benefits: [
-      "Over 20 years of experience in Philadelphia",
-      "No high-pressure sales — just honest advice",
-      "Transparent pricing without inflated markups",
-      "Licensed and insured (PA184779)",
-      "Installation, replacement, and repair services",
-      "Specialists in Philadelphia row homes and older properties",
-      "Energy-efficient window options from trusted brands",
-      "Free estimates for Philadelphia and surrounding counties",
-    ],
-    features: [
-      "New window installation for all home types",
-      "Full window replacement with old window removal",
-      "Window repair and restoration services",
-      "Energy-efficient double and triple-pane windows",
-      "Custom sizing for non-standard openings",
-      "Low-E glass coating options",
-      "Professional trim and casing work",
-      "Post-installation quality inspection",
-    ],
-    faq: [
-      {
-        question: "Why should I choose Adilay Roofing over other window companies in Philadelphia?",
-        answer:
-          "We offer transparent pricing without commission-based sales pressure, over 20 years of local experience, PA licensing (PA184779), and direct communication with our installation team from start to finish. We focus on quality work and honest advice rather than high-pressure sales tactics.",
-      },
-      {
-        question: "What window brands do you install?",
-        answer:
-          "We install high-quality vinyl windows from trusted manufacturers that offer excellent energy efficiency, durability, and warranty coverage. During your free consultation, we will discuss the best options for your home and budget.",
-      },
-      {
-        question: "Do you offer financing for window projects?",
-        answer:
-          "We offer competitive pricing that is often significantly lower than big-box window companies because we do not have commission-based sales teams inflating the price. Contact us for a free estimate and you may find that our pricing fits your budget better than expected.",
-      },
-      {
-        question: "How do I get a window estimate in Philadelphia?",
-        answer:
-          "Contact us by phone or through our website to schedule a free, no-obligation window estimate. We will visit your home, measure your windows, discuss your options, and provide a transparent, written estimate — no pressure and no hidden fees.",
       },
     ],
   },
@@ -1567,66 +1352,6 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "asphalt-shingle-roofing",
-    title: "Asphalt Shingle Roofing",
-    shortTitle: "Asphalt Shingles",
-    tagline: "Asphalt Shingle Roofing Philadelphia — GAF, CertainTeed & Owens Corning Installers",
-    category: "shingles",
-    description:
-      "Asphalt shingle roofing Philadelphia specialists. 3-tab & architectural shingles from GAF, CertainTeed, Owens Corning. Free estimates, licensed PA184779. Call (267) 255-3620.",
-    icon: "",
-    image: "/images/roof-shingles-philadelphia.jpg",
-    heroDescription:
-      "Asphalt shingles are by far the most popular roofing material in Philadelphia, and for good reason — they deliver an excellent combination of weather protection, curb appeal, and value that's hard to beat. Adilay Roofing is an asphalt shingle roofing Philadelphia specialist (PA184779), serving homeowners across Philadelphia and the surrounding areas of Bucks, Montgomery, Delaware, and Chester Counties. We install every major asphalt shingle product line: traditional 3-tab shingles for budget-conscious Philadelphia homeowners, and premium dimensional architectural shingles for those who want superior durability, wind resistance, and a richer multi-dimensional appearance. Asphalt shingles are engineered for exactly the kind of Mid-Atlantic weather Philadelphia throws at a roof — brutal summer heat and UV, heavy rain, high winds off the Delaware River, and winter ice and snow. We work with the three top asphalt shingle manufacturers in North America — GAF, CertainTeed, and Owens Corning — giving Philadelphia customers access to industry-leading warranty coverage and products proven in real-world conditions. Our asphalt shingle roofing Philadelphia services include new installation, complete tear-off and replacement, and 3-tab to architectural upgrades. Every project includes proper underlayment, ice and water shield in vulnerable areas, ridge ventilation, drip edge, and clean flashing work at chimneys, valleys, and pipe penetrations. Philadelphia has a uniquely varied housing stock — from historic row homes in South Philly and Fishtown, to twin homes in Northeast Philadelphia, to detached Colonial and Cape-style properties across Bucks and Montgomery. We've shingled every one of them and we know what the Philadelphia climate does to a roof after 15 years. Contact Adilay Roofing today for a free asphalt shingle roofing estimate in Philadelphia — written quote, no obligation, and honest answers from a licensed local contractor.",
-    benefits: [
-      "Most popular and proven roofing material in America",
-      "Excellent balance of protection, appearance, and value",
-      "3-tab and architectural shingle options",
-      "Top brands: GAF, CertainTeed, Owens Corning",
-      "Manufacturer warranties up to 30+ years",
-      "Engineered for the Mid-Atlantic climate",
-      "Licensed and insured installation (PA184779)",
-      "Free estimates for Philadelphia and surrounding counties",
-    ],
-    features: [
-      "3-tab asphalt shingle installation",
-      "Architectural (dimensional) shingle installation",
-      "Complete tear-off and replacement",
-      "Proper underlayment and ice shield installation",
-      "Ridge vent and attic ventilation",
-      "Drip edge and starter strip installation",
-      "Step, chimney, and pipe flashing",
-      "Full property cleanup and debris disposal",
-    ],
-    faq: [
-      {
-        question: "What is the difference between 3-tab and architectural asphalt shingles?",
-        answer:
-          "3-tab shingles are flat, uniform, and more affordable, while architectural (dimensional) shingles are thicker, multi-layered, and offer better wind resistance, durability, and a premium appearance. Architectural shingles also carry longer warranties — often 30 years or more.",
-      },
-      {
-        question: "How long do asphalt shingles last in Philadelphia?",
-        answer:
-          "Standard 3-tab asphalt shingles typically last 15–20 years, while architectural asphalt shingles can last 25–30+ years with proper installation, ventilation, and maintenance. Philadelphia's climate is well-suited for asphalt shingles.",
-      },
-      {
-        question: "How much does an asphalt shingle roof cost in Philadelphia?",
-        answer:
-          "Asphalt shingle roofing costs in Philadelphia typically range from $5,000 to $15,000 for a standard residential roof, depending on the size, shingle type, and project complexity. We provide free estimates with transparent pricing and no hidden fees.",
-      },
-      {
-        question: "Which asphalt shingle brand is best?",
-        answer:
-          "GAF, CertainTeed, and Owens Corning are the three leading asphalt shingle manufacturers, and all produce excellent products. Each offers different product lines, colors, and warranty options. We will help you compare brands and choose the best fit during your free estimate.",
-      },
-      {
-        question: "Can I upgrade from 3-tab to architectural shingles?",
-        answer:
-          "Yes, upgrading from 3-tab to architectural shingles is one of the most popular roofing improvements we perform. The upgrade provides better durability, wind resistance, and a significant improvement in curb appeal. We will remove your old 3-tab shingles and install premium architectural shingles with proper underlayment and ventilation.",
-      },
-    ],
-  },
-  {
     slug: "shingle-repair",
     title: "Repair Asphalt Shingle Roof",
     shortTitle: "Shingle Repair",
@@ -1683,66 +1408,6 @@ export const services: Service[] = [
         question: "Will repaired shingles match my existing roof?",
         answer:
           "We make every effort to match the color and profile of your existing shingles. Keep in mind that existing shingles may have faded slightly over time, so a perfect match is not always possible, but the repair will blend well with the surrounding shingles in most cases.",
-      },
-    ],
-  },
-  {
-    slug: "shingle-replacement",
-    title: "Shingle Replacement",
-    shortTitle: "Shingle Replace",
-    tagline: "Complete Shingle Replacement in Philadelphia PA — A Fresh Start for Your Roof",
-    category: "shingles",
-    description:
-      "Full shingle replacement services in Philadelphia. We tear off your old shingles and install a brand-new shingle roof with premium materials and expert craftsmanship.",
-    icon: "",
-    image: "/images/roof-shingles-philadelphia.jpg",
-    heroDescription:
-      "When your asphalt shingles have reached the end of their lifespan — showing widespread curling, cracking, granule loss, or persistent leaks — a full shingle replacement is the best way to restore your home's protection and give your roof a fresh start. At Adilay Roofing, licensed under PA184779, we provide complete shingle replacement services throughout Philadelphia and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. Our shingle replacement process begins with a careful tear-off of your existing shingles down to the roof deck, followed by a thorough inspection of the decking and replacement of any damaged or rotted boards. We then install new underlayment, ice and water shield in vulnerable areas like valleys and eaves, drip edge along the perimeter, and your choice of premium asphalt shingles from top manufacturers including GAF, CertainTeed, and Owens Corning. Whether you are replacing aging 3-tab shingles with an upgrade to architectural shingles, or simply refreshing your roof with new shingles of the same type, our experienced crew delivers professional results with attention to every detail — from starter strips and proper nailing patterns to ridge caps and ventilation. Philadelphia's challenging Mid-Atlantic weather demands a shingle replacement done right, and that is exactly what Adilay Roofing delivers. Contact us today for a free shingle replacement estimate — transparent pricing, premium materials, and workmanship you can count on.",
-    benefits: [
-      "Complete tear-off and fresh shingle installation",
-      "Decking inspection and repair included",
-      "Premium shingles from GAF, CertainTeed, Owens Corning",
-      "Upgrade from 3-tab to architectural shingles",
-      "Manufacturer warranties up to 30+ years",
-      "Licensed and insured roofing contractor (PA184779)",
-      "Professional cleanup and debris disposal",
-      "Free estimates for Philadelphia and surrounding counties",
-    ],
-    features: [
-      "Complete old shingle tear-off and disposal",
-      "Roof deck inspection and board replacement",
-      "New underlayment and ice shield installation",
-      "Drip edge and starter strip installation",
-      "3-tab or architectural shingle installation",
-      "Ridge cap and ventilation installation",
-      "Chimney, vent, and pipe flashing",
-      "Final walkthrough and quality inspection",
-    ],
-    faq: [
-      {
-        question: "How long does a shingle replacement take?",
-        answer:
-          "Most residential shingle replacements are completed in 1–3 days depending on the size and complexity of the roof. We will provide a specific timeline during your estimate and work efficiently to minimize disruption.",
-      },
-      {
-        question: "How much does shingle replacement cost in Philadelphia?",
-        answer:
-          "Shingle replacement costs in Philadelphia typically range from $8,000 to $25,000 for a standard residential home, depending on the size of the roof, the type of shingles selected, and the condition of the decking. We provide free, detailed estimates with no hidden fees.",
-      },
-      {
-        question: "Should I upgrade to architectural shingles during replacement?",
-        answer:
-          "If your budget allows, upgrading to architectural shingles during replacement is an excellent investment. They offer better wind resistance, longer warranties, and a significantly more attractive appearance compared to 3-tab shingles, with only a modest increase in cost.",
-      },
-      {
-        question: "Do I need a permit for shingle replacement in Philadelphia?",
-        answer:
-          "Yes, a building permit is required for shingle replacement in Philadelphia. As a licensed contractor (PA184779), we handle the permit process on your behalf and ensure your new roof meets all local building code requirements and passes inspection.",
-      },
-      {
-        question: "What happens if the decking is damaged under the old shingles?",
-        answer:
-          "During the tear-off process, we inspect every section of decking. If we find damaged, rotted, or soft boards, we replace them before installing the new underlayment and shingles. This ensures your new shingle roof has a solid, secure foundation. We will notify you of any additional costs before proceeding.",
       },
     ],
   },

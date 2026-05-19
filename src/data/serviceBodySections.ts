@@ -225,25 +225,6 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
   ],
 
-  // -------------------------------------------------------------------------
-  "commercial-siding": [
-    {
-      heading: "Commercial Siding Materials We Install",
-      html: "<p>Commercial buildings in Philadelphia use different siding systems than residential. The main options we install: <strong>insulated metal panels</strong> (warehouses, light industrial, modern storefronts — fast install, R-15 to R-30 built in), <strong>fiber cement panels</strong> (James Hardie commercial, Allura — durable, fire-rated, paintable), <strong>EIFS / synthetic stucco</strong> (mixed-use buildings, retail), and <strong>metal composite panels</strong> (architectural facades on newer construction). Each has different price points, code-compliance considerations, and installation requirements.</p>",
-    },
-    {
-      heading: "Storefronts, Warehouses, and Mixed-Use Considerations",
-      html: "<p>Commercial siding has to do more than residential: it serves as the <strong>fire barrier</strong> between occupancies, contributes to the building's <strong>thermal performance</strong> (which the energy code measures and enforces), and often carries <strong>signage attachment</strong> requirements. We design siding systems that meet code on all three fronts. For Philadelphia retail storefronts, we work with the property owner's signage contractor to coordinate cleat strips and conduit chases inside the wall assembly so the finished facade looks intentional, not patched.</p>",
-    },
-    {
-      heading: "Building Code Compliance and Inspections",
-      html: "<p>Commercial siding work in Philadelphia almost always requires a building permit and at least one Department of L&I inspection. We pull the permit, schedule the inspection, and meet the inspector on-site. Common code requirements: <strong>weather-resistant barrier</strong> behind the cladding, <strong>continuous insulation</strong> per Philadelphia Energy Conservation Code, <strong>fire-rated assemblies</strong> at property lines, and <strong>proper flashing</strong> at every penetration and termination. We document compliance with photo records during install in case any post-completion question comes up later.</p>",
-    },
-    {
-      heading: "Insurance and Licensing for Commercial Work",
-      html: "<p>Property owners and managers need three documents from any commercial siding contractor before work starts: <strong>PA HIC license</strong> (we are PA184779), <strong>certificate of insurance</strong> with general liability, workers' comp, and umbrella coverage that meets the building's requirements, and <strong>certificate of additional insured</strong> naming the property owner. We provide all three within 24 hours of a contract being signed. Our standard insurance package: $2M general liability, $1M umbrella, full workers' comp — enough to satisfy most Philadelphia commercial landlord requirements without requiring policy upgrades.</p>",
-    },
-  ],
 
   // -------------------------------------------------------------------------
   "vinyl-siding": [
@@ -269,29 +250,6 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
   ],
 
-  // -------------------------------------------------------------------------
-  "window-replacement": [
-    {
-      heading: "Full-Frame vs Insert Replacement — Knowing Which You Need",
-      html: "<p><strong>Insert replacement</strong> (also called pocket replacement) installs the new window inside the existing frame and trim — fast, low-disruption, lower cost, but you lose 1-2 inches of glass area on each dimension. Insert is the right choice when the existing window frame is wood and structurally sound. <strong>Full-frame replacement</strong> removes everything down to the rough opening — frame, trim, sash, sill — and installs a complete new window assembly. Full-frame is mandatory when the existing frame has rot, when you're enlarging the opening (egress upgrades), or when you want the maximum glass area for the rough opening. We assess each window on the estimate and recommend the right approach.</p>",
-    },
-    {
-      heading: "Triple-Pane vs Double-Pane in Philadelphia's Climate",
-      html: "<p>Double-pane low-E windows (the standard Energy Star spec) are the right choice for most Philadelphia homes. Triple-pane is worth the upgrade in three specific situations: <strong>street-facing rooms</strong> where you can hear traffic noise (the sound dampening is dramatic), <strong>upper-floor bedrooms</strong> facing direct sun where heat gain is a problem, and <strong>any room where comfort near the window matters</strong> (reading nooks, home offices). The energy savings alone don't justify the 15-20% triple-pane price premium for most homes — the comfort and noise reduction do.</p>",
-    },
-    {
-      heading: "Removing Old Windows — More Than Just Pulling Them Out",
-      html: "<p>If your home was built before 1978, your existing window frames likely have lead-based paint. EPA's RRP Rule requires lead-safe certified contractors for any work that disturbs the frame — we are. Old wood windows often have decades of paint layers, original putty (sometimes containing asbestos in homes built before 1980), and weight pockets containing iron sash weights. We dispose of all of it through Philadelphia-licensed haulers with the proper documentation. The job site is left clean, vacuumed (HEPA where lead is present), and the old window debris is gone.</p>",
-    },
-    {
-      heading: "Tax Credits, Rebates, and Energy Incentives",
-      html: "<p>Federal tax credits under the Inflation Reduction Act cover up to <strong>30% of qualifying window replacement costs (up to $600/year)</strong> through 2032. Window manufacturers like Andersen, Marvin, and Pella publish eligibility lists each year. PECO offers periodic rebates on Energy Star Most Efficient windows — current programs vary year-to-year. We provide the manufacturer certification statements you need for the federal credit at job completion, and we keep current PECO rebate forms on file for any active program at the time of your install.</p>",
-    },
-    {
-      heading: "Scheduling Around Philadelphia Weather",
-      html: "<p>Windows can be replaced year-round in Philadelphia, but the comfort window is roughly April-November. We avoid scheduling full-frame replacements during deep cold (December-February) when room heat loss during the actual swap matters; insert replacements are fine year-round because the existing frame stays in place. We also avoid scheduling during heavy rain weeks — the rough opening is exposed for 30-90 minutes per window, and rain mid-install is a problem. We watch the 7-day forecast and reschedule if needed at no charge.</p>",
-    },
-  ],
 
   // -------------------------------------------------------------------------
   "window-repair": [
@@ -313,29 +271,6 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
   ],
 
-  // -------------------------------------------------------------------------
-  "window-companies": [
-    {
-      heading: "What to Look For in a Philadelphia Window Company",
-      html: "<p>Good window companies in Philadelphia share five traits: <strong>state HIC license</strong> (PA HIC# — we are PA184779), <strong>workers' comp and general liability insurance</strong> with documents you can verify, <strong>manufacturer certifications</strong> from the brands they install (Marvin, Andersen, Pella, ProVia certifications come from training and volume requirements, not marketing), <strong>local references</strong> from homes you can drive past in your own neighborhood, and <strong>written warranties</strong> covering both materials and labor. If a company can't or won't produce all five upfront, keep looking.</p>",
-    },
-    {
-      heading: "Red Flags That Mean You're Talking to the Wrong Company",
-      html: "<p>The biggest warning signs we hear about from homeowners after a bad job: <strong>aggressive same-day-decision pricing</strong> (\"this discount only applies if you sign tonight\" is a sales tactic, not a fair price), <strong>no physical address</strong> or out-of-state corporate headquarters with no local crew, <strong>insurance certificates that won't be produced</strong> until you ask three times, <strong>contracts under 50% deposit</strong> for jobs over $10K (legitimate window installers don't need that much money before the work even starts), and <strong>unlicensed labor</strong> doing the actual install while a licensed lead is offsite at another job.</p>",
-    },
-    {
-      heading: "Local Philadelphia Companies vs National Chains",
-      html: "<p>Local Philadelphia window companies (us, several others) tend to win on <strong>responsiveness</strong> (warranty calls answered same-day, not routed to a national call center), <strong>permit and Historical Commission familiarity</strong> (we know which products are pre-approved for which districts), and <strong>relationships with manufacturer reps</strong> (we can get problems escalated). National chains tend to win on <strong>volume pricing</strong> on certain product lines and <strong>larger marketing budgets</strong>. We'd argue the responsiveness advantage matters more for a 30-year product than a 5% price gap, but it's a real choice and we don't pretend otherwise.</p>",
-    },
-    {
-      heading: "Manufacturer Partnerships Worth Knowing About",
-      html: "<p>The window brands we install most frequently in Philadelphia and why: <strong>Andersen</strong> (best resale value, 100-Series Fibrex composite for budget jobs, 400-Series wood for traditional homes), <strong>Marvin</strong> (Elevate fiberglass for energy performance, Ultimate wood for historic-district homes), <strong>Pella</strong> (Lifestyle and Reserve lines for mid-range custom), and <strong>ProVia</strong> (best vinyl in the contractor channel, lifetime non-prorated warranty). Each has its strengths; we recommend the right line for your home, your budget, and your block — not whichever line gives us the best margin.</p>",
-    },
-    {
-      heading: "Warranty and Service After the Install",
-      html: "<p>Real warranty service is what separates window companies once the install crew has driven away. Our standard: <strong>lifetime workmanship warranty</strong> on the install itself, <strong>full manufacturer warranty</strong> on the windows (typically 20 years on glass, lifetime on frames), and <strong>same-week service response</strong> for any warranty call from a Philadelphia customer. We register every window with the manufacturer at completion (so the warranty is in your name, not in limbo), and we keep your project records on file indefinitely so warranty service in year 12 is as straightforward as year 2.</p>",
-    },
-  ],
 
   // -------------------------------------------------------------------------
   "gutter-cleaning": [
@@ -405,25 +340,6 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
   ],
 
-  // -------------------------------------------------------------------------
-  "asphalt-shingle-roofing": [
-    {
-      heading: "Asphalt Shingle Types — 3-Tab, Architectural, and Designer Compared",
-      html: "<p><strong>3-tab shingles</strong> are the entry-level option (15-20 year service life, 60-mph wind warranty, around $100/sq for materials). They're flat-profile and look dated on most Philadelphia homes; we install them mainly on rentals and accessory buildings. <strong>Architectural (laminated) shingles</strong> are our default residential recommendation: 25-30 year service life, 110-130 mph wind warranty, 30-40% more expensive than 3-tab, far better curb appeal. <strong>Designer/luxury shingles</strong> (Slateline, Camelot, Presidential) replicate the look of slate or wood shake at roughly 2× architectural pricing — appropriate for upper-tier homes and historic districts.</p>",
-    },
-    {
-      heading: "Lifespan in the Philadelphia Climate",
-      html: "<p>Manufacturer-stated shingle warranties (50-year lifetime, etc.) are typically prorated and unrealistic in real-world conditions. Honest expected service life for asphalt shingles in Philadelphia: <strong>3-tab shingles</strong> 15-18 years, <strong>architectural</strong> 22-28 years, <strong>luxury/designer</strong> 30-40 years. The variation comes from attic ventilation (poor ventilation cuts shingle life by 25%+), tree exposure (limbs scrape shingles, sap stains them), and original installation quality (six nails per shingle vs four, properly placed in the nail line, etc.). Quality install on a properly ventilated roof is what gets you the upper end of the range.</p>",
-    },
-    {
-      heading: "Underlayment, Ice & Water Shield, and the System Underneath",
-      html: "<p>The shingles are 50% of a roofing system; what's underneath is the other 50%. Our standard install: <strong>synthetic underlayment</strong> (lighter, stronger, UV-stable, doesn't tear in wind during install) over the entire deck, <strong>ice-and-water shield</strong> at the eaves running 36 inches up from the eave (Philadelphia code requires 24, we go further) and in every valley, <strong>drip edge</strong> on every rake and eave, and <strong>step flashing</strong> at every sidewall and chimney. Cheap installers skip the ice-and-water (saves $200, costs $5,000 in ice-dam damage); we don't.</p>",
-    },
-    {
-      heading: "Why Asphalt Dominates Philadelphia Residential Roofing",
-      html: "<p>Asphalt shingles cover the majority of pitched residential roofs in Philadelphia for four reasons: <strong>installed cost</strong> is roughly half what slate, metal, or cedar shake would run, <strong>installation labor</strong> is fast (most homes are completed in 1-2 days), <strong>repair access</strong> is easy decades down the road (any roofer can match common shingle profiles), and <strong>insurance acceptance</strong> is universal (no carrier penalizes asphalt roofs). Slate, metal, and tile have niches — historic districts, premium homes — but asphalt is the default for good reasons.</p>",
-    },
-  ],
 
   // -------------------------------------------------------------------------
   "shingle-repair": [
@@ -449,25 +365,6 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
   ],
 
-  // -------------------------------------------------------------------------
-  "shingle-replacement": [
-    {
-      heading: "Tear-Off vs Overlay — Why We Almost Always Tear Off",
-      html: "<p>Philadelphia building code allows up to two layers of shingles on a roof — meaning if you only have one existing layer, an overlay (installing the new shingles directly over the old) is technically legal. We rarely recommend it because: <strong>overlay weight</strong> can stress an older roof structure, <strong>existing flashing isn't replaced</strong> (so you bake the most-likely future leak source under the new shingles), <strong>decking damage stays hidden</strong> until it becomes a serious problem, and <strong>full warranty</strong> from the manufacturer requires tear-off. Tear-off costs $0.50-1.00 more per square foot but gives you a complete new roofing system, not a cosmetic patch.</p>",
-    },
-    {
-      heading: "Decking Inspection During Replacement — Why It Matters",
-      html: "<p>The roof decking (usually plywood or OSB) is normally invisible — until tear-off. Roughly <strong>1 in 4 Philadelphia roofs</strong> we tear off has at least some rotted decking from years of slow moisture intrusion at penetrations or eaves. We inspect every square foot of exposed deck after tear-off and quote any needed plywood replacement at standard sheet rates ($60-90/sheet installed). This is one of the few legitimate \"surprise\" costs in roofing — we can't see decking through shingles. Honest contractors price it transparently when found; bad contractors hide it or skip it entirely.</p>",
-    },
-    {
-      heading: "Ice and Water Shield Placement — Beyond Code Minimum",
-      html: "<p>Philadelphia code requires ice-and-water shield (a self-adhered membrane that seals around nail penetrations) at the eaves <strong>24 inches inside the warm wall line</strong>, plus in valleys. We typically install it <strong>36 inches at eaves</strong>, the entire valley including 12 inches up each side, around every penetration (vents, plumbing stacks, chimneys, skylights), and at every sidewall flashing tie-in. The added cost is roughly 2% of the total install; the protection against ice-dam damage and penetration leaks is worth far more than that over the next 25 years.</p>",
-    },
-    {
-      heading: "Ridge Cap and Flashing — Replacement, Not Reuse",
-      html: "<p>Cheap installers reuse the existing ridge cap and step flashing during a replacement to save labor. We don't. <strong>Ridge cap shingles</strong> are replaced 100% of the time with manufacturer-matched product (using ridge cap that doesn't match the field shingles voids the warranty on most lines). <strong>Step flashing</strong> at every sidewall and chimney gets replaced with new metal. <strong>Pipe flashings and vent boots</strong> all get replaced — these typically fail before the field shingles do, so reusing them on a new roof is asking for a 7-year leak. The total flashing materials add maybe 3% to the job and prevent the most common future leak sources.</p>",
-    },
-  ],
 
   // -------------------------------------------------------------------------
   "soffit-repair": [

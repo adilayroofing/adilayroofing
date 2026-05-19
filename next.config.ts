@@ -68,6 +68,43 @@ const nextConfig: NextConfig = {
       },
 
       // ======================================================================
+      // Service consolidation (2026-05) — 6 near-duplicate service pages
+      // merged into their canonical survivor. Each cluster (Google indexed one
+      // page and ignored the rest) collapses to fewer, stronger pages. The
+      // 301s pass ranking equity to the survivor.
+      // ======================================================================
+      {
+        source: "/services/asphalt-shingle-roofing",
+        destination: "/services/shingle-roofing",
+        permanent: true,
+      },
+      {
+        source: "/services/shingle-replacement",
+        destination: "/services/shingle-roofing",
+        permanent: true,
+      },
+      {
+        source: "/services/commercial-siding",
+        destination: "/services/siding-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/residential-siding",
+        destination: "/services/siding-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/window-companies",
+        destination: "/services/window-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/window-replacement",
+        destination: "/services/window-installation",
+        permanent: true,
+      },
+
+      // ======================================================================
       // Legacy WordPress URLs — preserve ranking equity by mapping to nearest
       // live equivalent on the new site. Source URLs come from GSC Pages data.
       // ======================================================================
