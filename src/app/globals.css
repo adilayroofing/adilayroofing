@@ -95,6 +95,25 @@
   }
 }
 
+/* ── Inspection popup — one-shot CTA pulse ── */
+@keyframes adilay-cta-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+.animate-cta-pulse {
+  animation: adilay-cta-pulse 620ms ease-in-out 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-cta-pulse {
+    animation: none;
+  }
+}
+
 /* ── Blog prose typography ── */
 .blog-prose {
   color: #1C1A30;
