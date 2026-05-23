@@ -100,7 +100,6 @@ export default async function ServicePage({ params }: PageProps) {
   const heroTitle = `${service.title} in Philadelphia, PA`;
   const heroTagline = service.tagline;
   const heroDescription = service.heroDescription;
-  const benefits = service.benefits;
   const features = service.features;
   const faq = service.faq;
   // bodySections: per-service inline first, else centralized SERVICE_BODY_SECTIONS
@@ -111,7 +110,6 @@ export default async function ServicePage({ params }: PageProps) {
     : SERVICE_BODY_SECTIONS[slug] ?? [];
 
   const heroCTAText = "Get a FREE Estimate";
-  const benefitsHeading = "Benefits";
   const featuresHeading = "What's Included";
   const faqHeading = "Frequently Asked Questions";
   const relatedHeading = "Other Services We Offer";
@@ -273,44 +271,10 @@ export default async function ServicePage({ params }: PageProps) {
       )}
 
       {/* ================================================================= */}
-      {/* Benefits Section                                                  */}
-      {/* ================================================================= */}
-      <section className="bg-brand-light">
-        <div className="section-padding">
-          <div className="container-narrow mx-auto">
-            <h2 className="section-heading text-center mb-10">{benefitsHeading}</h2>
-
-            <ul className="grid grid-cols-2 md:grid-cols-2 gap-2 sm:gap-4 max-w-3xl mx-auto">
-              {benefits.map((benefit) => (
-                <li
-                  key={benefit}
-                  className="flex items-start gap-2 sm:gap-3 bg-white rounded-sm p-3 sm:p-5 border border-brand-border"
-                >
-                  {/* Checkmark icon */}
-                  <svg
-                    className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span className="text-brand-dark font-medium text-sm sm:text-base leading-tight">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================= */}
       {/* Features Section — "What's Included"                              */}
+      {/* (Benefits block removed 2026-05-23 — duplicated Features content  */}
+      {/*  near-identically across all 22 service pages, contributing to    */}
+      {/*  the template-fingerprint that was keeping services unindexed.)   */}
       {/* ================================================================= */}
       <section className="bg-white">
         <div className="section-padding">
