@@ -19,6 +19,30 @@ export interface BodySection {
   html: string;
 }
 
+// Recent-project showcase block — hyperlocal entity-rich content per
+// master plan §2 ("real local detail no AI can fabricate"). Optional;
+// service detail page only renders the section when a Service has one.
+export interface ProjectShowcase {
+  /** H2 heading for the section (e.g. "Recent Project: Bala Cynwyd Main Line Roof Replacement"). */
+  heading: string;
+  /** Display location string used in copy + ImageObject schema (e.g. "Bala Cynwyd, PA 19004"). */
+  location: string;
+  /** Optional slug for /service-areas/<slug>. When present, a contextual link is rendered. */
+  locationSlug?: string;
+  /** Before image — public path (e.g. "/images/projects/..."). */
+  beforeSrc: string;
+  beforeAlt: string;
+  /** After image — public path. */
+  afterSrc: string;
+  afterAlt: string;
+  /** Tailwind aspect-ratio class for the slider container. Defaults to "aspect-[4/5]". */
+  aspectClass?: string;
+  /** Sub-heading rendered above the project description (H3). */
+  scopeHeading: string;
+  /** Project description HTML (paragraph + optional list). Use real material/brand entity names. */
+  scopeHtml: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -33,6 +57,7 @@ export interface Service {
   features: string[];
   faq: { question: string; answer: string }[];
   bodySections?: BodySection[];
+  projectShowcase?: ProjectShowcase;
 }
 
 export function getServicesByCategory(category: ServiceCategory): Service[] {
@@ -51,7 +76,7 @@ export const services: Service[] = [
     icon: "",
     image: "/images/roof-replacement-philadelphia.jpg",
     heroDescription:
-      "When repairs are no longer enough, a full roof replacement in Philadelphia gives your property the protection it deserves. At Adilay Roofing, licensed under PA184779, our experienced crew handles the entire roof replacement process from start to finish — from carefully removing your existing roof down to the decking, to installing a brand-new roofing system with top-quality materials and clean, professional workmanship. Whether your asphalt shingles have reached the end of their lifespan, you are dealing with storm damage, or you simply want to upgrade to a more durable roofing material, we deliver roof replacement solutions tailored to your home and budget. We serve Philadelphia and the surrounding areas including Bucks County, Montgomery County, Delaware County, and Chester County. Every roof replacement project includes a thorough inspection of your roof deck, underlayment, ventilation, and flashing to ensure your new roof performs at its best for decades. Contact us today for a free estimate on roof replacement in Philadelphia — no pressure, no obligation, just honest advice from a team you can trust.",
+      "Full roof replacement in Philadelphia — done by our own licensed crew (PA184779), never subcontracted. Tear-off down to the decking, deck repair where needed, ice-and-water shield, new underlayment, flashing, ventilation, and your choice of architectural, designer, or metal roofing. Serving Philadelphia, Bucks, Montgomery, Delaware, and Chester Counties. Free written estimate — no pressure. Call (267) 255-3620.",
     benefits: [
       "Full tear-off and replacement with new materials",
       "Thorough inspection of decking and underlayment",
@@ -121,6 +146,18 @@ export const services: Service[] = [
     ],
     bodySections: [
       {
+        heading: "Roof Types We Replace in Philadelphia",
+        html: `<p>Philadelphia's housing stock is anything but uniform — from 1900-era slate-topped Victorians in Germantown to flat-rubber row-home roofs in South Philly to architectural-shingle Capes in Northeast Philly and Bucks. Every replacement we do starts with matching the roof system to the home, the neighborhood, and how the building is actually used.</p>
+<ul>
+  <li><strong><a href="/services/shingle-roofing">Asphalt Shingle Roofs</a></strong> — the Philadelphia standard. Architectural (dimensional) shingles from GAF, CertainTeed, and Owens Corning for 25–30 year service life; designer profiles where curb appeal matters.</li>
+  <li><strong><a href="/services/flat-roofing">Flat &amp; Low-Slope Roofs</a></strong> — EPDM rubber, TPO single-ply, and modified bitumen for row-home flat-backs, additions, porch roofs, and commercial buildings.</li>
+  <li><strong><a href="/services/storm-damage-roof-repair">Storm-Damaged Roofs</a></strong> — wind, hail, or tree-impact roofs we replace with full insurance-claim documentation for State Farm, Allstate, USAA, Liberty Mutual, Travelers, and Erie.</li>
+  <li><strong><a href="/services/residential-roofing">Residential Roofs</a></strong> — single-family homes, row homes, twin homes, additions, and detached garages across the five-county Philadelphia region.</li>
+  <li><strong><a href="/services/commercial-roofing">Commercial Roofs</a></strong> — small commercial buildings, multi-unit residential, and mixed-use properties with low-slope or flat membranes.</li>
+</ul>
+<p>Not sure what's on your roof or what should replace it? A <a href="/services/roof-inspection">free roof inspection</a> is the right first step — we walk the roof, check the attic, and give you a written assessment before recommending anything.</p>`,
+      },
+      {
         heading: "Your Roof Replacement Process — What to Expect From Start to Finish",
         html: `<p>A full roof replacement in Philadelphia should never feel chaotic. When you hire Adilay Roofing, here is exactly how the project runs from the first call to the final walkthrough.</p>
 <ol>
@@ -188,6 +225,29 @@ export const services: Service[] = [
 <p>If your roof is past 20 years old or showing signs of widespread wear, a <a href="/services/roof-inspection">free Philadelphia roof inspection</a> is the right first step. When replacement is the right answer, we put together an honest written estimate — no pressure, no surprises.</p>`,
       },
     ],
+    projectShowcase: {
+      heading: "Recent Project: Bala Cynwyd Roof Replacement on a Main Line Home",
+      location: "Bala Cynwyd, PA 19004",
+      locationSlug: "bala-cynwyd",
+      beforeSrc: "/images/projects/roof-replacement-bala-cynwyd-before.jpg",
+      beforeAlt:
+        "Before: aging asphalt shingle roof with worn-out gutters on a Main Line home in Bala Cynwyd, PA 19004 — prior to full tear-off by Adilay Roofing.",
+      afterSrc: "/images/projects/roof-replacement-bala-cynwyd-after.jpg",
+      afterAlt:
+        "After: new GAF Timberline 3D architectural shingles in Oyster Grey, black aluminum gutters, and vinyl-wrapped attic bay windows on the same Bala Cynwyd Main Line home — completed by Adilay Roofing.",
+      aspectClass: "aspect-[4/5]",
+      scopeHeading: "What We Replaced",
+      scopeHtml: `<p>A homeowner in <a href="/service-areas/bala-cynwyd">Bala Cynwyd</a> hired the Adilay Roofing crew for a complete tear-off and replacement on the main roof and front porch. We took the project from worn-out shingles to a fully restored exterior in a single coordinated scope.</p>
+<ul>
+  <li><strong>Tear-off down to the decking.</strong> Old shingles, underlayment, and damaged sheathing removed; fresh plywood installed where needed.</li>
+  <li><strong>Ice-and-water shield + synthetic underlayment</strong> at eaves, valleys, and penetrations — non-negotiable on a Main Line freeze-thaw winter.</li>
+  <li><strong>GAF Timberline HDZ architectural shingles in Oyster Grey</strong> — the color the homeowner picked out, installed to manufacturer spec with proper starter strip, ridge cap, and ventilation.</li>
+  <li><strong>Rebuilt gutter framing</strong> along the affected eaves so the new gutters had a clean, level fastening surface.</li>
+  <li><strong>Four attic bay windows wrapped with new vinyl siding</strong> — matched color and profile to the existing exterior.</li>
+  <li><strong>New black aluminum gutters and downspouts</strong> sized for the roof area and tied into the existing drainage points.</li>
+</ul>
+<p>Project address: 153 Upland Terrace, Bala Cynwyd PA 19004 — Lower Merion Township, Montgomery County. See more of <a href="/service-areas/bala-cynwyd">our roofing work in Bala Cynwyd</a> or call <a href="tel:+12672553620">(267) 255-3620</a> for a free estimate on a similar replacement.</p>`,
+    },
   },
   {
     slug: "roof-repair",

@@ -12,6 +12,7 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import VanBanner from "@/components/VanBanner";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import {
   AREA_SERVED,
   BASE_URL,
@@ -109,6 +110,10 @@ export default async function ServicePage({ params }: PageProps) {
     ? service.bodySections
     : SERVICE_BODY_SECTIONS[slug] ?? [];
 
+  // Optional per-service project showcase — real recent job with
+  // before/after photos. Rendered only when present.
+  const projectShowcase = service.projectShowcase;
+
   const heroCTAText = "Get a FREE Estimate";
   const featuresHeading = "What's Included";
   const faqHeading = "Frequently Asked Questions";
@@ -157,6 +162,34 @@ export default async function ServicePage({ params }: PageProps) {
         }
       : null;
 
+  // ImageObject pair for the project showcase (when present). Provides
+  // explicit geo + descriptive context that Google can associate with the
+  // service — far more durable than EXIF metadata, which Google strips.
+  const projectImageSchemas = projectShowcase
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "ImageObject",
+          contentUrl: `${BASE_URL}${projectShowcase.beforeSrc}`,
+          url: `${BASE_URL}${projectShowcase.beforeSrc}`,
+          name: `Before — ${projectShowcase.heading}`,
+          description: projectShowcase.beforeAlt,
+          contentLocation: { "@type": "Place", name: projectShowcase.location },
+          creator: ORG_REF,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ImageObject",
+          contentUrl: `${BASE_URL}${projectShowcase.afterSrc}`,
+          url: `${BASE_URL}${projectShowcase.afterSrc}`,
+          name: `After — ${projectShowcase.heading}`,
+          description: projectShowcase.afterAlt,
+          contentLocation: { "@type": "Place", name: projectShowcase.location },
+          creator: ORG_REF,
+        },
+      ]
+    : [];
+
   return (
     <>
       <script
@@ -169,6 +202,13 @@ export default async function ServicePage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      {projectImageSchemas.map((s, i) => (
+        <script
+          key={`project-image-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
       <BreadcrumbJsonLd
         items={[
           { name: "Services", path: "/services" },
@@ -264,6 +304,61 @@ export default async function ServicePage({ params }: PageProps) {
                     />
                   </article>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================= */}
+      {/* Project Showcase (optional, per-service)                          */}
+      {/* Real recent job with before/after photos + scope. Hyperlocal      */}
+      {/* entity-rich content that no AI template can fabricate — the      */}
+      {/* anti-template-fingerprint move from master plan §2.              */}
+      {/* ================================================================= */}
+      {projectShowcase && (
+        <section className="bg-white">
+          <div className="section-padding pt-0">
+            <div className="container-narrow mx-auto">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-3 md:mb-4">
+                  {projectShowcase.heading}
+                </h2>
+                <p className="text-[15px] md:text-lg text-brand-gray mb-5 md:mb-6">
+                  {projectShowcase.locationSlug ? (
+                    <>
+                      Completed in{" "}
+                      <Link
+                        href={`/service-areas/${projectShowcase.locationSlug}`}
+                        className="text-brand-red underline hover:text-red-700"
+                      >
+                        {projectShowcase.location}
+                      </Link>
+                      .
+                    </>
+                  ) : (
+                    <>Completed in {projectShowcase.location}.</>
+                  )}{" "}
+                  Drag the slider to see the before and after.
+                </p>
+
+                <BeforeAfterSlider
+                  beforeSrc={projectShowcase.beforeSrc}
+                  beforeAlt={projectShowcase.beforeAlt}
+                  afterSrc={projectShowcase.afterSrc}
+                  afterAlt={projectShowcase.afterAlt}
+                  aspectClass={projectShowcase.aspectClass ?? "aspect-[4/5]"}
+                  className="mb-6 md:mb-8"
+                />
+
+                <h3 className="text-lg md:text-2xl font-bold text-brand-dark mb-3">
+                  {projectShowcase.scopeHeading}
+                </h3>
+                <SafeHTML
+                  html={projectShowcase.scopeHtml}
+                  as="div"
+                  className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_li]:mb-1 [&_strong]:text-brand-dark"
+                />
               </div>
             </div>
           </div>
