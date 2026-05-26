@@ -114,6 +114,19 @@ export default async function ServicePage({ params }: PageProps) {
   // before/after photos. Rendered only when present.
   const projectShowcase = service.projectShowcase;
 
+  // Optional visual "Service Types" card grid — replaces bullet-list
+  // cross-link bodySection with photo+icon ServiceCard tiles.
+  const serviceTypeCards = service.serviceTypeCards;
+  const serviceTypeCardServices = serviceTypeCards
+    ? serviceTypeCards.cardSlugs
+        .map((s) => services.find((sv) => sv.slug === s))
+        .filter((sv): sv is NonNullable<typeof sv> => Boolean(sv))
+    : [];
+
+  // Optional visual process — replaces ordered-list bodySection
+  // with numbered step badges (homepage ProcessSection style).
+  const processSteps = service.processSteps;
+
   const heroCTAText = "Get a FREE Estimate";
   const featuresHeading = "What's Included";
   const faqHeading = "Frequently Asked Questions";
@@ -283,6 +296,73 @@ export default async function ServicePage({ params }: PageProps) {
           <BBBSeal />
         </div>
       </div>
+
+      {/* ================================================================= */}
+      {/* Service Types Card Grid (optional, per-service)                    */}
+      {/* Replaces bullet-list cross-link bodySections with ServiceCards    */}
+      {/* (photo + icon + Learn More). Cards lead the eye into related      */}
+      {/* services — same data as a bullet list, far better visual hierarchy. */}
+      {/* ================================================================= */}
+      {serviceTypeCards && serviceTypeCardServices.length > 0 && (
+        <section className="bg-brand-light">
+          <div className="section-padding">
+            <div className="container-wide mx-auto">
+              <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10">
+                <h2 className="section-heading">{serviceTypeCards.heading}</h2>
+                {serviceTypeCards.intro && (
+                  <p className="text-[15px] md:text-lg text-brand-gray leading-relaxed mt-3 md:mt-4">
+                    {serviceTypeCards.intro}
+                  </p>
+                )}
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5">
+                {serviceTypeCardServices.map((sv) => (
+                  <ServiceCard key={sv.slug} service={sv} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================= */}
+      {/* Process Steps (optional, per-service)                              */}
+      {/* Replaces ordered-list "process" bodySection with numbered step    */}
+      {/* badges (homepage ProcessSection visual language).                  */}
+      {/* ================================================================= */}
+      {processSteps && processSteps.steps.length > 0 && (
+        <section className="bg-white">
+          <div className="section-padding">
+            <div className="container-wide mx-auto">
+              <h2 className="section-heading text-center mb-8 md:mb-12">
+                {processSteps.heading}
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-6xl mx-auto">
+                {processSteps.steps.map((step, idx) => (
+                  <div key={step.title} className="relative text-center">
+                    {/* Desktop connector line between steps */}
+                    {idx < processSteps.steps.length - 1 && (
+                      <div
+                        className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-brand-border"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <div className="relative inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-brand-red text-white font-bold text-lg md:text-2xl mb-3 md:mb-5 shadow-sm">
+                      {idx + 1}
+                    </div>
+                    <h3 className="text-sm md:text-base font-bold text-brand-dark mb-1 md:mb-2 leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-brand-gray leading-snug max-w-xs mx-auto">
+                      {step.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ================================================================= */}
       {/* Body Sections — deep content with H2s for keyword targeting       */}

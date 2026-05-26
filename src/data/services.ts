@@ -43,6 +43,23 @@ export interface ProjectShowcase {
   scopeHtml: string;
 }
 
+// Visual "Service Types" card grid — replaces bullet-list cross-link sections
+// (e.g. "Roof Types We Replace"). Renders other services as ServiceCard
+// components (photo + icon + title + Learn More) instead of a <ul>.
+export interface ServiceTypeCards {
+  heading: string;
+  intro?: string;
+  /** Slugs of other Service entries to render as cards. */
+  cardSlugs: string[];
+}
+
+// Visual process — replaces an ordered-list "Our Process" block with
+// numbered step badges (like the homepage ProcessSection).
+export interface ProcessSteps {
+  heading: string;
+  steps: { title: string; description: string }[];
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -58,6 +75,8 @@ export interface Service {
   faq: { question: string; answer: string }[];
   bodySections?: BodySection[];
   projectShowcase?: ProjectShowcase;
+  serviceTypeCards?: ServiceTypeCards;
+  processSteps?: ProcessSteps;
 }
 
 export function getServicesByCategory(category: ServiceCategory): Service[] {
@@ -144,31 +163,47 @@ export const services: Service[] = [
           "Every roof replacement includes a manufacturer material warranty (typically 25 to 50 years depending on the shingle you choose) plus an Adilay Roofing workmanship warranty in writing. Specific terms vary by product — we put everything on paper with your estimate so you can compare warranties across materials before you decide.",
       },
     ],
+    serviceTypeCards: {
+      heading: "Roof Types We Replace in Philadelphia",
+      intro: "Philadelphia's housing stock runs from 1900-era slate Victorians in Germantown to flat-rubber row-home roofs in South Philly. Every replacement starts with matching the system to the home and the neighborhood.",
+      cardSlugs: [
+        "shingle-roofing",
+        "flat-roofing",
+        "storm-damage-roof-repair",
+        "residential-roofing",
+        "commercial-roofing",
+      ],
+    },
+    processSteps: {
+      heading: "Your Roof Replacement Process",
+      steps: [
+        {
+          title: "Free On-Site Estimate",
+          description: "Licensed roofer walks the roof, written proposal with materials and warranties.",
+        },
+        {
+          title: "Permit Filing",
+          description: "We file with Philadelphia L&I under our PA184779 license.",
+        },
+        {
+          title: "Full Tear-Off",
+          description: "Down to the decking; rotted sheathing replaced before anything new goes on.",
+        },
+        {
+          title: "Ice-and-Water Shield",
+          description: "At eaves and valleys, plus synthetic underlayment and drip edge.",
+        },
+        {
+          title: "New Roof Installed",
+          description: "Architectural or designer shingles, flashing, and ridge-soffit ventilation to spec.",
+        },
+        {
+          title: "Final Walkthrough",
+          description: "Photos, magnetic-sweep cleanup, and written warranty before we leave.",
+        },
+      ],
+    },
     bodySections: [
-      {
-        heading: "Roof Types We Replace in Philadelphia",
-        html: `<p>Philadelphia's housing stock is anything but uniform — from 1900-era slate-topped Victorians in Germantown to flat-rubber row-home roofs in South Philly to architectural-shingle Capes in Northeast Philly and Bucks. Every replacement we do starts with matching the roof system to the home, the neighborhood, and how the building is actually used.</p>
-<ul>
-  <li><strong><a href="/services/shingle-roofing">Asphalt Shingle Roofs</a></strong> — the Philadelphia standard. Architectural (dimensional) shingles from GAF, CertainTeed, and Owens Corning for 25–30 year service life; designer profiles where curb appeal matters.</li>
-  <li><strong><a href="/services/flat-roofing">Flat &amp; Low-Slope Roofs</a></strong> — EPDM rubber, TPO single-ply, and modified bitumen for row-home flat-backs, additions, porch roofs, and commercial buildings.</li>
-  <li><strong><a href="/services/storm-damage-roof-repair">Storm-Damaged Roofs</a></strong> — wind, hail, or tree-impact roofs we replace with full insurance-claim documentation for State Farm, Allstate, USAA, Liberty Mutual, Travelers, and Erie.</li>
-  <li><strong><a href="/services/residential-roofing">Residential Roofs</a></strong> — single-family homes, row homes, twin homes, additions, and detached garages across the five-county Philadelphia region.</li>
-  <li><strong><a href="/services/commercial-roofing">Commercial Roofs</a></strong> — small commercial buildings, multi-unit residential, and mixed-use properties with low-slope or flat membranes.</li>
-</ul>
-<p>Not sure what's on your roof or what should replace it? A <a href="/services/roof-inspection">free roof inspection</a> is the right first step — we walk the roof, check the attic, and give you a written assessment before recommending anything.</p>`,
-      },
-      {
-        heading: "Your Roof Replacement Process",
-        html: `<ol>
-  <li><strong>Free on-site estimate</strong> + written proposal with materials and warranties.</li>
-  <li><strong>Permit filing</strong> with Philadelphia L&amp;I under our PA184779 license.</li>
-  <li><strong>Full tear-off</strong> to the decking; rotted sheathing replaced.</li>
-  <li><strong>Ice-and-water shield, underlayment, drip edge</strong> at eaves and valleys.</li>
-  <li><strong>New shingles, flashing, ventilation</strong> installed to manufacturer spec.</li>
-  <li><strong>Final walkthrough</strong> with photos, magnetic-sweep cleanup, written warranty.</li>
-</ol>
-<p>Most replacements: 1–3 days.</p>`,
-      },
       {
         heading: "Roofing Materials We Install",
         html: `<h3>Architectural asphalt shingles</h3>
