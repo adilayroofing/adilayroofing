@@ -67,7 +67,10 @@ export type MaterialIconKey =
   | "designer"
   | "metal"
   | "flat"
-  | "tile";
+  | "tile"
+  | "chimney"
+  | "vent"
+  | "drop";
 
 export interface MaterialCard {
   iconKey?: MaterialIconKey;
@@ -104,7 +107,10 @@ export type CalloutIconKey =
   | "historic"
   | "permit"
   | "storm"
-  | "shield";
+  | "shield"
+  | "chimney"
+  | "vent"
+  | "drop";
 
 export interface IconCallout {
   iconKey: CalloutIconKey;
@@ -376,7 +382,7 @@ export const services: Service[] = [
     icon: "",
     image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:
-      "A small leak can become a big problem fast, which is why professional roof repair in Philadelphia should never be delayed. Adilay Roofing is a licensed roof repair Philadelphia PA homeowners have trusted for over 20 years (PA184779) — we respond quickly, diagnose the issue, and fix it right the first time. Whether you're dealing with storm damage from heavy wind and rain, a persistent roof leak, worn or missing flashing, or deteriorating shingles, our experienced Philadelphia roof repair crew handles it all. We repair every roof type common to Philadelphia homes: asphalt shingle, flat rubber (EPDM), and metal roofing systems. Every roof repair comes with a free estimate — a licensed roofer inspects the damage, explains what's causing the leak, and gives you a written quote with transparent, honest pricing. No hidden fees, no high-pressure upsells. We serve Philadelphia and the surrounding communities of Bucks County, Montgomery County, Delaware County, and Chester County, and we back every repair with a workmanship guarantee. Roof damage left unaddressed leads to mold growth, structural rot, and dramatically higher repair costs later. Don't wait — call Adilay Roofing today for a free roof repair estimate and same-day scheduling for urgent leaks across Philadelphia PA.",
+      "Roof repair in Philadelphia by our own licensed crew (PA184779) — leak detection, flashing rework, shingle and EPDM repair, with same-day response for active leaks. Serving Philadelphia, Bucks, Montgomery, Delaware, and Chester Counties. Free written estimate. Call (267) 255-3620.",
     benefits: [
       "Free roof repair estimates — no obligation, no pressure",
       "Same-day response available for active leaks in Philadelphia",
@@ -449,63 +455,139 @@ export const services: Service[] = [
           "Yes. Flat-roof repair on EPDM, modified bitumen, and TPO membranes is a daily job for our crew. We repair seam failures, punctures, parapet-wall tie-in leaks, and drain leaks across South Philly, Fishtown, Kensington, West Philadelphia, and the rest of the city.",
       },
     ],
-    bodySections: [
-      {
-        heading: "Roof Leak Repair in Philadelphia — Find It, Fix It, Stop It",
-        html: `<p>A roof leak is rarely where you think it is. Water enters at one point, runs along the decking or rafters, and drips through the ceiling somewhere else entirely. A rushed "repair" at the drip location almost always leaks again the next storm. Our Philadelphia roof repair process starts with proper leak tracing.</p>
+    serviceTypeCards: {
+      heading: "Roof Repairs We Handle",
+      intro: "Most leak calls trace back to flashing, vent boots, or storm-lifted shingles. Every Philly repair starts with the right diagnosis — never just a patch at the drip location.",
+      cardSlugs: [
+        "roof-leak-repair",
+        "emergency-roof-repair",
+        "storm-damage-roof-repair",
+        "flat-roof-repair",
+        "shingle-repair",
+      ],
+    },
+    processSteps: {
+      heading: "How a Roof Repair Visit Goes",
+      steps: [
+        {
+          title: "Call (267) 255-3620",
+          description: "Same-day for active leaks; next-day for scheduled inspections.",
+        },
+        {
+          title: "Roof + Attic Inspection",
+          description: "We trace water along framing — the leak source is rarely below the stain.",
+        },
+        {
+          title: "Written Diagnosis",
+          description: "Photos and written assessment of every failure point before any work.",
+        },
+        {
+          title: "Itemized Estimate",
+          description: "Transparent scope and price. You approve before we open anything up.",
+        },
+        {
+          title: "Permanent Repair",
+          description: "Proper flashing, sealants, and shingle tie-ins to manufacturer spec.",
+        },
+        {
+          title: "Photos + Cleanup",
+          description: "Magnetic-sweep cleanup, before/after photos, warranty in writing.",
+        },
+      ],
+    },
+    materialCards: {
+      heading: "Real Repair Pricing in Philadelphia",
+      items: [
+        {
+          iconKey: "shingle",
+          title: "Single Shingle/Slate",
+          stat: "$250–$500",
+          statLabel: "typical",
+          description: "Wind-damaged or cracked shingle replaced same-day or next-day on active leaks.",
+        },
+        {
+          iconKey: "vent",
+          title: "Vent Boot Replacement",
+          stat: "$300–$650",
+          statLabel: "per stack",
+          description: "UV-cracked rubber boot replaced with new boot, flashing, and surrounding shingles.",
+        },
+        {
+          iconKey: "chimney",
+          title: "Chimney Flashing",
+          stat: "$850–$2,200",
+          statLabel: "rebuilt right",
+          description: "Step + counter flashing rework — the #1 leak source on Philly homes.",
+        },
+        {
+          iconKey: "flat",
+          title: "Flat-Roof Patch",
+          stat: "$400–$1,200",
+          statLabel: "heat-welded",
+          description: "EPDM, TPO, or modified-bitumen patch heat-welded or seamed for a permanent fix.",
+        },
+      ],
+      footnote: `Outside these ranges? We explain why before you sign. See <a href="/financing">financing options</a> for larger repairs.`,
+    },
+    comparisonBlock: {
+      heading: "Repair or Replace? The Honest Line We Draw",
+      leftLabel: "Repair",
+      leftSubtitle: "Makes sense when",
+      leftItems: [
+        "Damage is localized — one failure point, not widespread.",
+        "Roof has 5+ years of life left.",
+        "Single chimney, vent boot, or flashing detail.",
+      ],
+      rightLabel: "Replace",
+      rightSubtitle: "Better long-term call when",
+      rightItems: [
+        "Roof is 22+ years old or has widespread granule loss.",
+        "Multiple active leaks in different roof sections.",
+        "Curling shingles or repeated repair calls in 2–3 years.",
+      ],
+    },
+    iconCallouts: {
+      heading: "Where Philadelphia Roof Leaks Usually Start",
+      items: [
+        {
+          iconKey: "chimney",
+          title: "Chimney Flashing",
+          description: "Step and counter-flashing failures are the #1 leak source we diagnose on Philly roofs.",
+        },
+        {
+          iconKey: "vent",
+          title: "Vent Boot UV Crack",
+          description: "Rubber boot around plumbing stacks fails after 8–12 years of sun exposure.",
+        },
+        {
+          iconKey: "storm",
+          title: "Wind-Lifted Shingles",
+          description: "Nor'easters and summer thunderstorms lift tabs and crease shingles at the windward side.",
+        },
+      ],
+      footnote: `Active leak? Call <a href="tel:+12672553620">(267) 255-3620</a> for same-day emergency response.`,
+    },
+    projectShowcase: {
+      heading: "Recent Project: Northern Liberties Fiberglass Roof Repair",
+      location: "Northern Liberties, Philadelphia",
+      locationSlug: "northern-liberties",
+      beforeSrc: "/images/projects/roof-repair-northern-liberties-during.jpg",
+      beforeAlt:
+        "Northern Liberties Philadelphia rooftop mid-repair — fiberglass roof with cracks along the membrane and wall edge before sealing, by Adilay Roofing.",
+      afterSrc: "/images/projects/roof-repair-northern-liberties-after.jpg",
+      afterAlt:
+        "Northern Liberties Philadelphia rooftop after repair — fiberglass membrane sealed with flashing cement and silicone elastomeric coating, stucco wall patched and waterproofed, by Adilay Roofing.",
+      aspectClass: "aspect-[3/4]",
+      scopeHeading: "What We Repaired",
+      scopeHtml: `<p>A homeowner in <a href="/service-areas/northern-liberties">Northern Liberties</a> called us for a fiberglass roof with cracks in three sections along the membrane and wall edge — exactly the kind of repair where the diagnosis matters more than the patch.</p>
 <ul>
-  <li><strong>Attic and interior inspection</strong> — we trace water staining back to the original point of entry, checking sheathing, rafters, and insulation along the way.</li>
-  <li><strong>Roof-top diagnosis</strong> — a licensed roofer walks the roof and inspects flashing, penetrations, valleys, and field shingles for the actual source of the leak.</li>
-  <li><strong>Written diagnosis and photos</strong> before any permanent work — you see what we see, so the repair makes sense.</li>
-  <li><strong>Permanent roof leak repair</strong> matched to the cause, not the symptom. If a flashing failure caused the leak, we re-flash it. If a cracked shingle did, we replace it correctly with the underlayment tied in.</li>
+  <li><strong>Crack repair</strong> in three sections of the fiberglass roof and wall edge.</li>
+  <li><strong>Membrane sealing</strong> with flashing cement and Sika polyurethane — both rated for long-term flat-roof service.</li>
+  <li><strong>Silicone elastomeric coating</strong> applied over the sealed membrane to extend service life and reflect UV.</li>
+  <li><strong>Stucco wall repair</strong> — patched and sealed with waterproof paint at the roof-wall transition.</li>
 </ul>
-<p>Every roof leak repair comes with a free estimate and a workmanship guarantee in writing.</p>`,
-      },
-      {
-        heading: "Flashing Repair — Chimney, Skylight, and Vent Pipe Details",
-        html: `<p>On most Philadelphia homes, the flashing fails before the shingles do. Flashing is the metal and sealant that ties your roof into everything that sticks out of it — chimneys, skylights, vent pipes, sidewalls, and dormers. When flashing cracks, corrodes, or pulls loose, water finds a path inside.</p>
-<h3>Chimney flashing repair</h3>
-<p>Older brick chimneys on Philadelphia twins and colonials often have original step flashing and counter-flashing that has simply aged out. We rebuild the flashing properly: step flashing woven into each shingle course, counter-flashing tucked into the brick mortar joints and sealed with a polyurethane or butyl sealant rated for the long haul.</p>
-<h3>Skylight and sun-tunnel flashing</h3>
-<p>Curb-mounted and deck-mounted skylights both develop leaks at the flashing kit. We replace the flashing kit when the underlying hardware is sound, or full skylight replacement when the frame itself is compromised.</p>
-<h3>Plumbing vent and exhaust-pipe boots</h3>
-<p>The rubber boots sealing plumbing vents are the shortest-lived component on most Philadelphia roofs — typically ten to fifteen years. We replace failed boots with commercial-grade or metal-collar replacements that last much longer.</p>
-<h3>Step flashing and sidewall tie-ins</h3>
-<p>Where a dormer or addition meets the main roof, step flashing and kick-out flashing direct water away from siding and interior walls. Missing or corroded step flashing is a classic cause of interior wall leaks — we install it to code and seal the connection permanently.</p>`,
-      },
-      {
-        heading: "Shingle Repair and Replacement in Philadelphia",
-        html: `<p>Shingle damage on Philadelphia homes usually comes from one of three sources: wind, age, or poor original installation. The repair depends on the cause.</p>
-<ul>
-  <li><strong>Wind damage</strong> — after a storm, look for missing tabs, lifted shingles that will not lay flat, and creased shingles where the wind folded them back. We replace damaged shingles and re-seal any that have been lifted, color-matching to your existing roof as closely as possible.</li>
-  <li><strong>Cracked and curling shingles</strong> — as asphalt shingles age, they lose granules, curl at the edges, and crack across the tabs. Isolated areas can be repaired; widespread curling usually means the roof has reached the end of its usable life.</li>
-  <li><strong>Missing shingles</strong> — replaced individually, with the underlayment inspected and new shingles tied into the courses above and below so water sheds correctly.</li>
-  <li><strong>Exposed nail heads and face-nailed shingles</strong> — common on older or rushed installations, these are the exact points where leaks start. We replace the affected shingles and seal the nails properly.</li>
-</ul>
-<p>For a full new roof, see our <a href="/services/roof-replacement">roof replacement in Philadelphia</a> page.</p>`,
-      },
-      {
-        heading: "Flat Roof Repair for Philadelphia Row Homes",
-        html: `<p>If you own a row home in South Philly, Fishtown, Kensington, West Philly, or any of the older city neighborhoods, you almost certainly have a flat roof — and flat roofs fail in predictable ways. We specialize in flat roof repair in Philadelphia and diagnose seam and membrane failures every day.</p>
-<ul>
-  <li><strong>EPDM rubber roof repair</strong> — seam failures, pinholes, punctures, and shrinkage pulling the membrane away from the parapet walls. Most EPDM repairs can be handled same-day with compatible patching material.</li>
-  <li><strong>Modified bitumen repair</strong> — torch-down and peel-and-stick systems split at seams and around drains as they age. We re-seam, patch, and re-detail penetrations properly.</li>
-  <li><strong>Parapet wall tie-in leaks</strong> — the single most common flat-roof leak location on Philadelphia row homes. We cut in new termination bars, install proper counter-flashing, and seal the tie-in so water has nowhere to run.</li>
-  <li><strong>Drain and scupper repair</strong> — standing water around a failing drain eats through any flat roof. We reset drains, rebuild scuppers, and re-pitch low spots where needed.</li>
-</ul>
-<p>See also our dedicated <a href="/services/flat-roof-repair">flat roof repair Philadelphia</a> service page for more detail.</p>`,
-      },
-      {
-        heading: "Chimney, Soffit, and Fascia Repairs",
-        html: `<p>The edge of your roof — soffit, fascia, and the chimney crown — is where roof repair and exterior carpentry meet. Leaks here rot wood out from the inside and often go unnoticed until paint starts bubbling or ceiling drywall stains appear near the exterior wall.</p>
-<p>We repair and replace rotted fascia boards, rebuild soffit panels and vents (maintaining proper attic ventilation), and rebuild chimney crowns and caps so water stops running down the inside of the masonry. Our <a href="/services/soffit-repair">soffit repair</a> service page covers the specific soffit and fascia work we handle across Philadelphia.</p>`,
-      },
-      {
-        heading: "Storm Damage Roof Repair in Philadelphia",
-        html: `<p>Storm damage is its own category of roof repair. The damage is often wider than it looks, the insurance claim process is time-sensitive, and the roof typically needs emergency stabilization before the permanent repair. We handle all three.</p>
-<p>For immediate stabilization — active leaks, wind damage, fallen limbs — see our <a href="/services/emergency-roof-repair">emergency roof repair Philadelphia</a> page. For storm-claim repairs with insurance documentation, our <a href="/services/storm-damage-roof-repair">storm damage roof repair</a> page walks through the process. Either way, call (267) 255-3620 — we will dispatch the same day for active leaks and provide a written, photographed damage report suitable for an insurance claim.</p>`,
-      },
-    ],
+<p>See more of <a href="/service-areas/northern-liberties">our roofing work in Northern Liberties</a> or call <a href="tel:+12672553620">(267) 255-3620</a> for a free estimate.</p>`,
+    },
   },
   {
     slug: "flat-roofing",

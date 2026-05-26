@@ -51,6 +51,30 @@ const PATHS: Record<IconKey, React.ReactNode> = {
       d="M4 6h6v6H4zM14 6h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"
     />
   ),
+  chimney: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.8}
+      d="M3 20h18M5 20V12l7-5 7 5v8M14 7V4h4v6M9 14h6M9 17h6"
+    />
+  ),
+  vent: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.8}
+      d="M3 20h18M6 20V11l3-3h6l3 3v9M9 8V5h6v3M10 12h4M10 15h4"
+    />
+  ),
+  drop: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.8}
+      d="M12 3c-2.5 4-6 8-6 12a6 6 0 0012 0c0-4-3.5-8-6-12z"
+    />
+  ),
 
   // ── callout icons ──
   snowflake: (
