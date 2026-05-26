@@ -158,71 +158,52 @@ export const services: Service[] = [
 <p>Not sure what's on your roof or what should replace it? A <a href="/services/roof-inspection">free roof inspection</a> is the right first step — we walk the roof, check the attic, and give you a written assessment before recommending anything.</p>`,
       },
       {
-        heading: "Your Roof Replacement Process — What to Expect From Start to Finish",
-        html: `<p>A full roof replacement in Philadelphia should never feel chaotic. When you hire Adilay Roofing, here is exactly how the project runs from the first call to the final walkthrough.</p>
-<ol>
-  <li><strong>Free on-site estimate.</strong> A licensed Philadelphia roofer walks your roof, inspects the decking access points, measures, and sits down with you to explain what we would do, what materials we recommend, and what it costs. No pressure, no obligation.</li>
-  <li><strong>Written proposal with materials and warranties.</strong> You get an itemized quote — shingles, underlayment, ice-and-water shield, flashing, ventilation, cleanup — with warranty terms in writing so you can compare against other estimates honestly.</li>
-  <li><strong>Permit filing.</strong> Philadelphia's Department of Licenses and Inspections requires a building permit for full replacements. We handle that paperwork under our PA184779 license.</li>
-  <li><strong>Material delivery and jobsite prep.</strong> Shingles, underlayment, and disposal container are staged before work starts. We protect landscaping, windows, and siding with tarps and plywood.</li>
-  <li><strong>Full tear-off down to the decking.</strong> Old shingles, underlayment, flashing, and damaged decking come off. We inspect every square foot of sheathing and replace anything rotted before going further.</li>
-  <li><strong>Ice-and-water shield, underlayment, and drip edge.</strong> Ice-and-water shield at eaves and valleys (critical for Philadelphia's freeze-thaw winters), synthetic underlayment across the field, drip edge on rakes and eaves.</li>
-  <li><strong>New shingles, flashing, and ventilation.</strong> Architectural or designer shingles installed to manufacturer spec, new step flashing, chimney and skylight flashing, pipe boots, and a balanced ridge-and-soffit ventilation system.</li>
-  <li><strong>Full cleanup and magnetic sweep.</strong> Your yard, driveway, and gutters leave spotless. We run a magnetic sweep for stray nails before we pack up.</li>
-  <li><strong>Final walkthrough, warranty paperwork, and photos.</strong> You get photos of the completed work, your written warranty, and a full final walkthrough with the crew lead.</li>
+        heading: "Your Roof Replacement Process",
+        html: `<ol>
+  <li><strong>Free on-site estimate</strong> + written proposal with materials and warranties.</li>
+  <li><strong>Permit filing</strong> with Philadelphia L&amp;I under our PA184779 license.</li>
+  <li><strong>Full tear-off</strong> to the decking; rotted sheathing replaced.</li>
+  <li><strong>Ice-and-water shield, underlayment, drip edge</strong> at eaves and valleys.</li>
+  <li><strong>New shingles, flashing, ventilation</strong> installed to manufacturer spec.</li>
+  <li><strong>Final walkthrough</strong> with photos, magnetic-sweep cleanup, written warranty.</li>
 </ol>
-<p>Most residential roof replacements in Philadelphia are completed in 1–3 days, depending on roof size, complexity, and weather.</p>`,
+<p>Most replacements: 1–3 days.</p>`,
       },
       {
-        heading: "Roofing Materials We Install — Architectural, Designer, and Metal",
-        html: `<p>The roofing material you choose shapes how your new roof looks, how long it lasts, and what it costs. For Philadelphia homes, we install and recommend the following.</p>
-<h3>Architectural asphalt shingles (the Philadelphia standard)</h3>
-<p>Also called dimensional or laminated shingles, these are the right call for the majority of Philadelphia homes. They resist wind up to 110–130 mph depending on the product, carry 25–30 year manufacturer warranties, and handle the Mid-Atlantic freeze-thaw climate well. Better warranty, better wind resistance, and better curb appeal than old-style three-tab shingles for a modest additional cost.</p>
+        heading: "Roofing Materials We Install",
+        html: `<h3>Architectural asphalt shingles</h3>
+<p>The Philadelphia standard — 110–130 mph wind rating, 25–30 year warranty, GAF / CertainTeed / Owens Corning.</p>
 <h3>Designer and luxury shingles</h3>
-<p>Impact-rated and designer shingles (GAF Grand Sequoia, CertainTeed Grand Manor, and similar) give slate or cedar-shake appearance in asphalt, with 50-year warranties and maximum wind resistance. Worth considering on historic Germantown, Mount Airy, and Chestnut Hill homes where curb appeal matters.</p>
-<h3>Metal roofing</h3>
-<p>Standing-seam metal roofs last 40–70 years and hold up to wind, snow, and ice better than any other residential option. A strong fit for historic homes, modern architecture, and accent sections like porches and bay windows.</p>
-<h3>Flat roof systems — EPDM, modified bitumen, TPO</h3>
-<p>For Philadelphia row homes, flat-roof additions, and commercial buildings, we install EPDM rubber, modified bitumen, and TPO single-ply membranes. Full coverage on our <a href="/services/flat-roofing">flat roofing</a> page.</p>
-<h3>Three-tab asphalt shingles</h3>
-<p>We install three-tab shingles when a homeowner specifically requests the lowest-cost option. They carry shorter warranties and less wind resistance — architectural shingles are almost always the better value.</p>`,
+<p>Impact-rated profiles (GAF Grand Sequoia, CertainTeed Grand Manor) for historic homes in Germantown, Mount Airy, Chestnut Hill — 50-year warranty.</p>
+<h3>Standing-seam metal</h3>
+<p>40–70 year service life. Best for historic homes, accents like porches and bay windows.</p>
+<p>Flat-roof system? See <a href="/services/flat-roofing">flat roofing</a> for EPDM, TPO, and modified bitumen.</p>`,
       },
       {
-        heading: "Tear-Off vs. Overlay — What's Right for Your Philadelphia Home",
-        html: `<p>Some contractors offer to "shingle over" your existing roof to save on labor and disposal. For most Philadelphia homes, we almost always recommend a full tear-off instead. Here is why.</p>
+        heading: "Tear-Off vs. Overlay",
+        html: `<p>We almost always recommend a full tear-off over a "shingle-over":</p>
 <ul>
-  <li><strong>You cannot see the decking on an overlay.</strong> Water damage, rot, and nail-popped plywood get trapped underneath the new shingles — guaranteeing another replacement in a fraction of the new roof's expected life.</li>
-  <li><strong>Weight matters.</strong> Two layers of asphalt on older Philadelphia homes adds a significant load the original framing was not designed to carry.</li>
-  <li><strong>Warranties.</strong> Most manufacturer shingle warranties are voided or reduced on overlays. A tear-off preserves the full warranty you paid for.</li>
-  <li><strong>Ventilation, flashing, and ice-and-water shield</strong> all need to be upgraded or reinstalled on a modern roof. Overlays skip all of that.</li>
-  <li><strong>Life of the new roof.</strong> Shingles installed over an old layer of shingles typically lose 3–8 years off the rated lifespan — the new roof runs hotter and traps heat against the shingle mats.</li>
+  <li><strong>Decking can't be inspected</strong> under an overlay — rot stays hidden.</li>
+  <li><strong>Manufacturer warranty</strong> is often voided on overlays.</li>
+  <li><strong>3–8 years</strong> shorter lifespan — overlays run hotter.</li>
+</ul>`,
+      },
+      {
+        heading: "Warranties in Writing",
+        html: `<p>Every Adilay replacement comes with <strong>two warranties on paper</strong>: the manufacturer's material warranty (25–50 years depending on shingle line) and our own workmanship warranty (covers proper flashing, fastening, ventilation, tie-ins). We hand over both documents before you sign — ask every bidder for the same.</p>`,
+      },
+      {
+        heading: "Financing",
+        html: `<p>$1,000–$100,000 loans through Service Finance Company — no payments until the job is done. <a href="/financing">See financing options</a>.</p>`,
+      },
+      {
+        heading: "What Makes a Philadelphia Roof Different",
+        html: `<ul>
+  <li><strong>Freeze-thaw winters</strong> — ice-and-water shield at eaves and valleys is non-negotiable.</li>
+  <li><strong>Row home pitched-to-flat transitions</strong> — South Philly, Fishtown, Kensington tie-ins matter more than the shingles.</li>
+  <li><strong>Historic homes</strong> — Germantown, Mount Airy, Chestnut Hill slate and built-up roofs need material-matched detailing.</li>
 </ul>
-<p>The only situations where we sometimes agree to an overlay are specific, limited cases with sound decking, one existing layer, and a homeowner who fully understands the trade-off. Even then, tear-off is almost always the better long-term value.</p>`,
-      },
-      {
-        heading: "Warranties That Actually Protect Your Investment",
-        html: `<p>A roof replacement in Philadelphia is a significant investment — so warranty terms matter as much as the price. Every Adilay Roofing roof replacement includes two separate warranties in writing.</p>
-<h3>Manufacturer material warranty</h3>
-<p>The shingle manufacturer warrants the materials against defects — typically 25 to 30 years on architectural shingles, up to 50 years on designer and impact-rated products. We give you the exact warranty document for the shingle you choose before you sign anything, so you can read the terms yourself.</p>
-<h3>Adilay Roofing workmanship warranty</h3>
-<p>Materials fail more rarely than installations do. Our workmanship warranty covers the roof being installed correctly — proper flashing, proper fastening, proper ventilation, proper tie-ins. If a leak develops because of how we installed it, we come back and fix it at no charge. The specific term is on your estimate in writing.</p>
-<p>We recommend any Philadelphia homeowner comparing roof replacement quotes asks every bidder for both warranties in writing. Contractors who cannot produce either document on request are not the right choice for a roof you expect to last 25+ years.</p>`,
-      },
-      {
-        heading: "Roof Replacement Financing — $1,000 to $100,000, No Payments Until Complete",
-        html: `<p>Adilay Roofing partners with Service Finance Company to offer flexible roof replacement financing for Philadelphia homeowners. Loan amounts from $1,000 to $100,000 are available, and you pay nothing until the job is complete and you are satisfied with the work. Multiple rate and term options are available — see our <a href="/financing">financing options</a> page for current offers or ask during your free estimate.</p>`,
-      },
-      {
-        heading: "What Makes a Philadelphia Roof Replacement Different",
-        html: `<p>Roofs in Philadelphia are not the same as roofs in Atlanta or Denver. A few Philadelphia-specific details we always factor into a new roof.</p>
-<ul>
-  <li><strong>Freeze-thaw winters.</strong> Ice-and-water shield at eaves and valleys is non-negotiable. Ice dams on poorly vented roofs in Northeast Philadelphia — Mayfair, Bustleton, Somerton — are a recurring cause of winter leaks.</li>
-  <li><strong>Row home parapets and flat-to-pitched transitions.</strong> Classic South Philly, Fishtown, Kensington, and West Philly row homes often pair a pitched front with a flat rubber back — the tie-in details matter more than the shingles.</li>
-  <li><strong>Shared party walls.</strong> On attached row houses, a leak on your roof can affect your neighbor's property. Proper flashing at shared walls and parapets is critical.</li>
-  <li><strong>Historic and older homes.</strong> In Germantown, Mount Airy, Chestnut Hill, and the older parts of West Philly, many homes still carry slate or original built-up roofs. Material matching and detailing matters.</li>
-  <li><strong>Philadelphia permits.</strong> L&amp;I requires a permit for full replacements; we handle it every time under our PA184779 license.</li>
-</ul>
-<p>If your roof is past 20 years old or showing signs of widespread wear, a <a href="/services/roof-inspection">free Philadelphia roof inspection</a> is the right first step. When replacement is the right answer, we put together an honest written estimate — no pressure, no surprises.</p>`,
+<p>Roof past 20? Start with a <a href="/services/roof-inspection">free roof inspection</a>.</p>`,
       },
     ],
     projectShowcase: {
@@ -246,7 +227,7 @@ export const services: Service[] = [
   <li><strong>Four attic bay windows wrapped with new vinyl siding</strong> — matched color and profile to the existing exterior.</li>
   <li><strong>New black aluminum gutters and downspouts</strong> sized for the roof area and tied into the existing drainage points.</li>
 </ul>
-<p>Project address: 153 Upland Terrace, Bala Cynwyd PA 19004 — Lower Merion Township, Montgomery County. See more of <a href="/service-areas/bala-cynwyd">our roofing work in Bala Cynwyd</a> or call <a href="tel:+12672553620">(267) 255-3620</a> for a free estimate on a similar replacement.</p>`,
+<p>See more of <a href="/service-areas/bala-cynwyd">our roofing work in Bala Cynwyd</a> or call <a href="tel:+12672553620">(267) 255-3620</a> for a free estimate on a similar replacement.</p>`,
     },
   },
   {
