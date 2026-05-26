@@ -66,7 +66,7 @@ export default function VanBanner({ text, highlight, href, variant = "red" }: Pr
       />
       <p
         className="text-white text-sm md:text-base font-medium leading-snug
-                   pl-5 md:pl-7 pr-32 sm:pr-44 md:pr-52 lg:pr-56 py-5 md:py-6 max-w-[42rem]"
+                   pl-5 md:pl-7 pr-36 sm:pr-44 md:pr-52 lg:pr-56 py-5 md:py-6 max-w-[42rem]"
       >
         {renderedText}
       </p>
@@ -75,8 +75,8 @@ export default function VanBanner({ text, highlight, href, variant = "red" }: Pr
         alt=""
         aria-hidden="true"
         loading="lazy"
-        className="pointer-events-none absolute right-0 sm:right-2 md:right-4 bottom-0
-                   w-40 sm:w-44 md:w-48 lg:w-52 h-auto drop-shadow-xl
+        className="pointer-events-none absolute -right-3 sm:right-2 md:right-4 bottom-0
+                   w-36 sm:w-44 md:w-48 lg:w-52 h-auto drop-shadow-xl
                    transition-all duration-[900ms] ease-out"
         style={{
           opacity: visible ? 1 : 0,

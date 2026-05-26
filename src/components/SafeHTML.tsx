@@ -1,9 +1,14 @@
 /**
- * SafeHTML — renders CMS HTML content with sanitization.
+ * SafeHTML — renders bodySection HTML content with sanitization.
  *
- * Only allows safe tags: <a>, <strong>, <em>, <b>, <i>, <u>, <br>, <p>, <span>
- * Only allows safe attributes on <a>: href, target, rel
- * Backward-compatible: plain text (no tags) renders normally.
+ * Inline:  <a> <strong> <em> <b> <i> <u> <br> <span>
+ * Block:   <p> <ul> <ol> <li> <h2> <h3> <h4> <h5> <h6>
+ * Attrs:   href/target/rel on <a> only
+ *
+ * Block-level list and heading tags were previously stripped, which silently
+ * collapsed every bullet list and sub-heading in services.ts /
+ * serviceBodySections.ts / locations.ts into run-on prose — the "wall of
+ * text" problem the May 26 audit surfaced.
  */
 
 const ALLOWED_TAGS = new Set([
@@ -16,6 +21,14 @@ const ALLOWED_TAGS = new Set([
   "br",
   "p",
   "span",
+  "ul",
+  "ol",
+  "li",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
 ]);
 
 const ALLOWED_ATTRS: Record<string, Set<string>> = {
