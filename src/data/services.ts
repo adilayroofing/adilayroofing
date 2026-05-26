@@ -417,7 +417,7 @@ export const services: Service[] = [
       {
         question: "How much does a roof repair cost in Philadelphia?",
         answer:
-          "Roof repair costs in Philadelphia vary depending on the type and extent of the damage. Minor repairs such as replacing a few shingles or sealing a small leak may cost a few hundred dollars, while more extensive repairs can range from $500 to $3,000 or more. We provide free estimates so you know the exact cost before any work begins.",
+          "Every roof repair is scoped from a real on-site inspection — type of failure, accessibility, materials, and whether decking work is needed all factor in. We provide a free written estimate before any work begins, with the full scope itemized so you know exactly what you're paying for. No hidden fees, no surprise add-ons.",
       },
       {
         question: "How quickly can you respond to a roof leak in Philadelphia?",
@@ -496,38 +496,37 @@ export const services: Service[] = [
       ],
     },
     materialCards: {
-      heading: "Real Repair Pricing in Philadelphia",
+      heading: "Materials & Sealants We Use",
       items: [
         {
           iconKey: "shingle",
-          title: "Single Shingle/Slate",
-          stat: "$250–$500",
-          statLabel: "typical",
-          description: "Wind-damaged or cracked shingle replaced same-day or next-day on active leaks.",
-        },
-        {
-          iconKey: "vent",
-          title: "Vent Boot Replacement",
-          stat: "$300–$650",
-          statLabel: "per stack",
-          description: "UV-cracked rubber boot replaced with new boot, flashing, and surrounding shingles.",
+          title: "GAF & CertainTeed Shingles",
+          stat: "Color-matched",
+          statLabel: "to your roof",
+          description: "Replacement shingles from the major Philly brands — standard colors like charcoal, weathered wood, and slate gray.",
         },
         {
           iconKey: "chimney",
-          title: "Chimney Flashing",
-          stat: "$850–$2,200",
-          statLabel: "rebuilt right",
-          description: "Step + counter flashing rework — the #1 leak source on Philly homes.",
+          title: "Sika Polyurethane Sealant",
+          stat: "Long-life",
+          statLabel: "weatherproof",
+          description: "Pro-grade sealant for chimney counter-flashing, flat-roof seams, and parapet-wall tie-ins where caulks fail.",
         },
         {
           iconKey: "flat",
-          title: "Flat-Roof Patch",
-          stat: "$400–$1,200",
-          statLabel: "heat-welded",
-          description: "EPDM, TPO, or modified-bitumen patch heat-welded or seamed for a permanent fix.",
+          title: "Silicone Elastomeric Coating",
+          stat: "UV-reflective",
+          statLabel: "extends roof life",
+          description: "Liquid-applied silicone for fiberglass and flat membranes — restores waterproofing without a full tear-off.",
+        },
+        {
+          iconKey: "drop",
+          title: "Ice & Water Shield",
+          stat: "Self-sealing",
+          statLabel: "at valleys & eaves",
+          description: "Self-adhering membrane at the leak-prone areas — non-negotiable on Philadelphia freeze-thaw winters.",
         },
       ],
-      footnote: `Outside these ranges? We explain why before you sign. See <a href="/financing">financing options</a> for larger repairs.`,
     },
     comparisonBlock: {
       heading: "Repair or Replace? The Honest Line We Draw",
