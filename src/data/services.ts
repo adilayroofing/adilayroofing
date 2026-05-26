@@ -60,6 +60,64 @@ export interface ProcessSteps {
   steps: { title: string; description: string }[];
 }
 
+// Material spec cards — replaces H3 sub-sections describing each material
+// option with a compact card grid (icon + stat + brand chips + 1-liner).
+export type MaterialIconKey =
+  | "shingle"
+  | "designer"
+  | "metal"
+  | "flat"
+  | "tile";
+
+export interface MaterialCard {
+  iconKey?: MaterialIconKey;
+  title: string;
+  /** Big stat displayed prominently — e.g. "25–30 yrs". */
+  stat: string;
+  statLabel: string;
+  /** Brand chips — e.g. ["GAF", "CertainTeed"]. */
+  brands?: string[];
+  description: string;
+}
+
+export interface MaterialCards {
+  heading: string;
+  items: MaterialCard[];
+  footnote?: string; // HTML allowed — used for a closing flat-roof link line.
+}
+
+// Comparison block — side-by-side ✓ recommended / ✗ avoid with concise items.
+export interface ComparisonBlock {
+  heading: string;
+  leftLabel: string;
+  leftSubtitle?: string; // e.g. "Recommended"
+  leftItems: string[];
+  rightLabel: string;
+  rightSubtitle?: string; // e.g. "Why we avoid it"
+  rightItems: string[];
+}
+
+// Icon callouts — small grid of icon + title + description tiles.
+export type CalloutIconKey =
+  | "snowflake"
+  | "row-homes"
+  | "historic"
+  | "permit"
+  | "storm"
+  | "shield";
+
+export interface IconCallout {
+  iconKey: CalloutIconKey;
+  title: string;
+  description: string;
+}
+
+export interface IconCallouts {
+  heading: string;
+  items: IconCallout[];
+  footnote?: string; // HTML allowed.
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -77,6 +135,9 @@ export interface Service {
   projectShowcase?: ProjectShowcase;
   serviceTypeCards?: ServiceTypeCards;
   processSteps?: ProcessSteps;
+  materialCards?: MaterialCards;
+  comparisonBlock?: ComparisonBlock;
+  iconCallouts?: IconCallouts;
 }
 
 export function getServicesByCategory(category: ServiceCategory): Service[] {
@@ -203,26 +264,53 @@ export const services: Service[] = [
         },
       ],
     },
+    materialCards: {
+      heading: "Roofing Materials We Install",
+      items: [
+        {
+          iconKey: "shingle",
+          title: "Architectural Asphalt",
+          stat: "25–30 yrs",
+          statLabel: "service life",
+          brands: ["GAF", "CertainTeed", "Owens Corning"],
+          description: "The Philadelphia standard — 110–130 mph wind rating, dimensional profile, strong warranty.",
+        },
+        {
+          iconKey: "designer",
+          title: "Designer Shingles",
+          stat: "50 yrs",
+          statLabel: "warranty",
+          brands: ["GAF Grand Sequoia", "CertainTeed Grand Manor"],
+          description: "Impact-rated profiles for historic Germantown, Mount Airy, and Chestnut Hill homes.",
+        },
+        {
+          iconKey: "metal",
+          title: "Standing-Seam Metal",
+          stat: "40–70 yrs",
+          statLabel: "service life",
+          description: "Best for historic homes, accents on porches and bay windows. Snow, wind, and hail durable.",
+        },
+      ],
+      footnote: `Flat-roof system? See <a href="/services/flat-roofing">flat roofing</a> for EPDM, TPO, and modified bitumen.`,
+    },
+    comparisonBlock: {
+      heading: "Tear-Off vs. Overlay",
+      leftLabel: "Tear-Off",
+      leftSubtitle: "What we recommend",
+      leftItems: [
+        "Decking fully inspected — rot replaced before new roof goes on.",
+        "Manufacturer warranty fully preserved.",
+        "Full rated lifespan of the new roof.",
+      ],
+      rightLabel: "Overlay",
+      rightSubtitle: "Why we usually avoid it",
+      rightItems: [
+        "Decking hidden — water damage stays trapped underneath.",
+        "Manufacturer warranty often voided on overlays.",
+        "3–8 years shorter lifespan — the roof runs hotter.",
+      ],
+    },
     bodySections: [
-      {
-        heading: "Roofing Materials We Install",
-        html: `<h3>Architectural asphalt shingles</h3>
-<p>The Philadelphia standard — 110–130 mph wind rating, 25–30 year warranty, GAF / CertainTeed / Owens Corning.</p>
-<h3>Designer and luxury shingles</h3>
-<p>Impact-rated profiles (GAF Grand Sequoia, CertainTeed Grand Manor) for historic homes in Germantown, Mount Airy, Chestnut Hill — 50-year warranty.</p>
-<h3>Standing-seam metal</h3>
-<p>40–70 year service life. Best for historic homes, accents like porches and bay windows.</p>
-<p>Flat-roof system? See <a href="/services/flat-roofing">flat roofing</a> for EPDM, TPO, and modified bitumen.</p>`,
-      },
-      {
-        heading: "Tear-Off vs. Overlay",
-        html: `<p>We almost always recommend a full tear-off over a "shingle-over":</p>
-<ul>
-  <li><strong>Decking can't be inspected</strong> under an overlay — rot stays hidden.</li>
-  <li><strong>Manufacturer warranty</strong> is often voided on overlays.</li>
-  <li><strong>3–8 years</strong> shorter lifespan — overlays run hotter.</li>
-</ul>`,
-      },
       {
         heading: "Warranties in Writing",
         html: `<p>Every Adilay replacement comes with <strong>two warranties on paper</strong>: the manufacturer's material warranty (25–50 years depending on shingle line) and our own workmanship warranty (covers proper flashing, fastening, ventilation, tie-ins). We hand over both documents before you sign — ask every bidder for the same.</p>`,
@@ -231,16 +319,28 @@ export const services: Service[] = [
         heading: "Financing",
         html: `<p>$1,000–$100,000 loans through Service Finance Company — no payments until the job is done. <a href="/financing">See financing options</a>.</p>`,
       },
-      {
-        heading: "What Makes a Philadelphia Roof Different",
-        html: `<ul>
-  <li><strong>Freeze-thaw winters</strong> — ice-and-water shield at eaves and valleys is non-negotiable.</li>
-  <li><strong>Row home pitched-to-flat transitions</strong> — South Philly, Fishtown, Kensington tie-ins matter more than the shingles.</li>
-  <li><strong>Historic homes</strong> — Germantown, Mount Airy, Chestnut Hill slate and built-up roofs need material-matched detailing.</li>
-</ul>
-<p>Roof past 20? Start with a <a href="/services/roof-inspection">free roof inspection</a>.</p>`,
-      },
     ],
+    iconCallouts: {
+      heading: "What Makes a Philadelphia Roof Different",
+      items: [
+        {
+          iconKey: "snowflake",
+          title: "Freeze-Thaw Winters",
+          description: "Ice-and-water shield at eaves and valleys is non-negotiable on a Philly roof.",
+        },
+        {
+          iconKey: "row-homes",
+          title: "Row-Home Tie-Ins",
+          description: "South Philly, Fishtown, Kensington pitched-to-flat tie-ins matter more than the shingles.",
+        },
+        {
+          iconKey: "historic",
+          title: "Historic Homes",
+          description: "Germantown, Mount Airy, Chestnut Hill slate and built-up roofs need material-matched detailing.",
+        },
+      ],
+      footnote: `Roof past 20? Start with a <a href="/services/roof-inspection">free roof inspection</a>.`,
+    },
     projectShowcase: {
       heading: "Recent Project: Bala Cynwyd Roof Replacement on a Main Line Home",
       location: "Bala Cynwyd, PA 19004",

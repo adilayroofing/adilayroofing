@@ -13,6 +13,7 @@ import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import VanBanner from "@/components/VanBanner";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import FeatureIcon from "@/components/FeatureIcon";
 import {
   AREA_SERVED,
   BASE_URL,
@@ -126,6 +127,15 @@ export default async function ServicePage({ params }: PageProps) {
   // Optional visual process — replaces ordered-list bodySection
   // with numbered step badges (homepage ProcessSection style).
   const processSteps = service.processSteps;
+
+  // Optional visual material spec cards.
+  const materialCards = service.materialCards;
+
+  // Optional ✓ / ✗ side-by-side comparison block (e.g. tear-off vs overlay).
+  const comparisonBlock = service.comparisonBlock;
+
+  // Optional small grid of icon callouts (e.g. "What makes a Philly roof different").
+  const iconCallouts = service.iconCallouts;
 
   const heroCTAText = "Get a FREE Estimate";
   const featuresHeading = "What's Included";
@@ -365,6 +375,158 @@ export default async function ServicePage({ params }: PageProps) {
       )}
 
       {/* ================================================================= */}
+      {/* Material Spec Cards (optional, per-service)                        */}
+      {/* Compact card grid — icon + big stat + brand chips + 1-liner.       */}
+      {/* Subtle 3px brand-red top accent on each card as a "roof edge"      */}
+      {/* motif. Replaces a list of H3 sub-sections.                         */}
+      {/* ================================================================= */}
+      {materialCards && materialCards.items.length > 0 && (
+        <section className="bg-brand-light">
+          <div className="section-padding">
+            <div className="container-wide mx-auto">
+              <h2 className="section-heading text-center mb-8 md:mb-12">
+                {materialCards.heading}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+                {materialCards.items.map((m) => (
+                  <div
+                    key={m.title}
+                    className="relative bg-white rounded-sm border border-brand-border shadow-sm pt-6 pb-5 px-5 md:pt-7 md:pb-6 md:px-6 hover:shadow-md transition-shadow"
+                  >
+                    {/* "Roof edge" accent */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[3px] bg-brand-red rounded-t-sm"
+                      aria-hidden="true"
+                    />
+                    {m.iconKey && (
+                      <div className="inline-flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-sm bg-brand-red/10 text-brand-red mb-3 md:mb-4">
+                        <FeatureIcon name={m.iconKey} className="w-6 h-6" />
+                      </div>
+                    )}
+                    <h3 className="text-lg md:text-xl font-bold text-brand-dark mb-2">
+                      {m.title}
+                    </h3>
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-2xl md:text-3xl font-bold text-brand-red leading-none">
+                        {m.stat}
+                      </span>
+                      <span className="text-xs md:text-sm text-brand-gray uppercase tracking-wide">
+                        {m.statLabel}
+                      </span>
+                    </div>
+                    <p className="text-sm md:text-base text-brand-gray leading-snug mb-3">
+                      {m.description}
+                    </p>
+                    {m.brands && m.brands.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {m.brands.map((b) => (
+                          <span
+                            key={b}
+                            className="inline-block text-xs font-semibold text-brand-dark bg-brand-light border border-brand-border rounded-sm px-2 py-1"
+                          >
+                            {b}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              {materialCards.footnote && (
+                <p
+                  className="text-center text-sm md:text-base text-brand-gray mt-6 md:mt-8 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700"
+                  dangerouslySetInnerHTML={{ __html: materialCards.footnote }}
+                />
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================= */}
+      {/* Comparison Block (optional, per-service)                           */}
+      {/* Side-by-side ✓ recommended / ✗ avoid. Stacked on mobile, 2-col    */}
+      {/* on tablet+. Same "roof edge" accent on the recommended side.       */}
+      {/* ================================================================= */}
+      {comparisonBlock && (
+        <section className="bg-white">
+          <div className="section-padding">
+            <div className="container-narrow mx-auto">
+              <h2 className="section-heading text-center mb-8 md:mb-12">
+                {comparisonBlock.heading}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+                {/* Recommended side */}
+                <div className="relative bg-white rounded-sm border-2 border-brand-red shadow-sm p-5 md:p-7">
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[3px] bg-brand-red rounded-t-sm"
+                    aria-hidden="true"
+                  />
+                  <div className="flex items-center gap-2 mb-4 md:mb-5">
+                    <span className="inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-brand-red text-white">
+                      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="text-lg md:text-xl font-bold text-brand-dark leading-tight">
+                        {comparisonBlock.leftLabel}
+                      </p>
+                      {comparisonBlock.leftSubtitle && (
+                        <p className="text-xs md:text-sm text-brand-red font-semibold uppercase tracking-wide">
+                          {comparisonBlock.leftSubtitle}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {comparisonBlock.leftItems.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm md:text-base text-brand-dark leading-snug">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-brand-red flex-shrink-0 mt-0.5 md:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Avoid side */}
+                <div className="relative bg-brand-light rounded-sm border border-brand-border p-5 md:p-7">
+                  <div className="flex items-center gap-2 mb-4 md:mb-5">
+                    <span className="inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-brand-gray/20 text-brand-gray">
+                      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 6l12 12M6 18L18 6" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="text-lg md:text-xl font-bold text-brand-dark leading-tight">
+                        {comparisonBlock.rightLabel}
+                      </p>
+                      {comparisonBlock.rightSubtitle && (
+                        <p className="text-xs md:text-sm text-brand-gray font-semibold uppercase tracking-wide">
+                          {comparisonBlock.rightSubtitle}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {comparisonBlock.rightItems.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm md:text-base text-brand-gray leading-snug">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-brand-gray flex-shrink-0 mt-0.5 md:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 6l12 12M6 18L18 6" />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================= */}
       {/* Body Sections — deep content with H2s for keyword targeting       */}
       {/* ================================================================= */}
       {bodySections.length > 0 && (
@@ -385,6 +547,51 @@ export default async function ServicePage({ params }: PageProps) {
                   </article>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================= */}
+      {/* Icon Callouts (optional, per-service)                              */}
+      {/* Small grid of icon + title + 1-liner tiles. Local-context items    */}
+      {/* that benefit from a quick scannable read.                          */}
+      {/* ================================================================= */}
+      {iconCallouts && iconCallouts.items.length > 0 && (
+        <section className="bg-brand-light">
+          <div className="section-padding">
+            <div className="container-wide mx-auto">
+              <h2 className="section-heading text-center mb-8 md:mb-12">
+                {iconCallouts.heading}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+                {iconCallouts.items.map((c) => (
+                  <div
+                    key={c.title}
+                    className="relative bg-white rounded-sm border border-brand-border shadow-sm pt-6 pb-5 px-5 md:pt-7 md:pb-6 md:px-6 hover:shadow-md transition-shadow text-center md:text-left"
+                  >
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[3px] bg-brand-red rounded-t-sm"
+                      aria-hidden="true"
+                    />
+                    <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-sm bg-brand-red/10 text-brand-red mb-3 md:mb-4 mx-auto md:mx-0">
+                      <FeatureIcon name={c.iconKey} className="w-7 h-7 md:w-8 md:h-8" />
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold text-brand-dark mb-2 leading-tight">
+                      {c.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-brand-gray leading-snug">
+                      {c.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              {iconCallouts.footnote && (
+                <p
+                  className="text-center text-sm md:text-base text-brand-gray mt-6 md:mt-8 [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700"
+                  dangerouslySetInnerHTML={{ __html: iconCallouts.footnote }}
+                />
+              )}
             </div>
           </div>
         </section>
