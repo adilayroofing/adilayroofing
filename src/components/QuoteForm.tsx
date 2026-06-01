@@ -490,7 +490,7 @@ export default function QuoteForm() {
                     type="text"
                     value={formData.customServiceArea}
                     onChange={(e) => updateField("customServiceArea", e.target.value)}
-                    placeholder="e.g. Doylestown, Trenton, NJ..."
+                    placeholder="e.g. Doylestown, Newtown, PA..."
                     className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border border-brand-border bg-white text-brand-dark text-sm md:text-base
                                focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red
                                transition-colors"

@@ -70,7 +70,7 @@ export async function POST(request: Request) {
     {
       slug: "/service-areas",
       title: "Service Areas | Adilay Roofing Philadelphia",
-      description: "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County, Chester County & Riverside NJ. Free estimates — (267) 255-3620.",
+      description: "Adilay Roofing serves Philadelphia, Bucks County, Montgomery County, Delaware County & Chester County. Free estimates — (267) 255-3620.",
     },
     {
       slug: "/blog",

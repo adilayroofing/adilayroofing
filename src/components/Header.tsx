@@ -14,8 +14,6 @@ const countyOrder = [
   "Bucks County",
   "Delaware County",
   "Chester County",
-  "Camden County",
-  "Burlington County",
 ];
 const locationsByCounty = countyOrder
   .map((county) => {

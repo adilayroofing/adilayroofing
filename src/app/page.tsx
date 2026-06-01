@@ -112,12 +112,6 @@ const HOMEPAGE_AREA_SLUGS: Record<string, string[]> = {
     "havertown",
   ],
   "Chester County, PA": ["chester-county", "west-chester"],
-  "South Jersey": [
-    "camden-county",
-    "cherry-hill",
-    "burlington-county",
-    "mount-laurel",
-  ],
 };
 
 // ---------------------------------------------------------------------------

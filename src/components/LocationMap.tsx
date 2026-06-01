@@ -2,7 +2,7 @@ type Props = {
   /** Place name as displayed (e.g., "Yardley" or "Bucks County") */
   name: string;
   /** Two-letter state abbreviation */
-  state: "PA" | "NJ";
+  state: "PA";
   /** Containing county (e.g., "Bucks County") */
   county: string;
   /** True if this page IS the county hub (no town drilldown needed). */

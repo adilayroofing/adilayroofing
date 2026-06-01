@@ -565,7 +565,7 @@ export default async function LocationPage({ params }: PageProps) {
                 </h2>
                 <p className="text-brand-gray text-center mb-10 max-w-2xl mx-auto">
                   Adilay Roofing also serves homeowners in these neighboring
-                  communities. Same crew, same {location.state === "PA" ? "Pennsylvania" : "New Jersey"} licensing,
+                  communities. Same crew, same Pennsylvania licensing,
                   same straightforward pricing.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">

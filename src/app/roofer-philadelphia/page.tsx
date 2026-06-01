@@ -110,7 +110,7 @@ const faqs = [
   {
     question: "Do you serve areas outside Philadelphia?",
     answer:
-      "Yes. Beyond Philadelphia itself, we serve the four surrounding counties: Bucks, Montgomery, Delaware, and Chester — and parts of southern New Jersey (Camden and Burlington counties). That covers most of the greater Philadelphia metro area. Check our service areas page for a complete list of towns.",
+      "Yes. Beyond Philadelphia itself, we serve the four surrounding Pennsylvania counties: Bucks, Montgomery, Delaware, and Chester. That covers most of the greater Philadelphia metro area on the PA side. Check our service areas page for a complete list of towns.",
   },
 ];
 

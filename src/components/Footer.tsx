@@ -19,7 +19,7 @@ const TOP_AREA_SLUGS = [
 
 // Pre-compute county groups for the "All Service Areas" footer block.
 // Built dynamically from locations data so every county is included
-// (no hardcoded list — guarantees Trenton/Mercer and any future county is covered).
+// (no hardcoded list — any future county added to locations is covered).
 const allCounties = Array.from(new Set(locations.map((l) => l.county)));
 const allLocationGroups = allCounties
   .map((county) => {

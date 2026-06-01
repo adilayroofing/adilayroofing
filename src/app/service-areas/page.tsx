@@ -25,9 +25,9 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
   return {
-    title: "Service Areas — Philadelphia, PA & South Jersey",
+    title: "Service Areas — Philadelphia & Surrounding PA Counties",
     description:
-      "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties PA plus Camden & Burlington Counties NJ. Free estimates — (267) 255-3620.",
+      "Adilay Roofing serves Philadelphia, Bucks, Montgomery, Delaware & Chester Counties, PA. Licensed PA184779. Free estimates — call (267) 255-3620.",
     keywords: [
       "roofer near me Philadelphia",
       "roofing contractor near me",
@@ -55,8 +55,6 @@ const countyOrder = [
   "Bucks County",
   "Delaware County",
   "Chester County",
-  "Camden County",
-  "Burlington County",
 ];
 
 const locationsByCounty = countyOrder

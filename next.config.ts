@@ -153,6 +153,28 @@ const nextConfig: NextConfig = {
       // Legacy standalone town URL (trenton page not yet built — send to index)
       { source: "/trenton", destination: "/service-areas", permanent: true },
 
+      // ======================================================================
+      // Removed NJ service area pages (2026-06) — Adilay Roofing no longer
+      // services New Jersey. Existing indexed URLs 301 to the PA service-areas
+      // index so backlink equity is preserved and Google drops them naturally.
+      // ======================================================================
+      { source: "/service-areas/camden-county", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/burlington-county", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/riverside-nj", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/cherry-hill", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/camden", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/pennsauken", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/gloucester-city", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/haddonfield", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/collingswood", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/voorhees", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/mount-laurel", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/marlton", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/willingboro", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/burlington", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/evesham", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/trenton", destination: "/service-areas", permanent: true },
+
       // Legacy WordPress blog archive permalinks (YYYY/MM/slug/)
       {
         source: "/:year(\\d{4})/:month(\\d{2})/:slug*",
