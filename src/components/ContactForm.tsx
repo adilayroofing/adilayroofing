@@ -322,6 +322,10 @@ export default function ContactForm() {
               </div>
             )}
 
+            <p className="text-xs text-gray-500 mt-3 leading-snug">
+              By submitting, you agree that Adilay Roofing may contact you by phone, text, and email about your request. Msg frequency varies; msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our <Link href="/privacy" className="underline hover:text-gray-700">Privacy Policy</Link>.
+            </p>
+
             <div className="flex flex-col-reverse sm:flex-row gap-2 sm:gap-3 pt-1">
               <button
                 type="button"
