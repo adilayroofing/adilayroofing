@@ -439,6 +439,63 @@ export default async function Home() {
       </section>
 
       {/* ============================================ */}
+      {/* LATEST PROJECT SHOWCASE — Bala Cynwyd        */}
+      {/* Wide, compact section before Services so     */}
+      {/* visitors see real recent work first.         */}
+      {/* ============================================ */}
+      <section
+        className="bg-shingle"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(248, 247, 247, 0.45), rgba(248, 247, 247, 0.45)), url("/images/shingle-bg.jpg")',
+        }}
+      >
+        <div className="container-wide mx-auto px-4 py-8 md:py-12">
+          <ScrollReveal>
+            <div className="text-center mb-5 md:mb-7">
+              <h2 className="section-heading">
+                Our Latest Roofing Projects
+              </h2>
+              <p className="section-subheading mx-auto mt-3">
+                Full roof replacement on a Main Line home in{" "}
+                <Link
+                  href="/service-areas/bala-cynwyd"
+                  className="text-brand-red font-semibold hover:underline"
+                >
+                  Bala Cynwyd, PA
+                </Link>
+                {" "}&mdash; drag the slider to see the before and after.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <figure className="max-w-3xl mx-auto">
+              <BeforeAfterSlider
+                beforeSrc="/images/projects/roof-replacement-bala-cynwyd-before.jpg"
+                beforeAlt="Before: aging asphalt shingle roof with worn-out gutters on a Main Line home in Bala Cynwyd, PA 19004 — prior to full tear-off by Adilay Roofing."
+                afterSrc="/images/projects/roof-replacement-bala-cynwyd-after.jpg"
+                afterAlt="After: new GAF Timberline 3D architectural shingles in Oyster Grey, black aluminum gutters, and vinyl-wrapped attic bay windows on the same Bala Cynwyd Main Line home — completed by Adilay Roofing."
+                aspectClass="aspect-[4/5] sm:aspect-square md:aspect-square"
+                objectPosition="center 60%"
+                afterImgClassName="scale-125 origin-bottom sm:scale-100"
+              />
+              <figcaption className="text-center text-sm text-brand-gray mt-4">
+                GAF Timberline HDZ architectural shingles, new black aluminum gutters, and wrapped attic bay windows &mdash;{" "}
+                <Link
+                  href="/services/roof-replacement"
+                  className="text-brand-red font-semibold hover:underline"
+                >
+                  see the full project
+                </Link>
+                .
+              </figcaption>
+            </figure>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* SERVICES SECTION                             */}
       {/* ============================================ */}
       <section className="section-padding bg-white">

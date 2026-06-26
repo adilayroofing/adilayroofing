@@ -35,6 +35,23 @@ interface Props {
    *  about 1.16). */
   aspectClass?: string;
   className?: string;
+  /** When true, fits the whole image inside the container (object-contain)
+   *  rather than cropping to fill (object-cover). Use when the source aspect
+   *  doesn't match the container — e.g. a portrait photo in a landscape box.
+   *  Pairs with `bgClass` to set the letterbox color. */
+  contain?: boolean;
+  /** Background behind the images when `contain` is true. Defaults to a
+   *  light brand gray so letterbox bars don't look like a broken layout. */
+  bgClass?: string;
+  /** CSS object-position value used when cropping (object-cover). Default
+   *  "center" centers the crop. Use values like "center 75%" to bias the
+   *  visible window toward the bottom of the source — useful for exterior
+   *  house photos where the sky should be cropped more than the ground. */
+  objectPosition?: string;
+  /** Extra Tailwind classes applied only to the AFTER image. Useful for a
+   *  responsive zoom (e.g. `scale-110 sm:scale-100`) so the after shot is
+   *  framed more tightly on smaller breakpoints. */
+  afterImgClassName?: string;
 }
 
 export default function BeforeAfterSlider({
@@ -44,7 +61,15 @@ export default function BeforeAfterSlider({
   afterAlt,
   aspectClass = "aspect-[7/6]",
   className = "",
+  contain = false,
+  bgClass = "bg-brand-light",
+  objectPosition,
+  afterImgClassName = "",
 }: Props) {
+  const fitClass = contain ? "object-contain" : "object-cover";
+  const imgStyle: React.CSSProperties = {
+    objectPosition: objectPosition ?? "center",
+  };
   const containerRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState(50);
@@ -177,7 +202,7 @@ export default function BeforeAfterSlider({
       onPointerMove={onContainerPointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
-      className={`relative w-full overflow-hidden rounded-sm select-none touch-pan-y shadow-lg ${aspectClass} ${className}`}
+      className={`relative w-full overflow-hidden rounded-sm select-none touch-pan-y shadow-lg ${contain ? bgClass : ""} ${aspectClass} ${className}`}
       role="region"
       aria-label="Before and after roof replacement comparison"
     >
@@ -187,7 +212,8 @@ export default function BeforeAfterSlider({
         alt={afterAlt}
         draggable={false}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        className={`absolute inset-0 w-full h-full ${fitClass} pointer-events-none ${afterImgClassName}`}
+        style={imgStyle}
       />
 
       {/* Before (top layer, clipped on the right) */}
@@ -196,8 +222,9 @@ export default function BeforeAfterSlider({
         alt={beforeAlt}
         draggable={false}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        className={`absolute inset-0 w-full h-full ${fitClass} pointer-events-none`}
         style={{
+          ...imgStyle,
           clipPath: `inset(0 ${100 - position}% 0 0)`,
           transition,
         }}
