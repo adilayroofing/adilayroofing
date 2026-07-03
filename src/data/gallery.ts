@@ -58,6 +58,23 @@ export const galleryProjects: GalleryProject[] = [
     objectPosition: "center 45%",
   },
   {
+    id: "victorian-replacement",
+    title: "Victorian Roof Replacement — Philadelphia",
+    category: "roof-replacement",
+    location: "Philadelphia, PA",
+    serviceSlug: "roof-replacement",
+    materials:
+      "Architectural shingles · Ice-and-water shield · Synthetic underlayment · New decking",
+    description:
+      "Full tear-off and re-roof on a Philadelphia Victorian — start to finish in four stages. (1) Full tear-off and new decking. (2) Synthetic underlayment plus ice-and-water shield at eaves, valleys, and penetrations. (3) Architectural shingles installed to manufacturer spec. (4) Completed roof, built to last 30+ years. Victorian and historic homes across Philly are our specialty.",
+    beforeImage: "/images/victorian-roof-replacement-philadelphia-before.png",
+    beforeAlt:
+      "Before: Adilay Roofing crew installing new underlayment and slate-look shingles on a Philadelphia Victorian roof — mid-replacement.",
+    afterImage: "/images/victorian-roof-replacement-philadelphia-after.jpg",
+    afterAlt:
+      "After: completed Victorian roof replacement by Adilay Roofing in Philadelphia — new architectural shingles, turret detail, and full roofline finished.",
+  },
+  {
     id: "multi-unit-replacement",
     title: "Multi-Unit Townhouse Roof Replacement",
     category: "roof-replacement",

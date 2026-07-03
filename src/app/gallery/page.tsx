@@ -286,7 +286,7 @@ function ProjectSliderCard({ project }: { project: GalleryProject }) {
         afterSrc={project.afterImage}
         afterAlt={project.afterAlt}
         aspectClass="aspect-[4/5] md:aspect-[4/3]"
-        objectPosition={project.objectPosition ?? "center 45%"}
+        contain
       />
 
       <div className="p-4 md:p-5">
