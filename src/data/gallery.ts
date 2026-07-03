@@ -20,6 +20,12 @@ export interface GalleryProject {
   /** Optional custom object-position for object-cover framing. Defaults to
    *  "center 45%" (biases crop up to keep roof + house visible). */
   objectPosition?: string;
+  /** Tailwind aspect class for the slider box. Chosen per-project to
+   *  match the source photo aspect so the container fits the image with
+   *  no letterbox padding. Portrait 3:4 photos get `aspect-[3/4]`,
+   *  Victorian near-square photos get `aspect-[7/6]`, landscape sources
+   *  get `aspect-[3/2]`, etc. */
+  aspectClass?: string;
 }
 
 export const galleryCategories = [
@@ -55,7 +61,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/projects/roof-replacement-bala-cynwyd-after.jpg",
     afterAlt:
       "After: new GAF Timberline 3D architectural shingles in Oyster Grey, black aluminum gutters, and vinyl-wrapped attic bay windows on the same Bala Cynwyd Main Line home — completed by Adilay Roofing.",
-    objectPosition: "center 45%",
+    aspectClass: "aspect-[3/4]",
   },
   {
     id: "victorian-replacement",
@@ -73,6 +79,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/victorian-roof-replacement-philadelphia-after.jpg",
     afterAlt:
       "After: completed Victorian roof replacement by Adilay Roofing in Philadelphia — new architectural shingles, turret detail, and full roofline finished.",
+    aspectClass: "aspect-[7/6]",
   },
   {
     id: "multi-unit-replacement",
@@ -90,7 +97,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-8-after.jpg",
     afterAlt:
       "After: new architectural shingle roof with clean flashing and ridge vent on the Philadelphia multi-unit townhouse — installed by Adilay Roofing.",
-    objectPosition: "center 50%",
+    aspectClass: "aspect-[3/4]",
   },
   {
     id: "shingle-roof-replacement",
@@ -108,7 +115,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-7-after.jpg",
     afterAlt:
       "After: brand new architectural shingle roof on the same Philadelphia row home — installed by Adilay Roofing.",
-    objectPosition: "center 50%",
+    aspectClass: "aspect-[3/2]",
   },
   {
     id: "historic-home-replacement",
@@ -126,7 +133,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-6-after.png",
     afterAlt:
       "After: new architectural shingle roof with clean lines and proper flashing on the same Philadelphia home — completed by Adilay Roofing.",
-    objectPosition: "center 45%",
+    aspectClass: "aspect-[4/5]",
   },
 
   // ── Roof Repair ─────────────────────────────────────────────────────
@@ -147,7 +154,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/projects/roof-repair-northern-liberties-after.jpg",
     afterAlt:
       "Northern Liberties Philadelphia rooftop after repair — fiberglass membrane sealed with flashing cement and silicone elastomeric coating, stucco wall patched and waterproofed, by Adilay Roofing.",
-    objectPosition: "center 50%",
+    aspectClass: "aspect-[3/4]",
   },
   {
     id: "storm-damage-repair",
@@ -165,7 +172,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-2-after.jpg",
     afterAlt:
       "After: matched architectural shingles woven into the storm-damaged Montgomery County roof — repaired by Adilay Roofing.",
-    objectPosition: "center 45%",
+    aspectClass: "aspect-[2/3]",
   },
   {
     id: "decking-shingles-repair",
@@ -183,7 +190,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-4-after.jpg",
     afterAlt:
       "After: new decking with matched architectural shingles blended into the surrounding roof on the same Philadelphia home — repaired by Adilay Roofing.",
-    objectPosition: "center 45%",
+    aspectClass: "aspect-[6/7]",
   },
 
   // ── Flat Roofing ────────────────────────────────────────────────────
@@ -203,7 +210,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-3-after.jpg",
     afterAlt:
       "After: new EPDM rubber flat roof on the same Philadelphia row home — clean drainage and sealed penetrations, installed by Adilay Roofing.",
-    objectPosition: "center 50%",
+    aspectClass: "aspect-[3/4]",
   },
 
   // ── Shingle Roofing (dedicated shingle category) ────────────────────
@@ -223,7 +230,7 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-1-after.jpg",
     afterAlt:
       "After: new architectural shingle roof with seamless aluminum gutters and gutter guards on the same Chester County PA home — installed by Adilay Roofing.",
-    objectPosition: "center 45%",
+    aspectClass: "aspect-[2/3]",
   },
 
   // ── Siding ──────────────────────────────────────────────────────────
@@ -243,6 +250,6 @@ export const galleryProjects: GalleryProject[] = [
     afterImage: "/images/before-after-5-after.jpg",
     afterAlt:
       "After: new premium vinyl siding with clean aluminum trim on the same Philadelphia row home — installed by Adilay Roofing.",
-    objectPosition: "center 50%",
+    aspectClass: "aspect-[4/5]",
   },
 ];
