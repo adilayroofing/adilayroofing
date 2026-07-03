@@ -285,7 +285,8 @@ function ProjectSliderCard({ project }: { project: GalleryProject }) {
         beforeAlt={project.beforeAlt}
         afterSrc={project.afterImage}
         afterAlt={project.afterAlt}
-        aspectClass={project.aspectClass ?? "aspect-[3/4]"}
+        aspectClass={`${project.aspectClass ?? "aspect-[3/4]"} md:aspect-square`}
+        contain
       />
 
       <div className="p-4 md:p-5">
