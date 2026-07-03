@@ -2,10 +2,24 @@ export interface GalleryProject {
   id: string;
   title: string;
   category: string; // matches service slugs
+  /** Short scope summary (~180-260 chars). Written for both readers and
+   *  SEO — includes materials + service type where possible. */
   description: string;
   location: string;
-  beforeImage?: string; // path like "/images/gallery/project-1-before.jpg"
-  afterImage?: string; // path like "/images/gallery/project-1-after.jpg"
+  /** Optional service-area slug for a hyperlocal internal link. */
+  locationSlug?: string;
+  /** Optional related service slug (deep-link to full service page). */
+  serviceSlug?: string;
+  /** Optional. Materials chip line, e.g. "GAF Timberline HDZ · Ice-and-water
+   *  shield · Aluminum drip edge". Short comma or middot list. */
+  materials?: string;
+  beforeImage: string;
+  beforeAlt: string;
+  afterImage: string;
+  afterAlt: string;
+  /** Optional custom object-position for object-cover framing. Defaults to
+   *  "center 45%" (biases crop up to keep roof + house visible). */
+  objectPosition?: string;
 }
 
 export const galleryCategories = [
@@ -15,112 +29,203 @@ export const galleryCategories = [
   { label: "Flat Roofing", value: "flat-roofing" },
   { label: "Shingle Roofing", value: "shingle-roofing" },
   { label: "Siding", value: "siding" },
-  { label: "Gutters", value: "gutters" },
 ];
 
+/**
+ * Ordered display list. Category order (Roof Replacement first, then Repair,
+ * Flat, Shingle, Siding) doubles as the section grouping on the gallery
+ * page, so keep like-categories adjacent.
+ */
 export const galleryProjects: GalleryProject[] = [
+  // ── Roof Replacement ────────────────────────────────────────────────
   {
-    id: "project-1",
-    title: "Complete Roof Replacement",
+    id: "bala-cynwyd-replacement",
+    title: "Main Line Roof Replacement — Bala Cynwyd",
     category: "roof-replacement",
+    location: "Bala Cynwyd, PA 19004",
+    locationSlug: "bala-cynwyd",
+    serviceSlug: "roof-replacement",
+    materials:
+      "GAF Timberline HDZ · Ice-and-water shield · Synthetic underlayment · Black aluminum gutters",
     description:
-      "Full tear-off and replacement with 50-year architectural shingles. Included new ice barrier, underlayment, and flashing throughout.",
-    location: "Philadelphia, PA",
-    beforeImage: "/images/before-after-6-before.png",
-    afterImage: "/images/before-after-6-after.png",
+      "Full tear-off and re-roof on a stone Main Line home. New GAF Timberline HDZ architectural shingles in Oyster Grey, ice-and-water shield at eaves and valleys, and new black aluminum gutters — plus vinyl-wrapped attic bay windows to match the exterior.",
+    beforeImage: "/images/projects/roof-replacement-bala-cynwyd-before.jpg",
+    beforeAlt:
+      "Before: aging asphalt shingle roof with worn-out gutters on a Main Line home in Bala Cynwyd, PA 19004 — prior to full tear-off by Adilay Roofing.",
+    afterImage: "/images/projects/roof-replacement-bala-cynwyd-after.jpg",
+    afterAlt:
+      "After: new GAF Timberline 3D architectural shingles in Oyster Grey, black aluminum gutters, and vinyl-wrapped attic bay windows on the same Bala Cynwyd Main Line home — completed by Adilay Roofing.",
+    objectPosition: "center 45%",
   },
   {
-    id: "project-2",
-    title: "Flat Roof EPDM Installation",
-    category: "flat-roofing",
-    description:
-      "EPDM rubber membrane installation on a Philadelphia row home flat roof. Full tear-off, new decking, and sealed membrane with proper drainage.",
-    location: "Philadelphia, PA",
-    beforeImage: "/images/before-after-4-before.jpg",
-    afterImage: "/images/before-after-4-after.jpg",
-  },
-  {
-    id: "project-3",
-    title: "Storm Damage Repair",
-    category: "roof-repair",
-    description:
-      "Emergency roof repair after severe storm damage. Replaced damaged shingles, repaired decking, and restored full weatherproofing.",
-    location: "Montgomery County, PA",
-    beforeImage: "/images/before-after-2-before.jpg",
-    afterImage: "/images/before-after-2-after.jpg",
-  },
-  {
-    id: "project-4",
-    title: "Vinyl Siding Installation",
-    category: "siding",
-    description:
-      "Complete vinyl siding installation on a Philadelphia row home. Removed old siding, installed house wrap and premium vinyl with clean trim detail.",
-    location: "Philadelphia, PA",
-    beforeImage: "/images/before-after-5-before.jpg",
-    afterImage: "/images/before-after-5-after.jpg",
-  },
-  {
-    id: "project-5",
-    title: "Shingle Roof & Gutter System",
-    category: "shingle-roofing",
-    description:
-      "New architectural shingle roof with seamless aluminum gutter system. Included custom downspouts and gutter guards.",
-    location: "Chester County, PA",
-    beforeImage: "/images/before-after-1-before.jpg",
-    afterImage: "/images/before-after-1-after.jpg",
-  },
-  {
-    id: "project-6",
-    title: "Gutter Replacement & Guards",
-    category: "gutters",
-    description:
-      "Removed old, damaged gutters and installed new seamless aluminum system with leaf guards to prevent clogging.",
-    location: "Bucks County, PA",
-  },
-  {
-    id: "project-7",
-    title: "Flat Roof Membrane Replacement",
-    category: "flat-roofing",
-    description:
-      "Complete flat roof membrane replacement on a commercial property. Installed new EPDM membrane with improved drainage and sealed all penetrations.",
-    location: "Philadelphia, PA",
-    beforeImage: "/images/before-after-3-before.jpg",
-    afterImage: "/images/before-after-3-after.jpg",
-  },
-  {
-    id: "project-8",
-    title: "Historic Home Restoration",
+    id: "multi-unit-replacement",
+    title: "Multi-Unit Townhouse Roof Replacement",
     category: "roof-replacement",
-    description:
-      "Careful roof replacement on a 100-year-old home. Removed layers of old roofing, repaired all decking, and installed modern shingles while preserving character.",
     location: "Philadelphia, PA",
-  },
-  {
-    id: "project-9",
-    title: "Leak Repair & Prevention",
-    category: "roof-repair",
+    serviceSlug: "roof-replacement",
+    materials:
+      "Architectural shingles · Step flashing · Ridge vent",
     description:
-      "Diagnosed and repaired persistent leak caused by faulty flashing. Installed new step flashing and sealed all vulnerable areas.",
-    location: "Bucks County, PA",
-  },
-  {
-    id: "project-11",
-    title: "Multi-Unit Roof Replacement",
-    category: "roof-replacement",
-    description:
-      "Full roof replacement on a multi-unit townhouse building. Our crew completed a full tear-off and installed new architectural shingles with proper flashing and ventilation.",
-    location: "Philadelphia, PA",
+      "Full tear-off and re-roof on a Philadelphia multi-unit townhouse building. Old shingles and underlayment removed, damaged decking replaced, then a new architectural shingle system installed with proper step flashing and ridge ventilation.",
     beforeImage: "/images/before-after-8-before.jpg",
+    beforeAlt:
+      "Before: worn asphalt shingle roof on a multi-unit Philadelphia townhouse building — end of service life, prior to tear-off by Adilay Roofing.",
     afterImage: "/images/before-after-8-after.jpg",
+    afterAlt:
+      "After: new architectural shingle roof with clean flashing and ridge vent on the Philadelphia multi-unit townhouse — installed by Adilay Roofing.",
+    objectPosition: "center 50%",
   },
   {
-    id: "project-10",
-    title: "Shingle Roof Replacement",
+    id: "shingle-roof-replacement",
+    title: "Shingle Roof Replacement — Philadelphia Row Home",
     category: "roof-replacement",
-    description:
-      "Complete tear-off and shingle replacement with new underlayment. Our crew installed architectural shingles for long-lasting protection.",
     location: "Philadelphia, PA",
+    serviceSlug: "roof-replacement",
+    materials:
+      "Architectural shingles · Synthetic underlayment · Aluminum drip edge",
+    description:
+      "Complete tear-off and shingle replacement on a Philadelphia row home. New synthetic underlayment, aluminum drip edge, and architectural shingles installed to manufacturer spec — long-lasting weather protection for a busy city block.",
     beforeImage: "/images/before-after-7-before.jpg",
+    beforeAlt:
+      "Before: aged asphalt shingle roof on a Philadelphia row home — cupping and granule loss visible, prior to replacement.",
     afterImage: "/images/before-after-7-after.jpg",
+    afterAlt:
+      "After: brand new architectural shingle roof on the same Philadelphia row home — installed by Adilay Roofing.",
+    objectPosition: "center 50%",
+  },
+  {
+    id: "historic-home-replacement",
+    title: "Historic Home Roof Replacement",
+    category: "roof-replacement",
+    location: "Philadelphia, PA",
+    serviceSlug: "roof-replacement",
+    materials:
+      "Architectural shingles · Decking repair · Ice-and-water shield",
+    description:
+      "Careful roof replacement on a Philadelphia home. Multiple layers of old roofing removed, damaged decking repaired, and new architectural shingles installed with ice-and-water shield at every eave, valley, and penetration.",
+    beforeImage: "/images/before-after-6-before.png",
+    beforeAlt:
+      "Before: weathered multi-layer shingle roof on a Philadelphia home — prior to full tear-off and decking repair by Adilay Roofing.",
+    afterImage: "/images/before-after-6-after.png",
+    afterAlt:
+      "After: new architectural shingle roof with clean lines and proper flashing on the same Philadelphia home — completed by Adilay Roofing.",
+    objectPosition: "center 45%",
+  },
+
+  // ── Roof Repair ─────────────────────────────────────────────────────
+  {
+    id: "northern-liberties-repair",
+    title: "Fiberglass Flat Roof Repair — Northern Liberties",
+    category: "roof-repair",
+    location: "Northern Liberties, Philadelphia",
+    locationSlug: "northern-liberties",
+    serviceSlug: "roof-repair",
+    materials:
+      "Flashing cement · Sika polyurethane · Silicone elastomeric coating",
+    description:
+      "Cracks in three sections of a Northern Liberties fiberglass roof — sealed with flashing cement and Sika polyurethane, then coated with silicone elastomeric to reflect UV and extend service life. Stucco wall patched and waterproofed at the roof-wall transition.",
+    beforeImage: "/images/projects/roof-repair-northern-liberties-during.jpg",
+    beforeAlt:
+      "Northern Liberties Philadelphia rooftop mid-repair — fiberglass roof with cracks along the membrane and wall edge before sealing, by Adilay Roofing.",
+    afterImage: "/images/projects/roof-repair-northern-liberties-after.jpg",
+    afterAlt:
+      "Northern Liberties Philadelphia rooftop after repair — fiberglass membrane sealed with flashing cement and silicone elastomeric coating, stucco wall patched and waterproofed, by Adilay Roofing.",
+    objectPosition: "center 50%",
+  },
+  {
+    id: "storm-damage-repair",
+    title: "Storm Damage Roof Repair",
+    category: "roof-repair",
+    location: "Montgomery County, PA",
+    serviceSlug: "storm-damage-roof-repair",
+    materials:
+      "Matched architectural shingles · Step flashing · Decking repair",
+    description:
+      "Emergency repair after a severe storm blew off shingles and exposed the decking. Water-damaged sheathing cut out and replaced, ice-and-water shield installed, and matched shingles woven in so the repair reads seamless against the existing roof.",
+    beforeImage: "/images/before-after-2-before.jpg",
+    beforeAlt:
+      "Before: storm-damaged Montgomery County roof with missing shingles and exposed decking — prior to emergency repair by Adilay Roofing.",
+    afterImage: "/images/before-after-2-after.jpg",
+    afterAlt:
+      "After: matched architectural shingles woven into the storm-damaged Montgomery County roof — repaired by Adilay Roofing.",
+    objectPosition: "center 45%",
+  },
+  {
+    id: "decking-shingles-repair",
+    title: "Roof Decking & Shingle Repair",
+    category: "roof-repair",
+    location: "Philadelphia, PA",
+    serviceSlug: "roof-repair",
+    materials:
+      "OSB decking · Architectural shingles · Ice-and-water shield",
+    description:
+      "Section of rotted decking replaced under a leaking Philadelphia roof. New OSB installed with proper spacing, ice-and-water shield laid over the repair area, then new architectural shingles blended into the surrounding field.",
+    beforeImage: "/images/before-after-4-before.jpg",
+    beforeAlt:
+      "Before: rotted roof decking and lifted shingles on a Philadelphia home — prior to repair by Adilay Roofing.",
+    afterImage: "/images/before-after-4-after.jpg",
+    afterAlt:
+      "After: new decking with matched architectural shingles blended into the surrounding roof on the same Philadelphia home — repaired by Adilay Roofing.",
+    objectPosition: "center 45%",
+  },
+
+  // ── Flat Roofing ────────────────────────────────────────────────────
+  {
+    id: "epdm-flat-roof",
+    title: "EPDM Flat Roof — Philadelphia Row Home",
+    category: "flat-roofing",
+    location: "Philadelphia, PA",
+    serviceSlug: "flat-roofing",
+    materials:
+      "EPDM rubber membrane · Tapered insulation · Sealed penetrations",
+    description:
+      "New EPDM rubber membrane on a Philadelphia row home flat roof. Old built-up roofing removed, tapered insulation set to promote positive drainage, and a single-ply EPDM installed with fully-sealed seams and penetrations.",
+    beforeImage: "/images/before-after-3-before.jpg",
+    beforeAlt:
+      "Before: cracked built-up flat roof on a Philadelphia row home — ponding water and split seams, prior to EPDM installation by Adilay Roofing.",
+    afterImage: "/images/before-after-3-after.jpg",
+    afterAlt:
+      "After: new EPDM rubber flat roof on the same Philadelphia row home — clean drainage and sealed penetrations, installed by Adilay Roofing.",
+    objectPosition: "center 50%",
+  },
+
+  // ── Shingle Roofing (dedicated shingle category) ────────────────────
+  {
+    id: "shingle-gutter-system",
+    title: "Shingle Roof + Seamless Gutter System",
+    category: "shingle-roofing",
+    location: "Chester County, PA",
+    serviceSlug: "shingle-roofing",
+    materials:
+      "Architectural shingles · Seamless aluminum gutters · Gutter guards",
+    description:
+      "New architectural shingle roof paired with a full seamless aluminum gutter system. Custom downspouts routed to grade, gutter guards installed to keep leaves and debris out of the run.",
+    beforeImage: "/images/before-after-1-before.jpg",
+    beforeAlt:
+      "Before: worn shingle roof and clogged gutters on a Chester County PA home — prior to full replacement by Adilay Roofing.",
+    afterImage: "/images/before-after-1-after.jpg",
+    afterAlt:
+      "After: new architectural shingle roof with seamless aluminum gutters and gutter guards on the same Chester County PA home — installed by Adilay Roofing.",
+    objectPosition: "center 45%",
+  },
+
+  // ── Siding ──────────────────────────────────────────────────────────
+  {
+    id: "vinyl-siding-rowhome",
+    title: "Vinyl Siding Installation — Row Home",
+    category: "siding",
+    location: "Philadelphia, PA",
+    serviceSlug: "siding-installation",
+    materials:
+      "Premium vinyl siding · House wrap · Aluminum trim",
+    description:
+      "Complete vinyl siding installation on a Philadelphia row home. Old siding stripped, house wrap installed for a proper weather barrier, then premium vinyl siding with clean aluminum trim around windows and doors.",
+    beforeImage: "/images/before-after-5-before.jpg",
+    beforeAlt:
+      "Before: aged and damaged siding on a Philadelphia row home — prior to full replacement by Adilay Roofing.",
+    afterImage: "/images/before-after-5-after.jpg",
+    afterAlt:
+      "After: new premium vinyl siding with clean aluminum trim on the same Philadelphia row home — installed by Adilay Roofing.",
+    objectPosition: "center 50%",
   },
 ];
