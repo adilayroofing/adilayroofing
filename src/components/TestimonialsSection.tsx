@@ -474,6 +474,9 @@ export default function TestimonialsSection() {
 
   const total = testimonials.length;
   const totalPages = Math.ceil(total / perPage);
+  // Displayed count is manually set so it can outpace what we've
+  // transcribed into the carousel — reflects the true Google total.
+  const displayTotal = 48;
 
   // Clamp page when perPage changes (e.g. resize)
   useEffect(() => {
@@ -549,12 +552,12 @@ export default function TestimonialsSection() {
             <StarRating count={5} size="lg" />
             <span className="hidden md:inline-block w-px h-5 md:h-6 bg-brand-border" />
             <span className="hidden md:inline-block text-brand-dark text-xs md:text-sm font-semibold whitespace-nowrap">
-              Across {total} Google reviews
+              Across {displayTotal} Google reviews
             </span>
           </div>
           <p className="mt-2 text-brand-gray text-[11px] md:text-xs">
             <span className="md:hidden">
-              Across {total} Google reviews ·{" "}
+              Across {displayTotal} Google reviews ·{" "}
             </span>
             Every Adilay Roofing customer who has reviewed us on Google has given a 5-star rating
           </p>
