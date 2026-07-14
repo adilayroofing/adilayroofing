@@ -1260,6 +1260,138 @@ export const locations: Location[] = [
     ],
   },
   {
+    slug: "wynnewood",
+    name: "Wynnewood",
+    state: "PA",
+    county: "Montgomery County",
+    type: "city",
+    metaTitle: "Roofer Wynnewood PA — Slate, Shingle & Roof Repair",
+    metaDescription:
+      "Wynnewood roofing contractor for Main Line stone colonials & Tudors. Slate, shingle & flat roofs. Licensed PA184779, 20+ yrs. Free estimates — (267) 255-3620.",
+    h1: "Wynnewood Roofing Services",
+    intro:
+      "Wynnewood is one of the Main Line's most established communities — named in 1691 for Dr. Thomas Wynne, William Penn's personal physician, and shaped by more than a century of gracious residential building along Lancaster Avenue and the SEPTA Paoli/Thorndale line. The housing stock here is exactly what the Main Line is famous for: mature stone colonials under original slate, brick and stucco Tudors in the English Village section, center-hall homes on tree-shaded streets around Shortridge Memorial Park, and solid twins and singles across Penn Wynne and South Wynnewood. Many of these roofs were installed between the 1910s and 1950s, which means Wynnewood homeowners today are dealing with slate that is reaching the end of its serviceable life, copper flashing that has thinned at the valleys, and box gutters that were designed for a different era of maintenance. Add one of the heaviest tree canopies in Lower Merion Township — beautiful in October, hard on roofs year-round — and Wynnewood homes need a roofer who understands old materials, steep architecture, and the standard of workmanship Main Line homeowners expect. Adilay Roofing is 20–25 minutes from Wynnewood via City Avenue, and we bring the same crew and craftsmanship that has completed over 2,000 projects across greater Philadelphia.",
+    localContext:
+      "Most of Wynnewood sits in Lower Merion Township (Montgomery County), with the Penn Wynne area extending toward Haverford Township in Delaware County — we handle permitting with the correct municipality either way. Lower Merion is one of the most active townships in the region about preserving original slate roofs and architectural character, and our estimates always present an honest repair-versus-replace comparison before recommending a full tear-off. The dense tree cover around Shortridge Park and Indian Creek promotes moss and algae on north-facing slopes, and clogged gutters from fall leaf drop are the single most common cause of the ice-dam leaks we repair here every winter.",
+    neighborhoods: ["Penn Wynne", "South Wynnewood", "English Village", "Wynnewood Valley"],
+    zipCodes: ["19096"],
+    faq: [
+      {
+        question: "How much does a roof replacement cost in Wynnewood, PA?",
+        answer:
+          "A typical Wynnewood roof replacement runs $12,000–$28,000 for a stone colonial or Tudor with architectural shingles, depending on size, pitch, and the number of valleys and dormers. Full slate restoration or synthetic-slate replacement on larger homes can range $30,000–$60,000+. Every estimate is free, written, and itemized — call (267) 255-3620.",
+      },
+      {
+        question: "Can you repair slate roofs on Wynnewood's older homes?",
+        answer:
+          "Yes. Much of Wynnewood's housing was built between the 1910s and 1950s with Pennsylvania slate, and in many cases the right answer is a targeted repair — replacing broken slates, rebuilding valleys, and renewing copper flashing — rather than a full replacement. If the slate itself is delaminating across large areas, we'll show you the evidence and walk through replacement options, including synthetic slate that keeps the original look. Licensed PA184779.",
+      },
+      {
+        question: "Do I need a permit for roof work in Wynnewood?",
+        answer:
+          "Full roof replacements in Wynnewood require a building permit from Lower Merion Township (or Haverford Township for the Delaware County side of Penn Wynne). Adilay Roofing pulls the permit, schedules the inspection, and hands you the closed paperwork at completion — you don't touch any of it.",
+      },
+      {
+        question: "What roofing material is best for a Wynnewood stone colonial or Tudor?",
+        answer:
+          "For most Wynnewood colonials and Tudors, dimensional architectural shingles in a slate-toned color give the best balance of durability, cost, and curb appeal — and designer shingles that mimic slate are a popular step up. Homes in the English Village section or with visible original slate often warrant true slate repair or synthetic slate to preserve character and value. We recommend algae-resistant shingles here because of the heavy tree canopy.",
+      },
+      {
+        question: "How fast can a roofer get to Wynnewood for an emergency leak?",
+        answer:
+          "We can typically reach Wynnewood within 45–60 minutes during business hours — our crew comes straight up City Avenue from our Philadelphia headquarters. Same-day tarping and leak containment are standard for active leaks in 19096. Call (267) 255-3620.",
+      },
+      {
+        question: "Why do Wynnewood roofs get moss, and is it a problem?",
+        answer:
+          "Wynnewood's mature tree canopy — especially around Shortridge Memorial Park, Indian Creek, and the older blocks off Wynnewood Road — keeps north-facing slopes shaded and damp, which is ideal for moss and algae. Left alone, moss lifts shingle edges and traps moisture against the roof deck. We remove growth safely (never pressure washing), install zinc or copper strips that inhibit regrowth, and spec algae-resistant shingles on replacements.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Roofing Wynnewood's Stone Colonials, Tudors, and English Village Homes",
+        html: `<p>Wynnewood's homes were built by craftsmen for owners who expected them to last a century — and most have. That longevity now defines the roofing work the neighborhood needs:</p>
+<ul>
+  <li><strong>Stone colonials and center-hall homes</strong> — the classic Wynnewood house, often carrying original or once-replaced slate, steep main planes, and multiple dormers. The failure points are almost never the field slate first: it's the valleys, the copper flashing, and the chimney counterflashing that give out.</li>
+  <li><strong>English Village Tudors</strong> — the 1920s planned Tudor enclave off Penn Road is one of the Main Line's architectural gems. Steep slopes, clipped gables, and character details demand careful material matching so a repair doesn't announce itself from the street.</li>
+  <li><strong>Penn Wynne and South Wynnewood twins and singles</strong> — solid interwar housing with pitched shingle roofs, many now on their second or third covering. These are straightforward architectural-shingle replacements where tear-off quality and proper ice-and-water shield matter most.</li>
+  <li><strong>Box gutters and built-in drainage</strong> — many older Wynnewood homes drain through built-in box gutters that require relining with rubber or metal rather than a standard gutter swap. We rebuild these correctly instead of covering the problem.</li>
+</ul>
+<p>Every job is done by our own 30-person crew — no subcontractors — with the documentation Lower Merion Township requires.</p>`,
+      },
+      {
+        heading: "Ice Dams, Leaf Load, and the Wynnewood Tree Canopy",
+        html: `<p>Ask us what we actually repair in Wynnewood every winter and the answer is ice-dam damage. The neighborhood's tall oaks and maples drop enormous leaf volume every fall; gutters and box gutters clog; then January melt-and-freeze cycles push water backward under slate and shingles at the eaves. The fix isn't just patching the leak — it's proper attic insulation and ventilation review, ice-and-water shield at the eaves during replacement, and drainage that actually moves water away from the house. During any free Wynnewood inspection we check all three, because a roof that leaks every February isn't a roof problem, it's a system problem. We also see hail and wind claims after summer storms move up the Schuylkill — we document damage thoroughly and work directly with homeowners' insurance carriers on covered repairs.</p>`,
+      },
+    ],
+  },
+  {
+    slug: "gladwyne",
+    name: "Gladwyne",
+    state: "PA",
+    county: "Montgomery County",
+    type: "city",
+    metaTitle: "Roofer Gladwyne PA — Slate, Cedar & Estate Roofing",
+    metaDescription:
+      "Gladwyne roofing contractor for Main Line estates. Slate, cedar, copper & shingle roofs done right. Licensed PA184779, 20+ yrs. Free estimates — (267) 255-3620.",
+    h1: "Gladwyne Roofing Services",
+    intro:
+      "Gladwyne is one of the most exclusive communities in Pennsylvania — the 19035 ZIP code regularly ranks among the wealthiest in the entire United States — and its roofs reflect that standing. Settled by Welsh Quakers in 1682 as Merion Square and renamed Gladwyne in 1891, the village grew from two dozen mills along Mill Creek into a summer retreat for wealthy Philadelphians after the Civil War, and early preservation efforts spared it from the tract development that reshaped most of the suburbs. The result is a rolling, wooded landscape of stone farmhouses, converted mill buildings, grand early-20th-century estates, and carefully sited newer construction — much of it roofed in true slate, cedar shake, and standing-seam copper rather than commodity shingle. Roofing at this level is a different trade: it means matching hundred-year-old Pennsylvania slate so a repair disappears, soldering copper valleys instead of caulking them, and treating a $60,000 roof as the long-term investment it is. Adilay Roofing serves Gladwyne with the craftsmanship these properties demand, backed by more than 2,000 completed projects across the Philadelphia region and a track record on the Main Line's most demanding homes.",
+    localContext:
+      "Gladwyne sits entirely within Lower Merion Township, which is among the region's most rigorous municipalities on permits and architectural preservation — the Gladwyne Historic District has been on the National Register of Historic Places since 1980, and exterior changes to designated properties can require Historical Architectural Review Board (HARB) approval. We manage that entire process: material samples, documentation, permit, and township inspection. Gladwyne's rolling topography and long private drives also mean access planning matters — staging, material delivery, and protecting landscaping are part of every estimate, not an afterthought.",
+    neighborhoods: [],
+    zipCodes: ["19035"],
+    faq: [
+      {
+        question: "How much does a roof replacement cost in Gladwyne, PA?",
+        answer:
+          "Gladwyne roof replacements typically range $25,000–$75,000+ because of the size of the homes and the premium materials involved — true slate, cedar shake, and copper cost several times more than architectural shingle. A targeted slate or flashing repair is often a few thousand dollars and can add decades of life to a sound slate roof. Every estimate is free, written, and itemized — call (267) 255-3620.",
+      },
+      {
+        question: "Do you work with slate, cedar, and copper roofing in Gladwyne?",
+        answer:
+          "Yes — that's most of what Gladwyne calls us for. We repair and restore Pennsylvania slate with matched salvaged material, replace cedar shake with properly ventilated new cedar or premium synthetic alternatives, and fabricate and solder copper flashing, valleys, and built-in gutters. Licensed PA184779, with our own crew — this work is never subcontracted.",
+      },
+      {
+        question: "My Gladwyne home is in the historic district — can you still replace the roof?",
+        answer:
+          "Yes. The Gladwyne Historic District has been on the National Register since 1980, and Lower Merion Township may require HARB (Historical Architectural Review Board) review before exterior changes on designated properties. We've worked through this process: we prepare material samples and documentation, present like-for-like or board-approved alternatives, then pull the township permit. It adds a little lead time, not uncertainty.",
+      },
+      {
+        question: "Should I replace my slate roof with shingles or keep the slate?",
+        answer:
+          "On a Gladwyne home, keep the slate if it's structurally sound — slate lasts 75–150 years, supports property value, and in the historic district may be the required option. Replace individual broken slates and renew the flashing instead. If the slate is delaminating across large areas (soft, flaking, powdery underside), synthetic slate preserves the look at lower weight and cost than new quarried slate. We'll give you an honest assessment either way in a free inspection.",
+      },
+      {
+        question: "How quickly can you respond to a roof leak in Gladwyne?",
+        answer:
+          "We can typically reach Gladwyne within an hour during business hours via I-76 along the Schuylkill. Same-day emergency tarping and leak containment are standard for active leaks in 19035, and we follow up with a documented repair plan — important for both insurance and historic-district paperwork. Call (267) 255-3620.",
+      },
+      {
+        question: "Do you handle insurance claims for storm damage on large Gladwyne roofs?",
+        answer:
+          "Yes. Wind and hail claims on slate, cedar, and copper roofs are frequently underpaid because adjusters price them like shingle roofs. We document damage in detail — photos, material specifications, and replacement-cost documentation — and work directly with your carrier so the settlement reflects what your roof actually costs to restore.",
+      },
+    ],
+    bodySections: [
+      {
+        heading: "Estate Roofing in Gladwyne — Slate, Cedar, and Copper Done Right",
+        html: `<p>Gladwyne kept the landscape most suburbs lost — farmhouses from its Merion Square days, stone estates from its era as a summer retreat, and mill-village buildings along Mill Creek — and these properties carry roofing systems that reward expertise and punish shortcuts:</p>
+<ul>
+  <li><strong>True slate roofs</strong> — many Gladwyne homes still carry original Pennsylvania slate. We repair with matched salvaged slate, rebuild valleys and hips, and renew copper flashing so a 90-year-old roof keeps performing instead of getting needlessly torn off.</li>
+  <li><strong>Cedar shake</strong> — beautiful and correct on many estate homes, but it needs ventilation detailing and periodic maintenance most roofers skip. We install new cedar over proper battens or breathable underlayment, and offer high-end synthetic shake where owners want the look with less upkeep.</li>
+  <li><strong>Copper and metal work</strong> — standing-seam sections, bay-window roofs, built-in box gutters, snow guards, and soldered valleys. Fabricated and installed by our own crew, not caulked into temporary submission.</li>
+  <li><strong>Flat sections and porch roofs</strong> — older estates hide low-slope sections behind parapets and balustrades; we waterproof these with modern membranes detailed to remain invisible from the ground.</li>
+</ul>
+<p>Long drives, mature landscaping, pool houses, and guest structures are all part of Gladwyne jobs — our estimates cover staging and protection explicitly, so nothing about the process is improvised on your property.</p>`,
+      },
+      {
+        heading: "Lower Merion Permits and the Gladwyne Historic District",
+        html: `<p>Lower Merion Township requires a building permit for full roof replacements, and it is particularly protective of original roofing materials — with good reason, since intact slate and period detail are a large part of what makes Gladwyne property values what they are. For homes in the Gladwyne Historic District (National Register, 1980) or otherwise designated by the township, exterior roofing changes can require review by the Historical Architectural Review Board before a permit is issued. We handle the full sequence: assessment and photos, material samples and like-for-like proposals for the board where required, permit application, scheduled inspections, and closed paperwork at completion. Homeowners never have to navigate the township themselves — and because we present preservation-first options, our proposals tend to move through review without friction.</p>`,
+      },
+    ],
+  },
+  {
     slug: "abington",
     name: "Abington",
     state: "PA",

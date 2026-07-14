@@ -22,7 +22,7 @@ const BASE_URL = "https://www.adilayroofing.com";
 //
 // Format: YYYY-MM-DD (ISO date). Next.js will serialize as the W3C datetime.
 const SERVICES_LASTMOD = "2026-05-26";
-const LOCATIONS_LASTMOD = "2026-06-01";
+const LOCATIONS_LASTMOD = "2026-07-14";
 const STATIC_LASTMOD = "2026-05-11";
 const HOMEPAGE_LASTMOD = "2026-05-11";
 const LEGAL_LASTMOD = "2026-03-15"; // privacy/terms — rarely change
