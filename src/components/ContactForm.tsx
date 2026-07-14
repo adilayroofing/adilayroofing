@@ -3,6 +3,7 @@
 import { useState, useRef, FormEvent } from "react";
 import Link from "next/link";
 import { company } from "@/data/company";
+import { bookingSchedules } from "@/data/booking";
 
 const serviceOptions = [
   "Roof Replacement",
@@ -46,7 +47,36 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [openScheduleIdx, setOpenScheduleIdx] = useState<number | null>(null);
   const formTopRef = useRef<HTMLDivElement>(null);
+  const bookingEmbedRef = useRef<HTMLDivElement>(null);
+
+  const availableSchedules = bookingSchedules.filter((s) => s.url.trim());
+
+  function selectSchedule(i: number) {
+    const opening = openScheduleIdx !== i;
+    setOpenScheduleIdx(opening ? i : null);
+    if (opening) {
+      requestAnimationFrame(() => {
+        bookingEmbedRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      });
+    }
+  }
+
+  // Google booking pages don't support prefill via URL params; signed-in
+  // Google users get their name/email auto-filled by Google itself.
+  function bookingUrl(base: string, embed: boolean) {
+    try {
+      const url = new URL(base);
+      if (embed) url.searchParams.set("gv", "true");
+      return url.toString();
+    } catch {
+      return base;
+    }
+  }
 
   const emailValid = /\S+@\S+\.\S+/.test(data.email.trim());
   const stage1Valid = data.name.trim().length > 0 && emailValid;
@@ -151,6 +181,128 @@ export default function ContactForm() {
         <p className="text-brand-gray text-sm md:text-base mb-7">
           One of our team will reach out within 24 hours. Need to talk now?
         </p>
+
+        {availableSchedules.length > 0 && (
+          <div className="mb-7 border-2 border-brand-red/20 rounded-sm bg-brand-light/60 p-4 md:p-6 text-left">
+            <div className="text-center mb-4 md:mb-5">
+              <span className="inline-block px-3 py-1 mb-2 bg-brand-red text-white text-xs font-bold uppercase tracking-wider rounded-full">
+                New
+              </span>
+              <h4 className="text-lg md:text-xl font-bold text-brand-dark mb-1">
+                Skip the wait — book your free visit now
+              </h4>
+              <p className="text-brand-gray text-sm">
+                Choose a day and time that works for you — booking takes
+                under a minute.
+              </p>
+            </div>
+
+            <div
+              className="flex flex-col sm:flex-row gap-3"
+              role="group"
+              aria-label="Choose a visit type"
+            >
+              {availableSchedules.map((schedule, i) => {
+                const selected = openScheduleIdx === i;
+                return (
+                  <button
+                    key={schedule.label}
+                    type="button"
+                    onClick={() => selectSchedule(i)}
+                    aria-expanded={selected}
+                    className={`flex-1 flex items-center gap-3 p-3.5 md:p-4 rounded-sm border-2 text-left transition-all active:scale-[0.98] cursor-pointer ${
+                      selected
+                        ? "border-brand-red bg-white shadow-md"
+                        : "border-brand-border bg-white hover:border-brand-red/60"
+                    }`}
+                  >
+                    <span
+                      className={`w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                        selected
+                          ? "bg-brand-red text-white"
+                          : "bg-brand-red/10 text-brand-red"
+                      }`}
+                    >
+                      <svg
+                        className="w-5 h-5 md:w-6 md:h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </span>
+                    <span className="flex-1 min-w-0">
+                      <span className="block font-bold text-brand-dark leading-tight">
+                        {schedule.label}
+                      </span>
+                      <span className="block text-sm text-brand-gray mt-0.5">
+                        {schedule.duration} on-site
+                      </span>
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
+                        selected
+                          ? "border-brand-red bg-brand-red"
+                          : "border-brand-border bg-white"
+                      }`}
+                    >
+                      {selected && (
+                        <svg
+                          className="w-3 h-3 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={3.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      )}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div ref={bookingEmbedRef} style={{ scrollMarginTop: "100px" }}>
+              {openScheduleIdx !== null && availableSchedules[openScheduleIdx] && (
+                <div className="mt-4">
+                  <iframe
+                    src={bookingUrl(availableSchedules[openScheduleIdx].url, true)}
+                    title={`Book a ${availableSchedules[openScheduleIdx].duration} visit`}
+                    className="w-full h-[600px] md:h-[680px] bg-white border border-brand-border rounded-sm"
+                  />
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mt-2">
+                    <p className="text-xs text-brand-gray">
+                      Powered by Google Calendar — you&apos;ll get an email
+                      confirmation instantly.
+                    </p>
+                    <a
+                      href={bookingUrl(availableSchedules[openScheduleIdx].url, false)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-brand-gray underline hover:text-brand-dark whitespace-nowrap"
+                    >
+                      Open in a new tab
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href={`tel:${company.phoneRaw}`}
