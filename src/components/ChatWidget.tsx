@@ -35,6 +35,13 @@ const AGENT_PHOTO = CLOUD_NAME
   ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/c_thumb,g_face,z_0.9,w_160,h_160,q_auto,f_auto/rep_j4mkmn`
   : null;
 
+// Faded backdrop for the messages area — the two branded Adilay vans
+// (Cloudinary asset uploaded 2026-07-21). Rendered at low opacity behind
+// the bubbles; q_auto:low keeps the download tiny since it's decorative.
+const CHAT_BG = CLOUD_NAME
+  ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/WhatsApp_Image_2026-07-15_at_00.17.00_ylgixy`
+  : null;
+
 // Same options as the contact form dropdown — keeps the sheet mapping identical.
 const SERVICE_OPTIONS = [
   "Roof Replacement",
@@ -437,9 +444,17 @@ export default function ChatWidget() {
           </div>
 
           {/* Messages */}
+          <div className="relative flex-1 min-h-0 bg-brand-light/60">
+            {CHAT_BG && (
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-cover bg-center opacity-[0.14] pointer-events-none"
+                style={{ backgroundImage: `url(${CHAT_BG})` }}
+              />
+            )}
           <div
             ref={scrollRef}
-            className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-brand-light/60"
+            className="relative h-full overflow-y-auto px-4 py-4 space-y-3"
           >
             {messages.map((msg, i) => (
               <MessageBubble key={i} message={msg} />
@@ -501,6 +516,7 @@ export default function ChatWidget() {
                 </div>
               </div>
             )}
+          </div>
           </div>
 
           {/* Pinned quick-form action */}
