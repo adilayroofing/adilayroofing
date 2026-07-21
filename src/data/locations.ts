@@ -340,9 +340,9 @@ export const locations: Location[] = [
     state: "PA",
     county: "Delaware County",
     type: "county",
-    metaTitle: "Roofer Delaware County PA — Local Roofing Experts",
+    metaTitle: "Delaware County Roofing — Free Quotes, Repair & Replacement",
     metaDescription:
-      "Delaware County roofing contractor. Serving Upper Darby, Drexel Hill, Media & Springfield. Roof replacement, repair, gutters. Free estimates — call today.",
+      "Free Delaware County roofing quotes — roof repair & replacement in Upper Darby, Drexel Hill, Media & Springfield. Licensed PA184779. Call (267) 255-3620.",
     h1: "Delaware County Roofing Services",
     intro:
       "Delaware County — Delco, as locals call it — is a densely populated suburban county that shares a border with southwest Philadelphia and stretches west to the rolling neighborhoods of Media, Swarthmore, and Springfield. The housing landscape tells the story of 20th-century suburban expansion: blocks of brick and stone twins from the 1920s and 1930s dominate Upper Darby and Drexel Hill, while post-war Cape Cods and ranchers fill out Ridley Park, Folcroft, and Prospect Park. Along the Main Line edge in Haverford and Radnor, larger colonial and Tudor-style homes feature steep pitches, cedar shake accents, and copper flashing that require specialized roofing knowledge. Delco roofs face the full brunt of Delaware Valley weather, from the heavy wet snows of February that load flat porch roofs to the intense summer thunderstorms that sweep across the county from the west. Many homes in the older inner-ring suburbs have aging flat roof sections over rear additions or enclosed porches that are particularly vulnerable to ponding water. Adilay Roofing brings our Philadelphia rowhouse expertise to Delco's similarly constructed twins and extends our full service lineup to every home style in the county.",
@@ -1017,9 +1017,9 @@ export const locations: Location[] = [
     state: "PA",
     county: "Bucks County",
     type: "city",
-    metaTitle: "Roofer Levittown PA — Shingle Roof Replacement Experts",
+    metaTitle: "Roof Repair & Replacement Levittown PA — Free Estimates",
     metaDescription:
-      "Levittown roofing specialists. Shingle replacement & repair for ranch homes, Cape Cods & more. Serving all Levittown sections. Free estimates — call now.",
+      "Levittown roof repair & shingle replacement for ranch homes & Cape Cods in every section. Licensed PA184779. Free estimates — call (267) 255-3620.",
     h1: "Levittown Roofing Services",
     intro:
       "Levittown is one of America's most famous planned communities, and its distinctive mid-century housing stock creates a unique roofing landscape. Built between 1952 and 1958 by William Levitt, the community comprises over 17,000 homes spread across named sections including Stonybrook, Goldenridge, Snowball Gate, Magnolia Hill, and Indian Creek. The original home designs — the Levittowner, the Rancher, the Jubilee, the Colonial, and the Country Clubber — each feature specific roof configurations that we know inside and out. Most Levittown homes have relatively simple roof geometries with moderate slopes, making them well-suited for asphalt shingle systems. However, many of these homes are now 65-plus years old, and even those with previous re-roofs are often due for replacement. The Levittowner model's low-pitched roof and minimal overhangs make it particularly susceptible to ice dam formation during Bucks County's cold winters. Wind-driven rain during summer storms can penetrate under aged shingles on homes with limited overhang protection. Adilay Roofing has completed roofing projects throughout Levittown's many sections, and our crews are familiar with each model's specific roof layout and potential trouble spots.",
@@ -1718,9 +1718,9 @@ export const locations: Location[] = [
     state: "PA",
     county: "Bucks County",
     type: "city",
-    metaTitle: "Roofer Newtown PA — Roof Replacement & Repair",
+    metaTitle: "Roof Repair & Replacement Newtown PA — Free Estimates",
     metaDescription:
-      "Newtown PA roofing experts. Shingle, slate & premium roofing for borough & township homes. Licensed PA184779. Free estimates — call (267) 255-3620.",
+      "Newtown PA roof repair & replacement for borough & township homes. Shingle, slate & premium roofing. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Newtown Roofing Services",
     intro:
       "Newtown is one of Bucks County's most desirable communities, encompassing the historic Newtown Borough with its charming State Street downtown and the surrounding Newtown Township with its upscale residential developments. The borough features beautifully preserved colonial and Federal-era homes dating to the 1700s and 1800s, while the township offers larger contemporary colonials, Tudors, and custom homes on wooded lots. Newtown's homes often feature complex roof systems with multiple planes, dormers, and premium materials that demand expert installation. Adilay Roofing brings over 20 years of experience to Newtown's diverse housing stock, providing premium roofing services that match the quality these homes deserve.",
@@ -1964,9 +1964,9 @@ export const locations: Location[] = [
     state: "PA",
     county: "Delaware County",
     type: "city",
-    metaTitle: "Roofer Havertown PA — Roof Replacement & Repair",
+    metaTitle: "Havertown Roofing — Roof Repair & Replacement | Free Quote",
     metaDescription:
-      "Havertown roofing by Adilay Roofing. Shingle replacement, storm repair & gutters for Haverford Twp homes. Licensed PA184779. Free estimates — (267) 255-3620.",
+      "Havertown roofing for Haverford Twp homes — shingle replacement, roof repair, storm damage & gutters. Licensed PA184779. Free estimates — (267) 255-3620.",
     h1: "Havertown Roofing Services",
     intro:
       "Havertown is the commercial and residential heart of Haverford Township in Delaware County, known for its excellent schools, family-friendly neighborhoods, and convenient access to Center City Philadelphia via the SEPTA Media/Elwyn line. The housing stock is predominantly mid-century — stone colonials, Cape Cods, and split-levels built during the 1940s through 1960s line the residential streets along Darby Road, Eagle Road, and Brookline Boulevard. Many of these homes are now 60-plus years old with aging roof systems. Havertown also features pockets of older Victorian-era homes and newer construction. The area's mature tree canopy provides beautiful shade but also promotes moss growth and generates heavy gutter debris. Adilay Roofing provides comprehensive roofing services to Havertown homeowners, delivering expert craftsmanship at competitive prices.",
@@ -2172,9 +2172,9 @@ export const locations: Location[] = [
     state: "PA",
     county: "Chester County",
     type: "city",
-    metaTitle: "Roofer Downingtown PA — Roof Replacement & Repair",
+    metaTitle: "Roof Repair & Replacement Downingtown PA — Free Estimates",
     metaDescription:
-      "Downingtown roofing contractor. Shingle replacement, storm repair & gutters. Licensed PA184779, 20+ yrs exp. Free estimates — call (267) 255-3620.",
+      "Downingtown PA roof repair, leak fixes & full replacement. Storm damage & gutters too. Licensed PA184779, 20+ yrs exp. Free estimates — (267) 255-3620.",
     h1: "Downingtown Roofing Services",
     intro:
       "Downingtown is a charming borough in central Chester County, situated along the Brandywine Creek and anchored by a revitalized downtown along East Lancaster Avenue. The borough features a mix of historic homes from the 1800s, early 20th-century colonials and twins, and mid-century residential construction. The surrounding East Caln and West Whiteland Townships add newer colonial developments and townhome communities. Downingtown's position in the Brandywine Valley means slightly colder winters than Philadelphia, with heavier snow accumulations and more frequent ice events. The area's wooded lots contribute to moss growth and gutter debris. Adilay Roofing extends our full suite of roofing services to Downingtown homeowners, bringing our proven Philadelphia craftsmanship to Chester County's diverse housing stock.",
@@ -2606,9 +2606,12 @@ export const locations: Location[] = [
     state: "PA",
     county: "Delaware County",
     type: "city",
-    metaTitle: "Roofer Chester PA — Residential & Commercial Roof Replacement",
+    // GSC 2026-07: "roofer chester" 1,068 impr @ pos 6.1 and "roof repair
+    // chester" 709 @ 8.2 with 0 clicks — top quick-win query on the whole site.
+    // Match "roofer chester" verbatim and front-load repair + free estimates.
+    metaTitle: "Roofer in Chester PA — Roof Repair & Free Estimates",
     metaDescription:
-      "Chester PA roofing by Adilay Roofing. Residential, commercial & flat roof repair along the Delaware River. Licensed PA184779. Free estimates — (267) 255-3620.",
+      "Need a roofer in Chester PA? Roof repair, replacement & flat roofs along the Delaware River. Licensed PA184779, insured. Free estimates — (267) 255-3620.",
     h1: "Chester PA Roofing Services",
     intro:
       "Chester is Pennsylvania's oldest city, founded by William Penn in 1682 on the banks of the Delaware River in southern Delaware County. The city's housing stock reflects centuries of history: Colonial-era and early-American homes in the historic downtown, early-20th-century rowhouses on streets like 9th Street, Providence Avenue, and Edgmont Avenue, and mid-century brick twins and singles in residential neighborhoods like Sun Village and Highland Gardens. Chester also has a significant commercial and institutional presence — Widener University, Crozer Chester Medical Center, the Chester riverfront developments, and the Talen Energy Stadium — meaning the city has a substantial inventory of commercial-grade low-slope and flat membrane roofs alongside its residential stock. The city's riverfront location exposes many properties to wind and storm pressure, while its older housing means many roofs are overdue for replacement. Adilay Roofing serves Chester with both residential and commercial roofing capabilities, bringing the same licensed, insured, 20-plus-year expertise to Chester projects that we bring to every Delaware Valley community.",

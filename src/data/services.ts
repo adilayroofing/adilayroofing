@@ -131,6 +131,10 @@ export interface Service {
   tagline: string;
   category: ServiceCategory;
   description: string;
+  /** SERP meta overrides — ≤60 chars / 150–160 chars incl. phone + PA184779.
+   * When absent, the template default in services/[slug]/page.tsx is used. */
+  metaTitle?: string;
+  metaDescription?: string;
   icon: string;
   image: string;
   heroDescription: string;
@@ -379,6 +383,9 @@ export const services: Service[] = [
     category: "roofing",
     description:
       "Roof repair Philadelphia PA homeowners trust. Expert leak repair, storm damage, flashing & shingle fixes. Free estimates, same-day response, licensed PA184779.",
+    metaTitle: "Roof Repair Philadelphia — Free Estimates, Fast Fixes",
+    metaDescription:
+      "Philadelphia roof repair — leaks, shingles, flashing & flat roofs fixed fast. Free same-week estimates, licensed PA184779, 5-star rated. Call (267) 255-3620.",
     icon: "",
     image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:
@@ -971,6 +978,11 @@ export const services: Service[] = [
     category: "roofing",
     description:
       "Emergency roof repair Philadelphia — 24/7 response for active leaks, storm damage, and fallen debris. Licensed PA184779, insured, same-day tarping. Call (267) 255-3620.",
+    // Biggest DEEP RANK lever in GSC: "emergency roof repair" 3,718 impr @ pos 21,
+    // "emergency roof leak repair" 2,192 @ 19.6 (28d, 2026-07). Urgency-first snippet.
+    metaTitle: "24/7 Emergency Roof Repair Philadelphia — On-Site Today",
+    metaDescription:
+      "Roof leaking now? 24/7 emergency roof repair & same-day tarping in Philadelphia. Licensed PA184779, insured, insurance claim help. Call (267) 255-3620.",
     icon: "",
     image: "/images/emergency-roof-repair-philadelphia.jpg",
     heroDescription:
@@ -1676,6 +1688,9 @@ export const services: Service[] = [
     category: "roofing",
     description:
       "Storm damage roof repair in Philadelphia PA. Wind, hail, and tree damage — we document, repair, and help with insurance claims. Free inspections, same-day response.",
+    metaTitle: "Storm Damage Roof Repair Philadelphia — Insurance Help",
+    metaDescription:
+      "Wind, hail or tree damage? Storm damage roof repair with emergency tarping & full insurance claim documentation. Licensed PA184779. Call (267) 255-3620.",
     icon: "",
     image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:
@@ -1741,6 +1756,9 @@ export const services: Service[] = [
     category: "roofing",
     description:
       "Roof leak repair in Philadelphia. Same-day leak detection, tracing, and fix for active roof leaks. Licensed PA184779, 20+ years, free inspection & written quote.",
+    metaTitle: "Roof Leak Repair Philadelphia — Find & Fix Leaks Fast",
+    metaDescription:
+      "Active roof leak? Same-day leak detection & repair across Philadelphia — flashing, shingles, flat roofs. Licensed PA184779, free estimate. (267) 255-3620.",
     icon: "",
     image: "/images/roof-repair-philadelphia.jpg",
     heroDescription:

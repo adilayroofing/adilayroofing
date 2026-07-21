@@ -13,9 +13,11 @@ import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Free No-Obligation Roofing Quote Philadelphia | Adilay Roofing",
+    // GSC 2026-07: the ~10K-impr cluster on this page is "free roof(ing)
+    // ESTIMATE" variants, not "quote" — lead with the word searchers use.
+    title: "Free Roofing Estimate Philadelphia — Same-Day Quotes",
     description:
-      "Get a free, no-obligation roofing quote in Philadelphia. Same-day response, written estimate, no pressure. Licensed contractor, 20+ years. Call (267) 255-3620.",
+      "Get a free roofing estimate in Philadelphia — same-day response, written no-obligation quote. Licensed PA184779, 5-star rated. Call (267) 255-3620.",
     keywords: [
       "no-obligation roofing quote",
       "free roofing quote",

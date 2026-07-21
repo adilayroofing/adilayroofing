@@ -65,8 +65,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${service.title} Philadelphia PA | Free Estimates`,
-    description: `Need ${service.title.toLowerCase()} in Philadelphia? Adilay Roofing offers professional ${service.title.toLowerCase()} services with 20+ years experience. Licensed PA184779, 5-star rated on Google. Free estimates — call (267) 255-3620.`,
+    title: service.metaTitle ?? `${service.title} Philadelphia PA | Free Estimates`,
+    description:
+      service.metaDescription ??
+      `Need ${service.title.toLowerCase()} in Philadelphia? Adilay Roofing offers professional ${service.title.toLowerCase()} services with 20+ years experience. Licensed PA184779, 5-star rated on Google. Free estimates — call (267) 255-3620.`,
     keywords: [
       `${service.title.toLowerCase()} Philadelphia`,
       `${service.title.toLowerCase()} Philadelphia PA`,
