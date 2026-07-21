@@ -571,7 +571,7 @@ export const services: Service[] = [
           description: "Nor'easters and summer thunderstorms lift tabs and crease shingles at the windward side.",
         },
       ],
-      footnote: `Active leak? Call <a href="tel:+12672553620">(267) 255-3620</a> for same-day emergency response.`,
+      footnote: `Active leak? Call <a href="tel:+12672553620">(267) 255-3620</a> or see our <a href="/services/emergency-roof-repair">24/7 emergency roof repair in Philadelphia</a> for same-day response.`,
     },
     projectShowcase: {
       heading: "Recent Project: Northern Liberties Fiberglass Roof Repair",

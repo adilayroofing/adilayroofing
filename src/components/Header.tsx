@@ -255,15 +255,6 @@ export default function Header() {
                 </div>
                 <div className="border-t border-brand-border mt-3 pt-2 space-y-1">
                   <Link
-                    href="/roofer-philadelphia"
-                    className="block text-center text-sm text-brand-dark font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
-                    role="menuitem"
-                    tabIndex={servicesDropdownOpen ? 0 : -1}
-                    onClick={() => setServicesDropdownOpen(false)}
-                  >
-                    Philadelphia Roofer — Full Guide &rarr;
-                  </Link>
-                  <Link
                     href="/services"
                     className="block text-center text-sm text-brand-red font-semibold hover:bg-brand-light rounded-sm py-1.5 transition-colors"
                     role="menuitem"
@@ -557,13 +548,6 @@ export default function Header() {
                     </div>
                   );
                 })}
-                <Link
-                  href="/roofer-philadelphia"
-                  className="block pl-4 pt-3 text-sm text-brand-dark font-semibold"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Philadelphia Roofer — Full Guide &rarr;
-                </Link>
                 <Link
                   href="/services"
                   className="block pl-4 pt-2 text-sm text-brand-red font-semibold"

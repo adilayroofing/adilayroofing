@@ -167,14 +167,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/roofer-philadelphia"
-                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
-                >
-                  Philadelphia Roofer
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/about"
                   className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >

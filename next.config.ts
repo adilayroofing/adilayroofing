@@ -105,6 +105,13 @@ const nextConfig: NextConfig = {
       },
 
       // ======================================================================
+      // Cannibalization fix (2026-07) — /roofer-philadelphia competed with the
+      // homepage for "roofer philadelphia" (GSC: home pos 28.8 / this page pos
+      // 38, impressions split). Consolidate equity into the homepage.
+      // ======================================================================
+      { source: "/roofer-philadelphia", destination: "/", permanent: true },
+
+      // ======================================================================
       // Legacy WordPress URLs — preserve ranking equity by mapping to nearest
       // live equivalent on the new site. Source URLs come from GSC Pages data.
       // ======================================================================

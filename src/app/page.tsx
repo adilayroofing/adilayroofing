@@ -961,12 +961,6 @@ export default async function Home() {
                       />
                     </svg>
                   </Link>
-                  <Link
-                    href="/roofer-philadelphia"
-                    className="inline-flex items-center gap-2 text-brand-dark font-semibold border-b border-brand-dark/40 hover:text-brand-red hover:border-brand-red transition-colors"
-                  >
-                    Philadelphia Roofer — Full Guide
-                  </Link>
                 </div>
               </div>
             </ScrollReveal>

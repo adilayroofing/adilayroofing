@@ -394,7 +394,7 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
     },
     {
       heading: "Same-Day Tarping and Temporary Weatherproofing",
-      html: "<p>If your roof has active leaks or visible damage after a storm, tarping is the priority — stop the secondary damage before scheduling permanent repairs. Our <strong>same-day emergency tarping service</strong> covers Philadelphia and the close suburbs: we install heavy-duty 6-mil reinforced tarp over the damaged area, secured with sandbags or screwed-down 1x4 furring strips, with proper overlap to shed water. Tarping holds for 30-60 days while the permanent repair is scheduled and any insurance claim is processed. Tarping cost is typically reimbursable through your homeowner's insurance.</p>",
+      html: "<p>If your roof has active leaks or visible damage after a storm, tarping is the priority — stop the secondary damage before scheduling permanent repairs. Our <strong>same-day emergency tarping service</strong> covers Philadelphia and the close suburbs: we install heavy-duty 6-mil reinforced tarp over the damaged area, secured with sandbags or screwed-down 1x4 furring strips, with proper overlap to shed water. Tarping holds for 30-60 days while the permanent repair is scheduled and any insurance claim is processed. Tarping cost is typically reimbursable through your homeowner's insurance. Roof actively leaking right now? Go straight to our <a href=\"/services/emergency-roof-repair\">24/7 emergency roof repair in Philadelphia</a> — that team dispatches day or night.</p>",
     },
     {
       heading: "The Insurance Claim Process — How to Maximize Your Coverage",
