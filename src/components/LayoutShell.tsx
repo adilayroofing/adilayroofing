@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import ChatWidget from "@/components/ChatWidget";
 
 export default function LayoutShell({
   children,
@@ -23,6 +24,7 @@ export default function LayoutShell({
       <Header />
       <main>{children}</main>
       <Footer />
+      <ChatWidget />
     </>
   );
 }
