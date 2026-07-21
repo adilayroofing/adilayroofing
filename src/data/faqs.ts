@@ -64,4 +64,23 @@ export const faqs = [
     answer:
       "Service Finance Company works with a range of credit profiles. The best way to find out your options is to apply — checking your eligibility typically does not affect your credit score.",
   },
+  // ── Exact-match question queries from GSC (2026-07) — answer-shaped for
+  // featured snippets and AI overviews. Figures must stay consistent with the
+  // corresponding blog posts (roof-replacement-cost-philadelphia-2026,
+  // roof-permit-philadelphia, roof-warranty-transfer-philadelphia-rowhome).
+  {
+    question: "How much does a new roof cost in Philadelphia?",
+    answer:
+      'Most Philadelphia roof replacements cost $5,192 to $10,986 in 2026, depending on roof size, material, and pitch. A typical rowhome with architectural shingles lands between $6,000 and $8,500; flat roofs are priced by membrane type. Every Adilay Roofing estimate is free, written, and itemized. <a href="/blog/roof-replacement-cost-philadelphia-2026">See the full 2026 cost breakdown →</a>',
+  },
+  {
+    question: "Do you need a permit to replace a roof in Philadelphia?",
+    answer:
+      'Yes — Philadelphia requires a building permit for a full roof replacement, while small repairs that don\'t change the roof system generally do not need one. As your contractor, Adilay Roofing pulls the permit and schedules the L&I inspection as part of the job, and the cost is included in your written estimate. <a href="/blog/roof-permit-philadelphia">Read the permit guide →</a>',
+  },
+  {
+    question: "Are roof warranties transferable to a new homeowner?",
+    answer:
+      'Often, yes — most manufacturer material warranties can transfer once to a new owner if requested within a set window after the sale. Workmanship warranties vary by contractor. Adilay Roofing registers every roof with the manufacturer and hands you the documentation, so a transferable warranty becomes a real selling point. <a href="/blog/roof-warranty-transfer-philadelphia-rowhome">How transfers work →</a>',
+  },
 ];

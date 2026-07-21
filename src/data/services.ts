@@ -1083,6 +1083,14 @@ export const services: Service[] = [
         answer:
           "Emergency tarping in Philadelphia typically starts around $300–$500 for a standard residential tarp installation. The price depends on the size of the damaged area, the difficulty of access, and whether any debris needs to be removed first. Permanent repairs are quoted separately — and we always provide a free written estimate before starting permanent work.",
       },
+      {
+        // GSC: "who does emergency roof tarping in philadelphia after wind
+        // damage" — 94 impr @ pos 2.2 (AI fan-out phrasing). Entity-first,
+        // quotable answer.
+        question: "Who does emergency roof tarping in Philadelphia?",
+        answer:
+          "Adilay Roofing provides 24/7 emergency roof tarping across Philadelphia and the surrounding counties. Call (267) 255-3620 any time — we dispatch a crew, typically the same day, to install a secured reinforced tarp that stops water intrusion after wind, storm, or tree damage. Tarping is free to quote and usually reimbursable through homeowner's insurance.",
+      },
     ],
     bodySections: [
       {
@@ -1813,6 +1821,13 @@ export const services: Service[] = [
         question: "Do you handle roof leak repair for flat roofs on Philadelphia row homes?",
         answer:
           "Yes. Flat EPDM rubber and modified bitumen roofs are extremely common on Philadelphia row homes — Fishtown, Kensington, South Philly, Point Breeze — and we repair them routinely. Most flat-roof leaks come from seam failures, punctures, or drain flashing, all of which we fix same-day in most cases.",
+      },
+      {
+        // GSC: "who to call for roof leak" (72 impr @ 38.2) and "who fixes
+        // roof leaks" (20 @ 46.1). Direct-answer phrasing.
+        question: "Who should I call for a roof leak in Philadelphia?",
+        answer:
+          "Call a licensed local roofing contractor — finding the true source of a leak is the hard part, and general handymen often patch the wrong spot. Adilay Roofing (PA license PA184779) answers (267) 255-3620 day and night, traces the leak to its source, and gives you a free written repair quote. Active leaks get same-day priority.",
       },
     ],
   },
