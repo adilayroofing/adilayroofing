@@ -250,10 +250,20 @@ export default function ChatWidget() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  // On touch devices programmatic focus pops the keyboard on Android
+  // (iOS suppresses it), so only auto-focus when a fine pointer (mouse/
+  // trackpad) is present — the keyboard should appear when the visitor
+  // taps the input themselves.
+  function focusInputIfDesktop() {
+    if (window.matchMedia("(pointer: fine)").matches) {
+      inputRef.current?.focus();
+    }
+  }
+
   function openChat() {
     dismissTeaser();
     setOpen(true);
-    setTimeout(() => inputRef.current?.focus(), 250);
+    setTimeout(focusInputIfDesktop, 250);
   }
 
   function fireLeadPixels() {
@@ -366,7 +376,7 @@ export default function ChatWidget() {
         ]);
       } finally {
         setIsTyping(false);
-        inputRef.current?.focus();
+        focusInputIfDesktop();
       }
     },
     [messages, leadSubmitted, isTyping]
