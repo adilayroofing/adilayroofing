@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "roof-repair"
-featuredImage: "/images/gutters-philadelphia.jpg"
+featuredImage: "/images/gutters-philadelphia.png"
 faq:
   - question: "Why is water leaking behind my gutter in Philadelphia?"
     answer: "There are four likely causes, in order of how often we see them on Philadelphia homes: (1) missing or improperly installed drip edge (the metal flashing that should overlap into the back of the gutter), (2) a gutter apron that was never installed or has separated from the fascia, (3) shingles cut too short at the eave so water sheets off the underlayment rather than into the gutter, and (4) ice damming during winter that has lifted the back of the gutter away from the fascia. The fix is different for each. We diagnose by looking at the eave detail from a ladder, usually in 10 minutes, and tell you which one applies."
@@ -40,7 +40,7 @@ Adilay Roofing has 20+ years of experience working on Philadelphia homes, licens
 
 **Got active water damage from a leaking eave?** Call **[(267) 255-3620](tel:+12672553620)** or [request a free assessment](/get-quote). We will look at the eave detail, diagnose the specific cause, and give you a written estimate with options ranked by what the roof actually needs.
 
-![Adilay Roofing gutters and roof line on a Philadelphia home](/images/gutters-philadelphia.jpg "The gutter-to-roof transition is where most eave leaks start. It's a 10-minute diagnosis from a ladder.")
+![Adilay Roofing gutters and roof line on a Philadelphia home](/images/gutters-philadelphia.png "The gutter-to-roof transition is where most eave leaks start. It's a 10-minute diagnosis from a ladder.")
 
 ## What's Supposed to Happen at the Eave
 
