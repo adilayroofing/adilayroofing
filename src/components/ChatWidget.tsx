@@ -270,15 +270,22 @@ export default function ChatWidget() {
   }
 
   function showTrustCard(question: string) {
-    setMessages((prev) => [
-      ...prev,
-      { role: "user", content: question },
-      {
-        role: "assistant",
-        kind: "trust",
-        content: `Absolutely — fully licensed and insured! We're a registered PA Home Improvement Contractor (license #${company.license}), BBB accredited, and rated 5.0 stars on Google. Here's the proof:`,
-      },
-    ]);
+    if (isTyping) return;
+    setMessages((prev) => [...prev, { role: "user", content: question }]);
+    // Brief typing indicator so the reply feels like the assistant is
+    // answering, matching the AI-powered questions.
+    setIsTyping(true);
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          kind: "trust",
+          content: `Absolutely — fully licensed and insured! We're a registered PA Home Improvement Contractor (license #${company.license}), BBB accredited, and rated 5.0 stars on Google. Here's the proof:`,
+        },
+      ]);
+      setIsTyping(false);
+    }, 1300);
   }
 
   function handleFormSubmitted(firstName: string) {
