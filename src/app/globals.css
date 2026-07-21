@@ -387,6 +387,17 @@
   }
 }
 
+/* Horizontal quick-question strip — scrollbar hidden, smooth sliding */
+.chat-chip-strip {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.chat-chip-strip::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .chat-pulse-ring,
   .chat-teaser,
@@ -396,6 +407,9 @@
   }
   .chat-pulse-ring {
     display: none;
+  }
+  .chat-chip-strip {
+    scroll-behavior: auto;
   }
 }
 

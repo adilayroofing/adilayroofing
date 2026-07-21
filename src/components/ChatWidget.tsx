@@ -96,11 +96,12 @@ export default function ChatWidget() {
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const chipStripRef = useRef<HTMLDivElement>(null);
+  const [chipArrows, setChipArrows] = useState({ left: false, right: true });
   const openRef = useRef(open);
   openRef.current = open;
 
@@ -115,7 +116,6 @@ export default function ChatWidget() {
         if (Array.isArray(stored.messages) && stored.messages.length > 0) {
           setMessages(stored.messages);
           setLeadSubmitted(Boolean(stored.leadSubmitted));
-          setHasInteracted(stored.messages.length > 1);
         }
       }
     } catch {
@@ -201,6 +201,45 @@ export default function ChatWidget() {
     };
   }, [open]);
 
+  /* ── Quick-question strip: arrow state + one-time slide hint ── */
+  useEffect(() => {
+    if (!open) return;
+    const el = chipStripRef.current;
+    if (!el) return;
+
+    function updateArrows() {
+      const strip = chipStripRef.current;
+      if (!strip) return;
+      setChipArrows({
+        left: strip.scrollLeft > 4,
+        right: strip.scrollLeft < strip.scrollWidth - strip.clientWidth - 4,
+      });
+    }
+
+    updateArrows();
+    el.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+
+    // Subtle nudge on open so visitors notice the strip slides.
+    const hint = setTimeout(() => {
+      const strip = chipStripRef.current;
+      if (strip && strip.scrollWidth > strip.clientWidth && strip.scrollLeft === 0) {
+        strip.scrollTo({ left: 48, behavior: "smooth" });
+        setTimeout(() => strip.scrollTo({ left: 0, behavior: "smooth" }), 500);
+      }
+    }, 800);
+
+    return () => {
+      el.removeEventListener("scroll", updateArrows);
+      window.removeEventListener("resize", updateArrows);
+      clearTimeout(hint);
+    };
+  }, [open]);
+
+  function slideChips(dir: -1 | 1) {
+    chipStripRef.current?.scrollBy({ left: dir * 190, behavior: "smooth" });
+  }
+
   /* ── Esc closes the panel ── */
   useEffect(() => {
     if (!open) return;
@@ -240,13 +279,11 @@ export default function ChatWidget() {
         content: `Absolutely — fully licensed and insured! We're a registered PA Home Improvement Contractor (license #${company.license}), BBB accredited, and rated 5.0 stars on Google. Here's the proof:`,
       },
     ]);
-    setHasInteracted(true);
   }
 
   function handleFormSubmitted(firstName: string) {
     setFormOpen(false);
     setLeadSubmitted(true);
-    setHasInteracted(true);
     setMessages((prev) => [
       ...prev,
       {
@@ -282,7 +319,6 @@ export default function ChatWidget() {
       ];
       setMessages(nextMessages);
       setInput("");
-      setHasInteracted(true);
       setIsTyping(true);
 
       try {
@@ -581,9 +617,24 @@ export default function ChatWidget() {
             </div>
           )}
 
-          {/* Quick replies (before first user message) */}
-          {!hasInteracted && !isTyping && (
-            <div className="shrink-0 px-4 pb-2 pt-1 bg-brand-light/60 flex flex-wrap gap-2">
+          {/* Quick questions — sticky one-row strip with slide arrows */}
+          <div className="shrink-0 bg-brand-light/60 flex items-center gap-0.5 px-1 py-1.5">
+            <button
+              type="button"
+              onClick={() => slideChips(-1)}
+              disabled={!chipArrows.left}
+              aria-label="Scroll questions left"
+              className="shrink-0 w-7 h-7 rounded-full bg-white border border-brand-border text-brand-dark flex items-center justify-center hover:border-brand-red hover:text-brand-red active:scale-90 transition-all cursor-pointer disabled:opacity-25 disabled:cursor-default"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <div
+              ref={chipStripRef}
+              className="chat-chip-strip flex-1 grid grid-rows-2 grid-flow-col auto-cols-max gap-1.5 overflow-x-auto px-1"
+            >
               {QUICK_REPLIES.map((q) => (
                 <button
                   key={q.label}
@@ -591,7 +642,7 @@ export default function ChatWidget() {
                   onClick={() =>
                     q.trust ? showTrustCard(q.text) : sendMessage(q.text)
                   }
-                  className="px-3 py-1.5 text-xs font-semibold text-brand-red bg-white border border-brand-red/40 rounded-full hover:bg-brand-red hover:text-white active:scale-95 transition-all cursor-pointer"
+                  className="shrink-0 whitespace-nowrap px-3 py-1.5 text-xs font-semibold text-brand-red bg-white border border-brand-red/40 rounded-full hover:bg-brand-red hover:text-white active:scale-95 transition-all cursor-pointer"
                 >
                   {q.label}
                 </button>
@@ -599,12 +650,24 @@ export default function ChatWidget() {
               <Link
                 href="/gallery"
                 onClick={() => setOpen(false)}
-                className="px-3 py-1.5 text-xs font-semibold text-brand-red bg-white border border-brand-red/40 rounded-full hover:bg-brand-red hover:text-white active:scale-95 transition-all cursor-pointer"
+                className="shrink-0 whitespace-nowrap px-3 py-1.5 text-xs font-semibold text-brand-red bg-white border border-brand-red/40 rounded-full hover:bg-brand-red hover:text-white active:scale-95 transition-all cursor-pointer"
               >
                 📸 Our work
               </Link>
             </div>
-          )}
+
+            <button
+              type="button"
+              onClick={() => slideChips(1)}
+              disabled={!chipArrows.right}
+              aria-label="Scroll questions right"
+              className="shrink-0 w-7 h-7 rounded-full bg-white border border-brand-border text-brand-dark flex items-center justify-center hover:border-brand-red hover:text-brand-red active:scale-90 transition-all cursor-pointer disabled:opacity-25 disabled:cursor-default"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
 
           {/* Input */}
           <form
