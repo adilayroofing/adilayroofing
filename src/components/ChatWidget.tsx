@@ -325,7 +325,11 @@ export default function ChatWidget() {
             >
               ✕
             </button>
-            <div className="flex items-center gap-2 sm:gap-2.5">
+            <button
+              type="button"
+              onClick={openChat}
+              className="flex items-center gap-2 sm:gap-2.5 text-left w-full cursor-pointer"
+            >
               <AssistantAvatar size="lg" />
               <div>
                 <p className="text-xs sm:text-sm font-bold text-brand-dark leading-snug">
@@ -335,7 +339,7 @@ export default function ChatWidget() {
                   Chat with our roofing expert — free &amp; instant.
                 </p>
               </div>
-            </div>
+            </button>
           </div>
         )}
 
