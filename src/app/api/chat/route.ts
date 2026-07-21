@@ -39,8 +39,9 @@ COMPANY FACTS (only source of truth — never invent facts):
 
 YOUR GOALS (in order):
 1. Answer roofing questions helpfully like a seasoned roofing expert — leaks, storm damage, shingle vs flat/EPDM, siding, windows, gutters, insurance basics, maintenance.
-2. Convert the conversation into a lead: naturally collect the visitor's full name, phone number, email address, which service they need, and a short description of the project (property address/area is great to include in the description). ALWAYS ask for the phone number — it's how the team confirms the free visit fastest. If they decline to share it, proceed politely without it. Also ask once, casually, if they'd like info about financing.
-3. IMPORTANT — EVERY message in which you ask the visitor for ANY contact detail (name, phone, email, or project description) MUST end with the exact token [[FORM]] as the last characters of the message. No exceptions: if the message asks for a detail, it ends with [[FORM]]. The chat UI replaces the token with a small fill-in box with those fields right under your message — much easier than typing them out. Keep the ask short and point to the box, e.g. "Just pop your details in the quick box below 👇 [[FORM]]". Never mention the token in your prose, and don't list the fields out loud — the box shows them.
+2. Convert the conversation into a lead — but only once the visitor shows intent: they describe a problem (leak, damage), ask for an estimate/quote/visit, or ask to be contacted. When that happens, collect their full name, phone number, email address, which service they need, and a short description of the project (property address/area is great to include in the description). ALWAYS ask for the phone number — it's how the team confirms the free visit fastest. If they decline to share it, proceed politely without it. Also ask once, casually, if they'd like info about financing.
+3. TOKEN RULE — when (and ONLY when) a message's purpose is to collect the visitor's contact details (name / phone / email / project description), end that message with the exact token [[FORM]] as the last characters. The chat UI replaces the token with a small fill-in box under your message. Keep the ask short and point to the box, e.g. "Just pop your details in the quick box below 👇 [[FORM]]". Never mention the token in your prose, and don't list the fields out loud — the box shows them.
+   DO NOT use the token (and do not ask for details) when you are simply answering an informational question — financing options, service areas, working hours, what services we offer, how something works. Answer those fully, then end with a light follow-up question WITHOUT the token (e.g. "Are you planning a project in one of these areas?"). Only if they answer with interest do you move to collecting details with the token.
 4. Once you have AT MINIMUM name + email + service + a short project description, call the submit_lead tool. Don't wait for perfect info — but always try to get the phone number first. (Most visitors will use the box, which submits directly — if they type their details in chat instead, use submit_lead as normal.)
 
 RULES:
@@ -236,13 +237,17 @@ export async function POST(request: Request) {
     const tokenPresent = raw.includes("[[FORM]]");
     const reply =
       raw.replace(/\s*\[\[FORM\]\]\s*/g, " ").trim() || FALLBACK_REPLY;
+    // Only treat the reply as a details request when it explicitly points to
+    // the box or literally asks for the visitor's name + email/phone —
+    // informational answers (financing, areas, hours) must NOT open the form.
     const asksForDetails =
       /quick box|box below|pop your details|leave your details|fill in the box/i.test(
         reply
       ) ||
-      (/\bname\b/i.test(reply) &&
-        /\b(email|phone|number)\b/i.test(reply) &&
-        reply.includes("?"));
+      (/your (full )?name\b/i.test(reply) &&
+        /your (email|phone)|(email|phone)( number| address)?\b.*\?/i.test(
+          reply
+        ));
     const showForm = !leadAlreadySubmitted && (tokenPresent || asksForDetails);
     return NextResponse.json({ reply, showForm });
   } catch (error) {
