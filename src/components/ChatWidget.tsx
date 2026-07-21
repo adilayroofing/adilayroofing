@@ -42,7 +42,9 @@ const AGENT_PHOTO = CLOUD_NAME
 // do not blur. Rendered at low opacity behind the bubbles; q_auto:low
 // keeps the download tiny since it's decorative.
 const CHAT_BG = CLOUD_NAME
-  ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/adilayroofing/images/blog/adilay-roofing-fleet-philadelphia`
+  ? // v1784674956 pins the restored (unedited) upload — bypasses the CDN's
+    // cached derived render from the brief period the asset was edited.
+    `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/v1784674956/adilayroofing/images/blog/adilay-roofing-fleet-philadelphia`
   : null;
 
 // Trust-card assets: PA license certificate + Google 5.0 badge (same images
