@@ -452,7 +452,7 @@ export default function ChatWidget() {
             {CHAT_BG && (
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-cover bg-center opacity-[0.09] pointer-events-none"
+                className="absolute inset-0 bg-cover bg-center opacity-[0.22] pointer-events-none"
                 style={{ backgroundImage: `url(${CHAT_BG})` }}
               />
             )}
