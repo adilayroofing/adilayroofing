@@ -38,10 +38,9 @@ const AGENT_PHOTO = CLOUD_NAME
   : null;
 
 // Faded backdrop for the messages area — the two branded Adilay vans.
-// Uses the phone-number-blurred copy (the original wrap shows the retired
-// (888) number, which must never appear on the site — see CLAUDE.md).
-// Rendered at low opacity behind the bubbles; q_auto:low keeps the
-// download tiny since it's decorative.
+// Owner's call (2026-07-22): the wrap's old phone number stays visible —
+// do not blur. Rendered at low opacity behind the bubbles; q_auto:low
+// keeps the download tiny since it's decorative.
 const CHAT_BG = CLOUD_NAME
   ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/adilayroofing/images/blog/adilay-roofing-fleet-philadelphia`
   : null;
