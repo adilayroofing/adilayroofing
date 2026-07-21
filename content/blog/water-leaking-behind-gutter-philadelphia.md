@@ -176,6 +176,8 @@ A few well-intentioned moves often make the problem worse.
 
 ## When to Call Us
 
+![New black seamless gutter and downspout installed on a Philadelphia stone home](/images/blog/black-gutter-downspout-stone-home-philadelphia.jpg "Done right: new seamless gutter and downspout on a Philadelphia stone home — proper drip edge underneath, no gap for water to sneak behind")
+
 Call **[(267) 255-3620](tel:+12672553620)** or [request a free inspection](/get-quote) when:
 
 - You see active water damage behind a gutter on your home

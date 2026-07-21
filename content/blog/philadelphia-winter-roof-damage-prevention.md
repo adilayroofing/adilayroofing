@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "seasonal-maintenance"
-featuredImage: "/images/experienced-crew-adilay-roofing-philadelphia.jpg"
+featuredImage: "/images/blog/gutters-cornice-porch-philadelphia.jpg"
 faq:
   - question: "What does winter actually do to a Philadelphia roof?"
     answer: "Philadelphia winters are freeze-thaw winters — temperatures cross 32°F dozens of times a season, which is harder on roofs than sustained deep cold. Each cycle, water that found its way into a shingle crack, flashing gap, or membrane seam freezes, expands about 9%, and pries the opening wider; then it thaws, runs deeper, and repeats. Add ice dams at the eaves (meltwater refreezing over cold overhangs and backing up under shingles), wet heavy snow loading on flat rowhome roofs, and wind events between fronts, and the pattern is clear: winter rarely creates roof problems from scratch — it finds every small existing problem and grows it."

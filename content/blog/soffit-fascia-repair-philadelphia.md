@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "7 min read"
 category: "roof-repair"
-featuredImage: "/images/gutters-philadelphia.png"
+featuredImage: "/images/blog/fascia-cornice-repair-crew-philadelphia.jpg"
 faq:
   - question: "What do soffits and fascia actually do?"
     answer: "Fascia is the vertical board running along your roof edge — it caps the rafter ends, carries the gutters, and closes the roof structure against weather. Soffit is the horizontal underside of the roof overhang — it seals the eave from below and, critically, ventilates the attic: vented soffit panels are the intake that lets air flow up through the attic and out the ridge or box vents. Together they're the finished edge of your roof system. When they fail, three things follow: water reaches the rafter ends and wall top, attic ventilation chokes (raising summer heat and winter moisture), and animals gain the easiest possible entrance to your attic."
@@ -80,6 +80,8 @@ The edge is a system. That's why the repair conversation is never just "replace 
 The two honest cost variables: **hidden rot** (the visible damage usually continues behind the gutter — budget mentally for the board, not the spot) and **height** (three-story twins and rowhomes need staging that one-story edges don't).
 
 The good news: caught at the peeling-paint stage, this is one of the cheapest roof repairs there is. Ignored for five years, it becomes rafter-tail carpentry.
+
+![Finished porch cornice with new black seamless gutters and white dentil trim on a Philadelphia home](/images/blog/new-black-gutters-porch-cornice-philadelphia.jpg "The finished product: restored cornice and fascia with new black seamless gutters on a Philadelphia porch — the repainting cycle retired for good")
 
 ## Why the Cause Comes First (or the Rot Comes Back)
 

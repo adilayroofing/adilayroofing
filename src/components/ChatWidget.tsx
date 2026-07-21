@@ -37,11 +37,13 @@ const AGENT_PHOTO = CLOUD_NAME
   ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/c_thumb,g_face,z_0.9,w_160,h_160,q_auto,f_auto/rep_j4mkmn`
   : null;
 
-// Faded backdrop for the messages area — the two branded Adilay vans
-// (Cloudinary asset uploaded 2026-07-21). Rendered at low opacity behind
-// the bubbles; q_auto:low keeps the download tiny since it's decorative.
+// Faded backdrop for the messages area — the two branded Adilay vans.
+// Uses the phone-number-blurred copy (the original wrap shows the retired
+// (888) number, which must never appear on the site — see CLAUDE.md).
+// Rendered at low opacity behind the bubbles; q_auto:low keeps the
+// download tiny since it's decorative.
 const CHAT_BG = CLOUD_NAME
-  ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/WhatsApp_Image_2026-07-15_at_00.17.00_ylgixy`
+  ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/adilayroofing/images/blog/adilay-roofing-fleet-philadelphia`
   : null;
 
 // Trust-card assets: PA license certificate + Google 5.0 badge (same images

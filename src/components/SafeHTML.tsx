@@ -29,10 +29,14 @@ const ALLOWED_TAGS = new Set([
   "h4",
   "h5",
   "h6",
+  "img",
 ]);
 
 const ALLOWED_ATTRS: Record<string, Set<string>> = {
   a: new Set(["href", "target", "rel"]),
+  // img src is restricted to site-internal /images/ paths in the attribute
+  // filter below — external URLs are stripped.
+  img: new Set(["src", "alt", "loading", "width", "height"]),
 };
 
 function sanitizeHtml(html: string): string {
@@ -72,9 +76,14 @@ function sanitizeHtml(html: string): string {
       if (allowedAttrSet.has(attrName)) {
         // Block javascript: protocol in href
         if (attrName === "href" && /^\s*javascript:/i.test(attrValue)) continue;
+        // img src must be a site-internal /images/ path
+        if (tagLower === "img" && attrName === "src" && !/^\/images\//.test(attrValue)) continue;
         safeAttrs.push(`${attrName}="${attrValue}"`);
       }
     }
+
+    // An <img> whose src was stripped renders nothing useful — drop it.
+    if (tagLower === "img" && !safeAttrs.some((a) => a.startsWith('src="'))) return "";
 
     return safeAttrs.length > 0
       ? `<${tagLower} ${safeAttrs.join(" ")}>`

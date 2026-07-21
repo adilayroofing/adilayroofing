@@ -5,6 +5,8 @@ import { company } from "@/data/company";
 import { serviceCategories, getServicesByCategory } from "@/data/services";
 import { getAllLocations, getLocationBySlug, getNearbyLocations, type Location } from "@/data/locations";
 import FAQ from "@/components/FAQ";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { galleryProjects } from "@/data/gallery";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SafeHTML from "@/components/SafeHTML";
@@ -132,6 +134,9 @@ export default async function LocationPage({ params }: PageProps) {
   const zipCodes = location.zipCodes;
   const locationFaq = location.faq;
   const bodySections = location.bodySections ?? [];
+  // Before/after sliders for gallery projects tagged with this area's slug —
+  // any location that gets a locationSlug'd gallery entry shows it automatically.
+  const localProjects = galleryProjects.filter((p) => p.locationSlug === slug);
 
   const heroCTAText = "Get FREE Estimate";
   const servicesHeading = `Our Services in ${location.name}`;
@@ -425,6 +430,55 @@ export default async function LocationPage({ params }: PageProps) {
       />
 
       {/* ================================================================= */}
+      {/* Local Projects — before/after sliders for jobs done in this area  */}
+      {/* ================================================================= */}
+      {localProjects.length > 0 && (
+        <section className="bg-brand-light">
+          <div className="section-padding">
+            <div className="container-narrow mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="section-heading">Recent Work in {location.name}</h2>
+                <p className="text-brand-gray mt-4 max-w-2xl mx-auto">
+                  Drag the slider to see a real Adilay Roofing project in{" "}
+                  {location.name} — before and after.
+                </p>
+              </div>
+              <div className="max-w-xl mx-auto space-y-12">
+                {localProjects.map((project) => (
+                  <div key={project.id}>
+                    <BeforeAfterSlider
+                      beforeSrc={project.beforeImage}
+                      beforeAlt={project.beforeAlt}
+                      afterSrc={project.afterImage}
+                      afterAlt={project.afterAlt}
+                      aspectClass={project.aspectClass}
+                      objectPosition={project.objectPosition}
+                    />
+                    <div className="mt-5 text-center">
+                      <h3 className="text-lg font-bold text-brand-dark">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-brand-gray mt-2 max-w-lg mx-auto">
+                        {project.description}
+                      </p>
+                      {project.serviceSlug && (
+                        <Link
+                          href={`/services/${project.serviceSlug}`}
+                          className="inline-block mt-3 text-brand-red font-semibold text-sm hover:underline"
+                        >
+                          Learn about this service &rarr;
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================= */}
       {/* Body Sections — deep local content with H2s                       */}
       {/* ================================================================= */}
       {bodySections.length > 0 && (
@@ -456,7 +510,7 @@ export default async function LocationPage({ params }: PageProps) {
                       <SafeHTML
                         html={section.html}
                         as="div"
-                        className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-base md:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark"
+                        className="text-[15px] md:text-lg text-brand-gray leading-relaxed [&_a]:text-brand-red [&_a]:underline [&_a:hover]:text-red-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-3 [&_li]:mb-1 [&_h3]:text-base md:text-xl [&_h3]:font-bold [&_h3]:text-brand-dark [&_h3]:mt-4 [&_h3]:mb-2 [&_strong]:text-brand-dark [&_img]:rounded-sm [&_img]:my-4 [&_img]:w-full [&_img]:max-w-md [&_img]:mx-auto"
                       />
                     </div>
                   </details>

@@ -252,4 +252,22 @@ export const galleryProjects: GalleryProject[] = [
       "After: new premium vinyl siding with clean aluminum trim on the same Philadelphia row home — installed by Adilay Roofing.",
     aspectClass: "aspect-[4/5]",
   },
+  {
+    id: "manayunk-siding-restoration",
+    title: "Full Facade & Siding Restoration — Manayunk",
+    category: "siding",
+    location: "Manayunk, Philadelphia",
+    locationSlug: "manayunk",
+    serviceSlug: "siding-repair",
+    materials: "Shake siding · Scalloped bay accents · White trim wrap · New railings",
+    description:
+      "Complete facade restoration on a three-story Manayunk rowhome: weathered paint and failing scalloped bay siding replaced with new shake siding, crisp white trim wrap on the bay and cornice, and a rebuilt porch entry. Same stone, same bones — a street-transforming refresh.",
+    beforeImage: "/images/projects/manayunk-siding-restoration-before.jpg",
+    beforeAlt:
+      "Before: weathered gray facade with peeling paint and aged siding on a three-story Manayunk rowhome, prior to restoration by Adilay Roofing.",
+    afterImage: "/images/projects/manayunk-siding-restoration-after.jpg",
+    afterAlt:
+      "After: the same Manayunk rowhome with new shake siding, white-wrapped bay and cornice trim, and a rebuilt porch entry — restored by Adilay Roofing.",
+    aspectClass: "aspect-[3/4]",
+  },
 ];

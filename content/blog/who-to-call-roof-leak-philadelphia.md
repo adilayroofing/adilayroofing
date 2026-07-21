@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "roof-repair"
-featuredImage: "/images/roof-leak-repair-drain-sealing.jpg"
+featuredImage: "/images/blog/adilay-roofing-fleet-philadelphia.jpg"
 faq:
   - question: "Who should I call when my roof is leaking?"
     answer: "Call a licensed roofing contractor — that's the direct answer. Not a general handyman (leak diagnosis is the specialized part; handymen patch symptoms and the leak usually returns), not a general contractor (they'll subcontract a roofer and add a markup), and not your insurance company first unless a storm just caused obvious damage. In Philadelphia, Adilay Roofing answers (267) 255-3620 day and night, prioritizes active leaks for same-day service, and gives you a free written quote after tracing the leak to its actual source. License PA184779, fully insured."

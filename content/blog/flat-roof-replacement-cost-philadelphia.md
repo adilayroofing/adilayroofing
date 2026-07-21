@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "cost-guide"
-featuredImage: "/images/flat-roof-philadelphia.jpg"
+featuredImage: "/images/blog/tight-access-scaffolding-philadelphia-rowhome.jpg"
 faq:
   - question: "How much does flat roof replacement cost in Philadelphia?"
     answer: "For a typical Philadelphia rowhome flat roof (roughly 600–1,000 square feet), full replacement generally lands between $4,500 and $9,500 in 2026. Per roofing square (100 sq ft), installed EPDM rubber runs about $400 to $900, modified bitumen a similar $400 to $900, and TPO somewhat more at $600 to $1,200. Where your roof falls in the range depends on tear-off (how many old layers come off), access (front-only three-story access costs more to stage than a walkout), parapet wall and neighbor tie-in detail work, and deck condition — rotted decking discovered at tear-off is the most common addition."

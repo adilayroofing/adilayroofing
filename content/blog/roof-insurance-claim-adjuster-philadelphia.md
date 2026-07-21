@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "9 min read"
 category: "insurance"
-featuredImage: "/images/adilay-roofing-honest-pricing-proposal.jpg"
+featuredImage: "/images/blog/adilay-truck-roof-replacement-crew-philadelphia.jpg"
 faq:
   - question: "What does an insurance adjuster look for on a roof?"
     answer: "The adjuster is answering one question: is this damage from a sudden covered event, or from wear and age? On shingle roofs they look for wind signatures (missing tabs, creased shingles with broken seals, damage concentrated on the windward slopes) and hail signatures (random circular bruises with granule loss, matching dents on soft metal like gutters and vents). They also look for the things that argue against coverage: uniform granule loss, curling, brittleness, previous patch repairs, and multiple shingle layers — all evidence of age. They photograph test squares, count hail strikes per square, and check whether damage patterns match the storm date's weather records."

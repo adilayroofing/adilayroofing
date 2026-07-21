@@ -929,6 +929,14 @@ export const locations: Location[] = [
         html: `<p>Manayunk&rsquo;s commercial Main Street and the residential blocks above it share parking, access, and patience. We plan deliveries around the morning rush at the businesses on Main, we use rear-alley access where possible (Lemonte, Hermitage, etc.), and we pull permits with the city for any project requiring street-side dumpster placement. Every Manayunk project ends with a magnet sweep of the street, sidewalk, and any driveway we touched &mdash; we don&rsquo;t leave nails behind for the neighbors&rsquo; tires to find.</p>
 <p>For nearby roofing pages, see <a href="/service-areas/roxborough">Roxborough</a> &middot; <a href="/service-areas/conshohocken">Conshohocken</a> &middot; <a href="/service-areas/bala-cynwyd">Bala Cynwyd</a> &middot; <a href="/service-areas/philadelphia">all Philadelphia neighborhoods</a>.</p>`,
       },
+      {
+        heading: "Case Study: Scalloped Bay Siding Restoration in Manayunk",
+        html: `<p>A recent Manayunk project shows what facade restoration on the hill actually involves. This three-story rowhome&rsquo;s signature scalloped (fish-scale) bay siding &mdash; a detail all over Manayunk and Roxborough &mdash; had reached end-of-life: broken scallops at the corners, peeling paint, and water getting behind the courses.</p>
+<img src="/images/projects/manayunk-scalloped-siding-damage.jpg" alt="Damaged scalloped fish-scale siding on a Manayunk bay window before restoration — broken shingles and peeling paint" loading="lazy" />
+<p>Because the bay sits over a shared walkway, the work needed scaffold staging rather than ladders &mdash; typical for Manayunk&rsquo;s tight lots:</p>
+<img src="/images/projects/manayunk-siding-during-work.jpg" alt="Adilay Roofing crew on scaffolding restoring the bay window siding of a Manayunk rowhome" loading="lazy" />
+<p>The finished facade &mdash; new shake siding, re-clad bay, white-wrapped trim and cornice, rebuilt porch entry &mdash; is in the before/after slider above. Full details on our <a href="/services/siding-repair">siding repair service page</a>.</p>`,
+      },
     ],
   },
   {

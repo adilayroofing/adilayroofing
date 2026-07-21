@@ -793,6 +793,20 @@ export const services: Service[] = [
     category: "siding",
     description:
       "Expert siding repair services in Philadelphia. We fix cracked, warped, loose, and storm-damaged siding to restore your home's protection and curb appeal.",
+    projectShowcase: {
+      heading: "Recent Project: Manayunk Facade & Siding Restoration",
+      location: "Manayunk, Philadelphia",
+      locationSlug: "manayunk",
+      beforeSrc: "/images/projects/manayunk-siding-restoration-before.jpg",
+      beforeAlt:
+        "Before: weathered gray facade with peeling paint and failing scalloped bay siding on a three-story Manayunk rowhome.",
+      afterSrc: "/images/projects/manayunk-siding-restoration-after.jpg",
+      afterAlt:
+        "After: the same Manayunk rowhome with new shake siding, white-wrapped bay and cornice trim, and a rebuilt porch entry.",
+      aspectClass: "aspect-[3/4]",
+      scopeHeading: "What This Project Involved",
+      scopeHtml: `<p>This three-story Manayunk rowhome had the classic hillside combination: sound stone bones with a facade past its service life &mdash; broken scalloped (fish-scale) shingles on the bay, peeling paint, and water working behind the siding courses. We stripped the failed material, re-clad the bay and upper facade in new shake siding, wrapped the bay trim and cornice in crisp white aluminum, and rebuilt the porch entry with new railings. Scaffold staging over the shared walkway kept the neighbors' access open throughout.</p>`,
+    },
     icon: "",
     image: "/images/siding-philadelphia.jpg",
     heroDescription:

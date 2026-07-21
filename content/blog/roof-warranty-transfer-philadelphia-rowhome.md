@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "general-roofing"
-featuredImage: "/images/roof-replacement-philadelphia.jpg"
+featuredImage: "/images/blog/roof-replacement-project-stone-home-philadelphia.jpg"
 faq:
   - question: "Does a roof warranty transfer to the new owner when I buy a house in Philadelphia?"
     answer: "Usually only partially, and only if specific steps are taken at or shortly after closing. Most major manufacturer warranties (GAF, CertainTeed, Owens Corning) transfer once to a second owner within a defined window (typically 60 days of the sale) for a small fee or no fee. The transfer is NOT automatic. The new owner must submit a warranty transfer request to the manufacturer with proof of purchase, the original installation paperwork, and the closing date. After the one allowed transfer, the warranty ends if the home is sold again. The contractor's workmanship warranty is a separate matter and rarely transfers unless explicitly stated in the original contract."

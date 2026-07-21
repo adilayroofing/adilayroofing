@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "cost-guide"
-featuredImage: "/images/roof-replacement-philadelphia.jpg"
+featuredImage: "/images/blog/slate-roof-repair-dormer-philadelphia.jpg"
 faq:
   - question: "How much does slate roof repair cost in Philadelphia?"
     answer: "Minor slate repairs — replacing a handful of broken or slipped slates, resealing a small flashing joint — typically run $400 to $1,500 in Philadelphia. Larger repairs such as rebuilding valley or chimney flashing in copper, or repairing a full section where slates and underlayment have failed together, generally land between $3,000 and $8,000. The wide ranges are honest: slate work is priced by access (a three-story Philly twin costs more to stage than a two-story), by how many surrounding slates must be lifted to do the repair correctly, and by material — salvaged Pennsylvania slate matched to your roof costs more than generic new slate."
@@ -57,6 +57,8 @@ Slate repair pricing confuses people because a "small" repair carries a bigger n
 **The matching factor.** Your 1920s Pennsylvania gray-black slate isn't at the supply house. Good repairs use salvaged slate matched for color, size, and weathering — and salvage stock costs real money. (Mismatched bargain slates are how a repair ends up visible from the street for the next forty years.)
 
 **The access factor.** Philadelphia slate lives on tall, steep roofs. Staging a three-story twin with proper fall protection is a meaningful share of any small job's cost — which is also why bundling repairs (do the flashing *and* the six slipped slates in one mobilization) is genuinely economical.
+
+![Adilay Roofing van and scaffolding at a slate-roofed stone estate in Philadelphia](/images/blog/adilay-van-slate-estate-philadelphia.jpg "On site at a Philadelphia slate roof project — proper staging and scaffolding are part of every safe slate repair")
 
 ## The Most Common Slate Repairs in Philadelphia — and What Each Costs
 

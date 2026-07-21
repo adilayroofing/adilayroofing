@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "10 min read"
 category: "comparison"
-featuredImage: "/images/flat-roof-philadelphia.jpg"
+featuredImage: "/images/flat-roofing-white-coating.jpg"
 faq:
   - question: "Which is the best flat roof for a Philadelphia rowhome, EPDM, TPO, or modified bitumen?"
     answer: "For a typical Philadelphia rowhome with moderate sun exposure and standard rooftop traffic, modified bitumen with a silver coating is the most cost-effective long-term system. It's affordable to install ($8 to $12 per square foot), repairs cheaply when something fails, and lasts 20 to 30 years with recoats every 4 to 7 years. EPDM is a good choice when you want longevity with minimal maintenance and aren't worried about reflective properties. TPO has the best energy efficiency but is more expensive per square foot and the long-term failure mode (seam separation) is harder to repair. We install all three based on the specific roof, sun exposure, deck condition, and budget."

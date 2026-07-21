@@ -13,7 +13,7 @@ secondaryKeywords:
 author: "Adilay Roofing Team"
 readTime: "8 min read"
 category: "roof-repair"
-featuredImage: "/images/emergency-roof-repair-philadelphia.jpg"
+featuredImage: "/images/blog/roof-tear-off-stone-house-philadelphia.jpg"
 faq:
   - question: "Who does emergency roof tarping in Philadelphia after wind damage?"
     answer: "Licensed roofing contractors with 24/7 dispatch handle emergency tarping — Adilay Roofing (PA license PA184779) answers (267) 255-3620 around the clock and covers Philadelphia plus Bucks, Montgomery, Delaware, and Chester counties. Some general contractors and disaster-restoration companies also tarp roofs, but a roofer is usually the better call because the same company that tarps your roof can quote and perform the permanent repair, and the tarping cost is often credited toward that repair. Avoid door-knocking storm chasers who appear right after a storm; verify a PA contractor license before letting anyone on your roof."

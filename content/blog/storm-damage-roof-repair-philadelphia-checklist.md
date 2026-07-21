@@ -65,6 +65,8 @@ If water can reach the interior, get the roof tarped the same day. Your policy's
 
 Professional tarping in Philadelphia runs $300–$500, holds 30–60 days, and is usually reimbursable — keep the invoice. We covered the full process, costs, and what a correct installation looks like in our [emergency roof tarping guide](/blog/emergency-roof-tarping-philadelphia), and our [emergency crew](/services/emergency-roof-repair) installs tarps day and night.
 
+![Adilay Roofing crew stabilizing a storm-damaged roof edge on a Philadelphia stone home](/images/blog/roof-edge-tear-off-crew-philadelphia.jpg "Our crew securing the roof edge of a Philadelphia stone home after storm damage — stabilization comes before permanent repair")
+
 ## Step 4: Get a Licensed Local Roofer's Assessment — Before You File
 
 Not every storm-damaged roof is an insurance claim. The order matters:
