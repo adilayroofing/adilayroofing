@@ -16,6 +16,8 @@ import { bookingSchedules } from "@/data/booking";
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
+  /** "trust" renders the licensed & insured proof card (license photo, BBB seal, Google stars) */
+  kind?: "trust";
 }
 
 interface StoredChat {
@@ -42,6 +44,21 @@ const CHAT_BG = CLOUD_NAME
   ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_760,q_auto:low,f_auto/WhatsApp_Image_2026-07-15_at_00.17.00_ylgixy`
   : null;
 
+// Trust-card assets: PA license certificate + Google 5.0 badge (same images
+// used on the site), plus the BBB seal hosted by BBB itself.
+const CLOUD_FOLDER =
+  process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER || "adilayroofing";
+const LICENSE_PHOTO = CLOUD_NAME
+  ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_600,q_auto,f_auto/${CLOUD_FOLDER}/images/pa-license`
+  : null;
+const GOOGLE_STARS_PHOTO = CLOUD_NAME
+  ? `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_300,q_auto,f_auto/${CLOUD_FOLDER}/images/google-business-review-5-stars`
+  : null;
+const BBB_SEAL_IMG =
+  "https://seal-dc-easternpa.bbb.org/seals/blue-seal-160-82-bbb-236104655.png";
+const BBB_PROFILE_URL =
+  "https://www.bbb.org/us/pa/philadelphia/profile/roofing-contractors/adilay-roofing-llc-0241-236104655/#sealclick";
+
 // Same options as the contact form dropdown — keeps the sheet mapping identical.
 const SERVICE_OPTIONS = [
   "Roof Replacement",
@@ -60,12 +77,16 @@ const WELCOME: ChatMessage = {
     "Hi, I'm Adi — Adilay Roofing's virtual expert! 👋 Ask me anything about roofs, siding, windows or gutters, or let's set up your FREE estimate. How can I help?",
 };
 
-const QUICK_REPLIES: { label: string; text: string }[] = [
-  { label: "Get a free estimate", text: "Get a free estimate" },
-  { label: "I have a roof leak", text: "I have a roof leak" },
-  { label: "Financing options", text: "Financing options" },
+// Labels kept short so all chips (plus the gallery link) fit in three rows.
+// `trust: true` renders the local licensed & insured proof card instead of
+// asking the AI.
+const QUICK_REPLIES: { label: string; text: string; trust?: boolean }[] = [
+  { label: "Licensed & insured?", text: "Are you licensed & insured?", trust: true },
+  { label: "Free estimate", text: "Get a free estimate" },
+  { label: "Roof leak", text: "I have a roof leak" },
+  { label: "Financing", text: "Financing options" },
   { label: "Working hours", text: "What are your working hours?" },
-  { label: "What areas do you serve?", text: "What areas do you serve?" },
+  { label: "Service areas", text: "What areas do you serve?" },
 ];
 
 export default function ChatWidget() {
@@ -207,6 +228,19 @@ export default function ChatWidget() {
         value: 1,
       });
     }
+  }
+
+  function showTrustCard(question: string) {
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", content: question },
+      {
+        role: "assistant",
+        kind: "trust",
+        content: `Absolutely — fully licensed and insured! We're a registered PA Home Improvement Contractor (license #${company.license}), BBB accredited, and rated 5.0 stars on Google. Here's the proof:`,
+      },
+    ]);
+    setHasInteracted(true);
   }
 
   function handleFormSubmitted(firstName: string) {
@@ -464,9 +498,13 @@ export default function ChatWidget() {
             ref={scrollRef}
             className="relative h-full overflow-y-auto px-4 py-4 space-y-3"
           >
-            {messages.map((msg, i) => (
-              <MessageBubble key={i} message={msg} />
-            ))}
+            {messages.map((msg, i) =>
+              msg.kind === "trust" ? (
+                <TrustCard key={i} message={msg} />
+              ) : (
+                <MessageBubble key={i} message={msg} />
+              )
+            )}
 
             {leadSubmitted && bookingSchedule && (
               <div className="chat-msg-in flex gap-2">
@@ -550,7 +588,9 @@ export default function ChatWidget() {
                 <button
                   key={q.label}
                   type="button"
-                  onClick={() => sendMessage(q.text)}
+                  onClick={() =>
+                    q.trust ? showTrustCard(q.text) : sendMessage(q.text)
+                  }
                   className="px-3 py-1.5 text-xs font-semibold text-brand-red bg-white border border-brand-red/40 rounded-full hover:bg-brand-red hover:text-white active:scale-95 transition-all cursor-pointer"
                 >
                   {q.label}
@@ -561,7 +601,7 @@ export default function ChatWidget() {
                 onClick={() => setOpen(false)}
                 className="px-3 py-1.5 text-xs font-semibold text-brand-red bg-white border border-brand-red/40 rounded-full hover:bg-brand-red hover:text-white active:scale-95 transition-all cursor-pointer"
               >
-                📸 See our work
+                📸 Our work
               </Link>
             </div>
           )}
@@ -841,6 +881,116 @@ function LeadForm({
           email about your request.
         </p>
       </form>
+    </div>
+  );
+}
+
+// Rich reply for the "Licensed & insured?" quick question — shows the PA
+// license certificate (tap to zoom in-chat), the BBB seal (opens the BBB
+// profile in a new tab), and the Google 5.0-star badge (opens the Google
+// Business profile in a new tab).
+function TrustCard({ message }: { message: ChatMessage }) {
+  const [zoomed, setZoomed] = useState(false);
+
+  return (
+    <div data-msg-row className="chat-msg-in flex gap-2">
+      <AssistantAvatar />
+      <div className="max-w-[85%] bg-white border border-brand-border rounded-2xl rounded-bl-sm px-4 py-3 space-y-3">
+        <p className="text-sm text-brand-dark leading-relaxed">
+          {message.content}
+        </p>
+
+        {LICENSE_PHOTO && (
+          <button
+            type="button"
+            onClick={() => setZoomed(true)}
+            className="block w-full text-left cursor-zoom-in"
+            aria-label={`Zoom PA contractor license ${company.license}`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element -- fixed-width chat asset from Cloudinary CDN; the global custom loader would double-prefix the absolute URL */}
+            <img
+              src={LICENSE_PHOTO}
+              alt={`Pennsylvania Home Improvement Contractor license ${company.license}`}
+              width={600}
+              height={390}
+              loading="lazy"
+              className="w-full h-auto rounded-md border border-brand-border"
+            />
+            <span className="block text-[11px] text-brand-gray mt-1">
+              PA License <strong>#{company.license}</strong> — tap to zoom
+            </span>
+          </button>
+        )}
+
+        {zoomed && LICENSE_PHOTO && (
+          <div
+            role="dialog"
+            aria-label="PA contractor license, zoomed"
+            className="fixed inset-0 z-[90] bg-black/85 flex items-center justify-center p-3 cursor-zoom-out"
+            onClick={() => setZoomed(false)}
+          >
+            <button
+              type="button"
+              onClick={() => setZoomed(false)}
+              aria-label="Close zoomed license"
+              className="absolute top-3 right-3 w-10 h-10 bg-white/15 hover:bg-white/30 text-white rounded-full flex items-center justify-center text-xl leading-none cursor-pointer"
+            >
+              ✕
+            </button>
+            {/* eslint-disable-next-line @next/next/no-img-element -- zoom overlay for the Cloudinary-hosted license photo */}
+            <img
+              src={LICENSE_PHOTO}
+              alt={`Pennsylvania Home Improvement Contractor license ${company.license}, enlarged`}
+              className="max-w-full max-h-[85vh] w-auto h-auto rounded-md shadow-2xl"
+            />
+            <span className="absolute bottom-4 inset-x-0 text-center text-white/80 text-xs">
+              Tap anywhere to close
+            </span>
+          </div>
+        )}
+
+        <div className="flex items-center gap-3">
+          <a
+            href={BBB_PROFILE_URL}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label="Adilay Roofing LLC BBB Business Review"
+            className="shrink-0"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element -- seal image is hosted by BBB */}
+            <img
+              src={BBB_SEAL_IMG}
+              alt="Adilay Roofing LLC BBB Business Review"
+              width={160}
+              height={82}
+              loading="lazy"
+              className="h-12 w-auto"
+            />
+          </a>
+          {GOOGLE_STARS_PHOTO && (
+            <a
+              href={company.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Adilay Roofing reviews on Google"
+              className="shrink-0"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element -- fixed-width chat asset from Cloudinary CDN; the global custom loader would double-prefix the absolute URL */}
+              <img
+                src={GOOGLE_STARS_PHOTO}
+                alt="Google Business Review — 5.0 stars"
+                width={300}
+                height={131}
+                loading="lazy"
+                className="h-12 w-auto"
+              />
+            </a>
+          )}
+        </div>
+        <p className="text-[11px] text-brand-gray leading-snug">
+          Tap the seals to see our BBB and Google profiles.
+        </p>
+      </div>
     </div>
   );
 }
