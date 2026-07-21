@@ -146,7 +146,11 @@ export default function ChatWidget() {
       const last = messages[messages.length - 1];
       if (last?.role === "assistant" && !isTyping) {
         const rows = el.querySelectorAll("[data-msg-row]");
-        const target = rows[rows.length - 1] as HTMLElement | undefined;
+        // Anchor to the visitor's question (the row before the reply) so the
+        // view reads: their question → the answer → the form under it.
+        const target = (rows[rows.length - 2] ?? rows[rows.length - 1]) as
+          | HTMLElement
+          | undefined;
         if (target) {
           el.scrollTop +=
             target.getBoundingClientRect().top -
