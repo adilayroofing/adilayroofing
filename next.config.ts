@@ -105,6 +105,33 @@ const nextConfig: NextConfig = {
       },
 
       // ======================================================================
+      // Service consolidation round 2 (2026-07) — GSC URL inspection showed
+      // these four stuck at "Discovered/Unknown — not indexed" while their
+      // sibling page ranks: Google picked one of each near-duplicate pair.
+      // Consolidate into the indexed sibling, same as the 2026-05 round.
+      // ======================================================================
+      {
+        source: "/services/gutter-screening",
+        destination: "/services/gutter-repair",
+        permanent: true,
+      },
+      {
+        source: "/services/shingle-repair",
+        destination: "/services/shingle-roofing",
+        permanent: true,
+      },
+      {
+        source: "/services/window-repair",
+        destination: "/services/window-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/vinyl-siding",
+        destination: "/services/siding-installation",
+        permanent: true,
+      },
+
+      // ======================================================================
       // Cannibalization fix (2026-07) — /roofer-philadelphia competed with the
       // homepage for "roofer philadelphia" (GSC: home pos 28.8 / this page pos
       // 38, impressions split). Consolidate equity into the homepage.

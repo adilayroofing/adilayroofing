@@ -227,49 +227,9 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
 
 
   // -------------------------------------------------------------------------
-  "vinyl-siding": [
-    {
-      heading: "Insulated vs Standard Vinyl — The R-Value Decision",
-      html: "<p>Standard vinyl siding (the kind installed on most Philadelphia rowhomes in the 1990s and 2000s) provides essentially zero insulation value — it's just a weather barrier. <strong>Insulated vinyl siding</strong> (CertainTeed Cedar Impressions, Mastic Structure, Norandex EnerEx) has rigid foam laminated to the back of every panel, adding R-2 to R-4 of continuous insulation. On a Philadelphia rowhome with no wall insulation, upgrading from standard to insulated vinyl during a re-side typically cuts winter heating bills by 8-12% and pays for the upgrade premium within 5-7 years.</p>",
-    },
-    {
-      heading: "Color and Texture Options That Don't Look Like Vinyl",
-      html: "<p>Modern vinyl siding has come a long way from the white-only, fake-grain look of 30 years ago. Current vinyl lines we install in Philadelphia: <strong>thick-profile (.046+ gauge)</strong> with deep wood-grain embossing, <strong>shake and shingle profiles</strong> for accent gables, <strong>color-fade warranties</strong> of 25-30 years (vinyl from 2000s-era used to fade noticeably by year 10; modern formulations don't), and <strong>dark colors</strong> (deep blues, grays, browns) that earlier vinyl couldn't hold without warping. We bring full sample boards to every estimate so you see the actual finished look in your home's lighting before committing.</p>",
-    },
-    {
-      heading: "What Goes Behind the Vinyl",
-      html: "<p>Vinyl siding is only as good as what's installed behind it. Our standard system: <strong>existing siding fully removed</strong> (we don't install vinyl over existing siding — it traps moisture and voids manufacturer warranties), <strong>sheathing repair</strong> where the underlying OSB or plywood has rotted, <strong>weather-resistant barrier</strong> (Tyvek HomeWrap or Hydrogap) properly seamed and taped, optional <strong>continuous foam insulation</strong> on full re-sides for maximum thermal performance, and <strong>flashing tape</strong> at every window, door, and wall penetration. Skipping any layer is a 10-year shortcut on a 40-year material.</p>",
-    },
-    {
-      heading: "Vinyl's Lifespan in the Philadelphia Climate",
-      html: "<p>Quality vinyl siding installed correctly should give you <strong>30-40 years</strong> of zero-maintenance service in Philadelphia's climate. The freeze-thaw cycles, summer humidity, and UV exposure don't shorten that significantly when the vinyl is .044 gauge or thicker (we install nothing thinner). Annual maintenance is one rinse with a garden hose to wash off pollen, soot, and pollution film. No painting, no staining, no caulking. The homes we re-sided in 2008-2010 still look essentially the same as install day.</p>",
-    },
-    {
-      heading: "Vinyl vs Fiber Cement — When Each Wins",
-      html: "<p>Vinyl wins on <strong>price</strong> (roughly half the installed cost of fiber cement), <strong>maintenance</strong> (zero versus repaint every 15-20 years), and <strong>install time</strong> (faster, less invasive). Fiber cement wins on <strong>resale value</strong> in upper-tier neighborhoods like Chestnut Hill, Society Hill, and Rittenhouse where buyers expect Hardie, on <strong>fire resistance</strong> in row construction, and on <strong>impact resistance</strong> from hail and storms. We quote both options on most full re-side jobs in Philadelphia so you can compare the actual numbers for your home and make the call yourself.</p>",
-    },
-  ],
 
 
   // -------------------------------------------------------------------------
-  "window-repair": [
-    {
-      heading: "Common Window Failures and What Causes Them",
-      html: "<p>The most frequent window repair calls in Philadelphia: <strong>broken seals</strong> (the foggy, condensation-between-panes look — caused by spacer failure on year-15+ insulated glass units), <strong>sash hardware failure</strong> (broken balance springs, snapped tilt latches, worn pivot bars), <strong>weatherstripping deterioration</strong> (drafts in winter, often the cheapest fix on the list), <strong>broken or stuck locks</strong>, and <strong>cracked or chipped glass</strong> from impact or thermal stress. Each has a distinct fix — we diagnose the specific failure mode on every repair call before quoting parts.</p>",
-    },
-    {
-      heading: "DIY vs Pro Repair — Where the Line Is",
-      html: "<p>Some window repairs are reasonable DIY projects: weatherstripping replacement, lock cylinder swaps, simple latch adjustments. Others really should go to a pro: <strong>insulated glass unit (IGU) replacement</strong> (requires factory-spec glass and proper resealing — wrong glass voids the manufacturer warranty), <strong>balance spring replacement</strong> (the springs are under significant tension and can injure if released wrong), <strong>full sash rebuild</strong>, and <strong>lead paint disturbance</strong> on pre-1978 windows (legally requires RRP-certified contractor). We're upfront about which is which and won't upsell you a service call for a $20 weatherstrip you can do yourself.</p>",
-    },
-    {
-      heading: "Repair vs Replace — How to Run the Numbers",
-      html: "<p>The honest math on most window repairs: <strong>a single broken IGU</strong> costs $150-350 to swap, versus $500-900 to replace the entire window. <strong>Sash hardware fix</strong> runs $100-250 versus $500+ for full replacement. <strong>If more than half your windows have failed seals</strong> simultaneously, replacement starts to make economic sense — the per-window install cost drops, and you're getting current-spec efficiency on the whole envelope. We'll quote both options whenever both are viable so you can see the comparison.</p>",
-    },
-    {
-      heading: "Storm Windows — A Cheaper Alternative to Replacement",
-      html: "<p>If your existing windows are functional but drafty (common on pre-WW2 Philadelphia homes with original wood double-hung windows), <strong>interior storm windows</strong> can deliver 70-80% of the energy savings of full replacement at 25-30% of the cost. Indow inserts and Larson Quickfit interiors are two systems we install regularly. They're also a great fit for historic district homes where exterior window changes require Historical Commission approval but interior modifications don't. We evaluate every existing window on a repair call to see if storms are a smarter spend than replacement.</p>",
-    },
-  ],
 
 
   // -------------------------------------------------------------------------
@@ -321,49 +281,9 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
   ],
 
   // -------------------------------------------------------------------------
-  "gutter-screening": [
-    {
-      heading: "Screen Types — Mesh, Solid, and Foam Compared",
-      html: "<p>Three gutter-protection systems we install in Philadelphia, ranked by effectiveness: <strong>fine micro-mesh</strong> (LeafFilter, Gutter Helmet, GutterGlove — block almost all debris but cost $20-30/foot installed and can be over-spec for homes without major tree exposure), <strong>solid covers with reverse-curve</strong> (water rides over the curve into the gutter, leaves slide off — $15-20/foot, work well in moderate leaf load), and <strong>foam inserts</strong> (cheap, $3-6/foot, only marginal effectiveness and degrade with UV — we generally don't recommend them despite the price). The right system depends on tree exposure and budget.</p>",
-    },
-    {
-      heading: "Cost vs Ongoing Cleaning Savings",
-      html: "<p>Quality gutter screens cost $1,500-4,000 installed on a typical Philadelphia home, depending on linear feet and system choice. Twice-a-year professional cleaning runs roughly $200-400 per visit, so $400-800/year. <strong>Payback math: most screen systems break even at year 4-7 versus continued professional cleaning</strong>, and the ongoing labor savings continue from there. Beyond direct cost, screens prevent the secondary damage clogged gutters cause (fascia rot, foundation water, ice dams) — much harder to put a number on but real value.</p>",
-    },
-    {
-      heading: "Warranty Considerations — Read the Fine Print",
-      html: "<p>\"Lifetime warranty\" claims in the gutter-screening industry are notoriously slippery. Common gotchas in screening warranties: <strong>transferability</strong> (does it survive a home sale?), <strong>service requirement</strong> (some require annual paid \"inspections\" by the original installer to keep warranty valid), <strong>exclusions for certain debris types</strong> (pine needles often excluded), and <strong>labor coverage limits</strong> (warranty pays for materials but you pay labor for the warranty service call). We read every warranty in plain English on the estimate so you understand exactly what you're getting before signing.</p>",
-    },
-    {
-      heading: "Retrofit vs New Install — How We Approach Each",
-      html: "<p>If your existing gutters are in good condition (3-15 years old, properly hung, no major leaks), a screen <strong>retrofit</strong> is the right project — $1,500-3,000 typical for a Philadelphia home. If your existing gutters are sagging, leaking, or older than 20 years, the smart play is a <strong>combined gutter replacement + screening</strong> — the install crew is already on-site, the per-foot install cost drops, and you avoid having to remove brand-new screens to replace failing gutters in 5 years. We assess and recommend honestly on every estimate.</p>",
-    },
-  ],
 
 
   // -------------------------------------------------------------------------
-  "shingle-repair": [
-    {
-      heading: "Common Shingle Damage We Repair",
-      html: "<p>The frequent shingle repair calls in Philadelphia: <strong>wind-lifted shingles</strong> after nor'easters or summer thunderstorm gusts (single shingle or whole-row peeling along the leading edge), <strong>granule loss</strong> from age, hail, or pressure-washing damage (visible as smooth black spots and granules in the gutters), <strong>cracked shingles</strong> from foot traffic or thermal stress, <strong>missing shingles</strong> from impact damage (fallen branches, hail), and <strong>flashing failures</strong> at chimneys, valleys, and sidewalls (the actual leak source for most \"shingle\" leaks). We diagnose the specific failure mode before quoting parts.</p>",
-    },
-    {
-      heading: "Wind-Lifted Shingles and Why They Happen",
-      html: "<p>Shingles are wind-rated up to 110-130 mph for architectural products, but the rating only holds when they're installed correctly: <strong>six nails per shingle</strong> placed in the nail line (not above or below), <strong>self-sealing strips activated</strong> by sun exposure (a common failure mode for shingles installed in cool weather and never properly heat-sealed), and <strong>proper starter strip and ridge cap</strong>. When we repair a wind-lifted area we hand-seal the new shingles with manufacturer-spec roofing cement so they bond before the next storm regardless of weather.</p>",
-    },
-    {
-      heading: "Granule Loss — When It's Cosmetic and When It's a Problem",
-      html: "<p>Granule loss from <strong>year 1-3 of a new install</strong> is normal — loose factory granules wash off in the first few rainstorms. Granule loss from <strong>year 5-15</strong> in concentrated areas (under valleys, at downspout impact points, where tree limbs scrape) is usually addressable with selective shingle replacement and corrective work. <strong>Widespread granule loss from year 15+</strong> is end-of-life and replacement is the right answer — the underlying asphalt mat is now exposed to UV and will fail rapidly. Granule loss is a useful indicator of where you are in the roof's lifespan curve.</p>",
-    },
-    {
-      heading: "Hail Damage and Insurance Documentation",
-      html: "<p>Hail damage to asphalt shingles can be subtle: small circular bruises where the granules are knocked off and the underlying mat is fractured. Untrained eyes miss it; trained adjusters and roofers find it with chalk marking. We do <strong>free post-storm hail inspections</strong> for Philadelphia homeowners after any significant hail event. If we find damage, we provide the chalk-marked photo report your insurance carrier needs to approve a claim. Roughly 60% of post-hail inspections we do result in a claim being approved — the carriers know what to look for, but you have to ask.</p>",
-    },
-    {
-      heading: "Matching Shingles on Older Roofs — A Real Challenge",
-      html: "<p>If your roof is more than 5-7 years old, <strong>exact-match replacement shingles probably aren't available anymore</strong>. Manufacturers discontinue color blends every few years, and sun-faded shingles don't match new ones of the same color anyway. Our approach: pull spare shingles from <strong>less-visible roof areas</strong> (rear slopes, behind dormers) and install the new shingles in those locations, leaving the matched-vintage shingles on the visible front. Done well, the repair is invisible from the curb. We also keep an inventory of common discontinued colors when we can source them.</p>",
-    },
-  ],
 
 
   // -------------------------------------------------------------------------

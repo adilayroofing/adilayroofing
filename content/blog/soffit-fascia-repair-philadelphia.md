@@ -87,7 +87,7 @@ The good news: caught at the peeling-paint stage, this is one of the cheapest ro
 
 Soffit and fascia don't rot on their own — they rot because water keeps arriving. The usual Philadelphia suspects:
 
-1. **Gutter problems** — clogged, back-pitched, or seam-leaking gutters overflow at the back edge, bathing the fascia every storm. Gutter repair and edge repair are one job, not two.
+1. **Gutter problems** — clogged, back-pitched, or seam-leaking gutters overflow at the back edge, bathing the fascia every storm. [Gutter cleaning](/services/gutter-cleaning) and [repair](/services/gutter-repair) are part of the edge fix, not a separate job.
 2. **Missing drip edge** — runoff wicks behind the gutter onto bare wood. This exact failure mode (and its fix) is the subject of our [water-behind-the-gutter guide](/blog/water-leaking-behind-gutter-philadelphia).
 3. **Ice dams** — winter meltwater backing up under the roof edge finds the fascia first. Prevention is ventilation and air-sealing — see the [ice dam guide](/blog/ice-dams-philadelphia-prevention-removal) — and note the circular irony: rotted soffits *choke* the ventilation that prevents the ice dams that rot soffits. Breaking that loop is the whole point of doing edge repair properly.
 4. **Roof-edge shingle wear** — first-course shingles failing at the eave deliver water straight down. If the roof edge generally looks tired, check it against our [signs you need a new roof](/blog/signs-you-need-new-roof-philadelphia).
