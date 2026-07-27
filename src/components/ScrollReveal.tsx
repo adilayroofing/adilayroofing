@@ -11,13 +11,15 @@ interface ScrollRevealProps {
   distance?: number;
 }
 
+// Snappy defaults (2026-07): 350ms / 16px, revealing as soon as the element
+// touches the viewport. Longer values made sections visibly lag the scroll.
 export default function ScrollReveal({
   children,
   className = "",
   delay = 0,
   direction = "up",
-  duration = 500,
-  distance = 24,
+  duration = 350,
+  distance = 16,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +35,7 @@ export default function ScrollReveal({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px 0px 0px" }
     );
 
     observer.observe(el);

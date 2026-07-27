@@ -12,6 +12,8 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SafeHTML from "@/components/SafeHTML";
 import VanBanner from "@/components/VanBanner";
 import LocationMap from "@/components/LocationMap";
+import HavertownProjectShowcase from "@/components/HavertownProjectShowcase";
+import { havertownSchemaImages, havertownOgImage } from "@/data/havertownProject";
 import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 // Fully static — every location page is generated at build time from
@@ -57,6 +59,8 @@ export async function generateMetadata({
       title: `${location.h1} | ${company.name}`,
       description: location.metaDescription,
       url: `${BASE_URL}/service-areas/${slug}`,
+      // Havertown gets the completed-project collage as its social image.
+      ...(slug === "havertown" ? { images: [havertownOgImage] } : {}),
     },
   };
 }
@@ -184,6 +188,9 @@ export default async function LocationPage({ params }: PageProps) {
     provider: ORG_REF,
     areaServed: locationAreaServed,
     url: `${BASE_URL}/service-areas/${slug}`,
+    // Havertown: photos of the completed July 2026 full roof replacement
+    // (city-level location only — no street address in copy or schema).
+    ...(slug === "havertown" ? { image: havertownSchemaImages } : {}),
   };
 
   // JSON-LD FAQPage schema
@@ -428,6 +435,11 @@ export default async function LocationPage({ params }: PageProps) {
         neighborhoods={neighborhoods}
         mapUrl={company.mapUrl}
       />
+
+      {/* ================================================================= */}
+      {/* Havertown project showcase — scroll-reveal before/after story     */}
+      {/* ================================================================= */}
+      {slug === "havertown" && <HavertownProjectShowcase variant="full" />}
 
       {/* ================================================================= */}
       {/* Local Projects — before/after sliders for jobs done in this area  */}

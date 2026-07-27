@@ -16,6 +16,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import HavertownProjectShowcase from "@/components/HavertownProjectShowcase";
 import VanBanner from "@/components/VanBanner";
 import { stripHtml } from "@/lib/schema";
 
@@ -494,6 +495,14 @@ export default async function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ============================================ */}
+      {/* HAVERTOWN PROJECT — scroll-reveal            */}
+      {/* before/after story (condensed: 2 pairs +     */}
+      {/* crew, links to the full section on the       */}
+      {/* Havertown service-area page).                */}
+      {/* ============================================ */}
+      <HavertownProjectShowcase variant="condensed" />
 
       {/* ============================================ */}
       {/* SERVICES SECTION                             */}
