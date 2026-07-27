@@ -113,7 +113,16 @@ function ShowcaseCollage() {
                   loading="lazy"
                   decoding="async"
                   className="absolute inset-0 w-full h-full object-cover"
-                  style={isCrew ? { objectPosition: "center 35%" } : undefined}
+                  // AFTER shots are portrait; anchoring the square crop to the
+                  // top keeps the street/tree context so their framing matches
+                  // the wider-looking BEFORE tiles.
+                  style={
+                    isCrew
+                      ? { objectPosition: "center 35%" }
+                      : card.kind === "after"
+                        ? { objectPosition: "center top" }
+                        : undefined
+                  }
                 />
                 <span
                   className={`absolute top-2 left-2 px-2 py-0.5 rounded-sm text-[10px] md:text-xs font-extrabold tracking-widest ${tag.className}`}
