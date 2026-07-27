@@ -308,7 +308,7 @@ export default function ChatWidget() {
       ...prev,
       {
         role: "assistant",
-        content: `Thank you${firstName ? `, ${firstName}` : ""}! ✅ Your request was sent to our team — we'll reach out within 24 hours. Want to skip the wait? Book your free 30-minute visit below.`,
+        content: `Thank you${firstName ? `, ${firstName}` : ""}! ✅ Your request was sent to our team — we'll reach out within 24 hours. Want to skip the wait? Book your free roof visit below and pick a 1-hour arrival window that works for you.`,
       },
     ]);
     fireLeadPixels();
@@ -570,8 +570,8 @@ export default function ChatWidget() {
                     📅 Book your {bookingSchedule.label.toLowerCase()}
                   </p>
                   <p className="text-xs text-brand-gray mb-3 leading-snug">
-                    Pick a day and time that works for you — takes under a
-                    minute, instant email confirmation.
+                    Pick a day and a 1-hour arrival window that works for you
+                    — takes under a minute, instant email confirmation.
                   </p>
                   <a
                     href={bookingSchedule.url}
@@ -593,7 +593,7 @@ export default function ChatWidget() {
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    Book my {bookingSchedule.duration} visit
+                    Book my {bookingSchedule.label.toLowerCase()}
                   </a>
                 </div>
               </div>

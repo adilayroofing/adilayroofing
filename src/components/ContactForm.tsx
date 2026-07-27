@@ -203,8 +203,8 @@ export default function ContactForm() {
                 Skip the wait — book your free visit now
               </h4>
               <p className="text-brand-gray text-sm">
-                Choose a day and time that works for you — booking takes
-                under a minute.
+                Choose a day and a 1-hour arrival window that works for you
+                — booking takes under a minute.
               </p>
             </div>
 
@@ -254,7 +254,7 @@ export default function ContactForm() {
                         {schedule.label}
                       </span>
                       <span className="block text-sm text-brand-gray mt-0.5">
-                        {schedule.duration} on-site
+                        {schedule.duration}
                       </span>
                     </span>
                     <span
@@ -309,7 +309,7 @@ export default function ContactForm() {
                 <div className="mt-4">
                   <iframe
                     src={bookingUrl(availableSchedules[openScheduleIdx].url, true)}
-                    title={`Book a ${availableSchedules[openScheduleIdx].duration} visit`}
+                    title={`Book your ${availableSchedules[openScheduleIdx].label}`}
                     className="w-full h-[600px] md:h-[680px] bg-white border border-brand-border rounded-sm"
                   />
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mt-2">

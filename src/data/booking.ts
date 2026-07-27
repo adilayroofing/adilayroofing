@@ -25,13 +25,14 @@ export interface BookingSchedule {
 }
 
 // The current Google Workspace plan allows only ONE appointment schedule.
-// The 30-min buffer on it means each visit blocks a full hour anyway.
-// If the plan is upgraded later, add a second entry here (e.g. "Full
-// Assessment" / "1 hour") and it will appear as a second card.
+// The schedule is set to 1-hour slots — the hour is the ARRIVAL WINDOW
+// the team can show up in, not the inspection length.
+// If the plan is upgraded later, add a second entry here and it will
+// appear as a second card.
 export const bookingSchedules: BookingSchedule[] = [
   {
     label: "Free Roof Visit",
-    duration: "30 min",
+    duration: "1-hour arrival window",
     url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1kSY9TA18Jk5W5wQdXBdTbqDa-0jnDFrFWD1GdgzvFjs7vjZxQmEj1mU9cUz8GoB5nkapZn5Cv",
   },
 ];
