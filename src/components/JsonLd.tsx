@@ -68,8 +68,8 @@ export default function JsonLd() {
     currenciesAccepted: "USD",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "41",
+      ratingValue: "4.9",
+      reviewCount: "55",
       bestRating: "5",
       worstRating: "1",
     },
