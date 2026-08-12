@@ -4,6 +4,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ScrollReveal from "@/components/ScrollReveal";
+import ApplyFinancingButton from "@/components/ApplyFinancingButton";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { stripHtml } from "@/lib/schema";
 
@@ -89,6 +90,36 @@ const fallbackFinancingFaqs = [
     answer:
       "Loans range from $1,000 to $100,000, depending on your project scope and credit profile.",
   },
+  {
+    question: "Do roofing companies take payment plans?",
+    answer:
+      "Many do, but there is an important difference between a contractor splitting your invoice into a few payments and true third-party financing. An in-house payment plan is an informal arrangement with the contractor. Financing through a licensed lender like Service Finance Company gives you a defined loan with fixed terms, a written agreement and consumer protections — and it means we get paid by the lender rather than chasing you for installments. Adilay Roofing uses the second approach.",
+  },
+  {
+    question: "Is there roof financing near me in Philadelphia?",
+    answer:
+      "Yes. Adilay Roofing offers financing on projects across Philadelphia and Bucks, Chester, Delaware and Montgomery counties — including row homes in South Philadelphia, Kensington, Fishtown and Northeast Philadelphia, and single-family homes throughout the suburbs. The application is handled online through Service Finance Company, so you can apply from home before we ever visit.",
+  },
+  {
+    question: "Can I finance a roof repair, or only a full replacement?",
+    answer:
+      "Both. Financing is not limited to full replacements — repairs, flashing and chimney work, siding, gutters and windows can all be financed. For smaller repairs in the $500 to $2,500 range it is worth comparing against simply paying outright, since interest on a small balance may cost more than the convenience is worth.",
+  },
+  {
+    question: "Should I finance a roof or use a home equity loan?",
+    answer:
+      "It depends on how quickly you need the work done and whether you want to borrow against your home. A HELOC or home equity loan often carries a lower rate but is secured by your property and typically takes weeks to close, including an appraisal. Contractor financing is unsecured and decisions are usually made the same day. If your roof is actively leaking, the timeline usually decides it.",
+  },
+  {
+    question: "Do I have to pay anything before the work starts?",
+    answer:
+      "No. Payments do not begin until your project is complete. You can apply, get approved and have us schedule the job without money leaving your account first — which is the main reason homeowners use financing for emergency roof work.",
+  },
+  {
+    question: "Will applying for roof financing hurt my credit?",
+    answer:
+      "Checking your eligibility typically does not affect your credit score. If you move forward with a loan, the lender may run a full credit check as part of final approval. Service Finance Company, LLC is a nationally licensed sales finance company (NMLS #140908) and an approved FHA Title I Lender, and all financing is subject to their credit approval.",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -143,7 +174,76 @@ const fallbackBenefits = [
   "FHA Title I approved lender",
 ];
 
-const fallbackTrustText = "Service Finance Company, LLC is a nationally licensed sales finance company and an approved FHA Title I Lender. With over 50 loan products and a track record of helping homeowners across the country, your financing is in trusted hands.";
+const fallbackTrustText = "Service Finance Company, LLC is a nationally licensed sales finance company and an approved FHA Title I Lender (NMLS #140908). With over 50 loan products and a track record of helping homeowners across the country, your financing is in trusted hands.";
+
+// Cost ranges below mirror the figures published in our 2026 Philadelphia roof
+// cost guide (content/blog/roof-replacement-cost-philadelphia-2026.md). Keep the
+// two in sync — if the blog's numbers are updated, update these too.
+const projectCosts = [
+  {
+    project: "Row home roof replacement",
+    range: "$4,200 – $6,800",
+    note: "The most common project we finance in Philadelphia. Flat or low-slope, typically 1,000–1,400 sq ft.",
+  },
+  {
+    project: "Typical full roof replacement",
+    range: "$5,192 – $10,986",
+    note: "The city-wide average range, driven mostly by square footage, pitch and how much decking needs replacing.",
+  },
+  {
+    project: "Larger or steep-slope homes",
+    range: "$10,000 – $16,000",
+    note: "Bigger footprints, complex rooflines, slate or tile, or multiple tear-off layers.",
+  },
+  {
+    project: "Roof repair",
+    range: "$500 – $2,500",
+    note: "Leak repairs, flashing work and storm damage. Often small enough to pay outright — but financing is available.",
+  },
+];
+
+const paymentComparison = [
+  {
+    method: "Contractor financing",
+    speed: "Same-day decision in most cases",
+    collateral: "Unsecured — your home is not collateral",
+    bestFor:
+      "Homeowners who need the roof now and want a fixed monthly payment without touching home equity.",
+    highlight: true,
+  },
+  {
+    method: "Home equity loan / HELOC",
+    speed: "Typically several weeks",
+    collateral: "Secured against your home",
+    bestFor:
+      "Larger renovations where the roof is one line item and you have time to wait for underwriting and an appraisal.",
+    highlight: false,
+  },
+  {
+    method: "Credit card",
+    speed: "Immediate",
+    collateral: "Unsecured",
+    bestFor:
+      "Small repairs you can clear quickly. Revolving rates are generally the most expensive way to carry a full roof balance.",
+    highlight: false,
+  },
+  {
+    method: "Insurance claim",
+    speed: "Weeks, and only if approved",
+    collateral: "None",
+    bestFor:
+      "Sudden storm or wind damage. Insurance does not cover wear and tear, and you still owe your deductible.",
+    highlight: false,
+  },
+  {
+    method: "Paying cash",
+    speed: "Immediate",
+    collateral: "None",
+    bestFor:
+      "The cheapest option if you have the savings and emptying them won't leave you exposed.",
+    highlight: false,
+  },
+];
 
 const fallbackCtaHeadline = "Ready to Get Started?";
 const fallbackCtaSubtext = "Apply for financing today, or contact us for a free estimate. We\u2019ll help you find the right payment option for your project.";
@@ -218,9 +318,10 @@ export default async function FinancingPage() {
             </ScrollReveal>
             <ScrollReveal delay={550} duration={600} distance={16}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/contact" className="btn-primary w-full sm:w-auto">
-                  Apply for Financing
-                </Link>
+                <ApplyFinancingButton
+                  location="hero"
+                  label="Apply for Financing"
+                />
                 <Link href="/get-quote" className="btn-outline-white w-full sm:w-auto">
                   Get a Free Estimate
                 </Link>
@@ -352,6 +453,140 @@ export default async function FinancingPage() {
       </section>
 
       {/* ================================================================= */}
+      {/* What a Roof Costs in Philadelphia                                 */}
+      {/* ================================================================= */}
+      <section className="section-padding bg-brand-light">
+        <div className="container-narrow mx-auto">
+          <ScrollReveal>
+            <h2 className="section-heading text-center mb-4">
+              What Does a Roof Actually Cost in Philadelphia?
+            </h2>
+            <p className="text-brand-gray text-lg max-w-3xl mx-auto mb-10 text-center leading-relaxed">
+              Most homeowners start looking into payment plans because the
+              number came in higher than expected. Here is what roofing work
+              typically runs across Philadelphia and the surrounding counties,
+              so you can work out what a monthly payment would need to cover.
+            </p>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {projectCosts.map((item, i) => (
+              <ScrollReveal key={item.project} delay={i * 100} distance={20}>
+                <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm flex flex-col md:flex-row md:items-start gap-3 md:gap-6">
+                  <div className="md:w-1/3">
+                    <p className="font-bold text-brand-dark">{item.project}</p>
+                    <p className="text-brand-navy font-semibold text-lg">
+                      {item.range}
+                    </p>
+                  </div>
+                  <p className="md:w-2/3 text-brand-gray text-sm leading-relaxed">
+                    {item.note}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={200}>
+            <p className="text-brand-gray text-sm max-w-3xl mx-auto mt-8 text-center leading-relaxed">
+              Philadelphia permits typically add $200 – $400, and older row
+              homes often need decking repairs that are only visible once the
+              old roof comes off. A good estimate accounts for both. For a
+              full breakdown by neighborhood, home size and material, see our{" "}
+              <Link
+                href="/blog/roof-replacement-cost-philadelphia-2026"
+                className="text-brand-navy font-semibold underline underline-offset-2"
+              >
+                2026 Philadelphia roof replacement cost guide
+              </Link>
+              .
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* Financing vs Other Ways to Pay                                    */}
+      {/* ================================================================= */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <ScrollReveal>
+            <h2 className="section-heading text-center mb-4">
+              Financing vs. Other Ways to Pay for a Roof
+            </h2>
+            <p className="text-brand-gray text-lg max-w-3xl mx-auto mb-10 text-center leading-relaxed">
+              Contractor financing is not automatically the cheapest way to pay
+              for a roof — it is the fastest way to get one done without
+              draining savings or borrowing against your house. Here is an
+              honest comparison so you can pick the right one.
+            </p>
+          </ScrollReveal>
+
+          <div className="max-w-4xl mx-auto overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[640px]">
+              <thead>
+                <tr className="border-b-2 border-brand-light">
+                  <th className="py-3 pr-4 text-brand-dark font-bold text-sm">
+                    Option
+                  </th>
+                  <th className="py-3 pr-4 text-brand-dark font-bold text-sm">
+                    How fast
+                  </th>
+                  <th className="py-3 pr-4 text-brand-dark font-bold text-sm">
+                    Collateral
+                  </th>
+                  <th className="py-3 text-brand-dark font-bold text-sm">
+                    Best for
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {paymentComparison.map((row) => (
+                  <tr
+                    key={row.method}
+                    className={`border-b border-brand-light align-top ${
+                      row.highlight ? "bg-brand-light/60" : ""
+                    }`}
+                  >
+                    <td className="py-4 pr-4 font-semibold text-brand-dark text-sm">
+                      {row.method}
+                    </td>
+                    <td className="py-4 pr-4 text-brand-gray text-sm">
+                      {row.speed}
+                    </td>
+                    <td className="py-4 pr-4 text-brand-gray text-sm">
+                      {row.collateral}
+                    </td>
+                    <td className="py-4 text-brand-gray text-sm leading-relaxed">
+                      {row.bestFor}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <ScrollReveal delay={200}>
+            <p className="text-brand-gray text-sm max-w-3xl mx-auto mt-8 text-center leading-relaxed">
+              All financing is offered through Service Finance Company, LLC and
+              is subject to credit approval. Available terms, promotional
+              periods and rates depend on the loan product you qualify for —
+              applying is the only way to see your actual options.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+              <ApplyFinancingButton
+                location="comparison_section"
+                label="See What You Qualify For"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
       {/* Trust Block                                                       */}
       {/* ================================================================= */}
       <section className="bg-brand-dark py-10 md:py-16">
@@ -400,9 +635,10 @@ export default async function FinancingPage() {
               {ctaSubtext}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="btn-primary w-full sm:w-auto">
-                Apply for Financing
-              </Link>
+              <ApplyFinancingButton
+                location="mid_page_cta"
+                label="Apply for Financing"
+              />
               <Link href="/get-quote" className="btn-secondary w-full sm:w-auto">
                 Get a Free Estimate
               </Link>
