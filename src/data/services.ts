@@ -1104,6 +1104,26 @@ export const services: Service[] = [
         answer:
           "Adilay Roofing provides 24/7 emergency roof tarping across Philadelphia and the surrounding counties. Call (267) 255-3620 any time — we dispatch a crew, typically the same day, to install a secured reinforced tarp that stops water intrusion after wind, storm, or tree damage. Tarping is free to quote and usually reimbursable through homeowner's insurance.",
       },
+      {
+        question: "Do you offer 24 hour roof repair?",
+        answer:
+          "Yes. Adilay Roofing answers emergency roof repair calls 24 hours a day, including nights, weekends and holidays. Call (267) 255-3620 and you reach a person, not an answering service queue. For an active leak we prioritise stabilisation first — tarping and temporary weatherproofing to stop water entering the house — then schedule the permanent repair in daylight when it can be done properly. Chasing a permanent fix at 2am in driving rain produces work that has to be redone.",
+      },
+      {
+        question: "Is there emergency roof leak repair near me?",
+        answer:
+          "If you are in Philadelphia or Bucks, Chester, Delaware or Montgomery county, yes. Our crews cover the city and all four surrounding counties, and because we are locally based rather than dispatching from out of state we are usually on site the same day. Call (267) 255-3620, describe where the water is coming in, and we will tell you what to do to limit damage while we are on the way.",
+      },
+      {
+        question: "Can you repair an emergency flat roof leak?",
+        answer:
+          "Yes, and flat roofs are a large share of our emergency work — Philadelphia row homes are overwhelmingly flat or low-slope. Emergency flat roof failures usually come from split seams, blistered or punctured membrane, failed flashing at parapet walls, or ponding water that has finally found a weak point. We carry EPDM, TPO and modified bitumen patch materials on the truck, so most flat roof emergencies can be sealed watertight on the first visit rather than tarped and revisited.",
+      },
+      {
+        question: "Do you cover emergency roof repair in Bucks and Chester County?",
+        answer:
+          "Yes. We respond to emergency calls throughout Bucks County — Levittown, Newtown, Langhorne, Bristol, Doylestown, Yardley — and across Chester County including West Chester, Exton, Downingtown, Phoenixville and Kennett Square, plus Delaware and Montgomery counties. Emergency response is dispatched from whichever crew is closest, so suburban calls are not deprioritised behind city work.",
+      },
     ],
     bodySections: [
       {
@@ -1736,6 +1756,31 @@ export const services: Service[] = [
         question: "How long does a typical soffit repair take?",
         answer:
           "Most residential soffit repairs in Philadelphia are completed in a single day. Full soffit-and-fascia replacements on larger homes may take 2 days. We leave your property clean, haul away all debris, and walk the job with you before we call it done.",
+      },
+      {
+        question: "What is the difference between soffit and fascia?",
+        answer:
+          "The fascia is the vertical board along your roof edge — the flat face your gutters attach to, visible from the street. The soffit is the horizontal panel tucked underneath the overhang, only visible when you stand below and look up. Fascia damage is usually spotted early because you can see it; soffit damage hides overhead and is often found late. Since gutters hang on the fascia and the soffit sits behind it, water that damages one almost always reaches the other, which is why we inspect both.",
+      },
+      {
+        question: "Is there soffit repair near me in Philadelphia?",
+        answer:
+          "Yes. Adilay Roofing repairs soffit and fascia across Philadelphia and Bucks, Chester, Delaware and Montgomery counties — including Fishtown, Manayunk, Roxborough, South Philadelphia, Northeast Philadelphia, and the surrounding suburbs. We know the common eave and overhang profiles on local row homes, twins and Colonials, so we can usually match your existing soffit rather than replacing an entire run. Call (267) 255-3620 for a free inspection.",
+      },
+      {
+        question: "Do you repair soffit, fascia and gutters together?",
+        answer:
+          "Usually, yes — and the order matters. Gutters hang on the fascia, and the soffit tucks in behind it, so the correct sequence is fascia repair first, then soffit, then gutters. Installing new soffit behind rotted fascia, or rehanging gutters on a board that is already failing, means redoing the work later. When the underlying problem touches all three we quote them as one job, because partial fixes leave the root cause in place and you pay twice.",
+      },
+      {
+        question: "Can soffit be repaired without replacing the whole run?",
+        answer:
+          "Often, yes. Spot repair works when the damage is confined to one or two panel sections, the fascia behind it is still sound, and the cause — usually gutter overflow — can be corrected at the same time. Full-run replacement makes more sense when rot has travelled along the eave, when wood soffit is past year 35 and failing in several places, or when animals have opened multiple entry points. We show you photos of what we found and put the recommendation in writing so you can see the reasoning.",
+      },
+      {
+        question: "Can damaged soffit raise my energy bills?",
+        answer:
+          "It can. Soffit vents are the intake side of your attic ventilation — cool air enters at the eaves and exits through ridge or gable vents. When soffit is rotted, blocked or was never vented properly, that airflow stops, your attic runs hot in summer, and your shingles age considerably faster from underneath. In winter the same trapped moisture contributes to ice damming. Restoring proper soffit ventilation is often the cheapest part of the repair and the part with the longest payback.",
       },
     ],
   },
