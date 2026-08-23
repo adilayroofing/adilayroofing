@@ -182,4 +182,4 @@ Call **[(267) 255-3620](tel:+12672553620)** or [request a free flat roof inspect
 
 We do flat roof inspections across Philadelphia and the surrounding counties. We bring a ruler, time-stamped photos, and a written assessment of cause and recommended fix. If a warranty claim is supportable, we tell you what to document and how to file. If it's not, we tell you that too.
 
-For related reading, see our [Flat roof leaks every winter guide](/blog/flat-roof-leaks-every-winter-philadelphia), our [EPDM vs TPO vs modified bitumen comparison](/blog/epdm-vs-tpo-vs-modified-bitumen-philadelphia), and our [flat roofing service page](/services/flat-roofing).
+For related reading, see our [Flat roof leaks every winter guide](/blog/flat-roof-leaks-every-winter-philadelphia), our [EPDM vs TPO vs modified bitumen comparison](/blog/epdm-vs-tpo-vs-modified-bitumen-philadelphia), and our [flat roofing service page](/services/flat-roofing). If ponding has already caused a leak, our [flat roof repair service](/services/flat-roof-repair) covers seam repair, membrane patching and drainage correction.
