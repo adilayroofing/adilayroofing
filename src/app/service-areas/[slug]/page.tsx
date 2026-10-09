@@ -12,8 +12,8 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SafeHTML from "@/components/SafeHTML";
 import VanBanner from "@/components/VanBanner";
 import LocationMap from "@/components/LocationMap";
-import HavertownProjectShowcase from "@/components/HavertownProjectShowcase";
-import { havertownSchemaImages, havertownOgImage } from "@/data/havertownProject";
+import ProjectCaseStudy from "@/components/ProjectCaseStudy";
+import { getCaseStudyForArea } from "@/data/projectCaseStudies";
 import { BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
 // Fully static — every location page is generated at build time from
@@ -41,6 +41,8 @@ export async function generateMetadata({
     return { title: "Location Not Found" };
   }
 
+  const caseStudyOg = getCaseStudyForArea(slug)?.ogImage;
+
   return {
     title: location.metaTitle,
     description: location.metaDescription,
@@ -59,8 +61,8 @@ export async function generateMetadata({
       title: `${location.h1} | ${company.name}`,
       description: location.metaDescription,
       url: `${BASE_URL}/service-areas/${slug}`,
-      // Havertown gets the completed-project collage as its social image.
-      ...(slug === "havertown" ? { images: [havertownOgImage] } : {}),
+      // Area pages with a case study use its project image for social cards.
+      ...(caseStudyOg ? { images: [caseStudyOg] } : {}),
     },
   };
 }
@@ -126,6 +128,9 @@ export default async function LocationPage({ params }: PageProps) {
     notFound();
   }
 
+  // Full project case study for this area, if one exists.
+  const caseStudy = getCaseStudyForArea(slug);
+
   // All locations for linking in "Communities We Serve"
   const allLocations = getAllLocations();
 
@@ -140,7 +145,9 @@ export default async function LocationPage({ params }: PageProps) {
   const bodySections = location.bodySections ?? [];
   // Before/after sliders for gallery projects tagged with this area's slug —
   // any location that gets a locationSlug'd gallery entry shows it automatically.
-  const localProjects = galleryProjects.filter((p) => p.locationSlug === slug);
+  const localProjects = galleryProjects.filter(
+    (p) => p.locationSlug === slug && !p.hideOnAreaPage
+  );
 
   const heroCTAText = "Get FREE Estimate";
   const servicesHeading = `Our Services in ${location.name}`;
@@ -188,9 +195,9 @@ export default async function LocationPage({ params }: PageProps) {
     provider: ORG_REF,
     areaServed: locationAreaServed,
     url: `${BASE_URL}/service-areas/${slug}`,
-    // Havertown: photos of the completed July 2026 full roof replacement
-    // (city-level location only — no street address in copy or schema).
-    ...(slug === "havertown" ? { image: havertownSchemaImages } : {}),
+    // Completed-project photos from this area's case study (neighborhood
+    // level only — no street address in copy or schema).
+    ...(caseStudy ? { image: caseStudy.schemaImages } : {}),
   };
 
   // JSON-LD FAQPage schema
@@ -437,9 +444,9 @@ export default async function LocationPage({ params }: PageProps) {
       />
 
       {/* ================================================================= */}
-      {/* Havertown project showcase — scroll-reveal before/after story     */}
+      {/* Project case study — scroll-reveal before/after story             */}
       {/* ================================================================= */}
-      {slug === "havertown" && <HavertownProjectShowcase variant="full" />}
+      {caseStudy && <ProjectCaseStudy data={caseStudy} />}
 
       {/* ================================================================= */}
       {/* Local Projects — before/after sliders for jobs done in this area  */}

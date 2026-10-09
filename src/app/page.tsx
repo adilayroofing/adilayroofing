@@ -16,7 +16,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SafeHTML from "@/components/SafeHTML";
 import BBBSeal from "@/components/BBBSeal";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import HavertownProjectShowcase from "@/components/HavertownProjectShowcase";
+import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 import VanBanner from "@/components/VanBanner";
 import { stripHtml } from "@/lib/schema";
 
@@ -440,69 +440,38 @@ export default async function Home() {
       </section>
 
       {/* ============================================ */}
-      {/* LATEST PROJECT SHOWCASE — Bala Cynwyd        */}
-      {/* Wide, compact section before Services so     */}
-      {/* visitors see real recent work first.         */}
+      {/* CASE STUDIES CAROUSEL — every project with a */}
+      {/* full write-up (src/data/caseStudies.ts),     */}
+      {/* each card deep-linking to its section.       */}
       {/* ============================================ */}
-      <section
-        className="bg-shingle"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(248, 247, 247, 0.45), rgba(248, 247, 247, 0.45)), url("/images/shingle-bg.jpg")',
-        }}
-      >
-        <div className="container-wide mx-auto px-4 py-8 md:py-12">
+      <section className="bg-brand-light">
+        <div className="container-wide mx-auto px-4 py-10 md:py-16">
           <ScrollReveal>
-            <div className="text-center mb-5 md:mb-7">
+            <div className="text-center mb-6 md:mb-10">
+              <p className="text-brand-red font-bold uppercase tracking-widest text-xs md:text-sm mb-2 md:mb-3">
+                Case Studies
+              </p>
               <h2 className="section-heading">
-                Our Latest Roofing Projects
+                Recent Roofing Projects, Start to Finish
               </h2>
-              <p className="section-subheading mx-auto mt-3">
-                Full roof replacement on a Main Line home in{" "}
-                <Link
-                  href="/service-areas/bala-cynwyd"
-                  className="text-brand-red font-semibold hover:underline"
-                >
-                  Bala Cynwyd, PA
-                </Link>
-                {" "}&mdash; drag the slider to see the before and after.
+              <p className="section-subheading mx-auto mt-3 md:mt-4">
+                Real Adilay jobs across Philadelphia and the Main Line &mdash;
+                what we found, what we built, and the photos to prove it.
               </p>
             </div>
           </ScrollReveal>
-
-          <ScrollReveal delay={100}>
-            <figure className="max-w-3xl mx-auto">
-              <BeforeAfterSlider
-                beforeSrc="/images/projects/roof-replacement-bala-cynwyd-before.jpg"
-                beforeAlt="Before: aging asphalt shingle roof with worn-out gutters on a Main Line home in Bala Cynwyd, PA 19004 — prior to full tear-off by Adilay Roofing."
-                afterSrc="/images/projects/roof-replacement-bala-cynwyd-after.jpg"
-                afterAlt="After: new GAF Timberline 3D architectural shingles in Oyster Grey, black aluminum gutters, and vinyl-wrapped attic bay windows on the same Bala Cynwyd Main Line home — completed by Adilay Roofing."
-                aspectClass="aspect-[4/5] sm:aspect-square md:aspect-square"
-                objectPosition="center 60%"
-                afterImgClassName="scale-125 origin-bottom sm:scale-100"
-              />
-              <figcaption className="text-center text-sm text-brand-gray mt-4">
-                GAF Timberline HDZ architectural shingles, new black aluminum gutters, and wrapped attic bay windows &mdash;{" "}
-                <Link
-                  href="/services/roof-replacement"
-                  className="text-brand-red font-semibold hover:underline"
-                >
-                  see the full project
-                </Link>
-                .
-              </figcaption>
-            </figure>
-          </ScrollReveal>
+          <CaseStudyCarousel />
+          <div className="text-center mt-6 md:mt-8">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
+            >
+              See All Before &amp; After Photos
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
         </div>
       </section>
-
-      {/* ============================================ */}
-      {/* HAVERTOWN PROJECT — scroll-reveal            */}
-      {/* before/after story (condensed: 2 pairs +     */}
-      {/* crew, links to the full section on the       */}
-      {/* Havertown service-area page).                */}
-      {/* ============================================ */}
-      <HavertownProjectShowcase variant="condensed" />
 
       {/* ============================================ */}
       {/* SERVICES SECTION                             */}
@@ -842,6 +811,62 @@ export default async function Home() {
       {/* TESTIMONIALS SECTION                         */}
       {/* ============================================ */}
       <TestimonialsSection />
+
+      {/* ============================================ */}
+      {/* BEFORE & AFTER SLIDER — Bala Cynwyd. Compact */}
+      {/* proof point after the reviews; the case-     */}
+      {/* study carousel near the top leads with work. */}
+      {/* ============================================ */}
+      <section
+        className="bg-shingle"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(248, 247, 247, 0.45), rgba(248, 247, 247, 0.45)), url("/images/shingle-bg.jpg")',
+        }}
+      >
+        <div className="container-wide mx-auto px-4 py-8 md:py-10">
+          <ScrollReveal>
+            <div className="text-center mb-4 md:mb-5">
+              <h2 className="text-xl md:text-2xl font-bold text-brand-dark">
+                Drag to Compare: Main Line Roof Replacement
+              </h2>
+              <p className="text-sm md:text-base text-brand-gray max-w-md mx-auto mt-2">
+                Full tear-off and re-roof in{" "}
+                <Link
+                  href="/service-areas/bala-cynwyd"
+                  className="text-brand-red font-semibold hover:underline"
+                >
+                  Bala Cynwyd, PA
+                </Link>
+                .
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <figure className="max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+              <BeforeAfterSlider
+                beforeSrc="/images/projects/roof-replacement-bala-cynwyd-before.jpg"
+                beforeAlt="Before: aging asphalt shingle roof with worn-out gutters on a Main Line home in Bala Cynwyd, PA 19004 — prior to full tear-off by Adilay Roofing."
+                afterSrc="/images/projects/roof-replacement-bala-cynwyd-after.jpg"
+                afterAlt="After: new GAF Timberline 3D architectural shingles in Oyster Grey, black aluminum gutters, and vinyl-wrapped attic bay windows on the same Bala Cynwyd Main Line home — completed by Adilay Roofing."
+                aspectClass="aspect-[4/5]"
+                objectPosition="center 60%"
+              />
+              <figcaption className="text-center text-xs md:text-sm text-brand-gray mt-3">
+                GAF Timberline HDZ shingles, new black gutters &amp; wrapped bay windows &mdash;{" "}
+                <Link
+                  href="/services/roof-replacement#recent-project"
+                  className="text-brand-red font-semibold hover:underline"
+                >
+                  see the full project
+                </Link>
+                .
+              </figcaption>
+            </figure>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ============================================ */}
       {/* GALLERY CTA WIDGET                           */}

@@ -190,13 +190,15 @@ export default async function ServicePage({ params }: PageProps) {
   // ImageObject pair for the project showcase (when present). Provides
   // explicit geo + descriptive context that Google can associate with the
   // service — far more durable than EXIF metadata, which Google strips.
+  const absoluteUrl = (src: string) =>
+    /^https?:\/\//.test(src) ? src : `${BASE_URL}${src}`;
   const projectImageSchemas = projectShowcase
     ? [
         {
           "@context": "https://schema.org",
           "@type": "ImageObject",
-          contentUrl: `${BASE_URL}${projectShowcase.beforeSrc}`,
-          url: `${BASE_URL}${projectShowcase.beforeSrc}`,
+          contentUrl: absoluteUrl(projectShowcase.beforeSrc),
+          url: absoluteUrl(projectShowcase.beforeSrc),
           name: `Before — ${projectShowcase.heading}`,
           description: projectShowcase.beforeAlt,
           contentLocation: { "@type": "Place", name: projectShowcase.location },
@@ -205,8 +207,8 @@ export default async function ServicePage({ params }: PageProps) {
         {
           "@context": "https://schema.org",
           "@type": "ImageObject",
-          contentUrl: `${BASE_URL}${projectShowcase.afterSrc}`,
-          url: `${BASE_URL}${projectShowcase.afterSrc}`,
+          contentUrl: absoluteUrl(projectShowcase.afterSrc),
+          url: absoluteUrl(projectShowcase.afterSrc),
           name: `After — ${projectShowcase.heading}`,
           description: projectShowcase.afterAlt,
           contentLocation: { "@type": "Place", name: projectShowcase.location },
@@ -606,7 +608,7 @@ export default async function ServicePage({ params }: PageProps) {
       {/* anti-template-fingerprint move from master plan §2.              */}
       {/* ================================================================= */}
       {projectShowcase && (
-        <section className="bg-white">
+        <section id="recent-project" className="bg-white scroll-mt-32">
           <div className="section-padding pt-0">
             <div className="container-narrow mx-auto">
               <div className="max-w-3xl mx-auto">

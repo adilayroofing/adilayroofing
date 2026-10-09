@@ -8,6 +8,9 @@ export interface GalleryProject {
   location: string;
   /** Optional service-area slug for a hyperlocal internal link. */
   locationSlug?: string;
+  /** Hide from the area page's "Recent Work" sliders — set when the
+   *  project already has its own case-study section on that page. */
+  hideOnAreaPage?: boolean;
   /** Optional related service slug (deep-link to full service page). */
   serviceSlug?: string;
   /** Optional. Materials chip line, e.g. "GAF Timberline HDZ · Ice-and-water
@@ -195,6 +198,30 @@ export const galleryProjects: GalleryProject[] = [
 
   // ── Flat Roofing ────────────────────────────────────────────────────
   {
+    id: "northern-liberties-tpo",
+    title: "Full TPO Flat Roof Replacement — Northern Liberties",
+    category: "flat-roofing",
+    location: "Northern Liberties, Philadelphia",
+    locationSlug: "northern-liberties",
+    // The Northern Liberties area page gets the full before/during/after
+    // case-study section instead of this slider.
+    hideOnAreaPage: true,
+    serviceSlug: "flat-roofing",
+    materials:
+      "TPO membrane · 2″ PolyISO insulation · 1/2″ + 3/4″ plywood · White aluminum capping",
+    description:
+      "Third-floor flat roof rebuilt from the framing up: 1,043 sq ft of failed TPO torn off, 135 sq ft of rotted roof-wall framing replaced with new 2×4s and plywood, then new decking, 2″ PolyISO insulation, a fully sealed TPO membrane, and 106 linear ft of white aluminum capping.",
+    beforeImage:
+      "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/northern-liberties-tpo/before-wide",
+    beforeAlt:
+      "Before: failing TPO flat roof membrane with worn coating and exposed seams on a Northern Liberties Philadelphia third-floor roof — prior to full replacement by Adilay Roofing.",
+    afterImage:
+      "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/northern-liberties-tpo/after-wide",
+    afterAlt:
+      "After: new white TPO flat roof with sealed seams, PolyISO insulation, and aluminum capping on the same Northern Liberties Philadelphia roof — completed by Adilay Roofing.",
+    aspectClass: "aspect-[3/4]",
+  },
+  {
     id: "epdm-flat-roof",
     title: "EPDM Flat Roof — Philadelphia Row Home",
     category: "flat-roofing",
@@ -254,20 +281,26 @@ export const galleryProjects: GalleryProject[] = [
   },
   {
     id: "manayunk-siding-restoration",
-    title: "Full Facade & Siding Restoration — Manayunk",
+    title: "Full Exterior Restoration — Manayunk",
     category: "siding",
     location: "Manayunk, Philadelphia",
     locationSlug: "manayunk",
+    // The Manayunk area page gets the full before/during/after case study
+    // instead of this slider.
+    hideOnAreaPage: true,
     serviceSlug: "siding-repair",
-    materials: "Shake siding · Scalloped bay accents · White trim wrap · New railings",
+    materials:
+      "Cedar-look vinyl siding (Black Walnut) · GAF Timberline 3D · GAF flat roofing · Trex roof deck",
     description:
-      "Complete facade restoration on a three-story Manayunk rowhome: weathered paint and failing scalloped bay siding replaced with new shake siding, crisp white trim wrap on the bay and cornice, and a rebuilt porch entry. Same stone, same bones — a street-transforming refresh.",
-    beforeImage: "/images/projects/manayunk-siding-restoration-before.jpg",
+      "A three-story Manayunk stone rowhome restored front to back: failing fish-scale siding replaced with Black Walnut cedar-look vinyl and white trim, new GAF roofs, a rebuilt rear addition with a 72″ French patio door, and a new 132 sq ft Trex roof deck.",
+    beforeImage:
+      "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/manayunk-facade/before-front",
     beforeAlt:
-      "Before: weathered gray facade with peeling paint and aged siding on a three-story Manayunk rowhome, prior to restoration by Adilay Roofing.",
-    afterImage: "/images/projects/manayunk-siding-restoration-after.jpg",
+      "Before: weathered front facade with a fish-scale slate third floor and peeling gray paint on a three-story Manayunk rowhome, prior to restoration by Adilay Roofing.",
+    afterImage:
+      "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/manayunk-facade/after-front",
     afterAlt:
-      "After: the same Manayunk rowhome with new shake siding, white-wrapped bay and cornice trim, and a rebuilt porch entry — restored by Adilay Roofing.",
+      "After: the same Manayunk rowhome with Black Walnut cedar-look vinyl siding, white trim, and charcoal shingles — restored by Adilay Roofing.",
     aspectClass: "aspect-[3/4]",
   },
 ];

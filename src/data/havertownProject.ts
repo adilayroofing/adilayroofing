@@ -1,6 +1,6 @@
 // Havertown, PA (Delaware County) — full roof replacement, completed July 2026.
-// Content for the HavertownProjectShowcase scroll section (home page +
-// /service-areas/havertown).
+// Case-study content for /service-areas/havertown (rendered by
+// <ProjectCaseStudy />) and the home-page case-study carousel.
 //
 // PRIVACY: the job address must never appear on the site. Public copy says
 // only "Havertown, PA (Delaware County)" / "a Havertown neighborhood".
@@ -9,6 +9,8 @@
 // (uploaded 2026-07-27, originals keep their EXIF data). This folder sits
 // outside the site's mirrored /images tree, so URLs are built here directly
 // instead of going through lib/cloudinary.ts.
+
+import type { CaseStudyCard, ProjectCaseStudyData } from "@/components/ProjectCaseStudy";
 
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ?? "dqj9hdrda";
 const PROJECT_FOLDER = "adilay/projects/havertown-josie";
@@ -19,26 +21,9 @@ export function havertownImg(id: string, width?: number): string {
   return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transforms.join(",")}/${PROJECT_FOLDER}/${id}`;
 }
 
-export function havertownSrcSet(id: string): string {
-  return [480, 960, 1600]
-    .map((w) => `${havertownImg(id, w)} ${w}w`)
-    .join(", ");
-}
-
-export interface ShowcaseCard {
-  kind: "before" | "after" | "crew";
-  imageId: string;
-  caption: string;
-  alt: string;
-  /** Intrinsic pixel size of the source image (avoids layout shift). */
-  width: number;
-  height: number;
-}
-
 // Cards in scroll order: Before 1 → After 1 → Before 2 → After 2 →
-// Before 3 → After 3 → crew finale. The condensed home-page variant shows
-// pairs 1–2 + crew.
-export const havertownCards: ShowcaseCard[] = [
+// Before 3 → After 3 → crew finale.
+export const havertownCards: CaseStudyCard[] = [
   {
     kind: "before",
     imageId: "main-roof-before",
@@ -104,7 +89,7 @@ export const havertownCards: ShowcaseCard[] = [
   },
 ];
 
-export const havertownStats = [
+const havertownStats = [
   { value: "2,963 sq ft", label: "Total tear-off" },
   { value: "2,449 sq ft", label: "New GAF shingle roof" },
   { value: "514 sq ft", label: "New EPDM flat roof" },
@@ -112,7 +97,7 @@ export const havertownStats = [
   { value: "July 2026", label: "Completed" },
 ];
 
-export const havertownScope = [
+const havertownScope = [
   "Removed old damaged shingles & EPDM membrane from main and flat roofs — 2,963 sq ft",
   'New 1/2" plywood + GAF synthetic underlayment on main roof — 2,449 sq ft',
   'New 3/4" plywood on flat roof — 514 sq ft',
@@ -123,16 +108,33 @@ export const havertownScope = [
   "Full debris removal",
 ];
 
-// Full-resolution delivery URLs for JSON-LD `image` and OpenGraph on the
-// Havertown service-area page.
-export const havertownSchemaImages = [
+const havertownSchemaImages = [
   havertownImg("main-roof-after", 1600),
   havertownImg("flat-roof-after", 1600),
   havertownImg("chimney-after", 1600),
   havertownImg("crew-installing-shingles", 1600),
 ];
 
-export const havertownOgImage = havertownImg("havertown-collage-og", 1600);
+const havertownOgImage = havertownImg("havertown-collage-og", 1600);
 
 /** Anchor id of the full section on /service-areas/havertown. */
 export const HAVERTOWN_SHOWCASE_ID = "havertown-project";
+
+export const havertownCaseStudy: ProjectCaseStudyData = {
+  id: HAVERTOWN_SHOWCASE_ID,
+  areaSlug: "havertown",
+  eyebrow: "Project Showcase — Delaware County",
+  heading: "Full Roof Replacement in Havertown, PA",
+  introHtml:
+    "An aging shingle roof and a worn flat roof, replaced down to the deck in a Havertown neighborhood. Scroll through the befores and afters.",
+  stats: havertownStats,
+  cards: havertownCards,
+  scope: havertownScope,
+  cta: {
+    heading: "Is your roof next?",
+    text: "Get a free roof assessment — no pressure, no obligation. Serving Havertown, Broomall, Drexel Hill, Springfield & all of Delaware County.",
+  },
+  img: havertownImg,
+  schemaImages: havertownSchemaImages,
+  ogImage: havertownOgImage,
+};

@@ -12,6 +12,7 @@
  * Treatments by card kind:
  *   before — rises in from a heavier desaturation and settles slightly
  *            muted, so the old roof always reads a touch drab
+ *   during — plain fade-up at full color (work in progress, no verdict)
  *   after  — starts a hair small + muted and pops to full saturation
  *   crew   — plain fade-up
  *
@@ -26,18 +27,14 @@ const DURATION_MS = 450;
 const DISTANCE_PX = 24;
 
 interface Props {
-  kind?: "before" | "after" | "crew";
+  kind?: "before" | "during" | "after" | "crew";
   className?: string;
-  /** Stagger offset for collage tiles that enter the viewport together —
-   *  tile N gets N × ~100ms so the reveals cascade before → after. */
-  delayMs?: number;
   children: ReactNode;
 }
 
 export default function ShowcaseRevealCard({
   kind = "crew",
   className = "",
-  delayMs = 0,
   children,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,7 +80,7 @@ export default function ShowcaseRevealCard({
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0) scale(1)" : hiddenTransform,
               filter: visible ? settledFilter : hiddenFilter,
-              transition: `opacity ${DURATION_MS}ms ease-out ${delayMs}ms, transform ${DURATION_MS}ms ease-out ${delayMs}ms, filter ${DURATION_MS}ms ease-out ${delayMs}ms`,
+              transition: `opacity ${DURATION_MS}ms ease-out, transform ${DURATION_MS}ms ease-out, filter ${DURATION_MS}ms ease-out`,
               willChange: "opacity, transform, filter",
             }
       }

@@ -793,18 +793,28 @@ export const services: Service[] = [
     description:
       "Expert siding repair services in Philadelphia. We fix cracked, warped, loose, and storm-damaged siding to restore your home's protection and curb appeal.",
     projectShowcase: {
-      heading: "Recent Project: Manayunk Facade & Siding Restoration",
+      heading: "Recent Project: Manayunk Rowhome Exterior Restoration",
       location: "Manayunk, Philadelphia",
       locationSlug: "manayunk",
-      beforeSrc: "/images/projects/manayunk-siding-restoration-before.jpg",
+      beforeSrc:
+        "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/manayunk-facade/before-side-bay",
       beforeAlt:
-        "Before: weathered gray facade with peeling paint and failing scalloped bay siding on a three-story Manayunk rowhome.",
-      afterSrc: "/images/projects/manayunk-siding-restoration-after.jpg",
+        "Before: broken scalloped fish-scale siding on the second-floor side bay of a Manayunk rowhome, with water getting behind the courses.",
+      afterSrc:
+        "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/manayunk-facade/after-side-bay",
       afterAlt:
-        "After: the same Manayunk rowhome with new shake siding, white-wrapped bay and cornice trim, and a rebuilt porch entry.",
+        "After: the same side bay re-sheathed and re-clad in Black Walnut cedar-look vinyl siding with white aluminum window capping, by Adilay Roofing.",
       aspectClass: "aspect-[3/4]",
       scopeHeading: "What This Project Involved",
-      scopeHtml: `<p>This three-story Manayunk rowhome had the classic hillside combination: sound stone bones with a facade past its service life &mdash; broken scalloped (fish-scale) shingles on the bay, peeling paint, and water working behind the siding courses. We stripped the failed material, re-clad the bay and upper facade in new shake siding, wrapped the bay trim and cornice in crisp white aluminum, and rebuilt the porch entry with new railings. Scaffold staging over the shared walkway kept the neighbors' access open throughout.</p>`,
+      scopeHtml: `<p>This three-story Manayunk stone rowhome had the classic hillside problem: sound stone bones with siding past its service life &mdash; broken scalloped (fish-scale) shingles on the side bay, slate tile failing on the rear walls, and water working in behind the courses. We restored it front to back over four phases:</p>
+<ul>
+  <li><strong>Tear-off to the sheathing.</strong> Damaged slate tile and fish-scale siding removed from the rear walls, third floor, and side bay.</li>
+  <li><strong>New 1/2&Prime; plywood and GAF synthetic underlayment</strong> behind every new course &mdash; the water barrier the old siding never had.</li>
+  <li><strong>Cedar-look vinyl siding in Black Walnut</strong> with white trim and white aluminum capping around every window &mdash; front bay and porch, side bay, rear walls, and addition.</li>
+  <li><strong>Rear addition rebuilt</strong> with reframed walls, insulation, a new 72&Prime; white French patio door, and new stone-faced steps.</li>
+  <li><strong>New GAF roofs and a 132 sq ft Trex roof deck</strong> on top of the addition.</li>
+</ul>
+<p>Manayunk&rsquo;s narrow walkways meant scaffold staging instead of ladders, which kept the neighbors&rsquo; access open throughout. See the <a href="/service-areas/manayunk#manayunk-project">full Manayunk case study</a> with every before, during, and after photo, or call <a href="tel:+12672553620">(267) 255-3620</a> for a free siding estimate.</p>`,
     },
     icon: "",
     image: "/images/siding-philadelphia.jpg",
