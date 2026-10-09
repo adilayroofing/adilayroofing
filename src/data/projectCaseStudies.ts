@@ -6,8 +6,10 @@ import type { ProjectCaseStudyData } from "@/components/ProjectCaseStudy";
 import { havertownCaseStudy } from "@/data/havertownProject";
 import { nolibsCaseStudy } from "@/data/northernLibertiesProject";
 import { manayunkCaseStudy } from "@/data/manayunkProject";
+import { fishtownCaseStudy } from "@/data/fishtownProject";
 
 export const projectCaseStudies: ProjectCaseStudyData[] = [
+  fishtownCaseStudy,
   nolibsCaseStudy,
   manayunkCaseStudy,
   havertownCaseStudy,

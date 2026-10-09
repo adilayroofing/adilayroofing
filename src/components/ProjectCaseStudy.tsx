@@ -20,7 +20,8 @@ export interface CaseStudyCard {
   imageId: string;
   caption: string;
   alt: string;
-  /** Intrinsic pixel size of the source image (avoids layout shift). */
+  /** Intrinsic pixel size of the source image — also sets the card's shape,
+   *  so wide drone shots aren't cropped into portrait frames. */
   width: number;
   height: number;
 }
@@ -127,7 +128,10 @@ export default function ProjectCaseStudy({ data }: { data: ProjectCaseStudyData 
               return (
                 <ShowcaseRevealCard key={card.imageId} kind={card.kind}>
                   <figure>
-                    <div className="relative rounded-sm overflow-hidden shadow-md aspect-[3/4] bg-brand-light">
+                    <div
+                      className="relative rounded-sm overflow-hidden shadow-md bg-brand-light"
+                      style={{ aspectRatio: `${card.width} / ${card.height}` }}
+                    >
                       <img
                         src={img(card.imageId, 960)}
                         srcSet={srcSet(card.imageId)}

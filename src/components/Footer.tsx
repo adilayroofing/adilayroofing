@@ -175,6 +175,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/case-studies"
+                  className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
+                >
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/gallery"
                   className="text-white/60 hover:text-brand-red active:text-brand-red transition-colors text-sm"
                 >

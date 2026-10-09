@@ -198,6 +198,29 @@ export const galleryProjects: GalleryProject[] = [
 
   // ── Flat Roofing ────────────────────────────────────────────────────
   {
+    id: "fishtown-flat-roof-recover",
+    title: "New Flat Roof Re-Cover — Fishtown",
+    category: "flat-roofing",
+    location: "Fishtown, Philadelphia",
+    locationSlug: "fishtown",
+    // The Fishtown area page gets the full case study instead of this slider.
+    hideOnAreaPage: true,
+    serviceSlug: "flat-roofing",
+    materials:
+      "GAF granulated torch-down (base + cap) · White aluminum capping · 4\u2033 drain-pipe boots",
+    description:
+      "A worn, ponding flat roof on a Fishtown corner rowhome re-covered with a two-ply GAF torch-down membrane — 599 sq ft across the main and lower back roofs, torch-welded at every seam, with 135 linear ft of new white aluminum flashing and capping.",
+    beforeImage:
+      "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/fishtown-flat-roof/before-main-roof",
+    beforeAlt:
+      "Before: worn, patched flat roof with ponding water around the vents on a Fishtown Philadelphia rowhome, prior to re-cover by Adilay Roofing.",
+    afterImage:
+      "https://res.cloudinary.com/dqj9hdrda/image/upload/f_auto,q_auto,w_960,c_limit/adilay/projects/fishtown-flat-roof/after-finished-roof",
+    afterAlt:
+      "After: the same Fishtown flat roof re-covered with a new GAF granulated torch-down membrane and white aluminum capping — completed by Adilay Roofing.",
+    aspectClass: "aspect-[16/9]",
+  },
+  {
     id: "northern-liberties-tpo",
     title: "Full TPO Flat Roof Replacement — Northern Liberties",
     category: "flat-roofing",

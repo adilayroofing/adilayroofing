@@ -463,10 +463,10 @@ export default async function Home() {
           <CaseStudyCarousel />
           <div className="text-center mt-6 md:mt-8">
             <Link
-              href="/gallery"
+              href="/case-studies"
               className="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
             >
-              See All Before &amp; After Photos
+              See All Case Studies
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>

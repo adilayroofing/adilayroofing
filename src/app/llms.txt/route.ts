@@ -69,6 +69,7 @@ ${postLines}
 - [About](${BASE_URL}/about): family-owned, ${company.yearsExperience} years, ${company.projectsCompleted} projects completed
 - [FAQ](${BASE_URL}/faq): pricing, permits, warranties, timelines
 - [Financing](${BASE_URL}/financing): roof financing options
+- [Case Studies](${BASE_URL}/case-studies): real Philadelphia roofing projects with before/during/after photos and full scopes of work, by roof type
 - [Gallery](${BASE_URL}/gallery): completed project photos
 - [Get a free quote](${BASE_URL}/get-quote)
 - [Contact](${BASE_URL}/contact)

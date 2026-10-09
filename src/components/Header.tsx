@@ -188,7 +188,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-8 whitespace-nowrap">
             {/* Services Dropdown */}
             <div ref={dropdownRef} className="relative">
               <button
@@ -348,6 +348,12 @@ export default function Header() {
             </div>
 
             <Link
+              href="/case-studies"
+              className="text-brand-dark font-semibold hover:text-brand-red transition-colors"
+            >
+              Case Studies
+            </Link>
+            <Link
               href="/about"
               className="text-brand-dark font-semibold hover:text-brand-red transition-colors"
             >
@@ -380,7 +386,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Right Actions */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
             {/* Phone Icon */}
             <a
               href={`tel:${company.phoneRaw}`}
@@ -426,7 +432,7 @@ export default function Header() {
             </a>
 
             {/* CTA Button */}
-            <Link href="/get-quote" className="btn-primary !py-3 !px-6 !text-base">
+            <Link href="/get-quote" className="btn-primary whitespace-nowrap !py-3 !px-4 xl:!px-6 !text-base">
               FREE Estimate
             </Link>
           </div>
@@ -643,6 +649,13 @@ export default function Header() {
               </div>
             </div>
 
+            <Link
+              href="/case-studies"
+              className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Case Studies
+            </Link>
             <Link
               href="/about"
               className="py-4 text-brand-dark font-semibold text-lg border-b border-brand-border hover:text-brand-red active:text-brand-red transition-colors"

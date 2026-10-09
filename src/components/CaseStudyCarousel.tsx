@@ -11,9 +11,9 @@
  * and link is server-rendered, so crawlers see all case studies and links.
  */
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { caseStudies } from "@/data/caseStudies";
+import CaseStudyCard from "@/components/CaseStudyCard";
 
 function Arrow({ dir }: { dir: "left" | "right" }) {
   return (
@@ -96,58 +96,7 @@ export default function CaseStudyCarousel() {
             aria-label={`${i + 1} of ${caseStudies.length}: ${cs.title}, ${cs.location}`}
             className="snap-start shrink-0 w-[42%] md:w-[29%]"
           >
-            <Link
-              href={cs.href}
-              className="group flex flex-col h-full bg-white border border-brand-border rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-            >
-              <div className="relative aspect-[4/5] md:aspect-square overflow-hidden bg-brand-light">
-                <img
-                  src={cs.afterSrc(640)}
-                  srcSet={`${cs.afterSrc(320)} 320w, ${cs.afterSrc(640)} 640w, ${cs.afterSrc(960)} 960w`}
-                  sizes="(min-width: 768px) 29vw, 42vw"
-                  alt={cs.afterAlt}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={cs.afterPosition ? { objectPosition: cs.afterPosition } : undefined}
-                />
-                <span className="absolute top-1.5 left-1.5 md:top-3 md:left-3 bg-emerald-600 text-white px-1.5 md:px-2.5 py-0.5 rounded-sm text-[9px] md:text-xs font-extrabold tracking-widest uppercase">
-                  After
-                </span>
-                {/* Small BEFORE inset so each card tells the whole story */}
-                <div className="absolute bottom-1.5 right-1.5 md:bottom-3 md:right-3 w-[40%] aspect-square rounded-sm overflow-hidden border-2 border-white shadow-md bg-brand-light">
-                  <img
-                    src={cs.beforeSrc(320)}
-                    alt={cs.beforeAlt}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover saturate-[0.75]"
-                  />
-                  <span className="absolute bottom-0 inset-x-0 bg-brand-red/90 text-white text-center text-[8px] md:text-[11px] font-extrabold tracking-widest uppercase py-px md:py-0.5">
-                    {cs.beforeLabel ?? "Before"}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col flex-1 p-2.5 md:p-4">
-                <p className="text-brand-red font-bold uppercase tracking-wider text-[9px] md:text-xs leading-tight mb-1">
-                  <span className="md:hidden">{cs.shortLocation}</span>
-                  <span className="hidden md:inline">
-                    {cs.type} · {cs.location}
-                  </span>
-                </p>
-                <h3 className="text-[13px] md:text-lg font-bold text-brand-dark leading-snug line-clamp-2">
-                  {cs.title}
-                </h3>
-                <p className="hidden md:block text-sm text-brand-gray leading-relaxed mt-1.5">
-                  {cs.highlight}
-                </p>
-                <span className="mt-auto pt-2 md:pt-3 inline-flex items-center gap-1 text-[12px] md:text-sm font-bold text-brand-red group-hover:gap-2 transition-all">
-                  View case study
-                  <span aria-hidden="true">&rarr;</span>
-                </span>
-              </div>
-            </Link>
+            <CaseStudyCard cs={cs} variant="carousel" sizes="(min-width: 768px) 29vw, 42vw" />
           </li>
         ))}
       </ul>

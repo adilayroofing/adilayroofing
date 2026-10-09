@@ -1,4 +1,5 @@
-// Home-page case-study carousel. ONLY projects with a dedicated written-up
+// Case studies for the home-page carousel and the /case-studies hub page.
+// ONLY projects with a dedicated written-up
 // story elsewhere on the site belong here (a full showcase section on an area
 // page, or a "Recent Project" write-up on a service page) — plain gallery
 // sliders don't qualify. Each card deep-links to that write-up.
@@ -14,9 +15,66 @@ import {
 } from "@/data/havertownProject";
 import { nolibsImg, NOLIBS_SHOWCASE_ID } from "@/data/northernLibertiesProject";
 import { manayunkImg, MANAYUNK_SHOWCASE_ID } from "@/data/manayunkProject";
+import { fishtownImg, FISHTOWN_SHOWCASE_ID } from "@/data/fishtownProject";
+
+export type CaseStudyCategoryId =
+  | "flat-roofing"
+  | "roof-replacement"
+  | "roof-repair"
+  | "siding-exterior";
+
+export interface CaseStudyCategory {
+  id: CaseStudyCategoryId;
+  label: string;
+  heading: string;
+  intro: string;
+  serviceHref: string;
+  serviceLabel: string;
+}
+
+/** Section order on /case-studies. Empty categories are skipped. */
+export const caseStudyCategories: CaseStudyCategory[] = [
+  {
+    id: "flat-roofing",
+    label: "Flat Roofing",
+    heading: "Flat Roof Case Studies",
+    intro:
+      "Flat roofs cover most Philadelphia rowhomes — and they fail the same ways: ponding water, cracked coatings, and open seams at walls and pipes. These projects replaced tired flat roofs with fully sealed TPO and GAF torch-down systems.",
+    serviceHref: "/services/flat-roofing",
+    serviceLabel: "Flat roofing services",
+  },
+  {
+    id: "roof-replacement",
+    label: "Roof Replacement",
+    heading: "Roof Replacement Case Studies",
+    intro:
+      "Full tear-offs down to the deck: rotted sheathing replaced, ice-and-water shield and synthetic underlayment installed, and new GAF architectural shingles finished with proper flashing and ventilation.",
+    serviceHref: "/services/roof-replacement",
+    serviceLabel: "Roof replacement services",
+  },
+  {
+    id: "roof-repair",
+    label: "Roof Repair",
+    heading: "Roof Repair Case Studies",
+    intro:
+      "Not every roof needs replacing. These targeted repairs found the actual leak, fixed it properly, and bought the homeowner years of service for a fraction of a new roof.",
+    serviceHref: "/services/roof-repair",
+    serviceLabel: "Roof repair services",
+  },
+  {
+    id: "siding-exterior",
+    label: "Siding & Exterior",
+    heading: "Siding & Exterior Case Studies",
+    intro:
+      "Siding, trim, and full exterior rebuilds — often paired with new roofing so the whole envelope is sealed at once.",
+    serviceHref: "/services/siding-installation",
+    serviceLabel: "Siding services",
+  },
+];
 
 export interface CaseStudy {
   id: string;
+  category: CaseStudyCategoryId;
   title: string;
   location: string;
   /** Compact location for the narrow mobile cards. */
@@ -46,6 +104,7 @@ const gallery = (id: string) => {
 
 const fromLocal = (path: string) => (width: number) => cldUrl(path, { width });
 
+const fishtown = gallery("fishtown-flat-roof-recover");
 const nlTpo = gallery("northern-liberties-tpo");
 const bala = gallery("bala-cynwyd-replacement");
 const manayunk = gallery("manayunk-siding-restoration");
@@ -55,7 +114,23 @@ const havertownAfter = havertownCards.find((c) => c.imageId === "main-roof-after
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: "fishtown-flat-roof-recover",
+    category: "flat-roofing",
+    title: "New Flat Roof Re-Cover",
+    location: "Fishtown, Philadelphia",
+    shortLocation: "Fishtown",
+    type: "Flat Roof",
+    highlight:
+      "599 sq ft of two-ply GAF torch-down membrane, new capping on every edge & sealed penetrations.",
+    afterSrc: (w) => fishtownImg("after-main-roof", w),
+    afterAlt: fishtown.afterAlt,
+    beforeSrc: (w) => fishtownImg("before-main-roof", w),
+    beforeAlt: fishtown.beforeAlt,
+    href: `/service-areas/fishtown#${FISHTOWN_SHOWCASE_ID}`,
+  },
+  {
     id: "northern-liberties-tpo",
+    category: "flat-roofing",
     title: "Full TPO Flat Roof Replacement",
     location: "Northern Liberties, Philadelphia",
     shortLocation: "Northern Liberties",
@@ -70,6 +145,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "manayunk-siding-restoration",
+    category: "siding-exterior",
     title: "Full Exterior Restoration",
     location: "Manayunk, Philadelphia",
     shortLocation: "Manayunk",
@@ -84,6 +160,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "havertown-replacement",
+    category: "roof-replacement",
     title: "Full Roof Replacement",
     location: "Havertown, PA",
     shortLocation: "Havertown, PA",
@@ -99,6 +176,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "bala-cynwyd-replacement",
+    category: "roof-replacement",
     title: "Main Line Roof Replacement",
     location: "Bala Cynwyd, PA",
     shortLocation: "Bala Cynwyd, PA",
@@ -113,6 +191,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "northern-liberties-repair",
+    category: "roof-repair",
     title: "Fiberglass Flat Roof Repair",
     location: "Northern Liberties, Philadelphia",
     shortLocation: "Northern Liberties",
