@@ -20,6 +20,9 @@ import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 import VanBanner from "@/components/VanBanner";
 import { stripHtml } from "@/lib/schema";
 
+// Reviews section reads approved Google reviews from the sheet — refresh hourly.
+export const revalidate = 3600;
+
 const BASE_URL = "https://www.adilayroofing.com";
 
 // ---------------------------------------------------------------------------

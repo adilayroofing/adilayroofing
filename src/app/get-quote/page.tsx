@@ -11,6 +11,9 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import BBBSeal from "@/components/BBBSeal";
 import { AREA_SERVED, BASE_URL, ORG_REF, stripHtml } from "@/lib/schema";
 
+// Reviews section reads approved Google reviews from the sheet — refresh hourly.
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
     // GSC 2026-07: the ~10K-impr cluster on this page is "free roof(ing)

@@ -21,7 +21,7 @@ export function getESTTimestamp(): string {
   });
 }
 
-function getAuth() {
+export function getAuth() {
   const credentials = JSON.parse(
     process.env.GOOGLE_SERVICE_ACCOUNT_KEY || "{}"
   );
