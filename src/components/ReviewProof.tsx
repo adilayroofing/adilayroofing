@@ -46,10 +46,15 @@ export async function ReviewBadge({
   className?: string;
 }) {
   const { reviews, stats } = await getSiteReviews();
-  // Faces: everyone marked "Feature near buttons?" first (owner picks real photos there)
-  const faces = [...reviews.filter((r) => r.featured), ...reviews].filter(
+  // Faces: 4 reviewers with their own picture + 1 Google letter circle, from
+  // the owner's "Feature near buttons?" picks first. Google serves uploaded
+  // pictures from /a-/ URLs and its generated letter avatars from /a/ URLs.
+  const unique = [...reviews.filter((r) => r.featured), ...reviews].filter(
     (r, i, all) => r.photo && all.findIndex((x) => x.name === r.name) === i
-  ).slice(0, 5);
+  );
+  const own = unique.filter((r) => r.photo!.includes("/a-/"));
+  const letter = unique.find((r) => !r.photo!.includes("/a-/"));
+  const faces = [...own.slice(0, 2), ...(letter ? [letter] : []), ...own.slice(2)].slice(0, 5);
 
   const dark = tone === "dark";
   return (
@@ -102,7 +107,7 @@ export async function ReviewQuotes({
   return (
     // Mobile: swipeable row of cards. Desktop: grid.
     <div
-      className={`flex md:grid ${cols} gap-3 md:gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-1 [scrollbar-width:none] ${className}`}
+      className={`flex md:grid ${cols} items-start gap-3 md:gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-1 [scrollbar-width:none] ${className}`}
     >
       {picks.map((r) => (
         <figure
@@ -127,6 +132,24 @@ export async function ReviewQuotes({
             </span>
             <GoogleG className="w-4 h-4 flex-shrink-0" />
           </figcaption>
+
+          {/* Full review, in the page HTML (good for SEO), opened on tap */}
+          {quoteLine(r) !== r.quote && (
+            <details className="group mt-3">
+              <summary
+                className={`list-none [&::-webkit-details-marker]:hidden cursor-pointer text-xs font-semibold inline-flex items-center gap-1 ${
+                  dark ? "text-white/80 hover:text-white" : "text-brand-red hover:text-brand-red-dark"
+                }`}
+              >
+                <span className="group-open:hidden">Read the full review from {r.name}</span>
+                <span className="hidden group-open:inline">Hide full review</span>
+                <svg className="w-3 h-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p className={`mt-2 text-xs md:text-sm leading-relaxed ${dark ? "text-white/75" : "text-brand-gray"}`}>{r.quote}</p>
+            </details>
+          )}
         </figure>
       ))}
     </div>
