@@ -1,5 +1,5 @@
 import ReviewerAvatar from "@/components/ReviewerAvatar";
-import { getSiteReviews, pickFeatured } from "@/lib/reviews";
+import { getSiteReviews, pickFeatured, quoteLine } from "@/lib/reviews";
 
 /*
  * Small review proof pieces that sit right next to call-to-action buttons:
@@ -46,7 +46,8 @@ export async function ReviewBadge({
   className?: string;
 }) {
   const { reviews, stats } = await getSiteReviews();
-  const faces = [...pickFeatured(reviews, 10), ...reviews].filter(
+  // Faces: everyone marked "Feature near buttons?" first (owner picks real photos there)
+  const faces = [...reviews.filter((r) => r.featured), ...reviews].filter(
     (r, i, all) => r.photo && all.findIndex((x) => x.name === r.name) === i
   ).slice(0, 5);
 
@@ -91,8 +92,8 @@ export async function ReviewQuotes({
   tone?: Tone;
   className?: string;
 }) {
-  const { reviews } = await getSiteReviews();
-  const picks = pickFeatured(reviews, count);
+  const { reviews, loadedAt } = await getSiteReviews();
+  const picks = pickFeatured(reviews, count, loadedAt);
   if (!picks.length) return null;
 
   const dark = tone === "dark";
@@ -112,7 +113,7 @@ export async function ReviewQuotes({
         >
           <blockquote className={`flex-1 font-bold italic leading-snug text-[15px] md:text-base ${dark ? "text-white" : "text-brand-dark"}`}>
             <span className="text-brand-red not-italic text-2xl leading-none align-[-0.3em] mr-0.5" aria-hidden="true">&ldquo;</span>
-            {r.highlight}
+            {quoteLine(r)}
             <span className="text-brand-red not-italic text-2xl leading-none align-[-0.3em] ml-0.5" aria-hidden="true">&rdquo;</span>
           </blockquote>
           <figcaption className="mt-3 flex items-center gap-2.5">

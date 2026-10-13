@@ -112,14 +112,22 @@ export function pickHighlight(text: string): string {
   return candidates.sort((a, b) => score(b) - score(a))[0];
 }
 
+/** The bold line for a review: its highlight, or the whole review when it's short. */
+export function quoteLine(r: Review): string {
+  return r.highlight || (r.quote.length <= 90 ? r.quote : "");
+}
+
 /**
- * Reviews to show next to call-to-action buttons: the owner's "Feature near
- * buttons?" picks first, then the newest reviews that have a highlight.
+ * Reviews to show next to call-to-action buttons. Rotates hourly through
+ * everything marked "Feature near buttons?" = YES so every pick gets airtime;
+ * if fewer are marked than slots, fills with the newest reviews that have a quote.
  */
-export function pickFeatured(reviews: Review[], count: number): Review[] {
-  const withQuote = reviews.filter((r) => r.highlight);
-  const picked = [...withQuote.filter((r) => r.featured), ...withQuote.filter((r) => !r.featured)];
-  return picked.slice(0, count);
+export function pickFeatured(reviews: Review[], count: number, now: number): Review[] {
+  const withQuote = reviews.filter(quoteLine);
+  const featured = withQuote.filter((r) => r.featured);
+  const start = featured.length ? Math.floor(now / 3_600_000) % featured.length : 0;
+  const rotated = [...featured.slice(start), ...featured.slice(0, start)];
+  return [...rotated, ...withQuote.filter((r) => !r.featured)].slice(0, count);
 }
 
 /** Approved reviews + Google stats for the site, cached for an hour. */
