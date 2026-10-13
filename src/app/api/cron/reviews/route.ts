@@ -89,7 +89,8 @@ export async function GET(request: Request) {
   const [rowsRange, countRange] = existing.data.valueRanges ?? [];
   const rows = rowsRange?.values ?? [];
   const knownIds = new Set(rows.map((r) => String(r[5] ?? "")).filter(Boolean));
-  const knownNameDate = new Set(rows.map((r) => `${String(r[1] ?? "").trim()}|${r[0]}`));
+  // Match by name too: rows pasted in by hand have no Google ID and approximate dates.
+  const knownNames = new Set(rows.map((r) => String(r[1] ?? "").trim().toLowerCase()));
   const prevCount = Number(countRange?.values?.[0]?.[0]) || 0;
 
   const fresh = (place.reviews ?? [])
@@ -101,7 +102,7 @@ export async function GET(request: Request) {
       text: (r.originalText?.text ?? r.text?.text ?? "").trim(),
     }))
     .filter((r) => r.date > REVIEWS_CUTOFF)
-    .filter((r) => !knownIds.has(r.id) && !knownNameDate.has(`${r.name}|${r.date}`))
+    .filter((r) => !knownIds.has(r.id) && !knownNames.has(r.name.toLowerCase()))
     .sort((a, b) => a.date.localeCompare(b.date));
 
   if (fresh.length) {
