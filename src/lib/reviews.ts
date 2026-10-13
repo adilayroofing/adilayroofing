@@ -10,7 +10,7 @@ import {
 /**
  * Google reviews pipeline (no database — the leads Google Sheet is the store).
  *
- * "Reviews" tab:       Date | Name | Stars | Review | Show on site? | Google ID
+ * "Reviews" tab:       Date | Name | Stars | Review | Show on site? | Google ID | Highlight | Photo
  * "Review Stats" tab:  B1 = Google rating, B2 = total Google reviews, B3 = last checked
  *
  * A daily cron (/api/cron/reviews) appends new Google reviews with
@@ -60,7 +60,7 @@ async function loadFromSheet(): Promise<SiteReviews> {
   try {
     const res = await sheetsClient().spreadsheets.values.batchGet({
       spreadsheetId,
-      ranges: [`${REVIEWS_SHEET}!A2:E`, `${STATS_SHEET}!B1:B2`],
+      ranges: [`${REVIEWS_SHEET}!A2:H`, `${STATS_SHEET}!B1:B2`],
     });
     const [rowsRange, statsRange] = res.data.valueRanges ?? [];
 
@@ -71,6 +71,8 @@ async function loadFromSheet(): Promise<SiteReviews> {
         name: String(r[1] ?? "").trim(),
         stars: Number(r[2]) || 5,
         quote: String(r[3] ?? "").trim(),
+        highlight: String(r[6] ?? "").trim() || undefined,
+        photo: String(r[7] ?? "").trim() || undefined,
       }))
       .filter((r) => r.name && r.quote && r.date)
       .sort((a, b) => b.date.localeCompare(a.date));
@@ -90,6 +92,23 @@ async function loadFromSheet(): Promise<SiteReviews> {
     console.error("[reviews] Failed to read reviews sheet:", err);
     return { reviews: fallbackReviews, stats: fallbackReviewStats, loadedAt };
   }
+}
+
+/**
+ * Picks a punchy sentence from a review to show bold above it (the owner can
+ * overwrite it in the sheet). Short reviews get none — they're shown whole.
+ */
+export function pickHighlight(text: string): string {
+  if (text.length <= 90) return "";
+  const positive =
+    /best|amazing|excellent|outstanding|fantastic|exceptional|flawless|perfect|honest|thorough|professional|happy|great|fast|quick|fair|reasonable|trust/gi;
+  const candidates = text
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length >= 20 && s.length <= 80);
+  if (!candidates.length) return "";
+  const score = (s: string) => (s.match(positive)?.length ?? 0) * 10 - s.length / 20;
+  return candidates.sort((a, b) => score(b) - score(a))[0];
 }
 
 /** Approved reviews + Google stats for the site, cached for an hour. */

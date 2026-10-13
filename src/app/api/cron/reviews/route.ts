@@ -6,6 +6,7 @@ import {
   REVIEWS_SHEET,
   REVIEWS_TAG,
   STATS_SHEET,
+  pickHighlight,
   sheetsClient,
 } from "@/lib/reviews";
 import { getESTTimestamp } from "@/lib/googleSheets";
@@ -30,7 +31,7 @@ interface PlaceReview {
   publishTime: string;
   text?: { text: string };
   originalText?: { text: string };
-  authorAttribution?: { displayName: string };
+  authorAttribution?: { displayName: string; photoUri?: string };
 }
 
 interface PlaceDetails {
@@ -99,7 +100,8 @@ export async function GET(request: Request) {
       date: r.publishTime.slice(0, 10),
       name: r.authorAttribution?.displayName?.trim() || "Google user",
       stars: r.rating,
-      text: (r.originalText?.text ?? r.text?.text ?? "").trim(),
+      text: (r.originalText?.text ?? r.text?.text ?? "").trim().replace(/\s*\n+\s*/g, " "),
+      photo: r.authorAttribution?.photoUri ?? "",
     }))
     .filter((r) => r.date > REVIEWS_CUTOFF)
     .filter((r) => !knownIds.has(r.id) && !knownNames.has(r.name.toLowerCase()))
@@ -108,10 +110,12 @@ export async function GET(request: Request) {
   if (fresh.length) {
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${REVIEWS_SHEET}!A:F`,
+      range: `${REVIEWS_SHEET}!A:H`,
       valueInputOption: "RAW",
       insertDataOption: "INSERT_ROWS",
-      requestBody: { values: fresh.map((r) => [r.date, r.name, r.stars, r.text, "", r.id]) },
+      requestBody: {
+        values: fresh.map((r) => [r.date, r.name, r.stars, r.text, "", r.id, pickHighlight(r.text), r.photo]),
+      },
     });
   }
 

@@ -110,49 +110,91 @@ function ReviewCard({ review, renderedAt }: { review: Review; renderedAt: number
   // On mobile: always show full text. On desktop: clamp long reviews.
   const shouldClamp = isLong && !isMobile;
 
+  // Bold pull-quote: the chosen highlight, or the whole review when it's short.
+  const isShort = !review.highlight && review.quote.length <= 90;
+  const headline = review.highlight || (isShort ? review.quote : "");
+
   return (
     <div className="bg-white rounded-sm p-4 md:p-6 shadow-sm border border-brand-border flex flex-col h-full">
-      {/* Top: Google + time */}
-      <div className="flex items-center justify-between mb-2">
-        <GoogleIcon className="w-5 h-5 md:w-6 md:h-6" />
-        <span className="text-[10px] md:text-xs text-brand-gray">{ago}</span>
+      {/* Reviewer — Google style */}
+      <div className="flex items-center gap-3">
+        <ReviewerAvatar name={review.name} photo={review.photo} />
+        <div className="min-w-0 flex-1">
+          <p className="font-bold text-brand-dark text-sm md:text-base truncate">{review.name}</p>
+          <div className="flex items-center gap-2 mt-0.5">
+            <StarRating count={review.stars} size="sm" />
+            <span className="text-[11px] md:text-xs text-brand-gray whitespace-nowrap">{ago}</span>
+          </div>
+        </div>
+        <GoogleIcon className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
       </div>
 
-      {/* Stars */}
-      <StarRating count={review.stars} size="md" />
-
-      {/* Quote */}
-      <blockquote className="mt-2 md:mt-3 flex-1">
-        <div
-          ref={contentRef}
-          className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
-          style={{ maxHeight: shouldClamp ? maxH : "none" }}
-        >
-          <p className="text-brand-dark leading-relaxed text-xs md:text-sm">
-            &ldquo;{review.quote}&rdquo;
-          </p>
-        </div>
-
-        {shouldClamp && (
-          <button
-            type="button"
-            onClick={() => setExpanded(!expanded)}
-            className="text-brand-red hover:text-brand-red-dark text-[11px] md:text-xs font-semibold mt-1 transition-colors cursor-pointer"
-          >
-            {expanded ? "Read Less" : "Read More"}
-          </button>
-        )}
-      </blockquote>
-
-      {/* Attribution */}
-      <div className="mt-3 pt-2 md:pt-3 border-t border-brand-border flex items-center gap-2">
-        <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center font-bold text-xs md:text-sm flex-shrink-0">
-          {review.name.charAt(0).toUpperCase()}
-        </div>
-        <p className="font-bold text-brand-dark text-xs md:text-sm truncate">
-          {review.name}
+      {/* Pull-quote */}
+      {headline && (
+        <p className="mt-4 text-brand-dark font-bold italic text-base md:text-lg leading-snug">
+          <span className="text-brand-red not-italic mr-0.5" aria-hidden="true">&ldquo;</span>
+          {headline}
+          <span className="text-brand-red not-italic ml-0.5" aria-hidden="true">&rdquo;</span>
         </p>
-      </div>
+      )}
+
+      {/* Full review */}
+      {!isShort && (
+        <blockquote className="mt-2 md:mt-3 flex-1">
+          <div
+            ref={contentRef}
+            className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
+            style={{ maxHeight: shouldClamp ? maxH : "none" }}
+          >
+            <p className="text-brand-gray leading-relaxed text-xs md:text-sm">{review.quote}</p>
+          </div>
+
+          {shouldClamp && (
+            <button
+              type="button"
+              onClick={() => setExpanded(!expanded)}
+              className="text-brand-red hover:text-brand-red-dark text-[11px] md:text-xs font-semibold mt-1 transition-colors cursor-pointer"
+            >
+              {expanded ? "Read Less" : "Read More"}
+            </button>
+          )}
+        </blockquote>
+      )}
+    </div>
+  );
+}
+
+/* Google's letter-avatar colors, picked per name so each reviewer keeps theirs. */
+const AVATAR_COLORS = ["#5C6BC0", "#7E57C2", "#EC407A", "#26A69A", "#42A5F5", "#EF6C00", "#8D6E63", "#78909C", "#AB47BC", "#689F38"];
+
+function ReviewerAvatar({ name, photo }: { name: string; photo?: string }) {
+  const [failed, setFailed] = useState(false);
+  const size = "w-10 h-10 md:w-11 md:h-11";
+
+  if (photo && !failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- Google profile photo, external and tiny
+      <img
+        src={photo}
+        alt=""
+        width={44}
+        height={44}
+        loading="lazy"
+        referrerPolicy="no-referrer"
+        onError={() => setFailed(true)}
+        className={`${size} rounded-full object-cover flex-shrink-0 bg-brand-light`}
+      />
+    );
+  }
+
+  const hash = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0);
+  return (
+    <div
+      className={`${size} rounded-full flex items-center justify-center text-white font-medium text-lg flex-shrink-0`}
+      style={{ backgroundColor: AVATAR_COLORS[hash % AVATAR_COLORS.length] }}
+      aria-hidden="true"
+    >
+      {name.charAt(0).toUpperCase()}
     </div>
   );
 }
