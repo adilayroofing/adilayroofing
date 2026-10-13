@@ -3,8 +3,12 @@ import { company } from "@/data/company";
 import ContactForm from "@/components/ContactForm";
 import TrustBadgeRow from "@/components/TrustBadgeRow";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { ReviewBadge, ReviewQuotes } from "@/components/ReviewProof";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { BASE_URL, ORG_REF } from "@/lib/schema";
+
+// Review proof next to the form reads the reviews sheet — refresh hourly.
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const dbSeo = await getPageSEO("/contact");
@@ -94,11 +98,15 @@ export default async function ContactPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-brand-dark mb-1 md:mb-2">
                     {formHeading}
                   </h2>
-                  <p className="text-brand-gray text-sm md:text-base mb-4 md:mb-8">
+                  <p className="text-brand-gray text-sm md:text-base mb-3 md:mb-5">
                     {formDescription}
                   </p>
+                  <ReviewBadge href="/#reviews" eager className="mb-4 md:mb-6" />
                   <ContactForm />
                 </div>
+
+                {/* What customers say — right where they decide to submit */}
+                <ReviewQuotes count={2} className="mt-4 md:mt-6" />
 
                 {/* Trust badges — under the form on /contact */}
                 <div className="mt-4 md:mt-6">

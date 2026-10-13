@@ -17,6 +17,8 @@ export interface Review {
   highlight?: string;
   /** Reviewer's Google profile photo URL */
   photo?: string;
+  /** Owner picked it to show next to the call-to-action buttons */
+  featured?: boolean;
 }
 
 export const fallbackReviews: Review[] = [
@@ -81,6 +83,7 @@ export const fallbackReviews: Review[] = [
       "I can’t say enough great things about Adilay Roofing LLC… From the very beginning, the owner Nissim Erez, made me feel like I was dealing with someone who genuinely cared about helping me not someone who was simply trying to make money. He took the time to explain everything, answered all of my questions, and most importantly, eased my anxiety by putting my best interest first. His honesty, professionalism, and integrity truly stood out. In an industry where it can be difficult to know who you can trust, Adilay Roofing LLC gave me complete peace of mind. The quality of their work was excellent! The team was professional, and my roof looks amazing! If you’re looking for a roofing company in the Overbrook area that is honest, trustworthy, affordable, professional, and truly cares about its customers, I highly recommend Adilay Roofing LLC. They earned my trust and my highest recommendation!",
     highlight: "Adilay Roofing LLC gave me complete peace of mind.",
     photo: "https://lh3.googleusercontent.com/a/ACg8ocJKdjA_2q1c2O8J8fWCgncqs6N9lmAScsDnRDFxC1gcod03bg=s128-c0x00000000-cc-rp-mo",
+    featured: true,
   },
   {
     date: "2026-08-02",
@@ -90,6 +93,7 @@ export const fallbackReviews: Review[] = [
       "Recently called Adilay Roofing to repair a leaking roof at my home in Bala Cynwyd and I couldn’t be happier with this experience. They were on time, honest, professional, and incredibly kind! Nissim, the owner, took the time to explain exactly what needed to be done to make my roof safe and keep it in excellent condition for many years. He genuinely cares about doing the job right. I highly recommend Adilay Roofing.",
     highlight: "He genuinely cares about doing the job right.",
     photo: "https://lh3.googleusercontent.com/a/ACg8ocJSlDGTwI-STGGOaZPU9ztK8uUU5LpaLOcdCDQU4LwwMDyp3w=s128-c0x00000000-cc-rp-mo",
+    featured: true,
   },
   {
     date: "2026-07-28",
@@ -117,6 +121,7 @@ export const fallbackReviews: Review[] = [
       "As a single woman of color and home owner in Philadelphia, I have had my share of good and bad interactions with roofing companies. However Adilay has proven to be the BEST! When my roof began leaking @ 1 am in the morning ; I was horrified and immediately contacted Adilay and they responded. Within hours they arrived and stopped the leak and subsequently repaired the roof in two days.They kept me informed throughout the entire process addressing any questions/concerns that I had. They turned an emergency situation into a manageable one with ease. KUDOS TO ADILAY!",
     highlight: "Adilay has proven to be the BEST!",
     photo: "https://lh3.googleusercontent.com/a/ACg8ocKau8PeIsG5SWP-fMoopUq3IW3BGOFzi6JSMU7n4dE1X5Id9w=s128-c0x00000000-cc-rp-mo",
+    featured: true,
   },
   {
     date: "2026-06-22",
@@ -198,6 +203,7 @@ export const fallbackReviews: Review[] = [
       "This house had been plagued with roof leaks for years. I got a few quotes from different roofers all within budget. Adilay Roofing was the only one that left nothing to chance. Their experience showed first in their quote and then in their workmanship. They removed a leaking metal roof that was installed over cedar shingles probably 100 years ago. They installed plywood on the entire roof, ice barrier, underlayment and then a 50 year shingle, better than expected. They also reroofed two low slope roofs and the front porch roof, more than expected! The entire job was done in 2 days, everything cleaned up and in order. They even painted the terra cotta chimneys and replaced some downspouts on the gutters, these things were not in the quote and they did not charge for this work or the materials. They made sure everything was 100%. Everyone involved in this was truly professional and respectful. The end result… Better than expected!",
     highlight: "Adilay Roofing was the only one that left nothing to chance.",
     photo: "https://lh3.googleusercontent.com/a-/ALV-UjUJGd2MGXk2yMlMWAHycEcc-gQ6kZNrBOtsdARURcpkmAA4WVOt0w=s128-c0x00000000-cc-rp-mo",
+    featured: true,
   },
   {
     date: "2025-09-03",
@@ -224,6 +230,7 @@ export const fallbackReviews: Review[] = [
       "Adilay Roofing did an outstanding job on four roofs, siding and a back deck for us! From start to finish, they were professional, on time, and detail-oriented. The work was top-quality clean lines, solid materials, and everything was done right the first time. And the best part? Their price beat every other company I reached out to. We got multiple quotes, and Adilay came in with the most competitive rate without sacrificing quality. I truly appreciate their honesty, Expertise, and great customer service. If you're looking for roofing or deck work, Adilay Roofing is the one to call. Highly recommended!",
     highlight: "Their price beat every other company I reached out to.",
     photo: "https://lh3.googleusercontent.com/a/ACg8ocK2TspnEi_xO8bRC8ilVMs9zzpdlf3tQJ_Ukuay5EjFbiQd_A=s128-c0x00000000-cc-rp-mo",
+    featured: true,
   },
   {
     date: "2025-07-02",
@@ -251,6 +258,7 @@ export const fallbackReviews: Review[] = [
       "Outstanding. I'd highly recommend Adilay Roofing to anyone in need of roofing services. From communication to pricing to execution, everything was flawless. The entire team was professional and went above and beyond to deliver quality at a fair price. The team was unbelievably punctual to boot and completed the job within 48 hours of my issue arising. A+. Highly Recommend!",
     highlight: "From communication to pricing to execution, everything was flawless.",
     photo: "https://lh3.googleusercontent.com/a-/ALV-UjWhoonylgDuGE2JicFiZE-dgskL2O9i0-tNJwYWcbWCoCthBfy0tg=s128-c0x00000000-cc-rp-mo",
+    featured: true,
   },
   {
     date: "2025-06-29",

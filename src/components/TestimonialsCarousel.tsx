@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, useRef, useSyncExternalStore } from "
 import Link from "next/link";
 import { company } from "@/data/company";
 import ScrollReveal from "@/components/ScrollReveal";
+import ReviewerAvatar from "@/components/ReviewerAvatar";
 
 import type { Review } from "@/data/reviews";
 import type { ReviewStats } from "@/lib/reviews";
@@ -164,41 +165,6 @@ function ReviewCard({ review, renderedAt }: { review: Review; renderedAt: number
   );
 }
 
-/* Google's letter-avatar colors, picked per name so each reviewer keeps theirs. */
-const AVATAR_COLORS = ["#5C6BC0", "#7E57C2", "#EC407A", "#26A69A", "#42A5F5", "#EF6C00", "#8D6E63", "#78909C", "#AB47BC", "#689F38"];
-
-function ReviewerAvatar({ name, photo }: { name: string; photo?: string }) {
-  const [failed, setFailed] = useState(false);
-  const size = "w-10 h-10 md:w-11 md:h-11";
-
-  if (photo && !failed) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element -- Google profile photo, external and tiny
-      <img
-        src={photo}
-        alt=""
-        width={44}
-        height={44}
-        loading="lazy"
-        referrerPolicy="no-referrer"
-        onError={() => setFailed(true)}
-        className={`${size} rounded-full object-cover flex-shrink-0 bg-brand-light`}
-      />
-    );
-  }
-
-  const hash = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0);
-  return (
-    <div
-      className={`${size} rounded-full flex items-center justify-center text-white font-medium text-lg flex-shrink-0`}
-      style={{ backgroundColor: AVATAR_COLORS[hash % AVATAR_COLORS.length] }}
-      aria-hidden="true"
-    >
-      {name.charAt(0).toUpperCase()}
-    </div>
-  );
-}
-
 /* ── Hook: responsive perPage ── */
 function usePerPage() {
   const [perPage, setPerPage] = useState(3);
@@ -296,7 +262,7 @@ export default function TestimonialsCarousel({
   const visible = testimonials.slice(startIdx, startIdx + perPage);
 
   return (
-    <section className="section-padding bg-brand-light">
+    <section id="reviews" className="section-padding bg-brand-light scroll-mt-24">
       <div className="container-wide mx-auto">
         {/* Heading */}
         <ScrollReveal>

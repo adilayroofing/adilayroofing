@@ -19,7 +19,7 @@ export default function TrustBadgeRow({
       <li className="bg-white border border-brand-border rounded-sm flex items-center justify-center p-1 h-14 md:h-16 overflow-hidden">
         <img
           src="/images/google-business-review-5-stars.png"
-          alt="Adilay Roofing — 5.0 stars on Google Business Reviews"
+          alt="Adilay Roofing — Google Business Reviews"
           loading="lazy"
           className="h-full w-full object-contain"
         />

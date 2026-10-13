@@ -69,7 +69,7 @@ export default function JsonLd() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "55",
+      reviewCount: "61",
       bestRating: "5",
       worstRating: "1",
     },

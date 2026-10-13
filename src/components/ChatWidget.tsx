@@ -294,7 +294,7 @@ export default function ChatWidget() {
         {
           role: "assistant",
           kind: "trust",
-          content: `Absolutely — fully licensed and insured! We're a registered PA Home Improvement Contractor (license #${company.license}), BBB accredited, and rated 5.0 stars on Google. Here's the proof:`,
+          content: `Absolutely — fully licensed and insured! We're a registered PA Home Improvement Contractor (license #${company.license}), BBB accredited, and rated 4.9 stars on Google. Here's the proof:`,
         },
       ]);
       setIsTyping(false);
@@ -1061,7 +1061,7 @@ function TrustCard({ message }: { message: ChatMessage }) {
               {/* eslint-disable-next-line @next/next/no-img-element -- fixed-width chat asset from Cloudinary CDN; the global custom loader would double-prefix the absolute URL */}
               <img
                 src={GOOGLE_STARS_PHOTO}
-                alt="Google Business Review — 5.0 stars"
+                alt="Adilay Roofing — Google Business Reviews"
                 width={300}
                 height={131}
                 loading="lazy"

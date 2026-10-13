@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import TrustBadgeRow from "@/components/TrustBadgeRow";
 import TrustBar from "@/components/TrustBar";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import { ReviewBadge, ReviewQuotes } from "@/components/ReviewProof";
 import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
@@ -265,7 +266,13 @@ export default async function GetQuotePage() {
         <div className="lg:w-[60%] bg-brand-light flex items-start lg:items-center justify-center px-3 md:px-4 py-3 md:py-10 lg:py-16">
           <div className="w-full max-w-2xl">
             <div id="quote-form-top" style={{ scrollMarginTop: "120px" }} />
+            <div className="flex justify-center mb-3 md:mb-4">
+              <ReviewBadge eager />
+            </div>
             <ContactForm />
+
+            {/* What customers say — right where they decide to submit */}
+            <ReviewQuotes count={2} className="mt-4 md:mt-6" />
 
             {/* Trust badges (Google / BBB / GAF / License) — replaces the
                 old mobile-only BBB seal with a fuller row of trust signals.
@@ -281,6 +288,11 @@ export default async function GetQuotePage() {
       {/* TRUST BAR                                                           */}
       {/* =================================================================== */}
       <TrustBar />
+
+      {/* =================================================================== */}
+      {/* TESTIMONIALS — right after the form, before the long SEO copy       */}
+      {/* =================================================================== */}
+      <TestimonialsSection />
 
       {/* =================================================================== */}
       {/* SEO CONTENT — Why a free roof quote is worth your time              */}
@@ -604,10 +616,6 @@ export default async function GetQuotePage() {
         </div>
       </section>
 
-      {/* =================================================================== */}
-      {/* TESTIMONIALS SECTION                                                */}
-      {/* =================================================================== */}
-      <TestimonialsSection />
 
       {/* =================================================================== */}
       {/* GALLERY CTA WIDGET                                                  */}

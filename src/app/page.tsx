@@ -9,6 +9,7 @@ import ServiceCard from "@/components/ServiceCard";
 import TrustBar from "@/components/TrustBar";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import { ReviewBadge, ReviewQuotes } from "@/components/ReviewProof";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import BlogCard from "@/components/blog/BlogCard";
@@ -303,12 +304,17 @@ export default async function Home() {
               or text us — fast response
             </a>
 
+            {/* Review proof right under the CTAs */}
+            <div className="mt-3 md:mt-5">
+              <ReviewBadge tone="dark" eager />
+            </div>
+
             <ScrollReveal delay={150} duration={500} distance={12}>
               <ul className="mt-4 md:mt-7 mx-auto grid grid-cols-4 gap-1.5 md:gap-3 max-w-[360px] md:max-w-3xl">
                 <li className="bg-white rounded-md flex items-center justify-center p-0.5 h-12 md:h-20 overflow-hidden">
                   <img
                     src="/images/google-business-review-5-stars.png"
-                    alt="Adilay Roofing — 5.0 stars on Google Business Reviews"
+                    alt="Adilay Roofing — Google Business Reviews"
                     loading="lazy"
                     className="h-full w-full object-contain"
                   />
@@ -398,6 +404,12 @@ export default async function Home() {
       {/* TRUST BAR                                    */}
       {/* ============================================ */}
       <TrustBar />
+
+      {/* ============================================ */}
+      {/* TESTIMONIALS — high on the page: reviews are */}
+      {/* what callers say convinced them.             */}
+      {/* ============================================ */}
+      <TestimonialsSection />
 
       {/* ============================================ */}
       {/* VAN BANNER — same-day on-site estimate         */}
@@ -810,10 +822,6 @@ export default async function Home() {
       {/* ============================================ */}
       <ProcessSection />
 
-      {/* ============================================ */}
-      {/* TESTIMONIALS SECTION                         */}
-      {/* ============================================ */}
-      <TestimonialsSection />
 
       {/* ============================================ */}
       {/* BEFORE & AFTER SLIDER — Bala Cynwyd. Compact */}
@@ -1112,7 +1120,9 @@ export default async function Home() {
       {/* ============================================ */}
       {/* CTA SECTION                                  */}
       {/* ============================================ */}
-      <CTASection />
+      <CTASection>
+        <ReviewQuotes count={3} tone="dark" />
+      </CTASection>
     </>
   );
 }

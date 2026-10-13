@@ -10,7 +10,7 @@ import {
 /**
  * Google reviews pipeline (no database — the leads Google Sheet is the store).
  *
- * "Reviews" tab:       Date | Name | Stars | Review | Show on site? | Google ID | Highlight | Photo
+ * "Reviews" tab:       Date | Name | Stars | Review | Show on site? | Google ID | Highlight | Photo | Feature near buttons?
  * "Review Stats" tab:  B1 = Google rating, B2 = total Google reviews, B3 = last checked
  *
  * A daily cron (/api/cron/reviews) appends new Google reviews with
@@ -60,7 +60,7 @@ async function loadFromSheet(): Promise<SiteReviews> {
   try {
     const res = await sheetsClient().spreadsheets.values.batchGet({
       spreadsheetId,
-      ranges: [`${REVIEWS_SHEET}!A2:H`, `${STATS_SHEET}!B1:B2`],
+      ranges: [`${REVIEWS_SHEET}!A2:I`, `${STATS_SHEET}!B1:B2`],
     });
     const [rowsRange, statsRange] = res.data.valueRanges ?? [];
 
@@ -73,6 +73,7 @@ async function loadFromSheet(): Promise<SiteReviews> {
         quote: String(r[3] ?? "").trim(),
         highlight: String(r[6] ?? "").trim() || undefined,
         photo: String(r[7] ?? "").trim() || undefined,
+        featured: String(r[8] ?? "").trim().toUpperCase() === "YES" || undefined,
       }))
       .filter((r) => r.name && r.quote && r.date)
       .sort((a, b) => b.date.localeCompare(a.date));
@@ -109,6 +110,16 @@ export function pickHighlight(text: string): string {
   if (!candidates.length) return "";
   const score = (s: string) => (s.match(positive)?.length ?? 0) * 10 - s.length / 20;
   return candidates.sort((a, b) => score(b) - score(a))[0];
+}
+
+/**
+ * Reviews to show next to call-to-action buttons: the owner's "Feature near
+ * buttons?" picks first, then the newest reviews that have a highlight.
+ */
+export function pickFeatured(reviews: Review[], count: number): Review[] {
+  const withQuote = reviews.filter((r) => r.highlight);
+  const picked = [...withQuote.filter((r) => r.featured), ...withQuote.filter((r) => !r.featured)];
+  return picked.slice(0, count);
 }
 
 /** Approved reviews + Google stats for the site, cached for an hour. */

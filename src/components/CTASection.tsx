@@ -5,11 +5,14 @@ import ScrollReveal from "@/components/ScrollReveal";
 interface CTASectionProps {
   headline?: string;
   subtext?: string;
+  /** Optional proof shown under the buttons (e.g. review quotes) */
+  children?: React.ReactNode;
 }
 
 export default function CTASection({
   headline = "Ready to Get Started?",
   subtext = "Contact us today for a free roof inspection and estimate. No pressure, no obligation — just honest advice from experienced professionals.",
+  children,
 }: CTASectionProps) {
   return (
     <section className="relative bg-brand-dark overflow-hidden">
@@ -55,6 +58,7 @@ export default function CTASection({
             </div>
           </ScrollReveal>
         </div>
+        {children && <div className="container-wide mx-auto mt-8 md:mt-12">{children}</div>}
       </div>
     </section>
   );
