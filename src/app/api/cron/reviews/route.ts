@@ -145,6 +145,49 @@ export async function GET(request: Request) {
   }
   const missing = prevCount > 0 ? count - prevCount - fresh.length : 0;
   if (missing > 0) {
+    // Places only returns 5 "most relevant" reviews, so the new one's text often
+    // isn't available. Leave a visible placeholder row so the owner sees it in the
+    // sheet (stays off the site: "Show on site?" is blank).
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+    const appended = await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: `${REVIEWS_SHEET}!A:I`,
+      valueInputOption: "RAW",
+      insertDataOption: "INSERT_ROWS",
+      requestBody: {
+        values: [[
+          today,
+          `⚠️ ${missing} NEW GOOGLE REVIEW${missing > 1 ? "S" : ""} — fill in`,
+          5,
+          `Google counted ${missing} new review${missing > 1 ? "s" : ""} (total ${count}) but didn't send the text. Open Google → Adilay Roofing → Reviews → sort Newest, then replace this row's Date, Name, Stars and Review with the real one and choose YES.`,
+          "",
+          `missing-${today}`,
+          "",
+          "",
+          "",
+        ]],
+      },
+    });
+    // Highlight the placeholder row yellow so it stands out
+    const updatedRange = appended.data.updates?.updatedRange ?? "";
+    const row = Number(updatedRange.match(/!A(\d+)/)?.[1]);
+    const meta = await sheets.spreadsheets.get({ spreadsheetId, fields: "sheets.properties" });
+    const sheetId = meta.data.sheets?.find((t) => t.properties?.title === REVIEWS_SHEET)?.properties?.sheetId;
+    if (row && sheetId !== undefined) {
+      await sheets.spreadsheets.batchUpdate({
+        spreadsheetId,
+        requestBody: {
+          requests: [{
+            repeatCell: {
+              range: { sheetId, startRowIndex: row - 1, endRowIndex: row, startColumnIndex: 0, endColumnIndex: 9 },
+              cell: { userEnteredFormat: { backgroundColor: { red: 1, green: 0.95, blue: 0.6 } } },
+              fields: "userEnteredFormat.backgroundColor",
+            },
+          }],
+        },
+      });
+    }
+
     await notify(
       "New Google review — check manually",
       `${missing} new Google review${missing > 1 ? "s" : ""} came in that Google didn't send the text for. Copy ${missing > 1 ? "them" : "it"} into the Reviews sheet if you want ${missing > 1 ? "them" : "it"} on the site.`,
