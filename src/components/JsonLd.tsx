@@ -66,13 +66,9 @@ export default function JsonLd() {
     priceRange: "$$",
     paymentAccepted: "Cash, Check, Credit Card",
     currenciesAccepted: "USD",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "61",
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // No aggregateRating: Google ignores self-serving ratings on a business's
+    // own site, and it triggered "Review has multiple aggregate ratings" in
+    // Search Console (2026-10-18). Stars come from the Google Business Profile.
   };
 
   const website = {
