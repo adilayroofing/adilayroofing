@@ -6,6 +6,9 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { getPageSEO, buildMetadataFromSEO, getStructuredContent } from "@/lib/seo";
 import { BASE_URL, ORG_REF } from "@/lib/schema";
 
+// Pick up scheduled posts on their date without a redeploy.
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   const dbSeo = await getPageSEO("/blog");
   if (dbSeo) {

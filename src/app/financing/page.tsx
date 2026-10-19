@@ -30,9 +30,11 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: "Roof Financing Philadelphia | Apply Today | Adilay Roofing",
+    // GSC mobile 90d: ~5.5k impr on "roofing companies that finance" /
+    // "roofing payment plans" at pos 30\u201370 \u2014 name both in the title.
+    title: "Roof Financing & Payment Plans Philadelphia | Adilay",
     description:
-      "Adilay Roofing offers flexible roof financing through Service Finance Company. Loans from $1,000\u2013$100,000. No payments until job is complete. Serving Philadelphia & surrounding counties.",
+      "A Philadelphia roofing company that finances: loans $1,000\u2013$100,000 through Service Finance, no payments until the job is done. PA184779. (267) 255-3620.",
     keywords: [
       "roof financing Philadelphia",
       "finance roof replacement Philadelphia",

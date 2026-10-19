@@ -570,7 +570,7 @@ export const services: Service[] = [
           description: "Nor'easters and summer thunderstorms lift tabs and crease shingles at the windward side.",
         },
       ],
-      footnote: `Active leak? Call <a href="tel:+12672553620">(267) 255-3620</a> or see our <a href="/services/emergency-roof-repair">24/7 emergency roof repair in Philadelphia</a> for same-day response.`,
+      footnote: `Water coming through the ceiling? See our <a href="/services/roof-leak-repair">roof leak repair</a> page for how we trace and fix leaks, call <a href="tel:+12672553620">(267) 255-3620</a>, or see our <a href="/services/emergency-roof-repair">24/7 emergency roof repair in Philadelphia</a> for same-day response.`,
     },
     projectShowcase: {
       heading: "Recent Project: Northern Liberties Fiberglass Roof Repair",
@@ -596,61 +596,83 @@ export const services: Service[] = [
   },
   {
     slug: "flat-roofing",
-    title: "Flat Roofing (EPDM)",
+    title: "Flat Roofing",
     shortTitle: "Flat Roof",
-    tagline: "Durable Flat Roof Solutions for Commercial & Residential Properties",
+    tagline: "Flat Roof Installation Philadelphia — Torch-Down, EPDM & TPO",
     category: "roofing",
     description:
-      "Professional flat roof installation and repair using EPDM rubber roofing. Ideal for commercial buildings, row homes, and additions in the Philadelphia area.",
+      "Flat roof installation and replacement for Philadelphia rowhomes, porches, roof decks and commercial buildings — torch-down modified bitumen, EPDM and TPO.",
+    // Real job mix (2026 proposals): torch-down GAF granulated mod-bit far
+    // outnumbers EPDM and TPO, so lead with it. AI-visibility prompts we score
+    // 0% on: "best flat roof repair company", "rubber roofs on rowhomes",
+    // "EPDM installers" — each answered in the FAQ below.
+    metaTitle: "Flat Roof Installation Philadelphia — Torch-Down & EPDM",
+    metaDescription:
+      "New flat roofs for Philadelphia rowhomes, porches & roof decks — torch-down, EPDM, TPO. Written scope, free estimate. Licensed PA184779. (267) 255-3620.",
     icon: "",
     image: "/images/flat-roof-philadelphia.jpg",
     heroDescription:
-      "EPDM (ethylene propylene diene terpolymer) rubber roofing is one of the most reliable flat roofing materials available, and Adilay Roofing is Philadelphia's trusted source for expert flat roof installation and repair. Licensed under PA184779, our team specializes in flat roofing systems for both commercial buildings and residential properties, including Philadelphia row homes, garage additions, porches, and low-slope roofs. EPDM delivers excellent waterproofing, UV resistance, and long-term durability, making it the preferred choice for flat and low-slope roofing applications throughout the Mid-Atlantic region. Unlike other flat roofing materials, EPDM can withstand extreme temperature fluctuations — from scorching Philadelphia summers to freezing winters — without cracking or deteriorating. We serve homeowners and business owners across Philadelphia and the surrounding areas of Bucks County, Montgomery County, Delaware County, and Chester County. Whether you need a complete flat roof replacement, a repair for ponding water or membrane damage, or a new flat roof installation on a building addition, our crew delivers professional results with meticulous attention to drainage, seam integrity, and edge detailing. Contact us today for a free flat roofing estimate and see why property owners across Philadelphia trust Adilay Roofing for their flat roof needs.",
+      "Most Philadelphia rowhomes have a flat or nearly flat roof, and that's most of the roofing we do. Adilay Roofing (PA license PA184779) installs and replaces flat roofs on rowhomes, twins, porch and bay window roofs, roof decks and small commercial buildings across Philadelphia and Bucks, Montgomery, Delaware and Chester counties. The system we install most is torch-down modified bitumen: GAF granulated membrane heat-welded to the roof, finished with new aluminum flashing and coping around every edge. It handles Philadelphia's freeze-thaw winters, takes foot traffic, and ties cleanly into brick parapets and the neighbor's roof. We also install EPDM rubber and white TPO when they suit the building better, and we'll tell you which and why. Every job starts with a free inspection and a numbered written scope: what comes off, how we check the plywood underneath, what goes on, and how we handle drains, downspouts, coping and the joint with the house next door. We haul away every bit of debris and register the manufacturer warranty when the roof is done. Call (267) 255-3620 for a free flat roof estimate.",
     benefits: [
-      "Superior waterproofing for flat and low-slope roofs",
-      "UV and weather resistant for long-term performance",
-      "Cost-effective solution for large commercial areas",
-      "Minimal maintenance requirements",
-      "Proven track record of 20+ year lifespan",
-      "Expert installation by licensed contractors (PA184779)",
-      "Ideal for Philadelphia row homes and commercial buildings",
+      "Torch-down modified bitumen, EPDM rubber and TPO installed",
+      "Numbered written scope before any work starts",
+      "Plywood inspected under every roof — rot replaced, never covered over",
+      "New aluminum flashing and coping on every edge",
+      "Drain boxes and downspouts sized so water actually leaves the roof",
+      "Proper tie-ins to neighboring rowhome roofs and walls",
+      "Licensed and insured Philadelphia contractor (PA184779)",
       "Free estimates with no obligation",
     ],
     features: [
-      "Full EPDM membrane installation",
-      "Existing flat roof tear-off and replacement",
-      "Proper drainage and slope assessment",
-      "Seam welding and edge detailing",
-      "Insulation board installation",
-      "Penetration flashing for vents and pipes",
-      "Parapet wall and coping cap installation",
-      "Ponding water correction and drainage improvement",
+      "Full tear-off down to the deck, or re-cover over a single sound layer",
+      "Torch-down GAF granulated modified bitumen membrane",
+      "EPDM rubber and TPO membrane installation",
+      "Plywood inspection and replacement",
+      "Porch, bay window and back-building roofs",
+      "Roof decks: take apart, re-roof underneath, rebuild",
+      "Aluminum coping and capping on parapets and roof edges",
+      "Drain box, downspout and gutter installation",
     ],
     faq: [
       {
-        question: "How long does an EPDM flat roof last?",
+        question: "What kind of flat roof is best for a Philadelphia rowhome?",
         answer:
-          "A properly installed EPDM roof can last 20–30 years with regular maintenance. The material is highly resistant to UV rays, ozone, and extreme temperatures.",
+          "For most rowhomes we recommend torch-down modified bitumen — it's what we install most. It's tough, handles foot traffic and freeze-thaw well, and ties neatly into brick walls and the neighbor's roof. EPDM rubber is a good choice on simple roofs with few penetrations, and white TPO makes sense on larger or commercial roofs where reflecting summer heat matters. We look at your roof and tell you which one fits and why.",
       },
       {
-        question: "Is EPDM good for residential flat roofs?",
+        question: "Who installs rubber roofs on rowhomes in Philadelphia?",
         answer:
-          "EPDM is an excellent choice for residential flat roofs, including row homes, additions, and porches. It provides reliable waterproofing at a reasonable cost.",
+          "Adilay Roofing installs EPDM rubber roofs on Philadelphia rowhomes, along with torch-down modified bitumen and TPO. We work across the city — Fishtown, Kensington, Northern Liberties, South Philly, Roxborough, Manayunk, West Philly and the Northeast. Call (267) 255-3620 for a free estimate.",
       },
       {
-        question: "How much does flat roof installation cost in Philadelphia?",
+        question: "How long does a flat roof last in Philadelphia?",
         answer:
-          "Flat roof installation costs in Philadelphia typically range from $4 to $10 per square foot depending on the size of the roof, the condition of the existing decking, and whether insulation is included. We provide free, itemized estimates so you understand every aspect of the cost before work begins.",
+          "A properly installed torch-down, EPDM or TPO roof typically lasts 20 years or more. What shortens it is almost always the details: edges, drains, and the joint with the wall or neighbor's roof. That's why every scope we write covers new flashing, coping and drainage, not just the membrane.",
+      },
+      {
+        question: "Tear-off or re-cover — which do I need?",
+        answer:
+          "If there's only one existing layer and the plywood underneath is dry and solid, a re-cover can be the right call. If there are already two layers, the wood is soft, or the roof has leaked for a while, a full tear-off down to the deck is the honest option. We check before we quote, and the scope says exactly which one you're getting.",
+      },
+      {
+        question: "Can you re-roof under my roof deck?",
+        answer:
+          "Yes. We take the deck apart, replace the roof underneath with new membrane and edge coping, and rebuild the deck. A lot of roofers won't take on the deck part. We do the whole job.",
       },
       {
         question: "Do I need a permit for flat roof work in Philadelphia?",
         answer:
-          "Yes, a permit is typically required for flat roof replacement in Philadelphia. As a licensed roofing contractor (PA184779), we handle all permit applications and ensure your flat roof meets Philadelphia building codes and passes inspection.",
+          "A permit is typically required for flat roof replacement in Philadelphia. As a licensed contractor (PA184779) we handle the permit and make sure the work meets code.",
       },
       {
         question: "What causes ponding water on a flat roof and how do you fix it?",
         answer:
-          "Ponding water on a flat roof is usually caused by improper drainage, sagging decking, or clogged drains. We correct ponding issues by improving the roof slope with tapered insulation, clearing or adding drains, and ensuring the membrane is properly sealed to prevent leaks in low spots.",
+          "Ponding usually comes from a sagging deck, a clogged or undersized drain, or a roof that was never pitched toward the drain. We fix the cause — replacing soft plywood, rebuilding or enlarging the drain box, adding a downspout — so the new membrane doesn't sit under water.",
+      },
+      {
+        question: "What makes a good flat roof repair company in Philadelphia?",
+        answer:
+          "Look for a licensed contractor (check the PA license number), a written scope that lists every step, a plan for the plywood underneath, and new flashing at the edges rather than a coat of cement. Ask who does the work and whether they'll handle the joint with the neighbor's roof. Adilay Roofing does all of that and has a 4.9-star Google rating from Philadelphia homeowners.",
       },
     ],
   },
@@ -1130,6 +1152,12 @@ export const services: Service[] = [
           "Yes, and flat roofs are a large share of our emergency work — Philadelphia row homes are overwhelmingly flat or low-slope. Emergency flat roof failures usually come from split seams, blistered or punctured membrane, failed flashing at parapet walls, or ponding water that has finally found a weak point. We carry EPDM, TPO and modified bitumen patch materials on the truck, so most flat roof emergencies can be sealed watertight on the first visit rather than tarped and revisited.",
       },
       {
+        // GSC mobile: "same day roof repair" 432 impr @ 16, never answered directly.
+        question: "Do you do same-day roof repair in Philadelphia?",
+        answer:
+          "Yes, for active leaks. We aim to have someone on the roof the same day you call. Small leaks can often be fixed on that first visit. For bigger damage we secure the roof that day with tarps or a framed temporary cover, then come back for the permanent repair once the full damage is clear, weather permitting. Call (267) 255-3620.",
+      },
+      {
         question: "Do you cover emergency roof repair in Bucks and Chester County?",
         answer:
           "Yes. We respond to emergency calls throughout Bucks County — Levittown, Newtown, Langhorne, Bristol, Doylestown, Yardley — and across Chester County including West Chester, Exton, Downingtown, Phoenixville and Kennett Square, plus Delaware and Montgomery counties. Emergency response is dispatched from whichever crew is closest, so suburban calls are not deprioritised behind city work.",
@@ -1173,7 +1201,9 @@ export const services: Service[] = [
   <li><strong>Orientation that sheds water downslope,</strong> with the top edge tucked under existing shingles wherever possible so rain runs across and off the tarp, not underneath it.</li>
   <li><strong>Targeted temporary flashing for specific leaks</strong> — a skylight seal failure, a chimney crack, or a plumbing boot tear often needs a small temporary flashing repair instead of a full tarp.</li>
 </ul>
-<p>Emergency tarping is not a permanent fix. Properly installed, a tarp holds for 30 to 90 days depending on weather — enough time to document the damage, work through an insurance claim, and schedule the permanent roof repair. We always return to complete the permanent fix and remove the tarp.</p>`,
+<p>Emergency tarping is not a permanent fix. Properly installed, a tarp holds for 30 to 90 days depending on weather — enough time to document the damage, work through an insurance claim, and schedule the permanent roof repair. We always return to complete the permanent fix and remove the tarp.</p>
+<h3>When a tarp isn't enough: framed emergency cover</h3>
+<p>If a storm tears open a corner of the roof or the wall beside it, a tarp alone won't hold. In those cases we build a temporary <strong>emergency roof cover</strong>: 2×4 framing and ½-inch plywood over the opening, temporary shingles over smaller damaged spots, and heavy-duty tarps over everything else, all fastened with battens. It's written up as its own short scope so you know exactly what's temporary. Once the roof is safe to work on, we inspect the full damage and quote the permanent repair separately.</p>`,
       },
       {
         heading: "Working With Your Homeowner's Insurance After Storm Damage",
@@ -1637,6 +1667,23 @@ export const services: Service[] = [
         answer:
           "Call a licensed local roofing contractor — finding the true source of a leak is the hard part, and general handymen often patch the wrong spot. Adilay Roofing (PA license PA184779) answers (267) 255-3620 day and night, traces the leak to its source, and gives you a free written repair quote. Active leaks get same-day priority.",
       },
+      {
+        // AI-visibility prompt "Who can fix a leaking roof in Philadelphia?"
+        // and reviews describing exactly this job.
+        question: "Can you fix a leak under a roof deck?",
+        answer:
+          "Yes, and it's one of the jobs we're known for. A leak under a rooftop deck means the deck has to come apart so the roof underneath can be redone. We take the deck apart, replace the membrane and edge coping, and rebuild the deck. Many roofers will only do part of that — they'll take the deck off but won't put it back, or won't touch it at all. We handle it start to finish.",
+      },
+      {
+        question: "Why does my rowhome leak where my roof meets the neighbor's?",
+        answer:
+          "Because the joint between two rowhomes is the hardest spot on the roof to keep watertight. Stepped roofs, shared parapets and siding on the neighbor's wall all meet there. A lasting repair runs the new membrane up the wall and under the neighbor's siding or flashing, then puts their siding back. A patch of roofing cement over the gap will usually leak again within a season or two.",
+      },
+      {
+        question: "Do you give a written scope before fixing a leak?",
+        answer:
+          "Always. You get a numbered list of exactly what we'll do — what comes off, what gets replaced, what material goes on, and what gets put back. If we find rotted plywood once the old roof is open, we stop and tell you before replacing it. Nothing is added without your OK.",
+      },
     ],
   },
   {
@@ -1786,6 +1833,11 @@ export const services: Service[] = [
         question: "Can soffit be repaired without replacing the whole run?",
         answer:
           "Often, yes. Spot repair works when the damage is confined to one or two panel sections, the fascia behind it is still sound, and the cause — usually gutter overflow — can be corrected at the same time. Full-run replacement makes more sense when rot has travelled along the eave, when wood soffit is past year 35 and failing in several places, or when animals have opened multiple entry points. We show you photos of what we found and put the recommendation in writing so you can see the reasoning.",
+      },
+      {
+        question: "Why is water leaking from my soffit?",
+        answer:
+          "Because water is getting in above it. The most common causes are water running behind the gutter (often from missing drip edge), clogged gutters spilling over the back, loose flashing or coping at the roof edge, and ice dams in winter. The soffit is just where the water comes out. We find and fix the source first, then replace the damaged soffit and fascia so it doesn't rot again.",
       },
       {
         question: "Can damaged soffit raise my energy bills?",

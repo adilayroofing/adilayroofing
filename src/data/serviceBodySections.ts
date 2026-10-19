@@ -16,8 +16,8 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
   // -------------------------------------------------------------------------
   "flat-roofing": [
     {
-      heading: "EPDM, TPO, and Modified Bitumen — Choosing the Right Flat Roof System",
-      html: "<p>Most Philadelphia rowhouses, additions, and commercial buildings need a low-slope or fully flat roofing system. We install three proven membranes: <strong>EPDM rubber</strong> (60-mil black or white, 25-30 year service life), <strong>TPO</strong> (heat-welded white membrane that reflects summer heat and reduces cooling bills), and <strong>modified bitumen</strong> (torch-down or peel-and-stick, ideal for foot-traffic decks). On a typical Philadelphia rowhouse roof we recommend EPDM for its proven longevity in our freeze-thaw climate and its straightforward seam repair if anything ever fails decades down the road.</p>",
+      heading: "Torch-Down, EPDM, and TPO — Choosing the Right Flat Roof System",
+      html: "<p>Most Philadelphia rowhouses, additions, and commercial buildings need a low-slope or fully flat roofing system. We install three proven membranes: <strong>torch-down modified bitumen</strong> (GAF granulated membrane heat-welded to the roof — the one we install most), <strong>EPDM rubber</strong> (a single sheet with few seams, good on simple roofs), and <strong>TPO</strong> (heat-welded white membrane that reflects summer heat, common on larger and commercial roofs). On a typical Philadelphia rowhouse we recommend torch-down: it stands up to foot traffic and freeze-thaw, and it ties neatly into brick parapets, porch roofs, and the neighbor's roof. Whatever the membrane, the edges get new aluminum flashing and coping set in flashing cement — that's where flat roofs actually fail.</p>",
     },
     {
       heading: "Why Flat Roofing Matters in Philadelphia Rowhouse Country",
@@ -289,6 +289,12 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
   // -------------------------------------------------------------------------
   "soffit-repair": [
     {
+      // GSC mobile: "water leaking from soffit" 172 impr @ 11.7 — no section
+      // answered it directly.
+      heading: "Water Leaking From Your Soffit — What It Means",
+      html: "<p>Water dripping from the soffit, or stains spreading across it, almost never starts in the soffit. It's coming from above and the soffit is just where it shows up. The usual sources, in the order we find them:</p><ul><li><strong>Water getting behind the gutter.</strong> No drip edge, or a gutter hung too low, lets runoff run down the back of the gutter onto the fascia and into the soffit. Our guide to <a href=\"/blog/water-leaking-behind-gutter-philadelphia\">water leaking behind the gutter</a> covers this in detail.</li><li><strong>Clogged or overflowing gutters and downspouts.</strong> When the gutter can't drain, water spills over the back edge.</li><li><strong>A failed roof edge.</strong> Loose flashing or coping at the edge of the roof lets water run under the membrane or shingles and out through the eave.</li><li><strong>Ice dams in winter.</strong> Meltwater backs up under the roof edge and drips out of the soffit.</li></ul><p>Fixing the soffit without fixing the source means it rots again. We trace where the water is coming from, repair that first, then replace the damaged soffit and fascia. Read more in our <a href=\"/blog/soffit-fascia-repair-philadelphia\">soffit and fascia repair guide</a>.</p>",
+    },
+    {
       heading: "What Soffits Actually Do for Your Philadelphia Home",
       html: "<p>The soffit is the underside of your roof eave overhang — the part you see when you stand below and look up. It does two jobs that most homeowners don't realize: <strong>ventilation</strong> (intake vents in the soffit pull cool air into the attic, which exits through ridge or gable vents — without soffit ventilation your attic heats up and your shingles age twice as fast), and <strong>protection</strong> (it prevents water, insects, birds, and squirrels from entering the eave assembly). When soffits fail, you get cooked shingles, ice dams in winter, and surprise wildlife in your attic.</p>",
     },
@@ -336,6 +342,16 @@ export const SERVICE_BODY_SECTIONS: Record<string, BodySection[]> = {
 
   // -------------------------------------------------------------------------
   "roof-leak-repair": [
+    {
+      // Built from the leak sources that show up again and again in our own
+      // repair scopes — rowhome-specific, not generic shingle advice.
+      heading: "The Rowhome Leaks We Fix Most Often in Philadelphia",
+      html: "<p>Most Philadelphia leaks we're called for aren't in the middle of the roof. They're at the edges and joints where a flat or low-slope rowhome roof meets something else:</p><ul><li><strong>Roof edges and coping.</strong> The metal coping (capping) along the front, back and parapet edges loosens, the flashing cement under it dries out, and water runs behind it into the wall. We replace it with new aluminum coping set in flashing cement.</li><li><strong>Drain boxes and downspouts.</strong> On three-story homes the drain box at the back of the main roof clogs, rusts through, or was simply too small. Water backs up over the membrane edge. The fix is a rebuilt drain box with a bigger opening to the downspout.</li><li><strong>Porch and bay window roofs.</strong> The small roofs over a front porch or bay window tie into the brick or siding above them. When that joint fails, water shows up inside at the front wall. These often need the first row of siding lifted so new membrane can run up the wall properly.</li><li><strong>Old satellite dishes and antennas.</strong> Every bolt that held a dish is a hole in the roof. We remove the abandoned mounts and seal the deck before the new membrane goes on.</li><li><strong>The neighbor's wall.</strong> Shared parapets and stepped roofs mean your roof and your neighbor's are one system. A proper repair runs the membrane up and under the neighbor's siding or flashing and puts it back, so water can't get between the two houses.</li><li><strong>Under a roof deck.</strong> The membrane under a deck gets no attention until it leaks. The deck has to come apart, the roof gets redone, and the deck goes back up. Plenty of roofers will do half of that. We do all of it.</li></ul>",
+    },
+    {
+      heading: "What a Real Leak Repair Includes",
+      html: "<p>Every leak repair we quote is written as a numbered scope, so you can see exactly what will be done before you agree to anything. A typical rowhome leak repair reads something like this:</p><ol><li>Remove anything sitting on the problem area (old satellite mounts, a section of siding, deck boards).</li><li>Remove the failed membrane or shingles down to the wood around the leak.</li><li>Inspect the plywood and replace anything soft or rotted. We tell you before we replace it.</li><li>Torch down new GAF granulated modified-bitumen membrane, or install new shingles over synthetic underlayment and ice &amp; water shield, depending on the roof.</li><li>Install new aluminum flashing and coping around the edges, set in flashing cement.</li><li>Put back the siding or deck boards we removed.</li><li>Haul every bit of debris off site.</li></ol><p>No mystery line items and no \"seal as needed.\" If the scope isn't written down, it isn't part of the job.</p>",
+    },
     {
       heading: "Finding the Leak Source — Why It's Harder Than It Looks",
       html: "<p>The water stain on your ceiling is rarely directly below the actual leak. <strong>Water travels along framing</strong> — rafters, joists, plywood seams — before it finally drops through the ceiling drywall. A leak at a chimney flashing on the front of your house can produce a stain in the middle of the room. Finding the actual source requires <strong>roof access</strong>, <strong>attic inspection</strong> with a moisture meter, and sometimes <strong>controlled water testing</strong> (running a hose on suspected areas while a second tech watches inside). Skip this step and you're patching the wrong spot.</p>",

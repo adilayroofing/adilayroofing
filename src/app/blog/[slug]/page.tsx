@@ -22,6 +22,10 @@ import CTASection from "@/components/CTASection";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { ORG_REF, stripHtml } from "@/lib/schema";
 
+// Scheduled posts are built as 404s until their date; re-render hourly so
+// they go live on the day instead of waiting for the next deploy.
+export const revalidate = 3600;
+
 // ─── Helpers ────────────────────────────────────────────────────────
 function isPostPublished(dateStr: string): boolean {
   const now = new Date();

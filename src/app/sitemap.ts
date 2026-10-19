@@ -3,6 +3,9 @@ import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { getAllPosts, getPublishedPostSlugs } from "@/lib/blog";
 
+// Scheduled blog posts enter the sitemap on their date.
+export const revalidate = 3600;
+
 const BASE_URL = "https://www.adilayroofing.com";
 
 // Per-content-type lastmod constants. Bump these (manually) only when the

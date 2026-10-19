@@ -88,6 +88,12 @@ const quoteFaqs = [
     answer:
       "Fill out the quick form on this page, call us at (267) 255-3620, or text us — whichever is easiest. Tell us a bit about your property and what you're seeing on your roof, and we'll get back to you the same day to confirm a time for your free, no-obligation roofing quote.",
   },
+  {
+    // GSC mobile: ~6k impr on "free roof estimate" variants at pos 9–20.
+    question: "What does your written estimate look like?",
+    answer:
+      "It's a numbered scope of work, not a one-line price. Each step is written out: what gets removed, how we check and replace any rotted plywood, which membrane or shingles go on, the flashing and coping at the edges, downspouts and drains, and debris removal. If something can only be found once the old roof is open, like soft wood underneath, the estimate says how it's handled and we call you before doing it. You sign electronically when you're ready.",
+  },
 ];
 
 export default async function GetQuotePage() {
